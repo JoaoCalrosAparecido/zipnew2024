@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.section_relogio {
+  position: relative;
+  top: 10px;
+  left: 2.4%;
+  width: 1800px;
+}
+
+.relogios_article {
+  position: relative;
+  top: -100px;
+}
+
+/* parte dos relogios */
+/*slide1*/
+.relogioss1 {
+  width: 503px;
+  height: 633px;
+  background-image: url('../IMG/bazar/parte_dos_relogios/2024/relogio1_refeito.png');
+  position: relative;
+  top: -750px;
+  
+}
+
+.relogioss1:hover {
+  background-image: url('../IMG/bazar/parte_dos_relogios/2024/relogio1_hover.png');
+}
+
+.relogio1_bazar{
+    position: relative;
+    top: 200px;
+    width: 506px;
+    height: 833px;
+    
+}
+
+.relogio1_bazar:hover {
+  
+}
+
+/*slide2*/
+.relogio2_bazar {
+    position: relative;
+    top: 200px;
+    width: 506px;
+    height: 833px;
+    
+}
+
+.relogioss2 {
+  width: 503px;
+  height: 633px;
+  background-image: url('../IMG/bazar/parte_dos_relogios/2024/relogio2.png');
+  position: relative;
+  top: -750px;
+  
+}
+
+.relogioss2:hover {
+  background-image: url('../IMG/bazar/parte_dos_relogios/2024/relogio2_hover.png');
+}
+
+/*slide3*/
+.relogio3_bazar {
+  position: relative;
+  top: 200px;
+  width: 506px;
+  height: 833px;
+}
+
+.relogioss3 {
+  width: 503px;
+  height: 633px;
+  background-image: url('../IMG/bazar/parte_dos_relogios/2024/relogio3.png');
+  position: relative;
+  top: -750px;
+  
+}
+
+.relogioss3:hover {
+  background-image: url('../IMG/bazar/parte_dos_relogios/2024/relogio3_hover.png');
+}
+
+
+
+/*slide4*/
+.relogio4_bazar {
+  position: relative;
+  top: 200px;
+  width: 506px;
+  height: 833px;
+}
+
+.relogioss4 {
+  width: 503px;
+  height: 633px;
+  background-image: url('../IMG/bazar/parte_dos_relogios/2024/relogio4.png');
+  position: relative;
+  top: -750px;
+  
+}
+
+.relogioss4:hover {
+  background-image: url('../IMG/bazar/parte_dos_relogios/2024/relogio4_hover.png');
+}
+
+
+/*slide5*/
+.relogio5_bazar {
+  position: relative;
+  top: 200px;
+  width: 506px;
+  height: 833px;
+}
+
+.relogioss5 {
+  width: 503px;
+  height: 633px;
+  background-image: url('../IMG/bazar/parte_dos_relogios/2024/relogios5.png');
+  position: relative;
+  top: -750px;
+  
+}
+
+.relogioss5:hover {
+  background-image: url('../IMG/bazar/parte_dos_relogios/2024/relogios5_hover.png');
+}
+
+
+
+/* parte escrita */
+.parte_escrita_relogio {
+    position: relative;
+    top:140px;
+    left: 6%;
+}
+
+.paragrafo_relogio1 {
+  position: relative;
+  top: -729px;
+}
+
+.relogios_paragrafo {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.relogios_paragrafo_preco {
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  left: 0.5px;
+  top: 10px;
+  font-size: 15px;
+}
+
+/* seta */
+.seta_relogios {}
+
+.relogios_article {
+    width: 100%;
+    height: 500px;
+}
+.relogios-grupo {
+    display: flex;
+    column-gap: 1px;
+}
+
+  
+  .slider {
+    width: 100%;
+    height: 820px;
+    position: absolute;
+    left: 0;
+    overflow: hidden; /* <===  */
+    border-radius: 15px;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 525px;
+    position: absolute;
+    transition: all 0.5s;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    z-index: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    right: 10px;
+  }
+  .btn img {
+    width: 120px;
+    position: relative;
+    right: 50px;
+    top: -50px;
+  
+  }
+  .btn:active {
+    transform: scale(1.1);
+  }
+  .btn-prev {
+    top: 45%;
+    left: 2%;
+    display: none;
+  }
+  .btn-next {
+    top: 65%;
+    left: 100.3%;
+  }
+  

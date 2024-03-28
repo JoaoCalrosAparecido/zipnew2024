@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+/* vorpo do new in for him*/
+.body_new_in_for_him
+
+/* area do new in for her*/
+.new_in_for_him {
+    position: absolute;
+    top: 4375px;
+    left: 8.76%;
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 373px;
+    height: 1080px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*slides*/
+.slider2 {
+    margin: 0 auto;
+    width: 439px;
+    height: 690px;
+    overflow: hidden;
+    position: relative;
+    top: 200px;
+    left: 9.9%;
+}
+
+.slides2 {
+    width: 400%;
+    height: 700px;
+    display: flex;
+}
+
+.slides2 input {
+    display: none;
+}
+
+.slide2 {
+    width: 25%;
+    position: relative;
+    transition: 1s;
+    
+}
+
+.slide2 img {
+    
+}
+
+.manual-navigation2 {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn2 {
+    border: 2px solid var(--corpartesuperior);
+    padding: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    position: relative;
+    left: -200px;
+    top: 90.5px;
+}
+
+.manual-btn2:not(:last-child) {
+    margin-right: 12px;
+}
+
+.manual-btn2:hover {
+    background-color: var(--corpartesuperior);
+}
+
+#radio2_1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2_2:checked ~ .first {
+    margin-left: -25%;
+}
+
+
+
+
+
+.navigation-auto2 {
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto2 div:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio2_1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: #000000;
+}
+
+#radio2_2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: #000000;
+}
+
+
+/* imagens do slide */
+.imagem_do_new_in_for_him_slide {
+    width: 369px;
+    height: 451px;
+    background-image: url('../IMG/watches/definitivo/slide/bota_preta_prdouto1_watches.png');
+}
+
+.imagem_do_new_in_for_him_slide:hover {
+    background-image: url('../IMG/new_in_for_him/new_in_for_him/relogio_azul_hover_refeito.png');
+}
+
+.imagem_do_new_in_for_him_slide2 {
+    width: 369px;
+    height: 451px;
+    background-image: url('../IMG/new_in_for_him/new_in_for_him/relogio_azul_refeito.png');
+}
+
+.imagem_do_new_in_for_him_slide2:hover {
+    background-image: url('../IMG/new_in_for_him/new_in_for_him/relogio_preto_hover_refeito.png');
+}
+
+/* paragrafos */
+.paragrafos_new_in_for_him {
+    position: absolute;
+    top: 510px;
+    left: 70.5px;
+}
+
+.paragrafo_do_produto_new_in_for_him {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.preco_new_in_for_him {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -5px;
+}
+
+
+/*partes novas do larezzo vindas do watches*/
+
+/*o slide first é compartilhado com o watches*/
+
+.imagem_do_larezzo_slide {
+    background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/bota_produto1_larezzo.png');
+    width: 439px;
+    height: 549px;
+    background-color: black;
+}
+
+.imagem_do_larezzo_slide:hover {
+    background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/bota_produto1_larezzo_hover.png');
+}
+
+.imagem_do_larezzo_slide2 {
+    background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo.png');
+    width: 439px;
+    height: 549px;
+    background-color: black;
+}
+
+.imagem_do_larezzo_slide2:hover {
+    background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo_hover.png');
+}
+
+/*parte escrita do larezzo*/
+
+.paragrafo_figcaption_larezzo {
+    position: relative;
+    top: 10px;
+}
+
+.produto_paragrafo_larezzo1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    position: relative;
+    left: 14%;
+    top: 5px;
+    padding-bottom: 10px;
+}
+
+.produto_paragrafo_larezzo2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    position: relative;
+    left: 10.5%;
+    top: 5px;
+    padding-bottom: 10px;
+}
+
+.parte_do_preço_larezzo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    opacity: 60%;
+    position: relative;
+    left: 35%;
+}
+
+/*imagens principais*/
+/*imagem do new in for her*/
+
+.imagem_do_larezzo {
+    position: relative;
+    width: 803px;
+    height: 1029px;
+}
+
+
+
+.imagem_do_new_in_for_her {
+    position: relative;
+    right: 7px;
+}
+
+
+/* parte escrita new in for her */
+.escrita_em_new_in_for_him{
+    position: relative;
+    top: -271px;
+    left: 227%;
+}
+
+/*botão*/
+.compre_agora_new_in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 70.5%;
+    top: 543px;
+    font-size: 6;
+    font-weight: normal;
+    width: 239px;
+    height: 36px;
+    background-color: white;
+    color: black;
+}
+
+/*parte escrita do botão*/
+.paragrafo_new_in {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.compre_agora_new_in:hover {  
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+/* setas */
+.setas_new_in_for_him {
+    display: flex;
+    column-gap: 435px;
+    position: relative;
+    top: -230px;
+    left: 10%;
+
+
+}
+
+.seta {
+    width: 60px;
+    height: 60px;
+}

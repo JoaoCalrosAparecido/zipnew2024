@@ -1,0 +1,43 @@
+/*section*/
+.h_pequeno_principe_section {
+    position: relative;
+    top: -245px;
+    left: 1%;
+
+}
+
+/*parte escrita*/
+/*article*/
+.parte_escrita_h_pequeno_principe_article {
+    display: flex;
+    justify-content: center;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 198px;
+}
+
+/*img*/
+.parte_escrita_h_pequeno_principe_img {
+    
+    width: 312px;
+}
+
+/*parte do paragrafo*/
+/*article*/
+.parte_do_paragrafo_cat_down_article {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 118px;
+    left: 1.2%;
+
+}
+
+/*paragrafo*/
+.parte_do_paragrafo_cat_down_paragrafo {
+    width: 1201px;
+    font-size: 17px;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}

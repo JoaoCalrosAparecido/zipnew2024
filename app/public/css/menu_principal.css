@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* parte do menu*/
+
+#menu_principal_como_todo {
+    position: fixed;
+    z-index: 2;
+    opacity: 100%;
+    top: 4%;
+}
+
+.menu_como_todo{
+    height: 10px;
+    
+    transition: 2s;
+}
+
+#menu_principal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.384);
+    width: 100%;
+    height: 95px;
+
+    
+}
+
+#menu_principal.rolagem {
+    background-color: rgb(255, 255, 255);
+}
+
+#section_menu_principal{
+    width: 100%;
+    position: relative;
+    display: flex;
+    column-gap: 1.4%;
+    position: relative;
+    left: 9%;
+    top: 55.9%;
+
+
+}
+
+/*link 1*/
+.links_do_menu1 {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.links_do_menu1.rolagem {
+    color: rgb(0, 0, 0);
+
+}
+
+/*link 2*/
+
+.links_do_menu2 {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.links_do_menu2.rolagem {
+    color: rgb(0, 0, 0);
+
+}
+
+/*link 3*/
+
+.links_do_menu3 {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.links_do_menu3.rolagem {
+    color: rgb(0, 0, 0);
+
+}
+
+/*link 4*/
+
+.links_do_menu4 {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.links_do_menu4.rolagem {
+    color: rgb(0, 0, 0);
+
+}
+
+/*link 5*/
+
+.links_do_menu5 {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.links_do_menu5.rolagem {
+    color: rgb(0, 0, 0);
+
+}
+
+/*link 6*/
+
+.links_do_menu6 {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.links_do_menu6.rolagem {
+    color: rgb(0, 0, 0);
+
+}
+
+
+
+/*logo imagem*/
+
+#logo_zip_menu {
+    position: fixed;
+    top: 5.4%;
+    left: 2%;
+    background-image: url(/img/area_do_menu/logo_zip_menu_parte_branca_2024_refeito.png);
+    z-index: 300;
+    width: 90px;
+    height:72px;
+}
+
+#logo_zip_menu.rolagem {
+    background-image: url(../IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
+}
+
+#logo_zip_menu_imagem {
+    width: 105%;
+}
+
+.teste {
+    position: fixed;
+    top: 200px;
+}
+
+
+
+
+/* barra_de_pesquisa_e_etc */
+
+
+
+/* imagem da barra de pesquisa e etc */
+
+#imagem_da_barra_de_pesquisa_e_etc {
+    z-index: 1;
+    position: fixed;
+    display: flex ;
+    column-gap: 20.7px;
+    right: 2.3%;
+    top: 10%;
+    height: 2.3%;
+    
+}
+
+/* imagem da barra de pesquisa */
+
+#imagem_da_barra_de_pesquisa{
+    transform: rotate(315deg);
+    position: relative;
+    top: 1.5px;
+    height: 25px;
+    width: 16px;
+    background-image: url('../IMG/area_do_menu/icone_pesquisa_branco.svg');
+}
+
+#imagem_da_barra_de_pesquisa.rolagem {
+    background-image: url('../IMG/area_do_menu/icone_pesquisa_preto.svg');
+}
+
+
+/* imagem do icone de favorito */
+
+#imagem_do_icone_de_favorito{
+    position: relative;
+    top: 2.5px;
+    height: 19px;
+    width: 20px;
+    background-image: url('../IMG/area_do_menu/icone_favorito_branco.svg');
+}
+
+#imagem_do_icone_de_favorito.rolagem {
+    background-image: url('../IMG/area_do_menu/icone_favorito_preto.svg');
+}
+
+/* imagem do icone de pessoa */
+
+#imagem_do_icone_de_pessoa {
+    position: relative;
+    top: 0.5px;
+    width: 17px;
+    height: 21px;
+    background-image: url('../IMG/area_do_menu/icone_pessoa_branco.svg');
+}
+
+#imagem_do_icone_de_pessoa.rolagem {
+    background-image: url('../IMG/area_do_menu/icone_pessoa_preto.svg');
+}
+
+/* imagem do icone da conta */
+
+#imagem_do_icone_da_sacola {
+    position: relative;
+    width: 19px;
+    height: 21px;
+    background-image: url('../IMG/area_do_menu/icone_sacola_branco.svg');
+}
+
+#imagem_do_icone_da_sacola.rolagem {
+    background-image: url('../IMG/area_do_menu/icone_sacola_preto.svg');
+}
