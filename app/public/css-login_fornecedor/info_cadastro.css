@@ -1,0 +1,79 @@
+#box {
+    background-color: #d6d4d4;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%,-50%);
+    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+  
+  }
+
+  #beneficios {
+    list-style-type: none;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 35px;
+
+  }
+
+  #espaço {
+    margin-left: 40px;
+    margin-right: 20px;
+
+  }
+
+  #cadas {
+    margin-top: 95px;
+    margin-bottom: 25px;
+  }
+
+  #buffs {
+    font-size: 14px;
+
+  }
+
+  #do {
+    margin-top: 15px;
+  }
+
+  #tr {
+    margin-top: 15px;
+  }
+
+  #qu {
+    margin-top: 15px;
+  }
+
+ /*posição dos icones*/
+    .icones_do_cadastrese{
+      position: relative;
+      top: 3px;
+  }
+
+#enviar{
+    width: 88%;
+    height: 45px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: rgb(36, 36, 36);
+    border-color: rgb(36, 36, 36);
+    margin-bottom: 50px;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+
+#linha{
+  position: absolute;
+  top: 55%;
+    left: 100%;
+    transform: translate(-50%,-50%);
+    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    height: 22rem;
+  color: rgb(170, 170, 170);
+}
+

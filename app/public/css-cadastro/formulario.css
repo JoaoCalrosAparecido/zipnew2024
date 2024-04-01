@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+label {
+    font-family: 'Poppins', sans-serif;
+}
+
+.abaixar {
+    position: relative;
+    top: 30px;
+}
+#caixa {
+    background-color: #F6F6F6;
+    max-width: 100%;
+    width: 100%;
+    height: 890px;
+    padding: 20px;
+    position: absolute;
+    top: 620px;
+    left: 50%;
+    margin-left: 0%;
+    transform: translate(-50%,-50%);
+    font-family: 'Poppins', sans-serif;
+    border: none;
+}
+
+#nome{
+    width: 50rem;
+    height: 40px;
+    margin-top: 20px;
+    border-width: 1px;
+
+}
+#nascimento{
+    width: 50rem;
+    height: 20px;
+    margin-top: 40px;
+    font-size: 16px;
+    border-width: 1px;
+}
+
+#dia, #mes, #ano{
+    width: 15rem;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 16px;
+    border-width: 1px;
+}
+
+#dia, #mes{
+    margin-right: 33px;
+}
+
+
+#senha{
+    width: 50rem;
+    height: 40px;
+    margin-top: 20px;
+    border-width: 1px;
+}
+
+#email{
+    width: 50rem;
+    height: 40px;
+    margin-top: 40px;
+    border-width: 1px;
+}
+
+
+#cpf{
+    width: 50rem;
+    height: 40px;
+    margin-top: 20px;
+    border-width: 1px;
+}
+#cep{
+    width: 50rem;
+    height: 40px;
+    margin-top: 20px;
+
+    border-width: 1px;
+}
+
+#cadastro{
+    font-size: 30px;
+    position: relative;
+    left: 76px;
+    bottom: -32px;
+
+}
+
+
+#forms{
+    margin-left: 80px;
+}
+
+#botao{
+    width: 50rem;
+    height: 70px;
+    cursor: pointer;
+    background-color: rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
+    border-color: rgb(36, 36, 36);
+    margin-bottom: 50px;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 35px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#lblemail, #lblnome, #lblsenha, #lblnascimento, #lblcep, #lbluf{
+    font-size: 20px;
+}
+
+#foto{
+
+
+    max-width: 40rem;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    margin-left: 30rem;
+    
+}
+
+#tornar{
+    margin-left: 80px;
+    margin-top: 60px;
+
+    
+}
+
+.span-required{
+    display: none;
+    position: absolute;
+    color: #e63636;
+    font-size: 13px;
+
+}
+
+
+

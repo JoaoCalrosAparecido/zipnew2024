@@ -1,0 +1,94 @@
+
+
+#Login {
+  background-color: #d6d4d4;
+  max-width: 400px;
+  width: 70%;
+  padding: 20px;
+  position: absolute;
+  top: 62%;
+  left: 38%;
+  transform: translate(-50%,-50%);
+
+}
+
+#sou {
+    margin-left: 15px;
+    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-size: 15px;
+    margin: 10px 0 30px 0;
+    font-weight: 100;
+    text-decoration: underline;
+    color: black;
+}
+
+
+form input[type=text],
+form input[type=password]{
+    width: 85%;
+    height: 33px;
+    border: 1px solid rgb(73, 73, 73);
+    padding-left: 10px;
+    margin: 10px 0;
+    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-size: 11px;
+}
+form input[type=text] {
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+form input[type=password] {
+    margin-top: 15px;
+
+}
+
+#botao-form{
+    width: 88%;
+    height: 45px;
+    cursor: pointer;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    border-color: rgb(36, 36, 36);
+    margin-bottom: 50px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#Remember {
+    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-size: 13px;
+    padding-right: 100px;
+    font-weight: 100;
+}
+
+#LostKey {
+    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 200;
+    text-decoration: underline;
+    
+}
+
+#AftSend {
+   margin: 15px 0;
+}
+
+#sign {
+    font-size: 22px;
+    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    margin-top: 45px;
+    margin-bottom: 5px;
+}
+
+#Up {
+    font-size: 14px;
+    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+
+
+}
+
+#control {
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
