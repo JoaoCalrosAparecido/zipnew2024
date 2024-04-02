@@ -1,0 +1,38 @@
+#boxG{
+    background-color: #f8f8f8;
+    max-width: 979px;
+    width: 100%;
+    padding: 50px;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+}
+
+#Superior{
+    display: flex;
+    justify-content: space-between;
+}
+
+#Mid{
+    display: flex;
+    margin-top: 20px;
+}
+
+.inputs{
+    width: 979px;
+    height: 41px;
+    margin-top: 20px;
+    font-size: 16px;
+    border-width: 1px;
+    color: #999999;
+    padding: 2px 2px 2px 16px;
+}
+
+#rr{
+    margin-right: 245px;
+}
+#pp{
+    margin-right: 275px;
+}
