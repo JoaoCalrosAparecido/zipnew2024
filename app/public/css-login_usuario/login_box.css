@@ -20,10 +20,10 @@
 
 #sou {
     margin-left: 15px;
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     margin: 10px 0 30px 0;
-    font-weight: 100;
+    font-weight: 500;
     text-decoration: underline;
     color: black;
 }
@@ -35,7 +35,7 @@ form input[type=password]{
     height: 33px;
     border: 1px solid rgb(73, 73, 73);
     padding-left: 10px;
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 11px;
 }
 form input[type=email],
@@ -49,7 +49,7 @@ form input[type=password] {
 
 #botao-form{
     width: 88%;
-    height: 45px;
+    height: 50px;
     cursor: pointer;
     background-color: rgb(36, 36, 36);
     color: white;
@@ -61,10 +61,10 @@ form input[type=password] {
 }
 
 #Remember {
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
-    padding-right: 100px;
-    font-weight: 100;
+    padding-right: 89px;
+    font-weight: 400;
 
 }
 
@@ -72,9 +72,9 @@ form input[type=password] {
 
 
 #LostKey {
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
-    font-weight: 200;
+    font-weight: 400;
     text-decoration: underline;
 
 
@@ -86,18 +86,17 @@ form input[type=password] {
 
 #sign {
     font-size: 22px;
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-top: 35px;
     margin-bottom: 25px;
 }
 
 #Up {
     font-size: 14px;
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 
 }
-
 #control {
     margin-left: 20px;
     margin-top: 40px;
