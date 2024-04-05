@@ -23,7 +23,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     margin: 10px 0 30px 0;
-    font-weight: 100;
+    font-weight: 500;
     text-decoration: underline;
     color: black;
 }
@@ -49,7 +49,7 @@ form input[type=password] {
 
 #botao-form{
     width: 88%;
-    height: 45px;
+    height: 50px;
     cursor: pointer;
     background-color: rgb(36, 36, 36);
     color: white;
@@ -63,8 +63,8 @@ form input[type=password] {
 #Remember {
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
-    padding-right: 100px;
-    font-weight: 100;
+    padding-right: 89px;
+    font-weight: 400;
 
 }
 
@@ -74,7 +74,7 @@ form input[type=password] {
 #LostKey {
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
-    font-weight: 200;
+    font-weight: 400;
     text-decoration: underline;
 
 
