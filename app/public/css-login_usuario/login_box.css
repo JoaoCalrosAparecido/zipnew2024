@@ -20,7 +20,7 @@
 
 #sou {
     margin-left: 15px;
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     margin: 10px 0 30px 0;
     font-weight: 100;
@@ -35,7 +35,7 @@ form input[type=password]{
     height: 33px;
     border: 1px solid rgb(73, 73, 73);
     padding-left: 10px;
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 11px;
 }
 form input[type=email],
@@ -61,7 +61,7 @@ form input[type=password] {
 }
 
 #Remember {
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
     padding-right: 100px;
     font-weight: 100;
@@ -72,7 +72,7 @@ form input[type=password] {
 
 
 #LostKey {
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
     font-weight: 200;
     text-decoration: underline;
@@ -86,14 +86,14 @@ form input[type=password] {
 
 #sign {
     font-size: 22px;
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-top: 35px;
     margin-bottom: 25px;
 }
 
 #Up {
     font-size: 14px;
-    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 
 }
