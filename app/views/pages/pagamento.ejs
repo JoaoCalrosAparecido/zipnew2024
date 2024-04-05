@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="css-login_usuario/parte_superior.css">
-    <link rel="stylesheet" href="css-login_usuario/menu_login.css">
-    <link rel="stylesheet" href="css-pagamento/estado.css">
-    <link rel="stylesheet" href="css-pagamento/pix.css">
+    <link rel="stylesheet" href="/css-login_usuario/parte_superior.css">
+    <link rel="stylesheet" href="/css-login_usuario/menu_login.css">
+    <link rel="stylesheet" href="/css-pagamento/estado.css">
+    <link rel="stylesheet" href="/css-pagamento/pix.css">
     <script src="./pagamento_script/script.js" defer></script>
+    <script src="./pagamento_script/script2.js" defer></script>
+    <script src="./pagamento_script/validar.js" defer></script>
 
     <link rel="shortcut icon" href="IMG/fivecon/logo preta grande.ico" type="image/x-icon">
 </head>
@@ -73,25 +75,95 @@
 
     <section id="boxG">
         <article id="Superior">
-                <h3 id="r">RESUMO DO PEDIDO       </h3>
-                <h3 id="P">PREÇO</h3>
-                <h3 id="t">TOTAL</h3>
+                <h3 class="negrito_top" id="r">RESUMO DO PEDIDO       </h3>
+                <h3 class="negrito_top" id="P">PREÇO</h3>
+                <h3 class="negrito_top" id="t">TOTAL</h3>
         </article>
             <br>
+            <hr style="height:0.5px;border-width:0;color:#EAEAEA;background-color:#EAEAEA">
            
         <article id="Mid"> 
-            <img class="pay_item" src="IMG/pagamento/blackbag.png" width="95px">
-            <h4 id="rr">   Bolsa Preta Clássica</h4>
+            <img class="pay_item" src="/" width="95px">
+            <h4 class="negrito_top" id="rr">Bolsa Preta Clássica</h4>
             <p id="pp">R$ 20,00</p>
             <p id="tt">R$ 20,00</p>
         </article>
             <br>
+            <hr style="height:0.5px;border-width:0;color:#EAEAEA;background-color:#EAEAEA">
         <article>
-            <h3>ENDEREÇO</h3>
+            <h3 class="negrito_top" id="adress">ENDEREÇO</h3>
                 <article id="slots">
-                    <input type="text" name="estado" id="estado" size="15" maxlength="9" placeholder="Estado*" class="inputs required" oninput="EstadoValidate()">
+                    <input type="text" name="cep" id="cep" size="15" maxlength="9" placeholder="CEP*" class="inputs required" oninput="cepValidate()"> 
                     <br>
-                    <input type="text" name="cep" id="cep" size="15" maxlength="9" placeholder="CEP*" class="inputs required" oninput="cepValidate()">
+                    <input type="number" name="casa" id="casa" size="15" maxlength="9" placeholder="Número da Casa*" class="inputs required" oninput="numValidate()">
                 </article>
         </article>
+        <br>
+        <hr style="height:0.5px;border-width:0;color:#EAEAEA;background-color:#EAEAEA">
+
+
+        <article id="pix">
+            <h3 class="negrito_top" id="paypay">PAGAMENTO</h3>
+            <h3 class="negrito_top" id="fafa">FATURA</h3>
+        </article>
+        <br>
+        <hr style="height:0.5px;border-width:0;color:#EAEAEA;background-color:#EAEAEA">
+
+
+        <section>
+            <article id="ppagg">
+                <p class="negrito_top" id="forma">Forma de Pagamento</p>
+                <img class="pay_" src="IMG/pagamento/pix.png" width="40px">
+            </article>
+            <Section id="displ">
+                <article id="leff">
+                    <form id="pixForm">
+                        <input type="text" name="nome" id="nome" maxlength="40" placeholder="Nome*" class="inpu required" oninput="nameValidate()">
+                        <br>
+                        <input type="number" name="mes" id="mes" maxlength="40" placeholder="Mês*" class="input required" oninput="mesValidate()">
+                        <input type="number" name="ano" id="ano" maxlength="40" placeholder="Ano*" class="input required" oninput="anoValidate()">
+                        <br>
+
+                            <input type="text" id="chavePix" placeholder="Digite a chave PIX" class="inpu required" required>
+                            <br>
+                            <input type="number" id="valor" placeholder="Digite o valor" class="inpu required" required>
+                            <br>
+                            <button type="submit" id="efut">Efetuar compra</button>
+
+                            <p id="mensagem"></p>
+
+                    </form>
+                </article>
+
+                <Section>
+                        <article id="Uw">
+                            <h3 class="negrito_top" id="all">Total</h3>
+                            <h3 class="negrito_top" id="custo">R$ 20,00</h3>
+                        </article>
+
+                        <article id="UwU">
+                            <p id="Dess">Descontos</p>
+                            <p>--</p>
+                        </article>
+
+                        <article id="Uww">
+                            <p id="drete">Frete</p>
+                            <p>--</p>
+                        </article>
+                </Section>
+            </Section>
+
+        </section>
+
+        <br>
+        <hr style="height:0.5px;border-width:0;color:#EAEAEA;background-color:#EAEAEA">
+        <br>
+
+        <section id="finall">
+            <p id="a">Termos de uso</p>
+            <p id="b">Política de Privacidade</p>
+            <p id="c">Ajuda</p>
+        </section>
+
+
     </section>
