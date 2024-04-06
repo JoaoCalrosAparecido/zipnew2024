@@ -7,7 +7,7 @@ function handleClick() {
     setTimeout(function() {
         addButton.textContent = 'ADICIONADO';
         addButton.disabled = true;
-        addButton.style.backgroundColor = '#28a745'; // Nova cor do botão
+        addButton.style.backgroundColor = '#5C5C5C'; // Nova cor do botão
         addButton.style.color = '#fff'; // Nova cor do texto
     }, 2000); // Tempo simulado de carga: 2 segundos
 }

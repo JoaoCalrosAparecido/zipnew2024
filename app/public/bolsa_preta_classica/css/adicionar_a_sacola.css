@@ -80,7 +80,7 @@
     cursor: pointer;
 }
 
-#produto_adicionar_a_sacola > p {
+#produto_adicionar_a_sacola {
     color: white;
     font-size: 17px;
     font-weight: 600;
