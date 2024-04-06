@@ -31,6 +31,10 @@ router.get("/cart",  function (req, res) {
   res.render('pages/cart', {msg: 'Back-end funcionando'});
 });
 
+router.get("/pagamento",  function (req, res) {
+  res.render('pages/pagamento', {msg: 'Back-end funcionando'});
+});
+
 router.post("/create", controller.regrasValidacao, function (req, res) {
 
 });

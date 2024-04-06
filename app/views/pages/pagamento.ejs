@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="css-login_usuario/parte_superior.css">
-    <link rel="stylesheet" href="css-login_usuario/menu_login.css">
-    <link rel="stylesheet" href="css-pagamento/estado.css">
-    <link rel="stylesheet" href="css-pagamento/pix.css">
+    <link rel="stylesheet" href="/css-login_usuario/parte_superior.css">
+    <link rel="stylesheet" href="/css-login_usuario/menu_login.css">
+    <link rel="stylesheet" href="/css-pagamento/estado.css">
+    <link rel="stylesheet" href="/css-pagamento/pix.css">
+    <link rel="stylesheet" href="css-cadastro/rodape_cadastro.css">
     <script src="./pagamento_script/script.js" defer></script>
+    <script src="./pagamento_script/script2.js" defer></script>
+    <script src="./pagamento_script/validar.js" defer></script>
 
     <link rel="shortcut icon" href="IMG/fivecon/logo preta grande.ico" type="image/x-icon">
 </head>
@@ -34,7 +37,7 @@
     <!--area do menu que contem os links-->
         <article id="menu_principal">
             <section id="section_menu_principal">
-                <a href="bazar.html">BAZAR</a>
+                <a href="/bazar">BAZAR</a>
                 <a href="">VENDER</a>
                 <a href="">FEMININO</a>
                 <a href="">MASCULINO</a>
@@ -45,7 +48,7 @@
 
         <!--logo zip-->
         <article>
-            <a href="index.html">
+            <a href="/">
                 <figure id="logo_zip_menu">
                 <img id="logo_zip_menu_imagem" src="IMG/area_do_menu/logo_zip_menu_2024_refeito.png" alt="">
             </figure>
@@ -60,9 +63,12 @@
         <article id="barra_de_pesquisa_e_etc">
             <figure id="imagem_da_barra_de_pesquisa_e_etc">
                 <img id="imagem_da_barra_de_pesquisa" src="IMG/area_do_menu/icone_de_pesquisa.svg" alt="">
+
                 <img id="imagem_do_icone_de_favorito" src="IMG/area_do_menu/icone_de_favorito.svg" alt="">
-                <a href="login_do_usuario.html"><img id="imagem_do_icone_de_pessoa" src="IMG/area_do_menu/icone_de_pessoa.svg" alt=""></a>
-                <img id="imagem_do_icone_da_sacola" src="IMG/area_do_menu/icone_sacola.svg" alt="">
+
+                <a href="/login_do_usuario"><img id="imagem_do_icone_de_pessoa" src="IMG/area_do_menu/icone_de_pessoa.svg" alt=""></a>
+
+                <a href="/cart"><img id="imagem_do_icone_da_sacola" src="IMG/area_do_menu/icone_sacola.svg" alt=""></a>
             </figure>
         </article>
     </section>
@@ -73,25 +79,253 @@
 
     <section id="boxG">
         <article id="Superior">
-                <h3 id="r">RESUMO DO PEDIDO       </h3>
-                <h3 id="P">PREÇO</h3>
-                <h3 id="t">TOTAL</h3>
+                <h3 class="negrito_top" id="r">RESUMO DO PEDIDO       </h3>
+                <h3 class="negrito_top" id="P">PREÇO</h3>
+                <h3 class="negrito_top" id="t">TOTAL</h3>
         </article>
             <br>
+            <hr style="height:0.5px;border-width:0;color:#EAEAEA;background-color:#EAEAEA">
            
         <article id="Mid"> 
             <img class="pay_item" src="IMG/pagamento/blackbag.png" width="95px">
-            <h4 id="rr">   Bolsa Preta Clássica</h4>
+            <h4 class="negrito_top" id="rr">Bolsa Preta Clássica</h4>
             <p id="pp">R$ 20,00</p>
             <p id="tt">R$ 20,00</p>
         </article>
             <br>
+            <hr style="height:0.5px;border-width:0;color:#EAEAEA;background-color:#EAEAEA">
         <article>
-            <h3>ENDEREÇO</h3>
+            <h3 class="negrito_top" id="adress">ENDEREÇO</h3>
                 <article id="slots">
-                    <input type="text" name="estado" id="estado" size="15" maxlength="9" placeholder="Estado*" class="inputs required" oninput="EstadoValidate()">
+                    <input type="text" name="cep" id="cep" size="15" maxlength="9" placeholder="CEP*" class="inputs required" oninput="cepValidate()"> 
                     <br>
-                    <input type="text" name="cep" id="cep" size="15" maxlength="9" placeholder="CEP*" class="inputs required" oninput="cepValidate()">
+                    <input type="number" name="casa" id="casa" size="15" maxlength="9" placeholder="Número da Casa*" class="inputs required" oninput="numValidate()">
                 </article>
         </article>
+        <br>
+        <hr style="height:0.5px;border-width:0;color:#EAEAEA;background-color:#EAEAEA">
+
+
+        <article id="pix">
+            <h3 class="negrito_top" id="paypay">PAGAMENTO</h3>
+            <h3 class="negrito_top" id="fafa">FATURA</h3>
+        </article>
+        <br>
+        <hr style="height:0.5px;border-width:0;color:#EAEAEA;background-color:#EAEAEA">
+
+
+        <section>
+            <article id="ppagg">
+                <p class="negrito_top" id="forma">Forma de Pagamento</p>
+                <img class="pay_" src="IMG/pagamento/pix.png" width="40px">
+            </article>
+            <Section id="displ">
+                <article id="leff">
+                    <form id="pixForm">
+                        <input type="text" name="nome" id="nome" maxlength="40" placeholder="Nome*" class="inpu required" oninput="nameValidate()">
+                        <br>
+                        <input type="number" name="mes" id="mes" maxlength="40" placeholder="Mês*" class="input required" oninput="mesValidate()">
+                        <input type="number" name="ano" id="ano" maxlength="40" placeholder="Ano*" class="input required" oninput="anoValidate()">
+                        <br>
+
+                            <input type="text" id="chavePix" placeholder="Digite a chave PIX" class="inpu required" required>
+                            <br>
+                            <input type="number" id="valor" placeholder="Digite o valor" class="inpu required" required>
+                            <br>
+                            <button type="submit" id="efut">Efetuar compra</button>
+
+                            <p id="mensagem"></p>
+
+                    </form>
+                </article>
+
+                <Section>
+                        <article id="Uw">
+                            <h3 class="negrito_top" id="all">Total</h3>
+                            <h3 class="negrito_top" id="custo">R$ 20,00</h3>
+                        </article>
+
+                        <article id="UwU">
+                            <p id="Dess">Descontos</p>
+                            <p>--</p>
+                        </article>
+
+                        <article id="Uww">
+                            <p id="drete">Frete</p>
+                            <p>--</p>
+                        </article>
+                </Section>
+            </Section>
+
+        </section>
+
+        <br>
+        <hr style="height:0.5px;border-width:0;color:#EAEAEA;background-color:#EAEAEA">
+        <br>
+
+        <section id="finall">
+            <p id="a">Termos de uso</p>
+            <p id="b">Política de Privacidade</p>
+            <p id="c">Ajuda</p>
+        </section>
+
+
     </section>
+
+         <!--rodapé-->
+         <section class="rodape">
+            <!--primeira seção-->
+            <section>
+                <article>
+                    <h1 class="rodape_h1 institucional">
+                        institucional
+                    </h1>
+                </article>
+                <article>
+                    <ul class="lista_do_rodape_parte_1">
+                        <li class="rodape_paragrafo institucional">sobre a ZIP</li>
+                        <li class="rodape_paragrafo institucional">fornecedores</li>
+                        <li class="rodape_paragrafo institucional">termos e condições</li>
+                        <li class="rodape_paragrafo institucional">política de privacidade</li>
+                        <li class="rodape_paragrafo institucional">configurações de privacidade</li>
+                        <li class="rodape_paragrafo institucional">trabalhe conosco</li>
+                        <li class="rodape_paragrafo institucional">sustentabilidade</li>
+                        <li class="rodape_paragrafo institucional">mapa do site</li>
+                        <li class="rodape_paragrafo institucional">investidores</li>
+                        <li class="rodape_paragrafo institucional">sala de imprensa</li>
+                        <li class="rodape_paragrafo institucional">blog ZIP</li>
+                    </ul>
+                </article>
+            </section>
+            <!--segunda seção-->
+            <section>
+                <!--parte ZIP&VC-->
+                <article>
+                    <article>
+                        <h1 class="rodape_h1 segunda_secao_parte_1_h1">
+                            ZIP&VC
+                        </h1>
+                    </article>
+                    <article>
+                        <ul class="lista_do_rodape segunda_secao_parte_1_ul">
+                            <li class="rodape_paragrafo">participe do programa</li>
+                        </ul>
+                    </article>
+                </article>
+    
+                <!--parte cartão ZIP-->
+                <article>
+                    <article>
+                        <h1 class="rodape_h1 segunda_secao_parte_2_h1">
+                            cartão ZIP
+                        </h1>
+                    </article>
+                    <article>
+                        <ul class="lista_do_rodape segunda_secao_parte_2_ul">
+                            <li class="rodape_paragrafo">sobre o cartão ZIP</li>
+                        </ul>
+                    </article>
+                </article>
+    
+                <!--parte ZIP Pay-->
+                <article>
+                    <article>
+                        <h1 class="rodape_h1 segunda_secao_parte_3_h1">
+                            ZIP Pay
+                        </h1>
+                    </article>
+                    <article>
+                        <ul class="lista_do_rodape segunda_secao_parte_3_ul">
+                            <li class="rodape_paragrafo">solicite seu cartão</li>
+                        </ul>
+                        <ul class="lista_do_rodape segunda_secao_parte_3_ul">
+                            <li class="rodape_paragrafo">tire sua dúvida por e-mail</li>
+                        </ul>
+                    </article>
+                </article>
+                
+                <!--parte cartão presente-->
+                <article>
+                    <article>
+                        <h1 class="rodape_h1 segunda_secao_parte_4_h1">
+                            cartão presente
+                        </h1>
+                    </article>
+                    <article>
+                        <ul class="lista_do_rodape segunda_secao_parte_4_ul">
+                            <li class="rodape_paragrafo">sobre o cartão presente ZIP</li>
+                        </ul>
+                    </article>
+                </article>
+                
+            </section>
+            
+            <!--parte 3-->
+            <section class="terceira_secao">
+                
+                <article>
+                    <h1 class="rodape_h1 ">
+                        serviços
+                    </h1>
+                </article>
+    
+                <article>
+                    <ul class="lista_do_rodape lista_terceira_secao">
+                        <li class="rodape_paragrafo">tipos de entrega</li>
+                        <li class="rodape_paragrafo">clique & retire</li>
+                        <li class="rodape_paragrafo">trocas & devoluções</li>
+                        <li class="rodape_paragrafo">formas de pagamento</li>
+                        <li class="rodape_paragrafo">todas as vantagens</li>
+                        <li class="rodape_paragrafo">minha ZIP</li>
+                    </ul>
+                </article>
+                
+    
+                <article class="terceita_secao_bazar">
+                    <article>
+                        <h1 class="rodape_h1 ">
+                            bazar
+                        </h1>
+                    </article>
+    
+                    <article>
+                        <ul class="lista_do_rodape">
+                            <li class="rodape_paragrafo">veja coleção</li>
+                        </ul>
+                    </article>
+    
+                </article>
+    
+            </section>
+    
+            <!--parte 4-->
+            <section class="quarta_secao">
+                <article>
+                    <h1 class="rodape_h1 ">
+                        marketplace ZIP
+                    </h1>
+                </article>
+    
+                <article class="lista_quarta_secao">
+                    <ul class="lista_do_rodape ">
+                        <li class="rodape_paragrafo">venda na ZIP</li>
+                        <li class="rodape_paragrafo">marketplace</li>
+                    </ul>
+                </article>
+    
+            </section>
+    
+            <!--icones do instagram e etc-->
+            <figure class="icones_do_instagram_e_etc_do_rodape">
+                <img src="IMG/rodape/icone_do_instagram_e_etc_2024.png" alt="">
+            </figure>
+    
+            <!--©Copyright2023  -->
+            <article class="copyright">
+                    <h1 class="h1_do_copyright">
+                        © Copyright - 2024 -
+                    </h1>
+            </article>
+        </section>
+    
+    </body>
