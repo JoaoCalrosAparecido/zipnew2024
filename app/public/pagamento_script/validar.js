@@ -8,6 +8,8 @@ const anoRegex = /^([1-2]+[9&0]+[0-9]{2})/
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
+        cepValidate();
+        numValidate();
         nameValidate();
         mesValidate();
         anoValidate();
@@ -26,6 +28,25 @@ function removeError(cadastro){
 }
 
 
+function cepValidate(){
+    if(campos[0].value.length < 8)
+    {
+        setError(0);
+    }
+    else{
+        removeError(0);
+    }
+}
+
+function numValidate(){
+    if(campos[1].value.length < 1)
+    {
+        setError(1);
+    }
+    else{
+        removeError(1);
+    }
+}
 
 
 function nameValidate(){
