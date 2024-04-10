@@ -11,11 +11,48 @@
     background-color: black;
     align-items: center;
     display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
     height: 120px;
 
 }
 
 #ban, #twitter{
-
+    font-size: 22px;
+    font-weight: 600;
     color: white;
+}
+
+#twitter{
+    margin-left: 17rem;
+}
+
+
+#mott{
+    padding: 40px;
+    background-color: rgb(238, 238, 238);
+}
+
+#ttom{
+    font-size: 19px;
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+#check{
+    margin-top: 30px;
+}
+
+form input[type=checkbox]{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 8px;
+    height: 18px;
+    width: 18px;
+}
+
+
+
+#aa, #bb, #cc, #dd{
+    font-size: 18px;
 }
