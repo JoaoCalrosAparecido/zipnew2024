@@ -1,0 +1,21 @@
+#ally{
+
+
+    margin-left: 81rem;
+    width: 38rem;
+    height: 45rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#thm{
+    background-color: black;
+    align-items: center;
+    display: flex;
+    height: 120px;
+
+}
+
+#ban, #twitter{
+
+    color: white;
+}
