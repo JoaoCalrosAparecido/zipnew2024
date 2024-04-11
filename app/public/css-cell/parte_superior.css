@@ -20,7 +20,7 @@
     position: fixed;
     top: 0;
     background-color: black;
-    height: 37px;
+    height: 21px;
     width: 100% ;
     color: white;
     display: flex;
@@ -29,14 +29,18 @@
 }
 
 #parte_superior > p{
-    font-size: 97%;
+    font-size: 70%;
     font-family: 'Poppins', sans-serif;
     position: relative;
+    font-weight: 600;
     
     
 
 }
 
+#parte_superior_texto_1::before {
+    content: "Confira as novidades do site. 10% OFF* na primeira compra!";
+}
 
 
 #img_parte_superior{
@@ -62,7 +66,7 @@
     left: 31.5%;
     top: 1.2%;
     z-index: 10;
-    display: flex;
+    display: none;
     column-gap: 177.5%;
     width: 20%;
     height: 2%;

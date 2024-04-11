@@ -37,6 +37,10 @@
 
 }
 
+#parte_superior_texto_1::before {
+    content: "10% OFF* na primeira compra. Utilize o cupom QueroMaisDez!";
+} 
+
 #img_parte_superior{
     position: fixed;
     width: 34px;
