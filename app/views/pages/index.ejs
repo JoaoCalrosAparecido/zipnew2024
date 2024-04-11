@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="/css/primeiro_slide_promos.css">
     <link rel="stylesheet" href="/css/menu_retratio.css">
 
+    <!--links dos responsivos-->
+    <link rel="stylesheet" href="../../css-cell/body.css" media="screen and (max-width:700px)">
+    <link rel="stylesheet" href="../../css-cell/parte_superior.css" media="screen and (max-width:700px)">
+    <link rel="stylesheet" href="../../css-cell/menu_principal.css" media="screen and (max-width:700px)">
+
     <link rel="shortcut icon" href="IMG/fivecon/logo preta grande.ico" type="image/x-icon">
 
     
@@ -28,7 +33,7 @@
     <section id="section_parte_superior">
         <article>
             <article id="parte_superior">
-                <p>10% OFF* na primeira compra. Utilize o cupom QueroMaisDez!  </p> 
+                <p id="parte_superior_texto_1"></p> 
             </article>
             <!--parte das setas-->
             <article class="setas_parte_superior">
@@ -44,51 +49,53 @@
         <!--area do menu que contem os links-->
         <article id="menu_principal">
             <section id="section_menu_principal">
-                <a href="/bazar" class="links_do_menu1">BAZAR</a>
-                    <a href="" class="links_do_menu2">VENDER</a>
-                    <section id="section_menu_retratio">
-                        <section id="section_do_menu_retratio_2">
-                            <!--parte das imagens-->
-                            <figure id="figure_imagens_menu_retratio">
-                                <figure id="menu_retratio_imagem1">
-                                    <img width="230px" src="../../IMG/menu_retratio/imagem_1.png" alt=""> <figcaption class="parte_escrita_figcaption">
-                                        Bazar Nick DJ
-                                    </figcaption>
+                <section id="parte_dos_links_do_menu">
+                    <a href="/bazar" class="links_do_menu1">BAZAR</a>
+                        <a href="" class="links_do_menu2">VENDER</a>
+                        <section id="section_menu_retratio">
+                            <section id="section_do_menu_retratio_2">
+                                <!--parte das imagens-->
+                                <figure id="figure_imagens_menu_retratio">
+                                    <figure id="menu_retratio_imagem1">
+                                        <img width="230px" src="../../IMG/menu_retratio/imagem_1.png" alt=""> <figcaption class="parte_escrita_figcaption">
+                                            Bazar Nick DJ
+                                        </figcaption>
+                                    </figure>
+                    
+                    
+                                    <figure id="menu_retratio_imagem2">
+                                        <img height="356px" src="/IMG/menu_retratio/imagem2.png" alt=""> <figcaption class="parte_escrita_figcaption">
+                                            Moda Passarela
+                                        </figcaption>
+                                    </figure>
                                 </figure>
-                        
-                        
-                                <figure id="menu_retratio_imagem2">
-                                    <img height="356px" src="/IMG/menu_retratio/imagem2.png" alt=""> <figcaption class="parte_escrita_figcaption">
-                                        Moda Passarela
-                                    </figcaption>
-                                </figure>
-                            </figure>
-                            <!--parte das listas-->
-                            <article id="article_menu_retratio_lista">
-                                <ul id="menu_retratio_ul1"><p id="menu_retratio_ul1_p">Venda na zip</p>
-                                    <li class="menu_retratio_lista1">Saiba como vender</li>
-                                    <li class="menu_retratio_lista1">Dicas de como vender bem</li>
-                                    <li class="menu_retratio_lista1">Mais sobre comisssão</li>
-                                </ul>
-                                <ul id="menu_retratio_ul2"><p id="menu_retratio_ul2_p">Bazar</p>
-                                    <li class="menu_retratio_lista2">Veja como montar o seu</li>
-                                    <li class="menu_retratio_lista2">bazar na zip</li>
-                                </ul>
-                                <ul id="menu_retratio_ul3"><p id="menu_retratio_ul3_p">Ajuda</p>
-                                    <li class="menu_retratio_lista3">Não recebi minha compra</li>
-                                    <li class="menu_retratio_lista3">Tenho dúvidas</li>
-                                </ul>
-                            </article>
-                            <!--parte escrita zip marketplace-->
-                            <article id="parte_escrita_menu_retratio">
-                                <img width="320px" src="IMG/menu_retratio/parte_escrita_refeito.png" alt="">
-                            </article>
+                                <!--parte das listas-->
+                                <article id="article_menu_retratio_lista">
+                                    <ul id="menu_retratio_ul1"><p id="menu_retratio_ul1_p">Venda na zip</p>
+                                        <li class="menu_retratio_lista1">Saiba como vender</li>
+                                        <li class="menu_retratio_lista1">Dicas de como vender bem</li>
+                                        <li class="menu_retratio_lista1">Mais sobre comisssão</li>
+                                    </ul>
+                                    <ul id="menu_retratio_ul2"><p id="menu_retratio_ul2_p">Bazar</p>
+                                        <li class="menu_retratio_lista2">Veja como montar o seu</li>
+                                        <li class="menu_retratio_lista2">bazar na zip</li>
+                                    </ul>
+                                    <ul id="menu_retratio_ul3"><p id="menu_retratio_ul3_p">Ajuda</p>
+                                        <li class="menu_retratio_lista3">Não recebi minha compra</li>
+                                        <li class="menu_retratio_lista3">Tenho dúvidas</li>
+                                    </ul>
+                                </article>
+                                <!--parte escrita zip marketplace-->
+                                <article id="parte_escrita_menu_retratio">
+                                    <img width="320px" src="IMG/menu_retratio/parte_escrita_refeito.png" alt="">
+                                </article>
+                            </section>
                         </section>
-                    </section>
-                <a href="" class="links_do_menu3">FEMININO</a>
-                <a href="" class="links_do_menu4">MASCULINO</a>
-                <a href="" class="links_do_menu5">INFANTIL</a>
-                <a href="" class="links_do_menu6">ACESSÓRIOS</a>
+                    <a href="" class="links_do_menu3">FEMININO</a>
+                    <a href="" class="links_do_menu4">MASCULINO</a>
+                    <a href="" class="links_do_menu5">INFANTIL</a>
+                    <a href="" class="links_do_menu6">ACESSÓRIOS</a>
+                </section>
             </section>
         </article>
         
@@ -106,6 +113,14 @@
         <!--imagem da barra de pesquisa e etc-->
         <article id="barra_de_pesquisa_e_etc">
             <figure id="imagem_da_barra_de_pesquisa_e_etc">
+
+                <div class="search-container">
+                    <div class="search-icon" id="searchIcon"></div>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar...">
+                </div>
+
+                <script src="../../barra_de_pesquisa.js"></script>
+
                 <figure id="imagem_da_barra_de_pesquisa"></figure>
 
                 <figure id="imagem_do_icone_de_favorito"></figure>
@@ -115,6 +130,8 @@
                 <a href="/cart">
                     <figure id="imagem_do_icone_da_sacola"></figure>
                 </a>
+
+                <figure id="Imagem_do_menu"></figure>
             </figure>
         </article>
 
@@ -157,7 +174,7 @@
     </section>
 
  
-    <!--parte do highlights-->
+    <!--parte do new in-->
     <section id="parte_do_new_in">
         
         <!--parte escrita highlights-->

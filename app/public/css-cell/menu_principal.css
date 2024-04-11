@@ -6,7 +6,7 @@
     position: fixed;
     z-index: 2;
     opacity: 100%;
-    top: 4%;
+    top: 2.3%;
 }
 
 .menu_como_todo{
@@ -19,7 +19,7 @@
     position: fixed;
     background-color: rgba(0, 0, 0, 0.384);
     width: 100%;
-    height: 95px;
+    height: 52px;
 
     
 }
@@ -41,119 +41,21 @@
 }
 
 #parte_dos_links_do_menu {
-    width: 100%;
-    position: relative;
-    display: flex;
-    column-gap: 1.4%;
+    display: none;
 }
-
-/*link 1*/
-.links_do_menu1 {
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    text-decoration: none;
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-}
-
-.links_do_menu1.rolagem {
-    color: rgb(0, 0, 0);
-
-}
-
-/*link 2*/
-
-.links_do_menu2 {
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    text-decoration: none;
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-}
-
-.links_do_menu2.rolagem {
-    color: rgb(0, 0, 0);
-
-}
-
-/*link 3*/
-
-.links_do_menu3 {
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    text-decoration: none;
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-}
-
-.links_do_menu3.rolagem {
-    color: rgb(0, 0, 0);
-
-}
-
-/*link 4*/
-
-.links_do_menu4 {
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    text-decoration: none;
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-}
-
-.links_do_menu4.rolagem {
-    color: rgb(0, 0, 0);
-
-}
-
-/*link 5*/
-
-.links_do_menu5 {
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    text-decoration: none;
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-}
-
-.links_do_menu5.rolagem {
-    color: rgb(0, 0, 0);
-
-}
-
-/*link 6*/
-
-.links_do_menu6 {
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    text-decoration: none;
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-}
-
-.links_do_menu6.rolagem {
-    color: rgb(0, 0, 0);
-
-}
-
 
 
 /*logo imagem*/
 
 #logo_zip_menu {
     position: fixed;
-    top: 5.4%;
-    left: 2%;
+    top: 3.3%;
+    left: 3.8%;
     background-image: url(../IMG/area_do_menu/logo_zip_menu_parte_branca_2024_refeito.png);
+    background-size: 44px;
     z-index: 300;
-    width: 90px;
-    height:72px;
+    width: 44px;
+    height:35px;
 }
 
 
@@ -166,10 +68,7 @@
     width: 105%;
 }
 
-.teste {
-    position: fixed;
-    top: 200px;
-}
+
 
 
 
@@ -184,27 +83,60 @@
     z-index: 1;
     position: fixed;
     display: flex ;
-    column-gap: 20.7px;
-    right: 2.3%;
-    top: 10%;
+    column-gap: 24.7px;
+    right: 29.3%;
+    top: 3%;
     height: 2.3%;
     
 }
 
 /*imagem da barra de pesquisa responsivo*/
 .search-container {
-    display: none;
+    display: block;
 }
+
+.search-container {
+    position: fixed;
+  }
+  
+  .search-icon {
+    width: 20px;
+    height: 24px;
+    transform: rotate(315deg);
+    background-image: url('../../IMG/area_do_menu/icone_pesquisa_branco.svg'); /* Adicione o caminho da sua imagem de ícone de pesquisa */
+    background-repeat: no-repeat;
+    background-size: 15px;
+    cursor: pointer;
+  }
+  
+  .search-input {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 25px; /* Mudança de left para right */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px; /* Largura ajustada */
+  }
+  
+  
+  .show {
+    display: block;
+  }
+  
 
 /* imagem da barra de pesquisa */
 
 #imagem_da_barra_de_pesquisa{
+    display: none;
     transform: rotate(315deg);
     position: relative;
     top: 1.5px;
-    height: 25px;
-    width: 16px;
+    height: 22.2px;
+    width: 14px;
     background-image: url('../IMG/area_do_menu/icone_pesquisa_branco.svg');
+    background-size: 14px;
 }
 
 #imagem_da_barra_de_pesquisa.rolagem {
@@ -215,6 +147,7 @@
 /* imagem do icone de favorito */
 
 #imagem_do_icone_de_favorito{
+    display: none;
     position: relative;
     top: 2.5px;
     height: 19px;
@@ -229,6 +162,7 @@
 /* imagem do icone de pessoa */
 
 #imagem_do_icone_de_pessoa {
+    display: none;
     position: relative;
     top: 0.5px;
     width: 17px;
@@ -244,11 +178,26 @@
 
 #imagem_do_icone_da_sacola {
     position: relative;
-    width: 19px;
-    height: 21px;
+    top: 2px;
+    width: 17px;
+    height: 19px;
     background-image: url('../IMG/area_do_menu/icone_sacola_branco.svg');
+    background-size: 16px;
+    background-repeat: no-repeat;
 }
 
 #imagem_do_icone_da_sacola.rolagem {
     background-image: url('../IMG/area_do_menu/icone_sacola_preto.svg');
+}
+
+/*icone de menu*/
+#Imagem_do_menu {
+    background-image: url('../IMG/area_do_menu/icone_do_menu2.svg');
+    background-size: 24px;
+    background-repeat: repeat-y;
+    position: relative;
+    left: -20%;
+    width: 30px;
+    height: 18px;
+    
 }
