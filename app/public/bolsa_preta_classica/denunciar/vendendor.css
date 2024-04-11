@@ -1,0 +1,81 @@
+#ally{
+
+
+    margin-left: 81rem;
+    width: 38rem;
+    height: 45rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#thm{
+    background-color: black;
+    align-items: center;
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 120px;
+
+}
+
+#ban, #twitte{
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+}
+
+#twitte{
+    margin-left: 16rem;
+}
+
+
+#mott{
+    padding: 40px;
+    background-color: rgb(238, 238, 238);
+}
+
+#ttom{
+    font-size: 19px;
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+#check{
+    margin-top: 30px;
+}
+
+form input[type=checkbox]{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 8px;
+    height: 18px;
+    width: 18px;
+}
+
+
+
+#aa, #bb, #cc, #dd{
+    font-size: 18px;
+}
+
+#send{
+    width: 33rem;
+    height: 60px;
+    cursor: pointer;
+    background-color: #212121;
+    color: rgb(255, 255, 255);
+    border-color: #212121;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top:  80px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+#close{
+    margin-left: 235px;
+    text-decoration: underline;
+}
+#fech{
+    margin-bottom: 100px;
+}

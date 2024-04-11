@@ -56,3 +56,30 @@ form input[type=checkbox]{
 #aa, #bb, #cc, #dd{
     font-size: 18px;
 }
+
+#send{
+    width: 33rem;
+    height: 60px;
+    cursor: pointer;
+    background-color: #212121;
+    color: rgb(255, 255, 255);
+    border-color: #212121;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top:  80px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+#close{
+    margin-left: 235px;
+    text-decoration: underline;
+}
+#fech{
+    margin-bottom: 100px;
+}
+
+#checked{
+    color: #212121;
+}
