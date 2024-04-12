@@ -101,6 +101,22 @@ form input[type=checkbox]{
     margin-bottom: 300px;
 }
 
-#checked{
-    color: #212121;
+input{
+    position: relative;
+}
+
+input::after {
+    position: absolute;
+    content: " ";
+    display: none;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: #212121;
+    left: 10px;
+    top: 0;
+    transform: translate(-50%);
+}
+input:checked::after {
+    display: block;
 }
