@@ -7,6 +7,7 @@
     width: 38rem;
     height: 45rem;
     font-family: 'Poppins', sans-serif;
+
 }
 
 #thm{
@@ -79,5 +80,10 @@ form input[type=checkbox]{
     text-decoration: underline;
 }
 #fech{
-    margin-bottom: 100px;
+    margin-bottom: 300px;
+}
+
+form input [type=checkbox] .checked{
+    color: #212121;
+    background-color: black;
 }

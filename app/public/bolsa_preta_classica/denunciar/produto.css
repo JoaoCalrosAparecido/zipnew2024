@@ -8,6 +8,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
+
 #thm{
     background-color: black;
     align-items: center;
@@ -78,7 +80,7 @@ form input[type=checkbox]{
     text-decoration: underline;
 }
 #fech{
-    margin-bottom: 100px;
+    margin-bottom: 300px;
 }
 
 #checked{
