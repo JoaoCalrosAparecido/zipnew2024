@@ -26,13 +26,13 @@
     display: none; /* Inicialmente oculto */
   }
 
-#thm{
+#th{
     background-color: black;
     align-items: center;
     display: flex;
     padding-left: 40px;
     padding-right: 40px;
-    height: 120px;
+    height: 145px;
 
 }
 
