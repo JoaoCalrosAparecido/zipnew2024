@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="/bolsa_preta_classica/denunciar/produto.css">
     <link rel="stylesheet" href="/bolsa_preta_classica/denunciar/vendendor.css">
+    <script src="/bolsa_preta_classica/denunciar/menu.js" defer></script>
 </head>
 <body>
         <!-- parte superior do desconto na primeira compra -->
@@ -158,7 +159,7 @@
                 <p>DETALHES</p>
                 <hr>
 
-                <p onclick="all">DENUNCIAR PRODUTO</p>
+                <p id="openMenuBtn">DENUNCIAR PRODUTO</p>
                 <hr>
 
                 <p>DENUNCIAR VENDEDOR</p>
@@ -443,10 +444,10 @@
 
 
 
-    <section id="ally">
+    <section id="menu" class="menu">
         <article id="thm">
             <label id="ban">DENUNCIAR PRODUTO</label>
-            <label id="twitter">X</label>
+            <span id="closeMenuBtn" class="closeBtn"><label id="twitter">X</label></span>
 
             </article>
             <form id="mott">
@@ -470,11 +471,13 @@
                         <input type="submit" id="send" name="action" value="DENUNCIAR">
                         <br>
                          <section id="fech">
-                        <label id="close">Fechar</label>
+
+                <span id="closeMenuBtn" class="closeBtn"><label id="close">Fechar</label></span>
                         </section>
                 </section>
             </form>
     </section>
+    <div id="overlay"></div>
 
 
 
@@ -509,8 +512,8 @@
                         </section>
                 </section>
             </form>
-       
     </section>
+    
 
 </body>
 </html>
