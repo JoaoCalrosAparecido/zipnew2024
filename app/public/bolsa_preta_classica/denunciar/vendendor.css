@@ -1,10 +1,16 @@
-#ally{
-
-
+#all{
+    position: absolute;
+    top: -10px;
+    z-index: 200;
+    position: fixed;
     margin-left: 81rem;
     width: 38rem;
     height: 45rem;
     font-family: 'Poppins', sans-serif;
+    right: -50%; /* Inicialmente oculto */
+    width: 50%; /* Metade da largura da tela */
+    box-sizing: border-box;
+    transition: right 0.3s ease;
 }
 
 #thm{
@@ -77,5 +83,17 @@ form input[type=checkbox]{
     text-decoration: underline;
 }
 #fech{
-    margin-bottom: 100px;
+    margin-bottom: 300px;
 }
+
+form input [type=checkbox] .checked{
+    color: #212121;
+    background-color: black;
+}
+
+
+
+
+
+
+
