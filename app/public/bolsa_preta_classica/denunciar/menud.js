@@ -1,5 +1,5 @@
-document.getElementById("openMenuBtn").addEventListener("click", function() {
-    var menu = document.getElementById("menu");
+document.getElementById("openMenuBt").addEventListener("click", function() {
+    var menu = document.getElementById("men");
     var overlay = document.getElementById("overlay");
     if (menu.style.right === "0%") {
       menu.style.right = "-50%";
@@ -10,16 +10,16 @@ document.getElementById("openMenuBtn").addEventListener("click", function() {
     }
   });
   
-  document.getElementById("closeMenuBtn").addEventListener("click", function() {
-    var menu = document.getElementById("menu");
+  document.getElementById("closeMenuB").addEventListener("click", function() {
+    var menu = document.getElementById("men");
     var overlay = document.getElementById("overlay");
     menu.style.right = "-50%";
     overlay.classList.remove('overlay-active');
   });
   
   
-  document.getElementById("closeMenuBt").addEventListener("click", function() {
-    var menu = document.getElementById("menu");
+  document.getElementById("closeMenu").addEventListener("click", function() {
+    var menu = document.getElementById("men");
     var overlay = document.getElementById("overlay");
     menu.style.right = "-50%";
     overlay.classList.remove('overlay-active');
