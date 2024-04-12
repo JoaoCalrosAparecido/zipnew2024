@@ -11,7 +11,7 @@
 
 /*parte do vesace - bazar*/
 .section_do_vesace_-_bazar {
-    display: none;
+
 }
 
 /*parte do new in*/
@@ -51,5 +51,10 @@
 
 /*watches seta*/
 .setas_watches {
+    display: none;
+}
+
+/*botoes*/
+#botao_responsivo {
     display: none;
 }
