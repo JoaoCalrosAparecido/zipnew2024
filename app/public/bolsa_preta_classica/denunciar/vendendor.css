@@ -1,17 +1,30 @@
-#all{
-    position: absolute;
+#men{
+    position: fixed;
     top: -10px;
     z-index: 200;
-    position: fixed;
     margin-left: 81rem;
     width: 38rem;
     height: 45rem;
     font-family: 'Poppins', sans-serif;
     right: -50%; /* Inicialmente oculto */
-    width: 50%; /* Metade da largura da tela */
     box-sizing: border-box;
     transition: right 0.3s ease;
 }
+
+#openMenuBt, #twitte, #close{
+    cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+    z-index: 1; /* Colocar acima do conteúdo */
+    display: none; /* Inicialmente oculto */
+  }
 
 #thm{
     background-color: black;
@@ -29,8 +42,8 @@
     color: white;
 }
 
-#twitte{
-    margin-left: 16rem;
+#ban{
+    margin-right: 16rem;
 }
 
 
