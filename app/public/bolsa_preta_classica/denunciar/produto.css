@@ -1,6 +1,7 @@
 #ally{
-
-
+    position: fixed;
+    top: -10px;
+    z-index: 200;
     margin-left: 81rem;
     width: 38rem;
     height: 45rem;

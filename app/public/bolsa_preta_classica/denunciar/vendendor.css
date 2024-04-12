@@ -1,6 +1,8 @@
-#ally{
-
-
+#all{
+    position: absolute;
+    top: -10px;
+    z-index: 200;
+    position: fixed;
     margin-left: 81rem;
     width: 38rem;
     height: 45rem;
