@@ -47,19 +47,19 @@
 /* parte escrita versace - bazar responsivo */
 #parte_escrita_versace_-_responsivo {
     position: absolute;
-    top:  66.2%;
-    left: 10%;
+    top:  70%;
+    left: 34%;
     
 }
 
 .parte_escrita_versace_bazar_img_responivo {
-    width: 110%;
+    width: 57%;
 }
 
 /* parte do botão */
 
 #parte_dos_botoes{
-    display: flex;
+    display: none;
     column-gap: 4px;
     position: absolute;
     top: 86.5%;
@@ -97,6 +97,34 @@
     width: 100%;
     height: 100%;
 }
+
+/*parte dos botoes responsivo*/
+#parte_dos_botoes_responsivo {
+    position: relative;
+    top: -100px;
+    left: 41%;
+    display: block;
+    background-color: white;
+    width: 105px;
+    height: 15px;
+
+}
+
+#parte_dos_botoes_responsivo > article {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    
+}
+
+#parte_dos_botoes_responsivo > article > p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 8px;
+    font-weight: bolder;
+    position: relative;
+    top: 3px;
+}
+
 
 /* section do vesace - bazar */
 

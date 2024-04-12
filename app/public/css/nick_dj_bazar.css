@@ -84,6 +84,10 @@ video {
     height: 100%;
 }
 
+/*parte dos botoes responsivo*/
+#parte_dos_botoes_responsivo {
+    display: none;
+}
 /* section do vesace - bazar */
 
 #section_do_vesace_-_bazar{
