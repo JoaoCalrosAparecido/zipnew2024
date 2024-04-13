@@ -83,7 +83,7 @@
     z-index: 1;
     position: fixed;
     display: flex ;
-    column-gap: 24.7px;
+    column-gap: 29.7px;
     right: 29.3%;
     top: 3%;
     height: 2.3%;
@@ -197,6 +197,7 @@
     background-repeat: repeat-y;
     position: relative;
     left: -20%;
+    top: 5px;
     width: 30px;
     height: 18px;
     
