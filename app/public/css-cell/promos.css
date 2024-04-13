@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+#section_promos_responsivo {
+    display: block;
+    position: relative;
+    top: -135px;
+}
+
+/*parte escrita*/
+#parte_escrita_promos_responsivo {
+    position: relative;
+    top: 65px;
+    left: -28px;
+}
+
+#parte_escrita_promos_responsivo > img {
+    width: 180px;
+}
+
+/*slide*/
+#promo_responsivo_slide {
+display: flex;
+column-gap: 5px;
+position: relative;
+left: 8px;
+}
+
+.imagem_do_slide {
+    width: 300px
+
+}
+
+/*figcaption*/
+#figcaption_promos_responsivo {
+    position: relative;
+    top: 12px;
+    left: 8px;
+}
+
+#paragrafo_promos_responsivo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+#preco_promos_responsivo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    opacity: 90%;
+}
+
+/*setas*/
+#figure_setas_promos_responsivo {
+    position: relative;
+    top: -250px;
+    display: flex;
+    column-gap: 530px;
+}
+
+#figure_setas_promos_responsivo > img {
+    width: 45px;
+}
+
+#rotacao_seta_promos_responsivo {
+    transform: rotate(180deg);
+}
