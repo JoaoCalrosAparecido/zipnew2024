@@ -17,7 +17,7 @@
 
 #menu_principal {
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: white;
     width: 100%;
     height: 52px;
 
@@ -51,7 +51,7 @@
     position: fixed;
     top: 3.3%;
     left: 3.8%;
-    background-image: url(../IMG/area_do_menu/logo_zip_menu_parte_branca_2024_refeito.png);
+    background-image: url(/IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
     background-size: 44px;
     z-index: 300;
     width: 44px;
@@ -103,7 +103,7 @@
     width: 20px;
     height: 24px;
     transform: rotate(315deg);
-    background-image: url('../../IMG/area_do_menu/icone_pesquisa_branco.svg'); /* Adicione o caminho da sua imagem de ícone de pesquisa */
+    background-image: url('../../IMG/area_do_menu/icone_pesquisa_preto.svg'); /* Adicione o caminho da sua imagem de ícone de pesquisa */
     background-repeat: no-repeat;
     background-size: 15px;
     cursor: pointer;
@@ -181,7 +181,7 @@
     top: 2px;
     width: 17px;
     height: 19px;
-    background-image: url('../IMG/area_do_menu/icone_sacola_branco.svg');
+    background-image: url('../IMG/area_do_menu/icone_sacola_preto.svg');
     background-size: 16px;
     background-repeat: no-repeat;
 }

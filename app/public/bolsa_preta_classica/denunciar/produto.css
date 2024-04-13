@@ -1,11 +1,31 @@
-#ally{
-
-
+#menu{
+    position: fixed;
+    top: -10px;
+    z-index: 200;
     margin-left: 81rem;
     width: 38rem;
     height: 45rem;
     font-family: 'Poppins', sans-serif;
+    right: -50%; /* Inicialmente oculto */
+    box-sizing: border-box;
+    transition: right 0.3s ease;
 }
+
+#openMenuBtn, #twitter, #close{
+    cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+    z-index: 1; /* Colocar acima do conteúdo */
+    display: none; /* Inicialmente oculto */
+  }
+
 
 #thm{
     background-color: black;
@@ -23,14 +43,15 @@
     color: white;
 }
 
-#twitter{
-    margin-left: 17rem;
+#ban{
+    margin-right: 17rem;
 }
+
 
 
 #mott{
     padding: 40px;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(255, 255, 255);
 }
 
 #ttom{
@@ -55,4 +76,47 @@ form input[type=checkbox]{
 
 #aa, #bb, #cc, #dd{
     font-size: 18px;
+}
+
+#send{
+    width: 33rem;
+    height: 60px;
+    cursor: pointer;
+    background-color: #212121;
+    color: rgb(255, 255, 255);
+    border-color: #212121;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top:  80px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+#close{
+    margin-left: 235px;
+    text-decoration: underline;
+}
+#fech{
+    margin-bottom: 300px;
+}
+
+input{
+    position: relative;
+}
+
+input::after {
+    position: absolute;
+    content: " ";
+    display: none;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: #212121;
+    left: 10px;
+    top: 0;
+    transform: translate(-50%);
+}
+input:checked::after {
+    display: block;
 }

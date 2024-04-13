@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" href="/bolsa_preta_classica/denunciar/produto.css">
     <link rel="stylesheet" href="/bolsa_preta_classica/denunciar/vendendor.css">
+    <script src="/bolsa_preta_classica/denunciar/menu.js" defer></script>
+    <script src="/bolsa_preta_classica/denunciar/menud.js" defer></script>
 </head>
 <body>
         <!-- parte superior do desconto na primeira compra -->
@@ -158,10 +160,10 @@
                 <p>DETALHES</p>
                 <hr>
 
-                <p>DENUNCIAR PRODUTO</p>
+                <p id="openMenuBtn">DENUNCIAR PRODUTO</p>
                 <hr>
 
-                <p>DENUNCIAR VENDEDOR</p>
+                <p id="openMenuBt">DENUNCIAR VENDEDOR</p>
                 <hr>
             </article>
         </section>
@@ -443,10 +445,14 @@
 
 
 
-    <section id="ally">
+<<<<<<< HEAD
+ <section id="ally">
+=======
+    <section id="menu" class="menu">
+>>>>>>> 76e1100a66724fab5b5b3e34d2df71f678f48b53
         <article id="thm">
             <label id="ban">DENUNCIAR PRODUTO</label>
-            <label id="twitter">X</label>
+            <span id="closeMenuBtn" class="closeBtn"><label id="twitter">X</label></span>
 
             </article>
             <form id="mott">
@@ -466,13 +472,58 @@
                         <input type="checkbox">
                         <label id="dd">Outro</label>
                         <br>
-                        <input type="submit" id="send" name="action" value="ENVIAR">
+                       
+                        <input type="submit" id="send" name="action" value="DENUNCIAR">
                         <br>
-                        <label id="">Fechar</label>
-                    
+                         <section id="fech">
+
+                <span id="closeMenuBt" class="closeBtn"><label id="close">Fechar</label></span>
+                        </section>
                 </section>
             </form>
-       
     </section>
+    <div id="overlay"></div>
+
+
+
+    <section id="men" class="men">
+        <article id="th">
+            <label id="ban">DENUNCIAR VENDEDOR</label>
+            <span id="closeMenuB" class="closeBtn"><label id="twitte">X</label></span>
+
+            </article>
+            <form id="mott">
+            <label id="ttom">Motivo da denúncia</label>
+            
+                <section id="check">
+                    
+                        <input type="checkbox" checked="checked">
+                        <label id="aa">Fraude</label>
+                        <br>
+                        <input type="checkbox">
+                        <label id="bb">Produto Ilícito</label>
+                        <br>
+                        <input type="checkbox">
+                        <label id="cc">Propaganda Enganosa</label>
+                        <br>
+                        <input type="checkbox">
+                        <label id="dd">Outro</label>
+                        <br>
+                       
+                        <input type="submit" id="send" name="action" value="DENUNCIAR">
+                        <br>
+                         <section id="fech">
+                            <span id="closeMenu" class="closeBtn"><label id="close">Fechar</label></span>
+                        </section>
+                </section>
+            </form>
+<<<<<<< HEAD
+          
+=======
+>>>>>>> 76e1100a66724fab5b5b3e34d2df71f678f48b53
+    </section>
+    <div id="overla"></div>
+    
+
 </body>
 </html>
