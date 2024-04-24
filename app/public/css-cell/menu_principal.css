@@ -75,130 +75,79 @@
 
 /* barra_de_pesquisa_e_etc */
 
-
-
-/* imagem da barra de pesquisa e etc */
-
-#imagem_da_barra_de_pesquisa_e_etc {
-    z-index: 1;
-    position: fixed;
-    display: flex ;
-    column-gap: 29.7px;
-    right: 29.3%;
-    top: 3%;
-    height: 2.3%;
-    
+#barra_de_pesquisa_e_etc {
+    display: none;
 }
 
-/*imagem da barra de pesquisa responsivo*/
-.search-container {
+#barra_de_pesquisa_e_etc_responsivo {
     display: block;
 }
 
-.search-container {
+/*parte do menu lateral*/
+
+
+  
+  .menu {
     position: fixed;
+    top: 0;
+    right: -50%; /* Inicialmente oculto */
+    width: 50%; /* Metade da largura da tela */
+    height: 100%;
+    background-color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: right 0.3s ease;
   }
   
-  .search-icon {
-    width: 20px;
-    height: 24px;
-    transform: rotate(315deg);
-    background-image: url('../../IMG/area_do_menu/icone_pesquisa_preto.svg'); /* Adicione o caminho da sua imagem de ícone de pesquisa */
-    background-repeat: no-repeat;
-    background-size: 15px;
+  .menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+  }
+  
+  #openMenuBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
     cursor: pointer;
   }
   
-  .search-input {
-    display: none;
+  /* Estilo para o ícone de menu */
+  #openMenuBtn i {
+    margin-right: 5px;
+  }
+  
+  /* Estilo para o botão de fechar menu */
+  .closeBtn {
     position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .closeBtn i {
+    font-size: 20px;
+  }
+  
+  /* Estilo para o overlay */
+  #overlay {
+    position: fixed;
     top: 0;
-    right: 25px; /* Mudança de left para right */
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 150px; /* Largura ajustada */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+    z-index: 1; /* Colocar acima do conteúdo */
+    display: none; /* Inicialmente oculto */
   }
   
-  
-  .show {
-    display: block;
+  .overlay-active {
+    background-color: rgba(0, 0, 0, 0.5); /* Preto semi-transparente */
   }
   
-
-/* imagem da barra de pesquisa */
-
-#imagem_da_barra_de_pesquisa{
-    display: none;
-    transform: rotate(315deg);
-    position: relative;
-    top: 1.5px;
-    height: 22.2px;
-    width: 14px;
-    background-image: url('../IMG/area_do_menu/icone_pesquisa_branco.svg');
-    background-size: 14px;
-}
-
-#imagem_da_barra_de_pesquisa.rolagem {
-    background-image: url('../IMG/area_do_menu/icone_pesquisa_preto.svg');
-}
-
-
-/* imagem do icone de favorito */
-
-#imagem_do_icone_de_favorito{
-    display: none;
-    position: relative;
-    top: 2.5px;
-    height: 19px;
-    width: 20px;
-    background-image: url('../IMG/area_do_menu/icone_favorito_branco.svg');
-}
-
-#imagem_do_icone_de_favorito.rolagem {
-    background-image: url('../IMG/area_do_menu/icone_favorito_preto.svg');
-}
-
-/* imagem do icone de pessoa */
-
-#imagem_do_icone_de_pessoa {
-    display: none;
-    position: relative;
-    top: 0.5px;
-    width: 17px;
-    height: 21px;
-    background-image: url('../IMG/area_do_menu/icone_pessoa_branco.svg');
-}
-
-#imagem_do_icone_de_pessoa.rolagem {
-    background-image: url('../IMG/area_do_menu/icone_pessoa_preto.svg');
-}
-
-/* imagem do icone da conta */
-
-#imagem_do_icone_da_sacola {
-    position: relative;
-    top: 2px;
-    width: 17px;
-    height: 19px;
-    background-image: url('../IMG/area_do_menu/icone_sacola_preto.svg');
-    background-size: 16px;
-    background-repeat: no-repeat;
-}
-
-#imagem_do_icone_da_sacola.rolagem {
-    background-image: url('../IMG/area_do_menu/icone_sacola_preto.svg');
-}
-
-/*icone de menu*/
-#Imagem_do_menu {
-    background-image: url('../IMG/area_do_menu/icone_do_menu2.svg');
-    background-size: 24px;
-    background-repeat: repeat-y;
-    position: relative;
-    left: -20%;
-    top: 5px;
-    width: 30px;
-    height: 18px;
-    
-}
