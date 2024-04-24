@@ -14,6 +14,9 @@
     <script src="./pagamento_script/script2.js" defer></script>
     <script src="./pagamento_script/validar.js" defer></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@latest/qrcode.min.js"></script>
+    <script src="caminho/para/o/arquivo/qrcode.min.js"></script>
+
     <link rel="shortcut icon" href="IMG/fivecon/logo preta grande.ico" type="image/x-icon">
 </head>
 <body>
@@ -124,20 +127,15 @@
                     <form id="pixForm">
                         <input type="text" name="nome" id="nome" maxlength="40" placeholder="Nome*" class="inpu required" oninput="nameValidate()">
                         <br>
-                        <input type="number" name="mes" id="mes" maxlength="40" placeholder="Mês*" class="input required" oninput="mesValidate()">
-                        <input type="number" name="ano" id="ano" maxlength="40" placeholder="Ano*" class="input required" oninput="anoValidate()">
-                        <br>
-
-                            <input type="text" id="chavePix" placeholder="Digite a chave PIX" class="inpu required" required>
-                            <br>
-                            <input type="number" id="valor" placeholder="Digite o valor" class="inpu required" required>
+                        
+                        <input type="text" name="cpf" id="cpf" maxlength="40" placeholder="CPF*" class="inpu required" oninput="cpfValidate()">
                             <br>
                             <button type="submit" id="efut">Efetuar compra</button>
-
-                            <p id="mensagem"></p>
-
                     </form>
+
                 </article>
+
+
 
                 <Section>
                         <article id="Uw">

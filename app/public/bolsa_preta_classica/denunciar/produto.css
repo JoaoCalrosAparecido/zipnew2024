@@ -120,3 +120,4 @@ input::after {
 input:checked::after {
     display: block;
 }
+
