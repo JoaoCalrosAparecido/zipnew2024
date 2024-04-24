@@ -20,9 +20,9 @@
 /*imagem de fundo nick dj bazar responsivo*/
 #imagem_nick_dj_bazar_responsivo {
     background-image: url(../../IMG/imagem_do_vesace_-_bazar/imagem_nick_dj_bazar_responsiva.png);
-    background-size: 680px;
-    width: 680px;
-    height: 710px;
+    background-size: 560px;
+    width: 560px;
+    height: 600px;
     position: relative;
     top: 45px;
 }
