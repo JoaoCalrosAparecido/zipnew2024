@@ -5,7 +5,10 @@
     --cordapartesuperiorverde: #084b4b;
 }
 
-
+/*responsivo*/
+#section_watche_responsivo_cell {
+    display: none;
+}
 
 /*zara_bazar_para_ele*/
 #parte_como_todo_watches {
