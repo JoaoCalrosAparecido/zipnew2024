@@ -249,11 +249,11 @@ left: -30px;
     background-color: var(--corpartesuperior);
 }
 
-#radio1:checked ~ .first {
+#radio1:checked ~ .first2 {
     margin-left: 0;
 }
 
-#radio2:checked ~ .first {
+#radio2:checked ~ .first2 {
     margin-left: -25%;
 }
 
@@ -279,11 +279,11 @@ left: -30px;
     margin-right: 40px;
 }
 
-#radio1:checked ~ .navigation-auto .auto-btn1 {
+#radio3:checked ~ .navigation-auto .auto-btn1 {
     background-color: #000000;
 }
 
-#radio2:checked ~ .navigation-auto .auto-btn2 {
+#radio4:checked ~ .navigation-auto .auto-btn2 {
     background-color: #000000;
 }
 
