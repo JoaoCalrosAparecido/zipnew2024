@@ -14,6 +14,9 @@
     <script src="./pagamento_script/script2.js" defer></script>
     <script src="./pagamento_script/validar.js" defer></script>
 
+    <script src="./pagamento_script/script45.js" defer></script>
+    <script src="./pagamento_script/qrcode.min.js" defer></script>
+
     <script src="https://cdn.jsdelivr.net/npm/qrcode@latest/qrcode.min.js"></script>
     <script src="caminho/para/o/arquivo/qrcode.min.js"></script>
 
@@ -130,7 +133,12 @@
                         
                         <input type="text" name="cpf" id="cpf" maxlength="40" placeholder="CPF*" class="inpu required" oninput="cpfValidate()">
                             <br>
-                            <button type="submit" id="efut">Efetuar compra</button>
+
+                            <div class="container">
+                                <button type="submit" id="generate-btn">Efetuar compra</button>
+                                <div id="qr-code" class="qr-code"></div>
+                                <div id="qr-code-text" class="qr-code-text"></div>
+                            </div>
                     </form>
 
                 </article>
