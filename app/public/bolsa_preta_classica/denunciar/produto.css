@@ -64,7 +64,7 @@
     margin-top: 30px;
 }
 
-form input[type=checkbox]{
+input[type=checkbox]{
     margin-top: 15px;
     margin-bottom: 15px;
     margin-right: 8px;
@@ -76,9 +76,10 @@ form input[type=checkbox]{
 
 #aa, #bb, #cc, #dd{
     font-size: 18px;
+    
 }
 
-#send{
+#denunciarBtn{
     width: 33rem;
     height: 60px;
     cursor: pointer;
@@ -105,19 +106,7 @@ input{
     position: relative;
 }
 
-input::after {
-    position: absolute;
-    content: " ";
-    display: none;
-    border-radius: 3px;
-    width: 20px;
-    height: 20px;
-    background-color: #212121;
-    left: 10px;
-    top: 0;
-    transform: translate(-50%);
-}
-input:checked::after {
-    display: block;
+#mensagem{
+    margin-left: 100px;
 }
 
