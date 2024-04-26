@@ -112,10 +112,10 @@ left: -30px;
 /*setas*/
 .setas_watches {
     display: flex;
-    column-gap: 447px;
+    column-gap: 347px;
     position: relative;
-    top: 325px;
-    left: 58%;
+    top: -325px;
+    left: 15%;
 }
 
 
@@ -249,11 +249,11 @@ left: -30px;
     background-color: var(--corpartesuperior);
 }
 
-#radio1:checked ~ .first2 {
+#radio3:checked ~ .first2 {
     margin-left: 0;
 }
 
-#radio2:checked ~ .first2 {
+#radio4:checked ~ .first2 {
     margin-left: -25%;
 }
 
@@ -358,4 +358,7 @@ left: -30px;
 }
 
 /*slide*/
-
+.slide_watches_cell{
+    width: 440px;
+    height: 700px;
+}
