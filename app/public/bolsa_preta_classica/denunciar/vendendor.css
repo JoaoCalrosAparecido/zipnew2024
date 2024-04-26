@@ -76,7 +76,7 @@ input[type=checkbox]{
     font-size: 18px;
 }
 
-#denunciarBtn{
+#denunciarBt{
     width: 33rem;
     height: 60px;
     cursor: pointer;
@@ -104,10 +104,25 @@ form input [type=checkbox] .checked{
     background-color: black;
 }
 
-#mensagem{
+#mensage{
     margin-left: 100px;
 }
 
+#all {
+    overflow: hidden;
+    z-index: 100;
+}
+
+.background::after {
+    content: " ";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.459); /* Inicialmente transparente */
+    z-index: 99; /* Colocar acima do conteúdo */
+}
 
 
 
