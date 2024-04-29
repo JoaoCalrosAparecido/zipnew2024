@@ -6,7 +6,7 @@
     position: fixed;
     z-index: 2;
     opacity: 100%;
-    top: 2.3%;
+    top: 24px;
 }
 
 .menu_como_todo{
@@ -19,7 +19,7 @@
     position: fixed;
     background-color: white;
     width: 100%;
-    height: 52px;
+    height: 60px;
 
     
 }
@@ -50,12 +50,12 @@
 #logo_zip_menu {
     position: fixed;
     top: 3.3%;
-    left: 3.8%;
+    left: 5.8%;
     background-image: url(/IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
-    background-size: 44px;
+    background-size: 52px;
     z-index: 300;
-    width: 44px;
-    height:35px;
+    width: 52px;
+    height:40px;
 }
 
 
@@ -81,6 +81,38 @@
 
 #barra_de_pesquisa_e_etc_responsivo {
     display: block;
+}
+
+/*barra de pesquisa*/
+.search-container {
+  position: fixed;
+  display: block;
+  left: 190px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  background-image: url('../IMG/area_do_menu/cell/icone_de_pesquisa_cell.png'); /* Adicione o caminho da sua imagem de ícone de pesquisa */
+  background-size: cover;
+  cursor: pointer;
+}
+
+.search-input {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 25px; /* Mudança de left para right */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px; /* Largura ajustada */
+}
+
+
+.show {
+  display: block;
 }
 
 /*parte do menu lateral*/

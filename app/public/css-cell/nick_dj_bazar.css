@@ -20,11 +20,12 @@
 /*imagem de fundo nick dj bazar responsivo*/
 #imagem_nick_dj_bazar_responsivo {
     background-image: url(../../IMG/imagem_do_vesace_-_bazar/imagem_nick_dj_bazar_responsiva.png);
-    background-size: 560px;
-    width: 560px;
-    height: 600px;
+    background-size: 660px;
+    width: 630px;
+    height: 710px;
     position: relative;
     top: 45px;
+    left: -25px;
 }
 
 /* parte escrita versace - bazar */
