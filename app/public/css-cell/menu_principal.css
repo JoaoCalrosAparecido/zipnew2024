@@ -49,7 +49,7 @@
 
 #logo_zip_menu {
     position: fixed;
-    top: 3.3%;
+    top: 3.4%;
     left: 5.8%;
     background-image: url(/IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
     background-size: 52px;
@@ -80,21 +80,24 @@
 }
 
 #barra_de_pesquisa_e_etc_responsivo {
-    display: block;
+   display: flex;
+   position: relative;
+   
 }
 
 /*barra de pesquisa*/
 .search-container {
   position: fixed;
   display: block;
-  left: 190px;
+  left: 485px;
+  top: 46px;
 }
 
 .search-icon {
-  width: 20px;
-  height: 20px;
-  background-color: #ccc;
-  background-image: url('../IMG/area_do_menu/cell/icone_de_pesquisa_cell.png'); /* Adicione o caminho da sua imagem de ícone de pesquisa */
+  width: 18px;
+  height: 18px;
+  
+  background-image: url(''); /* Adicione o caminho da sua imagem de ícone de pesquisa */
   background-size: cover;
   cursor: pointer;
 }
@@ -117,7 +120,10 @@
 
 /*parte do menu lateral*/
 
-
+  .article_menu_cell {
+    position: relative;
+    left: 300px;
+  }
   
   .menu {
     position: fixed;
@@ -140,11 +146,15 @@
   
   #openMenuBtn {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
+    top: 45px;
+    left: 560px;
+    background-image: url("../IMG/area_do_menu/cell/menu_cell.png");
+    background-size: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    
     border: none;
     cursor: pointer;
   }
@@ -183,3 +193,16 @@
     background-color: rgba(0, 0, 0, 0.5); /* Preto semi-transparente */
   }
   
+
+/*sacola*/
+#article_icone_sacola_cell {
+  position: relative;
+  top: 18px;
+  left: 520px;
+  width: 100px;
+  height: 100px;
+}
+
+#button_sacola_cell {
+  
+}

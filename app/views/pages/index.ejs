@@ -139,29 +139,54 @@
         </article>
 
         <!--barra de pesquisa e etc responsivo-->
-        <article id="barra_de_pesquisa_e_etc_responsivo">
+        <section id="barra_de_pesquisa_e_etc_responsivo">
 
-            <div class="search-container">
-                <div class="search-icon" id="searchIcon"></div>
+            <!--barra de pesquisa-->
+            <article class="search-container">
+                <article class="search-icon" id="searchIcon">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/kkvxgpti.json"
+                    trigger="hover"
+                    style="width:22px;height:22px">
+                    </lord-icon>
+                </article>
                 <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar...">
-              </div>
 
-              <script src="../../pesquisa.js"></script>
+                <script src="../../pesquisa.js"></script>
+            </article>
 
-            <button id="openMenuBtn">
-                <i class="fas fa-bars"></i> <!-- Ícone de menu -->
-                Abrir Menu
-              </button>
-              <div id="menu" class="menu">
-                <span id="closeMenuBtn" class="closeBtn"><i class="fas fa-times">ooo</i></span> <!-- Botão de fechar menu -->
-                <a href="#">Item de Menu 1</a>
-                <a href="#">Item de Menu 2</a>
-                <a href="#">Item de Menu 3</a>
-                <a href="#">Item de Menu 4</a>
-                <a href="#">Item de Menu 5</a>
-              </div>
-              <div id="overlay"></div>
-        </article>
+              
+
+            
+            <!--icone sacola-->
+            <article id="article_icone_sacola_cell">
+                
+                    <lord-icon
+                    src="https://cdn.lordicon.com/evyuuwna.json"
+                    trigger="morph"
+                    state="morph-shopping-bag-open"
+                    style="width:26px;height:26px">
+                    </lord-icon>
+
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+            </article>
+
+            <article">
+                <button id="openMenuBtn">
+                
+                
+                  </button>
+                  <div id="menu" class="menu">
+                    <span id="closeMenuBtn" class="closeBtn"><i class="fas fa-times">ooo</i></span> <!-- Botão de fechar menu -->
+                    <a href="#">Item de Menu 1</a>
+                    <a href="#">Item de Menu 2</a>
+                    <a href="#">Item de Menu 3</a>
+                    <a href="#">Item de Menu 4</a>
+                    <a href="#">Item de Menu 5</a>
+                  </div>
+                  <div id="overlay"></div>
+            </article>
+        </section>
 
     </section>
 
