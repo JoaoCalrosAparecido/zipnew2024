@@ -274,6 +274,20 @@
 }
 
 
+/*icones celular*/
+#section_icones_menu_deslizante_cell {
+  
+}
+
+#article_icones_menu_deslizante_cell {
+  display: flex;
+}
+
+#article_icones_menu_deslizante_cell > article > p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+}
+
 
 /*sacola*/
 #article_icone_sacola_cell {
