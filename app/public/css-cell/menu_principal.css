@@ -120,79 +120,160 @@
 
 /*parte do menu lateral*/
 
-  .article_menu_cell {
-    position: relative;
-    left: 300px;
-  }
-  
-  .menu {
-    position: fixed;
-    top: 84px;
-    right: -66%; /* Inicialmente oculto */
-    width: 66%; /* Metade da largura da tela */
-    height: 100%;
-    background-color: #333;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: right 0.3s ease;
-  }
-  
-  .menu a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px 0;
-  }
-  
-  #openMenuBtn {
-    position: fixed;
-    top: 45px;
-    left: 560px;
-    background-image: url("../IMG/area_do_menu/cell/menu_cell.png");
-    background-size: 18px;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-    
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Estilo para o ícone de menu */
-  #openMenuBtn i {
-    margin-right: 5px;
-  }
-  
-  /* Estilo para o botão de fechar menu */
-  .closeBtn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    color: white;
-  }
-  
-  .closeBtn i {
-    font-size: 20px;
-  }
-  
-  /* Estilo para o overlay */
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
-    z-index: 1; /* Colocar acima do conteúdo */
-    display: none; /* Inicialmente oculto */
-  }
-  
-  .overlay-active {
-    background-color: rgba(0, 0, 0, 0.5); /* Preto semi-transparente */
-  }
-  
+.article_menu_cell {
+  position: relative;
+  left: 300px;
+}
+
+.menu {
+  position: fixed;
+  top: 84px;
+  right: -66%; /* Inicialmente oculto */
+  width: 66%; /* Metade da largura da tela */
+  height: 100%;
+  background-color: #F2F2F2;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: right 0.3s ease;
+}
+
+.menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+#openMenuBtn {
+  position: fixed;
+  top: 45px;
+  left: 560px;
+  background-image: url("../IMG/area_do_menu/cell/menu_cell.png");
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo para o ícone de menu */
+#openMenuBtn.active {
+  background-image: url("../IMG/area_do_menu/cell/");
+}
+
+/* Estilo para o botão de fechar menu */
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.closeBtn i {
+  font-size: 20px;
+}
+
+/* Estilo para o overlay */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+  z-index: 1; /* Colocar acima do conteúdo */
+  display: none; /* Inicialmente oculto */
+}
+
+.overlay-active {
+  background-color: rgba(0, 0, 0, 0.5); /* Preto semi-transparente */
+}
+
+/*conteudo no menu responsivo*/
+
+/*links principais*/
+#section_links_principais_cell {
+
+}
+
+#article_links_principais_cell_p {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#article_links_principais_cell_p > p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 19.5px;
+  font-weight: 600;
+  position: relative;
+  left: 10.5px;
+}
+
+#article_links_principais_cell_img  {
+  display: flex;
+  flex-direction: column;
+  gap: 43.2px;
+  position: relative;
+  top: -315px;
+  left: 350px;
+}
+
+#article_links_principais_cell_img > img {
+  width: 9.5px;
+  height: 16px;
+}
+
+
+/*saiba mais*/
+#article_saiba_mais_menu_cell {
+  background-color: #212121;
+  width: 400px;
+  height: 170px;
+  position: relative;
+  left: -20px;
+  top: -280px;
+}
+
+#article_saiba_mais_menu_cell > p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 25px;
+}
+
+#article_saiba_mais_menu_cell > button {
+  width: 253px;
+  height: 40px;
+  border: none;
+  background-color: white;
+  text-decoration: none;
+  position: relative;
+  top: 45px;
+  left: 75px;
+  font-size: 21px;
+  font-family: 'Poppins', sans-serif;
+  color: #3B3B3B;
+
+}
+
+#article_saiba_mais_menu_cell > button:hover {
+  background-color: #3B3B3B;
+  color: white;
+}
+
+#article_saiba_mais_menu_cell > button:active {
+  background-color: #3B3B3B;
+  color: white;
+}
+
+
 
 /*sacola*/
 #article_icone_sacola_cell {
