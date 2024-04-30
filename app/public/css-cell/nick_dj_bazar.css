@@ -28,6 +28,12 @@
     left: -25px;
 }
 
+/*parte escrita botoes responsivo*/
+#botoes_escrita_di_nick_cell {
+    position: relative;
+    left: -20px;
+}
+
 /* parte escrita versace - bazar */
 
 #parte_escrita_versace_-_bazar {
@@ -51,8 +57,9 @@
 /* parte escrita versace - bazar responsivo */
 #parte_escrita_versace_-_responsivo {
     position: absolute;
-    top:  67%;
-    left: 34%;
+    top:  -250px;
+    left: 200px;
+    
     
 }
 
@@ -77,10 +84,10 @@
 /*parte dos botoes responsivo*/
 #section_parte_dos_botoes_responsivo {
     display: flex;
-    column-gap: 2px;
+    column-gap: 3px;
     position: relative;
-    top: -26px;
-    left: -130px;
+    top: -37px;
+    left: -100px;
 }
 
 .parte_dos_botoes_responsivo {
@@ -91,8 +98,8 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    width: 185px;
-    height: 40px;
+    width: 165px;
+    height: 35px;
 }
 
 .parte_dos_botoes_responsivo:hover {
@@ -109,10 +116,10 @@
 
 #section_parte_dos_botoes_responsivo > article > p {
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     position: relative;
-    top: 11px;
+    top: 10px;
 }
 
 
