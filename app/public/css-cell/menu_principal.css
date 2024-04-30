@@ -6,7 +6,7 @@
     position: fixed;
     z-index: 2;
     opacity: 100%;
-    top: 2.3%;
+    top: 24px;
 }
 
 .menu_como_todo{
@@ -19,7 +19,7 @@
     position: fixed;
     background-color: white;
     width: 100%;
-    height: 52px;
+    height: 60px;
 
     
 }
@@ -49,13 +49,13 @@
 
 #logo_zip_menu {
     position: fixed;
-    top: 3.3%;
-    left: 3.8%;
+    top: 3.4%;
+    left: 5.8%;
     background-image: url(/IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
-    background-size: 44px;
+    background-size: 52px;
     z-index: 300;
-    width: 44px;
-    height:35px;
+    width: 52px;
+    height:40px;
 }
 
 
@@ -80,74 +80,224 @@
 }
 
 #barra_de_pesquisa_e_etc_responsivo {
-    display: block;
+   display: flex;
+   position: relative;
+   
+}
+
+/*barra de pesquisa*/
+.search-container {
+  position: fixed;
+  display: block;
+  left: 485px;
+  top: 46px;
+}
+
+.search-icon {
+  width: 18px;
+  height: 18px;
+  
+  background-image: url(''); /* Adicione o caminho da sua imagem de ícone de pesquisa */
+  background-size: cover;
+  cursor: pointer;
+}
+
+.search-input {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 25px; /* Mudança de left para right */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px; /* Largura ajustada */
+}
+
+
+.show {
+  display: block;
 }
 
 /*parte do menu lateral*/
 
+.article_menu_cell {
+  position: relative;
+  left: 300px;
+}
 
+.menu {
+  position: fixed;
+  top: 84px;
+  right: -66%; /* Inicialmente oculto */
+  width: 66%; /* Metade da largura da tela */
+  height: 100%;
+  background-color: #F2F2F2;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: right 0.3s ease;
+}
+
+.menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+#openMenuBtn {
+  position: fixed;
+  top: 45px;
+  left: 560px;
+  background-image: url("../IMG/area_do_menu/cell/menu_cell.png");
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo para o ícone de menu */
+#openMenuBtn.active {
+  background-image: url("../IMG/area_do_menu/cell/");
+}
+
+/* Estilo para o botão de fechar menu */
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.closeBtn i {
+  font-size: 20px;
+}
+
+/* Estilo para o overlay */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+  z-index: 1; /* Colocar acima do conteúdo */
+  display: none; /* Inicialmente oculto */
+}
+
+.overlay-active {
+  background-color: rgba(0, 0, 0, 0.5); /* Preto semi-transparente */
+}
+
+/*conteudo no menu responsivo*/
+
+/*links principais*/
+#section_links_principais_cell {
+
+}
+
+#article_links_principais_cell_p {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#article_links_principais_cell_p > p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 19.5px;
+  font-weight: 600;
+  position: relative;
+  left: 10.5px;
+}
+
+#article_links_principais_cell_img  {
+  display: flex;
+  flex-direction: column;
+  gap: 43.2px;
+  position: relative;
+  top: -315px;
+  left: 350px;
+}
+
+#article_links_principais_cell_img > img {
+  width: 9.5px;
+  height: 16px;
+}
+
+
+/*saiba mais*/
+#article_saiba_mais_menu_cell {
+  background-color: #212121;
+  width: 400px;
+  height: 170px;
+  position: relative;
+  left: -20px;
+  top: -280px;
+}
+
+#article_saiba_mais_menu_cell > p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 25px;
+}
+
+#article_saiba_mais_menu_cell > button {
+  width: 253px;
+  height: 40px;
+  border: none;
+  background-color: white;
+  text-decoration: none;
+  position: relative;
+  top: 45px;
+  left: 75px;
+  font-size: 21px;
+  font-family: 'Poppins', sans-serif;
+  color: #3B3B3B;
+
+}
+
+#article_saiba_mais_menu_cell > button:hover {
+  background-color: #3B3B3B;
+  color: white;
+}
+
+#article_saiba_mais_menu_cell > button:active {
+  background-color: #3B3B3B;
+  color: white;
+}
+
+
+/*icones celular*/
+#section_icones_menu_deslizante_cell {
   
-  .menu {
-    position: fixed;
-    top: 0;
-    right: -50%; /* Inicialmente oculto */
-    width: 50%; /* Metade da largura da tela */
-    height: 100%;
-    background-color: #333;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: right 0.3s ease;
-  }
+}
+
+#article_icones_menu_deslizante_cell {
+  display: flex;
+}
+
+#article_icones_menu_deslizante_cell > article > p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+}
+
+
+/*sacola*/
+#article_icone_sacola_cell {
+  position: relative;
+  top: 18px;
+  left: 520px;
+  width: 100px;
+  height: 100px;
+}
+
+#button_sacola_cell {
   
-  .menu a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px 0;
-  }
-  
-  #openMenuBtn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Estilo para o ícone de menu */
-  #openMenuBtn i {
-    margin-right: 5px;
-  }
-  
-  /* Estilo para o botão de fechar menu */
-  .closeBtn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    color: white;
-  }
-  
-  .closeBtn i {
-    font-size: 20px;
-  }
-  
-  /* Estilo para o overlay */
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
-    z-index: 1; /* Colocar acima do conteúdo */
-    display: none; /* Inicialmente oculto */
-  }
-  
-  .overlay-active {
-    background-color: rgba(0, 0, 0, 0.5); /* Preto semi-transparente */
-  }
-  
+}

@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="../../css-cell/new_in_responsivo.css" media="screen and (max-width:700px)">
     <link rel="stylesheet" href="../../css-cell/promos.css" media="screen and (max-width:700px)">
     <link rel="stylesheet" href="../../css-cell/watches.css" media="screen and (max-width:700px)">
+    <link rel="stylesheet" href="../../css-cell/italian_leather_artistry.css" media="screen and (max-width:700px)">
+    <link rel="stylesheet" href="../../css-cell/larezzo.css" media="screen and (max-width:700px)">
 
     <link rel="shortcut icon" href="IMG/fivecon/logo preta grande.ico" type="image/x-icon">
 
@@ -118,10 +120,7 @@
         <article id="barra_de_pesquisa_e_etc">
             <figure id="imagem_da_barra_de_pesquisa_e_etc">
 
-                <article class="search-container">
-                    <article class="search-icon" id="searchIcon"></article>
-                    <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar...">
-                </article>
+
 
                 <script src="../../barra_de_pesquisa.js"></script>
 
@@ -140,29 +139,167 @@
         </article>
 
         <!--barra de pesquisa e etc responsivo-->
-        <article id="barra_de_pesquisa_e_etc_responsivo">
-            <button id="openMenuBtn">
-                <i class="fas fa-bars"></i> <!-- Ícone de menu -->
-                Abrir Menu
-              </button>
-              <div id="menu" class="menu">
-                <span id="closeMenuBtn" class="closeBtn"><i class="fas fa-times">ooo</i></span> <!-- Botão de fechar menu -->
-                <a href="#">Item de Menu 1</a>
-                <a href="#">Item de Menu 2</a>
-                <a href="#">Item de Menu 3</a>
-                <a href="#">Item de Menu 4</a>
-                <a href="#">Item de Menu 5</a>
-              </div>
-              <div id="overlay"></div>
-        </article>
+        <section id="barra_de_pesquisa_e_etc_responsivo">
+
+            <!--barra de pesquisa-->
+            <article class="search-container">
+                <article class="search-icon" id="searchIcon">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/kkvxgpti.json"
+                    trigger="hover"
+                    style="width:22px;height:22px">
+                    </lord-icon>
+                </article>
+                <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar...">
+
+                <script src="../../pesquisa.js"></script>
+            </article>
+
+              
+
+            
+            <!--icone sacola-->
+            <article id="article_icone_sacola_cell">
+                
+                    <lord-icon
+                    src="https://cdn.lordicon.com/evyuuwna.json"
+                    trigger="morph"
+                    state="morph-shopping-bag-open"
+                    style="width:26px;height:26px">
+                    </lord-icon>
+
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+            </article>
+
+            <article">
+                <button id="openMenuBtn">
+                
+                
+                  </button>
+                  <div id="menu" class="menu">
+                    <!-- <span id="closeMenuBtn" class="closeBtn"><i class="fas fa-times">ooo</i></span> Botão de fechar menu -->
+                    <section id="section_links_principais_cell">
+                        <article id="article_links_principais_cell_p">
+                            <p>BAZAR</p>
+
+                            <p>VENDER</p>
+
+                            <p>FEMININO</p>
+
+                            <p>MASCULINO</p>
+
+                            <p>INFANTIL</p>
+
+                            <p>ACESSÓRIOS</p>
+                            
+                        </article>
+
+                        <article id="article_links_principais_cell_img">
+                            <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt=""> 
+
+                            <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+
+                            <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+
+                            <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+
+                            <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+                            
+                            <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+                        </article>
+                    </section>
+
+                    <article id="article_saiba_mais_menu_cell">
+                        <p>Participe do nosso marketplace, favorite produtos e os adicione à sacola</p>
+                        <button><p>cadastre-se</p></button>
+                    </article>
+
+                    <!--parte dos icones cell-->
+                    <section id="section_icones_menu_deslizante_cell">
+                        <!--numero um-->
+                        <article id="article_icones_menu_deslizante_cell">
+                            <article>
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/kthelypq.json"
+                                    trigger="hover"
+                                    style="width:30px;height:30px">
+                                </lord-icon>
+                                
+                                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            </article>
+
+                            <article>
+                                <p>Entrar</p>
+                            </article>
+                        </article>
+
+                        <!--numero dois-->
+                        <article id="article_icones_menu_deslizante_cell">
+                            <article>
+                                <lord-icon
+                                src="https://cdn.lordicon.com/evyuuwna.json"
+                                trigger="morph"
+                                state="morph-shopping-bag-open"
+                                style="width:30px;height:30px">
+                                </lord-icon>
+                                
+                                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            </article>
+
+                            <article>
+                                <p>Sacola</p>
+                            </article>
+                        </article>
+
+                        <!--numero tres-->
+                        <article id="article_icones_menu_deslizante_cell">
+                            <article>
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/kthelypq.json"
+                                    trigger="hover"
+                                    style="width:30px;height:30px">
+                                </lord-icon>
+                                
+                                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            </article>
+
+                            <article>
+                                <p>Entrar</p>
+                            </article>
+                        </article>
+
+                        <!--numero quatro-->
+                        <article id="article_icones_menu_deslizante_cell">
+                            <article>
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/kthelypq.json"
+                                    trigger="hover"
+                                    style="width:30px;height:30px">
+                                </lord-icon>
+                                
+                                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            </article>
+
+                            <article>
+                                <p>Entrar</p>
+                            </article>
+                        </article>
+                    </section>
+
+                  </div>
+                  <div id="overlay"></div>
+            </article>
+        </section>
 
     </section>
+
+   
 
     <script src="../../menu_responsivo.js"></script>
 
     <script src="/js/menu_transparente.js"></script>
 
-
+    
 
 
 
@@ -174,10 +311,7 @@
             <video class="video_versace_bazar" src="IMG/imagem_do_vesace_-_bazar/video/dwyane-wade-x-versace-eyewear-video-desk.mp4" height=""  autoplay loop muted></video>
         </article>
 
-        <!--imagem do nick dj bazar responsivo-->
-        <figure>
-            <figure id="imagem_nick_dj_bazar_responsivo"></figure>
-        </figure>
+
 
         <!--parte escrita versace - bazar-->
         <article id="parte_escrita_versace_-_bazar">
@@ -186,11 +320,7 @@
             </figure>
         </article>
         
-        <article id="parte_escrita_versace_-_responsivo">
-            <figure>
-                <img class="parte_escrita_versace_bazar_img_responivo" src="../../IMG/imagem_do_vesace_-_bazar/parte_escrita_nick_dj_bazar_responsivo.png" alt="">
-            </figure>
-        </article>
+        
 
         <!--parte dos botoes-->
         <section id="parte_dos_botoes">
@@ -204,11 +334,27 @@
 
         </section>
 
-        <!--parte dos botoes responsivo-->
-        <section id="parte_dos_botoes_responsivo">
-            <article>
-                <P>COMPRE AGORA</P>
+        <!--parte  responsiva-->
+
+        <!--imagem do nick dj bazar responsivo-->
+        <figure>
+            <figure id="imagem_nick_dj_bazar_responsivo"></figure>
+        </figure>
+
+        <section id="botoes_escrita_di_nick_cell">
+            <article id="parte_escrita_versace_-_responsivo">
+                <figure>
+                    <img class="parte_escrita_versace_bazar_img_responivo" src="../../IMG/imagem_do_vesace_-_bazar/parte_escrita_nick_dj_bazar_responsivo.png" alt="">
+                </figure>
             </article>
+            <section id="section_parte_dos_botoes_responsivo" >
+                <article class="parte_dos_botoes_responsivo">
+                    <P>THE COLLECTION</P>
+                </article>
+                <article class="parte_dos_botoes_responsivo">
+                    <P>COMPRE AGORA</P>
+                </article>
+            </section>
         </section>
     </section>
 
@@ -535,11 +681,62 @@
     <!--watches cell-->
     <section id="section_watche_responsivo_cell">
         <section>
-            <figure>
-                <img class="imagem_do_watches" src="IMG/watches/definitivo/imagem_watches_principal.png" alt="">
-            </figure>
+            <figure id="imagem_principal_watches_cell"></figure>
+            <article id="article_watches_imagem_principal">
+                <figure id="parte_escrita_watches_cell"></figure>
+                <button id="botao_watches_cell">COMPRE AGORA</button>
+            </article>
         </section>
+
+        <!--slide-->
+        <article>
+            <section id="watches_slide">
+            
+                <article class="slider2">
+                    <article class="slides2">
+            
+                        <!--botoes do radio-->
+                            <input type="radio" name="radio-btn" id="radio3">
+                            <input type="radio" name="radio-btn" id="radio4">
+                        <!--slide imagens-->
+                        <article class="slide first2 slide_watches_cell">
+                            <article class="imagem_do_watches_slide"></article>
+                            <figcaption class="paragrafo_figcaption">
+                                <p class="produto_paragrafo_watches1">Full Watches (Usado)</p>
+                                <p class="parte_do_preço_watches">R$ 30,00</p>
+            
+                            </figcaption>
+                        </article>
+                        <article class="slide slide_watches_cell ">
+                            <article class="imagem_do_watches_slide2"></article>
+                                <figcaption class="paragrafo_figcaption">
+                                <p class="produto_paragrafo_watches2">Bolsa Replicada de Grife</p>
+                                <p class="parte_do_preço_watches">R$ 50,00</p>
+            
+                            </figcaption>
+                        </article>
+                        <!--navigation auto-->
+                        <article class="navigation-=auto">
+                            <article class="auto-btn1"></article>
+                            <article class="auto-btn2"></article>
+                        </article>
+                    </article>
+                    <article class="manual-navigation">
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                 </article>
+        </section>
+            
+
+
+
+
+
+       
     </section>
+</section>
+</artcle>
+</artcle>
 
     <!--watches desktop-->
  <section id="parte_como_todo_watches">
@@ -559,45 +756,42 @@
         </article>
 
         <article>
-            <article class="slider">
-
-                <article class="slides">
-                    
-                    <!--botoes do radio-->
-                        <input type="radio" name="radio-btn" id="radio1">
-                        <input type="radio" name="radio-btn" id="radio2">
-
-                    <!--slide imagens-->
-                    <article class="slide first">
-                        <article class="imagem_do_watches_slide"></article>
-                        <figcaption class="paragrafo_figcaption">
-                            <p class="produto_paragrafo_watches1">Full Watches (Usado)</p>
-                            <p class="parte_do_preço_watches">R$ 30,00</p>
-                            
-                        </figcaption>
-                    </article>
-
-                    <article class="slide ">
-                        <article class="imagem_do_watches_slide2"></article>
+            <section id="watches_slide">
+            
+                <article class="slider">
+                    <article class="slides">
+            
+                        <!--botoes do radio-->
+                            <input type="radio" name="radio-btn" id="radio1">
+                            <input type="radio" name="radio-btn" id="radio2">
+                        <!--slide imagens-->
+                        <article class="slide first">
+                            <article class="imagem_do_watches_slide"></article>
                             <figcaption class="paragrafo_figcaption">
-                            <p class="produto_paragrafo_watches2">Bolsa Replicada de Grife</p>
-                            <p class="parte_do_preço_watches">R$ 50,00</p>
-                            
-                        </figcaption>
+                                <p class="produto_paragrafo_watches1">Full Watches (Usado)</p>
+                                <p class="parte_do_preço_watches">R$ 30,00</p>
+            
+                            </figcaption>
+                        </article>
+                        <article class="slide ">
+                            <article class="imagem_do_watches_slide2"></article>
+                                <figcaption class="paragrafo_figcaption">
+                                <p class="produto_paragrafo_watches2">Bolsa Replicada de Grife</p>
+                                <p class="parte_do_preço_watches">R$ 50,00</p>
+            
+                            </figcaption>
+                        </article>
+                        <!--navigation auto-->
+                        <article class="navigation-=auto">
+                            <article class="auto-btn1"></article>
+                            <article class="auto-btn2"></article>
+                        </article>
                     </article>
-
-                    <!--navigation auto-->
-                    <article class="navigation-=auto">
-                        <article class="auto-btn1"></article>
-                        <article class="auto-btn2"></article>
-                    </article>
-
-                </article>
-
-                <article class="manual-navigation">
-                    <label for="radio1" class="manual-btn"></label>
-                    <label for="radio2" class="manual-btn"></label>
-             </article>
+                    <article class="manual-navigation">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                 </article>
+        </section>
             
 
 
@@ -627,6 +821,17 @@
 
 
     <!--italian leather artistry-->
+
+    <!--italian cell-->
+    <section id="section_italian_cell">
+        <figure id="imagem_pricipal_italian_cell"></figure>
+        <article id="article_parte_escrita_italian_cell">
+            <figure id="parte_escrita_italian_cell"></figure>
+            <button id="botao_italian_cell">ÓCULOS 50% OFF*</button>
+        </article>
+    </section>
+
+    <!--italian desktop-->
     <section class="section_italian">
         <article class="italian_leather_artistry">
             <figure id="imagem_italian_leather_artistry">
@@ -647,6 +852,68 @@
 
 
     <!--new in for him-->
+    <!--larezzo cell-->
+    <section id="section_larezzo_cell">
+        <!--slide-->
+        <article class="sliderla">
+            <section class="slides">
+                <!--botoes do radio-->
+                <input type="radio" name="radio-btn" id="radio2_3">
+                <input type="radio" name="radio-btn" id="radio2_4">
+                <!--slides imagens-->
+                <section class="slide firstla slide_larezzo_cell">
+                    <article class="imagem_do_larezzo_slide"></article>
+                    <figcaption class="paragrafo_figcaption_larezzo">
+                        <p class="produto_paragrafo_larezzo1">Larezzo Botas - Bazar</p>
+                        <p class="parte_do_preço_larezzo">R$ 150,00</p>
+                        
+                    </figcaption>
+                </section>
+
+                <section class="slide slide_larezzo_cell">
+                    <article class="imagem_do_larezzo_slide2"></article>
+                    <figcaption class="paragrafo_figcaption_larezzo">
+                        <p class="produto_paragrafo_larezzo2">Larezzo Ternos - Bazar</p>
+                        <p class="parte_do_preço_larezzo">R$ 150,00</p>
+                    
+                    </figcaption>
+                </section>
+                <!--navigation auto-->
+                <article class="navigation-auto2">
+                    <article class="auto-btn1"></article>
+                    <article class="auto-btn2"></article>
+
+                </article>
+            </section>
+            <article class="manual-navigation2">
+                <label for="radio2_3" class="manual-btn2"></label>
+                <label for="radio2_4" class="manual-btn2"></label>
+            </article>
+        </article>
+
+        <section class="setas_new_in_for_him">
+
+            <figure>
+                <img id="setaesquerda" class=" seta seta-esquerda" src="IMG/new_in_for_him/new_in_for_him/seta_esquerda.png" alt="">
+            </figure>
+
+            <figure>
+                <img id="setadireita" class=" seta seta-direita" src="IMG/new_in_for_him/new_in_for_him/seta_direita.png" alt="">
+            </figure>
+        </section>
+
+        <!--imagem principal-->
+        <article id="article_larezzo_cell">
+            <figure id="imagem_principal_larezzo_cell"></figure>
+            <article id="article_parte_escrita_larezzo_cell">
+                <figure id="parte_escrita_larezzo_cell"></figure>
+                <button id="botao_larezzo_cell">COMPRE AGORA</button>
+            </article>
+        </article>
+    </section>
+
+
+    <!--larezzo desktop-->
     <section class="body_new_in_for_him">
         <section class="new_in_for_him">
             <!--imagem new in for him-->

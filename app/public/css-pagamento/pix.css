@@ -53,7 +53,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-#efut{
+#generate-btn{
 width: 430px;
 height: 56px;
 cursor: pointer;
@@ -116,4 +116,19 @@ font-family: 'Poppins', sans-serif;
 
 .rodape{
     margin-top: 10rem;
+}
+
+#qr-code{
+    margin-top: 15px;
+
+}
+
+#qr-code-text{
+    margin-top: 7px;
+    font-size: 14px;
+padding-left: 9px;
+}
+
+#qr-code, #qr-code-text{
+    margin-left: 165px;
 }

@@ -21,7 +21,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+    background-color: rgba(0, 0, 0, 0.767); /* Inicialmente transparente */
     z-index: 1; /* Colocar acima do conteúdo */
     display: none; /* Inicialmente oculto */
   }
@@ -64,7 +64,7 @@
     margin-top: 30px;
 }
 
-form input[type=checkbox]{
+input[type=checkbox]{
     margin-top: 15px;
     margin-bottom: 15px;
     margin-right: 8px;
@@ -76,16 +76,17 @@ form input[type=checkbox]{
 
 #aa, #bb, #cc, #dd{
     font-size: 18px;
+    
 }
 
-#send{
+#denunciarBtn{
     width: 33rem;
     height: 60px;
     cursor: pointer;
     background-color: #212121;
     color: rgb(255, 255, 255);
     border-color: #212121;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: 16px;
     font-weight: 600;
     margin-top:  80px;
@@ -105,19 +106,23 @@ input{
     position: relative;
 }
 
-input::after {
-    position: absolute;
-    content: " ";
-    display: none;
-    border-radius: 3px;
-    width: 20px;
-    height: 20px;
-    background-color: #212121;
-    left: 10px;
-    top: 0;
-    transform: translate(-50%);
-}
-input:checked::after {
-    display: block;
+#mensagem{
+    margin-left: 100px;
 }
 
+#ally {
+    overflow: hidden;
+    z-index: 100;
+}
+
+.background::after {
+    content: " ";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.459); /* Inicialmente transparente */
+    z-index: 99; /* Colocar acima do conteúdo */
+
+}

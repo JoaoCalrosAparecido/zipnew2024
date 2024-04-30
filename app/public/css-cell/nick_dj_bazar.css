@@ -7,7 +7,7 @@
 
 .section_do_vesace_-_bazar{
     position: relative;
-    top: 25px;
+    top: 40px;
 }
 
 /* video de fundo */
@@ -20,11 +20,18 @@
 /*imagem de fundo nick dj bazar responsivo*/
 #imagem_nick_dj_bazar_responsivo {
     background-image: url(../../IMG/imagem_do_vesace_-_bazar/imagem_nick_dj_bazar_responsiva.png);
-    background-size: 560px;
-    width: 560px;
-    height: 600px;
+    background-size: 775px;
+    width: 630px;
+    height: 830px;
     position: relative;
     top: 45px;
+    left: -25px;
+}
+
+/*parte escrita botoes responsivo*/
+#botoes_escrita_di_nick_cell {
+    position: relative;
+    left: -20px;
 }
 
 /* parte escrita versace - bazar */
@@ -50,8 +57,9 @@
 /* parte escrita versace - bazar responsivo */
 #parte_escrita_versace_-_responsivo {
     position: absolute;
-    top:  68%;
-    left: 34%;
+    top:  -250px;
+    left: 200px;
+    
     
 }
 
@@ -74,35 +82,44 @@
 
 
 /*parte dos botoes responsivo*/
-#parte_dos_botoes_responsivo {
+#section_parte_dos_botoes_responsivo {
+    display: flex;
+    column-gap: 3px;
+    position: relative;
+    top: -37px;
+    left: -100px;
+}
+
+.parte_dos_botoes_responsivo {
     position: relative;
     top: -56px;
     left: 41%;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
-    width: 150px;
-    height: 25px;
-
+    width: 165px;
+    height: 35px;
 }
 
-#parte_dos_botoes_responsivo:hover {
+.parte_dos_botoes_responsivo:hover {
     background-color: black;
     color: white;
 }
 
-#parte_dos_botoes_responsivo > article {
+#section_parte_dos_botoes_responsivo > article {
     display: flex;
     justify-content: center;
     align-items: baseline;
     
 }
 
-#parte_dos_botoes_responsivo > article > p {
+#section_parte_dos_botoes_responsivo > article > p {
     font-family: 'Poppins', sans-serif;
-    font-size: 8px;
-    font-weight: bolder;
+    font-size: 12px;
+    font-weight: 700;
     position: relative;
-    top: 8px;
+    top: 10px;
 }
 
 

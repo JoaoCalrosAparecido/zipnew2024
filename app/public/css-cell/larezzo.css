@@ -1,0 +1,192 @@
+
+#section_larezzo_cell {
+    display: block;
+}
+
+/*slides*/
+.sliderla {
+    margin: 0 auto;
+    width: 439px;
+    height: 690px;
+    overflow: hidden;
+    position: relative;
+    top: 200px;
+    left: 9.9%;
+}
+
+.slidesla {
+    width: 400%;
+    height: 700px;
+    display: flex;
+}
+
+.slides2 input {
+    display: none;
+}
+
+.slide2 {
+    width: 25%;
+    position: relative;
+    transition: 1s;
+    
+}
+
+.slide2 img {
+    
+}
+
+.manual-navigation2 {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn2 {
+    border: 2px solid var(--corpartesuperior);
+    padding: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    position: relative;
+    left: -200px;
+    top: 90.5px;
+}
+
+.manual-btn2:not(:last-child) {
+    margin-right: 12px;
+}
+
+.manual-btn2:hover {
+    background-color: var(--corpartesuperior);
+}
+
+#radio2_3:checked ~ .firstla {
+    margin-left: 0;
+}
+
+#radio2_4:checked ~ .firstla {
+    margin-left: -25%;
+}
+
+
+
+
+
+.navigation-auto2 {
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto2 div:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio2_3:checked ~ .navigation-auto .auto-btn1 {
+    background-color: #000000;
+}
+
+#radio2_4:checked ~ .navigation-auto .auto-btn2 {
+    background-color: #000000;
+}
+
+
+/* imagens do slide */
+.imagem_do_new_in_for_him_slide {
+    width: 369px;
+    height: 451px;
+    background-image: url('../IMG/watches/definitivo/slide/bota_preta_prdouto1_watches.png');
+}
+
+.imagem_do_new_in_for_him_slide:hover {
+    background-image: url('../IMG/new_in_for_him/new_in_for_him/relogio_azul_hover_refeito.png');
+}
+
+.imagem_do_new_in_for_him_slide2 {
+    width: 369px;
+    height: 451px;
+    background-image: url('../IMG/new_in_for_him/new_in_for_him/relogio_azul_refeito.png');
+}
+
+.imagem_do_new_in_for_him_slide2:hover {
+    background-image: url('../IMG/new_in_for_him/new_in_for_him/relogio_preto_hover_refeito.png');
+}
+
+/* paragrafos */
+.paragrafos_new_in_for_him {
+    position: absolute;
+    top: 510px;
+    left: 70.5px;
+}
+
+.paragrafo_do_produto_new_in_for_him {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.preco_new_in_for_him {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -5px;
+}
+
+/*cell*/
+.slide_larezzo_cell {
+    width: 440px;
+    height: 700px;
+}
+
+/*imagem principal*/
+
+#article_larezzo_cell {
+    position: relative;
+    top: 150px;
+}
+
+#imagem_principal_larezzo_cell {
+    background-image: url("../IMG/larezzo/imagem_pricipal_cell.png");
+    background-size: 680px;
+    width: 680px;
+    height: 770px;
+    position: relative;
+    left: -35px;
+}
+
+/*parte escrita*/
+#article_parte_escrita_larezzo_cell {
+    position: relative;
+    top: -310px;
+    left: 170px;
+}
+
+#parte_escrita_larezzo_cell {
+    background-image: url("../IMG/larezzo/parte_escrita_cell_refeito.png");
+    background-size: 149px;
+    background-position: center;
+    width: 149px;
+    height: 40px;
+    position: relative;
+    top: -100px;
+    left: 70px;
+}
+
+#botao_larezzo_cell {
+    border: none;
+    width: 195px;
+    height: 32px;
+    background-color: white;
+    color: black;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: -90px;
+    left: 40px;
+}
