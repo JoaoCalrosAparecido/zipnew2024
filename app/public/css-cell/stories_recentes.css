@@ -1,0 +1,97 @@
+#section_stories_recentes_cell {
+    width: 100%;
+    height: 650px;
+    background-color: #F2F2F2;
+    position: relative;
+    top: 300px;
+}
+
+/*parte escrita stories recetes*/
+#figure_stories_recentes_cell {
+    background-image: url("../IMG/stories_recentes/cell/parte_escrita.png");
+    background-size: 240PX;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 420px;
+    height: 70px;
+    position: relative;
+    top: 20px;
+    left: 100px;
+}
+
+/*slide e bolinhas*/
+.carousel-containerST {
+    width: 625px;
+    overflow: hidden;
+    position: relative;
+    margin: 50px auto;
+}
+
+.carousel-slideST {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slideST {
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.rectangleST {
+    width: 100%;
+    height: 600px;
+    
+    margin-right: 20px;
+}
+
+#figure1_slide_stories_recente_cell {
+    background-image: url("../../IMG/stories_recentes/cell/slide_2.png");
+    background-size: 315px;
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 440px;
+}
+
+.carousel-paginationST {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination-itemST {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination-itemST.active2 {
+    background-color: #333;
+}
+
+/*slide parte escrita*/
+.carousel3st {
+    display: none;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+.slide3st {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.slide3st.active3st {
+    opacity: 1;
+}
+.red3st {
+    background-color: red;
+}
+.blue3st {
+    background-color: blue;
+}
