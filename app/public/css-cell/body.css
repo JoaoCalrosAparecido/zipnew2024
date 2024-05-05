@@ -4,6 +4,16 @@
     padding: 0%;
 }
 
+body {
+
+    
+}
+
+/*parte escrita new in*/
+.boddy {
+    display: none;
+}
+
 /*parte superior do desconto na primeira compra*/
 #section_parte_superior {
     
@@ -60,4 +70,11 @@
 /*botoes*/
 #botao_responsivo {
     display: none;
+}
+
+/*dj nick bazar cell*/
+#nick_dj_bazar_cell {
+    display: block;
+    position: relative;
+    top: -30px;
 }

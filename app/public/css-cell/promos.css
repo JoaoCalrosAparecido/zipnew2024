@@ -2,7 +2,9 @@
 
 #section_do_promos_responsivo {
     display: block;
-  }
+    position: relative;
+    top: -63px;
+}
   
 
 #section_promos_responsivo {
@@ -31,7 +33,7 @@ left: 8px;
 }
 
 .imagem_do_slide {
-    width: 300px
+    width: 283px
 
 }
 
@@ -60,7 +62,7 @@ left: 8px;
     position: relative;
     top: -250px;
     display: flex;
-    column-gap: 530px;
+    column-gap: 510px;
 }
 
 #figure_setas_promos_responsivo > img {

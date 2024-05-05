@@ -5,7 +5,8 @@
     height: 840px;
     background-color: #F2F2F2;
     position: relative;
-    top: 300px;
+    top: -450px;
+    display: block;
 }
 
 /*parte escrita stories recetes*/

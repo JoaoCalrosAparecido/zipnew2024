@@ -17,7 +17,7 @@
 
 #menu_principal {
     position: fixed;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.384);
     width: 100%;
     height: 60px;
 

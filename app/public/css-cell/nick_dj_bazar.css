@@ -7,7 +7,7 @@
 
 .section_do_vesace_-_bazar{
     position: relative;
-    top: 40px;
+    top: -23px;
 }
 
 /* video de fundo */
@@ -20,9 +20,9 @@
 /*imagem de fundo nick dj bazar responsivo*/
 #imagem_nick_dj_bazar_responsivo {
     background-image: url(../../IMG/imagem_do_vesace_-_bazar/imagem_nick_dj_bazar_responsiva.png);
-    background-size: 775px;
+    background-size: 885px;
     width: 630px;
-    height: 830px;
+    height: 890px;
     position: relative;
     top: 45px;
     left: -25px;
@@ -69,7 +69,7 @@
 
 /* parte do botão */
 
-#parte_dos_botoes{
+#parte_dos_botoes_nick_dj_responsivo{
     display: none;
     column-gap: 4px;
     position: absolute;

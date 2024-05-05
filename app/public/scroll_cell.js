@@ -1,4 +1,4 @@
-window.addEventListener('scroll', function() {
+/*window.addEventListener('scroll', function() {
     const squares = document.querySelectorAll('.square');
     squares.forEach(square => {
       const rect = square.getBoundingClientRect();
@@ -8,5 +8,5 @@ window.addEventListener('scroll', function() {
         square.style.transform = 'scale(0.8)';
       }
     });
-  });
+  });*/
   

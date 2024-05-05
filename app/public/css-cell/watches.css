@@ -7,7 +7,7 @@
 #section_watche_responsivo_cell {
     display: block;
     position: relative;
-    top: 00px;
+    top: -115px;
 }
 
 /*imagem principal*/
@@ -65,6 +65,7 @@ left: -30px;
 #watches_slide {
     position: relative;
     left: 200px;
+    top: -260px;
 }
 
 /* parte do slide */
@@ -103,7 +104,69 @@ left: -30px;
     height: 288px;
 }
 
+/*imagens*/
+.imagem_do_watches_slide_cell {
+    background-image: url('../IMG/watches/definitivo/slide/bota_preta_prdouto1_watches.png');
+    background-size: 350px;
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 430px;
+    background-color: black;
+}
+ 
+/*imagem hover*/
+.imagem_do_watches_slide_cell:hover {
+    background-image: url('../IMG/watches/definitivo/slide/bota_preta_produto1_watches_hover.png');
+}
 
+.imagem_do_watches_slide2_cell {
+    background-image: url('../IMG/watches/definitivo/slide/bolsa_preta_refeito.png');
+    background-size: 355px;
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 430px;
+    background-color: black;
+}
+
+.imagem_do_watches_slide2_cell:hover {
+    background-image: url('../IMG/watches/definitivo/slide/bolsa_preta_hover_refeito.png');
+}
+
+
+/*parte escrita dos produtos*/
+
+.paragrafo_figcaption_cell{
+    position: relative;
+    top: 10px;
+}
+
+.produto_paragrafo_watches1_cell {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20.5px;
+    font-weight: 600;
+    position: relative;
+    left: 14.5%;
+    top: 5px;
+    padding-bottom: 10px;
+}
+
+.parte_do_preço_watches_cell {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    opacity: 60%;
+    position: relative;
+    left: 31%;
+}
+
+.produto_paragrafo_watches2_cell {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20.5px;
+    font-weight: 600;
+    position: relative;
+    left: 10.5%;
+    top: 5px;
+    padding-bottom: 10px;
+}
 
 
 
@@ -112,9 +175,9 @@ left: -30px;
 /*setas*/
 .setas_watches {
     display: flex;
-    column-gap: 347px;
+    column-gap: 314px;
     position: relative;
-    top: -325px;
+    top: -655px;
     left: 15%;
 }
 
@@ -194,7 +257,7 @@ left: -30px;
 
 .slider2 {
     margin: 0 auto;
-    width: 439px;
+    width: 339px;
     height: 690px;
     overflow: hidden;
     position: relative;
@@ -232,13 +295,13 @@ left: -30px;
 
 .manual-btn {
     border: 2px solid var(--corpartesuperior);
-    padding: 4px;
+    padding: 3.5px;
     border-radius: 10px;
     cursor: pointer;
     transition: 1s;
     position: relative;
-    left: -23%;
-    top: 100px;
+    left: -29%;
+    top: -35px;
 }
 
 .manual-btn:not(:last-child) {
@@ -254,7 +317,7 @@ left: -30px;
 }
 
 #radio4:checked ~ .first2 {
-    margin-left: -25%;
+    margin-left: -32.5%;
 }
 
 
