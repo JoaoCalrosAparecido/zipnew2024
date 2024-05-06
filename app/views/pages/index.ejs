@@ -149,16 +149,19 @@
             <article class="search-container">
                 <article class="search-icon" id="searchIcon">
                     <lord-icon
-                        class="lord-iconbp"
-                        src="https://cdn.lordicon.com/kkvxgpti.json"
-                        trigger="hover"
-                        colors="primary:#ffffff">
-                    </lord-icon>
-                    <lord-icon
-                        class="lord-iconbpz"
-                        src="https://cdn.lordicon.com/kkvxgpti.json"
-                        trigger="hover">
-                    </lord-icon>
+                    id="icon1"
+                    src="https://cdn.lordicon.com/kkvxgpti.json"
+                    trigger="hover"
+                    style="width:20px;height:20px;display:none;">
+                </lord-icon>
+            
+                <lord-icon
+                    id="icon2"
+                    src="https://cdn.lordicon.com/kkvxgpti.json"
+                    trigger="hover"
+                    colors="primary:#ffffff"
+                    style="width:20px;height:20px;">
+                </lord-icon>
 
                 </article>
                 <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar...">
@@ -173,20 +176,34 @@
             <article id="article_icone_sacola_cell">
                 
                     <lord-icon
+                        id="icon3"
+                        src="https://cdn.lordicon.com/evyuuwna.json"
+                        trigger="morph"
+                        state="morph-shopping-bag-open"
+                        
+                        style="width:22px;height:22px;display:none;">
+                    </lord-icon>
+        
+
+                    <lord-icon
+                    id="icon4"
                     src="https://cdn.lordicon.com/evyuuwna.json"
                     trigger="morph"
                     state="morph-shopping-bag-open"
-                    style="width:26px;height:26px">
+                    colors="primary:#ffffff"
+                    style="width:22px;height:22px;">
                     </lord-icon>
 
                     <script src="https://cdn.lordicon.com/lordicon.js"></script>
             </article>
 
             <article">
-                <button id="openMenuBtn">
-                
-                
-                  </button>
+            <article id="openMenuBtn" class="botao_menu_cell">
+            </article>
+            
+
+                   <script src="../../rolagem_menu_cell.js"></script>
+
                   <section id="menu" class="menu">
                     <!-- <span id="closeMenuBtn" class="closeBtn"><i class="fas fa-times">ooo</i></span> Botão de fechar menu -->
                     <section id="section_links_principais_cell">
@@ -323,6 +340,8 @@
     <script src="../../menu_responsivo.js"></script>
 
     <script src="/js/menu_transparente.js"></script>
+
+    <script src="../../rolagem_cell_icones.js"></script>
 
 
     <!--parte da barra de baixo cell-->

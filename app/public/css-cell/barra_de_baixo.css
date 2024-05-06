@@ -1,6 +1,6 @@
 #section_barra_de_baixo_total {
     width: 625px;
-    height:5850px;
+    height:5830px;
     position: absolute;
 }
 
@@ -9,7 +9,7 @@
     height: 40px;
     background-color: #212121a1;
     position: sticky;
-    top: 870px;
+    top: 1110px;
     z-index: 9;
     display: flex;
     align-items: center;
