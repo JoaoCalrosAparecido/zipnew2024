@@ -25,7 +25,6 @@
     height: 890px;
     position: relative;
     top: 45px;
-    left: -25px;
 }
 
 /*parte escrita botoes responsivo*/
@@ -58,7 +57,7 @@
 #parte_escrita_versace_-_responsivo {
     position: absolute;
     top:  -250px;
-    left: 200px;
+    left: 219px;
     
     
 }
@@ -87,7 +86,7 @@
     column-gap: 3px;
     position: relative;
     top: -37px;
-    left: -100px;
+    left: -90px;
 }
 
 .parte_dos_botoes_responsivo {

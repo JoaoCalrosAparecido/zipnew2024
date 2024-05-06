@@ -68,3 +68,9 @@ window.addEventListener("scroll", function(){
     let header = document.querySelector('#imagem_do_icone_da_sacola')
     header.classList.toggle('rolagem',window.scrollY > 300)
 })
+
+/*icene menu cell*/
+window.addEventListener("scroll", function(){
+    let header = document.querySelector('.botao_menu_cell')
+    header.classList.toggle('rolagem',window.scrollY > 300)
+})

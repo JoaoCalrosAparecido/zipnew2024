@@ -36,7 +36,7 @@
 
 /*funcionamento do slide*/
 .carousel-container {
-    width: 625px;
+    width: 650px;
     overflow: hidden;
     position: relative;
     margin: 50px auto;
@@ -48,8 +48,8 @@
 }
 
 .slide {
-    width: 625px;
-    height: 420px;
+    width: 650px;
+    height: 430px;
     overflow: hidden;
     flex: 0 0 auto;
 }
@@ -60,9 +60,39 @@
     display: flex;
     column-gap: 11.5px;
     position: relative;
-    left: -260px;
+    left: -256px;
 }
 
+/*imagens slide*/
+#new_in_responsivo_img1 {
+    height: 376px;
+}
+#new_in_responsivo_img2 {
+    height: 366px;
+}
+#new_in_responsivo_img3 {
+    height: 375px;
+}
+
+#new_in_responsivo_img4 {
+    height: 376px;
+}
+#new_in_responsivo_img5 {
+    height: 366px;
+}
+#new_in_responsivo_img6 {
+    height: 375px;
+}
+
+#new_in_responsivo_img7 {
+    height: 376px;
+}
+#new_in_responsivo_img8 {
+    height: 366px;
+}
+#new_in_responsivo_img9 {
+    height: 375px;
+}
 
 /*texto embaixo da imagem*/
 
