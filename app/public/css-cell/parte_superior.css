@@ -11,12 +11,12 @@
 
 #section_parte_superior {
     width: 100%;
-
+    z-index: 10;
 }
 
 
 #parte_superior{
-    z-index: 1;
+    z-index: 10;
     position: fixed;
     top: 0;
     background-color: black;

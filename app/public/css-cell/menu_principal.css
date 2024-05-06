@@ -4,7 +4,7 @@
 
 #menu_principal_como_todo {
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     opacity: 100%;
     top: 24px;
 }
@@ -51,11 +51,11 @@
     position: fixed;
     top: 3.4%;
     left: 5.8%;
-    background-image: url(/IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
+    background-image: url(../IMG/area_do_menu/logo_zip_menu_parte_branca_2024_refeito.png);
     background-size: 52px;
     z-index: 300;
     width: 52px;
-    height:40px;
+    height:43px;
 }
 
 
@@ -101,6 +101,30 @@
   background-size: cover;
   cursor: pointer;
 }
+
+
+
+.lord-iconbp {
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  fill: #ffffff
+  display: inline-block;
+  background-image: url('https://cdn.lordicon.com/kkvxgpti.json');
+  background-size: cover; /* ou contain, dependendo do efeito desejado */
+  background-repeat: no-repeat;
+}
+.lord-iconbpz {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  background-image: url('https://cdn.lordicon.com/kkvxgpti.json');
+  background-size: cover; /* ou contain, dependendo do efeito desejado */
+  background-repeat: no-repeat;
+  position: relative;
+  top: -26px;
+}
+
 
 .search-input {
   display: none;
