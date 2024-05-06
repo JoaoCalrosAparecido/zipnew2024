@@ -27,9 +27,9 @@
 
 .rodape_cell_conteudo > article {
     display: flex;
-    column-gap: 2px;
+    column-gap: 12px;
     position: relative;
-    left: 10px;
+    left: 12px;
 }
 
 .rodape_cell_conteudo > article > p {
@@ -45,37 +45,32 @@
 }
 
 #figure1_cell_conteudo {
-    background-image: url("../IMG/rodape/cell/imagem_1.svg");
-    background-repeat: no-repeat;
-    background-size: 20px;
-    width: 26px;
-    height: 26px;
+
 }
 
+
+
+
 #figure2_cell_conteudo {
-    background-image: url("../IMG/rodape/cell/imagem_2.svg");
-    background-repeat: no-repeat;
-    background-size: 16px;
-    width: 26px;
-    height: 26px;
+
 }
 
 #figure3_cell_conteudo {
-    background-image: url("../IMG/rodape/cell/imagem_3.svg");
-    background-repeat: no-repeat;
-    background-size: 17px;
-    width: 26px;
-    height: 26px;
+
 }
 
 /*paragrafo*/
+#paragrafo1_cell_conteudo {
+    position: relative;
+    top: 3px;
+}
 
 #paragrafo2_cell_conteudo {
     position: relative;
-    top: 1px;
+    top: 2.5px;
 }
 
 #paragrafo3_cell_conteudo {
     position: relative;
-    top: 3px;
+    top: 2px;
 }

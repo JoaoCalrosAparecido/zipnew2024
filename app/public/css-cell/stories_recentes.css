@@ -250,13 +250,12 @@
     width: 180px;
     height: 50px;
     position: relative;
-    left: 220px;
+    margin: auto;
 }
 
 /*paragrafo*/
 #paragrafo_entre_no_mundo_cell {
     position: relative;
-    left: 110px;
     top: -8px;
 }
 
@@ -265,13 +264,15 @@
     font-size: 11.7px;
     font-weight: 600;
     opacity: 70%;
+    text-align: center;
 }
 
 /*botao email*/
 #section_botao_email_entre_no_mundo_cell {
-    position: relative;
-    left: 220px;
-    top: 25px;
+    position: absolute;
+    top: 158%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #article_botao_email_entre_no_mundo_cell {

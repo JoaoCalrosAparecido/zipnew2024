@@ -204,45 +204,73 @@
 /* imagem da barra de pesquisa */
 
 #imagem_da_barra_de_pesquisa{
-    transform: rotate(315deg);
-    position: relative;
-    top: 1.5px;
-    height: 25px;
-    width: 16px;
-    background-image: url('../IMG/area_do_menu/icone_pesquisa_branco.svg');
+    
 }
 
 #imagem_da_barra_de_pesquisa.rolagem {
-    background-image: url('../IMG/area_do_menu/icone_pesquisa_preto.svg');
+    
 }
 
+/*barra de pesquisa*/
+.search-container_principal {
+    position: fixed;
+    display: block;
+    left: 505px;
+    top: 46px;
+  }
+  
+  .search-icon_principal {
+    width: 18px;
+    height: 18px;
+    
+    background-image: url(''); /* Adicione o caminho da sua imagem de ícone de pesquisa */
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  
+  
+  .search-input_principal {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 25px; /* Mudança de left para right */
+    padding: 5px;
+    border: 1px solid #ccc;
+    width: 150px; /* Largura ajustada */
+  }
+  
+  .search-input_principal:focus {
+    outline: none;
+  
+  }
+  
+  
+  .show {
+    display: block;
+  }
 
 /* imagem do icone de favorito */
 
 #imagem_do_icone_de_favorito{
-    position: relative;
-    top: 2.5px;
-    height: 19px;
-    width: 20px;
-    background-image: url('../IMG/area_do_menu/icone_favorito_branco.svg');
+
 }
 
 #imagem_do_icone_de_favorito.rolagem {
-    background-image: url('../IMG/area_do_menu/icone_favorito_preto.svg');
+    
 }
 
 /* imagem do icone de pessoa */
 
 #imagem_do_icone_de_pessoa {
-    position: relative;
-    top: 0.5px;
-    width: 17px;
-    height: 21px;
-    background-image: url('../IMG/area_do_menu/icone_pessoa_branco.svg');
+
 }
 
 #imagem_do_icone_de_pessoa.rolagem {
-    background-image: url('../IMG/area_do_menu/icone_pessoa_preto.svg');
+
 }
 
 /* imagem do icone da conta */

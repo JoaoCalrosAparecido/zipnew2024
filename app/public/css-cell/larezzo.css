@@ -28,6 +28,12 @@
     height: 770px;
     position: relative;
     left: -35px;
+    transform: scale(0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+#imagem_principal_larezzo_cell:hover {
+    transform: scale(1);
 }
 
 /*parte escrita*/
@@ -50,8 +56,8 @@
 
 #botao_larezzo_cell {
     border: none;
-    width: 195px;
-    height: 32px;
+    width: 190px;
+    height: 30px;
     background-color: white;
     color: black;
     font-size: 10px;
@@ -62,6 +68,11 @@
     left: 40px;
 }
 
+#botao_larezzo_cell:hover {
+    color: white;
+    background-color: black;
+}
+
 #larezzo_slide {
     position: relative;
     left: 200px;
@@ -69,7 +80,10 @@
 }
 
 /* parte do slide */
-
+#larezzo_slide {
+    position: relative;
+    left: 215px;
+}
 
 
 /*imagens*/
@@ -146,7 +160,7 @@
     column-gap: 314px;
     position: relative;
     top: -540px;
-    left: 15%;
+    left: 17.5%;
 }
 
 
