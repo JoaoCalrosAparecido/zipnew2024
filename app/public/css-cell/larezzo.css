@@ -27,7 +27,7 @@
     width: 680px;
     height: 770px;
     position: relative;
-    left: -35px;
+    left: -25px;
     transform: scale(0.8);
     transition: all 0.3s ease-in-out;
 }
@@ -38,9 +38,8 @@
 
 /*parte escrita*/
 #article_parte_escrita_larezzo_cell {
-    position: relative;
-    top: -310px;
-    left: 170px;
+
+   
 }
 
 #parte_escrita_larezzo_cell {
@@ -49,9 +48,10 @@
     background-position: center;
     width: 149px;
     height: 40px;
-    position: relative;
-    top: -100px;
-    left: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #botao_larezzo_cell {
@@ -63,9 +63,10 @@
     font-size: 10px;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
-    position: relative;
-    top: -90px;
-    left: 40px;
+    position: absolute;
+    top: 55.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #botao_larezzo_cell:hover {

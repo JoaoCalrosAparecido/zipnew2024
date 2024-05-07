@@ -7,19 +7,24 @@
 #section_watche_responsivo_cell {
     display: block;
     position: relative;
-    top: -115px;
+    top: -130px;
 }
 
 /*imagem principal*/
+#section_imagens_bt_pe_watches_cell {
+    margin-bottom: 120px;
+}
+
 #imagem_principal_watches_cell {
 background-image: url("../IMG/watches/definitivo/imagem_principal_cell.png");
 background-size: 700px;
 width: 700px;
 height: 770px;
 position: relative;
-left: -30px;
+left: -36px;
 transform: scale(0.8);
 transition: all 0.3s ease-in-out;
+
 }
 
 #imagem_principal_watches_cell:hover {
@@ -29,17 +34,19 @@ transition: all 0.3s ease-in-out;
 #article_watches_imagem_principal {
     position: relative;
     top: -330px;
-    left: 230px;
+
 }
 
 #parte_escrita_watches_cell {
-    background-image: url("../IMG/watches/definitivo/imagem_watches_parte_escrita.png");
-    background-size: 229px;
-    background-position: -30px;
+    background-image: url("../IMG/watches/definitivo/imagem_watches_parte_escrita_refeito.png");
+    background-size: 160px;
+    background-repeat: no-repeat;
     width: 229px;
     height: 100px;
-    position: relative;
-    top: -100px;
+    position: absolute;
+    top: -17px;
+    left: 55%;
+    transform: translate(-50%, -50%);
 }
 
 #botao_watches_cell {
@@ -51,9 +58,10 @@ transition: all 0.3s ease-in-out;
     font-size: 10px;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
-    position: relative;
-    top: -132px;
-    left: -8px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 }
 
