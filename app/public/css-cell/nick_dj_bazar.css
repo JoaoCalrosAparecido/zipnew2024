@@ -21,7 +21,7 @@
 #imagem_nick_dj_bazar_responsivo {
     background-image: url(../../IMG/imagem_do_vesace_-_bazar/imagem_nick_dj_bazar_responsiva.png);
     background-size: 885px;
-    width: 650px;
+    width: 626px;
     height: 890px;
     position: relative;
     top: 45px;
@@ -31,12 +31,16 @@
 #botoes_escrita_di_nick_cell {
     position: relative;
     left: -20px;
+    display: flex;
+    width: 625px;
+    align-items: center;
+    justify-content: center;
 }
 
 /* parte escrita versace - bazar */
 
 #parte_escrita_versace_-_bazar {
-    position: absolute;
+    position: relative;
     top:  66.2%;
     left: 77.5%;
     display: none;

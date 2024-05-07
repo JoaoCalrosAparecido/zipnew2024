@@ -1,4 +1,4 @@
-
+/*
     const searchIcon = document.getElementById('searchIcon_principal');
     const searchInput = document.getElementById('searchInput_principal');
     let isSearchActive = false;
@@ -39,3 +39,4 @@
         isSearchActive = true;
     }
 
+*/
