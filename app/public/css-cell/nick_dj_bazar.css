@@ -30,10 +30,12 @@
 /*parte escrita botoes responsivo*/
 #botoes_escrita_di_nick_cell {
     position: relative;
+    top: 30px;
+    left: -11px;
     width: 625px;
-    height: 250px;
+    height: 00px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -60,8 +62,8 @@
 /* parte escrita versace - bazar responsivo */
 #parte_escrita_versace_-_responsivo {
     position: absolute;
-    top: -150px;
-    width: 220px;
+    top: -140px;
+    width: 210px;
     overflow: hidden;
 }
 
@@ -71,7 +73,7 @@
 
 
 .parte_escrita_versace_bazar_img_responivo {
-    width: 220px;
+    width: 210px;
 }
 
 /* parte do botão */
@@ -81,7 +83,6 @@
     column-gap: 4px;
     position: absolute;
     top: 86.5%;
-    left: 72%;
     width: 420px;
     height: 41px;
 }

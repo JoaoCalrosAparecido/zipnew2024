@@ -29,11 +29,11 @@
 display: flex;
 column-gap: 5px;
 position: relative;
-left: 8px;
+left: 7.5px;
 }
 
 .imagem_do_slide {
-    width: 295px
+    width: 285px
 
 }
 
@@ -62,7 +62,7 @@ left: 8px;
     position: relative;
     top: -250px;
     display: flex;
-    column-gap: 533px;
+    column-gap: 513px;
 }
 
 #figure_setas_promos_responsivo > img {

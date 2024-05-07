@@ -13,6 +13,9 @@
 /*imagem principal*/
 #section_imagens_bt_pe_watches_cell {
     margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #imagem_principal_watches_cell {
@@ -21,7 +24,7 @@ background-size: 700px;
 width: 700px;
 height: 770px;
 position: relative;
-left: -36px;
+
 transform: scale(0.8);
 transition: all 0.3s ease-in-out;
 
@@ -41,7 +44,7 @@ transition: all 0.3s ease-in-out;
     background-image: url("../IMG/watches/definitivo/imagem_watches_parte_escrita_refeito.png");
     background-size: 160px;
     background-repeat: no-repeat;
-    width: 229px;
+    width: 160px;
     height: 100px;
     position: absolute;
     top: -17px;
