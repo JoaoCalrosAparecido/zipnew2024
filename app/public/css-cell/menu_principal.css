@@ -179,6 +179,18 @@
 
 }
 
+/*parte do menu que fica preto*/
+#blackDiv {
+  display: none;
+  position: fixed;
+  top: 83px;
+  left: 0px;
+  width: 625px;
+  height: 1115px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+
 /* Estilo para o ícone de menu */
 #openMenuBtn.active {
   background-image: url("../IMG/area_do_menu/cell/x_de_fechar_refeito-removebg-preview_branco.png");
@@ -225,8 +237,12 @@
 /*conteudo no menu responsivo*/
 
 /*links principais*/
-#section_links_principais_cell {
+.menu {
+  z-index: 10;
+}
 
+#section_links_principais_cell {
+  z-index: 10;
 }
 
 #article_links_principais_cell_p {

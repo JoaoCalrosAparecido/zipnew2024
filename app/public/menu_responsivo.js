@@ -1,25 +1,26 @@
 document.getElementById("openMenuBtn").addEventListener("click", function() {
+  var blackDiv = document.getElementById('blackDiv');
   var menu = document.getElementById("menu");
-  var overlay = document.getElementById("overlay");
   var openMenuBtn = document.getElementById("openMenuBtn");
 
   if (menu.style.right === "0%") {
       menu.style.right = "-66%";
-      overlay.classList.remove('overlay-active');
+      blackDiv.style.display = 'none'; // Esconde a div preta
       openMenuBtn.classList.remove('active');
   } else {
       menu.style.right = "0%";
-      overlay.classList.add('overlay-active');
+      blackDiv.style.display = 'block'; // Mostra a div preta
       openMenuBtn.classList.add('active');
   }
 });
 
+// Outro código para fechar o menu
 document.getElementById("closeMenuBtn").addEventListener("click", function() {
+  var blackDiv = document.getElementById('blackDiv');
   var menu = document.getElementById("menu");
-  var overlay = document.getElementById("overlay");
   var openMenuBtn = document.getElementById("openMenuBtn");
 
   menu.style.right = "-66%";
-  overlay.classList.remove('overlay-active');
+  blackDiv.style.display = 'none'; // Esconde a div preta
   openMenuBtn.classList.remove('active');
 });
