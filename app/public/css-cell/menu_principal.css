@@ -87,13 +87,14 @@
    display: flex;
    position: relative;
    
+   
 }
 
 /*barra de pesquisa*/
 .search-container {
   position: fixed;
   display: block;
-  left: 505px;
+  left: 488px;
   top: 46px;
 }
 
@@ -154,7 +155,7 @@
 .botao_menu_cell {
   position: fixed;
   top: 50px;
-  left: 578px;
+  left: 556px;
   background-image: url('../IMG/area_do_menu/cell/menu_cell-removebg-preview_branco.png');
   background-repeat: no-repeat;
   background-size: 19px;
@@ -397,7 +398,7 @@
 #article_icone_sacola_cell {
   position: relative;
   top: 20px;
-  left: 540px;
+  left: 520px;
   width: 100px;
   height: 100px;
 }

@@ -79,10 +79,20 @@ transition: all 0.3s ease-in-out;
 }
 
 /*parte do slide*/
+#article_watches_slide {
+    display: flex;
+    justify-content: center;
+}
+
 #watches_slide {
     position: relative;
-    left: 215px;
     top: -260px;
+    left: 109px;
+}
+
+.slide_watches_cell {
+    position: relative;
+    
 }
 
 /* parte do slide */
@@ -195,7 +205,7 @@ transition: all 0.3s ease-in-out;
     column-gap: 314px;
     position: relative;
     top: -655px;
-    left: 17.5%;
+    left: 14%;
 }
 
 

@@ -19,6 +19,8 @@
 #article_larezzo_cell {
     position: relative;
     top: -180px;
+    display: flex;
+    justify-content: center;
 }
 
 #imagem_principal_larezzo_cell {
@@ -27,7 +29,6 @@
     width: 680px;
     height: 770px;
     position: relative;
-    left: -25px;
     transform: scale(0.8);
     transition: all 0.3s ease-in-out;
 }
@@ -76,15 +77,13 @@
 
 #larezzo_slide {
     position: relative;
-    left: 200px;
+    left: 193px;
     top: -260px;
+
 }
 
 /* parte do slide */
-#larezzo_slide {
-    position: relative;
-    left: 215px;
-}
+
 
 
 /*imagens*/
@@ -161,7 +160,7 @@
     column-gap: 314px;
     position: relative;
     top: -540px;
-    left: 17.5%;
+    left: 14%;
 }
 
 
