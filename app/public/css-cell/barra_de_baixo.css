@@ -2,6 +2,7 @@
     width: 625px;
     height:5800px;
     position: absolute;
+    display: none;
 }
 
 #section_barra_de_baixo {

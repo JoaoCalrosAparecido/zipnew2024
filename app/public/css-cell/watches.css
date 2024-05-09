@@ -87,7 +87,7 @@ transition: all 0.3s ease-in-out;
 #watches_slide {
     position: relative;
     top: -260px;
-    left: 109px;
+    left: 115px;
 }
 
 .slide_watches_cell {
@@ -205,7 +205,7 @@ transition: all 0.3s ease-in-out;
     column-gap: 314px;
     position: relative;
     top: -655px;
-    left: 14%;
+    left: 14.9%;
 }
 
 
