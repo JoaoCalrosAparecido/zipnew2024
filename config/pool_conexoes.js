@@ -20,3 +20,9 @@ pool.getConnection((err, conn) => {
 })
 
 module.exports = pool.promise()
+
+/*HOST= 'bvd7d0eykrivgn4plcfu-mysql.services.clever-cloud.com'
+USER= 'upa7co6ryymgk4ck'
+PASSWORD= 'DJnklhpdjlAsmHP2lLQT'
+NAME=  'bvd7d0eykrivgn4plcfu'
+PORT= '3306'*/
