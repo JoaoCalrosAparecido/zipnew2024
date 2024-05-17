@@ -43,7 +43,9 @@ router.post("/sign/register", controller.regrasValidacao, function (req, res) {
     // fazer validação dos dados
     // if(nome...)
 
-    const create = connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [nome, cpf, dia, mes, ano, email, senha, confirmsenha, cep]);
+    const nasc = `${ano}-${mes}-${dia}`
+
+    const create = connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, senha, confirmsenha, cep]);
     console.log(create)
     res.redirect('/')
   } catch (error) {
