@@ -36,6 +36,10 @@ router.get("/pagamento", function (req, res) {
   res.render('pages/pagamento', { msg: 'Back-end funcionando' });
 });
 
+router.get("/teste-masculino", function (req, res) {
+  res.render('pages/teste-masculino', { msg: 'Back-end funcionando' });
+});
+
 router.post("/sign/register", controller.regrasValidacao, function (req, res) {
   try {
     const { nome, cpf, dia, mes, ano, email, senha, confirmsenha, cep } = req.body;
