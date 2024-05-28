@@ -4,8 +4,21 @@ const controller = require("../controllers/controllers");
 const { validationResult } = require("express-validator");
 const connection = require("../../config/pool_conexoes")
 
+const bcrypt = require("bcrypt")
+
 router.get("/", function (req, res) {
-  res.render('pages/index', { msg: 'Back-end funcionando' });
+
+  const logado = req.session.userid;
+
+  console.log(logado)
+
+  let estalogado = false;
+
+  if (logado) {
+    estalogado = true
+  }
+
+  res.render('pages/index', { logado: estalogado });
 });
 
 router.get("/bazar", function (req, res) {
@@ -36,20 +49,67 @@ router.get("/pagamento", function (req, res) {
   res.render('pages/pagamento', { msg: 'Back-end funcionando' });
 });
 
-router.post("/sign/register", controller.regrasValidacao, function (req, res) {
+router.post("/sign/register", controller.regrasValidacao, async function (req, res) {
   try {
     const { nome, cpf, dia, mes, ano, email, senha, confirmsenha, cep } = req.body;
 
     // fazer validação dos dados
-    // if(nome...)
+    // if(nome...)+
 
     const nasc = `${ano}-${mes}-${dia}`
 
-    const create = connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, senha, confirmsenha, cep]);
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(senha, salt);
+
+    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, hashedPassword, confirmsenha, cep]);
     console.log(create)
     res.redirect('/')
   } catch (error) {
     console.log(error)
+  }
+});
+
+router.post("/sign/login", async function (req, res) {
+  const { email, senha } = req.body;
+
+  try {
+    const user = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
+
+    if (user.length == 0) {
+      // validação caso o usuario não seja encontrado
+    }
+
+    const senhaCorreta = bcrypt.compareSync(senha, user[0][0].senha)
+
+    if (!senhaCorreta) {
+      // validação senha errada
+    }
+
+    // cria sessão do usuario
+
+    req.session.userid = user[0][0].id_Cliente;
+    return req.session.save(() => {
+      res.redirect("/")
+    })
+
+    //req.session.destroy(() => {
+    //   res.redirect("/);
+    // });
+
+  } catch (error) {
+    console.log("erro:" + error)
+  }
+});
+
+router.get('/sair', function (req, res) {
+  try {
+    console.log('saiu')
+
+    req.session.destroy(() => {
+      res.redirect("/")
+    });
+  } catch (error) {
+    console.log("erro:" + error)
   }
 });
 
@@ -62,4 +122,3 @@ router.post("/delete", function (req, res) {
 });
 
 module.exports = router;
-
