@@ -22,7 +22,7 @@
 
 #menu_principal {
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 95px;
 
@@ -58,7 +58,7 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
@@ -74,7 +74,7 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
@@ -90,7 +90,7 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
@@ -106,7 +106,7 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
@@ -122,7 +122,7 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
@@ -138,7 +138,7 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
@@ -155,7 +155,7 @@
     position: fixed;
     top: 5.4%;
     left: 2%;
-    background-image: url(../IMG/area_do_menu/logo_zip_menu_parte_branca_2024_refeito.png);
+    background-image: url(/IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
     z-index: 300;
     width: 90px;
     height:72px;
