@@ -3,7 +3,6 @@ const router = express.Router();
 const controller = require("../controllers/controllers");
 const { validationResult } = require("express-validator");
 const connection = require("../../config/pool_conexoes")
-
 const bcrypt = require("bcrypt")
 
 router.get("/", function (req, res) {
