@@ -1,8 +1,16 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+const session = require("express-session");
+const FileStore = require("session-file-store")(session);
 
-const env = require("dotenv").config();
+app.use(session({
+  store: new FileStore(),
+  secret: 'fane-hwsn-2tgb-3b23',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
 
 app.use(express.static("./app/public"));
 

@@ -126,6 +126,12 @@
         <article id="barra_de_pesquisa_e_etc">
             <figure id="imagem_da_barra_de_pesquisa_e_etc">
 
+                <% if (logado) { %>
+                    <a href="/sair">sair</a>
+                <% } else { %>
+                    <a href="/login_do_usuario">Entrar</a>
+                <% } %>
+
 
 
                 
