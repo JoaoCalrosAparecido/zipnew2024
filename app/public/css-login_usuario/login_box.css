@@ -1,4 +1,4 @@
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 510px) {
 .login_inteiro {
     position: relative;
     top: 450px;
@@ -112,11 +112,21 @@ form input[type=password] {
     font-size: 14px;
 
 }
+#linha{
+    position: absolute;
+    top: 55%;
+      left: 100%;
+      transform: translate(-50%,-50%);
+      font-family: 'Poppins', sans-serif;
+      height: 22rem;
+    color: rgb(170, 170, 170);
+  }
 }
 
-@media only screen and (max-width: 500px) {
-    body {
-      background-color: lightblue;
+@media only screen and (max-width: 510px) {
+    #linha{
+        display: none;
     }
+
   }
 

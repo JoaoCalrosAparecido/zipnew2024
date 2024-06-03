@@ -76,15 +76,6 @@
     margin-top: 35px;
 }
 
-#linha{
-  position: absolute;
-  top: 55%;
-    left: 100%;
-    transform: translate(-50%,-50%);
-    font-family: 'Poppins', sans-serif;
-    height: 22rem;
-  color: rgb(170, 170, 170);
-}
 
 
 .user{
