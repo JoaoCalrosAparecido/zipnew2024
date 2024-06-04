@@ -6,7 +6,7 @@
     position: fixed;
     z-index: 10;
     opacity: 100%;
-    top: 24px;
+    top: 2.4vh;
 }
 
 .menu_como_todo{
@@ -18,8 +18,8 @@
 #menu_principal {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.384);
-    width: 100%;
-    height: 60px;
+    width: 100vw;
+    height: 7vh;
 
     
 }
@@ -49,12 +49,12 @@
 
 #logo_zip_menu {
     position: fixed;
-    top: 3.7%;
+    top: 3.2%;
     left: 4%;
     background-image: url(../IMG/area_do_menu/logo_zip_menu_parte_branca_2024_refeito.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 52px;
+    background-size: 40px;
     z-index: 300;
     width: 52px;
     height:43px;
@@ -94,8 +94,8 @@
 .search-container {
   position: fixed;
   display: block;
-  left: 488px;
-  top: 46px;
+  left: 79vw;
+  top: 5vh;
 }
 
 .search-icon {
@@ -117,9 +117,9 @@
   position: absolute;
   top: 0;
   right: 25px; /* Mudança de left para right */
-  padding: 5px;
+  padding: 2px;
   border: 1px solid #ccc;
-  width: 150px; /* Largura ajustada */
+  width: 30vw; /* Largura ajustada */
 }
 
 .search-input:focus {
@@ -154,13 +154,13 @@
 
 .botao_menu_cell {
   position: fixed;
-  top: 50px;
-  left: 556px;
+  top: 5vh;
+  left: 92vw;
   background-image: url('../IMG/area_do_menu/cell/menu_cell-removebg-preview_branco.png');
   background-repeat: no-repeat;
-  background-size: 19px;
-  width: 100px; /* Ajuste conforme necessário */
-  height: 100px; /* Ajuste conforme necessário */
+  background-size: 3.9vw;
+  width: 4vw; /* Ajuste conforme necessário */
+  height: 2vh; /* Ajuste conforme necessário */
   border: none;
   outline: none;
   cursor: pointer;
@@ -183,7 +183,7 @@
 #blackDiv {
   display: none;
   position: fixed;
-  top: 83px;
+  top: 9.4vh;
   left: 0px;
   width: 625px;
   height: 1115px;
@@ -194,11 +194,11 @@
 /* Estilo para o ícone de menu */
 #openMenuBtn.active {
   background-image: url("../IMG/area_do_menu/cell/x_de_fechar_refeito-removebg-preview_branco.png");
-  background-size: 14px;
-  width: 14px;
+  background-size: 2.6vw;
+  width: 3.5vw;
   height: 14px;
   background-position: center;
-  top: 47px;
+  top: 4.9vh;
 }
 
 #openMenuBtn.active.rolagem {
@@ -238,6 +238,7 @@
 
 /*links principais*/
 .menu {
+  top: 9.3vh;
   z-index: 10;
 }
 
@@ -413,9 +414,9 @@
 /*sacola*/
 #article_icone_sacola_cell {
   position: relative;
-  top: 20px;
-  left: 520px;
-  width: 100px;
+  top: 2.35vh;
+  left: 85.4vw;
+  width: 1vw;
   height: 100px;
 }
 
