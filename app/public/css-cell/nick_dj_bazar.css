@@ -17,23 +17,90 @@
     display: none;
 }
 
+/*cell*/
+#nick_dj_bazar_cell {
+    width: 100vw;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*slide*/
+
+.slideshow-container {
+    position: relative;
+    top: 4.5vh;
+    max-width: 100vw;
+    height: 400vh;
+    overflow: hidden;
+}
+
+.slide_dj_cell {
+    display: block;
+}
+
+.slide1_dj_cell {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.slide2_dj_cell {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(255, 0, 157);
+}
+
+.slide2_dj_cell > video {
+    position: relative;
+    left: -20vh;
+    width: 100vh;
+    height: 110vh;
+}
+
+.slide_dj_cell img {
+    width: 100%;
+    height: auto;
+}
+
+.dots {
+    position: relative;
+    top: 1.3vh;
+    z-index: 3;
+}
+
+.dot {
+    display: inline-block;
+    width: 2.4vw;
+    height: 2.4vw;
+    margin: 1vw;
+    background-color: #B6B7BA;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #fff6f6;
+}
+
+
 /*imagem de fundo nick dj bazar responsivo*/
 #imagem_nick_dj_bazar_responsivo {
     background-image: url(../../IMG/imagem_do_vesace_-_bazar/imagem_nick_dj_bazar_responsiva.png);
-    background-size: 885px;
-    width: 626px;
-    height: 890px;
+    background-size: 100vh;
+    background-position: bottom center;
+    width: 100vw;
+    height: 100vh;
     position: relative;
-    top: 45px;
 }
 
 /*parte escrita botoes responsivo*/
 #botoes_escrita_di_nick_cell {
     position: relative;
-    top: 30px;
-    left: -11px;
-    width: 625px;
-    height: 00px;
+    top: 5vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,10 +127,13 @@
 }
 
 /* parte escrita versace - bazar responsivo */
+#figure_escrita_versace_-_responsivo {
+    
+}
 #parte_escrita_versace_-_responsivo {
     position: absolute;
-    top: -180px;
-    width: 210px;
+    top: -28vh;
+    width: 50vw;
     overflow: hidden;
 }
 
@@ -73,10 +143,10 @@
 
 
 .parte_escrita_versace_bazar_img_responivo {
-    width: 210px;
+    width: 50vw;
 }
 
-/* parte do botão */
+/* parte do botão computador */
 
 #parte_dos_botoes_nick_dj_responsivo{
     display: none;
@@ -92,24 +162,28 @@
 /*parte dos botoes responsivo*/
 #section_parte_dos_botoes_responsivo {
     display: flex;
-    column-gap: 3px;
+    column-gap: 0.5vw;
     position: relative;
-    top: -70px;
+    top: -22vh;
 
 }
 
 .parte_dos_botoes_responsivo {
     position: relative;
-    top: -56px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
-    width: 165px;
-    height: 35px;
+    width: 35.3vw;
+    height: 8vw;
 }
 
 .parte_dos_botoes_responsivo:hover {
+    background-color: black;
+    color: white;
+}
+
+.parte_dos_botoes_responsivo:active {
     background-color: black;
     color: white;
 }
@@ -123,12 +197,28 @@
 
 #section_parte_dos_botoes_responsivo > article > p {
     font-family: 'Poppins', sans-serif;
-    font-size: 12px;
+    font-size: 2.7vw;
     font-weight: 700;
     position: relative;
-    top: 10px;
+    top: 1.1vh;
 }
 
+/*controles*/
+#section_controeles_cell {
+    position: relative;
+    top: -2.8vh;
+    width: 100vw;
+    height: 20vh;
+
+
+}
+
+#blur {
+    width: 100vw;
+    height: 5vh;
+    background-color: rgba(255, 255, 255, 0.322);
+    backdrop-filter: blur(15px);
+}
 
 /* section do vesace - bazar */
 
