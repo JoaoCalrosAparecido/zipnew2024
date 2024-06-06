@@ -1,0 +1,36 @@
+
+.login_inteiro {
+    position: relative;
+    top: 37rem;
+    max-width: 200vw;
+    margin: 0;
+
+
+}
+#Login{
+    left: 50%;
+    padding: 40px;
+    border-radius: 0;
+    max-width: 80vh;
+}
+
+#box{
+    position:relative;
+    top: 17rem;
+    left: 45%;
+    padding: 20px;
+    
+}
+
+#sign{
+
+}
+
+.section_voce_tambem_vai_gostar {
+    position: relative;
+    top: 75rem;
+}
+
+#LostKey{
+    padding-left: 70px;
+}
