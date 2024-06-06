@@ -9,34 +9,34 @@
 #parte_do_new_in_responsivo {
     display: block;
     position: relative;
-    top: -30px;
+    top: -8vh;
 }
 
 #parte_do_new_in_responsivo_slide {
     position: relative;
-    top: 140px;
+    top: ;
 }
 
 #new_in_responsivo_slide {
     position: relative;
-    top: -175px;
+    top: ;
 }
 
 /*parte escrita new in*/
 #imagem_new_in_responsivo {
     position: relative;
-    top: -70px;
+    top: 3vh;
     display: flex;
     justify-content: center;
 }
 
 #imagem_new_in_responsivo > img {
-    width: 180px;
+    width: 16vw;
 }
 
 /*funcionamento do slide*/
 .carousel-container {
-    width: 650px;
+    width: 100vw;
     overflow: hidden;
     position: relative;
     margin: 50px auto;
@@ -48,7 +48,7 @@
 }
 
 .slide {
-    width: 650px;
+    width: 100vw;
     height: 430px;
     overflow: hidden;
     flex: 0 0 auto;
@@ -60,45 +60,45 @@
     display: flex;
     column-gap: 11.5px;
     position: relative;
-    left: -270px;
+    left: -41.5vw;
 }
 
 /*imagens slide*/
 #new_in_responsivo_img1 {
-    height: 376px;
+    height: 59.3vw;
 }
 #new_in_responsivo_img2 {
-    height: 366px;
+    height: 60vw;
 }
 #new_in_responsivo_img3 {
-    height: 375px;
+    height: 62vw;
 }
 
 #new_in_responsivo_img4 {
-    height: 376px;
+    height: 59.3vw;
 }
 #new_in_responsivo_img5 {
-    height: 366px;
+    height: 60vw;
 }
 #new_in_responsivo_img6 {
-    height: 375px;
+    height: 59.3vw;
 }
 
 #new_in_responsivo_img7 {
-    height: 376px;
+    height: 59.3vw;
 }
 #new_in_responsivo_img8 {
-    height: 366px;
+    height: 60vw;
 }
 #new_in_responsivo_img9 {
-    height: 375px;
+    height: 60vw;
 }
 
 /*texto embaixo da imagem*/
 
 .figcapition_new_in {
     position: relative;
-    left: 146px;
+    left: 22vw;
     top: 8px;
 }
 
@@ -110,12 +110,12 @@
 
 #figcapition_new_in2 {
     position: relative;
-    left: 125px;
+    left: 18vw;
 }
 
 #figcapition_new_in3 {
     position: relative;
-    left: 130px;
+    left: 19vw;
 }
 
 
@@ -123,7 +123,7 @@
 
 /**/
 .rectangle {
-    width: 100%;
+    width: 100vw;
     height: 365px;
     background-color: #3498db;
     margin-right: 20px;
@@ -131,18 +131,18 @@
 
 .carousel-pagination {
     position: relative;
-    top: -50px;
+    top: -15vh;
     text-align: center;
-    margin-top: 20px;
+    margin-top: ;
 }
 
 .pagination-item {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 2.1vw;
+    height: 2.1vw;
     background-color: #ccc;
     border-radius: 50%;
-    margin: 0 5px;
+    margin: 0.4vw;
     cursor: pointer;
 }
 
