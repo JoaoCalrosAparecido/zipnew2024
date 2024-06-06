@@ -98,14 +98,15 @@
 
 .figcapition_new_in {
     position: relative;
-    left: 22vw;
-    top: 8px;
+    left: 21.5vw;
+    top: 1vh;
 }
 
 .figcapition_new_in > p {
-    font-size: 15px;
+    font-size: 3.3vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+
 }
 
 #figcapition_new_in2 {
@@ -122,19 +123,18 @@
 
 
 /**/
-.rectangle {
-    width: 100vw;
-    height: 365px;
-    background-color: #3498db;
-    margin-right: 20px;
+
+#section_carrousel {
+    position: relative;
+    top: -15vh;
 }
 
 .carousel-pagination {
     position: relative;
-    top: -15vh;
-    text-align: center;
-    margin-top: ;
+    left: 45vw;
 }
+
+
 
 .pagination-item {
     display: inline-block;

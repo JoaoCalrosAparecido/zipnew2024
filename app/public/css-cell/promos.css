@@ -3,70 +3,69 @@
 #section_do_promos_responsivo {
     display: block;
     position: relative;
-    top: -40px;
 }
   
 
 #section_promos_responsivo {
     display: block;
     position: relative;
-    top: -135px;
+    top: -12vh;
 }
 
 /*parte escrita*/
 #parte_escrita_promos_responsivo {
     position: relative;
-    top: 65px;
-    left: -28px;
+    left: 3.5vw;
+    top: -1.4vh;
 }
 
 #parte_escrita_promos_responsivo > img {
-    width: 180px;
+    width: 20vw;
 }
 
 /*slide*/
 #promo_responsivo_slide {
 display: flex;
-column-gap: 5px;
+column-gap: 0.7vw;
 position: relative;
-left: 7.5px;
+left: 1.8vw;
 }
 
 .imagem_do_slide {
-    width: 285px
+    width: 46vw
 
 }
 
 /*figcaption*/
 #figcaption_promos_responsivo {
     position: relative;
-    top: 12px;
-    left: 8px;
+    top: 1.5vh;
+    left: 2.7vw;
 }
 
 #paragrafo_promos_responsivo {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 12px;
-    margin-bottom: 5px;
+    font-size: 2.7vw;
+    margin-bottom: 0.2vh;
 }
 
 #preco_promos_responsivo {
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
+    font-size: 2.8vw;
     opacity: 90%;
 }
 
 /*setas*/
 #figure_setas_promos_responsivo {
     position: relative;
-    top: -250px;
+    top: -24vh;
     display: flex;
-    column-gap: 513px;
+    column-gap: 79vw;
 }
 
 #figure_setas_promos_responsivo > img {
-    width: 45px;
+    width: 10vw;
 }
 
 #rotacao_seta_promos_responsivo {
