@@ -3,16 +3,22 @@
 #section_italian_cell {
     display: block;
     position: relative;
-    top: -90px;
+    top: -20vh;
 }
  /*parte da imagem*/
 #imagem_pricipal_italian_cell {
     background-image: url("../IMG/italian_leather_artistry/definitivo/imagem_principal_cell.png");
-    background-size: 670px;
     width: 670px;
-    height: 650px;
+    height: 70vh;
     position: relative;
     left: -30px;
+    background-attachment: fixed;
+    background-size: 110vh;
+
+}
+
+.class_imagem_italian_leather_artistry {
+
 }
 
 /*parte escrita*/
