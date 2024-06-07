@@ -7,62 +7,56 @@
 #section_watche_responsivo_cell {
     display: block;
     position: relative;
-    top: -130px;
 }
 
 /*imagem principal*/
 #section_imagens_bt_pe_watches_cell {
-    margin-bottom: 120px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #imagem_principal_watches_cell {
-background-image: url("../IMG/watches/definitivo/imagem_principal_cell.png");
-background-size: 700px;
-width: 700px;
-height: 770px;
-position: relative;
+    background-image: url("../IMG/watches/definitivo/imagem_principal_cell.png");
+    background-size: 68vh;
+    width: 125vw;
+    height: 74vh;
+    position: relative;
 
-transform: scale(0.8);
-transition: all 0.3s ease-in-out;
 
 }
 
-#imagem_principal_watches_cell:hover {
-    transform: scale(1);
-}
+
+
 
 #article_watches_imagem_principal {
     position: relative;
-    top: -330px;
+    top: -30vh;
 
 }
 
 #parte_escrita_watches_cell {
     background-image: url("../IMG/watches/definitivo/imagem_watches_parte_escrita_refeito.png");
-    background-size: 160px;
+    background-size: 29vw;
     background-repeat: no-repeat;
-    width: 160px;
-    height: 100px;
+    width: 29vw;
+    height: 6vw;
     position: absolute;
-    top: -17px;
-    left: 55%;
+    top: -4.5vh;
     transform: translate(-50%, -50%);
 }
 
 #botao_watches_cell {
     border: none;
-    width: 190px;
-    height: 30px;
+    width: 38vw;
+    height: 6vw;
     background-color: white;
     color: black;
-    font-size: 10px;
+    font-size: 2.2vw;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     position: absolute;
-    top: -10px;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -86,7 +80,7 @@ transition: all 0.3s ease-in-out;
 
 #watches_slide {
     position: relative;
-    top: -260px;
+
     left: 115px;
 }
 

@@ -1,16 +1,23 @@
 
 
-@media screen and (max-width: 391px)   {
+@media screen and (min-width: 362px) and (max-width: 391px)   {
     #section_carrousel {
         position: relative;
         top: -23vh;
     }
 }
 
-@media screen and (max-width: 361px)   {
+@media screen and (min-width: 250px) and (max-width: 361px)   {
     #section_carrousel {
         position: relative;
         top: -30vh;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 413px)   {
+    #section_carrousel {
+        position: relative;
+        top: -20vh;
     }
 }
 

@@ -1,0 +1,32 @@
+@media screen and (min-width: 400px) and (max-width: 415px) {
+    #imagem_principal_watches_cell {
+        background-size: 66vh;
+        width: 135vw;
+        height: 72vh;
+        position: relative;
+    
+    
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 360px) {
+    #imagem_principal_watches_cell {
+        background-size: 66vh;
+        width: 135vw;
+        height: 72vh;
+        position: relative;
+    
+    
+    }
+}
+
+@media screen and (min-width: 380px) and (max-width: 391px) {
+    #imagem_principal_watches_cell {
+        background-size: 66vh;
+        width: 135vw;
+        height: 72vh;
+        position: relative;
+    
+    
+    }
+}
