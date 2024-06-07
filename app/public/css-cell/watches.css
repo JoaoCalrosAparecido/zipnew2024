@@ -92,7 +92,7 @@
 /* parte do slide */
 .primeiro_slide {
     position: relative;
-    top: -;
+
 }
 
 /* parte escrita new in for her */
@@ -193,9 +193,9 @@
 /*setas*/
 .setas_watches {
     display: flex;
-    column-gap: 68vw;
+    column-gap: 63vw;
     position: relative;
-    top: -60vh;
+    top: -55vh;
     left: 6vw;
 }
 
