@@ -80,8 +80,8 @@
 
 #watches_slide {
     position: relative;
-
-    left: 115px;
+    top: -20vh;
+    left: 25vw;
 }
 
 .slide_watches_cell {
@@ -92,7 +92,7 @@
 /* parte do slide */
 .primeiro_slide {
     position: relative;
-    top: -590px;
+    top: -;
 }
 
 /* parte escrita new in for her */
@@ -108,8 +108,7 @@
 /*imagem_pricipal do new in for her*/
 .imagem_do_watches {
     position: relative;
-    width: 803px;
-    height: 1029px;
+    width: 100vw;
 }
 
 /*parte escrita watches*/
@@ -128,11 +127,10 @@
 /*imagens*/
 .imagem_do_watches_slide_cell {
     background-image: url('../IMG/watches/definitivo/slide/bota_preta_prdouto1_watches.png');
-    background-size: 350px;
+    background-size: 70vw;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 430px;
-    background-color: black;
+    width: 70vw;
+    height: 80vw;
 }
  
 /*imagem hover*/
@@ -142,11 +140,10 @@
 
 .imagem_do_watches_slide2_cell {
     background-image: url('../IMG/watches/definitivo/slide/bolsa_preta_refeito.png');
-    background-size: 355px;
+    background-size: 71vw;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 430px;
-    background-color: black;
+    width: 71vw;
+    height: 80vw;
 }
 
 .imagem_do_watches_slide2_cell:hover {
@@ -158,17 +155,17 @@
 
 .paragrafo_figcaption_cell{
     position: relative;
-    top: 10px;
+    top: 2vh;
 }
 
 .produto_paragrafo_watches1_cell {
     font-family: 'Poppins', sans-serif;
-    font-size: 20.5px;
+    font-size: 4vw;
     font-weight: 600;
     position: relative;
-    left: 14.5%;
-    top: 5px;
-    padding-bottom: 10px;
+    left: 14vw;
+    top: 1vh;
+    padding-bottom: 2vh;
 }
 
 .parte_do_preço_watches_cell {
@@ -176,17 +173,17 @@
     font-size: 16px;
     opacity: 60%;
     position: relative;
-    left: 31%;
+    left: 27vw;
 }
 
 .produto_paragrafo_watches2_cell {
     font-family: 'Poppins', sans-serif;
-    font-size: 20.5px;
+    font-size: 4vw;
     font-weight: 600;
     position: relative;
-    left: 10.5%;
-    top: 5px;
-    padding-bottom: 10px;
+    left: 11vw;
+    top: 1vh;
+    padding-bottom: 2vh;
 }
 
 
@@ -196,10 +193,10 @@
 /*setas*/
 .setas_watches {
     display: flex;
-    column-gap: 314px;
+    column-gap: 68vw;
     position: relative;
-    top: -655px;
-    left: 14.9%;
+    top: -60vh;
+    left: 6vw;
 }
 
 
@@ -278,8 +275,8 @@
 
 .slider2 {
     margin: 0 auto;
-    width: 339px;
-    height: 690px;
+    width: 70vw;
+    
     overflow: hidden;
     position: relative;
     top: 220px;
@@ -306,6 +303,12 @@
     
 }
 
+#bolinhas_watches_cell {
+    position: relative;
+    top: -5vh;
+    left: -1.5vw;
+}
+
 .manual-navigation {
     position: absolute;
     width: 800px;
@@ -321,8 +324,8 @@
     cursor: pointer;
     transition: 1s;
     position: relative;
-    left: -29%;
-    top: -35px;
+
+    top: -350px;
 }
 
 .manual-btn:not(:last-child) {
@@ -338,8 +341,9 @@
 }
 
 #radio4:checked ~ .first2 {
-    margin-left: -32.5%;
+    margin-left: -25%;
 }
+
 
 
 
@@ -443,6 +447,6 @@
 
 /*slide*/
 .slide_watches_cell{
-    width: 440px;
+    width: 70vw;
     height: 700px;
 }
