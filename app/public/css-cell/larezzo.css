@@ -89,30 +89,29 @@
 /*imagens*/
 .imagem_do_larezzo_slide_cell {
     background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/bota_produto1_larezzo.png');
-    background-size: 350px;
+    background-size: 70vw;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 430px;
-    background-color: black;
+    width: 70vw;
+    height: 80vw;
 }
- 
 /*imagem hover*/
-.imagem_do_larezzo_slide_cell:hover {
+/*
+.imagem_do_larezzo_slide_cell:active {
     background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/bota_produto1_larezzo_hover.png');
 }
+*/
 
 .imagem_do_larezzo_slide2_cell {
     background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo.png');
-    background-size: 355px;
+    background-size: 71vw;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 430px;
-    background-color: black;
+    width: 71vw;
+    height: 80vw;
 }
 
-.imagem_do_larezzo_slide2_cell:hover {
+/*.imagem_do_larezzo_slide2_cell:active {
     background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo_hover.png');
-}
+}*/
 
 
 /*parte escrita dos produtos*/
@@ -124,12 +123,12 @@
 
 .produto_paragrafo_larezzo1_cell {
     font-family: 'Poppins', sans-serif;
-    font-size: 20.5px;
+    font-size: 4vw;
     font-weight: 600;
     position: relative;
-    left: 14.5%;
-    top: 5px;
-    padding-bottom: 10px;
+    left: 13vw;
+    top: 1vh;
+    padding-bottom: 2vh;
 }
 
 .parte_do_preço_larezzo_cell {
@@ -137,17 +136,17 @@
     font-size: 16px;
     opacity: 60%;
     position: relative;
-    left: 31%;
+    left: 26vw;
 }
 
 .produto_paragrafo_larezzo2_cell {
     font-family: 'Poppins', sans-serif;
-    font-size: 20.5px;
+    font-size: 4vw;
     font-weight: 600;
     position: relative;
-    left: 10.5%;
-    top: 5px;
-    padding-bottom: 10px;
+    left: 9vw;
+    top: 1vh;
+    padding-bottom: 2vh;
 }
 
 
@@ -157,10 +156,10 @@
 /*setas*/
 .setas_larezzo {
     display: flex;
-    column-gap: 314px;
+    column-gap: 64vw;
     position: relative;
-    top: -540px;
-    left: 14.9%;
+    top: -55vh;
+    left: 6vw;
 }
 
 
@@ -178,12 +177,12 @@
 
 .sliderla {
     margin: 0 auto;
-    width: 339px;
-    height: 690px;
+    width: 70vw;
+
     overflow: hidden;
     position: relative;
-    top: 220px;
-    left: -32%;
+    top: 40vh;
+    left: -400vw;
 }
 
 .slides2la {
@@ -200,6 +199,12 @@
 
 .slide img {
     
+}
+
+#larezzo_bolinha_cell {
+    position: relative;
+    top: -5vh;
+    left: -1.5vw;
 }
 
 .manual-navigation {
@@ -234,7 +239,7 @@
 }
 
 #radio4la:checked ~ .first2 {
-    margin-left: -32.5%;
+    margin-left: -25%;
 }
 
 
