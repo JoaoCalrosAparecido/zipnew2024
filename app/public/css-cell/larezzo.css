@@ -9,7 +9,7 @@
 #section_larezzo_cell {
     display: block;
     position: relative;
-    top: -285px;
+    top: -px;
 
 }
 
@@ -77,6 +77,7 @@
 
 #larezzo_slide {
     position: relative;
+    height: 70vw;
     left: 197px;
     top: -260px;
 
@@ -103,7 +104,7 @@
 
 .imagem_do_larezzo_slide2_cell {
     background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo.png');
-    background-size: 71vw;
+    background-size: 70vw;
     background-repeat: no-repeat;
     width: 71vw;
     height: 80vw;
@@ -174,15 +175,19 @@
 
 /* slide */
 
+.slide_larezzo_cell {
+    width: 70vw;
+    height: 700px;
+    position: relative;
+}
 
 .sliderla {
-    margin: 0 auto;
     width: 70vw;
-
+    height: 105vh;
     overflow: hidden;
     position: relative;
-    top: 40vh;
-    left: -400vw;
+    left: -25.5vw;
+
 }
 
 .slides2la {
@@ -203,16 +208,13 @@
 
 #larezzo_bolinha_cell {
     position: relative;
-    top: -5vh;
-    left: -1.5vw;
+    top: 5vh;
+    z-index: 3;
+
 }
 
 .manual-navigation {
-    position: absolute;
-    width: 800px;
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
+   
 }
 
 .manual-btn {
@@ -222,7 +224,7 @@
     cursor: pointer;
     transition: 1s;
     position: relative;
-    left: -29%;
+
     top: -35px;
 }
 

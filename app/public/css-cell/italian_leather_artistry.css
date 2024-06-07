@@ -23,33 +23,35 @@
 
 /*parte escrita*/
 #article_parte_escrita_italian_cell {
-
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 
 #parte_escrita_italian_cell {
     background-image: url("../IMG/italian_leather_artistry/definitivo/parte_escrita_cell_refeito.png");
-    background-size: 230px;
+    background-size: 50vw;
     background-repeat: no-repeat;
     background-position: center;
-    width: 230px;
-    height: 90px;
+    width: 50vw;
+    height: 18vw;
     position: relative;
-    top: -195px;
-    left: 205px;
+    top: -25vh;
+    margin: auto;
 }
 
 #botao_italian_cell {
     border: none;
-    width: 195px;
-    height: 32px;
+    width: 40VW;
+    height: 4VH;
     background-color: white;
     color: black;
-    font-size: 10px;
+    font-size: 2.3VW;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    top: -180px;
-    left: 220px;
+    top: -23vh;
+    margin: auto;
 }
 
 #botao_italian_cell:hover {

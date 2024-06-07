@@ -82,7 +82,7 @@
 #watches_slide {
     position: relative;
     top: -20vh;
-    left: 23vw;
+    left: 22.5vw;
 }
 
 .slide_watches_cell {
@@ -195,8 +195,15 @@
     display: flex;
     column-gap: 64vw;
     position: relative;
-    top: -55vh;
+    top: -52.5vh;
     left: 6vw;
+}
+
+@media screen and (min-height:799px) and (max-height:850px) {
+    .setas_watches {
+        position: relative;
+        top: -57.5vh;
+    }
 }
 
 
@@ -279,7 +286,7 @@
     
     overflow: hidden;
     position: relative;
-    top: 220px;
+    top: 27vh;
     left: -32%;
 }
 
@@ -306,10 +313,10 @@
 #bolinhas_watches_cell {
     position: relative;
     top: -5vh;
-    left: -1.5vw;
+    left: -10.5vw;
 }
 
-.manual-navigation {
+.manual-navigationla {
     position: absolute;
     width: 800px;
     margin-top: -40px;
