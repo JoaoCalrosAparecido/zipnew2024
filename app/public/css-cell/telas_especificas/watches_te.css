@@ -1,5 +1,5 @@
 /*imagem principal*/
-@media screen and (min-width: 400px) and (max-width: 415px) {
+@media screen and (min-width: 410px) and (max-width: 415px) {
     #imagem_principal_watches_cell {
         background-size: 66vh;
         width: 135vw;
@@ -32,9 +32,20 @@
     }
 }
 
+@media screen and (min-width: 400px) and (max-width: 409px) {
+    #imagem_principal_watches_cell {
+        background-size: 66vh;
+        width: 120vw;
+        height: 72vh;
+        position: relative;
+    
+    
+    }
+}
+
 /*slide*/
 /*setas*/
-@media screen and (min-width: 400px) and (max-width: 415px) {
+@media screen and (min-width: 410px) and (max-width: 415px) {
     .setas_watches {
         display: flex;
         column-gap: 64vw;
@@ -88,8 +99,19 @@
 }
 }
 
+@media screen and (min-width: 400px) and (max-width: 409px) {
+    .setas_watches {
+        display: flex;
+        column-gap: 64vw;
+        position: relative;
+        top: -73vh;
+        left: 3.2vw;
+
+}
+}
+
 /*bolinhas*/
-@media screen and (min-width: 400px) and (max-width: 415px) {
+@media screen and (min-width: 410px) and (max-width: 415px) {
     #bolinhas_watches_cell {
         position: relative;
         top: -11vh;
@@ -134,5 +156,13 @@
         position: relative;
         top: -15vh;
         left: -21vw;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 409px) {
+    #bolinhas_watches_cell {
+        position: relative;
+        top: -17vh;
+        left: -19.5vw;
     }
 }

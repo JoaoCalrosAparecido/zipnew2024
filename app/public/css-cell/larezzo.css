@@ -9,7 +9,7 @@
 #section_larezzo_cell {
     display: block;
     position: relative;
-    top: -px;
+    top: 15vh;
 
 }
 
@@ -25,43 +25,42 @@
 
 #imagem_principal_larezzo_cell {
     background-image: url("../IMG/larezzo/imagem_pricipal_cell.png");
-    background-size: 680px;
-    width: 680px;
-    height: 770px;
-    position: relative;
-    transform: scale(0.8);
-    transition: all 0.3s ease-in-out;
+    background-size: 70vh;
+        width: 145vw;
+        height: 74vh;
+        position: relative;
+        background-position: -10vw;
+
 }
 
-#imagem_principal_larezzo_cell:hover {
-    transform: scale(1);
-}
+
 
 /*parte escrita*/
 #article_parte_escrita_larezzo_cell {
-
+    position: absolute;
+    top: 42vh;
    
 }
 
 #parte_escrita_larezzo_cell {
     background-image: url("../IMG/larezzo/parte_escrita_cell_refeito.png");
-    background-size: 149px;
-    background-position: center;
-    width: 149px;
-    height: 40px;
+    background-size: 32vw;
+    background-repeat: no-repeat;
+    width: 32vw;
+    height: 8vw;
     position: absolute;
-    top: 50%;
+    top: -5vh;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #botao_larezzo_cell {
     border: none;
-    width: 190px;
-    height: 30px;
+    width: 38vw;
+    height: 6vw;
     background-color: white;
     color: black;
-    font-size: 10px;
+    font-size: 2.2vw;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     position: absolute;
@@ -159,8 +158,16 @@
     display: flex;
     column-gap: 64vw;
     position: relative;
-    top: -55vh;
+    top: -54vh;
     left: 6vw;
+}
+
+@media screen and (min-height:799px) and (max-height:850px) {
+    .setas_larezzo {
+        position: relative;
+        top: -60vh;
+        left: 6vw;
+    }
 }
 
 
@@ -187,6 +194,7 @@
     overflow: hidden;
     position: relative;
     left: -25.5vw;
+    top: -6.5vh;
 
 }
 
@@ -208,7 +216,8 @@
 
 #larezzo_bolinha_cell {
     position: relative;
-    top: 5vh;
+    top: -5vh;
+    left: -12vw;
     z-index: 3;
 
 }
