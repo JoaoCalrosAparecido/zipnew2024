@@ -7,6 +7,7 @@
 #section_watche_responsivo_cell {
     display: block;
     position: relative;
+    
 }
 
 /*imagem principal*/
@@ -81,7 +82,7 @@
 #watches_slide {
     position: relative;
     top: -20vh;
-    left: 25vw;
+    left: 23vw;
 }
 
 .slide_watches_cell {
@@ -91,8 +92,7 @@
 
 /* parte do slide */
 .primeiro_slide {
-    position: relative;
-
+    position: relative; 
 }
 
 /* parte escrita new in for her */
@@ -163,7 +163,7 @@
     font-size: 4vw;
     font-weight: 600;
     position: relative;
-    left: 14vw;
+    left: 13vw;
     top: 1vh;
     padding-bottom: 2vh;
 }
@@ -173,7 +173,7 @@
     font-size: 16px;
     opacity: 60%;
     position: relative;
-    left: 27vw;
+    left: 26vw;
 }
 
 .produto_paragrafo_watches2_cell {
@@ -181,7 +181,7 @@
     font-size: 4vw;
     font-weight: 600;
     position: relative;
-    left: 11vw;
+    left: 9vw;
     top: 1vh;
     padding-bottom: 2vh;
 }
@@ -193,7 +193,7 @@
 /*setas*/
 .setas_watches {
     display: flex;
-    column-gap: 63vw;
+    column-gap: 64vw;
     position: relative;
     top: -55vh;
     left: 6vw;

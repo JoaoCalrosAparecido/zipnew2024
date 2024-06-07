@@ -36,26 +36,101 @@
 /*setas*/
 @media screen and (min-width: 400px) and (max-width: 415px) {
     .setas_watches {
+        display: flex;
+        column-gap: 64vw;
+        position: relative;
+        top: -55vh;
+        left: 3.2vw;
 
-    position: relative;
-    top: -55vh;
+}
+}
+@media screen and (min-width: 420px) and (max-width: 430px) {
+    .setas_watches {
+        display: flex;
+        column-gap: 64vw;
+        position: relative;
+        top: -55vh;
+        left: 3.5vw;
 
 }
 }
 
 @media screen and (min-width: 300px) and (max-width: 360px) {
     .setas_watches {
+        display: flex;
+        column-gap: 64vw;
+        position: relative;
+        top: -68vh;
+        left: 2vw;
 
-    position: relative;
-    top: -70vh;
+}
+}
+
+@media screen and (min-width: 361px) and (max-width: 375px) {
+    .setas_watches {
+        display: flex;
+        column-gap: 64vw;
+        position: relative;
+        top: -72vh;
+        left: 2vw;
 
 }
 }
 
 @media screen and (min-width: 380px) and (max-width: 391px) {
     .setas_watches {
-    position: relative;
-    top: -55vh;
+        display: flex;
+        column-gap: 64vw;
+        position: relative;
+        top: -60vh;
+        left: 3vw;
 
 }
+}
+
+/*bolinhas*/
+@media screen and (min-width: 400px) and (max-width: 415px) {
+    #bolinhas_watches_cell {
+        position: relative;
+        top: -11vh;
+        left: -7.5vw;
+    }
+}
+
+
+@media screen and (min-width: 420px) and (max-width: 430px) {
+    #bolinhas_watches_cell {
+        position: relative;
+        top: -9vh;
+        left: -6vw;
+        
+    }
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 360px) {
+    #bolinhas_watches_cell {
+        position: relative;
+        top: -20vh;
+        left: -13.5vw;
+    }
+
+}
+
+
+@media screen and (min-width: 361px) and (max-width: 375px) {
+    #bolinhas_watches_cell {
+        position: relative;
+        top: -22vh;
+        left: -10.5vw;
+    }
+}
+
+
+@media screen and (min-width: 380px) and (max-width: 391px) {
+    #bolinhas_watches_cell {
+        position: relative;
+        top: -15vh;
+        left: -9vw;
+    }
 }
