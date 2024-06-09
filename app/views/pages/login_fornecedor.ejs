@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="css-login_fornecedor/parte_superior-login_fornecedor.css">
+    <link rel="stylesheet" href="css-login_fornecedor/menu-login_fornecedor.css">
+
+    <link rel="stylesheet" href="css-login_usuario/login_box.css">
+    <link rel="stylesheet" href="css-login_usuario/info_cadastro.css">
+    <link rel="stylesheet" href="css-login_fornecedor/voce_tambem_vai_gostarfn.css">
+    <link rel="stylesheet" href="css-login_fornecedor/stories_recentes_loginfn.css">
+    <link rel="stylesheet" href="css-login_fornecedor/rodape_loginfn.css">
+
+    <script src="./jsValidator/lojista.js" defer></script>
+ 
+
+    <link rel="shortcut icon" href="IMG/fivecon/logo preta grande.ico" type="image/x-icon">
+
+    <script src="./jsValidator/userv.js" defer></script>
+
+</head>
+<body>
+   <!-- parte superior do desconto na primeira compra -->
+   <section id="section_parte_superior">
+    <article>
+        <article id="parte_superior">
+            <p>10% OFF* na primeira compra. Utilize o cupom QueroMaisDez!  </p> 
+        </article>
+        <!--parte das setas-->
+        <article class="setas_parte_superior">
+            <img class="seta_esquerda_parte_superior" src="IMG/parte superior do desconto na primeira compra REFEITO/seta_esquerda.svg" alt="">
+            <img class="seta_direita_parte_superior" src="IMG/parte superior do desconto na primeira compra REFEITO/seta_direita.svg" alt="">
+        </article>
+    </article>
+</section>
+
+
+    <!--menu principal-->
+    <section id="menu_principal_como_todo">
+        <!--area do menu que contem os links-->
+        <article id="menu_principal">
+            <section id="section_menu_principal">
+                <a href="/bazar">BAZAR</a>
+                <a href="">VENDER</a>
+                <a href="">FEMININO</a>
+                <a href="">MASCULINO</a>
+                <a href="">INFANTIL</a>
+                <a href="">ACESSÓRIOS</a>
+            </section>
+        </article>
+
+        <!--logo zip-->
+        <article>
+            <a href="/">
+                <figure id="logo_zip_menu">
+                    <img id="logo_zip_menu_imagem" src="IMG/area_do_menu/logo_zip_menu_2024_refeito.png" alt="">
+                </figure>
+            </a>
+        </article>
+
+        
+        
+
+
+        <!--imagem da barra de pesquisa e etc-->
+        <article id="barra_de_pesquisa_e_etc">
+            <figure id="imagem_da_barra_de_pesquisa_e_etc">
+                <img id="imagem_da_barra_de_pesquisa" src="IMG/area_do_menu/icone_de_pesquisa.svg" alt="">
+
+                <img id="imagem_do_icone_de_favorito" src="IMG/area_do_menu/icone_de_favorito.svg" alt="">
+
+                <a href="/login_do_usuario"><img id="imagem_do_icone_de_pessoa" src="IMG/area_do_menu/icone_de_pessoa.svg" alt=""></a>
+
+                <a href="/cart"><img id="imagem_do_icone_da_sacola" src="IMG/area_do_menu/icone_sacola.svg" alt=""></a>
+            </figure>
+        </article>
+
+
+    </section>
+
+    <!--login-->
+     <section class="login_inteiro">
+         <!--login Lado esquerdo-->
+         <section id="Login">
+            <form id="control">
+                <figure>
+                    <img class="user" src="IMG/login/user.png" width="22px"><a id="sou" href="/login_do_usuario">Sou Usuário</a>
+                </figure>
+                <article>
+                    <h3 id="sign">SIGN-IN</h3>
+                </article>
+                <article> 
+                    <label id="Up">Entre com o CPF e a senha</label>
+                    <input type="text" name="cpf" id="cpf" placeholder="CPF*" class="inputs required" oninput="cpfValidate()">
+                    <br>
+                    <span class="span-required">O CPF está incorreto!</span>
+                    <input type="password" name="senha" id="senha" placeholder="Senha*" class="inputs required" oninput="mainPasswordValidate()">
+                    <br>
+                    <span class="span-required">A senha está incorreta!</span>
+                        <article id="AftSend">
+                            <input type="checkbox" id="Box">
+                            <label id="Remember">Lembre-me  <img class="icones_do_cadastrese" src="IMG/login/info.png" width="15px"></label>
+                            <label id="LostKey">Esqueceu a senha?</label>
+                        </article>
+                    <input type="submit" id="botao-form" name="acao" value="SIGN-IN">
+                </article>
+            </form>
+            <article>
+                <hr id="linha" >
+            </article>
+             <!--cadastre-se Lado direito-->
+                <section id="box">
+                    <article id="espaço">
+         
+                            <h3 id="cadas">CADASTRE-SE</h3>
+                            <a id="buffs">Cadastre-se na zip.com para obter benefícios,<br>como:</a>
+                                <ul id="beneficios">
+                                    <li id="um"><img class="icones_do_cadastrese" src="IMG/login/cartao.png" width="15px"> Participe do marketplace</li>
+                                    <li id="do"><img class="icones_do_cadastrese" src="IMG/login/coracao.png" width="15px"> Salve itens na sua Wishlist</li>
+                                    <li id="tr"><img class="icones_do_cadastrese" src="IMG/login/user.png" width="15px"> Adicione itens na sacola</li>
+                                    <li id="qu"><img class="icones_do_cadastrese" src="IMG/login/jornal.png" width="15px"> Confira novidades e ofertas exclusivas</li>
+                                </ul>
+                            <a href="/cadastro"><input type="submit" name="action" id="enviar" value="CADASTRE-SE"></a>
+                    </article>
+              </section>
+             </section>
+     </section>
+
+       <!--voce também vai gostar-->
+    <section class="section_voce_tambem_vai_gostar">
+        <article>
+            <p class="paragrafo_principal_voce_tambem_vai_gostar">VOCÊ TAMBÉM VAI GOSTAR</p>
+            
+        </article>
+
+        <!--parte do slide-->
+        
+        <section class="slide_do_voce_tambem_vai_gostar">
+            <!--tenis do slide-->
+            <figure>
+                <img  src="IMG/parte_do_ voce_tambem_vai_gostar_login_do_usuarioEfornecedor/tenis_medusa_grecco_tenis_refeito.png" alt="">
+                <figcaption>
+                    <p class="texto_vctbmvaig">Medusa Grecco Tenis</p>
+                    <p class="preco_vctbmvaig">R$ 27,99</p>
+                    <figure class="bolinhas_vctbmvaig1">
+                        <img src="IMG/parte_do_ voce_tambem_vai_gostar_login_do_usuarioEfornecedor/bolinhas_tenis/bolinha_tenis_refeito.png" alt="">
+                    </figure>
+                </figcaption>
+            </figure>
+
+            <!--bolsa do slide-->
+            <figure>
+                <img  src="IMG/parte_do_ voce_tambem_vai_gostar_login_do_usuarioEfornecedor/bolsa_medusa_purse_refeito.png" alt="">
+                <figcaption>
+                    <p class="texto_vctbmvaig">Medusa Purse</p>
+                    <p class="preco_vctbmvaig">R$ 1.100,00</p>
+                    <figure class="bolinhas_vctbmvaig">
+                        <img src="IMG/parte_do_ voce_tambem_vai_gostar_login_do_usuarioEfornecedor/bolinhas_bolsa/bolinhas_bolsa2_refeito.png" alt="">
+                    </figure>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img  src="IMG/parte_do_ voce_tambem_vai_gostar_login_do_usuarioEfornecedor/salto_alto_medusa_black_sandails_refeito.png" alt="">
+                <figcaption>
+                    <p class="texto_vctbmvaig">Medusa Black Sandails</p>
+                    <p class="preco_vctbmvaig">R$ 2.500,00</p>
+                    <figure class="bolinhas_vctbmvaig3">
+                        <img src="IMG/parte_do_ voce_tambem_vai_gostar_login_do_usuarioEfornecedor/bolinhas_salto_alto/bolinhas_do_salto_refeito.png" alt="">
+                    </figure>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img  src="IMG/parte_do_ voce_tambem_vai_gostar_login_do_usuarioEfornecedor/saia_medusa_skirt_versace_refeito.png" alt="">
+                <figcaption>
+                    <p class="texto_vctbmvaig">Medusa Skirt Versace</p>
+                    <p class="preco_vctbmvaig">R$ 1.500,00</p>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="seta_do_vctbmvaig" src="IMG/parte_do_ voce_tambem_vai_gostar_login_do_usuarioEfornecedor/setinha_do_vctbmvaig_refeito.png" alt="">
+            </figure>
+        </section>
+    </section>
+
+
+     <!--STORIES RECENTES-->
+     <section class="stories_recentes">
+            
+ 
+
+
+        <!--ENTRE NO MUNDO ZIP-->
+        <article class="stories_recentes_article" >
+            <!--linha-->
+            <hr class="linha_do_entre_no_mundo_zip">
+
+            <!--escrito entre no mundo zip-->
+            <figure class="figure_escrita_entre_nomundo_zip">
+                <img class="escrita_entre_nomundo_zip" src="IMG/stories_recentes/slides/entre_no_mundo_zip/escrita_entre_no_mundo_zip_refeito.png" alt="">
+            </figure>
+
+            <!--Esteja por dentro de eventos, coleções e novidades exclusivas-->
+            <article class="article_paragrafo_stories_recentes">
+                <p class="paragrafo_stories_recentes">Esteja por dentro de eventos, coleções e novidades exclusivas</p>
+            </article>
+
+            <!--Digite o seu e-mail-->
+            <section class="article_digite_o_seu_email">
+                <article class="digite_o_seu_email_stories_recentes">
+                    <p class="paragrafo_digite_o_seu_email">Digite o seu e-mail</p>
+                    <img class="setinha_do_digite_o_seu_email" src="IMG/stories_recentes/slides/entre_no_mundo_zip/setinha_do_digite_o_seu_email.svg" alt="">
+                </article>
+            </section>
+        </article>
+
+    </section>
+    
+
+
+    <!--rodapé-->
+    <section class="rodape">
+
+        <!--primeira seção-->
+        <section>
+            <article>
+                <h1 class="rodape_h1 institucional">
+                    institucional
+                </h1>
+            </article>
+            <article>
+                <ul class="lista_do_rodape_parte_1">
+                    <li class="rodape_paragrafo institucional">sobre a ZIP</li>
+                    <li class="rodape_paragrafo institucional">fornecedores</li>
+                    <li class="rodape_paragrafo institucional">termos e condições</li>
+                    <li class="rodape_paragrafo institucional">política de privacidade</li>
+                    <li class="rodape_paragrafo institucional">configurações de privacidade</li>
+                    <li class="rodape_paragrafo institucional">trabalhe conosco</li>
+                    <li class="rodape_paragrafo institucional">sustentabilidade</li>
+                    <li class="rodape_paragrafo institucional">mapa do site</li>
+                    <li class="rodape_paragrafo institucional">investidores</li>
+                    <li class="rodape_paragrafo institucional">sala de imprensa</li>
+                    <li class="rodape_paragrafo institucional">blog ZIP</li>
+                </ul>
+            </article>
+        </section>
+        <!--segunda seção-->
+        <section>
+            <!--parte ZIP&VC-->
+            <article>
+                <article>
+                    <h1 class="rodape_h1 segunda_secao_parte_1_h1">
+                        ZIP&VC
+                    </h1>
+                </article>
+                <article>
+                    <ul class="lista_do_rodape segunda_secao_parte_1_ul">
+                        <li class="rodape_paragrafo">participe do programa</li>
+                    </ul>
+                </article>
+            </article>
+
+            <!--parte cartão ZIP-->
+            <article>
+                <article>
+                    <h1 class="rodape_h1 segunda_secao_parte_2_h1">
+                        cartão ZIP
+                    </h1>
+                </article>
+                <article>
+                    <ul class="lista_do_rodape segunda_secao_parte_2_ul">
+                        <li class="rodape_paragrafo">sobre o cartão ZIP</li>
+                    </ul>
+                </article>
+            </article>
+
+            <!--parte ZIP Pay-->
+            <article>
+                <article>
+                    <h1 class="rodape_h1 segunda_secao_parte_3_h1">
+                        ZIP Pay
+                    </h1>
+                </article>
+                <article>
+                    <ul class="lista_do_rodape segunda_secao_parte_3_ul">
+                        <li class="rodape_paragrafo">solicite seu cartão</li>
+                    </ul>
+                    <ul class="lista_do_rodape segunda_secao_parte_3_ul">
+                        <li class="rodape_paragrafo">tire sua dúvida por e-mail</li>
+                    </ul>
+                </article>
+            </article>
+            
+            <!--parte cartão presente-->
+            <article>
+                <article>
+                    <h1 class="rodape_h1 segunda_secao_parte_4_h1">
+                        cartão presente
+                    </h1>
+                </article>
+                <article>
+                    <ul class="lista_do_rodape segunda_secao_parte_4_ul">
+                        <li class="rodape_paragrafo">sobre o cartão presente ZIP</li>
+                    </ul>
+                </article>
+            </article>
+            
+        </section>
+        
+        <!--parte 3-->
+        <section class="terceira_secao">
+            
+            <article>
+                <h1 class="rodape_h1 ">
+                    serviços
+                </h1>
+            </article>
+
+            <article>
+                <ul class="lista_do_rodape lista_terceira_secao">
+                    <li class="rodape_paragrafo">tipos de entrega</li>
+                    <li class="rodape_paragrafo">clique & retire</li>
+                    <li class="rodape_paragrafo">trocas & devoluções</li>
+                    <li class="rodape_paragrafo">formas de pagamento</li>
+                    <li class="rodape_paragrafo">todas as vantagens</li>
+                    <li class="rodape_paragrafo">minha ZIP</li>
+                </ul>
+            </article>
+            
+
+            <article class="terceita_secao_bazar">
+                <article>
+                    <h1 class="rodape_h1 ">
+                        bazar
+                    </h1>
+                </article>
+
+                <article>
+                    <ul class="lista_do_rodape">
+                        <li class="rodape_paragrafo">veja coleção</li>
+                    </ul>
+                </article>
+
+            </article>
+
+        </section>
+
+        <!--parte 4-->
+        <section class="quarta_secao">
+            <article>
+                <h1 class="rodape_h1 ">
+                    marketplace ZIP
+                </h1>
+            </article>
+
+            <article class="lista_quarta_secao">
+                <ul class="lista_do_rodape ">
+                    <li class="rodape_paragrafo">venda na ZIP</li>
+                    <li class="rodape_paragrafo">marketplace</li>
+                </ul>
+            </article>
+
+        </section>
+
+        <!--icones do instagram e etc-->
+        <figure class="icones_do_instagram_e_etc_do_rodape">
+            <img src="IMG/rodape/icone_do_instagram_e_etc_2024.png" alt="">
+        </figure>
+
+        <!--©Copyright2023  -->
+        <article class="copyright">
+                <h1 class="h1_do_copyright">
+                    © Copyright - 2024 -
+                </h1>
+        </article>
+    </section>
+</body>
+</html>

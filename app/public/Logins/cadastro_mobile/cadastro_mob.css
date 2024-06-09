@@ -2,6 +2,22 @@
     display: none;
 }
 
-#formulario{
-
+#nome, #senha, #email, #cpf, #cep{
+    width: 40vh;
+    height: 4vh;
 }
+#caixa{
+    background-color: #F6F6F6;
+    max-width: 100%;
+    width: 200rem;
+    height: 890px;
+    padding: 20px;
+    position: absolute;
+    top: 600px;
+     left: 47%; 
+     margin-left: 0%; 
+     transform: 0; 
+    font-family: 'Poppins', sans-serif;
+    border: none;
+}
+
