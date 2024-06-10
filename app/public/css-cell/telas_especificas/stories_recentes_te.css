@@ -123,6 +123,13 @@
         left: 4vw;
         font-weight: 500;
     }
+
+    .carousel-paginationST {
+        text-align: center;
+        margin-top: ;
+        position: relative;
+        top: -30vh;
+    }
 }
 
 /*iphone12 pro*/
