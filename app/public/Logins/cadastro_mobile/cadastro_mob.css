@@ -1,0 +1,63 @@
+#foto{
+    display: none;
+}
+
+#nome, #senha, #email, #cpf, #cep{
+    width: 80vw;
+    height: 5vh;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#caixa{
+    background-color: #F6F6F6;
+    max-width: 100%;
+    width: 200rem;
+    height: 890px;
+    padding: 20px;
+    position: absolute;
+    top: 600px;
+    left: 47%; 
+    margin-left: 0%; 
+    transform: 0; 
+    font-family: 'Poppins', sans-serif;
+    border: none;
+}
+
+#forms, #tornar{
+    margin-left: 10vw;
+}
+
+#cadastro{
+    margin-left: -30px
+}
+
+#dia, #mes, #ano{
+    width: 24vw;
+    height: 5vh;
+    margin-top: 5px;
+    font-size: 16px;
+    border-width: 1px;
+}
+
+#dia, #mes{
+    margin-right: 2.5vw;
+}
+
+#data{
+    margin-bottom: 25px;
+}
+
+#botao{
+    width: 80vw;
+    height: 70px;
+    cursor: pointer;
+    background-color: rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
+    border-color: rgb(36, 36, 36);
+    margin-bottom: 50px;
+    font-size: 23px;
+    font-weight: 500;
+    margin-top: 20px;
+
+}
