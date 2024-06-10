@@ -9,6 +9,10 @@
     margin-bottom: 5px;
 }
 
+#tornar{
+    width: 80vw;
+}
+
 #caixa{
     background-color: #F6F6F6;
     max-width: 100%;
@@ -17,15 +21,15 @@
     padding: 20px;
     position: absolute;
     top: 600px;
-    left: 47%; 
-    margin-left: 0%; 
+ 
+    margin: 0; 
     transform: 0; 
     font-family: 'Poppins', sans-serif;
     border: none;
 }
 
 #forms, #tornar{
-    margin-left: 10vw;
+    margin-left: 11vw;
 }
 
 #cadastro{
