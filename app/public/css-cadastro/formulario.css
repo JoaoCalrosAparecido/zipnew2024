@@ -29,13 +29,7 @@ label {
     border-width: 1px;
 
 }
-#nascimento{
-    width: 50rem;
-    height: 20px;
-    margin-top: 40px;
-    font-size: 16px;
-    border-width: 1px;
-}
+
 
 #dia, #mes, #ano{
     width: 15rem;
@@ -79,18 +73,9 @@ label {
     border-width: 1px;
 }
 
-#cadastro{
-    font-size: 30px;
-    position: relative;
-    left: 76px;
-    bottom: -32px;
-
-}
 
 
-#forms{
-    margin-left: 80px;
-}
+
 
 #botao{
     width: 50rem;
@@ -129,8 +114,16 @@ label {
 #tornar{
     margin-left: 80px;
     margin-top: 60px;
+}
+#forms{
+    margin-left: 80px;
+}
+#cadastro{
+    font-size: 30px;
+    position: relative;
+    left: 80px;
+    bottom: -32px;
 
-    
 }
 
 .span-required{
@@ -138,7 +131,6 @@ label {
     position: absolute;
     color: #e63636;
     font-size: 13px;
-
 }
 
 
