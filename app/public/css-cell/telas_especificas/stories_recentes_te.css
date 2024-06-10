@@ -128,7 +128,19 @@
         text-align: center;
         margin-top: ;
         position: relative;
-        top: -30vh;
+        top: -24vh;
+    }
+
+    /*linha*/
+    #article_linha_stories_recentes_cell {
+        position: relative;
+        top: -20vh;
+    }
+
+    /*entre no mundo zip*/
+    #section_entre_no_mundo_cell {
+        position: relative;
+        top: -18vh;
     }
 }
 

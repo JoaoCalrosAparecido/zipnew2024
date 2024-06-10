@@ -167,9 +167,8 @@
 /*bolinhas*/
 .carousel-paginationST {
     text-align: center;
-    margin-top: 2vh;
     position: relative;
-    top: -21vh;
+    top: -17vh;
 }
 
 .pagination-itemST {
@@ -259,28 +258,28 @@
 /*linha*/
 #article_linha_stories_recentes_cell {
     position: relative;
-    top: -171px;
+    top: -15vh;
 }
 
 #article_linha_stories_recentes_cell > hr {
-    height: 2px;
+    height: 2vh;
     opacity: 30%;
 }
 
 /*entre no mundo*/
 #section_entre_no_mundo_cell {
     position: relative;
-    top: -140PX;
+    top: -15vh;
 }
 
 /*imagem*/
 
 #figure_entre_no_mundo_cell {
-    background-image: url("../IMG/stories_recentes/cell/parte_escrita_entre_no_mundo_zip-Photoroom.png-Photoroom.png");
+    background-image: url("../IMG/stories_recentes/cell/parte_escrita_entre_no_mundo_zip-Photoroom.png-Photoroom_refeito.png");
     background-repeat: no-repeat;
-    background-size: 180px;
-    width: 180px;
-    height: 50px;
+    background-size: 38vw;
+    width: 38vw;
+    height: 5vh;
     position: relative;
     margin: auto;
 }
@@ -288,12 +287,12 @@
 /*paragrafo*/
 #paragrafo_entre_no_mundo_cell {
     position: relative;
-    top: -8px;
+    
 }
 
 #paragrafo_entre_no_mundo_cell > p {
     font-family: 'Poppins', sans-serif;
-    font-size: 11.7px;
+    font-size: 2.7vw;
     font-weight: 600;
     opacity: 70%;
     text-align: center;
@@ -302,7 +301,7 @@
 /*botao email*/
 #section_botao_email_entre_no_mundo_cell {
     position: absolute;
-    top: 158%;
+    top: 11vh;
     left: 50%;
     transform: translate(-50%, -50%);
 }
