@@ -4,14 +4,14 @@
 #rodape_cell {
     display: flex;
     flex-direction: column;
-    gap: 1.8px;
+    gap: 0.2vh;
     position: relative;
-    top: px;
+    top: 1vh;
 }
 
 .rodape_cell_conteudo {
     background-color: #212121;
-    height: 57px;
+    height: 6.33vh;
     display: flex;
     align-items: center;
 }
@@ -20,28 +20,28 @@
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 13.5px;
+    font-size: 2.81vw;
     position: relative;
-    left: 10px;
+    left: 2vw;
 }
 
 .rodape_cell_conteudo > article {
     display: flex;
-    column-gap: 12px;
+    column-gap: 2.5vw;
     position: relative;
-    left: 12px;
+    left: 2.5vw;
 }
 
 .rodape_cell_conteudo > article > p {
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 550;
-    font-size: 13px;
+    font-size: 2.81vw;
 }
 
 .rodape_cell_conteudo > article > img {
-    width: 20px;
-    height: 20px;
+    width: 4.17vw;
+    height: 4.17vw;
 }
 
 #figure1_cell_conteudo {
@@ -62,15 +62,15 @@
 /*paragrafo*/
 #paragrafo1_cell_conteudo {
     position: relative;
-    top: 3px;
+    top: 0.33vh;
 }
 
 #paragrafo2_cell_conteudo {
     position: relative;
-    top: 2.5px;
+    top: 0.27vh;
 }
 
 #paragrafo3_cell_conteudo {
     position: relative;
-    top: 2px;
+    top: 0.22vh;
 }

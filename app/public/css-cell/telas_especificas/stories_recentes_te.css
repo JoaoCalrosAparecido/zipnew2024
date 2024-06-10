@@ -106,6 +106,15 @@
 
 
 @media screen and (min-height:800px) and (max-height:811px) {
+    #section_stories_recentes_cell {
+        width: 100vw;
+        height: 105vh;
+        background-color: #F2F2F2;
+        position: relative;
+        top: 2vh;
+        display: block;
+    }
+
     /*parte escrita*/
     .carousel3st {
         position: relative;
