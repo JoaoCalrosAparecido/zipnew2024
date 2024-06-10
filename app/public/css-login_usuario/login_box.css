@@ -123,10 +123,5 @@ form input[type=password] {
   }
 
 
-@media screen and (max-width: 750px) {
-    #linha{
-        display: none;
-    }
 
-  }
 

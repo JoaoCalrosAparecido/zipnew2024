@@ -12,6 +12,7 @@
     padding: 40px;
     border-radius: 0;
     max-width: 80vh;
+    margin-left: 2vw;
 }
 
 #box{
@@ -19,11 +20,13 @@
     top: 17rem;
     left: 45%;
     padding: 20px;
+    max-width: 80vh;
+    margin-left: 2vw;
     
 }
 
 #Remember{
-    margin-right: 13vw;
+    padding-right: 20vw;
 }
 
 
@@ -31,4 +34,17 @@
     position: relative;
     top: 75rem;
 }
+
+#linha{
+    z-index: 3;
+    position: absolute;
+    top: 37%;
+      left: 47%;
+        transform: rotate(90deg);
+      font-family: 'Poppins', sans-serif;
+      height: 60vw;
+      width: 2px;
+    color: rgb(0, 0, 0);
+  }
+
 
