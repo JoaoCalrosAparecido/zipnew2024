@@ -20,7 +20,7 @@
 /*cell*/
 #nick_dj_bazar_cell {
     width: 100vw;
-    height: 100vh;
+    height: 103vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,9 +41,16 @@
 }
 
 .slide1_dj_cell {
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; /* Defina a largura do contêiner para ocupar 100% da largura da viewport */
+    height: 110vh; /* Defina a altura do contêiner para ocupar 100% da altura da viewport */
+    overflow: hidden; /* Oculte qualquer conteúdo que ultrapasse os limites do contêiner */
 }
+
+.slide1_dj_cell > video {
+    width: auto; /* Deixe a largura ajustável automaticamente para manter a proporção do vídeo */
+    height: 110vh; /* Defina uma altura fixa para o vídeo, aqui definido como 200% da altura da viewport */
+}
+
 
 
 .slide2_dj_cell {
@@ -86,13 +93,17 @@
     background-color: #fff6f6;
 }
 
+/*video*/
+#video_nick_dj_Bazar {
+    
+}
 
 /*imagem de fundo nick dj bazar responsivo*/
 #imagem_nick_dj_bazar_responsivo {
     background-image: url(../../IMG/imagem_do_vesace_-_bazar/imagem_nick_dj_bazar_responsiva.png);
-    background-size: 100vh;
+    background-size: 31vw;
     background-position: bottom center;
-    width: 100vw;
+    width: 1vw;
     height: 100vh;
     position: relative;
 }
@@ -134,7 +145,7 @@
 #parte_escrita_versace_-_responsivo {
     position: absolute;
     top: -28vh;
-    width: 50vw;
+    width: 37vw;
     overflow: hidden;
 }
 
@@ -144,7 +155,7 @@
 
 
 .parte_escrita_versace_bazar_img_responivo {
-    width: 50vw;
+    width: 37vw;
 }
 
 /* parte do botão computador */
@@ -162,10 +173,8 @@
 
 /*parte dos botoes responsivo*/
 #section_parte_dos_botoes_responsivo {
-    display: flex;
-    column-gap: 0.5vw;
     position: relative;
-    top: -22vh;
+    top: -23vh;
 
 }
 
@@ -175,8 +184,8 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    width: 35.3vw;
-    height: 8vw;
+    width: 27.3vw;
+    height: 2.33vh;
 }
 
 .parte_dos_botoes_responsivo:hover {
@@ -198,10 +207,10 @@
 
 #section_parte_dos_botoes_responsivo > article > p {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.7vw;
+    font-size: 1.6vw;
     font-weight: 700;
     position: relative;
-    top: 1.1vh;
+    top: 0.6vh;
 }
 
 /*controles*/
