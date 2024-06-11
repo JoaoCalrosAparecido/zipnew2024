@@ -19,9 +19,9 @@
 }
 
 #imagem_principal_watches_cell {
-    background-image: url("../IMG/watches/definitivo/imagem_principal_cell.png");
-    background-size: 68vh;
-    width: 125vw;
+    background-image: url("../IMG/cell_index/watches/imagem_principal.avif");
+    background-size: 100vw;
+    width: 100vw;
     height: 74vh;
     position: relative;
 
@@ -126,7 +126,7 @@
 
 /*imagens*/
 .imagem_do_watches_slide_cell {
-    background-image: url('../IMG/watches/definitivo/slide/bota_preta_prdouto1_watches.png');
+    background-image: url('../IMG/cell_index/watches/bota1.avif');
     background-size: 70vw;
     background-repeat: no-repeat;
     width: 70vw;
@@ -135,7 +135,7 @@
  
 /*imagem hover*/
 .imagem_do_watches_slide_cell:hover {
-    background-image: url('../IMG/watches/definitivo/slide/bota_preta_produto1_watches_hover.png');
+    background-image: url('../IMG/cell_index/watches/bota1-hover.avif');
 }
 
 .imagem_do_watches_slide2_cell {

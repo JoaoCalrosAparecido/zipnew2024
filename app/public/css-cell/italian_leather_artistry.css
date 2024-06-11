@@ -7,13 +7,13 @@
 }
  /*parte da imagem*/
 #imagem_pricipal_italian_cell {
-    background-image: url("../IMG/italian_leather_artistry/definitivo/imagem_principal_cell.png");
+    background-image: url("../IMG/cell_index/italian-leather/imagem-principal.avif");
     width: 100vw;
     height: 70vh;
     position: relative;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 110vh;
+    background-size: 100vw;
 
 }
 

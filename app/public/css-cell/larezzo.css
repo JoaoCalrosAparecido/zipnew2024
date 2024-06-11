@@ -24,12 +24,11 @@
 }
 
 #imagem_principal_larezzo_cell {
-    background-image: url("../IMG/larezzo/imagem_pricipal_cell.png");
-    background-size: 70vh;
-        width: 145vw;
+    background-image: url("../IMG/cell_index/larezzo/imagem-principal.avif");
+    background-size: 100vw;
+        width: 100vw;
         height: 74vh;
         position: relative;
-        background-position: -10vw;
 
 }
 
@@ -88,7 +87,7 @@
 
 /*imagens*/
 .imagem_do_larezzo_slide_cell {
-    background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/bota_produto1_larezzo.png');
+    background-image: url('../IMG/cell_index/larezzo/bota1.avif');
     background-size: 70vw;
     background-repeat: no-repeat;
     width: 70vw;

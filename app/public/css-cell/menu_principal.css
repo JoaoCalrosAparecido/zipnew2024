@@ -6,7 +6,7 @@
     position: fixed;
     z-index: 10;
     opacity: 100%;
-    top: 5vh;
+    top: 3vh;
 }
 
 .menu_como_todo{
@@ -19,7 +19,7 @@
     position: fixed;
     background-color: rgba(0, 0, 0, 0.384);
     width: 100vw;
-    height: 7vh;
+    height: 8vh;
 
     
 }
@@ -49,21 +49,21 @@
 
 #logo_zip_menu {
     position: fixed;
-    top: 3.2%;
-    left: 4%;
-    background-image: url(../IMG/area_do_menu/logo_zip_menu_parte_branca_2024_refeito.png);
+    top: -0.2vh;
+    left: -4vw;
+    background-image: url(../IMG/area_do_menu/logo_zip_menu_parte_branca_2024.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 40px;
+    background-size: 25vw;
     z-index: 300;
-    width: 52px;
-    height:43px;
+    width: 26vw;
+    height:24vw;
 }
 
 
 
 #logo_zip_menu.rolagem {
-    background-image: url(/IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
+    background-image: url(../IMG/area_do_menu/logo_zip_parte_preta_2024.png);
 }
 
 #logo_zip_menu_imagem {
@@ -95,7 +95,7 @@
   position: fixed;
   display: block;
   left: 79vw;
-  top: 5vh;
+  top: 5.65vh;
 }
 
 .search-icon {
@@ -115,9 +115,10 @@
 .search-input {
   display: none;
   position: absolute;
-  top: 0;
+  top: -0.2vh;
   right: 25px; /* Mudança de left para right */
   padding: 2px;
+  outline: none;
   border: 1px solid #ccc;
   width: 30vw; /* Largura ajustada */
 }
@@ -145,28 +146,37 @@
   right: -68vw; /* Inicialmente oculto */
   width: 68vw; /* Metade da largura da tela */
   height: 100%;
+  outline: none;
   background-color: #F2F2F2;
-  box-sizing: border-box;
   transition: right 0.3s ease;
+}
+
+input::-webkit-input-placeholder {
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  top: 0.2vh;
+  left: 1vw;
+  font-size: 2.5vw;
 }
 
 
 .botao_menu_cell {
   position: fixed;
-  top: 5vh;
-  left: 92vw;
-  background-image: url('../IMG/area_do_menu/cell/menu_cell-removebg-preview_branco.png');
+  top: 5.3vh;
+  right: 4vw;
+  background-image: url('../IMG/cell_index/menu-principal/menu-branco.png');
   background-repeat: no-repeat;
-  background-size: 3.9vw;
-  width: 4vw; /* Ajuste conforme necessário */
-  height: 2vh; /* Ajuste conforme necessário */
+  background-size: 5.5vw;
+  width: 6vw; /* Ajuste conforme necessário */
+  height: 6vw; /* Ajuste conforme necessário */
   border: none;
   outline: none;
   cursor: pointer;
 }
 
 .botao_menu_cell.rolagem {
-  background-image: url('../IMG/area_do_menu/cell/menu_cell-removebg-preview_preto.png');
+  background-image: url('../IMG/cell_index/menu-principal/menu-preto.png');
+  opacity: 70%;
 }
 
 #openMenuBtn {
@@ -455,11 +465,13 @@
 /*sacola*/
 #article_icone_sacola_cell {
   position: relative;
-  top: 2.35vh;
-  left: 85.4vw;
+  top: 2.6vh;
+  left: 84.5vw;
   width: 1vw;
   height: 100px;
 }
+
+
 
 #button_sacola_cell {
   
