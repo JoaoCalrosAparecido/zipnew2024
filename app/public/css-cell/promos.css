@@ -9,7 +9,7 @@
 #section_promos_responsivo {
     display: block;
     position: relative;
-    top: -12vh;
+    top: -3.3vh;
 }
 
 /*parte escrita*/
@@ -20,7 +20,7 @@
 }
 
 #parte_escrita_promos_responsivo > img {
-    width: 20vw;
+    width: 12.775vh;
 }
 
 /*slide*/
@@ -57,15 +57,21 @@ left: 1.8vw;
 }
 
 /*setas*/
+#section_setas_promos { 
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
 #figure_setas_promos_responsivo {
     position: relative;
-    top: -24vh;
+    top: -26vh;
     display: flex;
-    column-gap: 79vw;
+    column-gap: 80vw;
 }
 
 #figure_setas_promos_responsivo > img {
-    width: 10vw;
+    width: 13vw;
 }
 
 #rotacao_seta_promos_responsivo {

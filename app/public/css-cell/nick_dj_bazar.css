@@ -145,7 +145,7 @@
 #parte_escrita_versace_-_responsivo {
     position: absolute;
     top: -28vh;
-    width: 37vw;
+    width: 40vw;
     overflow: hidden;
 }
 
@@ -155,7 +155,7 @@
 
 
 .parte_escrita_versace_bazar_img_responivo {
-    width: 37vw;
+    width: 40vw;
 }
 
 /* parte do botão computador */
@@ -184,8 +184,8 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    width: 27.3vw;
-    height: 2.33vh;
+    width: 30.3vw;
+    height: 2.7vh;
 }
 
 .parte_dos_botoes_responsivo:hover {
