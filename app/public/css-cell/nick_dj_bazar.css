@@ -111,7 +111,7 @@
 /*parte escrita botoes responsivo*/
 #botoes_escrita_di_nick_cell {
     position: relative;
-    top: 5vh;
+    top: 13vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
