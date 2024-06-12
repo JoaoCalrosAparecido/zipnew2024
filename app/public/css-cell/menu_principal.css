@@ -192,7 +192,7 @@ input::-webkit-input-placeholder {
 #blackDiv {
   display: none;
   position: fixed;
-  top: 9.4vh;
+  top: 11vh;
   left: 0px;
   width: 100vw;
   height: 100vh;
@@ -203,11 +203,13 @@ input::-webkit-input-placeholder {
 /* Estilo para o ícone de menu */
 #openMenuBtn.active {
   background-image: url("../IMG/area_do_menu/cell/x_de_fechar_refeito-removebg-preview_branco.png");
-  background-size: 2.6vw;
-  width: 3.5vw;
+  background-repeat: no-repeat;
+  background-size: 4vw;
+  width: 5.5vw;
   height: 14px;
   background-position: center;
-  top: 4.9vh;
+  top: 6.1vh;
+  right: 4.6vw;
 }
 
 #openMenuBtn.active.rolagem {
@@ -247,13 +249,15 @@ input::-webkit-input-placeholder {
 
 /*links principais*/
 .menu {
-  top: 9.3vh;
+  top: 11vh;
   z-index: 10;
 }
 
 #section_links_principais_cell {
   z-index: 10;
   width: 10vw;
+  position: relative;
+  top: 1vh;
 }
 
 #article_links_principais_cell_p {
@@ -330,7 +334,7 @@ input::-webkit-input-placeholder {
   width: 68vw;
   height: 17vh;
   position: relative;
-  top: 3.5vh;
+  top: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -375,7 +379,7 @@ input::-webkit-input-placeholder {
 /*icones celular*/
 #section_icones_menu_deslizante_cell {
   position: relative;
-  top: 6vh;
+  top: 8.5vh;
   padding-left: 5vw;
   display: flex;
   flex-direction: column;

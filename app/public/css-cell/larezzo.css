@@ -9,7 +9,8 @@
 #section_larezzo_cell {
     display: block;
     position: relative;
-    top: 15vh;
+    top: -5.6vh;
+    height: 115vh;
 
 }
 
@@ -18,7 +19,7 @@
 
 #article_larezzo_cell {
     position: relative;
-    top: -180px;
+    top: -25vh;
     display: flex;
     justify-content: center;
 }
@@ -26,9 +27,9 @@
 #imagem_principal_larezzo_cell {
     background-image: url("../IMG/cell_index/larezzo/imagem-principal.avif");
     background-size: 100vw;
-        width: 100vw;
-        height: 74vh;
-        position: relative;
+    width: 100vw;
+    height: 90vh;
+    position: relative;
 
 }
 
@@ -37,33 +38,33 @@
 /*parte escrita*/
 #article_parte_escrita_larezzo_cell {
     position: absolute;
-    top: 42vh;
+    top: 45.8vh;
    
 }
 
 #parte_escrita_larezzo_cell {
     background-image: url("../IMG/larezzo/parte_escrita_cell_refeito.png");
-    background-size: 32vw;
+    background-size: 31vw;
     background-repeat: no-repeat;
-    width: 32vw;
+    width: 31vw;
     height: 8vw;
     position: absolute;
-    top: -5vh;
+    top: -4.6vh;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #botao_larezzo_cell {
     border: none;
-    width: 38vw;
-    height: 6vw;
+    width: 30.3vw;
+    height: 2.7vh;
     background-color: white;
     color: black;
-    font-size: 2.2vw;
+    font-size: 1.6vw;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     position: absolute;
-    top: 55.5%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -76,8 +77,7 @@
 #larezzo_slide {
     position: relative;
     height: 70vw;
-    left: 197px;
-    top: -260px;
+
 
 }
 
@@ -88,10 +88,10 @@
 /*imagens*/
 .imagem_do_larezzo_slide_cell {
     background-image: url('../IMG/cell_index/larezzo/bota1.avif');
-    background-size: 70vw;
+    background-size: 55vw;
     background-repeat: no-repeat;
-    width: 70vw;
-    height: 80vw;
+    width: 55vw;
+    height: 71vw;
 }
 /*imagem hover*/
 /*
@@ -102,10 +102,10 @@
 
 .imagem_do_larezzo_slide2_cell {
     background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo.png');
-    background-size: 70vw;
+    background-size: 55vw;
     background-repeat: no-repeat;
-    width: 71vw;
-    height: 80vw;
+    width: 55vw;
+    height: 71vw;
 }
 
 /*.imagem_do_larezzo_slide2_cell:active {
@@ -122,11 +122,11 @@
 
 .produto_paragrafo_larezzo1_cell {
     font-family: 'Poppins', sans-serif;
-    font-size: 4vw;
+    font-size: 3.5vw;
     font-weight: 600;
     position: relative;
-    left: 13vw;
-    top: 1vh;
+    left: 8.65vw;
+    top: -1vh;
     padding-bottom: 2vh;
 }
 
@@ -135,16 +135,17 @@
     font-size: 16px;
     opacity: 60%;
     position: relative;
-    left: 26vw;
+    left: 19.7vw;
+    top: -2.5vh;
 }
 
 .produto_paragrafo_larezzo2_cell {
     font-family: 'Poppins', sans-serif;
-    font-size: 4vw;
+    font-size: 3.5vw;
     font-weight: 600;
     position: relative;
-    left: 9vw;
-    top: 1vh;
+    left: 1.2vw;
+    top: -1vh;
     padding-bottom: 2vh;
 }
 
@@ -152,21 +153,26 @@
 
 
 
+
 /*setas*/
 .setas_larezzo {
-    display: flex;
+    display: none;
     column-gap: 64vw;
     position: relative;
     top: -54vh;
     left: 6vw;
 }
 
-@media screen and (min-height:799px) and (max-height:850px) {
-    .setas_larezzo {
-        position: relative;
-        top: -60vh;
-        left: 6vw;
-    }
+#setas-larezzo-cell {
+    display: flex;
+    position: relative;
+    top: -58vh;
+    column-gap: 50.1vw;
+    left: 10.5vw;
+}
+
+#setas-larezzo-cell > img {
+    width: 15vw;
 }
 
 
@@ -182,18 +188,18 @@
 /* slide */
 
 .slide_larezzo_cell {
-    width: 70vw;
+    width: 55vw;
     height: 700px;
     position: relative;
 }
 
 .sliderla {
-    width: 70vw;
+    width: 55vw;
     height: 105vh;
     overflow: hidden;
     position: relative;
-    left: -25.5vw;
-    top: -6.5vh;
+    top: -32.5vh;
+    left: 23.3vw;
 
 }
 
@@ -215,8 +221,8 @@
 
 #larezzo_bolinha_cell {
     position: relative;
-    top: -5vh;
-    left: -12vw;
+    top: -14.5vh;
+    left: -17.8vw;
     z-index: 3;
 
 }

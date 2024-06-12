@@ -2,16 +2,15 @@
 
 #section_stories_recentes_cell {
     width: 100vw;
-    height: 93.33vh;
+    height: 97.33vh;
     background-color: #F2F2F2;
     position: relative;
-    top: 2vh;
     display: block;
 }
 
 /*parte escrita stories recetes*/
 #figure_stories_recentes_cell {
-    background-image: url("../IMG/stories_recentes/cell/parte-escrita-refeito.png");
+    background-image: url("../IMG/stories_recentes/cell/parte_escrita.png");
     background-size: 45vw;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,6 +25,7 @@
 
 #section_slide_stories_recentes_cell {
     position: relative;
+    top: -5vh;
 
 }
 
@@ -48,7 +48,7 @@
 
 .rectangleST {
     width: 100vw;
-    height: 600px;
+    height: 65vh;
     overflow: hidden;
     margin-right: 20px;
 }
@@ -78,8 +78,8 @@
 }
 
 #figure2_slide_stories_recente_cell {
-    background-image: url("../../IMG/stories_recentes/cell/slide_3.png");
-    background-size: 62vw;
+    background-image: url("../IMG/cell_index/stories-recentes/imagem-kid.avif");
+    background-size: 74.5vw;
     background-repeat: no-repeat;
     width: 60vw;
     height: 47vh;
@@ -126,8 +126,8 @@
 }
 
 #figure6_slide_stories_recente_cell {
-    background-image: url("../../IMG/stories_recentes/cell/slide_3.png");
-    background-size: 62vw;
+    background-image: url("../IMG/cell_index/stories-recentes/imagem-kid.avif");
+    background-size: 74.5vw;
     background-repeat: no-repeat;
     width: 60vw;
     height: 47vh;
@@ -165,6 +165,11 @@
 }
 
 /*bolinhas*/
+#bolinhas-stories-cell {
+    position: relative;
+    top: 2vh;
+}
+
 .carousel-paginationST {
     text-align: center;
     position: relative;
@@ -269,7 +274,7 @@
 /*entre no mundo*/
 #section_entre_no_mundo_cell {
     position: relative;
-    top: -15vh;
+    top: -12vh;
 }
 
 /*imagem*/
@@ -304,6 +309,10 @@
     top: 11vh;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#section_botao_email_entre_no_mundo_cell > a {
+    text-decoration: none;
 }
 
 #article_botao_email_entre_no_mundo_cell {

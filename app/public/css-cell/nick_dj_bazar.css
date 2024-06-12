@@ -113,9 +113,7 @@
     position: relative;
     top: 13vh;
     width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    left: 31vw;
 }
 
 /* parte escrita versace - bazar */
@@ -175,14 +173,13 @@
 #section_parte_dos_botoes_responsivo {
     position: relative;
     top: -23vh;
+    left: 4.9vw;
 
 }
 
 .parte_dos_botoes_responsivo {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     background-color: white;
     width: 30.3vw;
     height: 2.7vh;

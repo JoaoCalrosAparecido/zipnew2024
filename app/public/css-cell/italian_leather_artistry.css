@@ -3,17 +3,17 @@
 #section_italian_cell {
     display: block;
     position: relative;
-    top: -15vh;
+    top: -30vh;
 }
  /*parte da imagem*/
 #imagem_pricipal_italian_cell {
-    background-image: url("../IMG/cell_index/italian-leather/imagem-principal.avif");
+    background-image: url("../IMG/italian_leather_artistry/definitivo/imagem_principal_cell.png");
     width: 100vw;
     height: 70vh;
     position: relative;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 100vw;
+    background-size: 110vh;
 
 }
 
@@ -23,9 +23,11 @@
 
 /*parte escrita*/
 #article_parte_escrita_italian_cell {
-display: flex;
-flex-direction: column;
-justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    left: 1vw;
 }
 
 #parte_escrita_italian_cell {
@@ -42,11 +44,11 @@ justify-content: center;
 
 #botao_italian_cell {
     border: none;
-    width: 40VW;
-    height: 4VH;
+    width: 35VW;
+    height: 3.5VH;
     background-color: white;
     color: black;
-    font-size: 2.3VW;
+    font-size: 2.1VW;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     position: relative;
