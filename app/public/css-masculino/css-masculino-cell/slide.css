@@ -3,14 +3,13 @@
 /*section principal*/
 #section_slide_cell {
     position: relative;
-    top: 173px;
+    top: 15vh;
 }
 
 /*primeiro slide*/
 #section_primeiro_slide1_cell {
-    background-color: cornflowerblue;
     width: 100%;
-    height: 883px; 
+    height: 190vh; 
     display: flex;
     flex-wrap: wrap;
     column-gap: 5px;
@@ -18,7 +17,49 @@
 }
 
 #section_primeiro_slide1_cell > figure {
-    background-color: blueviolet;
-    width: 280px;
-    height: 410px;
+    width: 45.83vw;
+    height: 43.75vh;
+}
+
+/*blocos do slide*/
+
+/*imagem*/
+#section_primeiro_slide1_cell > figure > img {
+    width: 45.83vw;
+    height: 34.75vh;
+}
+
+/*paragrafo*/
+#section_primeiro_slide1_cell > figure > figcaption > p:first-child {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin-top: 1vh;
+    text-indent: 2.8vw;
+}
+
+#section_primeiro_slide1_cell > figure > figcaption > p:nth-child(2) {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2vw;
+    margin-top: 0.4vh;
+    opacity: 60%;
+    text-indent: 2.5vw;
+}
+
+/*veja mais*/
+#veja-mais-cell {
+    position: relative;
+    top: 16vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+#veja-mais-cell > button {
+    background-color: white;
+    width: 77vw;
+    height: 6vh;
+    font-size: 3.8vw;
+    font-weight: 550;
+    font-family: 'Poppins', sans-serif;
 }

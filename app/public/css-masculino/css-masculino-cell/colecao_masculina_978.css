@@ -9,42 +9,57 @@
 /*colção masculina*/
 #section_parte_escrita_colecao_masculina_cell {
     position: relative;
-
+    top: -7vh;
+    height: 14vh;
+    background-color: #F1F1F1;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
 }
 
 #section_parte_escrita_colecao_masculina_cell > p {
-    text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 4vw;
     font-weight: 550;
+    position: relative;
+    top: 6.2vh;
 }
 
 /*979 produtos*/
 #section_978produtos {
-    position: relative;
-    top: 13px;
+    position: absolute;
+    top: 7vh;
+    height: 1520px;
+    width: 100vw;
+    z-index: 2;
+
+}
+
+#article_colecao_978 {
+    position: sticky;
+    top: 87.5px;
 }
 
 /*linha*/
 
-#article_hr1 {
-    
-}
 
-#article_hr2 {
-    position: relative;
-    top: 29px;
-}
 
 /*paragrafo*/
 #article_paragrafo_978 {
     position: relative;
-    top: 14px;
+    background-color: white;
+    height: 5.2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 #article_paragrafo_978 > p {
     text-align: center;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 2.9vw;
+    
 }

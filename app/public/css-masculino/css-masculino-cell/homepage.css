@@ -2,12 +2,13 @@
 
 #section_home_page_cell {
     position: relative;
-    top: 100px;
+    top: 12.5vh;
+    z-index: 4;
 }
 
 #section_home_page_cell > p {
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
+    font-size: 2.1vw;
     text-indent: 10px;
 
 }

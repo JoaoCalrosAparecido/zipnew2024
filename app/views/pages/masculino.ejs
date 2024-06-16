@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Zip Masculino</title>
 
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css-masculino/body_responsivo-masculino.css">
@@ -16,6 +16,7 @@
     <!--menu-->
     <link rel="stylesheet" href="/css-masculino/css-masculino-cell/body-masculino.css" media="screen and (max-width:750px)">
     <link rel="stylesheet" href="/css-masculino/css-masculino-cell/parte_superior-masculino.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="/css-masculino/css-masculino-cell/menu_principal-masculino.css" media="screen and (max-width:750px)">
 
     <!--homepage-->
     <link rel="stylesheet" href="/css-masculino/css-masculino-cell/homepage.css" media="screen and (max-width:750px)">
@@ -24,15 +25,16 @@
     <link rel="stylesheet" href="/css-masculino/css-masculino-cell/colecao_masculina_978.css" media="screen and (max-width:750px)">
 
     <!--slide-->
-    <link rel="stylesheet" href="/css-masculino/css-masculino-cell/slide.css">
+    <link rel="stylesheet" href="/css-masculino/css-masculino-cell/slide.css" media="screen and (max-width:750px)">
+
+    <!--entre no mundo-->
+    <link rel="stylesheet" href="/css-masculino/css-masculino-cell/entre_no_mundo-cell.css" media="screen and (max-width:750px)">
+
+    <!--rodapé-->
+    <link rel="stylesheet" href="/css-masculino/css-masculino-cell/rodape_cell.css" media="screen and (max-width:750px)">
 
 
-    <!--links dos responsivos reutilizado-->
-
-    <link rel="stylesheet" href="/css-cell/menu_principal.css" media="screen and (max-width:750px)">
-
-
-    
+    <link rel="shortcut icon" href="IMG/fivecon/logo preta grande.ico" type="image/x-icon">
 
 </head>
 <body>
@@ -218,16 +220,10 @@
                 id="icon1"
                 src="https://cdn.lordicon.com/kkvxgpti.json"
                 trigger="hover"
-                style="width:20px;height:20px;display:none;">
-            </lord-icon>
-        
-            <lord-icon
-                id="icon2"
-                src="https://cdn.lordicon.com/kkvxgpti.json"
-                trigger="hover"
-                colors="primary:#ffffff"
                 style="width:20px;height:20px;">
             </lord-icon>
+        
+            
 
             </article>
             <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar...">
@@ -247,18 +243,11 @@
                     trigger="morph"
                     state="morph-shopping-bag-open"
                     
-                    style="width:22px;height:22px;display:none;">
+                    style="width:22px;height:22px;">
                 </lord-icon>
     
 
-                <lord-icon
-                id="icon4"
-                src="https://cdn.lordicon.com/evyuuwna.json"
-                trigger="morph"
-                state="morph-shopping-bag-open"
-                colors="primary:#ffffff"
-                style="width:22px;height:22px;">
-                </lord-icon>
+                
 
                 <script src="https://cdn.lordicon.com/lordicon.js"></script>
         </article>
@@ -406,9 +395,7 @@
 
 <script src="../../menu_responsivo.js"></script>
 
-<script src="/js/menu_transparente.js"></script>
 
-<script src="../../rolagem_cell_icones.js"></script>
 
 
 <!--parte da barra de baixo cell-->
@@ -429,24 +416,22 @@
 <!--parte escrita coleçao masculina e produtos cell-->
 <!--parte escrita coleção masculina-->
 <section id="section_colecao_978">
-    <section id="section_parte_escrita_colecao_masculina_cell">
-        <p>COLEÇÃO MASCULINA</p>
-    </section>
-    
-    <!--978 produtos-->
-    <section id="section_978produtos">
-        <article id="article_hr1">
-            <hr>
-        </article>
-    
-        <article id="article_paragrafo_978">
-            <p>978 produtos</p>
-        </article>
-    
-        <article id="article_hr2">
-            <hr>
-        </article>
-    </section>
+        <section id="section_parte_escrita_colecao_masculina_cell">
+            <p>COLEÇÃO MASCULINA</p>
+        </section>
+        
+        <!--978 produtos-->
+        <section id="section_978produtos">
+            <article id="article_colecao_978">
+                
+        
+                <article id="article_paragrafo_978">
+                    <p>978 produtos</p>
+                </article>
+        
+                
+            </article>
+        </section>
 </section>
 
 <!--slides-->
@@ -455,21 +440,146 @@
     <!--primeiro slide-->
     <section id="section_primeiro_slide1_cell">
         <figure>
-            <img src="" alt="">
+            <img src="../../IMG/cell-masculino/imagem1.avif" alt="">
             <figcaption>
-                <p></p>
-                <p></p>
+                <p>Camisa Azul Lavagem Clara</p>
+                <p>R$ 50,00</p>
             </figcaption>
         </figure>
 
-        <figure></figure>
+        <figure>
+            <img src="../../IMG/cell-masculino/imagem2.avif" alt="">
+            <figcaption>
+                <p>Calça Azul Lavagem Clara</p>
+                <p>R$ 70,00</p>
+            </figcaption>
+        </figure>
 
-        <figure></figure>
+        <figure>
+            <img src="../../IMG/cell-masculino/imagem3.avif" alt="">
+            <figcaption>
+                <p>Tenis Casual Branco e Cinza</p>
+                <p>R$ 30,00</p>
+            </figcaption>
+        </figure>
         
-        <figure></figure>
+        <figure>
+            <img src="../../IMG/cell-masculino/imagem4.avif" alt="">
+            <figcaption>
+                <p>Tenis Casual Preto e Branco</p>
+                <p>R$ 30,00</p>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="../../IMG/cell-masculino/imagem5.avif" alt="">
+            <figcaption>
+                <p>Camisa Branca Estampada</p>
+                <p>R$ 20,00</p>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="../../IMG/cell-masculino/imagem6.avif" alt="">
+            <figcaption>
+                <p>Sobretudo Bege</p>
+                <p>R$ 40,00</p>
+            </figcaption>
+        </figure>
+        
+        <figure>
+            <img src="../../IMG/cell-masculino/imagem7.avif" alt="">
+            <figcaption>
+                <p>Camisa Laranja</p>
+                <p>R$ 20,00</p>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="../../IMG/cell-masculino/imagem8.avif" alt="">
+            <figcaption>
+                <p>Calça Preta</p>
+                <p>R$ 20,00</p>
+            </figcaption>
+        </figure>
     </section>
 
 </section>
-    
+
+<!--veja mais-->
+<section id="veja-mais-cell">
+    <button> Veja Mais</button>
+</section>
+
+ <!--entre no mundo-->
+ <section id="section_entre_no_mundo_cell">
+    <figure id="figure_entre_no_mundo_cell"></figure>
+
+    <article id="paragrafo_entre_no_mundo_cell">
+        <p>Esteja por dentro de eventos, coleções e novidades exclusivas</p>
+    </article>
+
+    <section id="section_botao_email_entre_no_mundo_cell">
+        <a href="/cadastro">
+            <article id="article_botao_email_entre_no_mundo_cell">
+                <p>E-mail</p>
+                <img src="../../IMG/stories_recentes/cell/seta.svg" alt="">
+            </article>
+        </a>
+    </section>
+
+</section>
+
+    <!--rodapé cell-->
+    <section id="rodape_cell">
+        <article class="rodape_cell_conteudo">
+            <article>
+                <figure id="figure1_cell_conteudo">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/qeemqlwz.json"
+                    trigger="hover"
+                    colors="primary:#ffffff,secondary:#ffffff"
+                    style="width:25px;height:25px">
+                </lord-icon>
+                </figure>
+                <p id="paragrafo1_cell_conteudo">SOBRE NÓS</p>
+            </article>
+        </article>
+
+        <article class="rodape_cell_conteudo">
+            <article>
+                <figure id="figure2_cell_conteudo">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/kthelypq.json"
+                    trigger="hover"
+                    colors="primary:#ffffff"
+                    style="width:25px;height:25px">
+                </lord-icon>
+                </figure>
+                <p id="paragrafo2_cell_conteudo">ZIP & VOCÊ</p>
+            </article>
+        </article>
+
+        <article class="rodape_cell_conteudo">
+            <article>
+                <figure id="figure3_cell_conteudo">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/hqymfzvj.json"
+                    trigger="hover"
+                    colors="primary:#ffffff"
+                    style="width:25px;height:25px">
+                </lord-icon>
+                </figure>
+                <p id="paragrafo3_cell_conteudo">MARKETPLACE</p>
+            </article>
+        </article>
+
+        <article class="rodape_cell_conteudo">
+                <p>Copyright - 2024</p>
+        </article>
+    </section>
+
+
+
 </body>
 </html>
