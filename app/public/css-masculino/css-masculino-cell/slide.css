@@ -71,3 +71,8 @@
     font-weight: 550;
     font-family: 'Poppins', sans-serif;
 }
+
+#veja-mais-cell > button:active {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
