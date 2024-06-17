@@ -278,6 +278,11 @@ input::-webkit-input-placeholder {
   width: 10vw;
 }
 
+#article_links_principais_cell_p > p > a {
+  text-decoration: none;
+  color: black;
+}
+
 /*paragrafo por paragrafo*/
 #article_links_principais_cell_p1 {
   display: flex;
