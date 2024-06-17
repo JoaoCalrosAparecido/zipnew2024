@@ -52,6 +52,10 @@ router.get("/masculino", function (req, res) {
   res.render('pages/masculino', { msg: 'Back-end funcionando' });
 });
 
+router.get("/feminino", function (req, res) {
+  res.render('pages/feminino', { msg: 'Back-end funcionando' });
+});
+
 router.post("/sign/register", controller.regrasValidacao, async function (req, res) {
   try {
     const { nome, cpf, dia, mes, ano, email, senha, confirmsenha, cep } = req.body;
