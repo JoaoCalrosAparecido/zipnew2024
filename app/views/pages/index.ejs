@@ -63,6 +63,13 @@
 
     <link rel="shortcut icon" href="IMG/fivecon/logo preta grande.ico" type="image/x-icon">
 
+
+            <!-- Notify -->
+        <!-- CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
+        <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
+
     
 </head>
 <body>
@@ -152,12 +159,13 @@
         <!--imagem da barra de pesquisa e etc-->
         <article id="barra_de_pesquisa_e_etc">
             <figure id="imagem_da_barra_de_pesquisa_e_etc">
-
+                <!--
                 <% if (logado) { %>
                     <a href="/sair">sair</a>
                 <% } else { %>
                     <a href="/login_do_usuario">Entrar</a>
                 <% } %>
+                -->
 
 
 
@@ -192,7 +200,7 @@
                         id="lordicon"
                         src="https://cdn.lordicon.com/xyboiuok.json"
                         trigger="hover"
-                        style="width:25px; height:25px">
+                        style="width:25px; height:25px; display: none;">
                     </lord-icon>
 
                     <lord-icon
@@ -219,7 +227,7 @@
                     id="pessoa2"
                     src="https://cdn.lordicon.com/kthelypq.json"
                     trigger="hover"
-                    style="width:25px;height:25px">
+                    style="width:25px;height:25px; display: none;">
                     </lord-icon>
                 </figure></a>
                 
@@ -240,7 +248,7 @@
                         trigger="morph"
                         state="morph-shopping-bag-open"
                         colors="primary:#ffffff"
-                        style="width:25px;height:25px;display:none;">
+                        style="width:25px;height:25px;">
                     </lord-icon>
                     </figure>
                 </a>
@@ -328,11 +336,19 @@
                                 <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
                             </p>
 
+<<<<<<< HEAD
                             <p id="article_links_principais_cell_p3"><a href="/feminino">FEMININO</a>
                                 <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
                             </p>
 
                             <p id="article_links_principais_cell_p4"><a href="/masculino">MASCULINO</a>
+=======
+                            <p id="article_links_principais_cell_p3"><a href="/feminino" style="text-decoration: none; color: black; ">FEMININO</a>
+                                <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+                            </p>
+
+                            <p id="article_links_principais_cell_p4"><a href="/masculino" style="text-decoration: none; color: black; ">MASCULINO</a>
+>>>>>>> 96888091197171e92021294e55027ac2d7a774d6
                                 <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
                             </p>
 
@@ -383,7 +399,7 @@
                             </article>
 
                             <article>
-                                <p>Entrar</p>
+                                <p><a href="/login_do_usuario" style="text-decoration: none; color: black; ">Entrar</a></p>
                             </article>
                         </article>
 
