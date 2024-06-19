@@ -64,6 +64,10 @@ router.get("/acessorios", function (req, res) {
   res.render('pages/acessorios', { msg: 'Back-end funcionando' });
 });
 
+router.get("/wishlist", function (req, res) {
+  res.render('pages/wishlist', { msg: 'Back-end funcionando' });
+});
+
 router.post("/sign/register", controller.regrasValidacao, async function (req, res) {
   try {
     const { nome, cpf, dia, mes, ano, email, senha, confirmsenha, cep } = req.body;
