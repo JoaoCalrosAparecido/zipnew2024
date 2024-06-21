@@ -21,6 +21,6 @@
     "simple-notify": "^1.0.4"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.4"
   }
 }

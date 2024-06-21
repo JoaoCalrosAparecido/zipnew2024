@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="css-login_usuario/parte_superior.css">
-    <link rel="stylesheet" href="css-login_usuario/menu_login.css">
-    <link rel="stylesheet" href="css-login_usuario/login_box.css">
-    <link rel="stylesheet" href="css-login_usuario/info_cadastro.css">
-    <link rel="stylesheet" href="css-login_usuario/voce_tambem_vai_gostar.css">
-    <link rel="stylesheet" href="css-login_usuario/stories_recentes_loginus.css">
-    <link rel="stylesheet" href="css-login_usuario/rodape_loginus.css">
+    <link rel="stylesheet" href="../css-login_usuario/parte_superior.css">
+    <link rel="stylesheet" href="../css-login_usuario/menu_login.css">
+    <link rel="stylesheet" href="../css-login_usuario/login_box.css">
+    <link rel="stylesheet" href="../css-login_usuario/info_cadastro.css">
+    <link rel="stylesheet" href="../css-login_usuario/voce_tambem_vai_gostar.css">
+    <link rel="stylesheet" href="../css-login_usuario/stories_recentes_loginus.css">
+    <link rel="stylesheet" href="../css-login_usuario/rodape_loginus.css">
 
     <!--links dos responsivos-->
-    <link rel="stylesheet" href="Logins/login_mobile/login_mob.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../Logins/login_mobile/login_mob.css" media="screen and (max-width:750px)">
 
 
                 <!-- Notify -->
@@ -104,10 +104,10 @@
 
                         <label id="Up">Entre com o email e a senha</label>
 
-                        <input type="email" name="email" id="email" placeholder="Email*" class="inputs required" value="<%= dadosUsuario[0] %>" oninput="emailValidate()">
+                        <input type="email" name="email" id="email" placeholder="Email*" >
                         <br>
                         <span class="span-required">O email está incorreto!</span>
-                        <input type="password" name="senha" id="senha" placeholder="Senha*" class="inputs required" value="<%= dadosUsuario[0] %>" oninput="mainPasswordValidate()">
+                        <input type="password" name="senha" id="senha" placeholder="Senha*" >
                         <br>
                         <span class="span-required">A senha está incorreta!</span>
 

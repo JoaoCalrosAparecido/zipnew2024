@@ -25,11 +25,11 @@ router.get("/bazar", function (req, res) {
 });
 
 router.get("/cadastro", function (req, res) {
-  res.render('pages/cadastro', { erros: null });
+  res.render('pages/cadastro', { erros: null, dadosform: {nome: '', cpf: '',dia: '',mes: '',ano: '',email: '',senha: '',confirmsenha: '',cep: ''}, logado: false });
 });
 
 router.get("/login_do_usuario", function (req, res) {
-  res.render('pages/login_do_usuario', { dadosUsuario: ['', ''] });
+  res.render('pages/login_do_usuario', { logado: false });
 });
 
 router.get("/perfil", function (req, res) {
@@ -74,7 +74,7 @@ router.post("/sign/register", controller.regrasValidacao, async function (req, r
   console.log(erros);
 
   if (!erros.isEmpty()) {
-    return res.render('pages/cadastro', { erros: erros });
+    return res.render('pages/cadastro', { erros: erros, dadosform: {nome: req.body.nome, cpf: req.body.cpf, dia: req.body.dia,  mes: req.body.mes, ano: req.body.ano, email: req.body.email, senha: req.body.senha, confirmsenha: req.body.confirmsenha, cep: req.body.cep} });
   }
 
   try {
@@ -94,6 +94,8 @@ router.post("/sign/register", controller.regrasValidacao, async function (req, r
   } catch (error) {
     console.log(error)
   }
+
+
 });
 
 
