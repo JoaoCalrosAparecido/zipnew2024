@@ -74,7 +74,7 @@ router.post("/sign/register", controller.regrasValidacao, async function (req, r
   console.log(erros);
 
   if (!erros.isEmpty()) {
-    return res.render('pages/cadastro', { erros: erros, dadosform: {nome: req.body.nome, cpf: req.body.cpf, dia: req.body.dia,  mes: req.body.mes, ano: req.body.ano, email: req.body.email, senha: req.body.senha, confirmsenha: req.body.confirmsenha, cep: req.body.cep} });
+    return res.render('pages/cadastro', { erros: erros, dadosform: {nome: req.body.nome, cpf: req.body.cpf, dia: req.body.dia,  mes: req.body.mes, ano: req.body.ano, email: req.body.email, senha: req.body.senha, confirmsenha: req.body.confirmsenha, cep: req.body.cep}, logado: false });
   }
 
   try {
@@ -90,9 +90,36 @@ router.post("/sign/register", controller.regrasValidacao, async function (req, r
 
     const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, hashedPassword, confirmsenha, cep]);
     console.log(create)
-    res.redirect('/')
+    res.render('pages/cadastro', { erros: erros, dadosform: {nome: req.body.nome, cpf: req.body.cpf, dia: req.body.dia,  mes: req.body.mes, ano: req.body.ano, email: req.body.email, senha: req.body.senha, confirmsenha: req.body.confirmsenha, cep: req.body.cep}, logado: true })
   } catch (error) {
     console.log(error)
+  }try {
+    const { email, senha } = req.body;
+
+    const user = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
+
+    if (user.length == 0) {
+      // validação caso o usuario não seja encontrado
+    }
+
+    const senhaCorreta = bcrypt.compareSync(senha, user[0][0].senha)
+
+    if (!senhaCorreta) {
+      // validação senha errada
+    }
+
+    // cria sessão do usuario
+    req.session.userid = user[0][0].id_Cliente;
+    return req.session.save(() => {
+      res.redirect("/")
+    })
+
+    //req.session.destroy(() => {
+    //   res.redirect("/);
+    // });
+
+  } catch (error) {
+    console.log("erro:" + error)
   }
 
 

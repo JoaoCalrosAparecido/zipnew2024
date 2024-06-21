@@ -114,12 +114,8 @@
                 erros.errors.forEach(err => {
                     campoErro[err['path']] = 'invalido';
                     msgErro +=  err.msg + '<br>'
-                    %>
-                    
-                    
-                <%});
-                %>
-                
+                    %>     
+                <%});%>
                 <script>
                     (() => {
                         var campoInvalido = '<%= msgErro%>'
@@ -130,7 +126,7 @@
                                 text: '' + campoInvalido.replace(/&lt;/g,"<").replace(/&gt;/g,">"),
                                 speed: 300,
                                 effect: 'fade',
-                                showIcon: true,
+                                showIcon: false,
                                 showCloseButton: true,
                                 autoclose: true,
                                 autotimeout: 5000,
@@ -143,7 +139,34 @@
                         mostrarNotificacao();
                     })();
                 </script>
-            <% } %>
+                <% } %>
+                
+        <%  if (logado) { %>
+            <script>
+                (() => {
+                    function showNotificacao() {
+                        return new Notify ({
+                            status: 'sucess',
+                            title: 'Cadastro realizado', 
+                            text: 'Usuario cadastrado com sucesso',
+                            speed: 300,
+                            effect: 'fade',
+                            showIcon: false,
+                            showCloseButton: true,
+                            autoclose: true,
+                            autotimeout: 5000,
+                            gap: 20,
+                            distance: 20,
+                            position: 'top-left'
+                        });
+                    }
+
+                    showNotificacao();
+                })();
+            </script>
+            <%}%>
+    
+            
             
 
             <form id="formulario" action="/sign/register" method="post">
