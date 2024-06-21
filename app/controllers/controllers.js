@@ -3,7 +3,7 @@ const { body, validationResult } = require("express-validator");
 
 const controller = {
   regrasValidacao: [
-    body('nome').isAlpha({min: 3}),
+    body('nome').isAlpha({min: 3, ignore: [' ', '-']}),
     body('cpf').isString({max: 10}),
     body('dia').isNumeric({max: 2}),
     body('mes').isNumeric({max: 2}),
