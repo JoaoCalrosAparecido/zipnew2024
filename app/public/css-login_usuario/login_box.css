@@ -119,7 +119,8 @@ form input[type=password] {
       transform: translate(-50%,-50%);
       font-family: 'Poppins', sans-serif;
       height: 22rem;
-    color: rgb(170, 170, 170);
+    color: rgb(206, 201, 201);
+    z-index: 3;
   }
 
 

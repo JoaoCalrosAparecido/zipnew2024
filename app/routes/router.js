@@ -69,6 +69,14 @@ router.get("/wishlist", function (req, res) {
 });
 
 router.post("/sign/register", controller.regrasValidacao, async function (req, res) {
+  const erros = validationResult(req);
+
+  console.log(erros);
+
+  if (!erros.isEmpty()) {
+    return res.render('pages/cadastro', { erros: erros });
+  }
+
   try {
     const { nome, cpf, dia, mes, ano, email, senha, confirmsenha, cep } = req.body;
 
@@ -89,10 +97,17 @@ router.post("/sign/register", controller.regrasValidacao, async function (req, r
 });
 
 
-router.post("/sign/login", async function (req, res) {
-  const { email, senha } = req.body;
+router.post("/sign/login", controller.regrasValidacao, async function (req, res) {
+  const erros = validationResult(req);
+
+  if (!erros.isEmpty()) {
+    console.log(erros);
+    return res.render('pages/cadastro', { erros: erros });
+  }
 
   try {
+    const { email, senha } = req.body;
+
     const user = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
 
     if (user.length == 0) {
@@ -106,7 +121,6 @@ router.post("/sign/login", async function (req, res) {
     }
 
     // cria sessão do usuario
-
     req.session.userid = user[0][0].id_Cliente;
     return req.session.save(() => {
       res.redirect("/")

@@ -95,14 +95,58 @@
         </article>
         <article class="abaixar">
 
+            <% 
+            const campoErro = {
+                nome:'',
+                email:'',
+                senha:'',
+                cpf:'',
+                cep:'',
+                confirmsenha:'',
+                dia:'',
+                mes:'',
+                ano:''
+            };
+            if (erros) {
+            
+                erros.errors.forEach(err => {
+                    campoErro[err['path']] = 'invalido';
+                });
+            %>
+                
+                <script>
+                    (() => {
+                        function mostrarNotificacao() {
+                            return new Notify ({
+                                status: 'error',
+                                title: `Campo inválido`,
+                                text: 'Verifique os dados e tente novamente.',
+                                speed: 300,
+                                effect: 'fade',
+                                showIcon: true,
+                                showCloseButton: true,
+                                autoclose: true,
+                                autotimeout: 4000,
+                                gap: 20,
+                                distance: 20,
+                                position: 'top-right'
+                            });
+                        }
+
+                        mostrarNotificacao();
+                    })();
+                </script>
+            <% } %>
+            
+
             <form id="formulario" action="/sign/register" method="post">
                 <section id="forms">
                         <article>
-                                    <input type="text" name="nome" id="nome" maxlength="40" placeholder="    Nome Completo*" class="inputs required" oninput="nameValidate()">
+                                    <input type="text" name="nome" id="nome" maxlength="40" class="<%=campoErro.nome %>" placeholder="    Nome Completo*" class="inputs required" oninput="nameValidate()">
                                 <br>
                                 <span class="span-required">É necessário preencher corretamente esse campo!</span>
                                 <br>
-                            <input type="text" name="cpf" id="cpf" maxlength="40" placeholder="    CPF*" class="inputs required" oninput="cpfValidate()">
+                            <input type="text" name="cpf" class="<%=campoErro.cpf %>" id="cpf" maxlength="40" placeholder="    CPF*" class="inputs required" oninput="cpfValidate()">
                             <br>
                             <span class="span-required">É necessário preencher corretamente esse campo!</span>
                             <br>
@@ -110,33 +154,32 @@
                                 <br>-->
 
                                     <section id="data">
-                                        <input type="text" name="dia" id="dia" maxlength="2"  placeholder="    Dia*" class="inputs required" oninput="diaValidate()">
+                                        <input type="text" name="dia" class="<%=campoErro.dia %>" id="dia" maxlength="2"  placeholder="    Dia*" class="inputs required" oninput="diaValidate()">
                                         <span class="span-required"></span>
-                                        <input type="text" name="mes" id="mes" maxlength="2" placeholder="    Mês*" class="inputs required" oninput="mesValidate()">
+                                        <input type="text" name="mes" class="<%=campoErro.mes %>" id="mes" maxlength="2" placeholder="    Mês*" class="inputs required" oninput="mesValidate()">
                                         <span class="span-required"></span>
-                                        <input type="text" name="ano" id="ano" maxlength="4" placeholder="    Ano*" class="inputs required" oninput="anoValidate()">
+                                        <input type="text" name="ano" class="<%=campoErro.ano %>" id="ano" maxlength="4" placeholder="    Ano*" class="inputs required" oninput="anoValidate()">
                                         <span class="span-required"></span>
                                         <br>
 
                                     </section>
 
-                            <input type="email" name="email" id="email" placeholder="    Email*" class="inputs required" oninput="emailValidate()">
+                            <input type="email" name="email" class="<%=campoErro.email %>" id="email" placeholder="    Email*" class="inputs required" oninput="emailValidate()">
                             <br>
                             <span class="span-required">É necessário preencher corretamente esse campo!</span>
                             <br>
-                                <input type="password" name="senha" id="senha" placeholder="    Senha*" class="inputs required" oninput="mainPasswordValidate()">
+                                <input type="password" name="senha" id="senha" class="<%=campoErro.senha %>" placeholder="    Senha*" class="inputs required" oninput="mainPasswordValidate()">
                                 <br>
                                 <span class="span-required">A senha prescisa de no minímo 8 digitos!</span>
                                 <br>
-                            <input type="password" name="confirmsenha" id="senha"  placeholder="    Confirme a senha" class="inputs required" oninput="comparePassword()">
+                            <input type="password" name="confirmsenha" id="senha" class="<%=campoErro.confirmsenha %>"  placeholder="    Confirme a senha" class="inputs required" oninput="comparePassword()">
                             <br>
                             <span class="span-required">As senhas não são compativeis!</span>
                             <br>
-                                <input type="text" name="cep" id="cep" size="15" placeholder="  CEP*" class="inputs required" oninput="cepValidate()">
+                                <input type="text" name="cep" id="cep" class="<%=campoErro.cep %>" size="15" placeholder="  CEP*" class="inputs required" oninput="cepValidate()">
                                 <br>
                                 <span class="span-required">É necessário preencher corretamente esse campo!</span>
                                 <br>
-
 
 
                             <input type="submit" value="ENVIAR" id="botao" >
