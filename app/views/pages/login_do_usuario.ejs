@@ -104,10 +104,10 @@
 
                         <label id="Up">Entre com o email e a senha</label>
 
-                        <input type="email" name="email" id="email" placeholder="Email*" class="inputs required" oninput="emailValidate()">
+                        <input type="email" name="email" id="email" placeholder="Email*" class="inputs required" value="<%= dadosUsuario[0] %>" oninput="emailValidate()">
                         <br>
                         <span class="span-required">O email está incorreto!</span>
-                        <input type="password" name="senha" id="senha" placeholder="Senha*" class="inputs required" oninput="mainPasswordValidate()">
+                        <input type="password" name="senha" id="senha" placeholder="Senha*" class="inputs required" value="<%= dadosUsuario[0] %>" oninput="mainPasswordValidate()">
                         <br>
                         <span class="span-required">A senha está incorreta!</span>
 

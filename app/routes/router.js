@@ -25,11 +25,11 @@ router.get("/bazar", function (req, res) {
 });
 
 router.get("/cadastro", function (req, res) {
-  res.render('pages/cadastro', { msg: 'Back-end funcionando' });
+  res.render('pages/cadastro', { erros: null });
 });
 
 router.get("/login_do_usuario", function (req, res) {
-  res.render('pages/login_do_usuario', { msg: 'Back-end funcionando' });
+  res.render('pages/login_do_usuario', { dadosUsuario: ['', ''] });
 });
 
 router.get("/perfil", function (req, res) {
