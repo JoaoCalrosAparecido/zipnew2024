@@ -17,7 +17,7 @@ router.get("/", function (req, res) {
     estalogado = true
   }
 
-  res.render('pages/index', { logado: estalogado });
+  res.render('pages/index', { logado: estalogado, });
 });
 
 router.get("/bazar", function (req, res) {
@@ -25,15 +25,15 @@ router.get("/bazar", function (req, res) {
 });
 
 router.get("/cadastro", function (req, res) {
-  res.render('pages/cadastro', { erros: null, dadosform: {nome: '', cpf: '',dia: '',mes: '',ano: '',email: '',senha: '',confirmsenha: '',cep: ''}, logado: false });
+  res.render('pages/cadastro', { erros: null, dadosform: {nome: '', cpf: '',dia: '',mes: '',ano: '',email: '',senha: '',confirmsenha: '',cep: ''}, logado: false, usuarioautenticado: req.session.userid });
 });
 
 router.get("/login_do_usuario", function (req, res) {
-  res.render('pages/login_do_usuario', { logado: false });
+  res.render('pages/login_do_usuario', { erros: null, logado: false, dadosform: {email: '', senha: ''}, usuarioautenticado: null });
 });
 
 router.get("/perfil", function (req, res) {
-  res.render('pages/perfil', { msg: 'Back-end funcionando' });
+  res.render('pages/perfil', { msg: 'Back-end funcionando', });
 });
 
 router.get("/bolsa_preta_classica", function (req, res) {
@@ -68,7 +68,7 @@ router.get("/wishlist", function (req, res) {
   res.render('pages/wishlist', { msg: 'Back-end funcionando' });
 });
 
-router.post("/sign/register", controller.regrasValidacao, async function (req, res) {
+router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {
   const erros = validationResult(req);
 
   console.log(erros);
@@ -90,48 +90,19 @@ router.post("/sign/register", controller.regrasValidacao, async function (req, r
 
     const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, hashedPassword, confirmsenha, cep]);
     console.log(create)
-    res.render('pages/cadastro', { erros: erros, dadosform: {nome: req.body.nome, cpf: req.body.cpf, dia: req.body.dia,  mes: req.body.mes, ano: req.body.ano, email: req.body.email, senha: req.body.senha, confirmsenha: req.body.confirmsenha, cep: req.body.cep}, logado: true })
+    res.render('pages/login_do_usuario', { erros: null, dadosform: {email: req.body.email, senha: req.body.senha}, logado: true, usuarioautenticado: null })
   } catch (error) {
     console.log(error)
-  }try {
-    const { email, senha } = req.body;
-
-    const user = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
-
-    if (user.length == 0) {
-      // validação caso o usuario não seja encontrado
-    }
-
-    const senhaCorreta = bcrypt.compareSync(senha, user[0][0].senha)
-
-    if (!senhaCorreta) {
-      // validação senha errada
-    }
-
-    // cria sessão do usuario
-    req.session.userid = user[0][0].id_Cliente;
-    return req.session.save(() => {
-      res.redirect("/")
-    })
-
-    //req.session.destroy(() => {
-    //   res.redirect("/);
-    // });
-
-  } catch (error) {
-    console.log("erro:" + error)
   }
-
-
 });
 
 
-router.post("/sign/login", controller.regrasValidacao, async function (req, res) {
+router.post("/sign/login", controller.regrasValidacaolog, async function (req, res) {
   const erros = validationResult(req);
 
   if (!erros.isEmpty()) {
     console.log(erros);
-    return res.render('pages/cadastro', { erros: erros });
+    return res.render('pages/login_do_usuario', { erros: erros, dadosform: {email: req.body.email, senha: req.body.senha}, logado: false, usuarioautenticado: null });
   }
 
   try {
@@ -152,7 +123,7 @@ router.post("/sign/login", controller.regrasValidacao, async function (req, res)
     // cria sessão do usuario
     req.session.userid = user[0][0].id_Cliente;
     return req.session.save(() => {
-      res.redirect("/")
+      return res.render('pages/login_do_usuario', { erros: null, dadosform: {email: req.body.email, senha: req.body.senha}, logado: true, usuarioautenticado: req.session.userid  });
     })
 
     //req.session.destroy(() => {
@@ -169,14 +140,14 @@ router.get('/sair', function (req, res) {
     console.log('saiu')
 
     req.session.destroy(() => {
-      res.redirect("/")
+      res.redirect("pages/perfil")
     });
   } catch (error) {
     console.log("erro:" + error)
   }
 });
 
-router.post("/update", controller.regrasValidacao, function (req, res) {
+router.post("/update", controller.regrasValidacaocadastro, function (req, res) {
 
 });
 

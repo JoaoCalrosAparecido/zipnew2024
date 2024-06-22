@@ -96,6 +96,98 @@
              <section id="Login">
                 <section>
             <article>
+                <% 
+            let msgErro = ''
+                
+            
+            const campoErro = {   
+                email:'',
+                senha:'',
+            };
+            if (erros) {
+                erros.errors.forEach(err => {
+                    campoErro[err['path']] = 'invalido';
+                    msgErro +=  err.msg + '<br>'
+                    %>     
+                <%});%>
+                <script>
+                    (() => {
+                        var campoInvalido = '<%= msgErro%>'
+                        function mostrarNotificacao() {
+                            return new Notify ({
+                                status: 'error',
+                                title: 'Verifique os Campos', 
+                                text: '' + campoInvalido.replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+                                speed: 300,
+                                effect: 'fade',
+                                showIcon: false,
+                                showCloseButton: true,
+                                autoclose: true,
+                                autotimeout: 5000,
+                                gap: 20,
+                                distance: 20,
+                                position: 'center'
+                            });
+                        }
+
+                        mostrarNotificacao();
+                    })();
+                </script>
+                <% } %>
+
+                <%  if (logado && !usuarioautenticado) { %>
+                    <script>
+                        (() => {
+                            function showNotificacao() {
+                                return new Notify ({
+                                    status: 'sucess',
+                                    title: 'Cadastro realizado', 
+                                    text: 'Usuario cadastrado com sucesso',
+                                    speed: 300,
+                                    effect: 'fade',
+                                    showIcon: false,
+                                    showCloseButton: true,
+                                    autoclose: true,
+                                    autotimeout: 5000,
+                                    gap: 20,
+                                    distance: 20,
+                                    position: 'top-left'
+                                });
+                            }
+        
+                            showNotificacao();
+                        })();
+                    </script>
+                    <%}%>
+                
+                    <%    if (usuarioautenticado) { %>
+                        <script>
+                            (() => {
+                                function mosNotificacao() {
+                                    return new Notify ({
+                                        status: 'sucess',
+                                        title: 'Usuario Logado', 
+                                        text: 'Você sera redirecionado para o perfil',
+                                        speed: 300,
+                                        effect: 'fade',
+                                        showIcon: false,
+                                        showCloseButton: true,
+                                        autoclose: true,
+                                        autotimeout: 5000,
+                                        gap: 20,
+                                        distance: 20,
+                                        position: 'top-left'
+                                    });
+                                }
+            
+                                mosNotificacao();
+                                setTimeout(() => {
+                                    window.location.href = "/perfil";
+                                },5000);
+
+                            })();
+                        </script>
+                        <%}%>
 
 
                 <form id="control" action="/sign/login" method="post">
@@ -104,12 +196,12 @@
 
                         <label id="Up">Entre com o email e a senha</label>
 
-                        <input type="email" name="email" id="email" placeholder="Email*" >
+                        <input type="email" name="email" class="<%=campoErro.email %>" value="<%= dadosform.email%>" id="email" placeholder="Email*" >
                         <br>
-                        <span class="span-required">O email está incorreto!</span>
-                        <input type="password" name="senha" id="senha" placeholder="Senha*" >
+                        
+                        <input type="password" name="senha" class="<%=campoErro.senha %>" value="<%= dadosform.senha%>" id="senha" placeholder="Senha*" >
                         <br>
-                        <span class="span-required">A senha está incorreta!</span>
+                        
 
                             <article id="AftSend">
                                 <input type="checkbox" id="Box">
