@@ -10,27 +10,32 @@ body{
 
 /** Começo */
 
+#profile{
+    margin-top: 4rem;
+}
+
 #on{
-    margin-left: 4vw;
+    margin-left: 3.5vw;
     margin-right: 4vw;
+    width: 64vw;
 }
 
 #welcome{
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 600;
 }
 
 #sales{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-    color: #02A7F0;
+    color: #ff3131;
 }
 
 
 /*Adicionar Produto*/
 
 #adding{
-    margin-top: 30px;
+    margin-top: 50px;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 5px;
@@ -40,7 +45,7 @@ body{
 hr{
     border-color:#f1f1f1;
     box-sizing:border-box;
-    width:100%;  
+    width: 100%;  
     height: 1px;
   }
 
@@ -57,12 +62,12 @@ hr{
     margin-bottom: 35px;
 
     background-color: rgb(255, 255, 255);
-    width: 10.5rem;
-    height: 14.5rem;
+    width: 12rem;
+    height: 19rem;
 
     border-style: solid;
     border-width: 1px;
-    border-radius: 28px;
+    border-radius: 15px;
     border-color: #333333;
 
     display: grid;
@@ -79,26 +84,50 @@ hr{
 
 /* Informações Usuario*/
 
+#onn{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#linha{
+    border-color:#f1f1f1;
+    box-sizing:border-box;
+    width: 100%;  
+    height: 1px;
+}
+
 #info{
+    border-radius: 5px;
     background: #F2F2F2;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 30rem;
+    margin-left: 73%;
+    margin-top: -26%;
+    position: absolute;
+
 }
 
 #data, #requests, #salle, #addv, #complaint, #warming{
     font-size: 16px;
     margin-top: 8px;
     margin-bottom: 8px;
+    width: 30rem;
     
 }
 
 /* Suporte */
 
 #sup{
+    border-radius: 5px;
     background: #F2F2F2;
     margin-top: 8px;
     padding-bottom: 28px;
     margin-bottom: 4rem;
+    width: 30rem;
+    margin-left: 73%;
+    margin-top: -11%;
+    position: absolute;
 
 }
 
@@ -108,6 +137,7 @@ hr{
     width: 100%;
     height: 50px;
 
+    border-radius: 5px;
     cursor: pointer;
     background-color: #333333;
     color: #FFFFFF;
@@ -122,8 +152,9 @@ hr{
 }
 
 #help{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 17px;
+    font-weight: 600;
 }
 
 #questions, #helping{
@@ -135,22 +166,23 @@ hr{
 /* Você pode gostar*/
 
 #slide{
+    width: 71vw;
     margin-bottom: 5rem;
 }
 
 #likeit{
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
 }
 
-#like, #likes{
-    margin-top: 15px;
+#like, #likes, #likez{
+    margin-top: 25px;
     margin-bottom: 15px;
 
     background-color: rgb(255, 255, 255);
-    width: 13rem;
-    height: 14.5rem;
+    width: 23rem;
+    height: 24rem;
 
     border-style: solid;
     border-width: 1px;
@@ -161,18 +193,15 @@ hr{
     place-items: center;
 }
 
-#likez{
-    display: none;
-}
-
 #container{
     display: flex;
-    margin-left: 6vw;
-    margin-right: 6vw;
+
+    margin-left: 4vw;
+    margin-right: 4vw;
 
 }
 
-#likes{
+#likes, #likez{
     margin-left: 10px;
 }
 
@@ -187,19 +216,15 @@ hr{
 
 #sepair{
     display: flex;
-    margin-left: 6vw;
-    margin-right: 6vw;
+    margin-left: 4.5vw;
+    margin-right: 4.5vw;
 }
 
 #display{
     margin-left: 5px;
 }
 
-#dissy{
-    margin-left: 30vw;
-}
-
-#dissa{
-    display: none;
+#dissy, #dissa{
+    margin-left: 12vw;
 }
 
