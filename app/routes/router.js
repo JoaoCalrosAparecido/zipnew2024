@@ -17,7 +17,7 @@ router.get("/", function (req, res) {
     estalogado = true
   }
 
-  res.render('pages/index', { logado: estalogado });
+  res.render('pages/index', { logado: estalogado, });
 });
 
 router.get("/bazar", function (req, res) {
@@ -25,15 +25,15 @@ router.get("/bazar", function (req, res) {
 });
 
 router.get("/cadastro", function (req, res) {
-  res.render('pages/cadastro', { msg: 'Back-end funcionando' });
+  res.render('pages/cadastro', { erros: null, dadosform: {nome: '', cpf: '',dia: '',mes: '',ano: '',email: '',senha: '',confirmsenha: '',cep: ''}, logado: false, usuarioautenticado: req.session.userid });
 });
 
 router.get("/login_do_usuario", function (req, res) {
-  res.render('pages/login_do_usuario', { msg: 'Back-end funcionando' });
+  res.render('pages/login_do_usuario', { erros: null, logado: false, dadosform: {email: '', senha: ''}, usuarioautenticado: null });
 });
 
 router.get("/perfil", function (req, res) {
-  res.render('pages/perfil', { msg: 'Back-end funcionando' });
+  res.render('pages/perfil', { msg: 'Back-end funcionando', });
 });
 
 router.get("/bolsa_preta_classica", function (req, res) {
@@ -68,7 +68,15 @@ router.get("/wishlist", function (req, res) {
   res.render('pages/wishlist', { msg: 'Back-end funcionando' });
 });
 
-router.post("/sign/register", controller.regrasValidacao, async function (req, res) {
+router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {
+  const erros = validationResult(req);
+
+  console.log(erros);
+
+  if (!erros.isEmpty()) {
+    return res.render('pages/cadastro', { erros: erros, dadosform: {nome: req.body.nome, cpf: req.body.cpf, dia: req.body.dia,  mes: req.body.mes, ano: req.body.ano, email: req.body.email, senha: req.body.senha, confirmsenha: req.body.confirmsenha, cep: req.body.cep}, logado: false });
+  }
+
   try {
     const { nome, cpf, dia, mes, ano, email, senha, confirmsenha, cep } = req.body;
 
@@ -82,17 +90,24 @@ router.post("/sign/register", controller.regrasValidacao, async function (req, r
 
     const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, hashedPassword, confirmsenha, cep]);
     console.log(create)
-    res.redirect('/')
+    res.render('pages/login_do_usuario', { erros: null, dadosform: {email: req.body.email, senha: req.body.senha}, logado: true, usuarioautenticado: null })
   } catch (error) {
     console.log(error)
   }
 });
 
 
-router.post("/sign/login", async function (req, res) {
-  const { email, senha } = req.body;
+router.post("/sign/login", controller.regrasValidacaolog, async function (req, res) {
+  const erros = validationResult(req);
+
+  if (!erros.isEmpty()) {
+    console.log(erros);
+    return res.render('pages/login_do_usuario', { erros: erros, dadosform: {email: req.body.email, senha: req.body.senha}, logado: false, usuarioautenticado: null });
+  }
 
   try {
+    const { email, senha } = req.body;
+
     const user = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
 
     if (user.length == 0) {
@@ -106,10 +121,9 @@ router.post("/sign/login", async function (req, res) {
     }
 
     // cria sessão do usuario
-
     req.session.userid = user[0][0].id_Cliente;
     return req.session.save(() => {
-      res.redirect("/")
+      return res.render('pages/login_do_usuario', { erros: null, dadosform: {email: req.body.email, senha: req.body.senha}, logado: true, usuarioautenticado: req.session.userid  });
     })
 
     //req.session.destroy(() => {
@@ -126,14 +140,14 @@ router.get('/sair', function (req, res) {
     console.log('saiu')
 
     req.session.destroy(() => {
-      res.redirect("/")
+      res.redirect("pages/perfil")
     });
   } catch (error) {
     console.log("erro:" + error)
   }
 });
 
-router.post("/update", controller.regrasValidacao, function (req, res) {
+router.post("/update", controller.regrasValidacaocadastro, function (req, res) {
 
 });
 

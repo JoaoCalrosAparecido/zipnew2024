@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="css-login_usuario/parte_superior.css">
-    <link rel="stylesheet" href="css-login_usuario/menu_login.css">
-    <link rel="stylesheet" href="css-login_usuario/login_box.css">
-    <link rel="stylesheet" href="css-login_usuario/info_cadastro.css">
-    <link rel="stylesheet" href="css-login_usuario/voce_tambem_vai_gostar.css">
-    <link rel="stylesheet" href="css-login_usuario/stories_recentes_loginus.css">
-    <link rel="stylesheet" href="css-login_usuario/rodape_loginus.css">
+    <link rel="stylesheet" href="../css-login_usuario/parte_superior.css">
+    <link rel="stylesheet" href="../css-login_usuario/menu_login.css">
+    <link rel="stylesheet" href="../css-login_usuario/login_box.css">
+    <link rel="stylesheet" href="../css-login_usuario/info_cadastro.css">
+    <link rel="stylesheet" href="../css-login_usuario/voce_tambem_vai_gostar.css">
+    <link rel="stylesheet" href="../css-login_usuario/stories_recentes_loginus.css">
+    <link rel="stylesheet" href="../css-login_usuario/rodape_loginus.css">
 
     <!--links dos responsivos-->
-    <link rel="stylesheet" href="Logins/login_mobile/login_mob.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../Logins/login_mobile/login_mob.css" media="screen and (max-width:750px)">
 
 
                 <!-- Notify -->
@@ -96,6 +96,98 @@
              <section id="Login">
                 <section>
             <article>
+                <% 
+            let msgErro = ''
+                
+            
+            const campoErro = {   
+                email:'',
+                senha:'',
+            };
+            if (erros) {
+                erros.errors.forEach(err => {
+                    campoErro[err['path']] = 'invalido';
+                    msgErro +=  err.msg + '<br>'
+                    %>     
+                <%});%>
+                <script>
+                    (() => {
+                        var campoInvalido = '<%= msgErro%>'
+                        function mostrarNotificacao() {
+                            return new Notify ({
+                                status: 'error',
+                                title: 'Verifique os Campos', 
+                                text: '' + campoInvalido.replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+                                speed: 300,
+                                effect: 'fade',
+                                showIcon: false,
+                                showCloseButton: true,
+                                autoclose: true,
+                                autotimeout: 5000,
+                                gap: 20,
+                                distance: 20,
+                                position: 'center'
+                            });
+                        }
+
+                        mostrarNotificacao();
+                    })();
+                </script>
+                <% } %>
+
+                <%  if (logado && !usuarioautenticado) { %>
+                    <script>
+                        (() => {
+                            function showNotificacao() {
+                                return new Notify ({
+                                    status: 'sucess',
+                                    title: 'Cadastro realizado', 
+                                    text: 'Usuario cadastrado com sucesso',
+                                    speed: 300,
+                                    effect: 'fade',
+                                    showIcon: false,
+                                    showCloseButton: true,
+                                    autoclose: true,
+                                    autotimeout: 5000,
+                                    gap: 20,
+                                    distance: 20,
+                                    position: 'top-left'
+                                });
+                            }
+        
+                            showNotificacao();
+                        })();
+                    </script>
+                    <%}%>
+                
+                    <%    if (usuarioautenticado) { %>
+                        <script>
+                            (() => {
+                                function mosNotificacao() {
+                                    return new Notify ({
+                                        status: 'sucess',
+                                        title: 'Usuario Logado', 
+                                        text: 'Você sera redirecionado para o perfil',
+                                        speed: 300,
+                                        effect: 'fade',
+                                        showIcon: false,
+                                        showCloseButton: true,
+                                        autoclose: true,
+                                        autotimeout: 5000,
+                                        gap: 20,
+                                        distance: 20,
+                                        position: 'top-left'
+                                    });
+                                }
+            
+                                mosNotificacao();
+                                setTimeout(() => {
+                                    window.location.href = "/perfil";
+                                },5000);
+
+                            })();
+                        </script>
+                        <%}%>
 
 
                 <form id="control" action="/sign/login" method="post">
@@ -104,12 +196,12 @@
 
                         <label id="Up">Entre com o email e a senha</label>
 
-                        <input type="email" name="email" id="email" placeholder="Email*" class="inputs required" oninput="emailValidate()">
+                        <input type="email" name="email" class="<%=campoErro.email %>" value="<%= dadosform.email%>" id="email" placeholder="Email*" >
                         <br>
-                        <span class="span-required">O email está incorreto!</span>
-                        <input type="password" name="senha" id="senha" placeholder="Senha*" class="inputs required" oninput="mainPasswordValidate()">
+                        
+                        <input type="password" name="senha" class="<%=campoErro.senha %>" value="<%= dadosform.senha%>" id="senha" placeholder="Senha*" >
                         <br>
-                        <span class="span-required">A senha está incorreta!</span>
+                        
 
                             <article id="AftSend">
                                 <input type="checkbox" id="Box">

@@ -19,6 +19,20 @@ const models = {
         }
     },
 
+    findCampoCustom: async (criterioWhere) => {
+        try{
+            const [resultados] = await pool.query(
+                "SELECT count(*) totalReg FROM cliente WHERE ?", 
+                [criterioWhere]
+            )
+            console.log(resultados)
+            return resultados[0].totalReg;
+        } catch (error) {
+            console.log(error);
+            return error;
+        }
+    },
+
     create: async (dadosForm) => {
         try {
             console.log(dadosForm)

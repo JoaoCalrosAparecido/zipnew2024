@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 
-    <link rel="stylesheet" href="css-cadastro/parte_superior-cadastro.css">
-    <link rel="stylesheet" href="css-cadastro/menu-cadastro.css">
-    <link rel="stylesheet" href="css-cadastro/formulario.css">
-    <link rel="stylesheet" href="css-cadastro/rodape_cadastro.css">
+    <link rel="stylesheet" href="../css-cadastro/parte_superior-cadastro.css">
+    <link rel="stylesheet" href="../css-cadastro/menu-cadastro.css">
+    <link rel="stylesheet" href="../css-cadastro/formulario.css">
+    <link rel="stylesheet" href="../css-cadastro/rodape_cadastro.css">
 
     <!--links dos responsivos cell-->
-    <link rel="stylesheet" href="Logins/cadastro_mobile/cadastro_mob.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../Logins/cadastro_mobile/cadastro_mob.css" media="screen and (max-width:750px)">
 
     <script src="./jsValidator/cadastro.js" defer></script>
 
@@ -60,7 +60,7 @@
             <article>
                 <a href="/">
                     <figure id="logo_zip_menu">
-                        <img id="logo_zip_menu_imagem" src="IMG/area_do_menu/logo_zip_menu_2024_refeito.png" alt="">
+                        <img id="logo_zip_menu_imagem" src="../IMG/area_do_menu/logo_zip_menu_2024_refeito.png" alt="">
                     </figure>
                 </a>
             </article>
@@ -95,53 +95,106 @@
         </article>
         <article class="abaixar">
 
+            <% 
+            let msgErro = ''
+                
+            
+            const campoErro = {   
+                nome:'',
+                email:'',
+                senha:'',
+                cpf:'',
+                cep:'',
+                confirmsenha:'',
+                dia:'',
+                mes:'',
+                ano:''
+            };
+            if (erros) {
+                erros.errors.forEach(err => {
+                    campoErro[err['path']] = 'invalido';
+                    msgErro +=  err.msg + '<br>'
+                    %>     
+                <%});%>
+                <script>
+                    (() => {
+                        var campoInvalido = '<%= msgErro%>'
+                        function mostrarNotificacao() {
+                            return new Notify ({
+                                status: 'error',
+                                title: 'Verifique os Campos', 
+                                text: '' + campoInvalido.replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+                                speed: 300,
+                                effect: 'fade',
+                                showIcon: false,
+                                showCloseButton: true,
+                                autoclose: true,
+                                autotimeout: 5000,
+                                gap: 20,
+                                distance: 20,
+                                position: 'center'
+                            });
+                        }
+
+                        mostrarNotificacao();
+                    })();
+                </script>
+                <% } %>
+                
+
+    
+            
+            
+
             <form id="formulario" action="/sign/register" method="post">
                 <section id="forms">
                         <article>
-                                    <input type="text" name="nome" id="nome" maxlength="40" placeholder="    Nome Completo*" class="inputs required" oninput="nameValidate()">
+                                    <input type="text" name="nome" id="nome" maxlength="40" class="<%=campoErro.nome %>" value="<%= dadosform.nome%>" placeholder="    Nome Completo*">
                                 <br>
-                                <span class="span-required">É necessário preencher corretamente esse campo!</span>
+                                
                                 <br>
-                            <input type="text" name="cpf" id="cpf" maxlength="40" placeholder="    CPF*" class="inputs required" oninput="cpfValidate()">
+                            <input type="text" name="cpf" class="<%=campoErro.cpf %>" value="<%= dadosform.cpf%>" id="cpf" maxlength="40" placeholder="    CPF*">
                             <br>
-                            <span class="span-required">É necessário preencher corretamente esse campo!</span>
+                            
                             <br>
                                 <!--<input type="date" name="nascimento" id="nascimento"  maxlength="40" class="inputs required" oninput="dateValidate()">
                                 <br>-->
 
                                     <section id="data">
-                                        <input type="text" name="dia" id="dia" maxlength="2"  placeholder="    Dia*" class="inputs required" oninput="diaValidate()">
+                                        <input type="text" name="dia" class="<%=campoErro.dia %>" value="<%= dadosform.dia%>" id="dia" maxlength="2"  placeholder="    Dia*">
                                         <span class="span-required"></span>
-                                        <input type="text" name="mes" id="mes" maxlength="2" placeholder="    Mês*" class="inputs required" oninput="mesValidate()">
+                                        <input type="text" name="mes" class="<%=campoErro.mes %>" value="<%= dadosform.mes%>" id="mes" maxlength="2" placeholder="    Mês*">
                                         <span class="span-required"></span>
-                                        <input type="text" name="ano" id="ano" maxlength="4" placeholder="    Ano*" class="inputs required" oninput="anoValidate()">
+                                        <input type="text" name="ano" class="<%=campoErro.ano %>" value="<%= dadosform.ano%>" id="ano" maxlength="4" placeholder="    Ano*">
                                         <span class="span-required"></span>
                                         <br>
 
                                     </section>
 
-                            <input type="email" name="email" id="email" placeholder="    Email*" class="inputs required" oninput="emailValidate()">
+                            <input type="email" name="email" class="<%=campoErro.email %>" value="<%= dadosform.email%>" id="email" placeholder="    Email*">
                             <br>
-                            <span class="span-required">É necessário preencher corretamente esse campo!</span>
+                            
                             <br>
-                                <input type="password" name="senha" id="senha" placeholder="    Senha*" class="inputs required" oninput="mainPasswordValidate()">
+                                <input type="password" name="senha" id="senha" class="<%=campoErro.senha %>" value="<%= dadosform.senha%>" placeholder="    Senha*">
                                 <br>
-                                <span class="span-required">A senha prescisa de no minímo 8 digitos!</span>
+                               
                                 <br>
-                            <input type="password" name="confirmsenha" id="senha"  placeholder="    Confirme a senha" class="inputs required" oninput="comparePassword()">
+                            <input type="password" name="confirmsenha" id="senha" class="<%=campoErro.confirmsenha %>" value="<%= dadosform.confirmsenha%>"  placeholder="    Confirme a senha">
                             <br>
-                            <span class="span-required">As senhas não são compativeis!</span>
+                            
                             <br>
-                                <input type="text" name="cep" id="cep" size="15" maxlength="9" placeholder="    CEP*" class="inputs required" oninput="cepValidate()">
+                                <input type="text" name="cep" id="cep" class="<%=campoErro.cep %>"  value="<%= dadosform.cep%>" size="15" placeholder="  CEP*">
                                 <br>
-                                <span class="span-required">É necessário preencher corretamente esse campo!</span>
+                                
                                 <br>
 
+
                             <input type="submit" value="ENVIAR" id="botao" >
+                            <script src="../jsValidator/cadasto.js"></script>
                         </article>
                 </section>
         </article>
-    <img src="IMG/cadastro/modelo.png" id="foto">
+    <img src="../IMG/cadastro/modelo.png" id="foto">
     </section>
 
 
