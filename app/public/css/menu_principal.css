@@ -155,16 +155,19 @@
     position: fixed;
     top: 5.4%;
     left: 2%;
-    background-image: url(../IMG/area_do_menu/logo_zip_menu_parte_branca_2024_refeito.png);
+    background-image: url(../IMG/area_do_menu/logo_zip_menu_parte_branca_2024.png);
+    background-size: 240px;
+    background-position: center center;
     z-index: 300;
     width: 90px;
-    height:72px;
+    height:75px;
 }
 
 
 
 #logo_zip_menu.rolagem {
     background-image: url(/IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
+    background-size: 90px;
 }
 
 #logo_zip_menu_imagem {
@@ -211,8 +214,8 @@
 .search-container_principal {
     position: fixed;
     display: block;
-    right: 175px;
-    top: 92px;
+    right: 173px;
+    top: 94px;
   }
   
   .search-icon_principal {

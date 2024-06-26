@@ -11,13 +11,12 @@
 
 #section_parte_superior {
     width: 100%;
-    z-index: 2222;
 
 }
 
 
 #parte_superior{
-    z-index: 222222;
+    z-index: 10;
     position: fixed;
     top: 0;
     background-color: black;
@@ -37,6 +36,10 @@
     
 
 }
+
+#parte_superior_texto_1::before {
+    content: "10% OFF* na primeira compra. Utilize o cupom QueroMaisDez!";
+} 
 
 #img_parte_superior{
     position: fixed;
