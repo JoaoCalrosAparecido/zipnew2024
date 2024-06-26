@@ -40,20 +40,29 @@
 
   }
 
-
+  #um{
+    display: flex;
+    align-items: center;
+  }
   #do {
     margin-top: 15px;
+    display: flex;
+    align-items: center;
 
   }
 
   #tr {
     margin-top: 15px;
+    display: flex;
+    align-items: center;
 
   }
 
   #qu {
     margin-top: 15px;
-    margin-bottom: 7px;
+    margin-bottom: 11px;
+    display: flex;
+    align-items: center;
 
   }
 
