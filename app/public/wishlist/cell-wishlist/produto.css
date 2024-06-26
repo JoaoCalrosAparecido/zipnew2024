@@ -4,6 +4,7 @@
 #produtos-cell {
     position: relative;
     top: 15vh;
+    margin-left: 3.8vw;
 }
 
 .button {
@@ -14,10 +15,26 @@
 .cart-itemfv {
     display: flex;
     column-gap: 2vw;
+    margin-bottom: 5vh;
 }
 
 .cart-itemfv > button {
+    position: absolute;
+    right: 3vw;
+    margin-top: 0.2vh;
     display: block;
+    border: none;
+    background-color: white;
+    background-image: url("../../../IMG/wishlist/produtos/x_para_remover_refeito.png");
+    background-size: 4.17vw;
+    background-position: center center;
+    width: 4.17vw;
+    height: 4.17vw;
+}
+
+.cart-itemfv > button {
+    position: absolute;
+    right: 5vw;
 }
 
 .cart-itemfv > article > h3 {
@@ -31,4 +48,13 @@
 }
 .cart-itemfv > img {
     width: 30vw;
+}
+
+#produto-cell-linha > hr{
+    background-color: black;
+    position: relative;
+    top: 13vh;
+    margin-left: 3.8vw;
+    width: 90.35vw;   
+
 }
