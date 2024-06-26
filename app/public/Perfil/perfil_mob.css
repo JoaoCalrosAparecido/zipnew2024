@@ -161,8 +161,8 @@ hr{
     margin-bottom: 15px;
 
     background-color: rgb(255, 255, 255);
-    width: 12rem;
-    height: 14.5rem;
+    width: 40vw;
+    height: 30vh;
 
     display: grid;
     place-items: center;

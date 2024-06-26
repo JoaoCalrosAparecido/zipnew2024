@@ -88,7 +88,7 @@
 
 .texto_vctbmvaig {
     position: relative;
-    left: 20px;
+    left: 12px;
     margin-top: 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
@@ -98,7 +98,7 @@
 
 .preco_vctbmvaig {
     position: relative;
-    left: 20px;
+    left: 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     margin-top: 8px;
@@ -116,12 +116,12 @@
 .bolinhas_vctbmvaig {
     margin-top: 5px;
     position: relative;
-    left: 20px;
+    left: 6px;
 }
 
 #tratar{
-    width: 12rem;
-    height: 14.5rem;
+    width: 40vw;
+    height: 30vh;
 }
 
 
