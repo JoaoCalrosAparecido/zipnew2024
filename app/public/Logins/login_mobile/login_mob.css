@@ -38,7 +38,7 @@
 #linha{
     z-index: 3;
     position: absolute;
-    top: 27%;
+    top: 19rem;
       left: 47%;
         transform: rotate(90deg);
       font-family: 'Poppins', sans-serif;

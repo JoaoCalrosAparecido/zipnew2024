@@ -181,14 +181,7 @@ input::-webkit-input-placeholder {
 
 
 
-#openMenuBtn {
 
-}
-
-#openMenuBtn.rolagem {
-
-
-}
 
 /*parte do menu que fica preto*/
 #blackDiv {
@@ -400,7 +393,6 @@ input::-webkit-input-placeholder {
   font-family: 'Poppins', sans-serif;
   font-size: 2.8vw;
   position: relative;
-  top: ;
   width: 30vw;
 }
 
@@ -481,7 +473,3 @@ input::-webkit-input-placeholder {
 }
 
 
-
-#button_sacola_cell {
-  
-}
