@@ -10,6 +10,10 @@ body{
 
 /** Começo */
 
+#profile{
+    margin-top: 7rem;
+}
+
 #on, #onn{
     margin-left: 4vw;
     margin-right: 4vw;
