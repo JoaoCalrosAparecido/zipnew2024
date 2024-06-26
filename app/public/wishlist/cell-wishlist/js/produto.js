@@ -2,10 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const addToCartButtons = document.querySelectorAll('.add-to-cartfv');
     addToCartButtons.forEach(button => {
         button.addEventListener('click', function() {
+            console
             const productName = button.parentNode.querySelector('figcaption h3').textContent;
             const price = parseFloat(button.parentNode.querySelector('figcaption p').textContent.replace('R$ ', ''));
             const imageName = button.getAttribute('data-image'); // Obtém o nome da imagem do atributo data-image
-            addToCartfv(productName, price, imageName);
+            addToCartfv(productName, price, imageName, description);
             
             // Movendo a imagem para o carrinho
             const productImageSrc = button.parentNode.querySelector('img').src;
@@ -34,20 +35,20 @@ function updateCartfv() {
     
     cartContainer.innerHTML = '';
     cartItems.forEach((item, index) => {
-        const cartItem = document.createElement('div');
+        const cartItem = document.createElement('article');
         cartItem.classList.add('cart-itemfv');
         
         const productImage = document.createElement('img');
-        productImage.src = `../../../../IMG/cell-masculino/${item.imagefv}`; // Caminho da imagem baseado no nome capturado
+        productImage.src = `../../../../IMG/${item.imagefv}`; // Caminho da imagem baseado no nome capturado
         productImage.alt = item.name;
         cartItem.appendChild(productImage);
         
-        const productInfo = document.createElement('div');
-        productInfo.innerHTML = `<h3>${item.name}</h3><p>${item.description}</p><p>Preço: R$ ${item.price.toFixed(2)}</p>`;
+        const productInfo = document.createElement('article');
+        productInfo.innerHTML = `<h3>${item.name}</h3><p>${item.descriptionfv}</p><p>Preço: R$ ${item.price.toFixed(2)}</p>`;
         cartItem.appendChild(productInfo);
         
         const removeButton = document.createElement('button');
-        removeButton.textContent = 'Removerfv';
+        removeButton.textContent = '';
         removeButton.onclick = function() {
             removeFromCartfv(index);
         };
@@ -68,12 +69,34 @@ function removeFromCartfv(index) {
     updateCartfv();
 }
 
-function addToCartfv(productName, price, imageName) {
+function productExistInCart(cartItem) {
+    console.log("productExistInCart")
+    let cartItems = localStorage.getItem('cartItemsfv');
+    cartItems = cartItems ? JSON.parse(cartItems) : [];
+
+    if (cartItems.length === 0) return false;
+
+    const isProductInCart = cartItems.some(function(item) {
+        console.log(item);
+        console.log(cartItem);
+        return item.name == cartItem.name && item.price == cartItem.price && item.imagefv == cartItem.imagefv && item.description == cartItem.descriptionfv;
+    })
+
+    console.log(isProductInCart)
+
+    return isProductInCart
+} 
+
+function addToCartfv(productName, price, imageName, description) {
     const cartItem = {
         name: productName,
         price: price,
-        imagefv: imageName  // Adiciona o nome da imagem ao objeto do carrinho
+        imagefv: imageName,
+        descriptionfv: description  // Adiciona o nome da imagem ao objeto do carrinho
     };
+
+    if (productExistInCart(cartItem)) return;
+    
     let cartItems = localStorage.getItem('cartItemsfv');
     cartItems = cartItems ? JSON.parse(cartItems) : [];
     cartItems.push(cartItem);
