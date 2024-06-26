@@ -30,6 +30,7 @@
 
 #forms, #tornar{
     margin-left: 8.5vw;
+    margin-right: 4vw;
 }
 
 #cadastro{
@@ -50,6 +51,7 @@
 
 #data{
     margin-bottom: 25px;
+    width: 400px;
 }
 
 #botao{
@@ -64,4 +66,8 @@
     font-weight: 500;
     margin-top: 20px;
 
+}
+
+#form{
+    margin-left: -20px;
 }
