@@ -10,7 +10,7 @@ body{
 
 /** Começo */
 
-#on{
+#on, #onn{
     margin-left: 4vw;
     margin-right: 4vw;
 }
@@ -144,18 +144,16 @@ hr{
     font-weight: 600;
 }
 
-#like, #likes{
+#like, #likes, #likezz{
     margin-top: 15px;
     margin-bottom: 15px;
 
     background-color: rgb(255, 255, 255);
-    width: 13rem;
+    width: 12rem;
     height: 14.5rem;
 
-    border-style: solid;
-    border-width: 1px;
 
-    border-color: #333333;
+
 
     display: grid;
     place-items: center;
@@ -167,12 +165,12 @@ hr{
 
 #container{
     display: flex;
-    margin-left: 6vw;
-    margin-right: 6vw;
+    margin-left: 9vw;
+    margin-right: 9vw;
 
 }
 
-#likes{
+#likes, #likezz{
     margin-left: 10px;
 }
 
@@ -187,8 +185,8 @@ hr{
 
 #sepair{
     display: flex;
-    margin-left: 6vw;
-    margin-right: 6vw;
+    margin-left: 8vw;
+    margin-right: 8vw;
 }
 
 #display{
@@ -196,10 +194,10 @@ hr{
 }
 
 #dissy{
-    margin-left: 30vw;
+    margin-left: 11vw;
 }
 
-#dissa{
+#dissa, #dissw{
     display: none;
 }
 
