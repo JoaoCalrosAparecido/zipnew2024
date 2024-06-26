@@ -187,8 +187,8 @@ hr{
     margin-bottom: 15px;
 
     background-color: rgb(255, 255, 255);
-    width: 15rem;
-    height: 19rem;
+    width: 16vw;
+    height: 40vh;
 
     display: grid;
     place-items: center;
@@ -197,18 +197,17 @@ hr{
 #container{
     display: flex;
 
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 3.5vw;
+    margin-right: 5vw;
 
 }
 
 #likes, #likez, #likezz{
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
 #h1, #h3{
     font-size: 14px;
-    margin-left: 5px;
 }
 #h2, #h4{
     font-size: 13px;
@@ -217,7 +216,7 @@ hr{
 
 #sepair{
     display: flex;
-    margin-left: 10vw;
+    margin-left: 4vw;
     margin-right: 8vw;
 }
 
@@ -226,14 +225,14 @@ hr{
 }
 
 #dissy{
-    margin-left: 6vw;
-}
-
-#dissa{
     margin-left: 8vw;
 }
 
+#dissa{
+    margin-left: 8.5vw;
+}
+
 #dissw{
-    margin-left: 5vw;
+    margin-left: 6vw;
 }
 
