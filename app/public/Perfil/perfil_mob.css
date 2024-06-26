@@ -89,7 +89,14 @@ hr{
     font-size: 16px;
     margin-top: 8px;
     margin-bottom: 8px;
+    width: 30rem;
+    display: flex;
+    align-items: center;
     
+}
+
+#upp{
+    padding-left: 9px;
 }
 
 /* Suporte */
@@ -122,8 +129,9 @@ hr{
 }
 
 #help{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 17px;
+    font-weight: 600;
 }
 
 #questions, #helping{
