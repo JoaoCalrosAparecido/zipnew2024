@@ -17,7 +17,7 @@
 
 #box{
     position:relative;
-    top: 17rem;
+    top: 13rem;
     left: 45%;
     padding: 20px;
     max-width: 80vh;
@@ -38,11 +38,11 @@
 #linha{
     z-index: 3;
     position: absolute;
-    top: 37%;
+    top: 27%;
       left: 47%;
         transform: rotate(90deg);
       font-family: 'Poppins', sans-serif;
-      height: 60vw;
+      height: 79vw;
       width: 2px;
     color: rgb(0, 0, 0);
   }
