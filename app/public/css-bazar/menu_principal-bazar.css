@@ -22,16 +22,14 @@
 
 #menu_principal {
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 95px;
 
     
 }
 
-#menu_principal.rolagem {
-    background-color: rgb(255, 255, 255);
-}
+
 
 #section_menu_principal{
     width: 100%;
@@ -58,14 +56,11 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
-.links_do_menu1.rolagem {
-    color: rgb(0, 0, 0);
 
-}
 
 /*link 2*/
 
@@ -74,14 +69,11 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
-.links_do_menu2.rolagem {
-    color: rgb(0, 0, 0);
 
-}
 
 /*link 3*/
 
@@ -90,14 +82,11 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
-.links_do_menu3.rolagem {
-    color: rgb(0, 0, 0);
 
-}
 
 /*link 4*/
 
@@ -106,14 +95,10 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
-.links_do_menu4.rolagem {
-    color: rgb(0, 0, 0);
-
-}
 
 /*link 5*/
 
@@ -122,14 +107,10 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
-.links_do_menu5.rolagem {
-    color: rgb(0, 0, 0);
-
-}
 
 /*link 6*/
 
@@ -138,14 +119,11 @@
     position: relative;
     text-decoration: none;
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
-.links_do_menu6.rolagem {
-    color: rgb(0, 0, 0);
 
-}
 
 
 
@@ -155,8 +133,8 @@
     position: fixed;
     top: 5.4%;
     left: 2%;
-    background-image: url(../IMG/area_do_menu/logo_zip_menu_parte_branca_2024.png);
-    background-size: 240px;
+    background-image: url(/IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
+    background-size: 90px;
     background-position: center center;
     z-index: 300;
     width: 90px;
@@ -165,10 +143,7 @@
 
 
 
-#logo_zip_menu.rolagem {
-    background-image: url(/IMG/area_do_menu/logo_zip_parte_preta_2024_refeito.png);
-    background-size: 90px;
-}
+
 
 #logo_zip_menu_imagem {
     width: 105%;
@@ -215,7 +190,7 @@
     position: fixed;
     display: block;
     right: 173px;
-    top: 94px;
+    top: 92px;
   }
   
   .search-icon_principal {
