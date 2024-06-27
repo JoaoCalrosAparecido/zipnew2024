@@ -396,12 +396,18 @@ input::-webkit-input-placeholder {
   column-gap: 10px;
 }
 
+
 .article_icones_menu_deslizante_cell > article > p {
   font-family: 'Poppins', sans-serif;
   font-size: 2.8vw;
   position: relative;
   top: ;
   width: 30vw;
+}
+
+.article_icones_menu_deslizante_cell > article > p > a {
+  text-decoration: none;
+  color: black;
 }
 
 /*contate-nos*/
