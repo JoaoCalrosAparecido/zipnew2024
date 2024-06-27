@@ -18,6 +18,8 @@
     width: 480px;
     height: 890px;
     padding: 20px;
+    padding-right: 1px;
+    padding-left: 1px;
     position: absolute;
     top: 550px;
  
@@ -69,4 +71,8 @@
 
 #form{
     margin-left: -20px;
+}
+
+#ajust{
+    width: 27rem;
 }
