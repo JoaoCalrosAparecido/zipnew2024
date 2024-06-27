@@ -1,7 +1,7 @@
 
 .login_inteiro {
     position: relative;
-    top: 37rem;
+    top: 36rem;
     max-width: 200vw;
     margin: 0;
 
@@ -17,7 +17,7 @@
 
 #box{
     position:relative;
-    top: 13rem;
+    top: 12rem;
     left: 45%;
     padding: 20px;
     max-width: 80vh;
@@ -32,13 +32,13 @@
 
 .section_voce_tambem_vai_gostar {
     position: relative;
-    top: 75rem;
+    top: 70rem;
 }
 
 #linha{
     z-index: 3;
-    position: absolute;
-    top: 19rem;
+    position: fixed;
+    top: 27%;
       left: 47%;
         transform: rotate(90deg);
       font-family: 'Poppins', sans-serif;
@@ -82,7 +82,7 @@
     position: relative;
     margin-right: 10vw;
     margin-left: 10vw;
-    margin-top: 20px;
+    margin-top: 30px;
 
 }
 
