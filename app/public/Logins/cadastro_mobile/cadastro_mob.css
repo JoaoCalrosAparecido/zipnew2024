@@ -15,11 +15,11 @@
 
 #caixa{
     background-color: #F6F6F6;
-    width: 480px;
+
     height: 890px;
     padding: 20px;
-    padding-right: 1px;
-    padding-left: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
     position: absolute;
     top: 550px;
  
@@ -74,5 +74,9 @@
 }
 
 #ajust{
-    width: 27rem;
+    width: 27vw;
+}
+
+#boxa{
+    width: 15rem;
 }
