@@ -3,7 +3,7 @@
 
 
 /*cell*/
-#rodape_cell > article {
+#article-total-rodape-cell {
     display: none;
 }
 
