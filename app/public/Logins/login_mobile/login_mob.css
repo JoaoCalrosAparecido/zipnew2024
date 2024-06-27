@@ -1,7 +1,7 @@
 
 .login_inteiro {
     position: relative;
-    top: 36rem;
+    top: 33rem;
     max-width: 200vw;
     margin: 0;
 
@@ -9,7 +9,7 @@
 }
 #Login{
     left: 50%;
-    padding: 40px;
+    padding: 10px;
     border-radius: 0;
     max-width: 80vh;
     margin-left: 2vw;
@@ -26,7 +26,7 @@
 }
 
 #Remember{
-    padding-right: 20vw;
+    padding-right: 32vw;
 }
 
 
@@ -47,6 +47,13 @@
     color: rgb(0, 0, 0);
   }
 
+#sign{
+    margin-top: 10px;
+}
+
+#enviar{
+    margin-bottom: 10px;
+}
 
 
 
