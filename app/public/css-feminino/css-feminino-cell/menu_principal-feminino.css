@@ -316,7 +316,7 @@ input::-webkit-input-placeholder {
   gap: 4.2vh;
   position: relative;
   top: -32vh;
-  left: 56vw;
+  left: 61.6vw;
 }
 
 #article_links_principais_cell_img > img {
@@ -392,7 +392,6 @@ input::-webkit-input-placeholder {
   font-family: 'Poppins', sans-serif;
   font-size: 2.8vw;
   position: relative;
-  top: ;
   width: 30vw;
 }
 
@@ -401,10 +400,12 @@ input::-webkit-input-placeholder {
   color: black;
 }
 
+
+
 /*contate-nos*/
 #article_contate_nos_menu_cell {
   display: flex;
-  column-gap: 17vw;
+  column-gap: 19vw;
 }
 
 #article_contate_nos_menu_cell > figure {
@@ -444,7 +445,7 @@ input::-webkit-input-placeholder {
 
 #article_brasil_menu_cell {
   display: flex;
-  column-gap: 16vw;
+  column-gap: 19vw;
 }
 
 #article_brasil_menu_cell > figure {

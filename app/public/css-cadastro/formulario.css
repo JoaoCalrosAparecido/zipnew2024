@@ -9,8 +9,7 @@ label {
 }
 #caixa {
     background-color: #F6F6F6;
-    max-width: 100%;
-    width: 100%;
+    width: 100vw;
     height: 890px;
     padding: 20px;
     position: absolute;
