@@ -395,6 +395,11 @@ input::-webkit-input-placeholder {
   width: 30vw;
 }
 
+.article_icones_menu_deslizante_cell > article > p > a {
+  text-decoration: none;
+  color: black;
+}
+
 /*contate-nos*/
 #article_contate_nos_menu_cell {
   display: flex;
