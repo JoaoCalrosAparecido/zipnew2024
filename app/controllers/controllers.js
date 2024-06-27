@@ -3,11 +3,11 @@ const { body, validationResult } = require("express-validator");
 
 const controller = {
   regrasValidacaocadastro: [
-    body('nome').trim().isAlpha('pt-BR', {ignore: ' '}).withMessage('Nome Invalido'),
+    body('nome').trim().isAlpha('pt-BR', {ignore: ' '}).withMessage('*Nome Invalido'),
     body('cpf').custom(async value => {
       const cpf = await models.findCampoCustom({'cpf':value});
       if (cpf > 0) {
-        throw new Error('CPF em uso!')
+        throw new Error('*CPF em uso!')
       } 
       let soma = 0
       var resultado
@@ -23,7 +23,7 @@ const controller = {
       }
 
       if (resto != parseInt(value.substring(9,10))){
-        throw new Error("CPF invalido!")
+        throw new Error("*CPF invalido!")
       }
 
       soma = 0
@@ -39,28 +39,28 @@ const controller = {
       }
 
       if (resto != parseInt(value.substring(10,11))) {
-        throw new Error("CPF invalido!")
+        throw new Error("*CPF invalido!")
       
       }
     }),
-    body('dia').isNumeric({max: 2}).withMessage('Dia Invalido'),
-    body('mes').isNumeric({max: 2}).withMessage('Mes Invalido'),
-    body('ano').isNumeric({max: 4}).withMessage('Ano Invalido'),
-    body('email').isEmail().withMessage('Email Invalido')
+    body('dia').isNumeric({max: 2}).withMessage('*Dia Invalido'),
+    body('mes').isNumeric({max: 2}).withMessage('*Mes Invalido'),
+    body('ano').isNumeric({max: 4}).withMessage('*Ano Invalido'),
+    body('email').isEmail().withMessage('*Email Invalido')
     .custom(async value => {
       const email = await models.findCampoCustom({'email':value});
       if (email > 0) {
-        throw new Error('Email em uso!')
+        throw new Error('*Email em uso!')
       }
     }),
-    body('senha').isStrongPassword().withMessage('A senha é fraca'),
-    body('confirmsenha').isStrongPassword().withMessage('A senha é fraca'),
-    body('cep').isNumeric({min: 8}).withMessage('CEP Invalido')
+    body('senha').isStrongPassword().withMessage('*A senha é fraca'),
+    body('confirmsenha').isStrongPassword().withMessage('*A senha é fraca e/ou é diferente'),
+    body('cep').isNumeric({min: 8}).withMessage('*CEP Invalido')
   ],
 
   regrasValidacaolog: [
-    body('email').isEmail().withMessage('Email Invalido'),
-    body('senha').isStrongPassword().withMessage('A senha é fraca'),
+    body('email').isEmail().withMessage('*Email Invalido'),
+    body('senha').isStrongPassword().withMessage('*Senha Invalida'),
   ]
 };
 

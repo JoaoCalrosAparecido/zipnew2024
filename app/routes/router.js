@@ -87,8 +87,9 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
 
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(senha, salt);
+    const hashPassword = bcrypt.hashSync(confirmsenha, salt);
 
-    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, hashedPassword, confirmsenha, cep]);
+    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, hashedPassword, hashPassword, cep]);
     console.log(create)
     res.render('pages/login_do_usuario', { erros: null, dadosform: {email: req.body.email, senha: req.body.senha}, logado: true, usuarioautenticado: null })
   } catch (error) {
