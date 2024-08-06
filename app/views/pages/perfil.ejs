@@ -481,13 +481,16 @@
                 <hr id="linha">
         
                 <article id="warming">
-            
+                    <% if (logado) { %>
+                        <a href="/sair">
                     <lord-icon
-                    src="https://cdn.lordicon.com/vihyezfv.json"
+                    src="https://cdn.lordicon.com/gwvmctbb.json"
                     trigger="hover"
+                    colors="primary:#000000,secondary:#000000"
                     style="width:25px;height:25px">
                 </lord-icon>
-                <p id="upp">Log-Out</p>
+                <p id="upp">Log-Out</p></a>
+                <% } %>
                 </article>
 
 

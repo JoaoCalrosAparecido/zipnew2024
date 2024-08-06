@@ -33,8 +33,19 @@ router.get("/login_do_usuario", function (req, res) {
 });
 
 router.get("/perfil", function (req, res) {
-  res.render('pages/perfil', { msg: 'Back-end funcionando', });
+  const logado = req.session.userid;
+
+  console.log(logado)
+
+  let estalogado = false;
+
+  if (logado) {
+    estalogado = true
+  }
+
+  res.render('pages/perfil',{ logado: estalogado, });
 });
+
 
 router.get("/bolsa_preta_classica", function (req, res) {
   res.render('pages/bolsa_preta_classica', { msg: 'Back-end funcionando' });
@@ -141,7 +152,7 @@ router.get('/sair', function (req, res) {
     console.log('saiu')
 
     req.session.destroy(() => {
-      res.redirect("pages/perfil")
+      res.redirect("/")
     });
   } catch (error) {
     console.log("erro:" + error)
