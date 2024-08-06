@@ -129,7 +129,7 @@ router.post("/sign/login", controller.regrasValidacaolog, async function (req, r
     const senhaCorreta = bcrypt.compareSync(senha, user[0][0].senha)
 
     if (!senhaCorreta) {
-      // validação senha errada
+      return
     }
 
     // cria sessão do usuario
