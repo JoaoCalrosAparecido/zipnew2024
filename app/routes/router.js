@@ -120,18 +120,6 @@ router.post("/sign/login", controller.regrasValidacaolog, async function (req, r
   try {
     const { email, senha } = req.body;
 
-    const user = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
-
-    if (user.length == 0) {
-      // validação caso o usuario não seja encontrado
-    }
-
-    const senhaCorreta = bcrypt.compareSync(senha, user[0][0].senha)
-
-    if (!senhaCorreta) {
-      return
-    }
-
     // cria sessão do usuario
     req.session.userid = user[0][0].id_Cliente;
     return req.session.save(() => {
