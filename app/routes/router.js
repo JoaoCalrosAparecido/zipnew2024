@@ -120,15 +120,13 @@ router.post("/sign/login", controller.regrasValidacaolog, async function (req, r
   try {
     const { email, senha } = req.body;
 
+    const [user] = await connection.query("SELECT * FROM cliente WHERE email = ?", [req.body.email]);
+
     // cria sessão do usuario
-    req.session.userid = user[0][0].id_Cliente;
+    req.session.userid = user[0].id_Cliente;
     return req.session.save(() => {
       return res.render('pages/login_do_usuario', { erros: null, dadosform: {email: req.body.email, senha: req.body.senha}, logado: true, usuarioautenticado: req.session.userid  });
     })
-
-    //req.session.destroy(() => {
-    //   res.redirect("/);
-    // });
 
   } catch (error) {
     console.log("erro:" + error)
