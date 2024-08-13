@@ -3,9 +3,10 @@ const router = express.Router();
 const controller = require("../controllers/controllers");
 const { validationResult } = require("express-validator");
 const connection = require("../../config/pool_conexoes")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
+const { verificarUsuAutorizado, limparSessao } = require("../auth/autentico");
 
-router.get("/", function (req, res) {
+router.get("/", limparSessao,function (req, res) {
   
   const logado = req.session.userid;
 
@@ -75,7 +76,7 @@ router.get("/acessorios", function (req, res) {
   res.render('pages/acessorios', { msg: 'Back-end funcionando' });
 });
 
-router.get("/wishlist", function (req, res) {
+router.get("/wishlist", verificarUsuAutorizado, function (req, res) {
   res.render('pages/wishlist', { msg: 'Back-end funcionando' });
 });
 
