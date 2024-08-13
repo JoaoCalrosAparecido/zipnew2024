@@ -8,7 +8,7 @@ const { verificarUsuAutorizado, limparSessao } = require("../auth/autentico");
 
 router.get("/", limparSessao,function (req, res) {
   
-  const logado = req.session.userid;
+  /*const logado = req.session.userid;
 
   console.log(logado)
 
@@ -16,7 +16,7 @@ router.get("/", limparSessao,function (req, res) {
 
   if (logado) {
     estalogado = true
-  }
+  }*/
 
   res.render('pages/index', { logado: estalogado, });
 });
@@ -76,7 +76,7 @@ router.get("/acessorios", function (req, res) {
   res.render('pages/acessorios', { msg: 'Back-end funcionando' });
 });
 
-router.get("/wishlist", verificarUsuAutorizado, function (req, res) {
+router.get("/wishlist", verificarUsuAutorizado([2, 3], "pages/restrito"), function (req, res) {
   res.render('pages/wishlist', { msg: 'Back-end funcionando' });
 });
 

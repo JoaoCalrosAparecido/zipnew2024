@@ -1,6 +1,6 @@
 const {  ValidationResult  } = require("express-validator");
-const usuario = require("./usuarioModel");
-const bcrypt = require("bcrypts");
+const usuario = require("../models/models");
+const bcrypt = require("bcrypt");
 
 verificarUsuAutenticado = (req, res, next) => {
     if (req.session.autenticado) {
@@ -8,7 +8,7 @@ verificarUsuAutenticado = (req, res, next) => {
     } else {
         var autenticado = { autenticado: null, id: null, tipo: null };
     }
-    req.session.autenticado = autentico;
+    req.session.autenticado = autenticado;
     next();
 }
 
@@ -38,7 +38,7 @@ gravarUsuAutenticado = async (req, res, next) => {
             var autenticado = { autenticado: null, id: null, tipo: null} ;;
         }
     } else {
-        var autentico = { autenticado: null, id: null, tipo: null} ;;
+        var autenticado = { autenticado: null, id: null, tipo: null} ;;
     }
     req.session.autenticado = autenticado;
 }
