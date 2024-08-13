@@ -6,19 +6,19 @@ const connection = require("../../config/pool_conexoes")
 const bcrypt = require("bcrypt");
 const { verificarUsuAutorizado, limparSessao } = require("../auth/autentico");
 
-router.get("/", limparSessao,function (req, res) {
+router.get("/",function (req, res) {
   
-  /*const logado = req.session.userid;
-
-  console.log(logado)
+  const logado = req.session.userid;
 
   let estalogado = false;
 
   if (logado) {
-    estalogado = true
-  }*/
+    estalogado = true;
+  }
 
-  res.render('pages/index', { logado: estalogado, });
+  console.log(logado);
+
+  res.render('pages/index', { logado: estalogado, usuarioautenticado: req.session.userid });
 });
 
 router.get("/bazar", function (req, res) {
@@ -30,11 +30,13 @@ router.get("/cadastro", function (req, res) {
 });
 
 router.get("/login_do_usuario", function (req, res) {
-  res.render('pages/login_do_usuario', { erros: null, logado: false, dadosform: {email: '', senha: ''}, usuarioautenticado: null });
+  res.render('pages/login_do_usuario', { erros: null, logado: false, dadosform: {email: '', senha: ''}, usuarioautenticado: req.session.userid });
 });
 
 router.get("/perfil", function (req, res) {
   const logado = req.session.userid;
+
+  console.log(req.session);
 
   console.log(logado)
 
@@ -103,7 +105,9 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
 
     const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, hashedPassword, hashPassword, cep]);
     console.log(create)
-    res.render('pages/login_do_usuario', { erros: null, dadosform: {email: req.body.email, senha: req.body.senha}, logado: true, usuarioautenticado: null })
+
+    req.session.autenticado = {  }
+    res.render('pages/login_do_usuario', { erros: null, dadosform: {email: req.body.email, senha: req.body.senha}, logado: true, usuarioautenticado: req.session.userid })
   } catch (error) {
     console.log(error)
   }
@@ -115,7 +119,7 @@ router.post("/sign/login", controller.regrasValidacaolog, async function (req, r
 
   if (!erros.isEmpty()) {
     console.log(erros);
-    return res.render('pages/login_do_usuario', { erros: erros, dadosform: {email: req.body.email, senha: req.body.senha}, logado: false, usuarioautenticado: null });
+    return res.render('pages/login_do_usuario', { erros: erros, dadosform: {email: req.body.email, senha: req.body.senha}, logado: false, usuarioautenticado: req.session.userid });
   }
 
   try {
@@ -134,16 +138,8 @@ router.post("/sign/login", controller.regrasValidacaolog, async function (req, r
   }
 });
 
-router.get('/sair', function (req, res) {
-  try {
-    console.log('saiu')
-
-    req.session.destroy(() => {
-      res.redirect("/")
-    });
-  } catch (error) {
-    console.log("erro:" + error)
-  }
+router.get('/sair', limparSessao,function (req, res) {
+  res.redirect('/');
 });
 
 router.post("/update", controller.regrasValidacaocadastro, function (req, res) {

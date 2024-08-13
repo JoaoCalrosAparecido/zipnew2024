@@ -213,24 +213,47 @@
                     </figure>
                 </a>
 
-                <a href="/login_do_usuario"><figure id="imagem_do_icone_de_pessoa">
-                    
+                <% if (logado) { %>
+                    <a href="/perfil">
+                        <figure id="imagem_do_icone_de_pessoa">
+                            <lord-icon
+                            id="pessoa1"
+                            src="https://cdn.lordicon.com/kthelypq.json"
+                            trigger="hover"
+                            colors="primary:#ffffff"
+                            style="width:25px;height:25px">
+                            </lord-icon>
+    
+                            <lord-icon
+                            id="pessoa2"
+                            src="https://cdn.lordicon.com/kthelypq.json"
+                            trigger="hover"
+                            style="width:25px;height:25px; display: none;">
+                            </lord-icon>
+                        </figure>
+                    </a>
+                <% } else { %>
+                    <a href="/login_do_usuario">
+                        <figure id="imagem_do_icone_de_pessoa">
+                            <lord-icon
+                            id="pessoa1"
+                            src="https://cdn.lordicon.com/kthelypq.json"
+                            trigger="hover"
+                            colors="primary:#ffffff"
+                            style="width:25px;height:25px">
+                            </lord-icon>
+    
+                            <lord-icon
+                            id="pessoa2"
+                            src="https://cdn.lordicon.com/kthelypq.json"
+                            trigger="hover"
+                            style="width:25px;height:25px; display: none;">
+                            </lord-icon>
+                        </figure>
+                    </a>
+                <% } %>
 
-                    <lord-icon
-                    id="pessoa1"
-                    src="https://cdn.lordicon.com/kthelypq.json"
-                    trigger="hover"
-                    colors="primary:#ffffff"
-                    style="width:25px;height:25px">
-                    </lord-icon>
-
-                    <lord-icon
-                    id="pessoa2"
-                    src="https://cdn.lordicon.com/kthelypq.json"
-                    trigger="hover"
-                    style="width:25px;height:25px; display: none;">
-                    </lord-icon>
-                </figure></a>
+                
                 
                 <a href="/cart">
                     <figure id="imagem_do_icone_da_sacola">
