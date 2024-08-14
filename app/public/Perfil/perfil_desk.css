@@ -116,11 +116,15 @@ hr{
     width: 30rem;
     display: flex;
     align-items: center;
+    text-decoration: none;
     
 }
 
-#upp{
-    padding-left: 9px;
+
+#uppy{
+    display: flex;
+    text-decoration: none;
+    color: black
 
 }
 
