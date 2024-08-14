@@ -26,6 +26,7 @@ label {
     height: 40px;
     margin-top: 20px;
     border-width: 1px;
+    padding-left: 10px;
 
 }
 
@@ -36,10 +37,12 @@ label {
     margin-top: 20px;
     font-size: 16px;
     border-width: 1px;
+    padding-left: 3.5px;
 }
 
 #dia, #mes{
     margin-right: 33px;
+
 }
 
 
@@ -48,6 +51,7 @@ label {
     height: 40px;
     margin-top: 20px;
     border-width: 1px;
+    padding-left: 10px;
 }
 
 #email{
@@ -55,6 +59,7 @@ label {
     height: 40px;
     margin-top: 40px;
     border-width: 1px;
+    padding-left: 10px;
 }
 
 
@@ -63,13 +68,14 @@ label {
     height: 40px;
     margin-top: 20px;
     border-width: 1px;
+    padding-left: 10px;
 }
 #cep{
     width: 50rem;
     height: 40px;
     margin-top: 20px;
-
     border-width: 1px;
+    padding-left: 10px;
 }
 
 
@@ -77,7 +83,7 @@ label {
 
 
 #botao{
-    width: 50rem;
+    width: 50.8rem;
     height: 70px;
     cursor: pointer;
     background-color: rgb(36, 36, 36);
