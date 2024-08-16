@@ -39,7 +39,7 @@ router.get("/perfil",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id)
-    res.render('pages/perfil', { usuario: user });
+    res.render('pages/perfil', { usuario: user, notify: "login" });
   });
 
 
@@ -54,9 +54,12 @@ router.get("/cart",
     res.render('pages/cart', { msg: 'Back-end funcionando' });
   });
 
-router.get("/pagamento", function (req, res) {
-  res.render('pages/pagamento', { msg: 'Back-end funcionando' });
-});
+router.get("/pagamento",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  function (req, res) {
+    res.render('pages/pagamento', { msg: 'Back-end funcionando' });
+  });
 
 router.get("/masculino", function (req, res) {
   res.render('pages/masculino', { msg: 'Back-end funcionando' });
@@ -119,7 +122,7 @@ router.post("/sign/login", controller.regrasValidacaolog, async function (req, r
   }
 
   try {
-    const {email} = req.body;
+    const { email } = req.body;
     const [user] = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
     console.log(user)
     req.session.autenticado = { autenticado: user[0].nome, id: user[0].id_Cliente }
