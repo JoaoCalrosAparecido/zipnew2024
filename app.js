@@ -5,7 +5,6 @@ const session = require("express-session");
 const FileStore = require("session-file-store")(session);
 
 app.use(session({
-  store: new FileStore(),
   secret: 'fane-hwsn-2tgb-3b23',
   resave: false,
   saveUninitialized: true,

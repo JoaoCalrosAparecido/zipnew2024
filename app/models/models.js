@@ -10,10 +10,10 @@ const models = {
         }
     },
 
-    findId: async (id) => {
+    findUserById: async (id) => {
         try {
-            const [linhas,campos] = await pool.query('SELECT * FROM (table_name) WHERE (column_name) = ?',[id]);
-            return linhas;
+            const [linhas] = await pool.query('SELECT * FROM cliente WHERE id_Cliente = ?',[id]);
+            return linhas[0];
         } catch (error) {
             return error;
         }

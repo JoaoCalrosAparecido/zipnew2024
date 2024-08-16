@@ -4,10 +4,11 @@ const controller = require("../controllers/controllers");
 const { validationResult } = require("express-validator");
 const connection = require("../../config/pool_conexoes")
 const bcrypt = require("bcrypt");
-const { verificarUsuAutorizado, limparSessao } = require("../auth/autentico");
+const { verificarUsuAutorizado, limparSessao, verificarUsuAutenticado } = require("../auth/autentico");
+const models = require("../models/models");
 
-router.get("/",function (req, res) {
-  
+router.get("/", function (req, res) {
+
   const logado = req.session.userid;
 
   let estalogado = false;
@@ -26,37 +27,32 @@ router.get("/bazar", function (req, res) {
 });
 
 router.get("/cadastro", function (req, res) {
-  res.render('pages/cadastro', { erros: null, dadosform: {nome: '', cpf: '',dia: '',mes: '',ano: '',email: '',senha: '',confirmsenha: '',cep: ''}, logado: false, usuarioautenticado: req.session.userid });
+  res.render('pages/cadastro', { erros: null, dadosform: { nome: '', cpf: '', dia: '', mes: '', ano: '', email: '', senha: '', confirmsenha: '', cep: '' }, logado: false, usuarioautenticado: req.session.userid });
 });
 
 router.get("/login_do_usuario", function (req, res) {
-  res.render('pages/login_do_usuario', { erros: null, logado: false, dadosform: {email: '', senha: ''}, usuarioautenticado: req.session.userid });
+  res.render('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: req.session.userid });
 });
 
-router.get("/perfil", function (req, res) {
-  const logado = req.session.userid;
-
-  console.log(req.session);
-
-  console.log(logado)
-
-  let estalogado = false;
-
-  if (logado) {
-    estalogado = true
-  }
-
-  res.render('pages/perfil',{ logado: estalogado, });
-});
+router.get("/perfil",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  async function (req, res) {
+    const user = await models.findUserById(req.session.autenticado.id)
+    res.render('pages/perfil', { usuario: user });
+  });
 
 
 router.get("/bolsa_preta_classica", function (req, res) {
   res.render('pages/bolsa_preta_classica', { msg: 'Back-end funcionando' });
 });
 
-router.get("/cart", function (req, res) {
-  res.render('pages/cart', { msg: 'Back-end funcionando' });
-});
+router.get("/cart",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  function (req, res) {
+    res.render('pages/cart', { msg: 'Back-end funcionando' });
+  });
 
 router.get("/pagamento", function (req, res) {
   res.render('pages/pagamento', { msg: 'Back-end funcionando' });
@@ -88,7 +84,7 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
   console.log(erros);
 
   if (!erros.isEmpty()) {
-    return res.render('pages/cadastro', { erros: erros, dadosform: {nome: req.body.nome, cpf: req.body.cpf, dia: req.body.dia,  mes: req.body.mes, ano: req.body.ano, email: req.body.email, senha: req.body.senha, confirmsenha: req.body.confirmsenha, cep: req.body.cep}, logado: false });
+    return res.render('pages/cadastro', { erros: erros, dadosform: { nome: req.body.nome, cpf: req.body.cpf, dia: req.body.dia, mes: req.body.mes, ano: req.body.ano, email: req.body.email, senha: req.body.senha, confirmsenha: req.body.confirmsenha, cep: req.body.cep }, logado: false });
   }
 
   try {
@@ -106,8 +102,8 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
     const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, hashedPassword, hashPassword, cep]);
     console.log(create)
 
-    req.session.autenticado = {  }
-    res.render('pages/login_do_usuario', { erros: null, dadosform: {email: req.body.email, senha: req.body.senha}, logado: true, usuarioautenticado: req.session.userid })
+    req.session.autenticado = {}
+    res.render('pages/login_do_usuario', { erros: null, dadosform: { email: req.body.email, senha: req.body.senha }, logado: true, usuarioautenticado: req.session.userid })
   } catch (error) {
     console.log(error)
   }
@@ -119,26 +115,22 @@ router.post("/sign/login", controller.regrasValidacaolog, async function (req, r
 
   if (!erros.isEmpty()) {
     console.log(erros);
-    return res.render('pages/login_do_usuario', { erros: erros, dadosform: {email: req.body.email, senha: req.body.senha}, logado: false, usuarioautenticado: req.session.userid });
+    return res.render('pages/login_do_usuario', { erros: erros, dadosform: { email: req.body.email, senha: req.body.senha }, logado: false, usuarioautenticado: req.session.userid });
   }
 
   try {
-    const { email, senha } = req.body;
-
-    const [user] = await connection.query("SELECT * FROM cliente WHERE email = ?", [req.body.email]);
-
-    // cria sessão do usuario
-    req.session.userid = user[0].id_Cliente;
-    return req.session.save(() => {
-      return res.render('pages/login_do_usuario', { erros: null, dadosform: {email: req.body.email, senha: req.body.senha}, logado: true, usuarioautenticado: req.session.userid  });
-    })
+    const {email} = req.body;
+    const [user] = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
+    console.log(user)
+    req.session.autenticado = { autenticado: user[0].nome, id: user[0].id_Cliente }
+    res.redirect("/perfil");
 
   } catch (error) {
     console.log("erro:" + error)
   }
 });
 
-router.get('/sair', limparSessao,function (req, res) {
+router.get('/sair', limparSessao, function (req, res) {
   res.redirect('/');
 });
 

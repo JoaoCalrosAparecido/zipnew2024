@@ -6,7 +6,7 @@ verificarUsuAutenticado = (req, res, next) => {
     if (req.session.autenticado) {
         var autenticado = req.session.autenticado;
     } else {
-        var autenticado = { autenticado: null, id: null, tipo: null };
+        var autenticado = { autenticado: null, id: null};
     }
     req.session.autenticado = autenticado;
     next();
@@ -43,13 +43,13 @@ gravarUsuAutenticado = async (req, res, next) => {
     req.session.autenticado = autenticado;
 }
 
-verificarUsuAutorizado = (tipoPermitido, destinoFalha) => {
+verificarUsuAutorizado = (destinoFalha, objectJson ,tipoPermitido = null) => {
     return (req, res, next) => {
-        if (req.session.autenticado.autenticado != null &&
-        tipoPermitido.find(function (element) { return element == req.session.autenticado.tipo }) != undefined) {
+        if (req.session.autenticado.autenticado != null // && tipoPermitido.find(function (element) { return element == req.session.autenticado.tipo }) != undefined
+) {
         next();
         } else {
-            res.render(destinoFalha, req.session.autenticado);
+            res.render(destinoFalha, objectJson);
         }
     };
 }
