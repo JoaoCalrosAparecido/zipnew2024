@@ -77,7 +77,9 @@ router.get("/acessorios", function (req, res) {
   res.render('pages/acessorios', { msg: 'Back-end funcionando' });
 });
 
-router.get("/wishlist", verificarUsuAutorizado([2, 3], "pages/restrito"), function (req, res) {
+router.get("/wishlist",verificarUsuAutenticado,
+verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+function (req, res) {
   res.render('pages/wishlist', { msg: 'Back-end funcionando' });
 });
 
