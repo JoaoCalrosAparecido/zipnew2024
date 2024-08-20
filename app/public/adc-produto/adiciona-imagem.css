@@ -137,23 +137,22 @@
     border-color: #ddd; /* Mudando a cor da borda para um cinza mais claro ao passar o mouse */
   }
   
-  #preview img, #preview video {
+  .preview img, .preview video {
     width: 100%;
-    height: 102%;
+    height: 100%;
     object-fit: cover; /* Para cobrir todo o espaço disponível sem distorção */
     display: block;
-    margin-bottom: 10px;
   }
   
-  .file-input {
+  input[type="file"] {
     display: none; /* Escondendo o campo de entrada padrão */
   }
   
-  .upload-area.file-added {
+  .uploadLabel.file-added .upload-area {
     border-color: transparent;
   }
-
-  /*imagem de cruz*/
+  
+  /* imagem de cruz */
   .imagem-de-cruz {
     width: 1.4vw;
     height: 1.4vw;
@@ -162,4 +161,6 @@
     background-size: 1.4vw;
     z-index: 2;
   }
+  
 
+  
