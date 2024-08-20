@@ -3,19 +3,23 @@
 #main-adc-img {
     position: relative;
     top: 17vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 #main-adc-img > article > p {
     font-size: 0.7vw;
     font-family: 'Poppins', sans-serif;
-    margin-left: 10vw;
+    
 }
 
 /*section*/
 #section-adc-img {
     display: flex;
-    column-gap: 3vw;
+    column-gap: 2vw;
 }
 
 /*blocos adc*/
@@ -25,7 +29,6 @@
     column-gap: 5.5px;
     width: 53.15vw;
     height: 66.5vw;
-    background-color: pink;
 }
 
 .blocos-adc {
@@ -36,6 +39,14 @@
 }
 
 /*descrição*/
+#section-descricao {
+    position: relative;
+    top: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+
 #form-input {
     display: flex;
     flex-direction: column;
@@ -87,3 +98,68 @@
     font-family:  'Poppins', sans-serif;
     font-size: 0.78vw;
 }
+#descricao-paragrafos :nth-child(1) > span {
+    color: #D9001B;
+}
+
+#descricao-paragrafos :nth-child(2) {
+    font-family:  'Poppins', sans-serif;
+    font-size: 0.80vw;
+}
+
+/*descrião parte do botão*/
+#botao-adc-prod > input {
+    width: 24.51vw;
+    height: 2.82vw;
+    border: none;
+    background-color: #212121;
+    color: #FFFFFF;
+    font-size: 0.85vw;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*parte do adcionar iamgem do prototipo*/
+.upload-area {
+    width: 26.37vw; /* Largura do retângulo */
+    height: 32.84vw; /* Altura do retângulo */
+    border: 2px solid #ccc; /* Adicionando uma borda cinza */
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .upload-area:hover {
+    border-color: #ddd; /* Mudando a cor da borda para um cinza mais claro ao passar o mouse */
+  }
+  
+  #preview img, #preview video {
+    width: 100%;
+    height: 102%;
+    object-fit: cover; /* Para cobrir todo o espaço disponível sem distorção */
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .file-input {
+    display: none; /* Escondendo o campo de entrada padrão */
+  }
+  
+  .upload-area.file-added {
+    border-color: transparent;
+  }
+
+  /*imagem de cruz*/
+  .imagem-de-cruz {
+    width: 1.4vw;
+    height: 1.4vw;
+    background-image: url('../../IMG/adicionar-produto/thumbnail_image.png');
+    background-position: center;
+    background-size: 1.4vw;
+    z-index: 2;
+  }
+
