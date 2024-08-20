@@ -107,14 +107,23 @@
     font-size: 0.80vw;
 }
 
-/*descrião parte do botão*/
-#botao-adc-prod > input {
-    width: 24.51vw;
-    height: 2.82vw;
-    border: none;
-    background-color: #212121;
-    color: #FFFFFF;
-    font-size: 0.85vw;
+#produto_adicionar_a_sacola {
+    background-color: black;
+    width: 474px;
+    height: 62px;
+    position: relative;
+    left: 4px;
+    top: 82px;
+}
+
+#produto_adicionar_a_sacola:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
+#produto_adicionar_a_sacola {
+    color: white;
+    font-size: 17px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
 }
