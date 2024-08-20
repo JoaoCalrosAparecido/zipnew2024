@@ -363,7 +363,9 @@
         <article>
             <p>Adicionar imagens</p>
         </article>
+
         <section id="section-adc-img">
+            <form action="/adc-produto" method="post" id="form-input">
             <!--quadrados de adicionar iamgem-->
             <section id="section-blocos-adc">
                 <article class="blocos-adc">
@@ -371,7 +373,7 @@
                       <article class="preview upload-area">
                         <article class="imagem-de-cruz"></article>
                       </article>
-                      <input type="file" accept="image/*, video/*" multiple>
+                      <input type="file" name="img1" accept="image/*, video/*" multiple>
                     </label>
                   </article>
                   <article class="blocos-adc">
@@ -379,7 +381,7 @@
                       <article class="preview upload-area">
                         <article class="imagem-de-cruz"></article>
                       </article>
-                      <input type="file" accept="image/*, video/*" multiple>
+                      <input type="file" name="img2" accept="image/*, video/*" multiple>
                     </label>
                   </article>
                   <article class="blocos-adc">
@@ -387,7 +389,7 @@
                       <article class="preview upload-area">
                         <article class="imagem-de-cruz"></article>
                       </article>
-                      <input type="file" accept="image/*, video/*" multiple>
+                      <input type="file" name="img3" accept="image/*, video/*" multiple>
                     </label>
                   </article>
                   <article class="blocos-adc">
@@ -395,7 +397,7 @@
                       <article class="preview upload-area">
                         <article class="imagem-de-cruz"></article>
                       </article>
-                      <input type="file" accept="image/*, video/*" multiple>
+                      <input type="file" name="img4" accept="image/*, video/*" multiple>
                     </label>
                   </article>
                   
@@ -406,23 +408,23 @@
             <!--descrição-->
             <section id="section-descricao">
                 <article>
-                    <form action="" id="form-input">
+                    
                         <article class="inputs-adc-img">
-                            <input type="text" name="" id="" placeholder="Titulo">
+                            <input type="text" name="tituloproduto" id="" placeholder="Titulo">
                         </article>
                         <article class="inputs-adc-img">
-                            <input type="text" name="" id="" placeholder="Preço">
+                            <input type="text" name="precoProduto" id="" placeholder="Preço">
                         </article>
                         <article class="inputs-adc-img">
-                            <input type="text" name="" id="" placeholder="Descrição">
+                            <input type="text" name="descProduto" id="" placeholder="Descrição">
                         </article>
                         <article id="article-input-cor">
                             <label for="idcor">
                                 <p>COR:</p>
                             </label>
-                            <input type="text" name="" id="idcor">
+                            <input type="text" name="corProduto" id="idcor">
                         </article>
-                    </form>
+                    
                 </article>
 
                 <article id="descricao-paragrafos">
@@ -431,9 +433,10 @@
                 </article>
 
                 <article id="botao-adc-prod">
-                    <input type="button" value="ADICIONAR PRODUTO">
+                    <input type="submit" value="ADICIONAR PRODUTO">
                 </article>
             </section>
+        </form>
         </section>
     </main>
 

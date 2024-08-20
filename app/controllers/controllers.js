@@ -73,6 +73,13 @@ const controller = {
           throw new Error(err);
         }
       }),
+  ],
+
+  regrasValidacaoAdcProduto: [
+    body('tituloProduto').isString().isLength({min: 3, max: 45}),
+    body('precoProduto').isNumeric({min: 0.1}),
+    body('descProduto').isString().isLength({ min: 25, max: 220 }),
+    body('corProduto').isString()
   ]
 };
 

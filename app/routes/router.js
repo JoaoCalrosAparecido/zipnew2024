@@ -86,6 +86,18 @@ function (req, res) {
 router.get("/adc-produto", function (req, res) {
   res.render('pages/adc-produto', { msg: 'Back-end funcionando' });
 });
+ router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function (req, res) {
+  const erros = validationResult(req);
+  if (!erros.isEmpty()) {
+    return res.render('pages/adc-produto', {msg: 'Back-end funcionando'});
+  }
+
+  const { img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto } = req.body;
+
+  const create = await connection.query("INSERT INTO produtos (img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto) VALUES (?, ?, ?, ?, ?, ?, ?)", [img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto]);
+  
+  res.render('pages/adc-produto', {msg: 'Back-end funcionando'});
+ });
 
 router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {
   const erros = validationResult(req);
