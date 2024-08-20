@@ -362,7 +362,13 @@
 
                             <article>
 
-                                <p><a href="/perfil">Perfil</a></p>
+
+                                <% if (logado) { %>
+                                    <p><a href="/perfil">Perfil</a></p>
+                                <% } else { %>
+                                    <p><a href="/perfil">Entrar</a></p>
+
+                                <% } %>
 
 
                             </article>
