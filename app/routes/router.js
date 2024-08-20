@@ -83,6 +83,10 @@ function (req, res) {
   res.render('pages/wishlist', { msg: 'Back-end funcionando' });
 });
 
+router.get("/adc-produto", function (req, res) {
+  res.render('pages/adc-produto', { msg: 'Back-end funcionando' });
+});
+
 router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {
   const erros = validationResult(req);
 

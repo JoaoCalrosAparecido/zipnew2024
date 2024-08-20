@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+#main-adc-img {
+    position: relative;
+    top: 17vh;
+
+}
+
+#main-adc-img > article > p {
+    font-size: 0.7vw;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 10vw;
+}
+
+/*section*/
+#section-adc-img {
+    display: flex;
+    column-gap: 3vw;
+}
+
+/*blocos adc*/
+#section-blocos-adc {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5.5px;
+    width: 53.15vw;
+    height: 66.5vw;
+    background-color: pink;
+}
+
+.blocos-adc {
+    background-color: aqua;
+    width: 26.37vw;
+    height: 32.84vw;
+    
+}
+
+/*descrição*/
+#form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 1.63vw;
+}
+
+.inputs-adc-img > input {
+    width: 24.51vw;
+    height: 2.25vw;
+    padding-left: 0.5vw;
+    font-size: 0.80vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+.inputs-adc-img > input::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82vw;
+    
+}
+
+#article-input-cor {
+    display: flex;
+    align-items: center;
+    column-gap: 0.3vw;
+
+}
+ /*input cor*/
+#article-input-cor > input {
+    width: 22.13vw;
+    height: 2.25vw;
+    padding-left: 0.5vw;
+    font-size: 0.80vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+#article-input-cor::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82vw;
+}
+
+#article-input-cor > label {
+   font-size: 0.85vw;
+   font-family:  'Poppins', sans-serif;
+   font-weight: 550;
+}
+
+/*descrião parte do texto*/
+#descricao-paragrafos :nth-child(1) {
+    font-family:  'Poppins', sans-serif;
+    font-size: 0.78vw;
+}
