@@ -7,19 +7,12 @@ const bcrypt = require("bcrypt");
 const { verificarUsuAutorizado, limparSessao, verificarUsuAutenticado } = require("../auth/autentico");
 const models = require("../models/models");
 
-router.get("/", function (req, res) {
-
-  const logado = req.session.userid;
-
-  let estalogado = false;
-
-  if (logado) {
-    estalogado = true;
+router.get("/", verificarUsuAutenticado,function (req, res) {
+  if (req.session.autenticado && req.session.autenticado.id) {
+    res.render('pages/index', { logado: true, usuarioautenticado: req.session.autenticado.id });
+  } else {
+    res.render('pages/index', { logado: false, usuarioautenticado: null });
   }
-
-  console.log(logado);
-
-  res.render('pages/index', { logado: estalogado, usuarioautenticado: req.session.userid });
 });
 
 router.get("/bazar", function (req, res) {
@@ -39,7 +32,8 @@ router.get("/perfil",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id)
-    res.render('pages/perfil', { usuario: user, notify: "login" });
+    res.render('pages/perfil', { usuario: user }
+    );
   });
 
 
@@ -77,11 +71,11 @@ router.get("/acessorios", function (req, res) {
   res.render('pages/acessorios', { msg: 'Back-end funcionando' });
 });
 
-router.get("/wishlist",verificarUsuAutenticado,
-verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
-function (req, res) {
-  res.render('pages/wishlist', { msg: 'Back-end funcionando' });
-});
+router.get("/wishlist", verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  function (req, res) {
+    res.render('pages/wishlist', { msg: 'Back-end funcionando' });
+  });
 
 router.get("/adc-produto", function (req, res) {
   res.render('pages/adc-produto', { msg: 'Back-end funcionando' });
