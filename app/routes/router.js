@@ -136,7 +136,6 @@ router.post("/sign/login", controller.regrasValidacaolog, async function (req, r
   try {
     const { email } = req.body;
     const [user] = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
-    console.log(user)
     req.session.autenticado = { autenticado: user[0].nome, id: user[0].id_Cliente }
     res.redirect("/perfil");
 

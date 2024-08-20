@@ -60,9 +60,7 @@ const controller = {
             throw new Error('Usuário não encontrado.');
           }
           const userSenha = users[0].senha;
-          console.log(userSenha);
           const senhaCorreta = await bcrypt.compare(senha, userSenha);
-          console.log(senhaCorreta);
           if (!senhaCorreta) {
             throw new Error('Senha incorreta.');
           }
