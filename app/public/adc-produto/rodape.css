@@ -14,7 +14,7 @@
     height: 700px;
     background-color: #212121;
     position: relative;
-    top: 500px;
+    margin: 25vh 0 0 0;
 }
 
 /* h1 */
@@ -134,7 +134,7 @@
     width: 100%;
     height: 85px;
     position: relative;
-    top: 110px;
+    top: 9vh;
 }
 
 .h1_do_copyright {
@@ -145,7 +145,6 @@
     position: relative;
     top: 25px;
     left: 2%;
-
 }
 
 /* terceira seçâo */
