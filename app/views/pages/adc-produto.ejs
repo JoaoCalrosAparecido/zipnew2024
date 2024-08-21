@@ -360,7 +360,8 @@
 
     <!--adcionar a imagem main-->
     <main id="main-adc-img">
-        <article>
+
+        <article id="adc-img-titulo">
             <p>Adicionar imagens</p>
         </article>
 
@@ -418,17 +419,19 @@
                         <article class="inputs-adc-img">
                             <input type="text" name="descProduto" id="" placeholder="Descrição">
                         </article>
-                        <article id="article-input-cor">
-                            <label for="idcor">
-                                <p>COR:</p>
-                            </label>
-                            <input type="text" name="corProduto" id="idcor">
-                        </article>
-                    
+                            <fieldset id="article-input-categoria">
+                                <legend>Categoria</legend>
+                                <select id="escolha-categoria">
+                                    <option>Feminino</option>
+                                    <option>Masculino</option>
+                                    <option>Infantil</option>
+                                    <option>Acessórios</option>
+                                </select>
+                            </fieldset>  
                 </article>
 
                 <article id="descricao-paragrafos">
-                    <p>Vendido por <span>VINKINGS</span></p>
+                    <p>Vendido por <span>ARTHUR</span></p>
                     <p>+100 vendas</p>
                 </article>
 

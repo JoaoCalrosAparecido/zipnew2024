@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+html, body {
+    overflow-x: hidden;
+}
+
 #main-adc-img {
     position: relative;
     top: 17vh;
@@ -10,10 +14,15 @@
 
 }
 
-#main-adc-img > article > p {
-    font-size: 0.7vw;
+#adc-img-titulo {
+    font-size: 0.9vw;
+    margin: 3vh 0 1vh 9.6vw;
+    align-self: flex-start;
+}
+
+#adc-img-titulo > p {
+    font-size: 0.9vw;
     font-family: 'Poppins', sans-serif;
-    
 }
 
 /*section*/
@@ -40,23 +49,24 @@
 
 /*descrição*/
 #section-descricao {
+    width: 24.51vw;
     position: relative;
-    top: 2.5vw;
+    top: 5vh;
     display: flex;
     flex-direction: column;
-    gap: 3vw;
+    row-gap: 5vh;
 }
 
 #form-input {
     display: flex;
-    flex-direction: column;
-    gap: 1.63vw;
+    gap: 3vw;
 }
 
 .inputs-adc-img > input {
     width: 24.51vw;
     height: 2.25vw;
-    padding-left: 0.5vw;
+    margin-bottom: 2vh;
+    padding-left: 0.7vw;
     font-size: 0.80vw;
     font-family: 'Poppins', sans-serif;
 }
@@ -67,30 +77,21 @@
     
 }
 
-#article-input-cor {
-    display: flex;
-    align-items: center;
-    column-gap: 0.3vw;
-
+#article-input-categoria {
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9vw;
+    margin-top: 1vh;
+    font-weight: 500;
 }
- /*input cor*/
-#article-input-cor > input {
-    width: 22.13vw;
-    height: 2.25vw;
+
+#escolha-categoria {
+    width: 25.6vw;
+    height: 5vh;
+    font-family: 'Poppins', sans-serif;
     padding-left: 0.5vw;
-    font-size: 0.80vw;
-    font-family: 'Poppins', sans-serif;
-}
-
-#article-input-cor::placeholder {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.82vw;
-}
-
-#article-input-cor > label {
-   font-size: 0.85vw;
-   font-family:  'Poppins', sans-serif;
-   font-weight: 550;
+    margin-top: 1vh;
+    font-size: 0.8vw;
 }
 
 /*descrião parte do texto*/
@@ -109,8 +110,8 @@
 
 /*descrião parte do botão*/
 #botao-adc-prod > input {
-    width: 24.51vw;
-    height: 2.82vw;
+    width: 25.6vw;
+    height: 6.82vh;
     border: none;
     background-color: #212121;
     color: #FFFFFF;
