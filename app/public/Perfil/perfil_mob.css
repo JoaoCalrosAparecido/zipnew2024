@@ -90,7 +90,7 @@ hr{
     padding-bottom: 3px;
 }
 
-#data, #requests, #salle, #addv, #complaint, #warming{
+#data, #requests, #salle, #addv, #complaint, #warming, #Log{
     font-size: 16px;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -99,7 +99,12 @@ hr{
     align-items: center;
     
 }
+#uppy{
+    display: flex;
+    text-decoration: none;
+    color: black
 
+}
 #upp{
     padding-left: 9px;
 }
@@ -212,8 +217,3 @@ hr{
 }
 
 
-#uppy{
-    padding-left: 9px;
-    text-decoration: none;
-
-}
