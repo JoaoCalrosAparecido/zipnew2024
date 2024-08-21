@@ -77,9 +77,12 @@ router.get("/wishlist", verificarUsuAutenticado,
     res.render('pages/wishlist', { msg: 'Back-end funcionando' });
   });
 
-router.get("/adc-produto", function (req, res) {
-  res.render('pages/adc-produto', { msg: 'Back-end funcionando' });
-});
+router.get("/adc-produto",
+verificarUsuAutenticado,
+verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+async function (req, res) {
+  const user = await models.findUserById(req.session.autenticado.id)
+  res.render('pages/adc-produto', { usuario: user })});
  router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function (req, res) {
   const erros = validationResult(req);
   if (!erros.isEmpty()) {
