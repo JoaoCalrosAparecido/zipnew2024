@@ -98,9 +98,9 @@ router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function
     console.log(errors)
     return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
   }
-  const { img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto, cateProduto } = req.body;
-  const create = await connection.query("INSERT INTO produtos (img1, img2, img3, titulo_prod, descProduto, corProduto, precoProduto) VALUES (?, ?, ?, ?, ?, ?, ?)",
-    [img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto]);
+  const { img1, img2, img3, tituloProduto, descProduto, precoProduto, cateProduto } = req.body;
+  const create = await connection.query("INSERT INTO produtos (img1, img2, img3, titulo_prod, descProduto, precoProduto) VALUES (?, ?, ?, ?, ?, ?)",
+    [img1, img2, img3, tituloProduto, descProduto, precoProduto]);
   console.log(create[0])
 
   if (cateProduto == "feminino") {
