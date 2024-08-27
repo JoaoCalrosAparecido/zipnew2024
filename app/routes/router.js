@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 const { verificarUsuAutorizado, limparSessao, verificarUsuAutenticado } = require("../auth/autentico");
 const models = require("../models/models");
 
-router.get("/", verificarUsuAutenticado,function (req, res) {
+router.get("/", verificarUsuAutenticado, function (req, res) {
   if (req.session.autenticado && req.session.autenticado.id) {
     res.render('pages/index', { logado: true, usuarioautenticado: req.session.autenticado.id });
   } else {
@@ -78,23 +78,29 @@ router.get("/wishlist", verificarUsuAutenticado,
   });
 
 router.get("/adc-produto",
-verificarUsuAutenticado,
-verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
-async function (req, res) {
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  async function (req, res) {
+    const user = await models.findUserById(req.session.autenticado.id)
+    console.log(user)
+    res.render('pages/adc-produto', { usuario: user })
+  });
+
+router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function (req, res) {
+  console.log('teste')
   const user = await models.findUserById(req.session.autenticado.id)
-  res.render('pages/adc-produto', { usuario: user })});
- router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function (req, res) {
+  console.log(user)
   const erros = validationResult(req);
   if (!erros.isEmpty()) {
-    return res.render('pages/adc-produto', {msg: 'Back-end funcionando'});
+    console.log('erro')
+    return res.render('pages/adc-produto', { msg: 'Back-end funcionando' });
   }
 
   const { img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto } = req.body;
 
   const create = await connection.query("INSERT INTO produtos (img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto) VALUES (?, ?, ?, ?, ?, ?, ?)", [img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto]);
-  
-  res.render('pages/adc-produto', {msg: 'Back-end funcionando'});
- });
+  res.redirect("/")
+});
 
 router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {
   const erros = validationResult(req);
