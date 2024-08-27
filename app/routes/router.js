@@ -23,7 +23,10 @@ router.get("/cadastro", function (req, res) {
   res.render('pages/cadastro', { erros: null, dadosform: { nome: '', cpf: '', dia: '', mes: '', ano: '', email: '', senha: '', confirmsenha: '', cep: '' }, logado: false, usuarioautenticado: req.session.userid });
 });
 
-router.get("/login_do_usuario", function (req, res) {
+router.get("/login_do_usuario", verificarUsuAutenticado, async function (req, res) {
+  if (req.session.autenticado && req.session.autenticado.id != null) {
+    return res.redirect("/perfil")
+  }
   res.render('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: req.session.userid });
 });
 
@@ -83,23 +86,29 @@ router.get("/adc-produto",
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id)
     console.log(user)
-    res.render('pages/adc-produto', { usuario: user })
+    res.render('pages/adc-produto', { usuario: user, erros: null })
   });
 
 router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function (req, res) {
   console.log('teste')
   const user = await models.findUserById(req.session.autenticado.id)
   console.log(user)
-  const erros = validationResult(req);
-  if (!erros.isEmpty()) {
-    console.log('erro')
-    return res.render('pages/adc-produto', { msg: 'Back-end funcionando' });
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    console.log(errors)
+    return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
   }
+  const { img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto, cateProduto } = req.body;
+  const create = await connection.query("INSERT INTO produtos (img1, img2, img3, titulo_prod, descProduto, corProduto, precoProduto) VALUES (?, ?, ?, ?, ?, ?, ?)",
+    [img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto]);
+  console.log(create[0])
 
-  const { img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto } = req.body;
+  if (cateProduto == "feminino") {
+    res.redirect("/feminino")
+  } else if (cateProduto == "masculino") {
+    res.redirect("/masculino")
+  } 
 
-  const create = await connection.query("INSERT INTO produtos (img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto) VALUES (?, ?, ?, ?, ?, ?, ?)", [img1, img2, img3, tituloProduto, descProduto, corProduto, precoProduto]);
-  res.redirect("/")
 });
 
 router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {
