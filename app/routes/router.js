@@ -117,22 +117,19 @@ router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function
     console.log(errors)
     return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
   }
-  const { img1, img2, img3, tituloProduto, descProduto, precoProduto, cateProduto } = req.body;
-  const create = await connection.query("INSERT INTO produtos (tituloprod, descProduto, preçoprod, cateProduto) VALUES (?, ?, ?, ?)",
-    [tituloProduto, descProduto, precoProduto, cateProduto]);
+  const { img1, img2, img3, img4, tituloProduto, descProduto, precoProduto, cateProduto } = req.body;
+  const create = await connection.query("INSERT INTO produtos (img1, img2, img3, img4, tituloprod, descProduto, preçoprod, cateProduto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+    [img1, img2, img3, img4, tituloProduto, descProduto, precoProduto, cateProduto]);
   console.log(create[0]);
   
   if (cateProduto == "feminino") {
     res.redirect("/feminino")
   } else if (cateProduto == "masculino") {
     res.redirect("/masculino")
-<<<<<<< HEAD
   } else if (cateProduto == "feminino") {
     res.redirect("/feminino")
   } else if (cateProduto == "acessorios") {
     res.redirect("/acessorios")
-=======
->>>>>>> bc624d98217300435c530c2b4ce6a3ce1fb35087
   }
 
 });
