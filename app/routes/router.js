@@ -74,25 +74,25 @@ router.get("/acessorios", function (req, res) {
   res.render('pages/acessorios', { msg: 'Back-end funcionando' });
 });
 
-router.get("/meusdados", 
+router.get("/meusdados",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
-  function (req, res) {
-  res.render('pages/Config/meusdados', { msg: 'Back-end funcionando' });
-});
+  async function (req, res) {
+    controller.mostrarPerfil(req,res)
+  });
 
-router.post("/meusdados", 
+router.post("/atualizardados",
   controller.regrasValidacaoperfil,
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
-  res.render('pages/Config/meusdados', { msg: 'Back-end funcionando' });
-});
+    res.render('pages/Config/meusdados', { msg: 'Back-end funcionando' });
+  });
 
 
 
 
-router.get("/wishlist", 
+router.get("/wishlist",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   function (req, res) {
@@ -126,7 +126,7 @@ router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function
     res.redirect("/feminino")
   } else if (cateProduto == "masculino") {
     res.redirect("/masculino")
-  } 
+  }
 
 });
 
