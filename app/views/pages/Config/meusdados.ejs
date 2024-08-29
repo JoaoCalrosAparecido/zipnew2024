@@ -7,33 +7,31 @@
 </head>
 <body>
     
-<form id="formulario" action="/sign/register" method="post">
+<form id="formulario" action="/atualizardados" method="post">
     <section id="forms">
         <article id="boxa">
 
         <p>
             <p>Nome:</p>
-            <input type="text" name="nome" id="nome"  placeholder="Nome Completo*">
+            <input type="text" name="nome" id="nome"  placeholder="Nome Completo*" value="<%= valores.nome %>">
         </p>
             <p>CPF:</p>
-            <p>99999999-99</p>
+            <p><%= usuario.cpf %></p>
         <p>
             <p>Nascimento:</p>
-            <input type="text" name="dia"  id="dia" maxlength="2"  placeholder="Dia*">
-            <input type="text" name="mes" id="mes" maxlength="2" placeholder="Mês*">
-            <input type="text" name="ano"  id="ano" maxlength="4" placeholder="Ano*">
+            <input type="date" name="nascimento"  id="nascimento" maxlength="2"  placeholder="Data de Nascimento*" value="<%= valores.nasc %>">
         </p>
         <p>
             <p>CEP:</p>
-            <input type="text" name="cep" id="cep" placeholder="CEP*">
+            <input type="text" name="cep" id="cep" placeholder="CEP*" value="<%= valores.cep %>">
         </p>
         <p>
             <p>Email:</p>
-            <input type="email" name="email" id="email" placeholder="Email*">
+            <input type="email" name="email" id="email" placeholder="Email*" value="<%= valores.email %>">
         </p>
         <p>
             <p>Senha:</p>
-            <input type="password" name="senha" id="senha" placeholder="Senha*">
+            <input type="password" name="senha" id="senha" placeholder="Senha*" >
         </p>
 
         <p>
