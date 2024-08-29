@@ -21,17 +21,16 @@ gravarUsuAutenticado = async (req, res, next) => {
     erros = validationResult(req)
     if (erros.isEmpty()) {
         var dadosForm = {
-            user_usuario: req.body.nome_usu,
-            senha_usuario: req.body.senha_usu,
+            email: req.body.email,
+            senha: req.body.senha,
         };
-        var results = await usuario.findUserEmail(dadosForm);
+        var results = await usuario.findUserEmail(dadosForm.email);
         var total = Object.keys(results).length;
         if (total == 1) {
-            if (bcrypt.compareSync(dadosForm.senha_usuario, results[0]. senha_usuario)) {
+            if (bcrypt.compareSync(dadosForm.senha, results[0].senha)) {
                 var autenticado = {
-                    autenticado: results[0].nome_usuario,
-                    id: results[0].id_usuario,
-                    tipo: results[0].tipo_usuario
+                    autenticado: results[0].nome,
+                    id: results[0].id_Cliente,
                 };
             }
         } else {
@@ -40,6 +39,7 @@ gravarUsuAutenticado = async (req, res, next) => {
     } else {
         var autenticado = { autenticado: null, id: null, tipo: null} ;;
     }
+    console.log(autenticado);
     req.session.autenticado = autenticado;
 }
 

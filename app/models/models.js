@@ -33,6 +33,19 @@ const models = {
         }
     },
 
+    findUserEmail: async (emailForm) => {
+        try {
+            const [results] = await pool.query(
+                "SELECT * FROM  CLIENTE  WHERE email = ?",
+                [emailForm]
+            );
+            console.log(results);
+            return results;
+        } catch (e) {
+            console.log(e);
+        }
+    },
+
     create: async (dadosForm) => {
         try {
             console.log(dadosForm)

@@ -105,7 +105,7 @@ router.get("/adc-produto",
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id)
     console.log(user)
-    res.render('pages/adc-produto', { usuario: user, erros: null })
+    res.render('pages/adc-produto', { usuario: user, erros: null, usuarioautenticado: req.session.autenticado })
   });
 
 router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function (req, res) {
@@ -118,15 +118,19 @@ router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function
     return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
   }
   const { img1, img2, img3, tituloProduto, descProduto, precoProduto, cateProduto } = req.body;
-  const create = await connection.query("INSERT INTO produtos (img1, img2, img3, titulo_prod, descProduto, precoProduto) VALUES (?, ?, ?, ?, ?, ?)",
-    [img1, img2, img3, tituloProduto, descProduto, precoProduto]);
-  console.log(create[0])
-
+  const create = await connection.query("INSERT INTO produtos (tituloprod, descProduto, preçoprod, cateProduto) VALUES (?, ?, ?, ?)",
+    [tituloProduto, descProduto, precoProduto, cateProduto]);
+  console.log(create[0]);
+  
   if (cateProduto == "feminino") {
     res.redirect("/feminino")
   } else if (cateProduto == "masculino") {
     res.redirect("/masculino")
-  } 
+  } else if (cateProduto == "feminino") {
+    res.redirect("/feminino")
+  } else if (cateProduto == "acessorios") {
+    res.redirect("/acessorios")
+  }
 
 });
 
