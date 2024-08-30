@@ -16,14 +16,14 @@
             <input type="text" name="nome" id="nome"  placeholder="Nome Completo*" value="<%= valores.nome %>">
         </p>
             <p>CPF:</p>
-            <p><%= valores.cpf %></p>
+            <input type="text" name="cpf" id="cpf"  placeholder="CPF" value="<%= valores.cpf %>" readonly>
         <p>
             <p>Nascimento:</p>
-            <input type="date" name="nascimento"  id="nascimento" maxlength="2"  placeholder="Data de Nascimento*" value="<%= valores.nasc %>">
+            <input type="date" name="nasc"  id="nasc" maxlength="2"  placeholder="Data de Nascimento*" value="<%= valores.nasc %>">
         </p>
         <p>
             <p>CEP:</p>
-            <input type="text" name="cep" id="cep" placeholder="CEP*" value="<%= valores.cep %>">
+            <input type="text" name="cep" id="cep" placeholder="CEP*" value="" >
         </p>
         <p>
             <p>Email:</p>
@@ -33,10 +33,7 @@
             <p>Senha:</p>
             <input type="password" name="senha" id="senha" placeholder="Senha*" >
         </p>
-
-        <p>
-            <input type="submit">
-        </p>
+        <button>Alterar Dados</button>
 </form>
                 
 
