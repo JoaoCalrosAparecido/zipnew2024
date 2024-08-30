@@ -100,10 +100,10 @@
                             </article>
                         </section>
                     </section>
-                <a href="" class="links_do_menu3">FEMININO</a>
+                <a href="/feminino" class="links_do_menu3">FEMININO</a>
                 <a href="/masculino" class="links_do_menu4">MASCULINO</a>
-                <a href="" class="links_do_menu5">INFANTIL</a>
-                <a href="" class="links_do_menu6">ACESSÓRIOS</a>
+                <a href="/infantil" class="links_do_menu5">INFANTIL</a>
+                <a href="/acessorios" class="links_do_menu6">ACESSÓRIOS</a>
             </section>
         </section>
     </article>
@@ -467,7 +467,7 @@
                 <h3>Calça Azul Lavagem Clara</h3>
                 <p>R$ 70,00</p>
             </figcaption>
-            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Calça Azul Lavagem Clara', 70, 'cell-masculino/imagem2.avif', 'Cor: Azul')"
+            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Calça Azul Lavagem Clara', 70, 'cell-masculino/imagem2.avif', )"
                 id="lordiconfv"
                 src="https://cdn.lordicon.com/xyboiuok.json"
                 trigger="hover"
@@ -482,7 +482,7 @@
                 <h3>Tenis Casual Branco e Cinza</h3>
                 <p>R$ 30,00</p>
             </figcaption>
-            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Tenis Casual Branco e Cinza', 30, 'cell-masculino/imagem3.avif', 'Cor: Branca')"
+            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Tenis Casual Branco e Cinza', 30, 'cell-masculino/imagem3.avif')"
                 id="lordiconfv"
                 src="https://cdn.lordicon.com/xyboiuok.json"
                 trigger="hover"
@@ -497,7 +497,7 @@
                 <h3>Tenis Casual Preto e Branco</h3>
                 <p>R$ 30,00</p>
             </figcaption>
-            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Tenis Casual Preto e Branco', 30, 'cell-masculino/imagem4.avif', 'Cor: Preta')"
+            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Tenis Casual Preto e Branco', 30, 'cell-masculino/imagem4.avif')"
                 id="lordiconfv"
                 src="https://cdn.lordicon.com/xyboiuok.json"
                 trigger="hover"
@@ -512,7 +512,7 @@
                 <h3>Camisa Branca Estampada</h3>
                 <p>R$ 20,00</p>
             </figcaption>
-            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Camisa Branca Estampada', 20, 'cell-masculino/imagem5.avif', 'Cor: Branca')"
+            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Camisa Branca Estampada', 20, 'cell-masculino/imagem5.avif')"
                 id="lordiconfv"
                 src="https://cdn.lordicon.com/xyboiuok.json"
                 trigger="hover"
@@ -527,7 +527,7 @@
                 <h3>Sobretudo Bege</h3>
                 <p>R$ 40,00</p>
             </figcaption>
-            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Sobretudo Bege', 40, 'cell-masculino/imagem6.avif', 'Cor: Bege')"
+            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Sobretudo Bege', 40, 'cell-masculino/imagem6.avif')"
                 id="lordiconfv"
                 src="https://cdn.lordicon.com/xyboiuok.json"
                 trigger="hover"
@@ -542,7 +542,7 @@
                 <h3>Camisa Laranja</h3>
                 <p>R$ 20,00</p>
             </figcaption>
-            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Camisa Laranja', 20, 'cell-masculino/imagem7.avif', 'Cor: Laranja')"
+            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Camisa Laranja', 20, 'cell-masculino/imagem7.avif')"
                 id="lordiconfv"
                 src="https://cdn.lordicon.com/xyboiuok.json"
                 trigger="hover"
@@ -552,19 +552,40 @@
         </figure>
 
         <figure>
-            <img src="../../IMG/cell-masculino/imagem8.avif" alt="">
+            <img src="../../IMG/cell-masculino/imagem8.avif" alt="Calça Preta">
             <figcaption>
                 <h3>Calça Preta</h3>
                 <p>R$ 20,00</p>
             </figcaption>
-            <lord-icon class="add-to-cartfv" onclick="addToCartfv('Calça Preta', 20, 'cell-masculino/imagem8.avif', 'Cor: Preta')"
+            <lord-icon class="add-to-cartfv" 
                 id="lordiconfv"
+                onclick="addToCartfv('Calça Preta', 20, 'cell-masculino/imagem8.avif')"
                 src="https://cdn.lordicon.com/xyboiuok.json"
                 trigger="hover"
                 data-image="cell-masculino/imagem8.avif"
                 style="width:4.2vw;height:4.2vw">
             </lord-icon>
         </figure>
+        
+        <% for(var i = 0; i < produtos.length; i++) { %>
+            <figure>
+                <img src="../../IMG/uploads/<%= produtos[i].img1 %>" alt="<%= produtos[i].tituloprod %>">
+                <figcaption>
+                    <p class="product-name"><%= produtos[i].tituloprod %></p>
+                    <p class="product-price">R$ <%= produtos[i].preçoprod %></p>
+                </figcaption>
+                <lord-icon class="add-to-cartfv" 
+                    id="lordiconfv"
+                    onclick="addToCartfv('<%= produtos[i].tituloprod %>', <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>')"
+                    src="https://cdn.lordicon.com/xyboiuok.json"
+                    trigger="hover"
+                    data-image="uploads/<%= produtos[i].img1 %>"
+                    style="width:4.2vw;height:4.2vw">
+                </lord-icon>
+            </figure>
+        <% } %>
+        
+
     </section>
 
 </section>

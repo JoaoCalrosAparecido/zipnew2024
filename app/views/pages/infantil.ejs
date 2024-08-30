@@ -560,6 +560,23 @@
                 style="width:4.2vw;height:4.2vw">
             </lord-icon>
         </figure>
+
+        <% for(var i=0; i<produtos.length; i++) {%>
+            <figure>
+                <img src="../../IMG/uploads/<%= produtos[i].img1 %>" alt="<%= produtos[i].tituloprod %>">
+                <figcaption id="desc-e-preco-prod-adc">
+                    <p id="desc-e-preco-prod-adc1"><%= produtos[i].tituloprod %></p>
+                    <p id="desc-e-preco-prod-adc2">R$: <%= produtos[i].preçoprod %></p>
+                </figcaption>
+                <lord-icon class="add-to-cartfv" onclick="addToCartfv(produtos[i].tituloprod,  produtos[i].preçoprod, 'uploads/<%= produtos[i].img1 %>', 'Cor: Azul Escuro')"
+                    id="lordiconfv"
+                    src="https://cdn.lordicon.com/xyboiuok.json"
+                    trigger="hover"
+                    data-image="uploads/<%= produtos[i].img1 %>"
+                    style="width:4.2vw;height:4.2vw">
+                </lord-icon>
+            </figure>
+        <% } %>
     </section>
 
 </section>

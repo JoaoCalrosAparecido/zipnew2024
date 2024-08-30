@@ -6,6 +6,11 @@ const connection = require("../../config/pool_conexoes")
 const bcrypt = require("bcrypt");
 const { verificarUsuAutorizado, limparSessao, verificarUsuAutenticado } = require("../auth/autentico");
 const models = require("../models/models");
+const produtosModels = require("../models/produtos.models");
+
+const multer = require('multer');
+const upload = multer({ dest: './app/public/IMG/uploads/' });
+
 
 router.get("/", verificarUsuAutenticado, function (req, res) {
   if (req.session.autenticado && req.session.autenticado.id) {
@@ -58,31 +63,42 @@ router.get("/pagamento",
     res.render('pages/pagamento', { msg: 'Back-end funcionando' });
   });
 
-router.get("/masculino", function (req, res) {
-  res.render('pages/masculino', { msg: 'Back-end funcionando' });
+router.get("/masculino", async function (req, res) {
+  const produtos = await produtosModels.findAllProductByCategoryName('masculino')
+
+  res.render('pages/masculino', { produtos, msg: 'Back-end funcionando' });
 });
 
-router.get("/feminino", function (req, res) {
-  res.render('pages/feminino', { msg: 'Back-end funcionando' });
+
+router.get("/feminino", async function (req, res) {
+  const produtos = await produtosModels.findAllProductByCategoryName('feminino')
+
+  res.render('pages/feminino', { produtos, msg: 'Back-end funcionando' });
 });
 
-router.get("/vender", function (req, res) {
+router.get("/infantil", async function (req, res) {
+  const produtos = await produtosModels.findAllProductByCategoryName('infantil')
+
+  res.render('pages/infantil', { produtos, msg: 'Back-end funcionando' });
+});
+
+router.get("/acessorios", async function (req, res) {
+  const produtos = await produtosModels.findAllProductByCategoryName('acessorios')
+
+  res.render('pages/acessorios', { produtos, msg: 'Back-end funcionando' });
+});
+
+router.get("/vender",  function (req, res) {
   res.render('pages/vender', { msg: 'Back-end funcionando' });
 });
 
-router.get("/infantil", function (req, res) {
-  res.render('pages/infantil', { msg: 'Back-end funcionando' });
-});
 
-router.get("/acessorios", function (req, res) {
-  res.render('pages/acessorios', { msg: 'Back-end funcionando' });
-});
 
 router.get("/meusdados",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
-    controller.mostrarPerfil(req,res)
+    controller.mostrarPerfil(req, res)
   });
 
 router.post("/atualizardados",
@@ -112,30 +128,39 @@ router.get("/adc-produto",
     res.render('pages/adc-produto', { usuario: user, erros: null, usuarioautenticado: req.session.autenticado })
   });
 
-router.post("/adc-produto", controller.regrasValidacaoAdcProduto, async function (req, res) {
-  console.log('teste')
+
+// [, ]
+router.post("/adc-produto", [
+    upload.fields([{ name: 'img1' }, { name: 'img2' },  { name: 'img3' },  { name: 'img4' }]), 
+    controller.regrasValidacaoAdcProduto
+  ], 
+  async function (req, res) {
   const user = await models.findUserById(req.session.autenticado.id)
-  console.log(user)
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     console.log(errors)
     return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
   }
-  const { img1, img2, img3, img4, tituloProduto, descProduto, precoProduto, cateProduto } = req.body;
-  const create = await connection.query("INSERT INTO produtos (img1, img2, img3, img4, tituloprod, descProduto, preçoprod, cateProduto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-    [img1, img2, img3, img4, tituloProduto, descProduto, precoProduto, cateProduto]);
-  console.log(create[0]);
-  
+
+  const { cateProduto } = req.body;
+
+  const create = await produtosModels.create({ 
+    ...req.body, 
+    img1: req.files.img1[0].filename,
+    img2: req.files.img2[0].filename,
+    img3: req.files.img3[0].filename,
+    img4: req.files.img4[0].filename, 
+  })
+
   if (cateProduto == "feminino") {
     res.redirect("/feminino")
   } else if (cateProduto == "masculino") {
     res.redirect("/masculino")
-  } else if (cateProduto == "feminino") {
-    res.redirect("/feminino")
+  } else if (cateProduto == "infantil") {
+    res.redirect("/infantil")
   } else if (cateProduto == "acessorios") {
     res.redirect("/acessorios")
   }
-
 });
 
 router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {

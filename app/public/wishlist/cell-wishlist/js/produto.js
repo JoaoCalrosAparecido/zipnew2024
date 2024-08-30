@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     const addToCartButtons = document.querySelectorAll('.add-to-cartfv');
+
     addToCartButtons.forEach(button => {
         button.addEventListener('click', function () {
-            console
-            const productName = button.parentNode.querySelector('figcaption h3').textContent;
-            const price = parseFloat(button.parentNode.querySelector('figcaption p').textContent.replace('R$ ', ''));
-            const imageName = button.getAttribute('data-image'); // Obtém o nome da imagem do atributo data-image
+            const productName = button.parentNode.querySelector('figcaption .product-name').textContent;
+            const price = parseFloat(button.parentNode.querySelector('figcaption .product-price').textContent.replace('R$ ', '').replace(',', '.'));
+            const imageName = button.getAttribute('data-image');
+            const description = button.getAttribute('data-description') || '';
+
             addToCartfv(productName, price, imageName, description);
 
             // Movendo a imagem para o carrinho
@@ -39,7 +41,7 @@ function updateCartfv() {
         cartItem.classList.add('cart-itemfv');
 
         const productImage = document.createElement('img');
-        productImage.src = `../../../../IMG/${item.imagefv}`; // Caminho da imagem baseado no nome capturado
+        productImage.src = `../../IMG/${item.imagefv}`;
         productImage.alt = item.name;
         cartItem.appendChild(productImage);
 
@@ -64,27 +66,21 @@ function updateCartfv() {
 function removeFromCartfv(index) {
     let cartItems = localStorage.getItem('cartItemsfv');
     cartItems = cartItems ? JSON.parse(cartItems) : [];
-    const removedItem = cartItems.splice(index, 1)[0];
+    cartItems.splice(index, 1);
     localStorage.setItem('cartItemsfv', JSON.stringify(cartItems));
     updateCartfv();
 }
 
 function productExistInCart(cartItem) {
-    console.log("productExistInCart")
     let cartItems = localStorage.getItem('cartItemsfv');
     cartItems = cartItems ? JSON.parse(cartItems) : [];
 
-    if (cartItems.length === 0) return false;
-
-    const isProductInCart = cartItems.some(function (item) {
-        console.log(item);
-        console.log(cartItem);
-        return item.name == cartItem.name && item.price == cartItem.price && item.imagefv == cartItem.imagefv && item.description == cartItem.descriptionfv;
-    })
-
-    console.log(isProductInCart)
-
-    return isProductInCart
+    return cartItems.some(item => 
+        item.name === cartItem.name && 
+        item.price === cartItem.price && 
+        item.imagefv === cartItem.imagefv && 
+        item.descriptionfv === cartItem.descriptionfv
+    );
 }
 
 function addToCartfv(productName, price, imageName, description) {
@@ -92,7 +88,7 @@ function addToCartfv(productName, price, imageName, description) {
         name: productName,
         price: price,
         imagefv: imageName,
-        descriptionfv: description  // Adiciona o nome da imagem ao objeto do carrinho
+        descriptionfv: description
     };
 
     if (productExistInCart(cartItem)) return;

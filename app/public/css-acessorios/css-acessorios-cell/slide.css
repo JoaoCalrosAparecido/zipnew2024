@@ -10,7 +10,7 @@
 /*primeiro slide*/
 #section_primeiro_slide1_cell {
     width: 100%;
-    height: 190vh; 
+    height: auto; 
     display: flex;
     flex-wrap: wrap;
     column-gap: 5px;

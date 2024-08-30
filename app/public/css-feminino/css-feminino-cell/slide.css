@@ -10,7 +10,7 @@
 /*primeiro slide*/
 #section_primeiro_slide1_cell {
     width: 100%;
-    height: 190vh; 
+    height: auto; 
     display: flex;
     flex-wrap: wrap;
     column-gap: 5px;
@@ -20,6 +20,25 @@
 #section_primeiro_slide1_cell > figure {
     width: 45.83vw;
     height: 43.75vh;
+}
+
+/*blocos slide dos produtos adicionados*/
+
+/*paragrafo*/
+#desc-e-preco-prod-adc1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin-top: 1vh;
+    text-indent: 2.8vw;
+}
+
+#desc-e-preco-prod-adc2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2vw;
+    margin-top: 0.4vh;
+    opacity: 60%;
+    text-indent: 2.5vw;
 }
 
 /*blocos do slide*/
