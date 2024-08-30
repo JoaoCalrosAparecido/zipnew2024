@@ -561,15 +561,16 @@
             </lord-icon>
         </figure>
 
-        <% for(var i=0; i<produtos.length; i++) {%>
+        <% for(var i = 0; i < produtos.length; i++) { %>
             <figure>
                 <img src="../../IMG/uploads/<%= produtos[i].img1 %>" alt="<%= produtos[i].tituloprod %>">
-                <figcaption id="desc-e-preco-prod-adc">
-                    <p id="desc-e-preco-prod-adc1"><%= produtos[i].tituloprod %></p>
-                    <p id="desc-e-preco-prod-adc2">R$: <%= produtos[i].preçoprod %></p>
+                <figcaption>
+                    <p class="product-name"><%= produtos[i].tituloprod %></p>
+                    <p class="product-price">R$ <%= produtos[i].preçoprod %></p>
                 </figcaption>
-                <lord-icon class="add-to-cartfv" onclick="addToCartfv(produtos[i].tituloprod,  produtos[i].preçoprod, 'uploads/<%= produtos[i].img1 %>', 'Cor: Azul Escuro')"
+                <lord-icon class="add-to-cartfv" 
                     id="lordiconfv"
+                    onclick="addToCartfv('<%= produtos[i].tituloprod %>', <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>')"
                     src="https://cdn.lordicon.com/xyboiuok.json"
                     trigger="hover"
                     data-image="uploads/<%= produtos[i].img1 %>"
