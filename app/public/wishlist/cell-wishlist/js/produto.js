@@ -6,9 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const productName = button.parentNode.querySelector('figcaption .product-name').textContent;
             const price = parseFloat(button.parentNode.querySelector('figcaption .product-price').textContent.replace('R$ ', '').replace(',', '.'));
             const imageName = button.getAttribute('data-image');
-            const description = button.getAttribute('data-description') || '';
 
-            addToCartfv(productName, price, imageName, description);
+            addToCartfv(productName, price, imageName);
 
             // Movendo a imagem para o carrinho
             const productImageSrc = button.parentNode.querySelector('img').src;
@@ -46,7 +45,7 @@ function updateCartfv() {
         cartItem.appendChild(productImage);
 
         const productInfo = document.createElement('article');
-        productInfo.innerHTML = `<h3>${item.name}</h3><p>${item.descriptionfv}</p><p>Preço: R$ ${item.price.toFixed(2)}</p>`;
+        productInfo.innerHTML = `<h3>${item.name}</h3><p>${item.descriptionfv || ''}</p><p>Preço: R$ ${item.price.toFixed(2)}</p>`;
         cartItem.appendChild(productInfo);
 
         const removeButton = document.createElement('button');
@@ -78,17 +77,16 @@ function productExistInCart(cartItem) {
     return cartItems.some(item => 
         item.name === cartItem.name && 
         item.price === cartItem.price && 
-        item.imagefv === cartItem.imagefv && 
-        item.descriptionfv === cartItem.descriptionfv
+        item.imagefv === cartItem.imagefv
     );
 }
 
-function addToCartfv(productName, price, imageName, description) {
+function addToCartfv(productName, price, imageName) {
     const cartItem = {
         name: productName,
         price: price,
         imagefv: imageName,
-        descriptionfv: description
+        descriptionfv: '' // Adiciona um valor padrão vazio para a descrição
     };
 
     if (productExistInCart(cartItem)) return;
