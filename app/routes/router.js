@@ -66,6 +66,10 @@ router.get("/feminino", function (req, res) {
   res.render('pages/feminino', { msg: 'Back-end funcionando' });
 });
 
+router.get("/vender", function (req, res) {
+  res.render('pages/vender', { msg: 'Back-end funcionando' });
+});
+
 router.get("/infantil", function (req, res) {
   res.render('pages/infantil', { msg: 'Back-end funcionando' });
 });
