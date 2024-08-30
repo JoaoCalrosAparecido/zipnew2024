@@ -1,6 +1,6 @@
 const {  ValidationResult  } = require("express-validator");
 const usuario = require("../models/models");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt")
 
 verificarUsuAutenticado = (req, res, next) => {
     if (req.session.autenticado) {
