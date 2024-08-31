@@ -74,6 +74,12 @@ const controller = {
     body('descProduto').isString().isLength({ min: 25, max: 220 }),
   ],
 
+  regrasValidacaoperfil: [
+    body('nome').isLength({ min: 3, max: 45 }).withMessage("*Nome deve ter de 3 a 45 caracteres!"),
+    body('email').isEmail().withMessage('*Email Inválido'),
+    body('cep').isPostalCode('BR').withMessage('*CEP Inválido')
+  ],
+
   mostrarPerfil: async (req, res) => {
     const user = await models.findUserById(req.session.autenticado.id)
     const data = new Date(user.nasc)
@@ -95,9 +101,10 @@ const controller = {
         nome: user.nome,
         cpf: user.cpf,
         nasc: user.nasc,
-        // cep: cep,
+        cep: user.cep,
         email: user.email,
-        nasc: dataFormatada
+        nasc: dataFormatada,
+        senha: ""
       };
 
       res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: null, valores: campos });
@@ -108,12 +115,13 @@ const controller = {
           listaErros: null,
           dadosNotificacao: null,
           valores: {
-            nome: user.nome,
-            cpf: user.cpf,
-            nasc: user.nasc,
-            // cep: user.cep,
-            email: user.email,
-            nasc: dataFormatada
+            nome: "",
+            cpf: "",
+            nasc: "",
+            cep: "",
+            email: "",
+            nasc: "",
+            senha: ""
           }
         });
     }
@@ -135,12 +143,13 @@ const controller = {
       var dadosForm = {
         nome: nome,
         email: email,
-        // cep: cep.replace("-", ""),
+        cep: cep,
         nasc: nasc,
-        senha: senha
       };
+
       if (senha != "") {
-        senha = bcrypt.hashSync(senha, salt);
+        const salt = bcrypt.genSaltSync(10);
+        dadosForm.senha = bcrypt.hashSync(req.body.senha, salt);
       }
 
       let resultUpdate = await models.update(dadosForm, req.session.autenticado.id);
@@ -159,15 +168,15 @@ const controller = {
             nome: user.nome,
             cpf: user.cpf,
             nasc: user.nasc,
-            // cep: user.cep,
+            cep: user.cep,
             email: user.email,
-            nasc: dataFormatada
+            nasc: dataFormatada,
+            senha: ""
           };
-          console.log("atualizado")
+          console.log("Atualizado")
           res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" }, valores: campos });
         } else {
-          console.log("atualizado 2")
-
+          console.log("Atualizado 2")
           res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, valores: dadosForm });
         }
       }

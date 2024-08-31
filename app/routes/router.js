@@ -102,6 +102,7 @@ router.get("/meusdados",
   });
 
 router.post("/atualizardados",
+  controller.regrasValidacaoperfil,
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
