@@ -97,9 +97,12 @@ hr{
     width: 30rem;
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: black
     
 }
-#uppy{
+#uppy, #kw{
+
     display: flex;
     text-decoration: none;
     color: black
@@ -107,6 +110,9 @@ hr{
 }
 #upp{
     padding-left: 9px;
+    text-decoration: none;
+    color: black
+    
 }
 
 /* Suporte */

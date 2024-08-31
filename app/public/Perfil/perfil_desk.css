@@ -121,12 +121,14 @@ hr{
 }
 
 
-#uppy{
+
+#uppy, #kw{
     display: flex;
     text-decoration: none;
     color: black
 
-}
+}    
+
 
 /* Suporte */
 

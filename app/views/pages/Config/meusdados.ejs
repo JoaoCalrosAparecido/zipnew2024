@@ -9,36 +9,41 @@
     <link rel="stylesheet" href="../meusdados/mob_dados.css" media="screen and (max-width:750px)">
 </head>
 <body>
-    
+<section id="center">
 <form id="formulario" action="/atualizardados" method="post">
     <section id="forms">
         <article id="boxa">
-
-        <p>
-            <p>Nome:</p>
+            <Section id="meio">
+                <h1>Meus Dados</h1>
+            </Section>
+        <p id="align">
+            <p id="pz" >Nome:</p>
             <input type="text" name="nome" id="nome"  placeholder="Nome Completo*" value="<%= valores.nome %>">
         </p>
-            <p>CPF:</p>
+            <p id="pz">CPF:</p>
             <input type="text" name="cpf" id="cpf"  placeholder="CPF" value="<%= valores.cpf %>" readonly>
         <p>
-            <p>Nascimento:</p>
-            <input type="date" name="nasc"  id="nasc" maxlength="2"  placeholder="Data de Nascimento*" value="<%= valores.nasc %>">
+            <p id="pz" >Nascimento:</p>
+            <input type="date" name="nasc"  id="nasc" maxlength="2"  placeholder="Data de Nascimento*" value="<%= valores.nasc %>" readonly>
         </p>
         <p>
-            <p>CEP:</p>
+            <p id="pz">CEP:</p>
             <input type="text" name="cep" id="cep" placeholder="CEP*" value="<%= valores.cep %>" >
         </p>
         <p>
-            <p>Email:</p>
+            <p id="pz">Email:</p>
             <input type="email" name="email" id="email" placeholder="Email*" value="<%= valores.email %>">
         </p>
         <p>
-            <p>Senha:</p>
+            <p id="pz">Senha:</p>
             <input type="password" name="senha" id="senha" placeholder="Senha*" >
         </p>
+
+        <p id="regra"><span id="pr">Preencha esse campo apenas se deseja alterar a sua senha!</span>
+            <br>A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas e minúsculas, números e símbolos como !, @, # ou $.</p>
         <button id="But">Alterar Dados</button>
 </form>
-                
+</section>                
 
 </body>
 </html>

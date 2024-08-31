@@ -2,11 +2,20 @@
 
 *{
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 
 #formulario{
+    width: 16.5rem;
+    height: 100%;
     background-color: #F6F6F6;
+    padding: 50px;
+    border-radius: 30px;
+}
+#forms{
+    width: 16.5rem;
 }
 
 
@@ -25,18 +34,56 @@ form input[type=password]{
 }
 
 button{
-    background-color: black;
+
+    background-color: rgb(36, 36, 36);
     color: white;
     border: none;
     font-size: 16px;
     cursor: pointer;
     border-radius: 20px;
     transition: background-color 0.3s ease;
-    width: 16rem;
-    height: 40px;
+    width: 16.5rem;
+    height: 50px;
     margin-top: 20px;
 
 }
 button:hover {
     background-color: #333;
+}
+#pz{
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    width: 20px;
+}
+h1{
+
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#center{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+
+}
+
+#regra{
+    padding: 5px;
+    margin-top: 20px;
+    background-color: #e7e4e4; /* Cor de fundo */
+    border: 2px solid #c0c0c0; /* Borda sólida */
+    width: 15.5rem;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+#pr{
+    color: red;
+    font-size: 11px;
+}
+
+#meio{
+    padding-left: 10px;
 }
