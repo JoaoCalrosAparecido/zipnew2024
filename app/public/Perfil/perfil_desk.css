@@ -244,3 +244,15 @@ hr{
     margin-left: 6vw;
 }
 
+#motag{
+    display: none;
+}
+
+#fazz{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    display: flex;
+}
+
+
