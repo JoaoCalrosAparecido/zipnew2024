@@ -1,10 +1,15 @@
-var famoso = document.getElementById("famous");
+document.getElementById('famous').addEventListener('click', function() {
+    const fundo = document.getElementById('motag');
+    fundo.style.display = 'flex';
+    setTimeout(() => {
+        fundo.classList.add('show');
+    }, 10);
+});
 
-famoso.addEventListener("click", function(){
-    var container = document.getElementById("motag");
-    if(container.style.display === "block"){
-        container.style.display = "none";
-    } else {
-        container.style.display = "block";
-    }
-})
+document.getElementById('fecharFormulario').addEventListener('click', function() {
+    const fundo = document.getElementById('motag');
+    fundo.classList.remove('show');
+    setTimeout(() => {
+        fundo.style.display = 'none';
+    }, 300);
+});
