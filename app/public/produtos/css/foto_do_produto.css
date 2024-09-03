@@ -39,12 +39,13 @@
 .foto_da_bolsa {
     width: 506px;
     height: 633px;
-    background-color: rgb(214, 138, 138);
+    
 }
 
 /*imagem 1*/
-#promos_bolsa_preta_classica1 {
-    background-image: url('../../IMG/pordutos/promos/bolsa_preta_classica/bolsa_preta_classica1.pn');
+#promos_bolsa_preta_classica1 > img {
+    width: 506px;
+    height: 633px
 }
 
 /*imagem 2*/
