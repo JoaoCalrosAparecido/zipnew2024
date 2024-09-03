@@ -44,6 +44,19 @@ router.get("/perfil",
     );
   });
 
+  router.post("/socialmedia",
+    verificarUsuAutenticado,
+    verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+    async function (req, res) {
+
+      const user = await models.findUserById(req.session.autenticado.id)
+      const { social } = req.body;
+      const create = await connection.query("INSERT INTO cliente ( Url_site ) VALUES (?)", [social]);
+      req.session.autenticado = {}
+      res.render('pages/perfil', { erros: null, dadosform: { email: req.body.email, senha: req.body.senha }, logado: true, usuarioautenticado: req.session.userid, usuario: user })
+
+    });
+
 
 router.get("/bolsa_preta_classica", function (req, res) {
   res.render('pages/bolsa_preta_classica', { msg: 'Back-end funcionando' });
