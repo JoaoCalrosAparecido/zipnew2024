@@ -92,6 +92,10 @@ router.get("/vender",  function (req, res) {
   res.render('pages/vender', { msg: 'Back-end funcionando' });
 });
 
+router.get("/produtos",  function (req, res) {
+  res.render('pages/produtos', { msg: 'Back-end funcionando' });
+});
+
 
 
 router.get("/meusdados",
