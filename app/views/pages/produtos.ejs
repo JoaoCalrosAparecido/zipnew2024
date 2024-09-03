@@ -231,15 +231,10 @@
         <script src="../../js/menu_transparente.js"></script>
        
     
-        
-    
-        
-
-
-
-    <!--foto das bolsas-->
+    <% if (produto) { %>
+        <!--foto das bolsas-->
     <p id="paragrafo_das_fotos_classica"><!--Feminino | Bolsas | Bolsas de mão |--> <span
-            id="paragrafo_das_fot0s_classica_span">Clássicas</span></p>
+        id="paragrafo_das_fot0s_classica_span">Clássicas</span></p>
     <section id="section_da_foto_da_bolsa">
         <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica1"></figure>
         <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica2"></figure>
@@ -252,9 +247,15 @@
     <section id="section_adicionar_a_sacola">
         <section id="section_position_sticky_adicionar_a_sacola">
             <article id="article_da_primeira_parte_escrita">
-                <p id="parte_escrita_bolsa_Preta">aaaaa</p>
-                <P id="parte_preço_bolsa_Preta">aaaaaaa</P>
-                <P id="parte_produto_usado_bolsa_Preta"></P>
+                <p id="parte_escrita_bolsa_Preta">
+                    <%= produto.tituloprod %>
+                </p>
+                <P id="parte_preço_bolsa_Preta">
+                    R$ <%= Number(produto.preçoprod).toFixed(2) %>
+                </P>
+                <P id="parte_produto_usado_bolsa_Preta">
+                    <%= produto.descProduto %>
+                </P>
                 <P id="parte_cor_bolsa_Preta">COR: <span id="parte_cor_bolsa_Preta_span">aaaaaa</span></P>
             </article>
 
@@ -272,7 +273,7 @@
             <script src="/adicionar_a_sacola/botao_adicionar_a_sacola.js"></script>
 
             <article id="artcle_do_vendidos_por_vinkings">
-                <p id="paragrafo_do_vendidos_por_vinkings">Vendido por <span id="span_do_vikings">VINKINGS</span></p>
+                <p id="paragrafo_do_vendidos_por_vinkings">Vendido por <span id="span_do_vikings">VIKINGS</span></p>
 
                 <p id="parte_escrita_100_vendas">+100 vendas</p>
             </article>
@@ -351,43 +352,42 @@
 
         </figure>
     </section>
-
+    <% } %>
 
     <!--STORIES RECENTES-->
-    <section class="stories_recentes">
+<section class="stories_recentes">
 
 
 
 
-        <!--ENTRE NO MUNDO ZIP-->
-        <article class="stories_recentes_article">
-            <!--linha-->
-            <hr class="linha_do_entre_no_mundo_zip">
+    <!--ENTRE NO MUNDO ZIP-->
+    <article class="stories_recentes_article">
+        <!--linha-->
+        <hr class="linha_do_entre_no_mundo_zip">
 
-            <!--escrito entre no mundo zip-->
-            <figure class="figure_escrita_entre_nomundo_zip">
-                <img class="escrita_entre_nomundo_zip"
-                    src="../IMG/stories_recentes/slides/entre_no_mundo_zip/escrita_entre_no_mundo_zip_refeito.png"
-                    alt="">
-            </figure>
+        <!--escrito entre no mundo zip-->
+        <figure class="figure_escrita_entre_nomundo_zip">
+            <img class="escrita_entre_nomundo_zip"
+                src="../IMG/stories_recentes/slides/entre_no_mundo_zip/escrita_entre_no_mundo_zip_refeito.png"
+                alt="">
+        </figure>
 
-            <!--Esteja por dentro de eventos, coleções e novidades exclusivas-->
-            <article class="article_paragrafo_stories_recentes">
-                <p class="paragrafo_stories_recentes">Esteja por dentro de eventos, coleções e novidades exclusivas</p>
-            </article>
-
-            <!--Digite o seu e-mail-->
-            <section class="article_digite_o_seu_email">
-                <article class="digite_o_seu_email_stories_recentes">
-                    <p class="paragrafo_digite_o_seu_email">Digite o seu e-mail</p>
-                    <img class="setinha_do_digite_o_seu_email"
-                        src="IMG/stories_recentes/slides/entre_no_mundo_zip/setinha_do_digite_o_seu_email.svg" alt="">
-                </article>
-            </section>
+        <!--Esteja por dentro de eventos, coleções e novidades exclusivas-->
+        <article class="article_paragrafo_stories_recentes">
+            <p class="paragrafo_stories_recentes">Esteja por dentro de eventos, coleções e novidades exclusivas</p>
         </article>
 
-    </section>
+        <!--Digite o seu e-mail-->
+        <section class="article_digite_o_seu_email">
+            <article class="digite_o_seu_email_stories_recentes">
+                <p class="paragrafo_digite_o_seu_email">Digite o seu e-mail</p>
+                <img class="setinha_do_digite_o_seu_email"
+                    src="IMG/stories_recentes/slides/entre_no_mundo_zip/setinha_do_digite_o_seu_email.svg" alt="">
+            </article>
+        </section>
+    </article>
 
+</section>
 
     <!--rodapé-->
     <section class="rodape">

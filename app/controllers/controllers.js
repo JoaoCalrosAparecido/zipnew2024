@@ -2,6 +2,7 @@ const pool = require("../../config/pool_conexoes");
 const bcrypt = require('bcrypt');
 const { body, validationResult } = require("express-validator");
 const models = require("../models/models");
+const produtosModels = require('../models/produtos.models');
 
 
 const controller = {
@@ -183,6 +184,22 @@ const controller = {
     } catch (e) {
       console.log(e)
       res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" }, valores: req.body });
+    }
+  },
+
+  mostrarProduto: async (req, res) => {
+    try {
+      const produtoId = parseInt(req.params.id_prod_cliente);
+      const [produto] = await produtosModels.findProdById(produtoId)
+      console.log(produto);
+      
+      if (produto) {
+          res.render('pages/produtos', { usuarioautenticado: req.session.autenticado, produto: produto[0] })
+      } else {
+          res.status(404).send('Produto não encontrado');
+      }
+    } catch (err) {
+      console.log(err);
     }
   }
 };

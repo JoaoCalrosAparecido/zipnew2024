@@ -11,6 +11,24 @@ const models = {
         }
     },
 
+    findProducts: async () => {
+        try {
+            const [linhas] = await pool.query('SELECT * FROM `produtos`');
+            return linhas;
+        } catch (error) {
+            return error;
+        }
+    },
+
+    findProdById: async (produtoId) => {
+        try {
+            const [linhas] = await pool.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
+            return linhas
+        } catch (err) {
+            console.log(err);
+        }
+    },
+
     create: async (dadosForm) => {
         try {
             console.log(dadosForm)
