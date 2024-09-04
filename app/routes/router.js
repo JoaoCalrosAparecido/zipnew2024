@@ -39,23 +39,30 @@ router.get("/perfil",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
-    const user = await models.findUserById(req.session.autenticado.id)
-    res.render('pages/perfil', { usuario: user }
-    );
-  });
+      const user = await models.findUserById(req.session.autenticado.id);
+      console.log('User:', user);
+      res.render('pages/perfil', { usuario: user });
 
-  router.post("/socialmedia",
-    verificarUsuAutenticado,
-    verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
-    async function (req, res) {
+  }
+);
+// Rota POST para atualizar a URL de mídia social
+router.post("/socialmedia",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  async function (req, res) {
+    
+      const { socialLinks } = req.body;
+      const userId = req.session.autenticado.id;
 
-      const user = await models.findUserById(req.session.autenticado.id)
-      const { social } = req.body;
-      await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [social, req.session.autenticado.id]);
-      req.session.autenticado = {}
-      res.render('pages/perfil', { erros: null, dadosform: { email: req.body.email, senha: req.body.senha }, logado: true, usuarioautenticado: req.session.userid, usuario: user })
+      await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [socialLinks, userId]);
 
-    });
+      const user = await models.findUserById(userId);
+
+      res.render('pages/perfil', { erros: null, logado: true, usuarioautenticado: userId, usuario: user });
+
+    
+  }
+);
 
 
 router.get("/bolsa_preta_classica", function (req, res) {

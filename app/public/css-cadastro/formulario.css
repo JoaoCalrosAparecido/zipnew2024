@@ -83,10 +83,10 @@ label {
     background-color: rgb(36, 36, 36);
     color: rgb(255, 255, 255);
     border-color: rgb(36, 36, 36);
-    margin-bottom: 50px;
+
     font-size: 25px;
     font-weight: 500;
-    margin-top: 35px;
+    margin-top: 20px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -131,7 +131,14 @@ label {
     border-color: rgb(255, 56, 56);
 }
 
-
+#regra{
+    padding: 5px;
+    background-color: #e7e4e4; /* Cor de fundo */
+    border: 2px solid #c0c0c0; /* Borda sólida */
+    width: 49.2rem;
+    border-radius: 5px;
+    font-size: 12.2px;
+}
 
 
 
