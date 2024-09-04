@@ -8,11 +8,15 @@ const produtosModels = require('../models/produtos.models');
 const controller = {
   regrasValidacaocadastro: [
     body('nome').trim().isAlpha('pt-BR', { ignore: ' ' }).withMessage('*Nome Inválido'),
-    body('cpf').custom(async value => {
+    body('cpf')
+    .customSanitizer(value => value.replace(/[\.\-]/g, '')) // Tira os hífens e os pontin
+    .custom(async value => {
+      // Verifica se o CPF já está em uso no banco de dados
       const [cpf] = await pool.query('SELECT * FROM cliente WHERE cpf = ?', [value]);
       if (cpf.length > 0) {
         throw new Error('*CPF em uso!');
       }
+  
       // Validação do CPF
       let soma = 0;
       for (let i = 1; i <= 9; i++) {
@@ -23,6 +27,7 @@ const controller = {
       if (resto !== parseInt(value.substring(9, 10))) {
         throw new Error("*CPF inválido!");
       }
+  
       soma = 0;
       for (let i = 1; i <= 10; i++) {
         soma += parseInt(value.substring(i - 1, i)) * (12 - i);
@@ -33,9 +38,15 @@ const controller = {
         throw new Error("*CPF inválido!");
       }
     }),
-    body('dia').isNumeric({ min: 1, max: 31 }).withMessage('*Dia Inválido'),
-    body('mes').isNumeric({ min: 1, max: 12 }).withMessage('*Mês Inválido'),
-    body('ano').isNumeric({ min: 1900, max: new Date().getFullYear() }).withMessage('*Ano Inválido'),
+
+    body('cep')
+    .customSanitizer(value => value.replace('-', '')) // Tira os hífens
+    .isLength({ min: 8, max: 8 }).withMessage('*CEP deve ter 8 dígitos')
+    .isNumeric().withMessage('*CEP deve conter apenas números'),
+
+    body('dia').isInt({ min: 1, max: 31 }).withMessage('*Dia Inválido'),
+    body('mes').isInt({ min: 1, max: 12 }).withMessage('*Mês Inválido'),
+    body('ano').isInt({ min: 1900, max: new Date().getFullYear() }).withMessage('*Ano Inválido'),
     body('email').isEmail().withMessage('*Email Inválido')
       .custom(async value => {
         const [email] = await pool.query('SELECT * FROM cliente WHERE email = ?', [value]);
@@ -43,9 +54,10 @@ const controller = {
           throw new Error('*Email em uso!');
         }
       }),
+
     body('senha').isStrongPassword().withMessage('*A senha é fraca'),
-    body('confirmsenha').isStrongPassword().withMessage('*A senha é fraca e/ou é diferente'),
-    body('cep').isNumeric({ min: 8 }).withMessage('*CEP Inválido')
+    body('confirmsenha').isStrongPassword().withMessage('*A senha é fraca e/ou é diferente')
+
   ],
   regrasValidacaolog: [
     body('email').isEmail().withMessage('*Email Inválido'),
