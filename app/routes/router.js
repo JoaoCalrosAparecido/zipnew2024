@@ -51,7 +51,7 @@ router.get("/perfil",
 
       const user = await models.findUserById(req.session.autenticado.id)
       const { social } = req.body;
-      const create = await connection.query("INSERT INTO cliente ( Url_site ) VALUES (?)", [social]);
+      await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [social, req.session.autenticado.id]);
       req.session.autenticado = {}
       res.render('pages/perfil', { erros: null, dadosform: { email: req.body.email, senha: req.body.senha }, logado: true, usuarioautenticado: req.session.userid, usuario: user })
 
