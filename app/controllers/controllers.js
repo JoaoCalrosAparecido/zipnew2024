@@ -41,8 +41,8 @@ const controller = {
 
     body('cep')
     .customSanitizer(value => value.replace('-', '')) // Tira os hífens
-    .isLength({ min: 8, max: 8 }).withMessage('*CEP deve ter 8 dígitos')
-    .isNumeric().withMessage('*CEP deve conter apenas números'),
+    .isLength({ min: 8, max: 8 }).isNumeric().withMessage('*CEP Inválido'),
+
 
     body('dia').isInt({ min: 1, max: 31 }).withMessage('*Dia Inválido'),
     body('mes').isInt({ min: 1, max: 12 }).withMessage('*Mês Inválido'),
