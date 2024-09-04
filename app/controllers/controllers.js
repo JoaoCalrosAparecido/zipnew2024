@@ -56,7 +56,15 @@ const controller = {
       }),
 
     body('senha').isStrongPassword().withMessage('*A senha é fraca'),
-    body('confirmsenha').isStrongPassword().withMessage('*A senha é fraca e/ou é diferente')
+  // Verifica se as senhas são iguais
+  body('confirmsenha').custom((value, { req }) => {
+    if (value !== req.body.senha) {
+      throw new Error('*As senhas não são iguais');
+    }
+    return true;
+  })
+
+
 
   ],
   regrasValidacaolog: [
