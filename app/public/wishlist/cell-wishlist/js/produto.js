@@ -1,99 +1,55 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const addToCartButtons = document.querySelectorAll('.add-to-cartfv');
-
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const productName = button.parentNode.querySelector('figcaption .product-name').textContent;
-            const price = parseFloat(button.parentNode.querySelector('figcaption .product-price').textContent.replace('R$ ', '').replace(',', '.'));
-            const imageName = button.getAttribute('data-image');
-
-            addToCartfv(productName, price, imageName);
-
-            // Movendo a imagem para o carrinho
-            const productImageSrc = button.parentNode.querySelector('img').src;
-            moveImageToCart(productImageSrc);
-        });
-    });
-
-    updateCartfv();
-});
-
-function moveImageToCart(imageSrc) {
-    const cartImageContainer = document.getElementById('cart-image-containerfv');
-    cartImageContainer.innerHTML = ''; // Limpa o conteúdo anterior
-
-    const cartImage = document.createElement('img');
-    cartImage.src = imageSrc;
-    cartImageContainer.appendChild(cartImage);
-}
-
 function updateCartfv() {
-    const cartContainer = document.getElementById('cart-itemsfv');
-    const totalContainer = document.getElementById('total-pricefv');
+    // Recupera os itens do carrinho do localStorage
     let cartItems = localStorage.getItem('cartItemsfv');
     cartItems = cartItems ? JSON.parse(cartItems) : [];
-    let totalPrice = 0;
 
-    cartContainer.innerHTML = '';
+    // Obtém o container onde os itens serão exibidos
+    const cartContainer = document.getElementById('cart-itemsfv');
+    cartContainer.innerHTML = ''; // Limpa o conteúdo atual
+
+    // Itera sobre cada item do carrinho
     cartItems.forEach((item, index) => {
         const cartItem = document.createElement('article');
         cartItem.classList.add('cart-itemfv');
 
+        // Cria e adiciona a imagem do produto
         const productImage = document.createElement('img');
         productImage.src = `../../IMG/${item.imagefv}`;
         productImage.alt = item.name;
         cartItem.appendChild(productImage);
 
-        const productInfo = document.createElement('article');
-        productInfo.innerHTML = `<h3>${item.name}</h3><p>${item.descriptionfv || ''}</p><p>Preço: R$ ${item.price.toFixed(2)}</p>`;
+        // Cria e adiciona as informações do produto
+        const productInfo = document.createElement('div'); // Alterei para 'div' para ser mais semântico
+        productInfo.innerHTML = `
+            <h3>${item.name}</h3>
+            <p>${item.descriptionfv || ''}</p>
+            <p>Preço: R$ ${parseFloat(item.price).toFixed(2)}</p>
+        `;
         cartItem.appendChild(productInfo);
 
+        // Cria e adiciona o botão de remoção
         const removeButton = document.createElement('button');
-        removeButton.textContent = '';
+        removeButton.textContent = ''; // Adicionei um texto ao botão
         removeButton.onclick = function () {
-            removeFromCartfv(index);
+            removeFromCartfv(index); // Chama a função para remover o item
         };
         cartItem.appendChild(removeButton);
 
+        // Adiciona o item do carrinho ao container
         cartContainer.appendChild(cartItem);
-        totalPrice += parseFloat(item.price);
     });
-
-    totalContainer.textContent = totalPrice.toFixed(2);
 }
 
+// Função para remover um item do carrinho
 function removeFromCartfv(index) {
     let cartItems = localStorage.getItem('cartItemsfv');
     cartItems = cartItems ? JSON.parse(cartItems) : [];
-    cartItems.splice(index, 1);
-    localStorage.setItem('cartItemsfv', JSON.stringify(cartItems));
+    cartItems.splice(index, 1); // Remove o item pelo índice
+    localStorage.setItem('cartItemsfv', JSON.stringify(cartItems)); // Atualiza o localStorage
+    updateCartfv(); // Atualiza a exibição do carrinho
+}
+
+// Atualiza o carrinho quando a página carrega
+window.addEventListener("load", function() {
     updateCartfv();
-}
-
-function productExistInCart(cartItem) {
-    let cartItems = localStorage.getItem('cartItemsfv');
-    cartItems = cartItems ? JSON.parse(cartItems) : [];
-
-    return cartItems.some(item => 
-        item.name === cartItem.name && 
-        item.price === cartItem.price && 
-        item.imagefv === cartItem.imagefv
-    );
-}
-
-function addToCartfv(productName, price, imageName) {
-    const cartItem = {
-        name: productName,
-        price: price,
-        imagefv: imageName,
-        descriptionfv: '' // Adiciona um valor padrão vazio para a descrição
-    };
-
-    if (productExistInCart(cartItem)) return;
-
-    let cartItems = localStorage.getItem('cartItemsfv');
-    cartItems = cartItems ? JSON.parse(cartItems) : [];
-    cartItems.push(cartItem);
-    localStorage.setItem('cartItemsfv', JSON.stringify(cartItems));
-    updateCartfv();
-}
+});
