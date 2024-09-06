@@ -192,10 +192,10 @@ const controller = {
             cep: user.cep,
             email: user.email,
             nasc: dataFormatada,
-            senha: ""
+            senha: ""  
           };
           console.log("Atualizado")
-          res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" }, valores: campos });
+          res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" },usuario: user, valores: campos });
         } else {
           console.log("Atualizado 2")
           res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, valores: dadosForm });

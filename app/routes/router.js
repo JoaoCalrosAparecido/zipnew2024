@@ -40,7 +40,6 @@ router.get("/perfil",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
       const user = await models.findUserById(req.session.autenticado.id);
-      console.log('User:', user);
       res.render('pages/perfil', { usuario: user });
 
   }
@@ -53,9 +52,7 @@ router.post("/socialmedia",
     
       const { socialLinks } = req.body;
       const userId = req.session.autenticado.id;
-
       await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [socialLinks, userId]);
-
       const user = await models.findUserById(userId);
 
       res.render('pages/perfil', { erros: null, logado: true, usuarioautenticado: userId, usuario: user });
@@ -146,6 +143,11 @@ router.post("/atualizardados",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
     controller.gravarPerfil(req,res)
+
+    const userId = req.session.autenticado.id;
+    const user = await models.findUserById(userId);
+    
+    res.redirect('pages/perfil', { usuario: user });
   });
 
 
