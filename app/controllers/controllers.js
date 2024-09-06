@@ -98,7 +98,9 @@ const controller = {
   regrasValidacaoperfil: [
     body('nome').isLength({ min: 3, max: 45 }).withMessage("*Nome deve ter de 3 a 45 caracteres!"),
     body('email').isEmail().withMessage('*Email Inválido'),
-    body('cep').isPostalCode('BR').withMessage('*CEP Inválido')
+    body('cep')    
+    .customSanitizer(value => value.replace('-', '')) // Tira os hífens
+    .isLength({ min: 8, max: 8 }).isNumeric().withMessage('*CEP Inválido'),
   ],
 
   mostrarPerfil: async (req, res) => {

@@ -143,11 +143,6 @@ router.post("/atualizardados",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
     controller.gravarPerfil(req,res)
-
-    const userId = req.session.autenticado.id;
-    const user = await models.findUserById(userId);
-    
-    res.redirect('pages/perfil', { usuario: user });
   });
 
 
