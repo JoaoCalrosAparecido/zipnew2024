@@ -266,7 +266,7 @@
             </a>
 
             <article>
-                <button id="produto_adicionar_a_sacola" class="add-to-cart" onclick="handleClick(), addToCart('', 30)">
+                <button id="produto_adicionar_a_sacola" class="add-to-cart" onclick="handleClick(); addToCart( '<%= produto.tituloprod %>', <%= Number(produto.preçoprod).toFixed(2) %>, '../../IMG/uploads/<%= produto.img1 %>') ">
                     <p>ADICIONAR À SACOLA</p>
                 </button>
 

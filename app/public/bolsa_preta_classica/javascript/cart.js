@@ -17,17 +17,18 @@ function updateCart() {
         cartItem.classList.add('cart-item');
         
         const productImage = document.createElement('img');
-        productImage.src = '../../IMG/sacola/produtos/bolsa.png';
+        productImage.src = `${item.img}`;
         productImage.alt = item.name;
         cartItem.appendChild(productImage);
         
         const productInfo = document.createElement('div');
-        productInfo.innerHTML = `<h3>BOLSA PRETA CLÁSSICA</h3><h2>${item.name}</h2><p>R$ ${item.price.toFixed(2)}</p>
-        <p id="cor_preta">Cor: Preta </p>
+        productInfo.innerHTML = `
+        <h3>${item.name}</h3>
+        <p>R$ ${item.price.toFixed(2)}</p>
         <h1>
         <img id="coracao_mover"  src="../../IMG/sacola/produtos/coracao_escrito_mover_par_uma_lista_de_desejos.svg" alt="Descrição da Imagem">
         Mover para a wishlist
-    </h1>`;
+        </h1>`;
         cartItem.appendChild(productInfo);
         
         const removeButton = document.createElement('button');

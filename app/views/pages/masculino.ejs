@@ -568,6 +568,7 @@
         </figure>
         
         <% for(var i = 0; i < produtos.length; i++) { %>
+            <a href="/produtos/<%=produtos[i].id_prod_cliente%>">
             <figure>
                 <img src="../../IMG/uploads/<%= produtos[i].img1 %>" alt="<%= produtos[i].tituloprod %>">
                 <figcaption>
@@ -583,8 +584,10 @@
                     style="width:4.2vw;height:4.2vw">
                 </lord-icon>
             </figure>
+        </a>
         <% } %>
         
+
 
     </section>
 

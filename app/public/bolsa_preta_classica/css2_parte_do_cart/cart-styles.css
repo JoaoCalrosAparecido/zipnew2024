@@ -29,13 +29,12 @@
     position: relative;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    top: -75px;
+    top: 0px;
 }
 
 .cart-item p {
     position: relative;
     left: 00px;
-    top: -68px;
     font-weight: 600;
     font-size: 17px;
     font-family: 'Poppins', sans-serif;
