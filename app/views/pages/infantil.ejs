@@ -100,10 +100,10 @@
                             </article>
                         </section>
                     </section>
-                <a href="" class="links_do_menu3">FEMININO</a>
+                <a href="/feminino" class="links_do_menu3">FEMININO</a>
                 <a href="/masculino" class="links_do_menu4">MASCULINO</a>
-                <a href="" class="links_do_menu5">INFANTIL</a>
-                <a href="" class="links_do_menu6">ACESSÓRIOS</a>
+                <a href="/infantil" class="links_do_menu5">INFANTIL</a>
+                <a href="/acessorios" class="links_do_menu6">ACESSÓRIOS</a>
             </section>
         </section>
     </article>
@@ -563,11 +563,13 @@
 
         <% for(var i = 0; i < produtos.length; i++) { %>
             <figure>
+                <a href="/produtos/<%=produtos[i].id_prod_cliente%>">
                 <img src="../../IMG/uploads/<%= produtos[i].img1 %>" alt="<%= produtos[i].tituloprod %>">
                 <figcaption>
                     <h3 class="product-name"><%= produtos[i].tituloprod %></h3>
                     <p class="product-price">R$ <%= produtos[i].preçoprod %></p>
                 </figcaption>
+                </a>
                 <lord-icon class="add-to-cartfv" 
                     id="lordiconfv"
                     onclick="addToCartfv('<%= produtos[i].tituloprod %>', <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>')"
