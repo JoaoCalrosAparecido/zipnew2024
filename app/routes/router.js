@@ -262,5 +262,8 @@ router.post("/delete", function (req, res) {
 
 });
 
+router.get("/adc-bazar",  function (req, res) {
+  res.render('pages/adc-bazar.ejs', { msg: 'Back-end funcionando' });
+});
 module.exports = router;
 

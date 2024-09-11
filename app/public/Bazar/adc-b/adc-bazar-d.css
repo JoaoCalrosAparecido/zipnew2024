@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+#counter{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+#bazaras{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+#Create{
+    font-size: 25px;
+}
+
+#Caridade, #Bio{
+    width: 50rem;
+    height: 40px;
+    margin-top: 20px;
+    border-width: 1px;
+    border-radius: 15px;
+}
+
+#Bio{
+    height: 80px;
+}
+
+form input[type=text], textarea{
+    padding-left: 10px;
+}
+
+textarea{
+    padding-top: 10px;
+}
+
+
+#file-upload {
+    width: 50rem;
+    height: 15rem;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+#file-upload input[type="file"] {
+    display: none;
+}
+
+#file-upload label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #777;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#file-upload label::before {
+    content: '+';
+}
+
