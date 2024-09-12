@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
+    flex-direction: column;
 }
 
 #bazaras{
@@ -24,7 +25,7 @@
 }
 
 #Caridade, #Bio{
-    width: 50rem;
+    width: 42vw;
     height: 40px;
     margin-top: 20px;
     border-width: 1px;
@@ -45,7 +46,7 @@ textarea{
 
 
 #file-upload {
-    width: 50rem;
+    width: 42vw;
     height: 15rem;
     border: 2px dashed #ccc;
     display: flex;
@@ -78,4 +79,55 @@ textarea{
 #file-upload label::before {
     content: '+';
 }
+
+
+
+#adding{
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+
+hr{
+    border-color:#f1f1f1;
+    box-sizing:border-box;
+    width: 42vw;
+    height: 1px;
+  }
+
+
+/* Botão Adicionar Produto*/
+
+#product{
+    flex-direction: row;
+    display: flex;
+}
+
+#box{
+    margin-top: 15px;
+    margin-bottom: 35px;
+
+    background-color: rgb(255, 255, 255);
+    width: 10.5rem;
+    height: 14.5rem;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 28px;
+    border-color: #333333;
+
+    display: grid;
+    place-items: center;
+    margin-right: 15px;
+}
+
+#add{
+    font-weight: 400;
+    color: #333333;
+    vertical-align: none;
+    font-size: 28px;
+}
+
 
