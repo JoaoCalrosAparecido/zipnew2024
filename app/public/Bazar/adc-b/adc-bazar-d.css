@@ -16,7 +16,7 @@
 #bazaras{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     width: 42vw;
 
 }
@@ -84,7 +84,7 @@ textarea{
 
 
 #adding{
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 5px;
@@ -131,4 +131,27 @@ hr{
     font-size: 28px;
 }
 
+button{
 
+    background-color: rgb(36, 36, 36);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    width: 16.5rem;
+    height: 50px;
+    margin-bottom: 20px;
+
+}
+button:hover {
+    background-color: #333;
+}
+
+#cente{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column;
+}
