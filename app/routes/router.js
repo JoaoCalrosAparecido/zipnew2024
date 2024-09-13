@@ -41,10 +41,9 @@ router.get("/perfil",
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id);
     res.render('pages/perfil', { usuario: user });
-
   }
 );
-// Rota POST para atualizar a URL de mídia social
+
 router.post("/socialmedia",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
@@ -54,13 +53,9 @@ router.post("/socialmedia",
     const userId = req.session.autenticado.id;
     await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [socialLinks, userId]);
     const user = await models.findUserById(userId);
-
     res.render('pages/perfil', { erros: null, logado: true, usuarioautenticado: userId, usuario: user });
-
-
   }
 );
-
 
 router.get("/bolsa_preta_classica", function (req, res) {
   res.render('pages/bolsa_preta_classica', { msg: 'Back-end funcionando' });
@@ -85,7 +80,6 @@ router.get("/masculino", async function (req, res) {
 
   res.render('pages/masculino', { produtos, msg: 'Back-end funcionando' });
 });
-
 
 router.get("/feminino", async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('feminino')
@@ -112,7 +106,7 @@ router.get("/vender", function (req, res) {
 router.get(
   '/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 3]),
   async (req, res) => {
     try {
       const produtoId = parseInt(req.params.id_prod_cliente);
@@ -132,7 +126,7 @@ router.get(
 
 router.get("/meusdados",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null } , [1]),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null } , [1, 2, 3]),
   async function (req, res) {
     controller.mostrarPerfil(req, res)
   });
@@ -140,17 +134,14 @@ router.get("/meusdados",
 router.post("/atualizardados",
   controller.regrasValidacaoperfil,
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     controller.gravarPerfil(req, res)
   });
 
-
-
-
 router.get("/wishlist",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   function (req, res) {
     res.render('pages/wishlist', { msg: 'Back-end funcionando' });
   });
@@ -163,7 +154,6 @@ router.get("/adc-produto",
     console.log(user)
     res.render('pages/adc-produto', { usuario: user, erros: null, usuarioautenticado: req.session.autenticado })
   });
-
 
 // [, ]
 router.post("/adc-produto", [
@@ -205,7 +195,18 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
   console.log(erros);
 
   if (!erros.isEmpty()) {
-    return res.render('pages/cadastro', { erros: erros, dadosform: { nome: req.body.nome, cpf: req.body.cpf, dia: req.body.dia, mes: req.body.mes, ano: req.body.ano, email: req.body.email, senha: req.body.senha, confirmsenha: req.body.confirmsenha, cep: req.body.cep }, logado: false });
+    return res.render('pages/cadastro', {
+     erros: erros, dadosform: {
+     nome: req.body.nome, 
+     cpf: req.body.cpf, 
+     dia: req.body.dia, 
+     mes: req.body.mes, 
+     ano: req.body.ano, 
+     email: req.body.email, 
+     senha: req.body.senha, 
+     confirmsenha: req.body.confirmsenha, 
+     cep: req.body.cep }, 
+     logado: false });
   }
 
   try {
@@ -232,7 +233,6 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
     console.log(error)
   }
 });
-
 
 router.post("/sign/login", controller.regrasValidacaolog, async function (req, res) {
   const erros = validationResult(req);
@@ -271,5 +271,6 @@ router.post("/delete", function (req, res) {
 router.get("/adc-bazar", function (req, res) {
   res.render('pages/adc-bazar.ejs', { msg: 'Back-end funcionando' });
 });
+
 module.exports = router;
 

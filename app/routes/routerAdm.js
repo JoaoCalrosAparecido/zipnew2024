@@ -10,16 +10,16 @@ const produtosModels = require("../models/produtos.models");
 const multer = require('multer');
 const upload = multer({ dest: './app/public/IMG/uploads/' });
 
-router.get("/adm",verificarUsuAutenticado, verificarUsuAutorizado(
-  "./pages/login_do_usuario", 
-{ 
+router.get("/adm",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado(
+  "./pages/login_do_usuario", { 
   erros: null, 
   dadosform: { email: "", senha: "" }, 
   logado: false, 
   usuarioautenticado: null
 },
 [3]
-
 ), function(req,res){
     res.render("./pages/adm")
 })
