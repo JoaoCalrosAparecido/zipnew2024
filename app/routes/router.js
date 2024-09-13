@@ -39,8 +39,8 @@ router.get("/perfil",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
-      const user = await models.findUserById(req.session.autenticado.id);
-      res.render('pages/perfil', { usuario: user });
+    const user = await models.findUserById(req.session.autenticado.id);
+    res.render('pages/perfil', { usuario: user });
 
   }
 );
@@ -49,15 +49,15 @@ router.post("/socialmedia",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
   async function (req, res) {
-    
-      const { socialLinks } = req.body;
-      const userId = req.session.autenticado.id;
-      await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [socialLinks, userId]);
-      const user = await models.findUserById(userId);
 
-      res.render('pages/perfil', { erros: null, logado: true, usuarioautenticado: userId, usuario: user });
+    const { socialLinks } = req.body;
+    const userId = req.session.autenticado.id;
+    await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [socialLinks, userId]);
+    const user = await models.findUserById(userId);
 
-    
+    res.render('pages/perfil', { erros: null, logado: true, usuarioautenticado: userId, usuario: user });
+
+
   }
 );
 
@@ -105,24 +105,24 @@ router.get("/acessorios", async function (req, res) {
   res.render('pages/acessorios', { produtos, msg: 'Back-end funcionando' });
 });
 
-router.get("/vender",  function (req, res) {
+router.get("/vender", function (req, res) {
   res.render('pages/vender', { msg: 'Back-end funcionando' });
 });
 
 router.get(
-  '/produtos/:id_prod_cliente', 
-  verificarUsuAutenticado, 
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  '/produtos/:id_prod_cliente',
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
   async (req, res) => {
     try {
       const produtoId = parseInt(req.params.id_prod_cliente);
       const [produto] = await connection.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
       console.log(produto);
-      
+
       if (produto) {
-          res.render('pages/produtos', { usuarioautenticado: req.session.autenticado, produto: produto[0] })
+        res.render('pages/produtos', { usuarioautenticado: req.session.autenticado, produto: produto[0] })
       } else {
-          res.status(404).send('Produto não encontrado');
+        res.status(404).send('Produto não encontrado');
       }
     } catch (err) {
       console.log(err);
@@ -132,7 +132,7 @@ router.get(
 
 router.get("/meusdados",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null } , [1]),
   async function (req, res) {
     controller.mostrarPerfil(req, res)
   });
@@ -140,9 +140,9 @@ router.get("/meusdados",
 router.post("/atualizardados",
   controller.regrasValidacaoperfil,
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
   async function (req, res) {
-    controller.gravarPerfil(req,res)
+    controller.gravarPerfil(req, res)
   });
 
 
@@ -150,14 +150,14 @@ router.post("/atualizardados",
 
 router.get("/wishlist",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
   function (req, res) {
     res.render('pages/wishlist', { msg: 'Back-end funcionando' });
   });
 
 router.get("/adc-produto",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id)
     console.log(user)
@@ -167,37 +167,37 @@ router.get("/adc-produto",
 
 // [, ]
 router.post("/adc-produto", [
-    upload.fields([{ name: 'img1' }, { name: 'img2' },  { name: 'img3' },  { name: 'img4' }]), 
-    controller.regrasValidacaoAdcProduto
-  ], 
+  upload.fields([{ name: 'img1' }, { name: 'img2' }, { name: 'img3' }, { name: 'img4' }]),
+  controller.regrasValidacaoAdcProduto
+],
   async function (req, res) {
-  const user = await models.findUserById(req.session.autenticado.id)
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    console.log(errors)
-    return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
-  }
+    const user = await models.findUserById(req.session.autenticado.id)
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      console.log(errors)
+      return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
+    }
 
-  const { cateProduto } = req.body;
+    const { cateProduto } = req.body;
 
-  const create = await produtosModels.create({ 
-    ...req.body, 
-    img1: req.files.img1[0].filename,
-    img2: req.files.img2[0].filename,
-    img3: req.files.img3[0].filename,
-    img4: req.files.img4[0].filename, 
-  })
+    const create = await produtosModels.create({
+      ...req.body,
+      img1: req.files.img1[0].filename,
+      img2: req.files.img2[0].filename,
+      img3: req.files.img3[0].filename,
+      img4: req.files.img4[0].filename,
+    })
 
-  if (cateProduto == "feminino") {
-    res.redirect("/feminino")
-  } else if (cateProduto == "masculino") {
-    res.redirect("/masculino")
-  } else if (cateProduto == "infantil") {
-    res.redirect("/infantil")
-  } else if (cateProduto == "acessorios") {
-    res.redirect("/acessorios")
-  }
-});
+    if (cateProduto == "feminino") {
+      res.redirect("/feminino")
+    } else if (cateProduto == "masculino") {
+      res.redirect("/masculino")
+    } else if (cateProduto == "infantil") {
+      res.redirect("/infantil")
+    } else if (cateProduto == "acessorios") {
+      res.redirect("/acessorios")
+    }
+  });
 
 router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {
   const erros = validationResult(req);
@@ -211,19 +211,22 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
   try {
     const { nome, cpf, dia, mes, ano, email, senha, confirmsenha, cep } = req.body;
 
-    // fazer validação dos dados
-    // if(nome...)
-
     const nasc = `${ano}-${mes}-${dia}`
 
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(senha, salt);
     const hashPassword = bcrypt.hashSync(confirmsenha, salt);
 
-    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep) VALUES (?, ?, ?, ?, ?, ?, ?)", [nome, cpf, nasc, email, hashedPassword, hashPassword, cep]);
+    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep, Id_Tipo_Usuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+      [nome, cpf, nasc, email, hashedPassword, hashPassword, cep, 1]);
     console.log(create)
+    const usuario = await connection.query("SELECT * FROM cliente WHERE id_Cliente = ?", [create.insertId]);
+    req.session.autenticado = {
+      autenticado: usuario[0].nome,
+      id: usuario[0].id_Cliente,
+      tipo: usuario[0].Id_Tipo_Usuario
+    }
 
-    req.session.autenticado = {}
     res.render('pages/login_do_usuario', { erros: null, dadosform: { email: req.body.email, senha: req.body.senha }, logado: true, usuarioautenticado: req.session.userid })
   } catch (error) {
     console.log(error)
@@ -262,7 +265,7 @@ router.post("/delete", function (req, res) {
 
 });
 
-router.get("/adc-bazar",  function (req, res) {
+router.get("/adc-bazar", function (req, res) {
   res.render('pages/adc-bazar.ejs', { msg: 'Back-end funcionando' });
 });
 module.exports = router;
