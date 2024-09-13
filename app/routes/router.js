@@ -37,7 +37,7 @@ router.get("/login_do_usuario", verificarUsuAutenticado, async function (req, re
 
 router.get("/perfil",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 3]),
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id);
     res.render('pages/perfil', { usuario: user });
@@ -245,7 +245,10 @@ router.post("/sign/login", controller.regrasValidacaolog, async function (req, r
   try {
     const { email } = req.body;
     const [user] = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
-    req.session.autenticado = { autenticado: user[0].nome, id: user[0].id_Cliente }
+    req.session.autenticado = { autenticado: user[0].nome, id: user[0].id_Cliente, tipo: user[0].Id_Tipo_Usuario }
+    if(req.session.autenticado.tipo == 3){
+      res.redirect("/adm");
+    }
     res.redirect("/perfil");
 
   } catch (error) {

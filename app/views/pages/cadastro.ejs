@@ -383,11 +383,24 @@
         <article id="ajust">
             <h2 id="cadastro">CRIE UMA CONTA</h2>
             <p id="tornar">Conecte-se a zip.com para obter os benefícios de um perfil</p>
-        </article>
+        </article>  
         <article class="abaixar">
 
-            <% let msgErro='' const campoErro={ nome:'', email:'', senha:'', cpf:'', cep:'', confirmsenha:'', dia:'',
-                mes:'', ano:'' }; if (erros) { erros.errors.forEach(err=> {
+            <% let msgErro='' 
+            const campoErro={ 
+                nome:'', 
+                email:'', 
+                senha:'', 
+                cpf:'', 
+                cep:'', 
+                confirmsenha:'', 
+                dia:'',
+                mes:'', 
+                ano:'' 
+            }; 
+            
+            if (erros) { 
+                erros.errors.forEach(err=> {
                 campoErro[err['path']] = 'invalido';
                 msgErro += err.msg + '<br>'
                 %>
