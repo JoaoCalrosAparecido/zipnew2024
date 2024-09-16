@@ -50,7 +50,7 @@ router.get("/perfil",
 
 router.post("/socialmedia",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
   async function (req, res) {
 
     const { socialLinks } = req.body;
