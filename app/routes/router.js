@@ -41,7 +41,7 @@ router.get("/login_do_usuario", verificarUsuAutenticado, async function (req, re
 
 router.get("/perfil",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id);
     res.render('pages/perfil', { usuario: user });
