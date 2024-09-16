@@ -21,7 +21,7 @@ router.get("/adm",
 },
 [3]
 ), function(req,res){
-    res.render("./pages/adm")
+    res.render("./pages/administrador")
 })
 
 module.exports = router;
