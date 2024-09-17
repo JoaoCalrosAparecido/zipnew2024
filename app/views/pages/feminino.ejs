@@ -100,10 +100,10 @@
                             </article>
                         </section>
                     </section>
-                <a href="" class="links_do_menu3">FEMININO</a>
+                <a href="/feminino" class="links_do_menu3">FEMININO</a>
                 <a href="/masculino" class="links_do_menu4">MASCULINO</a>
-                <a href="" class="links_do_menu5">INFANTIL</a>
-                <a href="" class="links_do_menu6">ACESSÓRIOS</a>
+                <a href="/infantil" class="links_do_menu5">INFANTIL</a>
+                <a href="/acessorios" class="links_do_menu6">ACESSÓRIOS</a>
             </section>
         </section>
     </article>
@@ -562,7 +562,7 @@
         
         <% for(var i = 0; i < produtos.length; i++) { %>
             
-                <figure>
+                <figure class="class_produtos_figure">
                     <a href="/produtos/<%=produtos[i].id_prod_cliente%>">
                     <img src="../../IMG/uploads/<%= produtos[i].img1 %>" alt="<%= produtos[i].tituloprod %>">
                     <figcaption>

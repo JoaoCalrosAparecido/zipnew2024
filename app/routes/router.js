@@ -67,7 +67,7 @@ router.get("/bolsa_preta_classica", function (req, res) {
 
 router.get("/cart",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1,2, 3]),
   function (req, res) {
     res.render('pages/cart', { msg: 'Back-end funcionando' });
   });
