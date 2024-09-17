@@ -517,12 +517,15 @@
             </form>
         </div>
     </section>
+
         <section id="sup">
             <section id="onn">
-                <article>
-                    <button id="famous">SOU FAMOSO</button>
-                </article>
-
+                <% if(usuario.Id_Tipo_Usuario == 2){ %>
+                <% }else{ %>
+                    <article>
+                        <button id="famous">SOU FAMOSO</button>
+                    </article>
+                <% }%>
                 <article id="help">
                     <p>Suporte</p>
                 </article>
