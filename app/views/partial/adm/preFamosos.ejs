@@ -19,80 +19,13 @@
                         <tr>
                             <td><%= cliente.id_Cliente %> <%= cliente.nome %></td>
                             <td><%= cliente.Url_site %></td>
-                            <td><form action="/aprovarFamoso?idUsuario=<%= cliente.id_Cliente %>" method="post"><button type="submit">Aprovar</button></form></td>
-                            <td><form action="/negarFamoso?idUsuario=<%= cliente.id_Cliente %>" method="post"><button type="submit">Negar</button></form></td>
+                            <td><form action="/aprovarFamoso?idUsuario=<%= cliente.id_Cliente %>" method="post"><button id="aprova" type="submit">Aprovar</button></form></td>
+                            <td><form action="/negarFamoso?idUsuario=<%= cliente.id_Cliente %>" method="post"><button id="nega" type="submit">Negar</button></form></td>
                         </tr>
                     <% })} %>
                 
                 
             </tbody>
         </table>
-    </section>
-
-    <!-- <section class="table-wrapper-denuncias">
-        <table class="table-denuncias">
-            <thead class="denuncias-colunas">
-                <tr>
-                    <th>ID do Cliente</th>
-                    <th>Motivo da Denúncia</th>
-                    <th>Advertência</th>
-                </tr>
-            </thead>
-
-            <tbody class="denuncias-colunas-conteudo">
-                <tr>
-                    <td>0134</td>
-                    <td>www.instagram.com www.instagram.comwww.instagram.comwww.instagram.com</td>
-                    <td><button type="submit" class="efeito-botao">Advertir</button></td>
-                </tr>
-
-                <tr>
-                    <td>0134</td>
-                    <td>www.instagram.com www.instagram.comwww.instagram.comwww.instagram.com</td>
-                    <td><button type="submit" class="efeito-botao">Advertir</button></td>
-                </tr>
-
-                <tr>
-                    <td>0134</td>
-                    <td>www.instagram.com www.instagram.comwww.instagram.comwww.instagram.com</td>
-                    <td><button type="submit" class="efeito-botao">Advertir</button></td>
-                </tr>
-
-                <tr>
-                    <td>0134</td>
-                    <td>www.instagram.com www.instagram.comwww.instagram.comwww.instagram.com</td>
-                    <td><button type="submit" class="efeito-botao">Advertir</button></td>
-                </tr>
-
-                <tr>
-                    <td>0134</td>
-                    <td>www.instagram.com www.instagram.comwww.instagram.comwww.instagram.com</td>
-                    <td><button type="submit" class="efeito-botao">Advertir</button></td>
-                </tr>
-
-                <tr>
-                    <td>0134</td>
-                    <td>www.instagram.com www.instagram.comwww.instagram.comwww.instagram.com</td>
-                    <td><button type="submit" class="efeito-botao">Advertir</button></td>
-
-                    <article id="messageContainer" class="hidden">
-                        <article id="messageBox">
-                            <span id="closeBtn">&times;</span>
-                            <label for="advertencia">Faça uma advertência</label>
-                            <input type="text" id="advertencia">
-                            <fieldset>
-                                <legend>Suspensão</legend>
-                                <select>
-                                    <option>Suspender por 3 dias</option>
-                                    <option>Suspender por uma semana</option>
-                                    <option>Suspender por um mês</option>
-                                    <option>Suspensão permanente</option>
-                                </select>
-                            </fieldset>
-                        </article>
-                    </article> mensagem quando advertir estiver funcionando
-                </tr>
-            </tbody>
-        </table>
-    </section> -->
+    </section> 
 </section>

@@ -124,19 +124,19 @@ button {
     border: none;
 }
 
-tbody > tr > td:nth-child(3) > button:nth-child(1) {
+#aprova {
     background-color: #30beaa;
 }
 
-tbody > tr > td:nth-child(4) > button:nth-child(1) {
+#nega {
     background-color: #f70064;
 }
 
-tbody > tr > td:nth-child(3) > button:nth-child(1):hover {
+#aprova:hover {
     opacity: 0.8;
 }
 
-tbody > tr > td:nth-child(4) > button:nth-child(1):hover {
+#nega:hover {
     opacity: 0.8;
 }
 
