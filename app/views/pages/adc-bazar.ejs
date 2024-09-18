@@ -8,7 +8,7 @@
     <script src="../../Bazar/adc-b/img.js" defer></script>
 </head>
 <body>
-<form id="imageSection">
+<form id="imageSection" action="/bazarAdc" method="post" >
     <section id="imageSection">
         <label for="fileInput" id="imageSelector">
             <div id="imagePlaceholder">
@@ -18,18 +18,18 @@
             <input type="file" id="fileInput" accept="image/*">
         </label>
         <div id="formOverlay">
-            <input type="text" id="Name" placeholder="Nome">
-            <input type="text" id="Year" placeholder="Ano">
-            <input type="text" id="Description" placeholder="Breve Descrição">
+            <input type="text"  id="Name" placeholder="Nome" name="Nome">
+            <input type="text" id="Year" placeholder="Ano" name="Ano">
+            <input type="text" id="Description" placeholder="Breve Descrição" name="Descricao">
         </div>
     </section>
 
     <section id="additionalInputs">
-        <input type="text" placeholder="Instituição de Caridade">
+        <input type="text" placeholder="Instituição de Caridade" name="Titulo">
     </section>
 
     <section id="textAreaSection">
-        <textarea placeholder="Biografia do Famoso"></textarea>
+        <textarea placeholder="Biografia do Famoso" name="Biografia"></textarea>
     </section>
 
     <article id="product">
