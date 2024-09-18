@@ -29,8 +29,7 @@
     display: flex;
     flex-wrap: wrap;
     /* position: absolute; */ /* Comentei essa linha para que a altura automática funcione corretamente */
-    row-gap: 3px; /* Altere este valor conforme necessário */
-    column-gap: 3px;
+    gap: 6px;
     position: relative;
     left: 10.44%;
     top: 170px;
@@ -43,7 +42,7 @@
 }
 
 /*imagem 1*/
-#promos_bolsa_preta_classica1 > img {
+.foto_da_bolsa > img {
     width: 506px;
     height: 633px
 }
