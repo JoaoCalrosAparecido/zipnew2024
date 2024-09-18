@@ -30,7 +30,8 @@ router.get("/administrador", function (req, res) {
 });
 
 router.get("/cadastro", function (req, res) {
-  res.render('pages/cadastro', { erros: null, dadosform: { nome: '', cpf: '', dia: '', mes: '', ano: '', email: '', senha: '', confirmsenha: '', cep: '' }, logado: false, usuarioautenticado: req.session.userid });
+  res.render('pages/cadastro', 
+  { erros: null, dadosform: { nome: '', cpf: '', dia: '', mes: '', ano: '', email: '', senha: '', confirmsenha: '', cep: '' }, logado: false, usuarioautenticado: req.session.userid });
 });
 
 router.get("/login_do_usuario", verificarUsuAutenticado, async function (req, res) {
@@ -153,7 +154,7 @@ router.get("/wishlist",
 
 router.get("/adc-produto",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2]),
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id)
     console.log(user)
