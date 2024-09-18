@@ -574,7 +574,7 @@
                 <img src="../../IMG/uploads/<%= produtos[i].img1 %>" alt="<%= produtos[i].tituloprod %>">
                 <figcaption>
                     <h3 class="product-name"><%= produtos[i].tituloprod %></h3>
-                    <p class="product-price">R$ <%= produtos[i].preçoprod %></p>
+                    <p class="product-price" id="texto">R$ <%= produtos[i].preçoprod %></p>
                 </figcaption>
                 </a>
                 <lord-icon class="add-to-cartfv" 
@@ -587,6 +587,8 @@
                 </lord-icon>
             </figure>
 
+            
+
         <% } %>
         
 
@@ -594,7 +596,7 @@
     </section>
 
 </section>
-
+<script src="../../cat-produto/ponto-para-virgula.js"></script>
 <script src="../../css-masculino/js/icone-favorito.js"></script>
 <script src="../../wishlist/cell-wishlist/js/index.js"></script>
 
