@@ -4,3 +4,9 @@ window.onload = function() {
         p.innerHTML = p.innerHTML.replace(/\./g, ',');
     });
 };
+window.onload = function() {
+    var preco = document.getElementById('parte_preço_bolsa_Preta');
+    preco.forEach(function(p) {
+        p.innerHTML = p.innerHTML.replace(/\./g, ',');
+    });
+};
