@@ -174,6 +174,8 @@ router.post("/adc-produto", [
       return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
     }
 
+
+
     const { cateProduto } = req.body;
 
     const create = await produtosModels.create({
