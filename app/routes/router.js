@@ -112,7 +112,7 @@ router.get("/vender", function (req, res) {
 router.get(
   '/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async (req, res) => {
     try {
       const produtoId = parseInt(req.params.id_prod_cliente);

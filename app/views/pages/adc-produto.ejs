@@ -366,7 +366,11 @@
         </article>
 
         <section id="section-adc-img">
-            <form action="/adc-produto" method="post" id="form-input" enctype="multipart/form-data">
+            <% if(usuario.Id_Tipo_Usuario == 2){ %>
+                <form method="post" id="form-input">
+                <% }else{ %>
+                    <form action="/adc-produto" method="post" id="form-input" enctype="multipart/form-data">
+            <% }%>
             <!--quadrados de adicionar iamgem-->
             <section id="section-blocos-adc">
                 <article class="blocos-adc">
