@@ -1,6 +1,6 @@
 const pool = require("../../config/pool_conexoes");
 
-const models = {
+const prodModels = {
     findAllProductByCategoryName: async (name) => {
         try {
             console.log(name)
@@ -29,16 +29,23 @@ const models = {
         }
     },
 
-    create: async (dadosForm) => {
+    createProd: async (dadosForm) => {
         try {
-            console.log(dadosForm)
             const [linhas] = await pool.query('INSERT INTO produtos SET ?', [dadosForm]);
             return linhas;
         } catch (error) {
             console.log(error);
-            return null;
+            return error;
         }
     },
+    findBazarByUserId: async (UserId) => {
+        try {
+            const [linhas] = await pool.query("SELECT * FROM bazar WHERE id_Cliente = ?", [UserId])
+            return linhas[0]
+        } catch (error) {
+            return error
+        }
+    }
 };
 
-module.exports = models;
+module.exports = prodModels;
