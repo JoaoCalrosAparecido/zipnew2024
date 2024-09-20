@@ -29,6 +29,14 @@ function updateCart() {
         Mover para a wishlist
     </h1>`;
         cartItem.appendChild(productInfo);
+        const additionalInfo = document.createElement('div');
+        additionalInfo.innerHTML = `
+        <p>${item.name}</p>
+        <p>${item.price.toFixed(2)}</p>
+        <p>${item.id_prod_cliente}</p>☻
+  
+
+        `;
         
         const removeButton = document.createElement('button');
         removeButton.textContent = '';
