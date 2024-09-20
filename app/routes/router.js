@@ -30,8 +30,8 @@ router.get("/administrador", function (req, res) {
 });
 
 router.get("/cadastro", function (req, res) {
-  res.render('pages/cadastro', 
-  { erros: null, dadosform: { nome: '', cpf: '', dia: '', mes: '', ano: '', email: '', senha: '', confirmsenha: '', cep: '' }, logado: false, usuarioautenticado: req.session.userid });
+  res.render('pages/cadastro',
+    { erros: null, dadosform: { nome: '', cpf: '', dia: '', mes: '', ano: '', email: '', senha: '', confirmsenha: '', cep: '' }, logado: false, usuarioautenticado: req.session.userid });
 });
 
 router.get("/login_do_usuario", verificarUsuAutenticado, async function (req, res) {
@@ -69,14 +69,14 @@ router.get("/bolsa_preta_classica", function (req, res) {
 
 router.get("/cart",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1,2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   function (req, res) {
     res.render('pages/cart', { msg: 'Back-end funcionando' });
   });
 
 router.get("/pagamento",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1,2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   function (req, res) {
     res.render('pages/pagamento', { msg: 'Back-end funcionando' });
   });
@@ -132,7 +132,7 @@ router.get(
 
 router.get("/meusdados",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null } , [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     controller.mostrarPerfil(req, res)
   });
@@ -162,10 +162,13 @@ router.get("/adc-produto",
   });
 
 // [, ]
-router.post("/adc-produto", [
+router.post("/adc-produto",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3])
+  [
   upload.fields([{ name: 'img1' }, { name: 'img2' }, { name: 'img3' }, { name: 'img4' }]),
   controller.regrasValidacaoAdcProduto
-],
+  ],
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id)
     const errors = validationResult(req);
@@ -174,27 +177,25 @@ router.post("/adc-produto", [
       return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
     }
 
-
-
-    const { cateProduto } = req.body;
+    const { cateProduto, tituloProduto, precoProduto, descProduto } = req.body;
 
     const create = await produtosModels.create({
-      ...req.body,
+      ,
       img1: req.files.img1[0].filename,
       img2: req.files.img2[0].filename,
       img3: req.files.img3[0].filename,
       img4: req.files.img4[0].filename,
     })
 
-    if (cateProduto == "feminino") {
-      res.redirect("/feminino")
-    } else if (cateProduto == "masculino") {
-      res.redirect("/masculino")
-    } else if (cateProduto == "infantil") {
-      res.redirect("/infantil")
-    } else if (cateProduto == "acessorios") {
-      res.redirect("/acessorios")
-    }
+if (cateProduto == "feminino") {
+  res.redirect("/feminino")
+} else if (cateProduto == "masculino") {
+  res.redirect("/masculino")
+} else if (cateProduto == "infantil") {
+  res.redirect("/infantil")
+} else if (cateProduto == "acessorios") {
+  res.redirect("/acessorios")
+}
   });
 
 router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {
@@ -204,17 +205,19 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
 
   if (!erros.isEmpty()) {
     return res.render('pages/cadastro', {
-     erros: erros, dadosform: {
-     nome: req.body.nome, 
-     cpf: req.body.cpf, 
-     dia: req.body.dia, 
-     mes: req.body.mes, 
-     ano: req.body.ano, 
-     email: req.body.email, 
-     senha: req.body.senha, 
-     confirmsenha: req.body.confirmsenha, 
-     cep: req.body.cep }, 
-     logado: false });
+      erros: erros, dadosform: {
+        nome: req.body.nome,
+        cpf: req.body.cpf,
+        dia: req.body.dia,
+        mes: req.body.mes,
+        ano: req.body.ano,
+        email: req.body.email,
+        senha: req.body.senha,
+        confirmsenha: req.body.confirmsenha,
+        cep: req.body.cep
+      },
+      logado: false
+    });
   }
 
   try {
@@ -254,7 +257,7 @@ router.post("/sign/login", controller.regrasValidacaolog, async function (req, r
     const { email } = req.body;
     const [user] = await connection.query("SELECT * FROM cliente WHERE email = ?", [email]);
     req.session.autenticado = { autenticado: user[0].nome, id: user[0].id_Cliente, tipo: user[0].Id_Tipo_Usuario }
-    if(req.session.autenticado.tipo == 3){
+    if (req.session.autenticado.tipo == 3) {
       res.redirect("/adm");
     }
     res.redirect("/perfil");
@@ -290,20 +293,20 @@ router.get("/adc-bazar",
   ), function (req, res) {
     res.render('pages/adc-bazar.ejs');
   })
-  
 
-router.post("/bazarAdc",   verificarUsuAutenticado,
-verificarUsuAutorizado(
-  "./pages/login_do_usuario", {
-  erros: null,
-  dadosform: { email: "", senha: "" },
-  logado: false,
-  usuarioautenticado: null
-},
-  [2, 3]
-), function (req, res) {
-  bazarController.submitBazar(req, res)
-});
+
+router.post("/bazarAdc", verificarUsuAutenticado,
+  verificarUsuAutorizado(
+    "./pages/login_do_usuario", {
+    erros: null,
+    dadosform: { email: "", senha: "" },
+    logado: false,
+    usuarioautenticado: null
+  },
+    [2, 3]
+  ), function (req, res) {
+    bazarController.submitBazar(req, res)
+  });
 
 module.exports = router;
 
