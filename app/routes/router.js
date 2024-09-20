@@ -164,11 +164,9 @@ router.get("/adc-produto",
 // [, ]
 router.post("/adc-produto",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3])
-  [
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   upload.fields([{ name: 'img1' }, { name: 'img2' }, { name: 'img3' }, { name: 'img4' }]),
-  controller.regrasValidacaoAdcProduto
-  ],
+  controller.regrasValidacaoAdcProduto,
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id)
     const errors = validationResult(req);
@@ -178,24 +176,30 @@ router.post("/adc-produto",
     }
 
     const { cateProduto, tituloProduto, precoProduto, descProduto } = req.body;
+    const userBazar = await pool.query("SELECT * FROM bazar WHERE id_Cliente = ?", [req.session.autenticado.id])
 
     const create = await produtosModels.create({
-      ,
+      tituloprod: tituloProduto,
+      preçoprod: precoProduto,
+      descProduto: descProduto,
+      cateProduto: cateProduto,
+      Id_Bazar: userBazar[0] ? userBazar[0].Id_Bazar : null,
+      id_Cliente: req.session.autenticado.id,
       img1: req.files.img1[0].filename,
       img2: req.files.img2[0].filename,
       img3: req.files.img3[0].filename,
       img4: req.files.img4[0].filename,
     })
-
-if (cateProduto == "feminino") {
-  res.redirect("/feminino")
-} else if (cateProduto == "masculino") {
-  res.redirect("/masculino")
-} else if (cateProduto == "infantil") {
-  res.redirect("/infantil")
-} else if (cateProduto == "acessorios") {
-  res.redirect("/acessorios")
-}
+    console.log(create)
+    if (cateProduto == "feminino") {
+      res.redirect("/feminino")
+    } else if (cateProduto == "masculino") {
+      res.redirect("/masculino")
+    } else if (cateProduto == "infantil") {
+      res.redirect("/infantil")
+    } else if (cateProduto == "acessorios") {
+      res.redirect("/acessorios")
+    }
   });
 
 router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {
