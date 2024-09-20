@@ -1,0 +1,4 @@
+HOST = bvd7d0eykrivgn4plcfu-mysql.services.clever-cloud.com
+NAME = bvd7d0eykrivgn4plcfu
+USER = upa7co6ryymgk4ck
+PASSWORD = x6hIESZSkWnMhCqh9yuC
