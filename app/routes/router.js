@@ -46,7 +46,10 @@ router.get("/perfil",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id);
-    res.render('pages/perfil', { usuario: user });
+
+    const userId = req.session.autenticado.id;
+    const bazar = await produtosModels.findBazarByUserId(userId);
+    res.render('pages/perfil', { usuario: user, Bazar: bazar });
   }
 );
 
@@ -297,8 +300,10 @@ router.get("/adc-bazar",
     usuarioautenticado: null
   },
     [2, 3]
-  ), function (req, res) {
-    res.render('pages/adc-bazar.ejs');
+  ), async function (req, res) {
+    const userId = req.session.autenticado.id;
+    const bazar = await produtosModels.findBazarByUserId(userId);
+    res.render('pages/adc-bazar.ejs' , { Bazar: bazar });
   })
 
 

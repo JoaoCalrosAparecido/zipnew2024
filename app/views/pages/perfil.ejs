@@ -381,10 +381,27 @@
             </article>
 
             <!-- Adicionar Produto -->
-
-            <% if(usuario.Id_Tipo_Usuario == 2){ %>
+            <% if(Bazar){ %>
+                <article id="adding">
+                    <h2 id="add">Administrar Bazar</h2>
+                </article>
+                <hr />
+    
+                <article id="product">
+                    <a href="/adc-bazar">
+                        <section id="box">
+                            <h1 id="add"> <lord-icon src="https://cdn.lordicon.com/hqymfzvj.json" trigger="hover"
+                                    style="width:25px;height:25px">
+                                </lord-icon></h1>
+                        </section>
+                    </a>
+                    <!-- Adicionar Caixas!!!!! -->
+    
+                </article>
+            </section>
+            <% }else if(usuario.Id_Tipo_Usuario == 2){ %>
             <article id="adding">
-                <h2 id="add">Administrar Bazar</h2>
+                <h2 id="add">Criar Bazar</h2>
             </article>
             <hr />
 
@@ -400,6 +417,7 @@
 
             </article>
         </section>
+
         <% }else{ %>
             <article id="adding">
                 <h2 id="add">Adicionar Produto</h2>
