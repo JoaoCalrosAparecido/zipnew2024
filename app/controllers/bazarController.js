@@ -12,7 +12,7 @@ const bazarController = {
 
         await pool.query("INSERT INTO bazar (nome, ano, descricao, titulo, biografia, id_Cliente) VALUES (?, ?, ?, ?, ?, ?) ", [Nome, Ano, Descricao, Titulo, Biografia, userId]);
 
-        res.render('pages/perfil', { erros: null, logado: true, usuarioautenticado: userId, usuario: user, Bazar: bazar });
+        res.redirect('/perfil');
     },
 
 
@@ -62,7 +62,7 @@ const bazarController = {
             lista.errors.push(erroMulter);
           }
           console.log(lista)
-          return res.render("pages/perfil", { listaErros: lista, dadosNotificacao: null, valores: req.body })
+          return res.render("pages/adc-bazar", { listaErros: lista, dadosNotificacao: null, valores: req.body })
         }
         try {
           let { Nome, Ano, Descricao, Titulo, Biografia } = req.body
@@ -96,13 +96,13 @@ const bazarController = {
                 Biografia: bazar.biografia,
               };
               console.log("Atualizado")
-              res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" }, usuario: user, Bazar: bazar, valores: campos });
+              res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Bazar! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" }, usuario: user, Bazar: bazar, valores: campos });
             } else {
               const userId = req.session.autenticado.id;
               const user = await models.findUserById(userId);
               const bazar = await produtosModels.findBazarByUserId(userId);
               console.log("Atualizado 2")
-              res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, usuario: user, Bazar: bazar, valores: dadosForm });
+              res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Bazar! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, usuario: user, Bazar: bazar, valores: dadosForm });
             }
           }
         } catch (e) {
@@ -110,7 +110,7 @@ const bazarController = {
           const userId = req.session.autenticado.id;
           const user = await models.findUserById(userId);
           const bazar = await produtosModels.findBazarByUserId(userId);
-          res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" },usuario: user, Bazar: bazar, valores: req.body });
+          res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar", mensagem: "Verifique os valores digitados!", tipo: "error" },usuario: user, Bazar: bazar, valores: req.body });
         }
     },
     
