@@ -325,5 +325,19 @@ router.post("/bazarAdc",
     bazarController.submitBazar(req, res)
   });
 
+  router.post("/attBazar", 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado(
+    "./pages/login_do_usuario", {
+    erros: null,
+    dadosform: { email: "", senha: "" },
+    logado: false,
+    usuarioautenticado: null
+  },
+    [2, 3]
+  ), function (req, res) {
+    bazarController.alterarBazar(req, res)
+  });
+
 module.exports = router;
 

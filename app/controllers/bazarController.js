@@ -62,53 +62,54 @@ const bazarController = {
             lista.errors.push(erroMulter);
           }
           console.log(lista)
-          return res.render("pages/Config/meusdados", { listaErros: lista, dadosNotificacao: null, valores: req.body })
+          return res.render("pages/perfil", { listaErros: lista, dadosNotificacao: null, valores: req.body })
         }
         try {
-          let { nome, email, cep, nasc, senha } = req.body
+          let { Nome, Ano, Descricao, Titulo, Biografia } = req.body
           var dadosForm = {
-            nome: nome,
-            email: email,
-            cep: cep,
-            nasc: nasc,
+            nome: Nome,
+            ano: Ano,
+            descricao: Descricao,
+            titulo: Titulo,
+            biografia: Biografia,
           };
+  
     
-          if (senha != "") {
-            const salt = bcrypt.genSaltSync(10);
-            dadosForm.senha = bcrypt.hashSync(req.body.senha, salt);
-          }
-    
-          let resultUpdate = await models.update(dadosForm, req.session.autenticado.id);
+          let resultUpdate = await models.att(dadosForm, req.session.autenticado.id);
     
           if (!resultUpdate.isEmpty) {
             if (resultUpdate.changedRows == 1) {
-              var user = await models.findUserById(req.session.autenticado.id);
-              const data = new Date(user.nasc)
-              const dataFormatada = data.toISOString().split('T')[0];
+              var userr = await models.findUserById(req.session.autenticado.id);
+              const user = await models.findUserById(userId);
+              const userId = req.session.autenticado.id;
+              const bazar = await produtosModels.findBazarByUserId(userId);
               var autenticado = {
-                autenticado: user.nome,
-                id: user.id_Cliente,
+                autenticado: userr.nome,
+                id: userr.id_Cliente,
               };
               req.session.autenticado = autenticado;
-              let campos = {
-                nome: user.nome,
-                cpf: user.cpf,
-                nasc: user.nasc,
-                cep: user.cep,
-                email: user.email,
-                nasc: dataFormatada,
-                senha: ""  
+              let campos = { 
+                Nome: bazar.nome,
+                Ano: bazar.ano,
+                Descricao: bazar.descricao,
+                Titulo: bazar.titulo,
+                Biografia: bazar.biografia,
               };
               console.log("Atualizado")
-              res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" }, usuario: user, valores: campos });
+              res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" }, usuario: user, Bazar: bazar, valores: campos });
             } else {
+              const userId = req.session.autenticado.id;
+              const user = await models.findUserById(userId);
+              const bazar = await produtosModels.findBazarByUserId(userId);
               console.log("Atualizado 2")
-              res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, usuario: user, valores: dadosForm });
+              res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, usuario: user, Bazar: bazar, valores: dadosForm });
             }
           }
         } catch (e) {
           console.log(e)
-          res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" }, valores: req.body });
+          const userId = req.session.autenticado.id;
+          const bazar = await produtosModels.findBazarByUserId(userId);
+          res.render("pages/adc-bazar", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" },Bazar: bazar, valores: req.body });
         }
     },
 }
