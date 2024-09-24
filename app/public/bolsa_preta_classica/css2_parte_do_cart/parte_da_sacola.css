@@ -13,7 +13,7 @@
     width: 220px;
     height: 278px;
 }
-.cart-item > div   {
+.cart-item > article   {
     position: relative;
     top: -100px;
     left: 10px;
@@ -24,6 +24,9 @@
     left: 20px;
 }
 
-.cart-item > div >h1  {
+.cart-item > article >h1  {
+    display: none;
+}
+#item-mercadopago  {
     display: none;
 }

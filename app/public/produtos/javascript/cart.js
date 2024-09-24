@@ -27,7 +27,7 @@ function updateCart() {
         <h1>
         <img id="coracao_mover"  src="../../IMG/sacola/produtos/coracao_escrito_mover_par_uma_lista_de_desejos.svg" alt="Descrição da Imagem">
         Mover para a wishlist
-    </h1>`;
+    </h1> `;
         cartItem.appendChild(productInfo);
         const additionalInfo = document.createElement('div');
         additionalInfo.innerHTML = `
@@ -37,6 +37,8 @@ function updateCart() {
   
 
         `;
+
+        cartItem.appendChild(additionalInfo); // Adicione esta linha aqui
         
         const removeButton = document.createElement('button');
         removeButton.textContent = '';

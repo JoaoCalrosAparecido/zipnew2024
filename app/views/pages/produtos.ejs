@@ -271,7 +271,7 @@
             </a>
 
             <article>
-                <button id="produto_adicionar_a_sacola" class="add-to-cart" onclick="handleClick(); addToCart( '<%= produto.tituloprod %>', <%= Number(produto.preçoprod).toFixed(2) %>, '../../IMG/uploads/<%= produto.img1 %>') ">
+                <button id="produto_adicionar_a_sacola" class="add-to-cart" onclick="handleClick(); addToCart( '<%= produto.tituloprod %>', Number('<%=produto.preçoprod %>').toFixed(2), '../../IMG/uploads/<%= produto.img1 %>', parseInt('<%= produto.id_prod_cliente %>'))">
                     <p>ADICIONAR À SACOLA</p>
                 </button>
 
