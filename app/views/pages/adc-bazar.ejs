@@ -10,28 +10,28 @@
 <body>
 
 <% if (Bazar) { %>
-    <form id="imageSection" action="/bazarAdc" method="post" >
+    <form id="imageSection" action="/" method="post" >
         <section id="imageSection">
             <label for="fileInput" id="imageSelector">
-                <div id="imagePlaceholder">
+                <section id="imagePlaceholder">
                     <span>+</span>
-                </div>
+                </section>
                 <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
                 <input type="file" id="fileInput" accept="image/*">
             </label>
-            <div id="formOverlay">
-                <input type="text"  id="Name" placeholder="Nome" name="Nome">
-                <input type="text" id="Year" placeholder="Ano" name="Ano">
-                <input type="text" id="Description" placeholder="Breve Descrição" name="Descricao">
-            </div>
+            <section id="formOverlay">
+                <input type="text"  id="Name" placeholder="Nome" name="Nome" value="<%= valores.Nome %>">
+                <input type="text" id="Year" placeholder="Ano" name="Ano" value="<%= valores.Ano %>">
+                <input type="text" id="Description" placeholder="Breve Descrição" name="Descricao" value="<%= valores.Descricao %>">
+            </section>
         </section>
     
         <section id="additionalInputs">
-            <input type="text" placeholder="Instituição de Caridade" name="Titulo">
+            <input type="text" placeholder="Instituição de Caridade" name="Titulo" value="<%= valores.Titulo %>">
         </section>
     
         <section id="textAreaSection">
-            <textarea placeholder="Biografia do Famoso" name="Biografia"></textarea>
+            <textarea placeholder="Biografia do Famoso" name="Biografia"><%= valores.Biografia %></textarea>
         </section>
     
         <section id="cen">
@@ -61,25 +61,29 @@
         
     
         <section id="submitSection">
-            <button id="submitBtn">ADICIONAR BAZAR</button>
+            <button id="submitBtn">ATUALIZAR BAZAR</button>
         </section>
         <script src="script.js"></script>
     </form>
+
+
+
+
 <% } else { %>
     <form id="imageSection" action="/bazarAdc" method="post" >
         <section id="imageSection">
             <label for="fileInput" id="imageSelector">
-                <div id="imagePlaceholder">
+                <section id="imagePlaceholder">
                     <span>+</span>
-                </div>
+                </section>
                 <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
                 <input type="file" id="fileInput" accept="image/*">
             </label>
-            <div id="formOverlay">
+            <section id="formOverlay">
                 <input type="text"  id="Name" placeholder="Nome" name="Nome">
                 <input type="text" id="Year" placeholder="Ano" name="Ano">
                 <input type="text" id="Description" placeholder="Breve Descrição" name="Descricao">
-            </div>
+            </section>
         </section>
     
         <section id="additionalInputs">
@@ -93,7 +97,7 @@
         
     
         <section id="submitSection">
-            <button id="submitBtn">ADICIONAR BAZAR</button>
+            <button id="submitBtn">CRIAR BAZAR</button>
         </section>
         <script src="script.js"></script>
     </form>

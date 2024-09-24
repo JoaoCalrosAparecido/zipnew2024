@@ -303,11 +303,16 @@ router.get("/adc-bazar",
   ), async function (req, res) {
     const userId = req.session.autenticado.id;
     const bazar = await produtosModels.findBazarByUserId(userId);
-    res.render('pages/adc-bazar.ejs' , { Bazar: bazar });
+    if (bazar){
+      bazarController.dadosBazar(req,res)
+    }else{
+      res.render('pages/adc-bazar.ejs' , { Bazar: bazar });
+    }
   })
 
 
-router.post("/bazarAdc", verificarUsuAutenticado,
+router.post("/bazarAdc", 
+  verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {
     erros: null,

@@ -197,10 +197,10 @@ const controller = {
             senha: ""  
           };
           console.log("Atualizado")
-          res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" },usuario: user, valores: campos });
+          res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" }, usuario: user, valores: campos });
         } else {
           console.log("Atualizado 2")
-          res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, valores: dadosForm });
+          res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, usuario: user, valores: dadosForm });
         }
       }
     } catch (e) {
