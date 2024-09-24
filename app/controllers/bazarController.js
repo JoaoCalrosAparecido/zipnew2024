@@ -17,9 +17,9 @@ const bazarController = {
 
 
     // verificarBazar: async (req,res) => {
-    //      const userId = req.session.autenticado.id;
-    //      const bazar = await prodModels.findBazarByUserId(userId);
-    //  }
+    //       const userId = req.session.autenticado.id;
+    //       const bazar = await produtosModels.findBazarByUserId(userId);
+    //   },
 
 
     dadosBazar: async (req, res) => {
@@ -108,10 +108,13 @@ const bazarController = {
         } catch (e) {
           console.log(e)
           const userId = req.session.autenticado.id;
+          const user = await models.findUserById(userId);
           const bazar = await produtosModels.findBazarByUserId(userId);
-          res.render("pages/adc-bazar", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" },Bazar: bazar, valores: req.body });
+          res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" },usuario: user, Bazar: bazar, valores: req.body });
         }
     },
+    
+
 }
 
 module.exports = bazarController;
