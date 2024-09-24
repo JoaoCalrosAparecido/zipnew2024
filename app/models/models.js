@@ -75,7 +75,16 @@ const models = {
         } catch (error) {
             return error;
         }  
-    }
+    },
+
+    att: async (dadosForm, id) => {
+        try {
+            const [linhas] = await pool.query('UPDATE bazar SET ? WHERE id_Cliente = ?', [dadosForm, id]);
+            return linhas;
+        } catch (error) {
+            return error;
+        }  
+    },
 };
     
 module.exports = models;
