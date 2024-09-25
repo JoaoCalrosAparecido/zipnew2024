@@ -26,6 +26,12 @@ const bazarController = {
     const userId = req.session.autenticado.id;
     const bazar = await produtosModels.findBazarByUserId(userId);
     try {
+      const UserIdProd = req.session.autenticado.id;
+      const produtoBazar = await produtosModels.chamarProdutosBazar(UserIdProd)
+      const jsonResult = {
+        listaProdBazar: produtoBazar,
+      }
+        
       let campos = {
         Nome: bazar.nome,
         Ano: bazar.ano,
@@ -34,14 +40,20 @@ const bazarController = {
         Biografia: bazar.biografia,
       };
 
-      res.render("pages/adc-bazar", { listaErros: null, dadosNotificacao: null, valores: campos, Bazar: bazar });
+      res.render("pages/adc-bazar", { listaErros: null, dadosNotificacao: null, valores: campos, Bazar: bazar,  listaProdBazar: produtoBazar });
     } catch (e) {
+      const UserIdProd = req.session.autenticado.id;
+      const produtoBazar = await produtosModels.chamarProdutosBazar(UserIdProd)
+      const jsonResult = {
+        listaProdBazar: produtoBazar,
+      }
       console.log(e);
       res.render("pages/adc-bazar",
         {
           Bazar: bazar,
           listaErros: null,
           dadosNotificacao: null,
+          listaProdBazar: produtoBazar,
           valores: {
             Nome: "",
             Ano: "",
@@ -113,6 +125,21 @@ const bazarController = {
           res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar", mensagem: "Verifique os valores digitados!", tipo: "error" },usuario: user, Bazar: bazar, valores: req.body });
         }
     },
+
+    mostrarProdutosBazar: async (req, res) => {
+      try {
+          const userId = req.session.autenticado.id;
+          const produtoBazar = await produtosModels.chamarProdutosBazar(userId)
+          const jsonResult = {
+              listaProdBazar: produtoBazar,
+          }
+
+          res.render("./pages/adc-bazar", jsonResult)
+
+      } catch (error) {
+
+      }
+  },
     
 
 }

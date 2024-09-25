@@ -45,7 +45,12 @@ const prodModels = {
         } catch (error) {
             return error
         }
-    }
+    },
+
+    chamarProdutosBazar: async (UserIdProd) => {
+        const [resultados] = await pool.query("SELECT * FROM produtos WHERE id_Cliente = ?", [UserIdProd])
+        return resultados
+    },
 };
 
 module.exports = prodModels;

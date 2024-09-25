@@ -34,6 +34,8 @@
             <textarea placeholder="Biografia do Famoso" name="Biografia"><%= valores.Biografia %></textarea>
         </section>
     
+
+
         <section id="cen">
             <article id="product">
                 <a href="/adc-produto">
@@ -44,15 +46,17 @@
                     </section>
                 </a>
     
-                <!-- Other Products RS!!!!! -->
-    
-                <!-- <a>
-                    <section id="ash">
-                        <h1 id="addyy"></h1>
-                    </section>
-                    <p id="cust">Cachicol</p>
-                    <p id="cust">9,99</p>
-                </a> -->
+
+                 <% if(listaProdBazar) {
+                    listaProdBazar.forEach(function (produtos){ %>
+                        <a>
+                            <section id="ash">
+                                <h1 id="addyy"></h1>
+                            </section>
+                            <p id="cust"><%= produtos.tituloprod %></p>
+                            <p id="cust"><%= produtos.preçoprod %></p>
+                        </a>
+                    <% })} %>
     
                 
             </article>
