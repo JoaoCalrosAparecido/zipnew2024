@@ -26,12 +26,11 @@ const bazarController = {
     const userId = req.session.autenticado.id;
     const bazar = await produtosModels.findBazarByUserId(userId);
     try {
-      const UserIdProd = req.session.autenticado.id;
-      const produtoBazar = await produtosModels.chamarProdutosBazar(UserIdProd)
-      const jsonResult = {
-        listaProdBazar: produtoBazar,
-      }
-        
+        const idBazar = await produtosModels.findBazarById()
+        const produtoBazar = await produtosModels.mostrarProdutosBazar(req.session.autenticado.id, idBazar)
+        const jsonResult = {
+          listaProdBazar: produtoBazar,
+        }
       let campos = {
         Nome: bazar.nome,
         Ano: bazar.ano,
@@ -40,10 +39,10 @@ const bazarController = {
         Biografia: bazar.biografia,
       };
 
-      res.render("pages/adc-bazar", { listaErros: null, dadosNotificacao: null, valores: campos, Bazar: bazar,  listaProdBazar: produtoBazar });
+      res.render("pages/adc-bazar", { listaErros: null, dadosNotificacao: null, valores: campos, Bazar: bazar, listaProdBazar: produtoBazar });
     } catch (e) {
-      const UserIdProd = req.session.autenticado.id;
-      const produtoBazar = await produtosModels.chamarProdutosBazar(UserIdProd)
+      const idBazar = await produtosModels.findBazarById()
+      const produtoBazar = await produtosModels.mostrarProdutosBazar(req.session.autenticado.id, idBazar)
       const jsonResult = {
         listaProdBazar: produtoBazar,
       }
@@ -126,20 +125,31 @@ const bazarController = {
         }
     },
 
-    mostrarProdutosBazar: async (req, res) => {
-      try {
-          const userId = req.session.autenticado.id;
-          const produtoBazar = await produtosModels.chamarProdutosBazar(userId)
-          const jsonResult = {
-              listaProdBazar: produtoBazar,
-          }
+    //puxar produto pelo ID
 
-          res.render("./pages/adc-bazar", jsonResult)
+  //   mostrarProdutosPerfil: async (req, res) => {
+  //     try {
+  //       const UserIdProd = req.session.autenticado.id;
+  //       const produtoBazar = await produtosModels.chamarProdutosBazar(UserIdProd)
+  //       const jsonResult = {
+  //         listaProdBazar: produtoBazar,
+  //       }
+  //         res.render("./pages/adc-bazar", jsonResult)
+  //     } catch (error) {
+  //     }
+  // },
 
-      } catch (error) {
-
+  mostrarProdutosBazar: async (req, res) => {
+    try {
+      const idBazar = await produtosModels.findBazarById
+      const produtoBazar = await produtosModels.mostrarProdutosBazar(req.session.autenticado.id, idBazar)
+      const jsonResult = {
+        listaProdBazar: produtoBazar,
       }
-  },
+        res.render("./pages/adc-bazar", jsonResult)
+    } catch (error) {
+    }
+},
     
 
 }

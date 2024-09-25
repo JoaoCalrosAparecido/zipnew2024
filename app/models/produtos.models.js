@@ -47,8 +47,18 @@ const prodModels = {
         }
     },
 
-    chamarProdutosBazar: async (UserIdProd) => {
+    mostrarProdutosPerfil: async (UserIdProd) => {
         const [resultados] = await pool.query("SELECT * FROM produtos WHERE id_Cliente = ?", [UserIdProd])
+        return resultados
+    },
+
+    mostrarProdutosBazar: async (userId, idBazar) => {
+        const [resultados] = await pool.query("SELECT * FROM produtos WHERE id_Cliente = ? AND Id_Bazar = ?", [userId, idBazar])
+        return resultados
+    },
+
+    findBazarById: async (idBazar) => {
+        const [resultados] = await pool.query("SELECT * FROM bazar WHERE Id_Bazar = ?", [idBazar])
         return resultados
     },
 };
