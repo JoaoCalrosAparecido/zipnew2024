@@ -105,6 +105,7 @@ const controller = {
 
   mostrarPerfil: async (req, res) => {
     const user = await models.findUserById(req.session.autenticado.id)
+    const bazar = await produtosModels.findBazarByUserId(user);
     const data = new Date(user.nasc)
     const dataFormatada = data.toISOString().split('T')[0];
     try {
@@ -130,13 +131,14 @@ const controller = {
         senha: ""
       };
 
-      res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: null, valores: campos });
+      return res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: null, valores: campos, Bazar:bazar });
     } catch (e) {
       console.log(e);
-      res.render("pages/Config/meusdados",
+      return res.render("pages/Config/meusdados",
         {
           listaErros: null,
           dadosNotificacao: null,
+          Bazar:bazar,
           valores: {
             nome: "",
             cpf: "",
@@ -150,7 +152,8 @@ const controller = {
     }
   },
   gravarPerfil: async (req, res) => {
-
+    const userId = await models.findUserById(req.session.autenticado.id)
+    const bazar = await produtosModels.findBazarByUserId(userId);
     const erros = validationResult(req);
     const erroMulter = req.session.erroMulter;
     if (!erros.isEmpty() || erroMulter != null) {
@@ -197,15 +200,15 @@ const controller = {
             senha: ""  
           };
           console.log("Atualizado")
-          res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" }, usuario: user, valores: campos });
+          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" }, Bazar: bazar, usuario: user, valores: campos });
         } else {
           console.log("Atualizado 2")
-          res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, usuario: user, valores: dadosForm });
+          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, Bazar: bazar, usuario: user, valores: dadosForm });
         }
       }
     } catch (e) {
       console.log(e)
-      res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" }, valores: req.body });
+      return res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" }, Bazar: bazar, valores: req.body });
     }
   },
 
