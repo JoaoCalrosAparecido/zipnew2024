@@ -150,30 +150,28 @@ const bazarController = {
       }
   },
 
-  mostrarProdutosBazar: async (req, res) => {
-    try {
-      const idBazar = await produtosModels.findBazarById
-      const produtoBazar = await produtosModels.mostrarProdutosBazar(req.session.autenticado.id, idBazar)
-      const jsonResult = {
-        listaProdBazar: produtoBazar,
-      }
-        res.render("./pages/adc-bazar", jsonResult)
-    } catch (error) {
-    }
-},
+//   mostrarProdutosBazar: async (req, res) => {
+//     try {
+//       const idBazar = await produtosModels.findBazarById
+//       const produtoBazar = await produtosModels.mostrarProdutosBazar(req.session.autenticado.id, idBazar)
+//       const jsonResult = {
+//         listaProdBazar: produtoBazar,
+//       }
+//         res.render("./pages/adc-bazar", jsonResult)
+//     } catch (error) {
+//     }
+// },
 
-mostrarProdutosBazar: async (req, res) => {
-      const userId = req.session.autenticado.id;
-      const idBazar = await produtosModels.findBazarByUserId(userId);
-      const produtoBazar = await produtosModels.mostrarProdutosBazar(userId, idBazar);
-      const jsonResult = {
-          listaProdBazar: produtoBazar,
-      };
+// mostrarProdutosBazar: async (req, res) => {
+//       const userId = req.session.autenticado.id;
+//       const idBazar = await produtosModels.findBazarByUserId(userId);
+//       const produtoBazar = await produtosModels.mostrarProdutosBazar(userId, idBazar);
+//       const jsonResult = {
+//           listaProdBazar: produtoBazar,
+//       };
           
-      res.render("./pages/adc-bazar", jsonResult);
-
-
-},
+//       res.render("./pages/adc-bazar", jsonResult);
+// },
 
     
 
