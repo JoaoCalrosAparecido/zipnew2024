@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <link rel="stylesheet" href="/teste.css">
+</head>
+<body>
+
+<% if (bazaarList) { %>
+    <% Object.keys(bazaarList).forEach(function (bazaarId) { %>
+    <section id="imageSection">
+            <img id="imagePreview" src="IMG/bazar/florenza/imagem_principal_florenza.png" >
+        <section id="formOverlay">
+            <p id="Name"><%= bazaarList[bazaarId].nome %></p>
+            <p id="Year"><%= bazaarList[bazaarId].ano %></p>
+            <p id="Description"><%= bazaarList[bazaarId].descricao %></p>
+        </section>
+    </section>
+
+    <section id="additionalInputs">
+        <p><%= bazaarList[bazaarId].titulo %></p>
+    </section>
+
+    <section id="textAreaSection">
+        <p><%= bazaarList[bazaarId].biografia %></p>
+    </section>
+
+                
+                <% bazaarList[bazaarId].produtos.forEach(function (produto) { %>
+                    <p><%= produto.tituloprod %></p>
+                    <p><%= produto.preçoprod %></p>
+                <% }) %>
+            
+            
+        </article>
+    </section>
+    <% }) %>
+<% } %>
+</body>
+</html>

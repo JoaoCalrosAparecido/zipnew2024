@@ -56,12 +56,25 @@ const prodModels = {
          const [resultados] = await pool.query("SELECT * FROM produtos WHERE id_Cliente = ? AND Id_Bazar = ?", [userId, idBazar])
     return resultados;
     },
+
+
+    // pegar todos os bazares com seus produtos
+    findAllBazaarsWithProducts: async () => {
+        try {
+            const [result] = await pool.query(`
+                SELECT bazar.*, produtos.tituloprod, produtos.preçoprod
+                FROM bazar
+                LEFT JOIN produtos ON bazar.Id_Bazar = produtos.Id_Bazar
+            `);
+            return result;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    },
+
     
 
-    // findBazarByUserId: async (userId) => {
-    //     const [resultados] = await pool.query("SELECT * FROM bazar WHERE id_Cliente = ?", [userId]);
-    //     return resultados;
-    // },
 };
 
 module.exports = prodModels;

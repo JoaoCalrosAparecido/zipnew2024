@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://web.archive.org/web/20180329103453/http://opti.netii.net/');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+#imageSection {
+    position: relative;
+    width: 100%;
+    height: 86%;
+}
+
+#imageSelector {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#imagePreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #868686;
+}
+
+#imagePlaceholder {
+    font-size: 4rem;
+    color: #aaa;
+    text-align: center;
+}
+
+#fileInput {
+    display: none;
+}
+
+#formOverlay {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#Name, #Year{
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    text-align: end;
+    font-size: 50px;
+    font-weight: 600;
+
+}
+
+#Description{
+    width: 350px;
+    height: 50px;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: end;
+}
+
+#additionalInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#additionalInputs {
+    width: 50%;
+    padding: 10px;
+
+    font-size: 1rem;
+    text-align: center;
+}
+
+#textAreaSection {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#textAreaSection  {
+    width: 50%;
+    height: 150px;
+    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #333;
+    resize: none;
+    text-align: center;
+}
+
+#submitSection {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#submitBtn {
+    padding: 10px 20px;
+    width: 25rem;
+    height: 5rem;
+    border: none;
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#submitBtn:hover {
+    background-color: #2c2c2c;
+}
+
+@media (max-width: 768px) {
+    #formOverlay input,
+    #additionalInputs input {
+        width: 80%;
+    }
+    #formOverlay {
+        bottom: 5%;
+        right: 5%;
+    }
+    #textAreaSection textarea {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    #formOverlay input,
+    #additionalInputs input {
+        width: 90%;
+    }
+    #textAreaSection textarea {
+        width: 90%;
+    }
+
+}
+
+/* Carrosel */
+
+#product{
+    flex-direction: row;
+    display: flex;
+}
+
+#box{
+    margin-top: 15px;
+    margin-bottom: 35px;
+
+    background-color: rgb(255, 255, 255);
+    width: 12rem;
+    height: 19rem;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: #333333;
+
+    display: grid;
+    place-items: center;
+    margin-right: 15px;
+}
+
+#add{
+    font-weight: 400;
+    color: #333333;
+    vertical-align: none;
+    font-size: 28px;
+}
+
+#cen{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+
+
+#ash{
+    margin-top: 15px;
+    margin-bottom: 6px;
+
+    background-color: rgb(255, 255, 255);
+    width: 12rem;
+    height: 16rem;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: #333333;
+
+    display: grid;
+    place-items: center;
+    margin-right: 15px;
+}
+
+#addyy{
+    font-weight: 400;
+    color: #333333;
+    vertical-align: none;
+    font-size: 28px;
+}
+
+#cust{
+    font-size: 14px;
+}

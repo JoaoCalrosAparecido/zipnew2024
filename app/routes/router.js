@@ -21,6 +21,9 @@ router.get("/", verificarUsuAutenticado, function (req, res) {
   }
 });
 
+router.get("/teste", bazarController.getBazaarsWithProducts, function (req, res) {
+});
+
 router.get("/bazar", function (req, res) {
   res.render('pages/bazar', { msg: 'Back-end funcionando' });
 });

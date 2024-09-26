@@ -173,6 +173,39 @@ const bazarController = {
 //       res.render("./pages/adc-bazar", jsonResult);
 // },
 
+
+getBazaarsWithProducts: async (req, res) => {
+  try {
+      const bazaarList = await produtosModels.findAllBazaarsWithProducts();
+
+      let groupedBazaars = bazaarList.reduce((accumulator, currentItem) => {
+          const { Id_Bazar, nome, ano, descricao, titulo, biografia, tituloprod, preçoprod } = currentItem;
+
+          if (!accumulator[Id_Bazar]) {
+              accumulator[Id_Bazar] = {
+                  nome,
+                  ano,
+                  descricao,
+                  titulo,
+                  biografia,
+                  produtos: []
+              };
+          }
+
+          if (tituloprod) {
+              accumulator[Id_Bazar].produtos.push({ tituloprod, preçoprod });
+          }
+
+          return accumulator;
+      }, {});
+
+      return res.render("pages/teste", { bazaarList: groupedBazaars });
+  } catch (error) {
+      console.log(error);
+      return res.render("pages/teste", { bazaarList: [], errorList: error });
+  }
+}
+
     
 
 }
