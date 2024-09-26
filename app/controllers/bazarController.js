@@ -4,16 +4,28 @@ const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 
 const bazarController = {
-    submitBazar: async (req, res) => {
-        const userId = req.session.autenticado.id;
-        const user = await models.findUserById(userId);
-        const bazar = await produtosModels.findBazarByUserId(userId);
-        const { Nome, Ano, Descricao, Titulo, Biografia } = req.body;
+  submitBazar: async (req, res) => {
+      const userId = req.session.autenticado.id;
+      const user = await models.findUserById(userId);
+      const { Nome, Ano, Descricao, Titulo, Biografia } = req.body;
+      let bazar = await produtosModels.findBazarByUserId(userId);
+      
+      if (!bazar) {
+          await pool.query(
+              "INSERT INTO bazar (nome, ano, descricao, titulo, biografia, id_Cliente) VALUES (?, ?, ?, ?, ?, ?)", 
+              [Nome, Ano, Descricao, Titulo, Biografia, userId]
+          );
+          bazar = await produtosModels.findBazarByUserId(userId);
+      }
 
-        await pool.query("INSERT INTO bazar (nome, ano, descricao, titulo, biografia, id_Cliente) VALUES (?, ?, ?, ?, ?, ?) ", [Nome, Ano, Descricao, Titulo, Biografia, userId]);
+      // atualiza os produtos do usuário com o id do bazar
+      await pool.query(
+          "UPDATE produtos SET id_Bazar = ? WHERE id_Cliente = ? AND id_Bazar IS NULL",
+          [bazar.Id_Bazar, userId]
+      );
 
-        res.redirect('/perfil');
-    },
+      res.redirect('/perfil');
+  },
 
 
     // verificarBazar: async (req,res) => {
