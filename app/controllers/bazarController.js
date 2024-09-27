@@ -199,10 +199,10 @@ getBazaarsWithProducts: async (req, res) => {
           return accumulator;
       }, {});
 
-      return res.render("pages/teste", { bazaarList: groupedBazaars });
+      return res.render("pages/bazar", { bazaarList: groupedBazaars });
   } catch (error) {
       console.log(error);
-      return res.render("pages/teste", { bazaarList: [], errorList: error });
+      return res.render("pages/bazar", { bazaarList: [], errorList: error });
   }
 }
 
