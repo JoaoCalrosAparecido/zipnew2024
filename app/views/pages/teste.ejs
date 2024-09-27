@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste</title>
     <link rel="stylesheet" href="/teste.css">
+    <link rel="canonical" href="https://fontmeme.com/fonts/radiant-font/">
 </head>
 <body>
 
@@ -24,14 +25,20 @@
     </section>
 
     <section id="textAreaSection">
-        <p><%= bazaarList[bazaarId].biografia %></p>
+        <p id="bio"><%= bazaarList[bazaarId].biografia %></p>
     </section>
 
-                
+            <section id="cen">
                 <% bazaarList[bazaarId].produtos.forEach(function (produto) { %>
-                    <p><%= produto.tituloprod %></p>
-                    <p><%= produto.preçoprod %></p>
+                    <a>
+                        <section id="ash">
+                            <img id="addyy" src="<%= produto.img1 %>" alt="">
+                        </section>
+                        <p id="cust"><%= produto.tituloprod %></p>
+                        <p id="cust">R$ <%= produto.preçoprod %></p>
+                    </a>
                 <% }) %>
+            </section>
             
             
         </article>
