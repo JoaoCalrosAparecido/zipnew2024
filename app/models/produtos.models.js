@@ -4,7 +4,7 @@ const prodModels = {
     findAllProductByCategoryName: async (name) => {
         try {
             console.log(name)
-            const [linhas] = await pool.query('SELECT * FROM `produtos` WHERE `cateProduto` = ?', [name]);
+            const [linhas] = await pool.query('SELECT * FROM `produtos` WHERE `cateProduto` = ? AND Id_Bazar = NULL', [name]);
             return linhas;
         } catch (error) {
             return error;
@@ -38,6 +38,7 @@ const prodModels = {
             return error;
         }
     },
+    
     findBazarByUserId: async (UserId) => {
         try {
             const [linhas] = await pool.query("SELECT * FROM bazar WHERE id_Cliente = ?", [UserId])
