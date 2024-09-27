@@ -179,7 +179,7 @@ getBazaarsWithProducts: async (req, res) => {
       const bazaarList = await produtosModels.findAllBazaarsWithProducts();
 
       let groupedBazaars = bazaarList.reduce((accumulator, currentItem) => {
-          const { Id_Bazar, nome, ano, descricao, titulo, biografia, tituloprod, preçoprod } = currentItem;
+          const { Id_Bazar, nome, ano, descricao, titulo, biografia, tituloprod, preçoprod, img1 } = currentItem;
 
           if (!accumulator[Id_Bazar]) {
               accumulator[Id_Bazar] = {
@@ -193,7 +193,7 @@ getBazaarsWithProducts: async (req, res) => {
           }
 
           if (tituloprod) {
-              accumulator[Id_Bazar].produtos.push({ tituloprod, preçoprod });
+              accumulator[Id_Bazar].produtos.push({ tituloprod, preçoprod, img1 });
           }
 
           return accumulator;
