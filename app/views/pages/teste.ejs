@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<section id="AllBazar">
 <% if (bazaarList) { %>
     <% Object.keys(bazaarList).forEach(function (bazaarId) { %>
     <section id="imageSection">
@@ -21,7 +22,7 @@
     </section>
 
     <section id="additionalInputs">
-        <p><%= bazaarList[bazaarId].titulo %></p>
+        <p id="titulo"><%= bazaarList[bazaarId].titulo %></p>
     </section>
 
     <section id="textAreaSection">
@@ -32,7 +33,7 @@
                 <% bazaarList[bazaarId].produtos.forEach(function (produto) { %>
                     <a>
                         <section id="ash">
-                            <img id="addyy" src="<%= produto.img1 %>" alt="">
+                            <img src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                         </section>
                         <p id="cust"><%= produto.tituloprod %></p>
                         <p id="cust">R$ <%= produto.preçoprod %></p>
@@ -45,5 +46,6 @@
     </section>
     <% }) %>
 <% } %>
+</section>
 </body>
 </html>
