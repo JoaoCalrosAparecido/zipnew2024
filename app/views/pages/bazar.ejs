@@ -404,17 +404,18 @@
                     <p id="bio"><%= bazaarList[bazaarId].biografia %></p>
                 </section>
             
-                        <section id="cen">
-                            <% bazaarList[bazaarId].produtos.forEach(function (produto) { %>
-                                <a>
-                                    <section id="ash">
-                                        <img id="addyy" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
-                                    </section>
-                                    <p id="cust"><%= produto.tituloprod %></p>
-                                    <p id="cust">R$ <%= produto.preçoprod %></p>
-                                </a>
-                            <% }) %>
-                        </section>
+                <section id="cen">
+                    <% bazaarList[bazaarId].produtos.forEach(function (produto) { %>
+                        <%= console.log(produto) %>
+                        <a id="none" href="/produtos/<%= produto.id_prod_cliente %>">
+                            <section id="ash">
+                                <img id="addyy" src="../../IMG/uploads/<%= produto.img1 %>" alt="Imagem do produto">
+                            </section>
+                            <p id="cust"><%= produto.tituloprod %></p>
+                            <p id="cust">R$ <%= produto.preçoprod %></p>
+                        </a>
+                    <% }) %>
+                </section>
                         
                         
                     </article>

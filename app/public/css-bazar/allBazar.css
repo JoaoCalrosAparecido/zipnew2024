@@ -19,6 +19,11 @@ body {
     margin-top: 7.5%;
 }
 
+#none{
+    text-decoration: none;
+    color: black;
+}
+
 #imageSection {
     position: relative;
     width: 100%;
