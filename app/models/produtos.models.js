@@ -62,7 +62,7 @@ const prodModels = {
     findAllBazaarsWithProducts: async () => {
         try {
             const [result] = await pool.query(`
-                SELECT bazar.*, produtos.tituloprod, produtos.preçoprod
+                SELECT bazar.*, produtos.tituloprod, produtos.preçoprod, produtos.img1
                 FROM bazar
                 LEFT JOIN produtos ON bazar.Id_Bazar = produtos.Id_Bazar
             `);
