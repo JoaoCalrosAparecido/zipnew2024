@@ -10,14 +10,14 @@
 <body>
 
 <% if (Bazar) { %>
-    <form id="imageSection" action="/attBazar" method="post" >
+    <form id="imageSection" action="/attBazar" method="post" enctype="multipart/form-data">
         <section id="imageSection">
             <label for="fileInput" id="imageSelector">
                 <section id="imagePlaceholder">
                     <span>+</span>
                 </section>
-                <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
-                <input type="file" id="fileInput" accept="image/*">
+                <img id="imagePreview" src="/IMG/uploads/<%= valores.imgBazar %>" alt="Image Preview" >
+                <input type="file" id="fileInput" name="imgBazar" accept="image/*" >
             </label>
             <section id="formOverlay">
                 <input type="text"  id="Name" placeholder="Nome" name="Nome" value="<%= valores.Nome %>">
@@ -67,24 +67,23 @@
         <section id="submitSection">
             <button id="submitBtn">ATUALIZAR BAZAR</button>
         </section>
-        <script src="script.js"></script>
     </form>
 
 
 
 
 <% } else { %>
-    <form id="imageSection" action="/bazarAdc" method="post" >
+    <form id="imageSection" action="/bazarAdc" method="post" enctype="multipart/form-data">
         <section id="imageSection">
             <label for="fileInput" id="imageSelector">
                 <section id="imagePlaceholder">
                     <span>+</span>
                 </section>
                 <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
-                <input type="file" id="fileInput" accept="image/*">
+                <input type="file" id="fileInput" name="imgBazar" accept="image/*">
             </label>
             <section id="formOverlay">
-                <input type="text"  id="Name" placeholder="Nome" name="Nome">
+                <input type="text" id="Name" placeholder="Nome" name="Nome">
                 <input type="text" id="Year" placeholder="Ano" name="Ano">
                 <input type="text" id="Description" placeholder="Breve Descrição" name="Descricao">
             </section>
@@ -97,14 +96,12 @@
         <section id="textAreaSection">
             <textarea placeholder="Biografia do Famoso" name="Biografia"></textarea>
         </section>
-
-        
     
         <section id="submitSection">
             <button id="submitBtn">CRIAR BAZAR</button>
         </section>
-        <script src="script.js"></script>
     </form>
+    <script src="./app/public/Bazar/uploadBazar.js"></script>
 <% } %>
 </body>
 </html>

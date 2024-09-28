@@ -8,8 +8,8 @@ const { verificarUsuAutorizado, limparSessao, verificarUsuAutenticado } = requir
 const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 
-const multer = require('multer');
 const bazarController = require("../controllers/bazarController");
+const multer = require('multer');
 const upload = multer({ dest: './app/public/IMG/uploads/' });
 
 
@@ -308,33 +308,38 @@ router.get("/adc-bazar",
   })
 
 
-router.post("/bazarAdc", 
-  verificarUsuAutenticado,
-  verificarUsuAutorizado(
-    "./pages/login_do_usuario", {
-    erros: null,
-    dadosform: { email: "", senha: "" },
-    logado: false,
-    usuarioautenticado: null
-  },
-    [2, 3]
-  ), function (req, res) {
-    bazarController.submitBazar(req, res)
-  });
+  router.post("/bazarAdc", 
+    verificarUsuAutenticado,
+    verificarUsuAutorizado(
+        "./pages/login_do_usuario", {
+            erros: null,
+            dadosform: { email: "", senha: "" },
+            logado: false,
+            usuarioautenticado: null
+        }, [2, 3]
+    ), 
+    upload.single('imgBazar'),
+    function (req, res) {
+        bazarController.submitBazar(req, res);
+    }
+);
 
-  router.post("/attBazar", 
+router.post("/attBazar", 
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {
-    erros: null,
-    dadosform: { email: "", senha: "" },
-    logado: false,
-    usuarioautenticado: null
-  },
+      erros: null,
+      dadosform: { email: "", senha: "" },
+      logado: false,
+      usuarioautenticado: null
+    },
     [2, 3]
-  ), function (req, res) {
-    bazarController.alterarBazar(req, res)
-  });
+  ), 
+  upload.single('imgBazar'),
+  function (req, res) {
+    bazarController.alterarBazar(req, res);
+  }
+);
 
 module.exports = router;
 

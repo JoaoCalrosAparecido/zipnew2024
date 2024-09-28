@@ -388,7 +388,7 @@
                 <% Object.keys(bazaarList).forEach(function (bazaarId) { %>
                 <section id="imageSection">
                         <section id="imagePreview"></section>
-                        <img id="imagePreview" src="../../IMG/bazar/florenza/imagem_principal_florenza.png" >
+                        <img id="imagePreview" src="/IMG/uploads/<%= bazaarList[bazaarId].imgBazar %>" alt="Imagem do Bazar" class="img-bazar">
                     <section id="formOverlay">
                         <p id="Name"><%= bazaarList[bazaarId].nome %></p>
                         <p id="Year"><%= bazaarList[bazaarId].ano %></p>
@@ -406,7 +406,6 @@
             
                 <section id="cen">
                     <% bazaarList[bazaarId].produtos.forEach(function (produto) { %>
-                        <%= console.log(produto) %>
                         <a id="none" href="/produtos/<%= produto.id_prod_cliente %>">
                             <section id="ash">
                                 <img id="addyy" src="../../IMG/uploads/<%= produto.img1 %>" alt="Imagem do produto">
