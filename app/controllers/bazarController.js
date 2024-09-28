@@ -9,10 +9,9 @@ const bazarController = {
     const { Nome, Ano, Descricao, Titulo, Biografia } = req.body;
 
     let bazar = await produtosModels.findBazarByUserId(userId);
-    
-    // Se o bazar ainda não existe, insere um novo
+
     if (!bazar) {
-        const imgBazar = req.file ? req.file.filename : null; // Salva apenas o nome da imagem
+        const imgBazar = req.file ? req.file.filename : null;
 
         await pool.query(
             "INSERT INTO bazar (nome, ano, descricao, titulo, biografia, imgBazar, id_Cliente) VALUES (?, ?, ?, ?, ?, ?, ?)",
@@ -22,7 +21,7 @@ const bazarController = {
         bazar = await produtosModels.findBazarByUserId(userId);
     }
 
-    // Atualiza os produtos do usuário com o id do bazar
+    // atualiza os produtos com o id do bazar :)
     await pool.query(
         "UPDATE produtos SET id_Bazar = ? WHERE id_Cliente = ? AND id_Bazar IS NULL",
         [bazar.Id_Bazar, userId]
@@ -96,7 +95,7 @@ const bazarController = {
 
       try {
           let { Nome, Ano, Descricao, Titulo, Biografia } = req.body;
-          const imgBazarPath = req.file ? req.file.filename : null; // Pega o caminho da imagem, se houver
+          const imgBazarPath = req.file ? req.file.filename : null; // caminho da imagem
           
           var dadosForm = {
               nome: Nome,
@@ -104,7 +103,7 @@ const bazarController = {
               descricao: Descricao,
               titulo: Titulo,
               biografia: Biografia,
-              imgBazar: imgBazarPath // Adiciona o caminho da imagem aqui
+              imgBazar: imgBazarPath
           };
 
           let resultUpdate = await models.att(dadosForm, req.session.autenticado.id);
@@ -126,7 +125,7 @@ const bazarController = {
                       Descricao: bazar.descricao,
                       Titulo: bazar.titulo,
                       Biografia: bazar.biografia,
-                      imgBazar: bazar.imgBazar // Certifique-se de adicionar a imagem aqui
+                      imgBazar: bazar.imgBazar
                   };
                   console.log("Atualizado");
                   return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Bazar! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "success" }, usuario: user, Bazar: bazar, valores: campos });
