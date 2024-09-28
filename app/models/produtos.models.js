@@ -4,7 +4,7 @@ const prodModels = {
     findAllProductByCategoryName: async (name) => {
         try {
             console.log(name)
-            const [linhas] = await pool.query('SELECT * FROM `produtos` WHERE `cateProduto` = ? AND Id_Bazar = NULL', [name]);
+            const [linhas] = await pool.query('SELECT * FROM `produtos` WHERE `cateProduto` = ? AND Id_Bazar IS NULL', [name]);
             return linhas;
         } catch (error) {
             return error;
