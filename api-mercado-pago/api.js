@@ -1,5 +1,10 @@
-const client = new MercadoPago({  accessToken: config.access_token });
-const preference = new Preference(client);
+const MercadoPago = require('mercadopago'); 
+
+const config = {
+  access_token: 'APP_USR-5593607796954557-092821-c64b7b86bb2f21f48268017986839bb2-2009674095'
+};
+
+MercadoPago.configure({ access_token: config.access_token });
 
 const body = {
   items: [
@@ -11,14 +16,19 @@ const body = {
       unit_price: 10,
     },
   ],
-  
   back_urls: {
     success: 'http://test.com/success',
     failure: 'http://test.com/failure',
     pending: 'http://test.com/pending',
   },
-
+  auto_return: 'all',
 };
 
-const response = await preference.create({ body })
-  .then(console.log).catch(console.log);
+(async () => {
+  try {
+    const response = await MercadoPago.preferences.create(body);
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+})();
