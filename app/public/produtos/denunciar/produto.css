@@ -1,17 +1,18 @@
-#menu{
+/* Estilo Geral */
+#menu, #men {
     position: fixed;
-    top: -10px;
+    top: 0;
     z-index: 200;
-    margin-left: 81rem;
     width: 38rem;
-    height: 45rem;
+    height: 100vh;
     font-family: 'Poppins', sans-serif;
-    right: -50%; /* Inicialmente oculto */
+    right: -50%; /* Inicialmente fora da tela */
     box-sizing: border-box;
     transition: right 0.3s ease;
+    background-color: white;
 }
 
-#openMenuBtn, #twitter, #close{
+#openMenuBtn, #openMenuBt, #twitter, #close {
     cursor: pointer;
 }
 
@@ -21,50 +22,42 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.767); /* Inicialmente transparente */
-    z-index: 1; /* Colocar acima do conteúdo */
-    display: none; /* Inicialmente oculto */
-  }
+    background-color: rgba(0, 0, 0, 0.767);
+    z-index: 1;
+    display: none; /* Overlay oculto inicialmente */
+}
 
-
-#thm{
+#thm, #th {
     background-color: black;
     align-items: center;
     display: flex;
     padding-left: 40px;
     padding-right: 40px;
     height: 120px;
-
 }
 
-#ban, #twitter{
+#ban, #twitter, #twitte {
     font-size: 22px;
     font-weight: 600;
     color: white;
 }
 
-#ban{
-    margin-right: 17rem;
-}
-
-
-
-#mott{
+#mott {
     padding: 40px;
     background-color: rgb(255, 255, 255);
 }
 
-#ttom{
+#ttom {
     font-size: 19px;
     font-weight: 600;
     padding-top: 40px;
 }
 
-#check{
+#check {
     margin-top: 30px;
 }
 
-input[type=checkbox]{
+input[type=checkbox] {
     margin-top: 15px;
     margin-bottom: 15px;
     margin-right: 8px;
@@ -72,15 +65,12 @@ input[type=checkbox]{
     width: 18px;
 }
 
-
-
-#aa, #bb, #cc, #dd{
+#aa, #bb, #cc, #dd {
     font-size: 18px;
-    
 }
 
-#denunciarBtn{
-    width: 33rem;
+#denunciarBtn, #denunciarBt {
+    width: 100%;
     height: 60px;
     cursor: pointer;
     background-color: #212121;
@@ -89,24 +79,20 @@ input[type=checkbox]{
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: 600;
-    margin-top:  80px;
+    margin-top: 80px;
     font-family: 'Poppins', sans-serif;
-    
 }
 
-#close{
+#close {
     margin-left: 235px;
     text-decoration: underline;
 }
-#fech{
+
+#fech {
     margin-bottom: 300px;
 }
 
-input{
-    position: relative;
-}
-
-#mensagem{
+#mensagem {
     margin-left: 100px;
 }
 
@@ -115,14 +101,25 @@ input{
     z-index: 100;
 }
 
-.background::after {
-    content: " ";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.459); /* Inicialmente transparente */
-    z-index: 99; /* Colocar acima do conteúdo */
+/* Responsividade para Mobile */
+@media (max-width: 768px) {
+    #menu, #men {
+        width: 100%;
+        height: 100vh;
+        right: -100%; /* Inicialmente fora da tela no mobile */
+    }
 
+    #ban {
+        margin-right: auto;
+    }
+
+    #close {
+        margin-left: auto;
+    }
+
+    #denunciarBtn, #enviarBtn {
+        width: 100%;
+        height: 60px;
+        margin-top: 50px;
+    }
 }

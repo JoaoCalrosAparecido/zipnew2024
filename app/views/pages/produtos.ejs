@@ -597,44 +597,76 @@
     <article class="overlay" id="overlay"></article>
 
 
-<section id="ally">
-
-    <section id="men" class="men">
-        <article id="th">
-            <label id="ban">DENUNCIAR VENDEDOR</label>
-            <span id="closeMenuB" class="closeBtn"><label id="twitte">X</label></span>
-
-        </article>
-        <article id="mott">
-            <label id="ttom">Motivo da denúncia</label>
-
-            <section id="check">
-
-                <input type="checkbox" checked="checked">
-                <label id="aa">Fraude</label>
-                <br>
-                <input type="checkbox">
-                <label id="bb">Produto Ilícito</label>
-                <br>
-                <input type="checkbox">
-                <label id="cc">Propaganda Enganosa</label>
-                <br>
-                <input type="checkbox">
-                <label id="dd">Outro</label>
-                <br>
-
-                <button type="submit" id="denunciarBt" name="action">Denunciar</button>
-                <article id="mensage"></article>
-                <br>
-                <section id="fech">
-                    <span id="closeMenu" class="closeBtn"><label id="close">Fechar</label></span>
-                </section>
+    <section id="ally">
+    
+        <!-- Formulário de denúncia de produto -->
+        <section id="menu" class="menu">
+            <article id="thm">
+                <label id="ban">DENUNCIAR PRODUTO</label>
+                <span id="closeMenuBtn" class="closeBtn"><label id="twitter">X</label></span>
+            </article>
+            <form action="/denunciar-produto" method="POST" id="denunciarProdutoForm">
+                <article id="mott">
+                    <label id="ttom">Motivo da denúncia</label>
+                    <section id="check">
+                        <input type="checkbox" id="produtoRepetido" name="motivo" value="Produto Repetido" checked>
+                        <label for="produtoRepetido" id="aa">Produto Repetido</label>
+                        <br>
+                        <input type="checkbox" id="produtoForaTema" name="motivo" value="Produto Fora do Tema">
+                        <label for="produtoForaTema" id="bb">Produto Fora do Tema</label>
+                        <br>
+                        <input type="checkbox" id="produtoQualidade" name="motivo" value="Produto de Má Qualidade">
+                        <label for="produtoQualidade" id="cc">Produto de Má Qualidade</label>
+                        <br>
+                        <input type="checkbox" id="outroMotivo" name="motivo" value="Outro">
+                        <label for="outroMotivo" id="dd">Outro</label>
+                        <br>
+                        <button type="submit" id="denunciarBtn" name="action">Denunciar</button>
+                        <article id="mensagem"></article>
+                        <br>
+                        <section id="fech">
+                            <span id="closeMenuBt" class="closeBtn"><label id="close">Fechar</label></span>
+                        </section>
+                    </section>
+                </article>
+            </form>
+        </section>
+    
+        <section id="ally">
+            <section id="men" class="men">
+                <article id="th">
+                    <label id="ban">DENUNCIAR VENDEDOR</label>
+                    <span id="closeMenuB" class="closeBtn"><label id="twitte">X</label></span>
+                </article>
+                <form action="/denunciar-vendedor" method="POST" id="denunciarVendedorForm">
+                    <article id="mott">
+                        <label id="ttom">Motivo da denúncia</label>
+                        <section id="check">
+                            <input type="checkbox" id="fraude" name="motivo" value="Fraude" checked>
+                            <label for="fraude" id="aa">Fraude</label>
+                            <br>
+                            <input type="checkbox" id="produtoIlicito" name="motivo" value="Produto Ilícito">
+                            <label for="produtoIlicito" id="bb">Produto Ilícito</label>
+                            <br>
+                            <input type="checkbox" id="propagandaEnganosa" name="motivo" value="Propaganda Enganosa">
+                            <label for="propagandaEnganosa" id="cc">Propaganda Enganosa</label>
+                            <br>
+                            <input type="checkbox" id="outroMotivoVendedor" name="motivo" value="Outro">
+                            <label for="outroMotivoVendedor" id="dd">Outro</label>
+                            <br>
+                            <button type="submit" id="denunciarBt" name="action">Denunciar</button>
+                            <article id="mensage"></article>
+                            <br>
+                            <section id="fech">
+                                <span id="closeMenu" class="closeBtn"><label id="close">Fechar</label></span>
+                            </section>
+                        </section>
+                    </article>
+                </form>
             </section>
-        </article>
-</section>
-
-    </section>
-    <article id="overla"></article>
+        </section>
+        <article id="overla"></article>
+    
 
 
 </body>
