@@ -12,18 +12,18 @@
     background-color: white;
 }
 
-#openMenuBtn, #openMenuBt, #twitter, #close {
+#openMenuBtn, #openMenuBt, #twitter, #close, #twitte {
     cursor: pointer;
 }
 
-#overlay {
+#overlay, #overla {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.767);
-    z-index: 1;
+    z-index: 199;
     display: none; /* Overlay oculto inicialmente */
 }
 
@@ -63,6 +63,7 @@ input[type=checkbox] {
     margin-right: 8px;
     height: 18px;
     width: 18px;
+    cursor: pointer;
 }
 
 #aa, #bb, #cc, #dd {

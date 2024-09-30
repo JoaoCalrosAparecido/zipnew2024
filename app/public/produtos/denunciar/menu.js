@@ -1,58 +1,58 @@
 const ally = document.getElementById("ally");
 
-// Abrir o menu de denúncia de produto
+// Abrir D.produto
 document.getElementById("openMenuBtn").addEventListener("click", function () {
     var menu = document.getElementById("menu");
     var overlay = document.getElementById("overlay");
 
-    // Exibir o menu deslizando da direita e o overlay
     menu.style.right = "0";
     overlay.style.display = "block";
     ally.classList.add("background");
 });
 
-// Fechar o menu de denúncia de produto
-document.getElementById("closeMenuBtn").addEventListener("click", function () {
+// Fechar D.produto
+["closeMenuBtn", "closeMenuBt"].forEach(function (Feh) {
+  document.getElementById(Feh).addEventListener("click", function () {
     var menu = document.getElementById("menu");
     var overlay = document.getElementById("overlay");
 
-    // Ocultar o menu deslizando para a direita e o overlay
-    menu.style.right = "-50%";
+    menu.style.right = "-100%";
     overlay.style.display = "none";
     ally.classList.remove("background");
+  });
 });
 
-// Abrir o menu de denúncia de vendedor
+// Abrir D.vendedor
 document.getElementById("openMenuBt").addEventListener("click", function () {
     var menu = document.getElementById("men");
     var overlay = document.getElementById("overlay");
 
-    // Exibir o menu deslizando da direita e o overlay
     menu.style.right = "0";
     overlay.style.display = "block";
     ally.classList.add("background");
 });
 
-// Fechar o menu de denúncia de vendedor
-document.getElementById("closeMenuB").addEventListener("click", function () {
+// Fecha D.vendedor
+["closeMenuB", "closeMenu"].forEach(function (Feh) {
+  document.getElementById(Feh).addEventListener("click", function () {
     var menu = document.getElementById("men");
     var overlay = document.getElementById("overlay");
 
-    // Ocultar o menu deslizando para a direita e o overlay
-    menu.style.right = "-50%";
+    menu.style.right = "-100%";
     overlay.style.display = "none";
     ally.classList.remove("background");
+  });
 });
 
-// Fechar ambos os menus clicando no overlay
+
+// Fecha no clique do overlas
 document.getElementById("overlay").addEventListener("click", function () {
     var menu1 = document.getElementById("menu");
     var menu2 = document.getElementById("men");
     var overlay = document.getElementById("overlay");
 
-    // Ocultar ambos os menus e o overlay
-    menu1.style.right = "-50%";
-    menu2.style.right = "-50%";
+    menu1.style.right = "-100%";
+    menu2.style.right = "-100%";
     overlay.style.display = "none";
     ally.classList.remove("background");
 });
