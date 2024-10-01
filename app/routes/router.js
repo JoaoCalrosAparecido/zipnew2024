@@ -152,6 +152,31 @@ router.get("/wishlist",
     res.render('pages/wishlist', { msg: 'Back-end funcionando' });
   });
 
+  router.post('/addFav', 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  async function (req, res) {
+    try {
+      const idProd = parseInt(req.body.idProd);
+      const date = new Date();
+
+      const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+      const results = await connection.query(
+        'INSERT INTO `Favoritos` (Id_Favoritos, data) VALUES (?, ?)',
+        [idProd, dataFav]
+      );
+      console.log('Favoritado');
+
+      res.redirect('/wishlist');
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Erro ao adicionar favorito'); // Opcional: resposta de erro
+    }
+  }
+);
+
+
 router.get("/adc-produto",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2]),

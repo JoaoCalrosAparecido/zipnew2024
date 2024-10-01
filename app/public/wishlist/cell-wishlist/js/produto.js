@@ -40,6 +40,7 @@ function updateCartfv() {
     });
 }
 
+
 // Função para remover um item do carrinho
 function removeFromCartfv(index) {
     let cartItems = localStorage.getItem('cartItemsfv');

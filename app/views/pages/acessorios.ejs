@@ -571,14 +571,19 @@
                     <p class="product-price">R$ <%= produtos[i].preçoprod %></p>
                 </figcaption>
                 </a>
-                <lord-icon class="add-to-cartfv" 
-                    id="lordiconfv"
-                    onclick="addToCartfv('<%= produtos[i].tituloprod %>', <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>')"
-                    src="https://cdn.lordicon.com/xyboiuok.json"
-                    trigger="hover"
-                    data-image="uploads/<%= produtos[i].img1 %>"
-                    style="width:4.2vw;height:4.2vw">
-                </lord-icon>
+                <form action="addFav" method="post">
+                    <!-- onclick="addToCartfv('<%= produtos[i].tituloprod %>', <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>')" -->
+                    <input type="hidden" name="idProd" value="<%= produtos[i].id_prod_cliente %>">
+                    <button type="submit">
+                        <lord-icon class="add-to-cartfv"
+                            id="lordiconfv"
+                            src="https://cdn.lordicon.com/xyboiuok.json"
+                            trigger="hover"
+                            data-image="uploads/<%= produtos[i].img1 %>"
+                            style="width:4.2vw;height:4.2vw">
+                        </lord-icon>
+                    </button>
+                </form>
             </figure>
         <% } %>
     </section>
