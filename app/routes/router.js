@@ -9,8 +9,10 @@ const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 
 const bazarController = require("../controllers/bazarController");
+const denunciaController = require("../controllers/denunciaController");
 const multer = require('multer');
 const upload = multer({ dest: './app/public/IMG/uploads/' });
+const denunciasModels = require("../models/denunciasModels");
 
 
 router.get("/", verificarUsuAutenticado, function (req, res) {
@@ -365,6 +367,38 @@ router.post("/attBazar",
     bazarController.alterarBazar(req, res);
   }
 );
+
+router.post("/denunciar-produto",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado(
+    "./pages/login_do_usuario", {
+      erros: null,
+      dadosform: { email: "", senha: "" },
+      logado: false,
+      usuarioautenticado: null
+    },
+    [1, 2, 3]
+  ), 
+  function (req, res) {
+    denunciaController.denunciarP(req, res);
+  }
+)
+
+router.post("/denunciar-vendedor",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado(
+    "./pages/login_do_usuario", {
+      erros: null,
+      dadosform: { email: "", senha: "" },
+      logado: false,
+      usuarioautenticado: null
+    },
+    [1, 2, 3]
+  ), 
+  function (req, res) {
+
+  }
+)
 
 module.exports = router;
 
