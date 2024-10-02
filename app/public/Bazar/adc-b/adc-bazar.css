@@ -24,7 +24,9 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: transparent;
+    border: 2px solid #000000;
+    border-radius: 2vw;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -62,7 +64,9 @@ body, html {
     width: 350px;
     height: 50px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #000000;
+    border-radius: 1vw;
+    margin-bottom: 0.2vw;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: end;
 }
@@ -88,8 +92,9 @@ body, html {
 #additionalInputs input {
     width: 50%;
     padding: 10px;
-    border: 1px solid #ccc;
-    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #000000;
+    border-radius: 1vw;
+    margin-top: 4vw;
     font-size: 1rem;
     text-align: center;
 }
