@@ -4,6 +4,7 @@ const { MercadoPagoConfig, Preference } = require('mercadopago');
 // O resto do seu código continua igual
 ;
 
+
 // Step 2: Initialize the client object
 const client = new MercadoPagoConfig({ accessToken: 'APP_USR-5593607796954557-092821-c64b7b86bb2f21f48268017986839bb2-2009674095', options: { timeout: 5000, idempotencyKey: 'abc' } });
 
