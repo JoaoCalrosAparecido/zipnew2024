@@ -566,17 +566,17 @@
                 <label id="ban">DENUNCIAR PRODUTO</label>
                 <span id="closeMenuBtn" class="closeBtn"><label id="twitter">X</label></span>
             </article>
-            <form action="/denunciar-produto" method="POST" id="denunciarProdutoForm">
+            <form action="/denunciar-produto/<%= produto.id_prod_cliente %>" method="POST" id="denunciarProdutoForm">
                 <article id="mott">
                     <label id="ttom">Motivo da denúncia</label>
                     <section id="check">
-                        <input type="checkbox" id="produtoRepetido" name="Repetido" value="Produto Repetido" checked>
+                        <input type="checkbox" id="produtoRepetido" name="Repetido" value="True">
                         <label for="produtoRepetido" id="aa">Produto Repetido</label>
                         <br>
-                        <input type="checkbox" id="produtoForaTema" name="ForaTema" value="Produto Fora do Tema">
+                        <input type="checkbox" id="produtoForaTema" name="ForaTema" value="True">
                         <label for="produtoForaTema" id="bb">Produto Fora do Tema</label>
                         <br>
-                        <input type="checkbox" id="produtoQualidade" name="MaQualidade" value="Produto de Má Qualidade">
+                        <input type="checkbox" id="produtoQualidade" name="MaQualidade" value="True">
                         <label for="produtoQualidade" id="cc">Produto de Má Qualidade</label>
                         <br>
                         <button type="submit" id="denunciarBtn" name="action">DENUNCIAR</button>

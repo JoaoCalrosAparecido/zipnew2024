@@ -6,22 +6,60 @@ const denunciasModels = require("../models/denunciasModels");
 
 const denunciaController = {
     denunciarP: async (req, res) => {
-        const user = await models.findUserById(req.session.autenticado.id)
-        const produtoId = parseInt(req.params.id_prod_cliente);
-        const [produtos] = await pool.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
+        try {
+            const userId = req.session.autenticado.id;
+            const produtoId = parseInt(req.params.id_prod_cliente);
+            const [produtos] = await pool.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
+    
+            // // Verifica se o produto existe
+            // if (produtos.length === 0) {
+            //     return res.status(404).send("Produto não encontrado.");
+            // }
+    
+            // Verifica se o usuario ja fez uma denuncia
+            const [denunciasExistentes] = await pool.query(
+                'SELECT * FROM `denuncias_produto` WHERE id_Cliente = ? AND id_prod_cliente = ?',
+                [userId, produtoId]
+            );
+            if (denunciasExistentes.length > 0) {
+                return res.status(400).send("Você já denunciou este produto.");
+            }
+    
+            const { Repetido, ForaTema, MaQualidade } = req.body;
+    
+            const dadosDenuncia = {
+                id_prod_cliente: produtoId,
+                id_Cliente: userId, 
+                repetido: !!Repetido, 
+                fora_tema: !!ForaTema,
+                ma_qualidade: !!MaQualidade,
+            };
+    
+            // Definir o limite
+            const max_denuncias = 8;
+    
+            await denunciasModels.denunciarProd(dadosDenuncia);
+    
+            // Verifica o número total de denúncias
+            const [totalDenuncias] = await pool.query(
+                'SELECT COUNT(*) as total FROM `denuncias_produto` WHERE id_prod_cliente = ?',
+                [produtoId]
+            );
+    
+            // Verifica se atingiu o limite
+            if (totalDenuncias[0].total >= max_denuncias) {
+                await pool.query('DELETE FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
+    
+                return res.status(200).send(`Produto ${produtoId} foi removido devido ao número elevado de denúncias.`);
+            }
+    
+            res.status(200).send("Denúncia registrada com sucesso.");
 
-
-        const { Repetido, ForaTema, MaQualidade } = req.body
-        const dadosDenuncia = {
-            id_prod_cliente: produtoId,
-            id_Cliente: user,
-            repetido: Repetido,
-            fora_tema: ForaTema,
-            ma_qualidade: MaQualidade,
+        } catch (error) {
+            console.error("Erro ao processar a denúncia:", error);
+            res.status(500).send("Erro ao processar a denúncia.");
         }
-        
-        const denunciarProd = await denunciasModels.denunciarProd(dadosDenuncia)
-    }
-}
+    },
+        }
 
 module.exports = denunciaController;

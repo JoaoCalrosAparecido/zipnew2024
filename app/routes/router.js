@@ -123,9 +123,7 @@ router.get('/produtos/:id_prod_cliente',
       const [produtos] = await connection.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
       if (produtos.length > 0) {
         res.render('pages/produtos', { usuarioautenticado: req.session.autenticado, produto: produtos[0] });
-      } else {
-        res.status(404).send('Produto não encontrado');
-      }
+      } 
     } catch (err) {
       console.log(err);
       res.status(500).send('Erro ao buscar o produto');
@@ -368,21 +366,21 @@ router.post("/attBazar",
   }
 );
 
-router.post("/denunciar-produto",
-  verificarUsuAutenticado,
-  verificarUsuAutorizado(
+router.post("/denunciar-produto/:id_prod_cliente",
+  verificarUsuAutenticado, 
+  verificarUsuAutorizado(   
     "./pages/login_do_usuario", {
       erros: null,
       dadosform: { email: "", senha: "" },
       logado: false,
       usuarioautenticado: null
     },
-    [1, 2, 3]
+    [1, 2, 3] 
   ), 
   function (req, res) {
     denunciaController.denunciarP(req, res);
   }
-)
+);
 
 router.post("/denunciar-vendedor",
   verificarUsuAutenticado,
@@ -401,4 +399,3 @@ router.post("/denunciar-vendedor",
 )
 
 module.exports = router;
-
