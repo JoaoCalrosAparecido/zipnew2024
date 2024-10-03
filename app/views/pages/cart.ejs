@@ -395,6 +395,50 @@
     
 </section>
 
+<form action="addpedidos" method="post">
+    <div class="form-payment">
+        <div class="products">
+            <h2 class="title">Resumo do pedido</h2>
+            
+            <% var pedidos = pedidos || []; %>
+            <%
+            var total = 0;
+            if (pedidos.length > 0) {
+                pedidos.forEach(function(item) {
+                    total += (item.qtde * item.preco);
+            %>
+                    <div class="item">
+                        <span class="price hidden" id="summary-price">R$ <%= item.preco.toFixed(2) %></span>
+                        <span class="price" id="subtot-price">R$ <%= (item.qtde * item.preco).toFixed(2) %></span>
+                        <p class="item-name"> <%= item.produto %>
+                        <span id="summary-quantity"> <%= item.qtde %></span> x R$ <%= item.preco.toFixed(2) %></span>
+                        </p>
+                    </div>
+            <%
+                });
+            } else {
+            %>
+                <p>Carrinho vazio.</p>
+            <%
+            }
+            %>
+            
+            <div class="total">
+                <span class="price" id="summary-total">Total R$ <%= total.toFixed(2) %></span>
+            </div>
+        </div>
+    </div>
+
+    <section id="section_da_parte_da_sacola">
+        <article class="container" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </article>
+    </section>
+</form>
+
+<script src="../../api-mercado-pago/api.js"></script>
+
+
     <section id="section_da_parte_da_sacola">
         <art class="container" id="cart-items">
             <!-- Cart items will be dynamically added here -->
@@ -433,6 +477,10 @@
                             <p class="paragrafo_resumo paragrafo_resumo_direita parte_do_total">R$ <span id="other-total-price-1">0</span></p>
                         </article>
                         <!--parte do botão-->
+                        <label for="cep">Digite o CEP:</label>
+                        <input type="text" id="cep" name="cep" required placeholder="Ex: 12345-678" pattern="\d{5}-\d{3}">
+                        <label for="numero">Número da Casa:</label>
+                         <input type="text" id="numero" name="numero" required placeholder="Ex: 123" pattern="\d+" title="Apenas números são permitidos">
                         <a href="/pagamento">
                             <article id="botao_do_finalizar_resumo">
                                 <P id="paragrafo_do_botao_do_finalizar_resumo">FINALIZAR</P>

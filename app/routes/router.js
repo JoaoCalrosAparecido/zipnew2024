@@ -14,6 +14,15 @@ const multer = require('multer');
 const upload = multer({ dest: './app/public/IMG/uploads/' });
 const denunciasModels = require("../models/denunciasModels");
 
+// SDK do Mercado Pago
+const { MercadoPagoConfig, Preference } = require('mercadopago');
+const { pedidoController } = require("../controllers/pedidoControler");
+// Adicione as credenciais
+const client = new MercadoPagoConfig({
+accessToken: process.env.accessToken
+});
+
+
 
 router.get("/", verificarUsuAutenticado, function (req, res) {
   if (req.session.autenticado && req.session.autenticado.id) {
@@ -78,6 +87,47 @@ router.get("/cart",
   function (req, res) {
     res.render('pages/cart', { msg: 'Back-end funcionando' });
   });
+
+
+
+router.post("/create-preference", function (req, res) {
+const preference = new Preference(client);
+console.log(req.body.items);
+preference.create({
+body: {
+items: req.body.items,
+
+address: req.body.items,
+
+
+back_urls: {
+"success": process.env.URL_BASE + "/feedback",
+"failure": process.env.URL_BASE + "/feedback",
+"pending": process.env.URL_BASE + "/feedback"
+},
+auto_return: "approved",
+}
+})
+.then((value) => {
+res.json(value)
+})
+.catch(console.log)
+});
+router.get("/feedback", function (req, res) {
+pedidoController.gravarPedido(req, res);
+});
+
+
+router.get('/pedidos', (req, res) => {
+    const pedidos = req.session.pedidos || []; // ou outra forma de obter os pedidos
+    res.render('pages/cart', { pedidos: pedidos });
+});
+
+
+// Exporta o router
+module.exports = router;
+
+
 
 router.get("/pagamento",
   verificarUsuAutenticado,
