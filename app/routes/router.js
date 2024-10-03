@@ -211,12 +211,12 @@ router.get("/wishlist",
     try {
       const idProd = parseInt(req.body.idProd);
       const date = new Date();
-
+  
       const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
 
       const results = await connection.query(
-        'INSERT INTO `Favoritos` (Id_Favoritos, data) VALUES (?, ?)',
-        [idProd, dataFav]
+        'INSERT INTO `Favoritos` (Id_Favoritos, data, id_Cliente) VALUES (?, ?, ?)',
+        [idProd, dataFav, req.session.autenticado.id]
       );
       console.log('Favoritado');
 

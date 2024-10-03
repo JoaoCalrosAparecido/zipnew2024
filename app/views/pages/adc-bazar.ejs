@@ -14,7 +14,12 @@
         <section id="imageSection">
             <label for="fileInput" id="imageSelector">
                 <section id="imagePlaceholder">
-                    <span>+</span>
+                    <span> <lord-icon
+                        src="https://cdn.lordicon.com/sbnjyzil.json"
+                        trigger="hover"
+                        colors="primary:#000000,secondary:#000000"
+                        style="width:4vw;height:4vw">
+                    </lord-icon></span>
                 </section>
                 <img id="imagePreview" src="/IMG/uploads/<%= valores.imgBazar %>" alt="Image Preview" >
                 <input type="file" id="fileInput" name="imgBazar" accept="image/*" >
@@ -40,9 +45,13 @@
             <article id="product">
                 <a href="/adc-produto">
                     <section id="box">
-                        <h1 id="add"> <lord-icon src="https://cdn.lordicon.com/hqymfzvj.json" trigger="hover"
-                                style="width:25px;height:25px">
-                            </lord-icon></h1>
+                        <h1 id="add"> <lord-icon
+                            src="https://cdn.lordicon.com/sbnjyzil.json"
+                            trigger="hover"
+                            colors="primary:#000000,secondary:#000000"
+                            style="width:2vw;height:2vw">
+                        </lord-icon></h1>
+                        <script src="https://cdn.lordicon.com/lordicon.js"></script>
                     </section>
                 </a>
     
@@ -103,5 +112,6 @@
     </form>
     <script src="./app/public/Bazar/uploadBazar.js"></script>
 <% } %>
+
 </body>
 </html>
