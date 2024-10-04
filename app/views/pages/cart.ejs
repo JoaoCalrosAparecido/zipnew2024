@@ -395,7 +395,7 @@
     
 </section>
 
-<form action="addpedidos" method="post">
+<form action="create-preference" method="post">
     <div class="form-payment">
         <div class="products">
             <h2 class="title">Resumo do pedido</h2>
@@ -434,9 +434,9 @@
             <!-- Cart items will be dynamically added here -->
         </article>
     </section>
-</form>
 
-<script src="../../api-mercado-pago/api.js"></script>
+
+    
 
 
     <section id="section_da_parte_da_sacola">
@@ -477,17 +477,23 @@
                             <p class="paragrafo_resumo paragrafo_resumo_direita parte_do_total">R$ <span id="other-total-price-1">0</span></p>
                         </article>
                         <!--parte do botão-->
+                        <!--
                         <label for="cep">Digite o CEP:</label>
                         <input type="text" id="cep" name="cep" required placeholder="Ex: 12345-678" pattern="\d{5}-\d{3}">
                         <label for="numero">Número da Casa:</label>
                          <input type="text" id="numero" name="numero" required placeholder="Ex: 123" pattern="\d+" title="Apenas números são permitidos">
-                        <a href="/pagamento">
-                            <article id="botao_do_finalizar_resumo">
-                                <P id="paragrafo_do_botao_do_finalizar_resumo">FINALIZAR</P>
+                        -->
+                            <article id="">
+                                <button id="checkout-btn">
+                                    <P id="paragrafo_do_botao_do_finalizar_resumo">FINALIZAR</P>
+                                </button>
+                                
                             </article>
-                        </a>
+                        
                     </section>
                 </article>
+
+                
                 <!--pix-->
                 <article id="article_do_pix">
                     <article id="article_forma_de_pagamento">
@@ -517,6 +523,11 @@
             </section>
         </section>
     </section>
+</form>
+
+<script src="../../api-mercado-pago/api.js"></script>
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+  
 
     <!--linha secundaria-->
     <section id="section_linha_secundaria">

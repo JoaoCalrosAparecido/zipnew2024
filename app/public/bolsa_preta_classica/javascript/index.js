@@ -13,3 +13,4 @@ function addToCart(productName, price, img, id_prod_cliente) {
     cartItems.push(cartItem);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
+

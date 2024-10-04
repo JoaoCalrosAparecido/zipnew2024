@@ -76,17 +76,21 @@
 }
 
 /*botao finalizar*/
-#botao_do_finalizar_resumo {
+#checkout-btn {
     width: 415px;
     height: 54px;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    left: -0.00000000000000000001vw;
+    top: 0.0000000000000000000000001vh;
+    z-index: 100;
 }
 
 #paragrafo_do_botao_do_finalizar_resumo{
-    color: white;
+    color: rgb(96, 29, 29);
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;

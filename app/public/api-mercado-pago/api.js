@@ -11,16 +11,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
         const extractedData = [];
         // Itera sobre cada item para extrair os dados
         items.forEach(item => {
-            const price = parseFloat(item.querySelector("#summary-price").innerText.trim().replace('R$', '').trim());
+            const price = item.querySelector(".preco-prod");
             const unit_price = parseFloat(price.toFixed(2));
-            const nameElement = item.querySelector(".item-name");
-            const description = nameElement.childNodes[0].nodeValue.trim();
-            const quantity = Number(nameElement.querySelector("#summary-quantity").innerText.trim());
+            const  title = item.querySelector(".name-prod");
+            const quantity = 1;
             const currency_id = "BRL";
-            extractedData.push({ unit_price, description, quantity, currency_id });
+            extractedData.push({ unit_price, title, quantity, currency_id });
         });
         const orderData = { items: extractedData };
 
+        
         fetch("/create-preference", {
             method: "POST",
             headers: {

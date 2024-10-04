@@ -22,10 +22,11 @@ function updateCart() {
         productImage.alt = item.name;
         cartItem.appendChild(productImage);
         
+
         const productInfo = document.createElement('article');
         productInfo.innerHTML = `
-        <h3>${item.name}</h3>
-        <p>R$ ${Number(item.price).toFixed(2)}</p>
+        <h3 class="name-prod">${item.name}</h3>
+        <p class="preco-prod">R$ ${Number(item.price).toFixed(2)}</p>
         <h1>
         <img id="coracao_mover"  src="../../IMG/sacola/produtos/coracao_escrito_mover_par_uma_lista_de_desejos.svg" alt="Descrição da Imagem">
         Mover para a wishlist

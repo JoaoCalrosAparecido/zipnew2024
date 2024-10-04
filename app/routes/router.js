@@ -97,7 +97,7 @@ preference.create({
 body: {
 items: req.body.items,
 
-address: req.body.items,
+
 
 
 back_urls: {
@@ -288,6 +288,7 @@ router.post("/adicionar-produto",
       console.log(errors)
       return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
     }
+
 
     const { cateProduto, tituloProduto, precoProduto, descProduto } = req.body;
 
