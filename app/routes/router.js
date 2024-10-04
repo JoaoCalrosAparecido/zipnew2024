@@ -36,13 +36,6 @@ router.get("/bazar", bazarController.getBazaarsWithProducts, function (req, res)
 
 });
 
-router.get("/administrador", function (req, res) {
-  res.render('pages/administrador', { msg: 'Back-end funcionando' });
-});
-
-router.get("/adm-denuncias", function (req, res) {
-  res.render('pages/adm-denuncias', { msg: 'Back-end funcionando' });
-});
 
 router.get("/cadastro", function (req, res) {
   res.render('pages/cadastro',

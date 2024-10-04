@@ -12,12 +12,27 @@ const admController = {
                 page: "../partial/adm/preFamosos"
             }
 
-            res.render("./pages/administrador", jsonResult)
+            res.render("./pages/tabelasAdm", jsonResult)
 
         } catch (error) {
 
         }
     },
+
+    mostrarDenuncias: async (req, res) => {
+        try {
+            const jsonResult = {
+                page: "../partial/adm/denuncias"
+            }
+
+            res.render("./pages/tabelasAdm", jsonResult)
+
+        } catch (error) {
+
+        }
+    },
+
+
     aprovarFamoso: async (req, res) => {
         const idUsuario = req.query.idUsuario
         const resultUpdate = await admModel.alterarTipoUsuario(2, idUsuario)
