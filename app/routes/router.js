@@ -209,14 +209,25 @@ router.get("/wishlist",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     try {
-      const idProd = parseInt(req.body.idProd);
+     /* const idProd = parseInt(req.body.idProd);*/
       const date = new Date();
+
+      const idProd = req.body.idProd; // Captura o valor do input
+      const [id, titulo, preco, img1] = idProd.split(',');
+
+      console.log('ID do produto:', id);
+      console.log('Título do produto:', titulo);
+      console.log('Preço do produto:', preco);
+      console.log('Imagem do produto:', img1);
   
       const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
 
+      
+
+
       const results = await connection.query(
-        'INSERT INTO `Favoritos` (Id_Favoritos, data, id_Cliente) VALUES (?, ?, ?)',
-        [idProd, dataFav, req.session.autenticado.id]
+        'INSERT INTO `Favoritos` (id_prod_cliente, data, id_Cliente, tituloProd, preçoProd, img1) VALUES (?, ?, ?, ?, ?, ?)',
+        [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
       );
       console.log('Favoritado');
 
@@ -227,6 +238,34 @@ router.get("/wishlist",
     }
   }
 );
+
+router.delete('/removeFav', 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  async function (req, res) {
+    try {
+      const idProd = req.body.idProd; // Captura o valor do input (ID do produto a ser removido)
+      console.log('ID do produto a ser removido:', idProd);
+
+      const results = await connection.query(
+        'DELETE FROM `Favoritos` WHERE id_prod_cliente = ? AND id_Cliente = ?',
+        [idProd, req.session.autenticado.id]
+      );
+      
+      if (results.affectedRows > 0) {
+        console.log('Produto removido dos favoritos');
+        res.status(200).send('Produto removido dos favoritos'); // Sucesso
+      } else {
+        res.status(404).send('Produto não encontrado nos favoritos'); // Produto não encontrado
+      }
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Erro ao remover favorito'); // Opcional: resposta de erro
+    }
+  }
+);
+
+
 
 
 router.get("/adc-produto",

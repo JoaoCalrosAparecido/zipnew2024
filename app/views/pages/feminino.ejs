@@ -572,9 +572,10 @@
                     </a>
                     <form action="addFav" method="post">
                     <!-- onclick="addToCartfv('<%= produtos[i].tituloprod %>', <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>')" -->
-                    <input type="hidden" name="idProd" value="<%= produtos[i].id_prod_cliente %>" style="opacity: 0;">
-                    <button type="submit">
+                    <input type="hidden" name="idProd" value="<%= produtos[i].id_prod_cliente %>, <%= produtos[i].tituloprod %>, <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>'"   style="opacity: 0;">
+                    <button type="submit" >
                         <lord-icon class="add-to-cartfv"
+                            onclick="addToCartfv('<%= produtos[i].tituloprod %>', <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>')"
                             id="lordiconfv"
                             src="https://cdn.lordicon.com/xyboiuok.json"
                             trigger="hover"

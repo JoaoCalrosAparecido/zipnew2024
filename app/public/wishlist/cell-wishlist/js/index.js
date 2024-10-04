@@ -25,6 +25,7 @@ function productExistInCart(cartItem) {
     return isProductInCart
 } 
 
+
 function addToCartfv(productName, price, imageName, description) {
     const cartItem = {
         name: productName,
