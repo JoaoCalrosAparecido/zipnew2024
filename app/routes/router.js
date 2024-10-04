@@ -40,6 +40,10 @@ router.get("/administrador", function (req, res) {
   res.render('pages/administrador', { msg: 'Back-end funcionando' });
 });
 
+router.get("/adm-denuncias", function (req, res) {
+  res.render('pages/adm-denuncias', { msg: 'Back-end funcionando' });
+});
+
 router.get("/cadastro", function (req, res) {
   res.render('pages/cadastro',
     { erros: null, dadosform: { nome: '', cpf: '', dia: '', mes: '', ano: '', email: '', senha: '', confirmsenha: '', cep: '' }, logado: false, usuarioautenticado: req.session.userid });

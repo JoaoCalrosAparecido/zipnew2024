@@ -71,7 +71,7 @@ html {
     padding: 10px;
     border: 1px solid #000000;
     margin-bottom: 0.3vw;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #FFFFFF;
     text-align: end;
 }
 
@@ -97,7 +97,7 @@ html {
     padding: 10px;
     border: 1px solid #000000;
     margin-top: 7vw;
-    font-size: 1rem;
+    font-size: 15px;
     text-align: center;
 }
 
@@ -265,3 +265,9 @@ html {
 #cust:nth-child(3) {
     margin: 0 0 3.5vw 0.8vw;
 }
+
+input::placeholder {
+    font-size: 15px;
+}
+
+
