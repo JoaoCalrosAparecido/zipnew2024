@@ -570,13 +570,13 @@
                 <article id="mott">
                     <label id="ttom">Motivo da denúncia</label>
                     <section id="check">
-                        <input type="checkbox" id="produtoRepetido" name="Repetido" value="True">
+                        <input type="checkbox" id="produtoRepetido" name="Repetido">
                         <label for="produtoRepetido" id="aa">Produto Repetido</label>
                         <br>
-                        <input type="checkbox" id="produtoForaTema" name="ForaTema" value="True">
+                        <input type="checkbox" id="produtoForaTema" name="ForaTema">
                         <label for="produtoForaTema" id="bb">Produto Fora do Tema</label>
                         <br>
-                        <input type="checkbox" id="produtoQualidade" name="MaQualidade" value="True">
+                        <input type="checkbox" id="produtoQualidade" name="MaQualidade">
                         <label for="produtoQualidade" id="cc">Produto de Má Qualidade</label>
                         <br>
                         <button type="submit" id="denunciarBtn" name="action">DENUNCIAR</button>
@@ -596,17 +596,17 @@
             <label id="ban">DENUNCIAR VENDEDOR</label>
             <span id="closeMenuB" class="closeBtn"><label id="twitte">X</label></span>
         </article>
-        <form action="/denunciar-vendedor" method="POST" id="denunciarVendedorForm">
+        <form action="/denunciar-vendedor/<%= produto.id_prod_cliente %>" method="POST" id="denunciarVendedorForm">
             <article id="mott">
                 <label id="ttom">Motivo da denúncia</label>
                 <section id="check">
-                    <input type="checkbox" id="fraude" name="Fraude" value="Fraude" checked>
+                    <input type="checkbox" id="fraude" name="Fraude">
                     <label for="fraude" id="aa">Fraude</label>
                     <br>
-                    <input type="checkbox" id="produtoIlicito" name="Ilícito" value="Produto Ilícito">
+                    <input type="checkbox" id="produtoIlicito" name="Ilícito">
                     <label for="produtoIlicito" id="bb">Produto Ilícito</label>
                     <br>
-                    <input type="checkbox" id="propagandaEnganosa" name="Enganosa" value="Propaganda Enganosa">
+                    <input type="checkbox" id="propagandaEnganosa" name="Enganosa">
                     <label for="propagandaEnganosa" id="cc">Propaganda Enganosa</label>
                     <br>
 
