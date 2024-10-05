@@ -103,24 +103,13 @@ const controller = {
     .isLength({ min: 8, max: 8 }).isNumeric().withMessage('*CEP Inválido'),
   ],
 
+
   mostrarPerfil: async (req, res) => {
     const user = await models.findUserById(req.session.autenticado.id)
     const bazar = await produtosModels.findBazarByUserId(user);
     const data = new Date(user.nasc)
     const dataFormatada = data.toISOString().split('T')[0];
     try {
-      // if (user.cep != null) {
-      //   const httpsAgent = new https.Agent({
-      //     rejectUnauthorized: false,
-      //   });
-      //   const response = await fetch(`https://viacep.com.br/ws/${user.cep}/json/`,
-      //     { method: 'GET', headers: null, body: null, agent: httpsAgent, });
-      //   var viaCep = await response.json();
-      //   var cep = user.cep.slice(0, 5) + "-" + user.cep.slice(5);
-      // } else {
-      //   var viaCep = { logradouro: "", bairro: "", localidade: "", uf: "" }
-      //   var cep = null;
-      // }
       let campos = {
         nome: user.nome,
         cpf: user.cpf,
@@ -226,7 +215,40 @@ const controller = {
     } catch (err) {
       console.log(err);
     }
-  }
+  },
+
+  regrasValidaçãoURL: [
+    body('socialLinks')
+    .notEmpty()
+    .isURL()
+    .withMessage('O link deve ser uma URL válida.')
+    .matches(/^(https:\/\/(www\.)?(instagram\.com|youtube\.com|tiktok\.com))/)
+    .withMessage('O link deve ser do Instagram, YouTube ou TikTok.')
+  ],
+
+  regrasValidaçãoBazar: [
+    body('imgBazar')
+      .notEmpty().withMessage('O campo da imagem não pode estar vazio.'),
+    body('Nome')
+      .notEmpty().withMessage('O nome não pode estar vazio.')
+      .isString().isLength({ min: 2, max: 10 }).withMessage('O nome deve ter entre 2 e 10 caracteres.'),
+      
+    body('Ano')
+      .notEmpty().withMessage('O ano não pode estar vazio.')
+      .isNumeric().isLength({ min: 4, max: 4 }).withMessage('O ano deve ter 4 dígitos.'),
+      
+    body('Descricao')
+      .notEmpty().withMessage('A descrição não pode estar vazia.')
+      .isString().isLength({ min: 5, max: 20 }).withMessage('A descrição deve ter entre 5 e 20 caracteres.'),
+      
+    body('Titulo')
+      .notEmpty().withMessage('O título não pode estar vazio.')
+      .isString().isLength({ min: 3, max: 25 }).withMessage('O título deve ter entre 3 e 25 caracteres.'),
+      
+    body('Biografia')
+      .notEmpty().withMessage('A Biografia não pode estar vazia.')
+      .isString().isLength({ min: 10, max: 300 }).withMessage('A biografia deve ter entre 10 e 300 caracteres.')
+  ],
 };
 
 module.exports = controller;

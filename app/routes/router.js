@@ -62,10 +62,18 @@ router.get("/perfil",
 );
 
 router.post("/socialmedia",
+  controller.regrasValidaçãoURL,
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
   async function (req, res) {
+    const erros = validationResult(req);
+  
+    if (!erros.isEmpty()) {
+      return res.redirect('/perfil');
+    }
+
     const { socialLinks } = req.body;
+  
     const userId = req.session.autenticado.id;
     const bazar = await produtosModels.findBazarByUserId(userId);
     await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [socialLinks, userId]);
@@ -467,6 +475,7 @@ router.get("/adc-bazar",
 
 
   router.post("/bazarAdc", 
+    // controller.regrasValidaçãoBazar,
     verificarUsuAutenticado,
     verificarUsuAutorizado(
         "./pages/login_do_usuario", {
@@ -483,6 +492,7 @@ router.get("/adc-bazar",
 );
 
 router.post("/attBazar", 
+  // controller.regrasValidaçãoBazar,
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {

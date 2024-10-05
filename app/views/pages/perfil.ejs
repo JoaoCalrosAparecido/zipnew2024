@@ -522,7 +522,7 @@
             <span id="fecharFormulario" class="fechar">&times;</span>
             <form id="formulario" action="/socialmedia" method="post">
                 <div class="instrucoes">
-                    Coloque pelo menos um link das redes sociais abaixo no campo:
+                    Coloque um link das redes sociais abaixo no campo:
                 </div>
 
                 <input type="url" class="campo-input" id="social" name="socialLinks" placeholder="Instagram, TikTok, YouTube" required />
@@ -538,12 +538,14 @@
 
         <section id="sup">
             <section id="onn">
-                <% if(usuario.Id_Tipo_Usuario == 2){ %>
-                <% }else{ %>
-                    <article>
-                        <button id="famous">SOU FAMOSO</button>
-                    </article>
-                <% }%>
+                <% if (usuario.Id_Tipo_Usuario == 1 && !usuario.Url_site) { %>
+                <article>
+                    <button id="famous">SOU FAMOSO</button>
+                </article>
+                <% } else if (usuario.Id_Tipo_Usuario == 1 && usuario.Url_site) { %>
+                    Aguarde a verificação
+                <% } else { %>
+                <% } %>
                 <article id="help">
                     <p>Suporte</p>
                 </article>
