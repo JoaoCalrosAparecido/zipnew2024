@@ -5,6 +5,11 @@ const multer = require('multer');
 const upload = multer({ dest: './app/public/IMG/uploads/' });
 const admController = require("../controllers/admController");
 
+
+router.get("/tabelasAdm", function (req, res) {
+  res.render('pages/tabelasAdm', { msg: 'Back-end funcionando' });
+});
+
 router.get("/adm",
   verificarUsuAutenticado,
   verificarUsuAutorizado(
@@ -17,7 +22,7 @@ router.get("/adm",
   },
     [3]
   ), function (req, res) {
-    res.render("./pages/administrador", { page: "../partial/adm/index" })
+    res.render("./pages/tabelasAdm", { page: "../partial/adm/index" })
   })
 
 router.get("/adm-famosos",
@@ -45,7 +50,7 @@ router.get("/adm-denuncias",
   },
     [3]
   ), function (req, res) {
-    res.render("./pages/administrador", { page: "" })
+    admController.mostrarDenuncias(req, res)
   })
 
 router.post("/aprovarFamoso",

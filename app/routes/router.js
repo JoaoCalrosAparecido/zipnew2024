@@ -36,9 +36,6 @@ router.get("/bazar", bazarController.getBazaarsWithProducts, function (req, res)
 
 });
 
-router.get("/administrador", function (req, res) {
-  res.render('pages/administrador', { msg: 'Back-end funcionando' });
-});
 
 router.get("/cadastro", function (req, res) {
   res.render('pages/cadastro',
@@ -472,7 +469,7 @@ router.post("/denunciar-produto/:id_prod_cliente",
   }
 );
 
-router.post("/denunciar-vendedor",
+router.post("/denunciar-vendedor/:id_prod_cliente",
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {
@@ -484,7 +481,7 @@ router.post("/denunciar-vendedor",
     [1, 2, 3]
   ), 
   function (req, res) {
-
+    denunciaController.denunciarV(req, res);
   }
 )
 

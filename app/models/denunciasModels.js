@@ -18,11 +18,23 @@ const denunciasModels = {
     
         return await pool.query(query, values);
     },
-    
 
-    denunciarVend: async (denunciaVForm) => {
-        const [campos] = await pool.query('INSERT INTO denuncias_vendedor SET ?', [denunciaVForm]);
-        return campos;
+    denunciarVend: async (dadosDenunciaV) => {
+        const query = 
+            `INSERT INTO denuncias_vendedor
+            (id_Cliente, id_Cliente_denunciado, fraude, produto_ilicito, propaganda_enganosa, data_denuncia)
+            VALUES (?, ?, ?, ?, ?, NOW())`
+        ;
+    
+        const values = [
+            dadosDenunciaV.id_Cliente,
+            dadosDenunciaV.id_Cliente_denunciado,
+            dadosDenunciaV.fraude,
+            dadosDenunciaV.produto_ilicito,
+            dadosDenunciaV.propaganda_enganosa,
+        ];
+    
+        return await pool.query(query, values);
     },
 }
 
