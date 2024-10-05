@@ -9,7 +9,7 @@
 
 #menu_principal_como_todo {
     position: fixed;
-    z-index: 2;
+    z-index: 20;
     opacity: 100%;
     top: 4%;
 }
