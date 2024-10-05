@@ -5,11 +5,17 @@
 /* area da ssection */
 
 
+/*cell*/
+#rodape_cell  {
+    display: none;
+}
+
+/*normal*/
 .rodape {
     height: 708px;
     background-color: #212121;
     position: relative;
-
+    bottom: 0px;
 }
 
 /* h1 */

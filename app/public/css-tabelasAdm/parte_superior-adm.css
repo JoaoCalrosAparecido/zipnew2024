@@ -15,7 +15,7 @@
 
 
 #section_parte_superior {
-    width: 100%;
+    width: 100vw;
 
 }
 
@@ -26,7 +26,7 @@
     top: 0;
     background-color: black;
     height: 37px;
-    width: 100% ;
+    width: 100vw ;
     color: white;
     display: flex;
     justify-content: center;
