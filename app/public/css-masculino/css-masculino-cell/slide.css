@@ -2,9 +2,15 @@
 
 /*section principal*/
 #section_slide_cell {
+    width: 100%;
+    height: auto; 
     position: relative;
     top: 15vh;
     z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    justify-content: center;
 }
 
 /*primeiro slide*/
@@ -20,6 +26,7 @@
 #section_primeiro_slide1_cell > figure {
     width: 45.83vw;
     height: 43.75vh;
+    
 }
 
 /*blocos do slide*/
@@ -60,6 +67,12 @@
 }
 
 /*blocos do slide produtos*/
+
+.class_produtos_figure {
+    width: 45.83vw;
+    height: 43.75vh;
+
+}
 
 .class_produtos_figure > a {
     text-decoration: none;

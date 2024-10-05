@@ -2,9 +2,15 @@
 
 /*section principal*/
 #section_slide_cell {
+    width: 100%;
+    height: auto; 
     position: relative;
-    top: 16.1vh;
+    top: 15vh;
     z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    justify-content: center;
 }
 
 /*primeiro slide*/
@@ -14,13 +20,13 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 5px;
-    row-gap: 0vh;
     justify-content: center;
 }
 
 #section_primeiro_slide1_cell > figure {
     width: 45.83vw;
     height: 43.75vh;
+    
 }
 
 /*blocos do slide*/
@@ -37,7 +43,7 @@
 }
 
 /*paragrafo*/
-#section_primeiro_slide1_cell > figure > figcaption > p:first-child {
+#section_primeiro_slide1_cell > figure > figcaption > h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5vw;
     font-weight: 500;
@@ -45,7 +51,7 @@
     text-indent: 2.8vw;
 }
 
-#section_primeiro_slide1_cell > figure > figcaption > p:nth-child(2) {
+#section_primeiro_slide1_cell > figure > figcaption > p {
     font-family: 'Poppins', sans-serif;
     font-size: 2.2vw;
     margin-top: 0.4vh;
@@ -58,14 +64,15 @@
     top: -39.5vh;
     left: 40vw;
     z-index: 3;
-    height: 4.2vw;
-}
-
-lord-icon {
-    height: 4.2vw;
 }
 
 /*blocos do slide produtos*/
+
+.class_produtos_figure {
+    width: 45.83vw;
+    height: 43.75vh;
+    
+}
 
 .class_produtos_figure > a {
     text-decoration: none;

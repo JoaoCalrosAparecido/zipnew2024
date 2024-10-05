@@ -3,13 +3,13 @@
 /*section principal*/
 #section_colecao_978 {
     position: relative;
-    top: 130px;
+    top: 10vh;
 }
 
 /*colção masculina*/
 #section_parte_escrita_colecao_masculina_cell {
     position: relative;
-    top: -7vh;
+    top: vh;
     height: 14vh;
     background-color: #F1F1F1;
     z-index: 2;
@@ -22,14 +22,18 @@
     font-size: 4vw;
     font-weight: 550;
     position: relative;
-    top: 6.2vh;
+    top: 1.2vh;
+}
+
+#section_parte_escrita_colecao_masculina_cell > :nth-child(2) {
+    display: none;
 }
 
 /*979 produtos*/
 #section_978produtos {
     position: absolute;
-    top: 7vh;
-    height: 1520px;
+    top: 14vh;
+    height: 240vh;
     width: 100vw;
 
 }

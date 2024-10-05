@@ -1,8 +1,14 @@
+.stories_recentes {
+    display: none;
+}
+
+
 #section_entre_no_mundo_cell {
     position: relative;
     top: 25vh;
     background-color: #F4F4F4;
     height: 25vh;
+    display: block;
 }
 
 #figure_entre_no_mundo_cell {
