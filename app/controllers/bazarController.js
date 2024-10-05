@@ -6,7 +6,7 @@ const produtosModels = require("../models/produtos.models");
 const bazarController = {
   submitBazar: async (req, res) => {
     const userId = req.session.autenticado.id;
-    const { Nome, Ano, Descricao, Titulo, Biografia } = req.body;
+    const { imgBazar, Nome, Ano, Descricao, Titulo, Biografia } = req.body;
 
     let bazar = await produtosModels.findBazarByUserId(userId);
 
@@ -14,8 +14,8 @@ const bazarController = {
         const imgBazar = req.file ? req.file.filename : null;
 
         await pool.query(
-            "INSERT INTO bazar (nome, ano, descricao, titulo, biografia, imgBazar, id_Cliente) VALUES (?, ?, ?, ?, ?, ?, ?)",
-            [Nome, Ano, Descricao, Titulo, Biografia, imgBazar, userId]
+            "INSERT INTO bazar (imgBazar, nome, ano, descricao, titulo, biografia, id_Cliente) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            [imgBazar, Nome, Ano, Descricao, Titulo, Biografia, userId]
         );
         
         bazar = await produtosModels.findBazarByUserId(userId);
