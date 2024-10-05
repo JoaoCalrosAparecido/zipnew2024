@@ -165,18 +165,31 @@ router.get('/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async (req, res) => {
-    try {
       const produtoId = parseInt(req.params.id_prod_cliente);
       const [produtos] = await connection.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
+
       if (produtos.length > 0) {
-        res.render('pages/produtos', { usuarioautenticado: req.session.autenticado, produto: produtos[0] });
-      } 
-    } catch (err) {
-      console.log(err);
-      res.status(500).send('Erro ao buscar o produto');
-    }
+        const produto = produtos[0];
+        const idCliente = produto.id_Cliente;
+        const [clientes] = await connection.query('SELECT nome FROM `cliente` WHERE id_Cliente = ?', [idCliente]);
+
+        if (clientes.length > 0) {
+          const nomeCliente = clientes[0].nome;
+
+          res.render('pages/produtos', { 
+            usuarioautenticado: req.session.autenticado, 
+            produto: produto,
+            nomeCliente: nomeCliente 
+          });
+        }
+      } else {
+        res.status(404).send('Produto não encontrado.');
+      }
+
   }
 );
+
+
 router.get("/meusdados",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
