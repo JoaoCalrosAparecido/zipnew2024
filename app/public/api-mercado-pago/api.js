@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         });
         const orderData = { items: extractedData };
 
+        console.log('teste')
         
         fetch("/create-preference", {
             method: "POST",

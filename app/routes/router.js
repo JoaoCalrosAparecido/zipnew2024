@@ -260,7 +260,40 @@ router.delete('/removeFav',
   }
 );
 
+router.post('/addCart', 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  async function (req, res) {
+    try {
+     /* const idProd = parseInt(req.body.idProd);*/
+      const date = new Date();
 
+      const idProd = req.body.idProd; // Captura o valor do input
+      const [id, titulo, preco, img1] = idProd.split(',');
+
+      console.log('ID do produto:', id);
+      console.log('Título do produto:', titulo);
+      console.log('Preço do produto:', preco);
+      console.log('Imagem do produto:', img1);
+  
+      const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+      
+
+
+      const results = await connection.query(
+        'INSERT INTO `Sacola` (id_prod_cliente, data, id_Cliente, tituloProd, preçoProd, img1) VALUES (?, ?, ?, ?, ?, ?)',
+        [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
+      );
+      console.log('Favoritado');
+
+      res.redirect('/cart');
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Erro ao adicionar cart'); // Opcional: resposta de erro
+    }
+  }
+);
 
 
 router.get("/adc-produto",
