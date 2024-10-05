@@ -7,6 +7,7 @@
     top: 12.25vh;
     z-index: 4;
     left: 0px;
+    display: block;
 }
 
 #section_home_page_cell > p {
