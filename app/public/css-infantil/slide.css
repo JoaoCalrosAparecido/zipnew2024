@@ -15,7 +15,6 @@
     flex-wrap: wrap;
     column-gap: 0.5vh;
     row-gap: 19vh;
-    justify-content: center;
 }
 
 #section_primeiro_slide1_cell > figure {
@@ -62,6 +61,11 @@
 }
 
 /*blocos do slide produtos*/
+.class_produtos_figure {
+    width: 23.55vw;
+    height: 62.25vh;
+
+}
 
 .class_produtos_figure > a {
     text-decoration: none;

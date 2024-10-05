@@ -270,12 +270,11 @@
                 <article id="imagem_de_favorito"></article>
             </a>
 
-            <form action="addCart" method="post">
-                <input type="hidden" name="idProd" value="<%= produtos[i].id_prod_cliente %>, <%= produtos[i].tituloprod %>, <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>'"   style="opacity: 0;">
+           
                     <button type="submit" id="produto_adicionar_a_sacola" class="add-to-cart" onclick="handleClick(); addToCart( '<%= produto.tituloprod %>', Number('<%=produto.preçoprod %>').toFixed(2), '../../IMG/uploads/<%= produto.img1 %>', parseInt('<%= produto.id_prod_cliente %>'))">
                         <p>ADICIONAR À SACOLA</p>
                      </button>
-            </form>
+            
             
 
             <script src="/adicionar_a_sacola/botao_adicionar_a_sacola.js"></script>
