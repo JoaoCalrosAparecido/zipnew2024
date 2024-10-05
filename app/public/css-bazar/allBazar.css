@@ -6,13 +6,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-
 }
 
 #AllBazar{
@@ -25,6 +25,7 @@ body {
 }
 
 #imageSection {
+    margin-top: -1vw;
     position: relative;
     width: 100%;
     height: 820px;
@@ -57,7 +58,9 @@ body {
     height: 100%;
     text-align: end;
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 400;
+    margin-bottom: -1vw;
+    letter-spacing: -4px;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
 
@@ -77,16 +80,19 @@ body {
     margin-top: 150px;
     padding: 10px;
     font-size: 50px;
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: -4px;
 }
 
 #titulo{
+    margin-top: -2vw;
     width: 100vh;
     height: 100%;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+    font-weight: 400;
+    letter-spacing: -4px;
 }
 
 
@@ -94,7 +100,7 @@ body {
 #textAreaSection {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 1vw;
     padding: 10px;
 
 }
@@ -117,29 +123,65 @@ body {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    margin-bottom: 90px;
-    margin-top: 80px;
+    margin-bottom: 8vw;
+    margin-top: 6vw;
 }
 
 
 #ash{
     margin-top: 15px;
     margin-bottom: 6px;
-    background-color: rgb(245, 245, 245);
-    width: 20rem;
-    height: 26rem;
+    background-color: rgb(216, 215, 215);
+    width: 23vw;
+    height: 31vw;
     display: grid;
     place-items: center;
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
 #cust{
     font-size: 18px;
+    margin-left: 1vw;
     width: 100%;
+}
+
+#cust:nth-child(2) {
+    margin: 0.5vw 0 0 1.2vw;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#cust:nth-child(3) {
+    margin-left: 1vw;
 }
 
 
 @media (max-width: 768px) {
+    html {
+        overflow-x: hidden;
+    }
+
+    #imageSection {
+        height: 90vh;
+    }
+
+    #Name, #Year{
+        margin-bottom: -5vw;
+    }
+    
+    #Description{
+        margin: 30px 0 8vw 0;
+    }
+
+    #titulo {
+        display: none;
+    }
+
+    #textAreaSection {
+        width: 80vw;
+        margin: -23vw 0 14vw 9.5vw;
+    }
+
     #formOverlay input,
     #additionalInputs input {
         width: 80%;
@@ -152,8 +194,8 @@ body {
         width: 80%;
     }
     #ash{
-        width: 12rem;
-        height: 18rem;
+        width: 12vw;
+        height: 18vw;
     }
     #cust{
         font-size: 16px;
@@ -171,14 +213,21 @@ body {
         width: 90%;
     }
     #ash{
-        width: 10rem;
-        height: 16rem;
+        width: 46vw;
+        height: 70vw;
+        margin-left: 0.5vw;
     }
-    #cust{
+    
+    #cust:nth-child(2) {
+        margin: 0.5vw 0 0 4vw;
+        font-weight: 600;
         font-size: 14px;
-        width: 100%;
     }
-
+    
+    #cust:nth-child(3) {
+        margin: 0 0 9vw 3.5vw;
+        font-size: 13px;
+    }
 }
 
 
