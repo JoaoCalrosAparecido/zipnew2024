@@ -313,9 +313,9 @@ input::-webkit-input-placeholder {
 #article_links_principais_cell_img  {
   display: flex;
   flex-direction: column;
-  gap: 4.2vh;
+  gap: 3.4vh;
   position: relative;
-  top: -32vh;
+  top: -27vh;
   left: 61.6vw;
 }
 
@@ -331,7 +331,7 @@ input::-webkit-input-placeholder {
   width: 68vw;
   height: 17vh;
   position: relative;
-  top: -28vh;
+  top: -20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
