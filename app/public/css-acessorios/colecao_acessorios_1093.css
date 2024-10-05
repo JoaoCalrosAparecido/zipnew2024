@@ -3,44 +3,50 @@
 /*section principal*/
 #section_colecao_667 {
     position: relative;
-    top: 10vh;
+    top: 13vh;
 }
 
 /*colção masculina*/
 #section_parte_escrita_colecao_feminino_cell {
     position: relative;
     top: vh;
-    height: 14vh;
+    height: 15.74vh;
+    width: 100vw;
     background-color: #F1F1F1;
-    z-index: 2;
+    z-index: ;
     display: flex;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #section_parte_escrita_colecao_feminino_cell > p {
     font-family: 'Poppins', sans-serif;
-    font-size: 4vw;
+    font-size: 1.6vw;
     font-weight: 550;
     position: relative;
-    top: 1.2vh;
+    top: ;
 }
 
 #section_parte_escrita_colecao_feminino_cell > :nth-child(2) {
-    display: none;
+    font-size: 0.8vw;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
 }
 
 /*979 produtos*/
 #section_667produtos {
     position: absolute;
-    top: 14.3vh;
-    height: 240vh;
+    top: 15vh;
+    height: 300vh;
     width: 100vw;
 
 }
 
 #article_colecao_667 {
     position: sticky;
-    top: 87.5px;
+    top: 14vh;
     z-index: 5;
     
 }
@@ -53,12 +59,12 @@
 #article_paragrafo_667 {
     position: relative;
     background-color: white;
-    height: 5.2vh;
+    height: 7.2vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.532);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.532);
 
 }
 
@@ -66,6 +72,6 @@
     text-align: center;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    font-size: 2.9vw;
+    font-size: 1vw;
     
 }

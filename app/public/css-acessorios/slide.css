@@ -3,8 +3,8 @@
 /*section principal*/
 #section_slide_cell {
     position: relative;
-    top: 16.1vh;
-    z-index: 2;
+    top: 20vh;
+    z-index: ;
 }
 
 /*primeiro slide*/
@@ -13,14 +13,14 @@
     height: auto; 
     display: flex;
     flex-wrap: wrap;
-    column-gap: 5px;
-    row-gap: 0vh;
+    column-gap: 0.5vh;
+    row-gap: 19vh;
     justify-content: center;
 }
 
 #section_primeiro_slide1_cell > figure {
-    width: 45.83vw;
-    height: 43.75vh;
+    width: ;
+    height: 60vh;
 }
 
 /*blocos do slide*/
@@ -32,37 +32,33 @@
 
 /*imagem*/
 #section_primeiro_slide1_cell > figure > img {
-    width: 45.83vw;
-    height: 34.75vh;
+    width: 23.59vw;
+    height: 62.20vh;
 }
 
 /*paragrafo*/
 #section_primeiro_slide1_cell > figure > figcaption > p:first-child {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5vw;
+    font-size: 0.938vw;
     font-weight: 500;
     margin-top: 1vh;
-    text-indent: 2.8vw;
+    text-indent: 0.9vw;
 }
 
 #section_primeiro_slide1_cell > figure > figcaption > p:nth-child(2) {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.2vw;
+    font-size: 0.99vw;
     margin-top: 0.4vh;
     opacity: 60%;
-    text-indent: 2.5vw;
+    text-indent: 0.9vw;
 }
 /*favorito*/
 #lordiconfv {
     position: relative;
-    top: -39.5vh;
-    left: 40vw;
-    z-index: 3;
-    height: 4.2vw;
-}
-
-lord-icon {
-    height: 4.2vw;
+    top: -71vh;
+    left: 21.4vw;
+    z-index: ;
+    height: 3.8vw;
 }
 
 /*blocos do slide produtos*/
@@ -73,34 +69,35 @@ lord-icon {
 }
 
 .class_produtos_figure > a > img {
-    width: 45.83vw;
-    height: 34.75vh;
+    width: 23.59vw;
+    height: 62.2vh;
 }
 
 /*paragrafo*/
 .class_produtos_figure > a > figcaption > h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5vw;
+    font-size: 0.938vw;
     font-weight: 500;
     margin-top: 1vh;
-    text-indent: 2.8vw;
+    text-indent: 0.9vw;
 }
 
 .class_produtos_figure > a > figcaption > p {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.2vw;
+    font-size: 0.99vw;
     margin-top: 0.4vh;
     opacity: 60%;
-    text-indent: 2.5vw;
+    text-indent: 0.9vw;
 }
+
 
 
 /*veja mais*/
 #veja-mais-cell {
     position: relative;
-    top: 16vh;
+    top: 20vh;
     width: 100vw;
-    display: flex;
+    display: none;
     justify-content: center;
 }
 
