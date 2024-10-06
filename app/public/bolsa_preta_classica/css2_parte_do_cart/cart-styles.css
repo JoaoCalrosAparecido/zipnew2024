@@ -69,10 +69,10 @@
 }
 
 /*x remover*/
-button {
+#btnremove {
     position: relative;
     top: -112px;
-    left: 778px;
+    
     width: 24px;
     height: 24px;
     border: none;

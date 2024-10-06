@@ -374,7 +374,7 @@
     
         
 
-        
+
 
     <!--sacola subtotal-->
     <section id="section_sacola_subtotal">
@@ -396,7 +396,7 @@
     
 </section>
 
-<form action="create-preference" method="post">
+<!--<form action="create-preference" method="post">-->
     <section class="form-payment">
         <article class="products">
             <h2 class="title">Resumo do pedido</h2>
@@ -429,22 +429,41 @@
             </article>
         </article>
     </section>
+<!--lista do codigo-->
 
     <section id="section_da_parte_da_sacola">
         <article class="container" id="cart-items">
-            <!-- Cart items will be dynamically added here -->
+          
+            
+            <% for(var i = 0; i < cart.length; i++) { %>
+                <article id="cart-items">
+                    <!-- Itens do carrinho serão inseridos aqui -->
+                    <section class="cart-item">
+                        <img src="../../IMG/uploads/<%= cart[i].img1.trim() %>" alt="Nome do Produto">
+                        <article>
+                            <h3 class="name-prod"><%= cart[i].tituloprod %></h3>
+                            <p class="preco-prod">R$ <%= cart[i].preçoprod %></p>
+                            <h1>
+                                <img id="coracao_mover" src="../../IMG/sacola/produtos/coracao_escrito_mover_par_uma_lista_de_desejos.svg" alt="Mover para a wishlist">
+                                Mover para a wishlist
+                            </h1>
+                        </article>
+                        <form action="removeCart" method="post">
+                            <input type="hidden" name="idRemoveProdCart" value="<%= cart[i].Id_prod_cliente %>"   style="opacity: 0;">
+                            <button id="btnremove" type="submit" ></button>
+                        </form>
+                    </section>
+                </article>
+            <% } %>
+       
         </article>
     </section>
-
+    
 
     
 
 
-    <section id="section_da_parte_da_sacola">
-        <art class="container" id="cart-items">
-            <!-- Cart items will be dynamically added here -->
-        </art>
-    </section>
+    
     
     
 
@@ -525,7 +544,7 @@
             </section>
         </section>
     </section>
-</form>
+<!--</form>-->
 <script src="../../cat-produto/ponto-para-virgula.js"></script>
 <script src="../../api-mercado-pago/api.js"></script>
 <script src="https://sdk.mercadopago.com/js/v2"></script>

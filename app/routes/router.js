@@ -8,6 +8,9 @@ const { verificarUsuAutorizado, limparSessao, verificarUsuAutenticado } = requir
 const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 
+//sacola
+const cartModels = require('../models/cartModels')
+
 const bazarController = require("../controllers/bazarController");
 const denunciaController = require("../controllers/denunciaController");
 const multer = require('multer');
@@ -89,12 +92,45 @@ router.get("/bolsa_preta_classica", function (req, res) {
 router.get("/cart",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
-  function (req, res) {
-    res.render('pages/cart', { msg: 'Back-end funcionando' });
+  async function (req, res) {
+    const userId = req.session.autenticado.id;
+    const cart = await cartModels.findAllProductByUserId(userId);
+    
+
+    
+    res.render('pages/cart', { msg: 'Back-end funcionando', cart: cart });
   });
 
+  router.post("/removeCart",
+    verificarUsuAutenticado,
+    verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+    async function (req, res) {
 
+
+      try {
+        
   
+        const productId = req.body.idRemoveProdCart; // Captura o valor do input
+  
+        console.log('ID do produto:', productId);
+       
+        const userId = req.session.autenticado.id;
+  
+  
+         await connection.query(
+          "DELETE FROM `Sacola` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
+          [userId, productId]
+        );
+        console.log('Sacola');
+  
+        res.redirect('/cart'); 
+      } catch (err) {
+        console.log(err);
+        res.status(500).send('Erro ao remover cart'); // Opcional: resposta de erro
+      }
+    }
+    );
+
 
 router.post("/create-preference", function (req, res) {
 const preference = new Preference(client);
@@ -107,7 +143,7 @@ items: req.body.items,
 
 
 back_urls: {
-"success": process.env.URL_BASE + "/feedback",
+"success": process.env.URL_BASE + "/",
 "failure": process.env.URL_BASE + "/feedback",
 "pending": process.env.URL_BASE + "/feedback"
 },
@@ -291,17 +327,18 @@ router.delete('/removeFav',
   }
 );
 
-router.post('/addCart', 
+router.post('/produtos/addCart', 
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
+    
+
     try {
-     /* const idProd = parseInt(req.body.idProd);*/
       const date = new Date();
 
-      const idProd = req.body.idProd; // Captura o valor do input
-      const [id, titulo, preco, img1] = idProd.split(',');
-
+      const idProdCart = req.body.idProdCart; // Captura o valor do input
+      const [id, titulo, preco, img1] = idProdCart.split(',');
+      const userId = req.session.autenticado.id;
       console.log('ID do produto:', id);
       console.log('Título do produto:', titulo);
       console.log('Preço do produto:', preco);
@@ -309,16 +346,19 @@ router.post('/addCart',
   
       const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
 
-      
+      console.log('addtocart')
 
+      const prodJaExiste = await cartModels.hasProducts(userId, id)
 
-      const results = await connection.query(
-        'INSERT INTO `Sacola` (id_prod_cliente, data, id_Cliente, tituloProd, preçoProd, img1) VALUES (?, ?, ?, ?, ?, ?)',
-        [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
-      );
-      console.log('Favoritado');
+      if(prodJaExiste) {
+        res.redirect('/cart')
+      } else {
+        await cartModels.addProducts(id, dataFav, req.session.autenticado.id, titulo, preco, img1)
+        console.log('Sacola');
+        res.redirect('/cart');
+      }
 
-      res.redirect('/cart');
+       
     } catch (err) {
       console.log(err);
       res.status(500).send('Erro ao adicionar cart'); // Opcional: resposta de erro

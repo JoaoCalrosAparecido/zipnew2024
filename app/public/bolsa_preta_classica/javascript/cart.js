@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     updateCart();
 });
 
@@ -12,7 +12,7 @@ function updateCart() {
     console.log(cartItems);
     let totalPrice = 0;
 
-    
+
     cartContainer.innerHTML = '';
     cartItems.forEach((item, index) => {
         const cartItem = document.createElement('artcile');
@@ -61,7 +61,7 @@ function updateCart() {
     otherTotalContainer1.textContent = totalPrice.toFixed(2); // Exibir o preço total em outro span
     otherTotalContainer2.textContent = totalPrice.toFixed(2); // Exibir o preço total em outro span
 }
-
+*/
 function removeFromCart(index) {
     let cartItems = localStorage.getItem('cartItems');
     cartItems = cartItems ? JSON.parse(cartItems) : [];
