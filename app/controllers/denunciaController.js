@@ -1,6 +1,7 @@
 const pool = require("../../config/pool_conexoes");
 const { body, validationResult } = require("express-validator");
 const models = require("../models/models");
+const admModel = require("../models/admModels");
 const produtosModels = require("../models/produtos.models");
 const denunciasModels = require("../models/denunciasModels");
 
@@ -104,7 +105,22 @@ const denunciaController = {
             res.status(500).send("Erro ao processar a denúncia.");
         }
     },
-    
+
+    listarDenuncias: async (req, res) => {
+        try {
+        const denuncias = await denunciasModels.listarDenuncias(); 
+        const jsonResult = {
+            denuncias: denuncias,
+            page: "../partial/adm/denuncias"
+        };
+
+        res.render('pages/tabelasAdm', jsonResult);
+        } catch (error) {
+            console.error('Erro ao listar as denúncias: ', error);
+            res.status(500).send('Erro ao listar as denúncias.');
         }
+    
+    },
+}
 
 module.exports = denunciaController;

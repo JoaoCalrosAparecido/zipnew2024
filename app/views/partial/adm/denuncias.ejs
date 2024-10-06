@@ -11,13 +11,15 @@
         </thead>
 
         <tbody class="denuncias-colunas-conteudo">
-            <tr>
-                <td class="celula1">001</td>
-                <td class="celula2">001</td>
-                <td class="celula3">001</td>
-                <td class="celula4">001</td>
-                <td class="celula5"><button type="submit" class="efeito-botao">Remover</button></td>
-            </tr>
+            <% denuncias.forEach(denuncia => { %>
+                <tr>
+                    <td class="celula1"><%= denuncia.id_prod_cliente %></td>
+                    <td class="celula2"><%= denuncia.total_repetido %></td>
+                    <td class="celula3"><%= denuncia.total_fora_tema %></td>
+                    <td class="celula4"><%= denuncia.total_ma_qualidade %></td>
+                    <td class="celula5"><button type="submit" class="efeito-botao">Remover</button></td>
+                </tr>
+            <% }) %>
         </tbody>
     </table>
 </section>
@@ -35,13 +37,15 @@
             </thead>
 
             <tbody class="denuncias-colunas-conteudo--vendedor">
-                <tr>
-                    <td class="celula1">001</td>
-                    <td class="celula2">001</td>
-                    <td class="celula3">001</td>
-                    <td class="celula4">001</td>
-                    <td class="celula5"><button type="submit" class="efeito-botao">Banir</button></td>
-                </tr>
+                <% denunciasV.forEach(denuncias => { %>
+                    <tr>
+                        <td class="celula1"><%= denuncias.id_Cliente_denunciado %></td>
+                        <td class="celula2"><%= denuncias.total_fraude %></td>
+                        <td class="celula3"><%= denuncias.total_produto_ilicito %></td>
+                        <td class="celula4"><%= denuncias.total_propaganda_enganosa %></td>
+                        <td class="celula5"><button type="submit" class="efeito-botao">Banir</button></td>
+                    </tr>
+                <% }) %>
 
 
                     <!-- <article id="messageContainer" class="hidden">

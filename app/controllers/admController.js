@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const { body, validationResult } = require("express-validator");
 const admModel = require("../models/admModels");
 const models = require('../models/models');
+const denunciasModels = require("../models/denunciasModels");
 
 const admController = {
     mostrarFamosos: async (req, res) => {
@@ -21,7 +22,11 @@ const admController = {
 
     mostrarDenuncias: async (req, res) => {
         try {
+            const denuncias = await denunciasModels.listarDenuncias(); 
+            const denunciasVendedor = await denunciasModels.listarDenunciasVendedor();
             const jsonResult = {
+                denunciasV: denunciasVendedor,
+                denuncias: denuncias,
                 page: "../partial/adm/denuncias"
             }
 
