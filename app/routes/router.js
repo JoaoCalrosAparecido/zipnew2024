@@ -169,6 +169,10 @@ router.get("/vender", function (req, res) {
   res.render('pages/vender', { msg: 'Back-end funcionando' });
 });
 
+router.get("/minhas-vendas", function (req, res) {
+  res.render('pages/minhas-vendas', { msg: 'Back-end funcionando' });
+});
+
 router.get('/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
