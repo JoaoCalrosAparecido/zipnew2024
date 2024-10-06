@@ -36,6 +36,36 @@ const denunciasModels = {
     
         return await pool.query(query, values);
     },
+
+    listarDenuncias: async () => {
+        const query = 
+            `SELECT 
+                id_prod_cliente, 
+                SUM(repetido) AS total_repetido,
+                SUM(fora_tema) AS total_fora_tema,
+                SUM(ma_qualidade) AS total_ma_qualidade
+            FROM 
+                denuncias_produto
+            GROUP BY 
+                id_prod_cliente;`;
+            const [denuncias] = await pool.query(query);
+            return denuncias
+    },
+
+    listarDenunciasVendedor: async () => {
+        const query = 
+            `SELECT 
+                id_Cliente_denunciado, 
+                SUM(fraude) AS total_fraude,
+                SUM(produto_ilicito) AS total_produto_ilicito,
+                SUM(propaganda_enganosa) AS total_propaganda_enganosa
+            FROM 
+                denuncias_vendedor
+            GROUP BY 
+                id_Cliente_denunciado;`;
+            const [denuncias] = await pool.query(query);
+            return denuncias
+    }
 }
 
 module.exports = denunciasModels

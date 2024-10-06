@@ -214,6 +214,10 @@ router.get("/meus-pedidos", function (req, res) {
   res.render('pages/meus-pedidos', { msg: 'Back-end funcionando' });
 });
 
+router.get("/denuncias-usu", function (req, res) {
+  res.render('pages/denuncias-usu', { msg: 'Back-end funcionando' });
+});
+
 router.get('/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),

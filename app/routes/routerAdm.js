@@ -4,6 +4,8 @@ const { verificarUsuAutorizado, limparSessao, verificarUsuAutenticado } = requir
 const multer = require('multer');
 const upload = multer({ dest: './app/public/IMG/uploads/' });
 const admController = require("../controllers/admController");
+const denunciaController = require("../controllers/denunciaController");
+const controller = require("../controllers/controllers");
 
 
 router.get("/tabelasAdm", function (req, res) {
@@ -39,17 +41,18 @@ router.get("/adm-famosos",
     admController.mostrarFamosos(req, res)
   })
 
-router.get("/adm-denuncias",
-  verificarUsuAutenticado,
-  verificarUsuAutorizado(
-    "./pages/login_do_usuario", {
-    erros: null,
-    dadosform: { email: "", senha: "" },
-    logado: false,
-    usuarioautenticado: null
-  },
-    [3]
-  ), function (req, res) {
+  router.get('/adm-denuncias', 
+    verificarUsuAutenticado,
+    verificarUsuAutorizado(
+        "./pages/login_do_usuario", {
+            erros: null,
+            dadosform: { email: "", senha: "" },
+            logado: false,
+            usuarioautenticado: null
+        },
+        [3]
+    ),
+    function (req, res){
     admController.mostrarDenuncias(req, res)
   })
 
