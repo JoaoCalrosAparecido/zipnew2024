@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         locale: 'pt-BR' // Os mais comuns são: 'pt-BR', 'es-AR' e 'en-US'
     });
 
+    
     // Handle call to backend and generate preference.
     document.getElementById("checkout-btn").addEventListener("click", function () {
         $('#checkout-btn').attr("disabled", true);

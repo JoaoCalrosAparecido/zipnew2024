@@ -12,6 +12,7 @@ function updateCart() {
     console.log(cartItems);
     let totalPrice = 0;
 
+    
     cartContainer.innerHTML = '';
     cartItems.forEach((item, index) => {
         const cartItem = document.createElement('artcile');

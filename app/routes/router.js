@@ -94,6 +94,7 @@ router.get("/cart",
   });
 
 
+  
 
 router.post("/create-preference", function (req, res) {
 const preference = new Preference(client);
@@ -219,6 +220,7 @@ router.get("/wishlist",
   function (req, res) {
     res.render('pages/wishlist', { msg: 'Back-end funcionando' });
   });
+
 
   router.post('/addFav', 
   verificarUsuAutenticado,
