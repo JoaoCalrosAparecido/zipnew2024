@@ -101,7 +101,6 @@ hr{
 }
 
 #info{
-    border-radius: 5px;
     background: #F2F2F2;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -136,7 +135,6 @@ hr{
 /* Suporte */
 
 #sup{
-    border-radius: 5px;
     background: #F2F2F2;
     margin-top: 8px;
     padding-bottom: 28px;
@@ -145,7 +143,6 @@ hr{
     margin-left: 73%;
     margin-top: -10%;
     position: absolute;
-
 }
 
 #famous{
@@ -169,8 +166,8 @@ hr{
 }
 
 #help{
-    margin-bottom: 10px;
-    font-size: 17px;
+    margin-bottom: 0.5vw;
+    font-size: 20px;
     font-weight: 600;
     margin-top: 30px;
 }
@@ -178,7 +175,7 @@ hr{
 #questions, #helping{
     margin-top: 4px;
     margin-bottom: 4px;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 /* Você pode gostar*/

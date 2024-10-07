@@ -6,7 +6,6 @@
     padding: 10px;
     border: none;
     margin: 20px;
-    border-radius: 5px;
     box-sizing: border-box;
 }
 
@@ -88,6 +87,28 @@
     background-color: #F6F6F6; 
     padding: 10px;
     margin-bottom: 10px;
+}
+
+
+.mensagem-espera {
+    margin-top: 3vh;
+    font-size: 20px;
+}
+
+#sup {
+    margin-top: -17vh;
+}
+
+#upp {
+    margin-left: 0.4vw;
+}
+
+.logout-icon {
+    margin-left: 5px;
+}
+
+.configrcoes{
+    margin-top: 0.4vw;
 }
 
 /* telas menores 480px */
