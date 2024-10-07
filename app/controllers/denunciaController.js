@@ -106,21 +106,8 @@ const denunciaController = {
         }
     },
 
-    listarDenuncias: async (req, res) => {
-        try {
-        const denuncias = await denunciasModels.listarDenuncias(); 
-        const jsonResult = {
-            denuncias: denuncias,
-            page: "../partial/adm/denuncias"
-        };
 
-        res.render('pages/tabelasAdm', jsonResult);
-        } catch (error) {
-            console.error('Erro ao listar as denúncias: ', error);
-            res.status(500).send('Erro ao listar as denúncias.');
-        }
-    
-    },
+
 }
 
 module.exports = denunciaController;

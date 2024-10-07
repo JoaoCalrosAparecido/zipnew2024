@@ -17,7 +17,11 @@
                     <td class="celula2"><%= denuncia.total_repetido %></td>
                     <td class="celula3"><%= denuncia.total_fora_tema %></td>
                     <td class="celula4"><%= denuncia.total_ma_qualidade %></td>
-                    <td class="celula5"><button type="submit" class="efeito-botao">Remover</button></td>
+                    <td class="celula5">
+                        <form action="/removerDenuncia?id_prod_cliente=<%= denuncia.id_prod_cliente %>" method="post">
+                            <button type="submit" class="efeito-botao">Remover</button>
+                        </form>
+                    </td>
                 </tr>
             <% }) %>
         </tbody>

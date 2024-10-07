@@ -37,6 +37,11 @@ const admController = {
         }
     },
 
+    removerProdutoDenunciado: async (id_prod_cliente) => {
+            await denunciasModels.removerProdutoDenunciado(id_prod_cliente);
+    },
+    
+
 
     aprovarFamoso: async (req, res) => {
         const idUsuario = req.query.idUsuario

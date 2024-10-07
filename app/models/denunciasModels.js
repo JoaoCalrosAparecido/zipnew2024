@@ -65,6 +65,11 @@ const denunciasModels = {
                 id_Cliente_denunciado;`;
             const [denuncias] = await pool.query(query);
             return denuncias
+    },
+
+    removerProdutoDenunciado: async (id_prod_cliente) => {
+        const queryProduto = 'DELETE FROM `produtos` WHERE id_prod_cliente = ?';
+        await pool.query(queryProduto, [id_prod_cliente]);
     }
 }
 
