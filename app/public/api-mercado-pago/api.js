@@ -3,24 +3,28 @@ document.addEventListener("DOMContentLoaded", function (e) {
         locale: 'pt-BR' // Os mais comuns são: 'pt-BR', 'es-AR' e 'en-US'
     });
 
+    console.log("primeira etapa")
     
+
     // Handle call to backend and generate preference.
     document.getElementById("checkout-btn").addEventListener("click", function () {
-        $('#checkout-btn').attr("disabled", true);
+        console.log("clicou no botão")
+        //$('#checkout-btn').attr("disabled", true);
         const items = document.querySelectorAll(".products .item");
+        console.log(items)
         // Array para armazenar os dados extraídos
         const extractedData = [];
         // Itera sobre cada item para extrair os dados
         items.forEach(item => {
-            const price = item.querySelector(".preco-prod");
-            const unit_price = parseFloat(price.toFixed(2));
-            const  title = item.querySelector(".name-prod");
+            console.log(item)
+            const unit_price = Number(parseFloat( item.querySelector(".preco-prod-value").innerText).toFixed(2));
+            const  title = item.querySelector(".name-prod").innerText;
             const quantity = 1;
             const currency_id = "BRL";
             extractedData.push({ unit_price, title, quantity, currency_id });
         });
         const orderData = { items: extractedData };
-
+        console.log(orderData)
         console.log('teste')
         
         fetch("/create-preference", {
@@ -35,14 +39,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
         })
         .then(function (preference) {
             createCheckoutButton(preference.id);
-            $(".shopping-cart").fadeOut(500);
+            //$(".shopping-cart").fadeOut(500);
             setTimeout(() => {
-                $(".container_payment").show(500).fadeIn();
+               // $(".container_payment").show(500).fadeIn();
             }, 500);
         })
         .catch(function () {
             alert("Unexpected error");
-            $('#checkout-btn').attr("disabled", false);
+           // $('#checkout-btn').attr("disabled", false);
         });
     });
 
@@ -69,11 +73,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
 
     // Go back
-    document.getElementById("go-back").addEventListener("click", function () {
+    /*document.getElementById("go-back").addEventListener("click", function () {
         $(".container_payment").fadeOut(500);
         setTimeout(() => {
             $(".shopping-cart").show(500).fadeIn();
         }, 500);
         $('#checkout-btn').attr("disabled", false);
-    });
+    });*/
 });

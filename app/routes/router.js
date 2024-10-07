@@ -132,42 +132,39 @@ router.get("/cart",
     );
 
 
-router.post("/create-preference", function (req, res) {
-const preference = new Preference(client);
-console.log(req.body.items);
-preference.create({
-body: {
-items: req.body.items,
+      router.post("/create-preference", function (req, res) {
+      const preference = new Preference(client);
+      console.log(req.body.items);
+      preference.create({
+      body: {
+      items: req.body.items,
+
+      back_urls: {
+      "success": process.env.URL_BASE + "/feedback",
+      "failure": process.env.URL_BASE + "/feedback",
+      "pending": process.env.URL_BASE + "/feedback"
+      },
+      auto_return: "approved",
+      }
+      })
+      .then((value) => {
+      res.json(value)
+      })
+      .catch(console.log)
+      });
+      router.get("/feedback", function (req, res) {
+      pedidoController.gravarPedido(req, res);
+      });
 
 
+      router.get('/pedidos', (req, res) => {
+          const pedidos = req.session.pedidos || []; // ou outra forma de obter os pedidos
+          res.render('pages/cart', { pedidos: pedidos });
+      });
 
 
-back_urls: {
-"success": process.env.URL_BASE + "/",
-"failure": process.env.URL_BASE + "/feedback",
-"pending": process.env.URL_BASE + "/feedback"
-},
-auto_return: "approved",
-}
-})
-.then((value) => {
-res.json(value)
-})
-.catch(console.log)
-});
-router.get("/feedback", function (req, res) {
-pedidoController.gravarPedido(req, res);
-});
-
-
-router.get('/pedidos', (req, res) => {
-    const pedidos = req.session.pedidos || []; // ou outra forma de obter os pedidos
-    res.render('pages/cart', { pedidos: pedidos });
-});
-
-
-// Exporta o router
-module.exports = router;
+      // Exporta o router
+      module.exports = router;
 
 
 

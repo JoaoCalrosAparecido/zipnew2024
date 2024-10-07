@@ -432,17 +432,17 @@
 <!--lista do codigo-->
 
     <section id="section_da_parte_da_sacola">
-        <article class="container" id="cart-items">
+        <article class="container products " id="cart-items">
           
             
             <% for(var i = 0; i < cart.length; i++) { %>
                 <article id="cart-items">
                     <!-- Itens do carrinho serão inseridos aqui -->
-                    <section class="cart-item">
+                    <section class="cart-item item">
                         <img src="../../IMG/uploads/<%= cart[i].img1.trim() %>" alt="Nome do Produto">
                         <article>
                             <h3 class="name-prod"><%= cart[i].tituloprod %></h3>
-                            <p class="preco-prod">R$ <%= cart[i].preçoprod %></p>
+                            <p class="preco-prod">R$ <span class="preco-prod-value"><%= cart[i].preçoprod %></span></p>
                             <h1>
                                 <img id="coracao_mover" src="../../IMG/sacola/produtos/coracao_escrito_mover_par_uma_lista_de_desejos.svg" alt="Mover para a wishlist">
                                 Mover para a wishlist
@@ -504,13 +504,14 @@
                         <label for="numero">Número da Casa:</label>
                          <input type="text" id="numero" name="numero" required placeholder="Ex: 123" pattern="\d+" title="Apenas números são permitidos">
                         -->
-                            <article id="">
-                                <button id="checkout-btn">
-                                    <P id="paragrafo_do_botao_do_finalizar_resumo">FINALIZAR</P>
-                                </button>
+                            
                                 
-                            </article>
-                        
+                                    <button id="checkout-btn">
+                                        <P id="paragrafo_do_botao_do_finalizar_resumo">FINALIZAR</P>
+                                    </button>
+                                
+                               
+                            
                     </section>
                 </article>
 
