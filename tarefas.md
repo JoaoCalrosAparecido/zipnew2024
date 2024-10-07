@@ -1,9 +1,16 @@
 ## O que falta do projeto (Lazully)
-- Fazer a pagina de Adm
+- Carrosel Bazar e Adc Bazar
 
-- Carrosel Bazar
+- Pop up denunciado com sucesso
 
-- Quando a pessoa clicar em denúncias deve aparecer elas anônimas, só o motivo;
+- Validações: Url - Bazar/Adc Bazar (vermelho e pop)
 
-- Campo de Busca
+- Mensagem de Solicitaçã do Famoso negada
 
+- Adm pode aplicar banimentos / Fazer a pagina de Adm
+
+- Usuario poder remover produto
+
+- Campo de busca
+
+- Cadastro Politica de Privacidade
