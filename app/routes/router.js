@@ -258,10 +258,6 @@ router.get("/meus-pedidos", function (req, res) {
   res.render('pages/meus-pedidos', { msg: 'Back-end funcionando' });
 });
 
-router.get("/denuncias-usu", function (req, res) {
-  res.render('pages/denuncias-usu', { msg: 'Back-end funcionando' });
-});
-
 router.get('/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
@@ -638,6 +634,18 @@ router.post("/denunciar-vendedor/:id_prod_cliente",
   function (req, res) {
     denunciaController.denunciarV(req, res);
   }
-)
+);
+
+
+router.get("/denuncias-usu", async function (req, res) {
+  const userId = req.session.autenticado.id;
+  const denuncias = await denunciasModels.listarDenunciasUsu(userId);
+  const jsonResult = {
+      denuncias: denuncias,
+  };
+  res.render('pages/denuncias-usu', jsonResult);
+});
+
+
 
 module.exports = router;

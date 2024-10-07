@@ -67,6 +67,27 @@ const denunciasModels = {
             return denuncias
     },
 
+    listarDenunciasUsu: async (userId) => {
+        const query = 
+            `SELECT 
+                dp.id_prod_cliente, 
+                SUM(dp.repetido) AS total_repetido,
+                SUM(dp.fora_tema) AS total_fora_tema,
+                SUM(dp.ma_qualidade) AS total_ma_qualidade,
+                p.tituloprod AS nome_produto  -- Seleciona o nome do produto
+            FROM 
+                denuncias_produto dp
+            JOIN 
+                produtos p ON dp.id_prod_cliente = p.id_prod_cliente
+            WHERE 
+                p.id_Cliente = ?
+            GROUP BY 
+                dp.id_prod_cliente;`;
+        
+        const [denuncias] = await pool.query(query, [userId]);
+        return denuncias;
+    },
+
     removerProdutoDenunciado: async (id_prod_cliente) => {
         const queryProduto = 'DELETE FROM `produtos` WHERE id_prod_cliente = ?';
         await pool.query(queryProduto, [id_prod_cliente]);

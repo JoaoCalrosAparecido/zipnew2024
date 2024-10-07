@@ -375,12 +375,14 @@
                 </tr>
             </thead>
             <tbody id="denuncias__celulas">
-                <tr id="denuncias__linhas">
-                    <td>Saia preta</td>
-                    <td>01</td>
-                    <td>02</td>
-                    <td>03</td>
-                </tr>
+                <% denuncias.forEach(denuncia => { %>
+                    <tr id="denuncias__linhas">
+                        <td><%= denuncia.nome_produto %></td>
+                        <td><%= denuncia.total_repetido %></td>
+                        <td><%= denuncia.total_fora_tema %></td>
+                        <td><%= denuncia.total_ma_qualidade %></td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
     </section>
