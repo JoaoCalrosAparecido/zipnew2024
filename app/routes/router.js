@@ -101,6 +101,51 @@ router.get("/cart",
     res.render('pages/cart', { msg: 'Back-end funcionando', cart: cart });
   });
 
+  router.get("/produtos-adicionados",
+    verificarUsuAutenticado,
+    verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+    async function (req, res) {
+      const userId = req.session.autenticado.id;
+      const prodAdd = await produtosModels.findAllProductByUserId(userId);
+      
+      
+  
+      
+      res.render('pages/produtos-adicionados', { msg: 'Back-end funcionando', prodAdd: prodAdd });
+    });
+
+    router.post("/removeProdAdd",
+      verificarUsuAutenticado,
+      verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+      async function (req, res) {
+  
+        try {
+        
+  
+          const productAddremove = req.body.productAddremove; // Captura o valor do input
+    
+          console.log('ID do produto:', productAddremove);
+         
+          const userId = req.session.autenticado.id;
+    
+    
+           await connection.query(
+            "DELETE FROM `produtos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
+            [userId, productAddremove]
+          );
+          console.log('produto do add removido');
+    
+          res.redirect('/produtos-adicionados'); 
+        } catch (err) {
+          console.log(err);
+          res.status(500).send('Erro ao remover produto adicionado'); // Opcional: resposta de erro
+        }
+        
+      }
+      );
+  
+  
+
   router.post("/removeCart",
     verificarUsuAutenticado,
     verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
@@ -408,6 +453,7 @@ router.post("/adicionar-produto",
       img3: req.files.img3[0].filename,
       img4: req.files.img4[0].filename,
     }
+
 
     const createProd = await produtosModels.createProd(dadosProduto)
     console.log(createProd)

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/body.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/cart-styles.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/linha_sacola.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/parte_superior.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/menu.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/menu_retratio.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/parte_da_sacola.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/sacola_subtotal.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/resumo_&_pix.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/voce_pode_gostar.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/slide.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/rodape.css">
+</head>
+<body>
+    <section id="section_da_parte_da_sacola">
+        <article class="container products " id="cart-items">
+          
+            
+            <% for(var i = 0; i < prodAdd.length; i++) { %>
+                <article id="cart-items">
+                    <!-- Itens do carrinho serão inseridos aqui -->
+                    <section class="cart-item item">
+                        <img src="../../IMG/uploads/<%= prodAdd[i].img1.trim() %>" alt="Nome do Produto">
+                        <article>
+                            <h3 class="name-prod"><%= prodAdd[i].tituloprod %></h3>
+                            <p class="preco-prod">R$ <span class="preco-prod-value"><%= prodAdd[i].preçoprod %></span></p>
+                            <h1>
+                                <img id="coracao_mover" src="../../IMG/sacola/produtos/coracao_escrito_mover_par_uma_lista_de_desejos.svg" alt="Mover para a wishlist">
+                                Mover para a wishlist
+                            </h1>
+                        </article>
+                        <form action="removeProdAdd" method="post">
+                            <input type="hidden" name="productAddremove" value="<%= prodAdd[i].Id_prod_cliente %>"   style="opacity: 0;">
+                            <button id="btnremove" type="submit" ></button>
+                        </form>
+                    </section>
+                </article>
+            <% } %>
+       
+        </article>
+    </section>
+</body>
+</html>

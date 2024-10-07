@@ -1,6 +1,16 @@
 const pool = require("../../config/pool_conexoes");
 
 const prodModels = {
+
+    findAllProductByUserId: async (userId) => {
+        try {
+            const [linhas] = await pool.query('SELECT * FROM `produtos` WHERE `id_Cliente` = ? ', [userId]);
+            return linhas;
+        } catch (error) {
+            return error;
+        }
+    },
+
     findAllProductByCategoryName: async (name) => {
         try {
             console.log(name)
@@ -35,7 +45,7 @@ const prodModels = {
             return linhas;
         } catch (error) {
             console.log(error);
-            return error;
+            return errordadosForm
         }
     },
     
