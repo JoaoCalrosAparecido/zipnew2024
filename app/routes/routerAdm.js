@@ -56,6 +56,27 @@ router.get("/adm-famosos",
     admController.mostrarDenuncias(req, res)
   })
 
+  router.post('/removerDenuncia',   
+    verificarUsuAutenticado,
+    verificarUsuAutorizado(
+      "./pages/login_do_usuario", {
+      erros: null,
+      dadosform: { email: "", senha: "" },
+      logado: false,
+      usuarioautenticado: null
+    },
+      [3]
+    ), async (req, res) => {
+    try {
+        const { id_prod_cliente } = req.query;
+        await admController.removerProdutoDenunciado(id_prod_cliente);
+        res.redirect('/adm-denuncias');
+    } catch (error) {
+        console.error('Erro ao remover produto denunciado: ', error);
+        res.status(500).send('Erro ao remover o produto denunciado.');
+    }
+});
+
 router.post("/aprovarFamoso",
   verificarUsuAutenticado,
   verificarUsuAutorizado(
