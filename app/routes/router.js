@@ -107,11 +107,13 @@ router.get("/cart",
     async function (req, res) {
       const userId = req.session.autenticado.id;
       const prodAdd = await produtosModels.findAllProductByUserId(userId);
+      const prodAddId = await produtosModels.findProdById(produtoId);
+      
       
       
   
       
-      res.render('pages/produtos-adicionados', { msg: 'Back-end funcionando', prodAdd: prodAdd });
+      res.render('pages/produtos-adicionados', { msg: 'Back-end funcionando', prodAdd: prodAdd, prodAddId:prodAddId });
     });
 
     router.post("/removeProdAdd",
@@ -121,17 +123,17 @@ router.get("/cart",
   
         try {
         
-  
+          const userId = req.session.autenticado.id;
           const productAddremove = req.body.productAddremove; // Captura o valor do input
     
-          console.log('ID do produto:', productAddremove);
+          console.log( userId, productAddremove);
          
-          const userId = req.session.autenticado.id;
+          
     
     
            await connection.query(
-            "DELETE FROM `produtos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
-            [userId, productAddremove]
+            "DELETE FROM `produtos` WHERE Id_prod_cliente = ?",
+            [ productAddremove]
           );
           console.log('produto do add removido');
     
