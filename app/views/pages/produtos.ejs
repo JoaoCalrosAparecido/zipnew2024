@@ -21,9 +21,40 @@
     <script src="/produtos/denunciar/menu.js" defer></script>
     <script src="/produtos/denunciar/menud.js" defer></script>
     <script src="/produtos/denunciar/script.js" defer></script>
+
+    <!-- Notify -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
+
 </head>
 
 <body>
+    <% if (dadosNotificacao) {%>
+        <script>
+            (() => {
+                function mostrarNotificacao() {
+                    return new Notify({
+                        status: '<%= dadosNotificacao.type %>',
+                        title: '<%= dadosNotificacao.title %>',
+                        text: '<%= dadosNotificacao.msg %>',
+                        speed: 300,
+                        effect: 'fade',
+                        showIcon: false,
+                        showCloseButton: true,
+                        autoclose: true,
+                        autotimeout: 5000,
+                        gap: 20,
+                        distance: 20,
+                        position: 'center'
+                    });
+                }
+
+                mostrarNotificacao();
+            })();
+        </script>
+    <% } %>
         <!-- parte superior do desconto na primeira compra -->
         <a href="/masculino">
             <section id="section_parte_superior">

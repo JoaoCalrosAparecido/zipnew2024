@@ -83,8 +83,21 @@ const denunciaController = {
                 'SELECT * FROM `denuncias_vendedor` WHERE id_Cliente = ? AND id_Cliente_denunciado = ?',
                 [userId, idClienteDenunciado]
             );
+            
+            const produto = produtos[0];
+
             if (denunciasExistentes.length > 0) {
-                return res.status(400).send("Você já denunciou este vendedor.");
+                const jsonResult = {
+                    usuarioautenticado: req.session.autenticado, 
+                    produto: produto,
+                    nomeCliente: req.session.autenticado.nomeCliente,
+                    dadosNotificacao: { 
+                        title: "Tudo ocorreu como esperado :)", 
+                        msg: "Denúncia efetuada com sucesso.", 
+                        type: 'sucess' 
+                    }
+                }
+                return res.render('pages/produtos', jsonResult);
             }
     
             const { Fraude, Ilícito, Enganosa } = req.body;
@@ -99,7 +112,17 @@ const denunciaController = {
     
             await denunciasModels.denunciarVend(dadosDenunciaV);
     
-            res.status(200).send("Denúncia registrada com sucesso.");
+            const jsonResult = {
+                usuarioautenticado: req.session.autenticado, 
+                produto: produto,
+                nomeCliente: req.session.autenticado.nomeCliente,
+                dadosNotificacao: { 
+                    title: "Tudo ocorreu como esperado :)", 
+                    msg: "Denúncia efetuada com sucesso.", 
+                    type: 'sucess' 
+                }
+            }
+            return res.render('pages/produtos', jsonResult);
         } catch (error) {
             console.error("Erro ao processar a denúncia:", error);
             res.status(500).send("Erro ao processar a denúncia.");

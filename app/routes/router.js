@@ -284,7 +284,8 @@ router.get('/produtos/:id_prod_cliente',
           res.render('pages/produtos', { 
             usuarioautenticado: req.session.autenticado, 
             produto: produto,
-            nomeCliente: nomeCliente 
+            nomeCliente: nomeCliente,
+            dadosNotificacao: null
           });
         }
       } else {
