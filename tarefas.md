@@ -1,16 +1,21 @@
 ## O que falta do projeto (Lazully)
 - Carrosel Bazar e Adc Bazar
 
-- Pop up denunciado com sucesso
+- Pop up denunciado com sucesso (Moreira helps)
 
-- Validações: Url - Bazar/Adc Bazar (vermelho e pop)
+- Validações: Url - Bazar/Adc Bazar (vermelho e pop) (Moreira helps)
 
-- Mensagem de Solicitaçã do Famoso negada
+- Mensagem de Solicitação do Famoso negada (God helps)
 
 - Adm pode aplicar banimentos / Fazer a pagina de Adm
 
-- Usuario poder remover produto
-
-- Campo de busca
+- Campo de busca (Thomaz helps)
 
 - Cadastro Politica de Privacidade
+
+
+## O que falta do projeto (Sophia)
+- Mobile Perfil Bugo
+
+## O que falta do projeto (João)
+- Usuario poder remover produto

@@ -49,12 +49,12 @@ body {
     border: none;
 }
 
-.denuncias-colunas-conteudo>tr>td:nth-child(5)>button {
+#borão {
     background-color: #f70064;
 }
 
 
-.denuncias-colunas-conteudo>tr>td:nth-child(5)>button:hover {
+#borão:hover {
     opacity: 0.8;
 }
 
