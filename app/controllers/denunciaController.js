@@ -8,23 +8,31 @@ const denunciasModels = require("../models/denunciasModels");
 const denunciaController = {
     denunciarP: async (req, res) => {
         try {
+            
             const userId = req.session.autenticado.id;
             const produtoId = parseInt(req.params.id_prod_cliente);
             const [produtos] = await pool.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
-    
-            // // Verifica se o produto existe
-            // if (produtos.length === 0) {
-            //     return res.status(404).send("Produto não encontrado.");
-            // }
-    
+            
             // Verifica se o usuario ja fez uma denuncia
             const [denunciasExistentes] = await pool.query(
                 'SELECT * FROM `denuncias_produto` WHERE id_Cliente = ? AND id_prod_cliente = ?',
                 [userId, produtoId]
             );
             if (denunciasExistentes.length > 0) {
-                return res.status(400).send("Você já denunciou este produto.");
+                const produto = produtos[0];
+                const jsonResult = {
+                    usuarioautenticado: req.session.autenticado, 
+                    produto: produto,
+                    nomeCliente: req.session.autenticado.nomeCliente,
+                    dadosNotificacao: { 
+                        title: "Você ja denunciou esse Produto", 
+                        msg: "Produto ja denunciado", 
+                        type: 'info' 
+                    }
             }
+            return res.render('pages/produtos', jsonResult);
+        }
+            
     
             const { Repetido, ForaTema, MaQualidade } = req.body;
     
@@ -54,8 +62,19 @@ const denunciaController = {
                 return res.status(200).send(`Produto ${produtoId} foi removido devido ao número elevado de denúncias.`);
             }
     
-            res.status(200).send("Denúncia registrada com sucesso.");
+            const produto = produtos[0];
 
+            const jsonResult = {
+                usuarioautenticado: req.session.autenticado, 
+                produto: produto,
+                nomeCliente: req.session.autenticado.nomeCliente,
+                dadosNotificacao: { 
+                    title: "Sua denúncia foi enviada", 
+                    msg: "Denúncia realizada com sucesso", 
+                    type: 'sucess' 
+                }
+            }
+            return res.render('pages/produtos', jsonResult);
         } catch (error) {
             console.error("Erro ao processar a denúncia:", error);
             res.status(500).send("Erro ao processar a denúncia.");
@@ -92,9 +111,9 @@ const denunciaController = {
                     produto: produto,
                     nomeCliente: req.session.autenticado.nomeCliente,
                     dadosNotificacao: { 
-                        title: "Tudo ocorreu como esperado :)", 
-                        msg: "Denúncia efetuada com sucesso.", 
-                        type: 'sucess' 
+                        title: "Você ja denunciou esse vendedor", 
+                        msg: "Vendedor ja denunciado", 
+                        type: 'info' 
                     }
                 }
                 return res.render('pages/produtos', jsonResult);
@@ -117,8 +136,8 @@ const denunciaController = {
                 produto: produto,
                 nomeCliente: req.session.autenticado.nomeCliente,
                 dadosNotificacao: { 
-                    title: "Tudo ocorreu como esperado :)", 
-                    msg: "Denúncia efetuada com sucesso.", 
+                    title: "Sua denúncia foi enviada", 
+                    msg: "Denúncia realizada com sucesso", 
                     type: 'sucess' 
                 }
             }

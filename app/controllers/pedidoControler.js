@@ -2,7 +2,6 @@
 const { body, validationResult } = require("express-validator");
 const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
-/*
 const moment = require("moment"); // Certifique-se de ter isso importado
 const pedidoModel = require("../models/pedidoModel"); // Certifique-se de ter esse import
 
@@ -36,4 +35,4 @@ const pedidoControler = {
   }
 };
 
-module.exports = pedidoControler;
+module.exports = pedidoControler;*/
