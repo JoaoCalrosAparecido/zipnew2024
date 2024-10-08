@@ -11,6 +11,7 @@ const prodModels = {
         }
     },
 
+    
     findAllProduct: async (userId, produtoId) => {
         try {
             const [linhas] = await pool.query('SELECT * FROM `produtos` WHERE `id_Cliente` = ? AND id_prod_cliente = ?', [userId, produtoId]);

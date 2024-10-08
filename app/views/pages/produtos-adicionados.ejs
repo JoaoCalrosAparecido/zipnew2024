@@ -36,14 +36,17 @@
                             </h1>
                         </article>
                         
-                        <form action="removeProdAdd" method="post">
-                            <input type="hidden" name="productAddremove" value="<%= prodAdd[i].Id_prod_cliente %>"   style="opacity: 0;">
+                        <form action="removeProdAdd" method="post" onsubmit="return confirmRemoval()">
+                            <input type="" name="productAddremove" value="<%= prodAdd[i].id_prod_cliente %>"   style="opacity: 0;">
                             <button id="btnremove" type="submit" ></button>
                         </form>
                        
                     </section>
                 </article>
             <% } %>
+
+            <!--tem certeza que deseja remover o produto-->
+            <script src="../../produto-adcionados/temcerteza.js"></script>
        
         </article>
     </section>

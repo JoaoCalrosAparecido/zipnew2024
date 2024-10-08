@@ -17,11 +17,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
         // Itera sobre cada item para extrair os dados
         items.forEach(item => {
             console.log(item)
+            const id = parseFloat(document.getElementById('id_prod').value)
             const unit_price = Number(parseFloat( item.querySelector(".preco-prod-value").innerText).toFixed(2));
             const  title = item.querySelector(".name-prod").innerText;
             const quantity = 1;
             const currency_id = "BRL";
-            extractedData.push({ unit_price, title, quantity, currency_id });
+            extractedData.push({ id, unit_price, title, quantity, currency_id });
         });
         const orderData = { items: extractedData };
         console.log(orderData)

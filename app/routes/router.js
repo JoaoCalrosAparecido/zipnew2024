@@ -109,13 +109,14 @@ router.get("/cart",
     async function (req, res) {
       const userId = req.session.autenticado.id;
       
-      const prodAdd = await produtosModels.findAllProduct(userId, produtoId);
+      const prodAdd = await produtosModels.findAllProductByUserId(userId);
      
       
       
     
       
   
+
       
       res.render('pages/produtos-adicionados', { msg: 'Back-end funcionando', prodAdd: prodAdd });
     });
@@ -135,7 +136,9 @@ router.get("/cart",
           console.log('ID do produto:', productId)
           const userId = req.session.autenticado.id;
           console.log( userId, productId);
-    
+          
+
+
            await connection.query(
             "DELETE FROM `produtos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
             [userId, productId]

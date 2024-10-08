@@ -438,9 +438,10 @@
             <% for(var i = 0; i < cart.length; i++) { %>
                 <article id="cart-items">
                     <!-- Itens do carrinho serão inseridos aqui -->
-                    <section class="cart-item item">
+                    <section class="cart-item item" id="">
                         <img src="../../IMG/uploads/<%= cart[i].img1.trim() %>" alt="Nome do Produto">
                         <article>
+                            <input type="" name="id_prod" id="id_prod" value="<%= cart[i].Id_prod_cliente %>">
                             <h3 class="name-prod"><%= cart[i].tituloprod %></h3>
                             <p class="preco-prod">R$ <span class="preco-prod-value"><%= cart[i].preçoprod %></span></p>
                             <h1>
@@ -459,6 +460,7 @@
         </article>
     </section>
     
+
 
     
 
