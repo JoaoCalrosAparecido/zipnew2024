@@ -32,3 +32,6 @@ const body = {
     console.error(error);
   }
 })();
+
+accessToken = 'APP_USR-5593607796954557-092821-c64b7b86bb2f21f48268017986839bb2-2009674095'
+publicKey = 'APP_USR-241135b5-df14-48b8-bfe3-985304c1e399'

@@ -1,16 +1,16 @@
-const pool = require("../../config/pool_conexoes");
+/*const pool = require("../../config/pool_conexoes");
 const { body, validationResult } = require("express-validator");
 const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
-/* 
+/*
 const moment = require("moment"); // Certifique-se de ter isso importado
 const pedidoModel = require("../models/pedidoModel"); // Certifique-se de ter esse import
-*/
+
 
 const pedidoControler = {
   gravarPedido: async (req, res) => {
     try {
-      const pedidos = req.session.pedidos;
+      const pedidos = req.session.cart;
       const camposJsonPedido = {
         data: moment().format("YYYY-MM-DD HH:mm:ss"),
         usuario_id_usuario: req.session.autenticado.id,
