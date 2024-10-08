@@ -93,8 +93,10 @@ router.get("/cart",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
+
     const userId = req.session.autenticado.id;
     const cart = await cartModels.findAllProductByUserId(userId);
+    
     
 
     
@@ -106,14 +108,16 @@ router.get("/cart",
     verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
     async function (req, res) {
       const userId = req.session.autenticado.id;
-      const prodAdd = await produtosModels.findAllProductByUserId(userId);
-      const prodAddId = await produtosModels.findProdById(produtoId);
+      
+      const prodAdd = await produtosModels.findAllProduct(userId, produtoId);
+     
       
       
+    
       
   
       
-      res.render('pages/produtos-adicionados', { msg: 'Back-end funcionando', prodAdd: prodAdd, prodAddId:prodAddId });
+      res.render('pages/produtos-adicionados', { msg: 'Back-end funcionando', prodAdd: prodAdd });
     });
 
     router.post("/removeProdAdd",
@@ -123,17 +127,18 @@ router.get("/cart",
   
         try {
         
-          const userId = req.session.autenticado.id;
-          const productAddremove = req.body.productAddremove; // Captura o valor do input
-    
-          console.log( userId, productAddremove);
-         
           
+          const productId = req.body.productAddremove; // Captura o valor do input
     
+          
+         
+          console.log('ID do produto:', productId)
+          const userId = req.session.autenticado.id;
+          console.log( userId, productId);
     
            await connection.query(
-            "DELETE FROM `produtos` WHERE Id_prod_cliente = ?",
-            [ productAddremove]
+            "DELETE FROM `produtos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
+            [userId, productId]
           );
           console.log('produto do add removido');
     
