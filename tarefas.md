@@ -1,7 +1,7 @@
 ## O que falta do projeto (Lazully)
 - Carrosel Bazar e Adc Bazar
 
-- Pop up denunciado com sucesso (Moreira helps)
+- Pop up denunciado preencha alguma denuncia e validação para não passar em branco
 
 - Validações: Url - Bazar/Adc Bazar (vermelho e pop) (Moreira helps)
 

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <script src="../../Bazar/adc-b/img.js" defer></script>
+    <script src="../../css-bazar/carrosel.js" defer></script>
 </head>
 
 <body>
@@ -397,9 +398,15 @@
             </section>
 
 
-            
+            <section class="carousel__container mt-3 mb-3">
+                <article class="arrows">
+                    <button class="arrow-btn previous"><i class="bi bi-arrow-left-short"></i></button>
+                    <button class="arrow-btn next"><i class="bi bi-arrow-right-short"></i></button>
+                </article>
+                <section class="carousel__inner">
+
             <section id="cen">
-                <article id="product">
+                <article id="product" class="card">
                     <a href="/adc-produto">
                         <section id="box">
                             <h1 id="add"> <lord-icon src="https://cdn.lordicon.com/sbnjyzil.json" trigger="hover"
@@ -411,7 +418,7 @@
 
 
                     <% if(listaProdBazar) { listaProdBazar.forEach(function (produtos){ %>
-                        <a>
+                        <a class="card">
                             <section id="ash">
                                 <h1 id="addyy"></h1>
                             </section>
@@ -427,7 +434,8 @@
                 </article>
             </section>
             <script src="https://cdn.lordicon.com/lordicon.js"></script>
-
+                    </section>
+                </section>
 
             <section id="submitSection">
                 <button id="submitBtn">ATUALIZAR BAZAR</button>
