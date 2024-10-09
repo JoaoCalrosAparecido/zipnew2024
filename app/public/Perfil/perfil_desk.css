@@ -62,7 +62,7 @@ hr{
 }
 
 #box{
-    margin-top: 15px;
+    margin-top: 1.2vw;
     margin-bottom: 35px;
 
     background-color: rgb(255, 255, 255);
@@ -84,6 +84,8 @@ hr{
     color: #6d6e79;
     vertical-align: none;
     font-size: 32px;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 0.6vw;
 }
 
 /* Informações Usuario*/
@@ -186,8 +188,13 @@ hr{
 
 #likeit{
     text-align: center;
-    font-size: 24px;
-    font-weight: 600;
+    border-bottom: 2px solid #f1f1f1;
+    width: 91%;
+    padding-bottom: 0.6vw;
+    margin-left: 3.5vw;
+    font-size: 32px;
+    font-weight: 400;
+    color: #6d6e79;
 }
 
 #like, #likes, #likez, #likezz{
@@ -211,15 +218,11 @@ hr{
 
 #likes, #likez, #likezz{
     margin-left: 5px;
+    height: 60vh;
+    width: 21.2vw;
+    margin-top: 2vw;
 }
 
-#h1, #h3{
-    font-size: 14px;
-}
-#h2, #h4{
-    font-size: 13px;
-    color: #7F7F7F;
-}
 
 #sepair{
     display: flex;
@@ -231,16 +234,23 @@ hr{
     margin-left: 5px;
 }
 
-#dissy{
-    margin-left: 8vw;
-}
 
 #dissa{
-    margin-left: 8.5vw;
+    margin-left: 12vw;
 }
 
 #dissw{
-    margin-left: 6vw;
+    margin-left: 10vw;
+}
+
+#h3 {
+    font-weight: 500;
+    margin-left: 1vw;
+    font-size: 16px;
+}
+
+#h4 {
+    margin-left: 0.8vw;
 }
 
 #motag{
@@ -258,3 +268,4 @@ hr{
 #formulario {
     height: 48vh;
 }
+
