@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function (e) {
+    //chave pública do vendedor
     const mercadopago = new MercadoPago('APP_USR-5593607796954557-092821-c64b7b86bb2f21f48268017986839bb2-2009674095', {
         locale: 'pt-BR' // Os mais comuns são: 'pt-BR', 'es-AR' e 'en-US'
     });
 
     console.log("primeira etapa")
     
+
 
     // Handle call to backend and generate preference.
     document.getElementById("checkout-btn").addEventListener("click", function () {
@@ -21,10 +23,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
             const unit_price = Number(parseFloat( item.querySelector(".preco-prod-value").innerText).toFixed(2));
             const  title = item.querySelector(".name-prod").innerText;
             const quantity = 1;
-            const currency_id = "BRL";
-            extractedData.push({ id, unit_price, title, quantity, currency_id });
+            const currency_id = "BRL";        
+            extractedData.push({ id, unit_price, title,quantity, currency_id });
         });
         const orderData = { items: extractedData };
+ 
         console.log(orderData)
         console.log('teste')
         

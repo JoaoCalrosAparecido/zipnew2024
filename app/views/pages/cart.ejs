@@ -34,7 +34,7 @@
             </section>
         </a>
     
-    
+
         <!--menu principal-->
         <section id="menu_principal_como_todo">
             <!--area do menu que contem os links-->
@@ -111,6 +111,7 @@
     
     
     
+              
                     
     
                     <figure id="imagem_da_barra_de_pesquisa" class="search-container_principal">
@@ -450,7 +451,7 @@
                             </h1>
                         </article>
                         <form action="removeCart" method="post">
-                            <input type="hidden" name="idRemoveProdCart" value="<%= cart[i].Id_prod_cliente %>"   style="opacity: 0;">
+                            <input type="hidden" name="idRemoveProdCart" value="<%= cart[i].Id_prod_cliente %>, "   style="opacity: 0;">
                             <button id="btnremove" type="submit" ></button>
                         </form>
                     </section>
@@ -508,7 +509,8 @@
                         -->
                             
                                 
-                                    <button id="checkout-btn">
+                                    
+                                    <button type="submit" id="checkout-btn">
                                         <P id="paragrafo_do_botao_do_finalizar_resumo">FINALIZAR</P>
                                     </button>
                                 
