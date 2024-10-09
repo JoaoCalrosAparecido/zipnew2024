@@ -112,48 +112,6 @@ body {
 }
 
 
-/* Carrosel */
-
-#product{
-    flex-direction: row;
-    display: flex;
-}
-
-#cen{
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    margin-bottom: 8vw;
-    margin-top: 6vw;
-}
-
-
-#ash{
-    margin-top: 15px;
-    margin-bottom: 6px;
-    background-color: rgb(216, 215, 215);
-    width: 23vw;
-    height: 31vw;
-    display: grid;
-    place-items: center;
-    margin-right: 5px;
-}
-
-#cust{
-    font-size: 18px;
-    margin-left: 1vw;
-    width: 100%;
-}
-
-#cust:nth-child(2) {
-    margin: 0.5vw 0 0 1.2vw;
-    font-weight: 500;
-    font-size: 20px;
-}
-
-#cust:nth-child(3) {
-    margin-left: 1vw;
-}
 
 
 @media (max-width: 768px) {
@@ -228,28 +186,61 @@ body {
 }
 
 
+
+
+
+/* Carrosel */
+
+#product{
+    flex-direction: row;
+    display: flex;
+}
+
+#ash{
+    background-color: rgb(216, 215, 215);
+    width: 18vw;
+    height: 26vw;
+    display: grid;
+    place-items: center;
+}
+
+#cust{
+    font-size: 18px;
+    margin-left: 1vw;
+    width: 100%;
+}
+
 #addyy{
     width: 100%;
     height: 100%;
 }
 
+#cust:nth-child(2) {
+    margin: 0.5vw 0 0 1.2vw;
+    font-weight: 500;
+    font-size: 20px;
+}
 
+#cust:nth-child(3) {
+    margin-left: 1vw;
+}
 
 
 .carousel__container {
     overflow: hidden;
     position: relative;
     padding: 1rem 0;
+    width: 87vw;
 
     & .arrows .arrow-btn {
         display: flex;
-        min-width: 20px;
-        min-height: 20px;
+        min-width: 40px;
+        min-height: 40px;
         font-size: 25px;
         outline: none;
-        background: var(--cor-principal);
-        color: var(--cor-fundo);
-        border: 3px solid var(--cor-containers);
+        background: black;
+        color: white;
+        border: 3px solid white;
         cursor: pointer;
         transition: font .5s, color .5s, background .5s;
         border-radius: 50%;
@@ -257,11 +248,11 @@ body {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 50;
+        z-index: 1;
 
         &:hover {
             color: #ffffff;
-            background: var(--cor-principal-hover);
+            background: gray;
         }
 
         & i {
@@ -271,9 +262,11 @@ body {
 
     & .carousel__inner {
         display: flex;
-        width: fit-content;
+        width: 100%;
         align-items: center;
-        padding: 10px 2.5rem;
+        padding: 12px 2.5rem;
+        margin-bottom: 8vw;
+        margin-top: 6vw;
     }
 
     & .card {
@@ -290,8 +283,84 @@ body {
     right: 0;
 }
 
+#centro{
+    margin-left: 6vw;
+    margin-right: 6vw;
+}
+
 @media (min-width:768px) {
     .carousel__container .carousel__inner {
         gap: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+    .carousel__container .carousel__inner {
+        gap: 1.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #ash{
+
+        width: 70vw;
+        height: 100vw;
+    }
+    .carousel__container {
+        width: 92vw;
+        & .arrows .arrow-btn {
+            display: flex;
+            min-width: 40px;
+            min-height: 40px;
+            font-size: 25px;
+            outline: none;
+            background: black;
+            color: white;
+            border: 3px solid white;
+            cursor: pointer;
+            transition: font .5s, color .5s, background .5s;
+            border-radius: 50%;
+            padding: .5rem .6rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+    
+            &:hover {
+                color: #ffffff;
+                background: gray;
+            }
+    
+            & i {
+                margin: auto;
+            }
+        }
+    
+        & .carousel__inner {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            padding: 12px 7vw;
+            margin-bottom: 8vw;
+            margin-top: 6vw;
+        }
+    
+        & .card {
+            transition: transform .4s;
+            padding: 0 1rem;
+        }
+    }
+    
+    .arrow-btn.previous {
+        left: 0;
+    }
+    
+    .arrow-btn.next {
+        right: 0;
+    }
+    
+    #centro{
+        margin-left: 4vw;
+        margin-right: 4vw;
     }
 }

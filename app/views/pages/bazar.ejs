@@ -383,13 +383,13 @@
                     </p>
                 </section>
 
+                <section id="centro">
                 <section class="carousel__container mt-3 mb-3">
                     <article class="arrows">
                         <button class="arrow-btn previous"><i class="bi bi-arrow-left-short"></i></button>
                         <button class="arrow-btn next"><i class="bi bi-arrow-right-short"></i></button>
                     </article>
                     <section class="carousel__inner">
-                <section id="cen">
                     <% bazaarList[bazaarId].produtos.forEach(function (produto) { %>
                         <a id="none" href="/produtos/<%= produto.id_prod_cliente %>" class="card">
                             <section id="ash">
@@ -402,7 +402,6 @@
                             </p>
                         </a>
                         <% }) %>
-                    </section>
                 </section>
             </section>
 

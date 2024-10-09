@@ -9,7 +9,7 @@ carouselsContainers.forEach(container => {
     let indexAtual = 0;
     const atualizarCard = (arrayCard) => {
         arrayCard.forEach((card, indexCard) => {
-            card.style.transform = `translateX(-${indexAtual * 100}%)`;
+            card.style.transform = `translateX(-${indexAtual * 108}%)`;
             if (indexCard === indexAtual) {
                 card.classList.add("active")
             } else {
