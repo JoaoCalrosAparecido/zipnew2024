@@ -1,5 +1,5 @@
 ## O que falta do projeto (Lazully)
-- Carrosel Bazar e Adc Bazar
+- Carrosel seta
 
 - Pop up denunciado preencha alguma denuncia e validação para não passar em branco
 

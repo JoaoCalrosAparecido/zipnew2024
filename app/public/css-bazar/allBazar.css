@@ -236,7 +236,6 @@ body {
         display: flex;
         min-width: 40px;
         min-height: 40px;
-        font-size: 25px;
         outline: none;
         background: black;
         color: white;
@@ -288,9 +287,15 @@ body {
     margin-right: 6vw;
 }
 
+#bi{
+    height: 100%;
+    width: 100%;
+    font-size: 25%;
+}
+
 @media (min-width:768px) {
     .carousel__container .carousel__inner {
-        gap: 2rem;
+        gap: 1.7rem;
     }
 }
 
@@ -300,7 +305,8 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+
     #ash{
 
         width: 70vw;
@@ -358,7 +364,7 @@ body {
     .arrow-btn.next {
         right: 0;
     }
-    
+
     #centro{
         margin-left: 4vw;
         margin-right: 4vw;
