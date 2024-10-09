@@ -11,6 +11,9 @@ const produtosModels = require("../models/produtos.models");
 //sacola
 const cartModels = require('../models/cartModels')
 
+//MINHAS VENDAS
+const minhasvendasModels = require('../models/minhasvendasModels') 
+
 const bazarController = require("../controllers/bazarController");
 const denunciaController = require("../controllers/denunciaController");
 const multer = require('multer');
@@ -187,8 +190,10 @@ router.get("/cart",
     );
 
 
+
+
       router.post("/create-preference", function (req, res) {
-      const preference = new Preference(client);
+        const preference = new Preference(client);
       console.log(req.body.items);
       preference.create({
       body: {
@@ -221,6 +226,9 @@ router.get("/cart",
       // Exporta o router
       module.exports = router;
 
+
+
+      
 
 
 router.get("/pagamento",
@@ -258,9 +266,42 @@ router.get("/vender", function (req, res) {
   res.render('pages/vender', { msg: 'Back-end funcionando' });
 });
 
-router.get("/minhas-vendas", function (req, res) {
+router.get("/minhas-vendas", 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  function (req, res) {
+  
+
+  
+
   res.render('pages/minhas-vendas', { msg: 'Back-end funcionando' });
 });
+
+router.post("/enviado",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]), 
+  async function (req, res) {
+  
+
+    try {
+      const userId = req.session.autenticado.id;
+      const envio = req.body.envio;
+      await connection.query(
+        'SELECT * FROM `Minhas_Vendas` WHERE id_Cliente = ? AND enviado = ? ',
+        [userId, envio]
+      );
+      console.log(userId, envio)
+  
+    
+
+     } catch (err) {
+       console.log(err);
+       res.status(500).send('Erro ao produto enviado'); // Opcional: resposta de erro
+     }
+
+     res.redirect('/minhas-vendas');
+});
+
 
 router.get("/meus-pedidos", function (req, res) {
   res.render('pages/meus-pedidos', { msg: 'Back-end funcionando' });

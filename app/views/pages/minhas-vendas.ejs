@@ -365,6 +365,7 @@
 
     <!-- tabela -->
     <section>
+        
         <table id="vendas" style="display: block;">
             <thead id="vendas__cabecalho">
                 <tr id="vendas__colunas">
@@ -377,10 +378,16 @@
                 <tr id="vendas__linhas">
                     <td>Saia preta</td>
                     <td>Cleber</td>
-                    <td><button>Enviado para os correios</button></td>
+                    <td>
+                        <form action="enviado" method="post">
+                            <input type="hidden" name="envio" value="enviou">
+                            <button type="submit" >Enviado para os correios</button>
+                        </form>
+                    </td>
                 </tr>
             </tbody>
         </table>
+    
     </section>
 
     <!--rodapé cell-->
