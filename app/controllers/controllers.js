@@ -189,15 +189,15 @@ const controller = {
             senha: ""  
           };
           console.log("Atualizado")
-          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "sucess" }, Bazar: bazar, usuario: user, valores: campos });
+          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Alterações Gravadas", type: "sucess" }, Bazar: bazar, usuario: user, valores: campos });
         } else {
           console.log("Atualizado 2")
-          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Perfil! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "sucess" }, Bazar: bazar, usuario: user, valores: dadosForm });
+          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Sem Alterações", type: "sucess" }, Bazar: bazar, usuario: user, valores: dadosForm });
         }
       }
     } catch (e) {
       console.log(e)
-      return res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar o perfil!", mensagem: "Verifique os valores digitados!", tipo: "error" }, Bazar: bazar, valores: req.body });
+      return res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { title: "Erro ao atualizar o perfil!", msg: "Verifique os valores digitados!", type: "error" }, Bazar: bazar, valores: req.body });
     }
   },
 
