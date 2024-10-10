@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (e) {
     //chave pública do vendedor
-    const mercadopago = new MercadoPago('APP_USR-5593607796954557-092821-c64b7b86bb2f21f48268017986839bb2-2009674095', {
+    const mercadopago = new MercadoPago('APP_USR-72b8cc69-8252-4d71-b78e-0af3ec8fc217', {
         locale: 'pt-BR' // Os mais comuns são: 'pt-BR', 'es-AR' e 'en-US'
     });
 
@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
             const  title = item.querySelector(".name-prod").innerText;
             const quantity = 1;
             const currency_id = "BRL";        
-            extractedData.push({ id, unit_price, title,quantity, currency_id });
+            
+            
+            extractedData.push({ id, unit_price, title, quantity, currency_id });
         });
         const orderData = { items: extractedData };
  

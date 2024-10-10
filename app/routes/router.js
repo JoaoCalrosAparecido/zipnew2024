@@ -199,10 +199,11 @@ router.get("/cart",
       body: {
       items: req.body.items,
 
+
       back_urls: {
-      "success": process.env.URL_BASE + "/feedback",
-      "failure": process.env.URL_BASE + "/feedback",
-      "pending": process.env.URL_BASE + "/feedback"
+      "success": process.env.URL_BASE ,
+      "failure": process.env.URL_BASE ,
+      "pending": process.env.URL_BASE 
       },
       auto_return: "approved",
       }
@@ -212,6 +213,34 @@ router.get("/cart",
       })
       .catch(console.log)
       });
+
+      /*router.post("/create-preference", function (req, res) {  
+    const preference = new mercadopago.Preference();  
+    
+    console.log(req.body.items);  
+
+    preference.create({  
+        items: req.body.items,  
+        back_urls: {  
+            "success": process.env.URL_BASE,  
+            "failure": process.env.URL_BASE,  
+            "pending": process.env.URL_BASE   
+        },  
+        auto_return: "approved",  
+    })  
+    .then((preferenceResponse) => {  
+        // Enviando o init_point na resposta  
+        res.json({  
+            init_point: preferenceResponse.body.init_point,  
+            preference_id: preferenceResponse.body.id // opcional, se você quiser o ID da preferência  
+        });  
+    })  
+    .catch(error => {  
+        console.error(error);  
+        res.status(500).json({ error: 'Erro ao criar a preferência' }); // Resposta de erro  
+    });  
+}); */
+
       router.get("/feedback", function (req, res) {
       pedidoController.gravarPedido(req, res);
       });
