@@ -128,13 +128,13 @@ const bazarController = {
                       imgBazar: bazar.imgBazar
                   };
                   console.log("Atualizado");
-                  return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Bazar! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "success" }, usuario: user, Bazar: bazar, valores: campos });
+                  return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Bazar! atualizado com sucesso", msg: "Alterações Gravadas", type: "success" }, usuario: user, Bazar: bazar, valores: campos });
               } else {
                   const userId = req.session.autenticado.id;
                   const user = await models.findUserById(userId);
                   const bazar = await produtosModels.findBazarByUserId(userId);
                   console.log("Atualizado 2");
-                  return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Bazar! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "success" }, usuario: user, Bazar: bazar, valores: dadosForm });
+                  return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Bazar! atualizado com sucesso", msg: "Sem Alterações", type: "success" }, usuario: user, Bazar: bazar, valores: dadosForm });
               }
           }
       } catch (e) {
@@ -142,7 +142,7 @@ const bazarController = {
           const userId = req.session.autenticado.id;
           const user = await models.findUserById(userId);
           const bazar = await produtosModels.findBazarByUserId(userId);
-          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar", mensagem: "Verifique os valores digitados!", tipo: "error" }, usuario: user, Bazar: bazar, valores: req.body });
+          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Erro ao atualizar", msg: "Verifique os valores digitados!", type: "error" }, usuario: user, Bazar: bazar, valores: req.body });
       }
   },
 
