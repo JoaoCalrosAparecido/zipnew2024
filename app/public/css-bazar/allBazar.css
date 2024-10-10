@@ -200,7 +200,7 @@ body {
     background-color: rgb(216, 215, 215);
     width: 22.5vw;
     height: 30.5vw;
-    margin-left: -2.7vw;
+    margin-left: -2.3vw;
     display: grid;
     place-items: center;
 }
@@ -217,13 +217,13 @@ body {
 }
 
 #cust:nth-child(2) {
-    margin: 0.7vw 0 0 -1.2vw;
+    margin: 0.7vw 0 0 -0.9vw;
     font-weight: 500;
     font-size: 18px;
 }
 
 #cust:nth-child(3) {
-    margin-left: -1.3vw;
+    margin-left: -1vw;
     font-weight: 300;
 }
 
@@ -278,7 +278,7 @@ body {
 }
 
 .arrow-btn.previous {
-    left: 0.3vw;
+    left: 0.6vw;
     margin-top: -2.5vw;
 }
 
