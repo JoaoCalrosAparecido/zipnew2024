@@ -63,7 +63,7 @@ router.get("/perfil",
 
     const userId = req.session.autenticado.id;
     const bazar = await produtosModels.findBazarByUserId(userId);
-    res.render('pages/perfil', { usuario: user, Bazar: bazar });
+    res.render('pages/perfil', { usuario: user, Bazar: bazar, dadosNotificacao: null });
   }
 );
 
