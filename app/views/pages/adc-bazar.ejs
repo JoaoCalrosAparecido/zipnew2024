@@ -417,9 +417,9 @@
 
 
                     <% if(listaProdBazar) { listaProdBazar.forEach(function (produtos){ %>
-                        <a class="card">
+                        <a id="none" href="/produtos/<%= produtos.id_prod_cliente %>" class="card">
                             <section id="ash">
-                                <h1 id="addyy"></h1>
+                                <img id="addyy" src="../../IMG/uploads/<%= produtos.img1 %>" alt="Imagem do produto">
                             </section>
                             <p id="cust">
                                 <%= produtos.tituloprod %>

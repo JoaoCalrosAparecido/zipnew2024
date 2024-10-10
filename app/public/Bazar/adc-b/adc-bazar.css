@@ -226,40 +226,38 @@ html {
 
 
 #ash {
-
     background-color: rgb(255, 255, 255);
     width: 18vw;
     height: 26vw;
-
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 2px;
-    border-color: #333333;
-
     display: grid;
     place-items: center;
 }
 
+#none{
+    text-decoration: none;
+    color: black;
+}
+
 #addyy {
-    font-weight: 400;
-    color: #333333;
-    vertical-align: none;
-    font-size: 28px;
+    width: 100%;
+    height: 100%;
 }
 
 #cust {
-    font-size: 14px;
+    font-size: 18px;
+    margin-left: 1vw;
+    width: 100%;
 }
 
 #cust:nth-child(2) {
-    margin-left: 1vw;
+    margin: 0.5vw 0 0 1.2vw;
     font-weight: 500;
+    font-size: 20px;
 }
 
 #cust:nth-child(3) {
-    margin: 0 0 0 0.8vw;
+    margin-left: 1vw;
 }
-
 input::placeholder {
     font-size: 15px;
 }
@@ -272,7 +270,7 @@ input::placeholder {
     position: relative;
     padding: 1rem 0;
     width: 87vw;
-
+    
     & .arrows .arrow-btn {
         display: flex;
         min-width: 40px;
