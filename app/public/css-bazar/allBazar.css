@@ -232,7 +232,7 @@ body {
     position: relative;
     padding: 1rem 0;
     width: 95vw;
-    margin-left: -4.2vw;
+    margin-left: -4.9vw;
 
     & .arrows .arrow-btn {
         display: flex;
@@ -277,7 +277,7 @@ body {
 }
 
 .arrow-btn.previous {
-    left: 0;
+    left: 1.5vw;
     margin-top: -2.5vw;
     
 }
