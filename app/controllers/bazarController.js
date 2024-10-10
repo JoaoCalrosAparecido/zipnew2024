@@ -94,75 +94,57 @@ const bazarController = {
       }
 
       try {
-        let { Nome, Ano, Descricao, Titulo, Biografia } = req.body;
-        const imgBazarPath = req.file ? req.file.filename : null; // caminho da imagem
-        
-        const dadosForm = {
-          nome: Nome,
-          ano: Ano,
-          descricao: Descricao,
-          titulo: Titulo,
-          biografia: Biografia,
-          imgBazar: imgBazarPath
-        };
-      
-        const userId = req.session.autenticado.id;
-        const resultUpdate = await models.att(dadosForm, userId);
-      
-        const user = await models.findUserById(userId);
-        const bazar = await produtosModels.findBazarByUserId(userId);
-      
-        if (!resultUpdate.isEmpty) {
-          if (resultUpdate.changedRows == 1) {
-            const userr = await models.findUserById(userId);
-            req.session.autenticado = {
-              autenticado: userr.nome,
-              id: userr.id_Cliente,
-            };
-      
-            const campos = { 
-              Nome: bazar.nome,
-              Ano: bazar.ano,
-              Descricao: bazar.descricao,
-              Titulo: bazar.titulo,
-              Biografia: bazar.biografia,
-              imgBazar: bazar.imgBazar
-            };
-      
-            console.log("Atualizado");
-            return res.render("pages/perfil", { 
-              listaErros: null, 
-              dadosNotificacao: { title: "Bazar atualizado com sucesso", msg: "Alterações Gravadas", type: "success" },
-              usuario: user, 
-              Bazar: bazar, 
-              valores: campos 
-            });
-          } else {
-            console.log("Atualizado 2");
-            return res.render("pages/perfil", {
-              listaErros: null, 
-              dadosNotificacao: { title: "Bazar atualizado com sucesso", msg: "Sem Alterações", type: "info" },
-              usuario: user, 
-              Bazar: bazar, 
-              valores: dadosForm 
-            });
+          let { Nome, Ano, Descricao, Titulo, Biografia } = req.body;
+          const imgBazarPath = req.file ? req.file.filename : null; // caminho da imagem
+          
+          var dadosForm = {
+              nome: Nome,
+              ano: Ano,
+              descricao: Descricao,
+              titulo: Titulo,
+              biografia: Biografia,
+              imgBazar: imgBazarPath
+          };
+
+          let resultUpdate = await models.att(dadosForm, req.session.autenticado.id);
+
+          if (!resultUpdate.isEmpty) {
+              if (resultUpdate.changedRows == 1) {
+                var userr = await models.findUserById(req.session.autenticado.id);
+                const user = await models.findUserById(userId);
+                const userId = req.session.autenticado.id;
+                const bazar = await produtosModels.findBazarByUserId(userId);
+                var autenticado = {
+                  autenticado: userr.nome,
+                  id: userr.id_Cliente,
+                };
+                  req.session.autenticado = autenticado;
+                  let campos = { 
+                      Nome: bazar.nome,
+                      Ano: bazar.ano,
+                      Descricao: bazar.descricao,
+                      Titulo: bazar.titulo,
+                      Biografia: bazar.biografia,
+                      imgBazar: bazar.imgBazar
+                  };
+                  console.log("Atualizado");
+                  return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Bazar! atualizado com sucesso", mensagem: "Alterações Gravadas", tipo: "success" }, usuario: user, Bazar: bazar, valores: campos });
+              } else {
+                  const userId = req.session.autenticado.id;
+                  const user = await models.findUserById(userId);
+                  const bazar = await produtosModels.findBazarByUserId(userId);
+                  console.log("Atualizado 2");
+                  return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Bazar! atualizado com sucesso", mensagem: "Sem Alterações", tipo: "success" }, usuario: user, Bazar: bazar, valores: dadosForm });
+              }
           }
-        }
       } catch (e) {
-        console.log(e);
-        const userId = req.session.autenticado.id;
-        const user = await models.findUserById(userId);
-        const bazar = await produtosModels.findBazarByUserId(userId);
-        
-        return res.render("pages/perfil", {
-          listaErros: null, 
-          dadosNotificacao: { title: "Erro ao atualizar", msg: "Verifique os valores digitados!", type: "error" },
-          usuario: user, 
-          Bazar: bazar, 
-          valores: req.body 
-        });
+          console.log(e);
+          const userId = req.session.autenticado.id;
+          const user = await models.findUserById(userId);
+          const bazar = await produtosModels.findBazarByUserId(userId);
+          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { titulo: "Erro ao atualizar", mensagem: "Verifique os valores digitados!", tipo: "error" }, usuario: user, Bazar: bazar, valores: req.body });
       }
-    },
+  },
 
 
     //puxar produto pelo ID
