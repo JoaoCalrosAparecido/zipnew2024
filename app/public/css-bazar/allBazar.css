@@ -198,32 +198,31 @@ body {
 
 #ash{
     background-color: rgb(216, 215, 215);
-    width: 22.5vw;
-    height: 30.5vw;
-    margin-left: -2.7vw;
+    width: 18vw;
+    height: 26vw;
     display: grid;
     place-items: center;
 }
 
 #cust{
-    font-size: 17px;
+    font-size: 18px;
     margin-left: 1vw;
     width: 100%;
 }
 
 #addyy{
-    width: 100%;
-    height: 100%;
+    width: 110%;
+    height: 110%;
 }
 
 #cust:nth-child(2) {
-    margin: 0.7vw 0 0 -1.2vw;
+    margin: 2vw 0 0 0.7vw;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 #cust:nth-child(3) {
-    margin-left: -1.3vw;
+    margin-left: 0.5vw;
     font-weight: 300;
 }
 
@@ -233,14 +232,14 @@ body {
     position: relative;
     padding: 1rem 0;
     width: 95vw;
-    margin-left: -2.7vw;
+    margin-left: -4.9vw;
 
     & .arrows .arrow-btn {
         display: flex;
         min-width: 40px;
         min-height: 40px;
         outline: none;
-        background: #cfcfd4;
+        background: #f1f1f1;
         color: white;
         border: 1px solid transparent;
         cursor: pointer;
@@ -254,7 +253,7 @@ body {
 
         &:hover {
             color: #ffffff;
-            opacity: 0.8;
+            background: rgb(252, 250, 250);
         }
 
         & i {
@@ -278,14 +277,14 @@ body {
 }
 
 .arrow-btn.previous {
-    left: 0.3vw;
+    left: 1.5vw;
     margin-top: -2.5vw;
+    
 }
 
 .arrow-btn.next {
     right: 0;
     margin-top: -2.5vw;
-    margin-right: 3vw;
 }
 
 #centro{
@@ -311,26 +310,24 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     #ash{
+
         width: 70vw;
         height: 100vw;
     }
-
     .carousel__container {
-        width: 87vw;
-        margin-left: 5vw;
-        margin-top: -13vw;
+        width: 92vw;
         & .arrows .arrow-btn {
             display: flex;
             min-width: 40px;
             min-height: 40px;
             font-size: 25px;
             outline: none;
-            background: #cfcfd4;
+            background: black;
             color: white;
-            border: 3px solid transparent;
+            border: 3px solid white;
             cursor: pointer;
             transition: font .5s, color .5s, background .5s;
             border-radius: 50%;
@@ -342,6 +339,7 @@ body {
     
             &:hover {
                 color: #ffffff;
+                background: gray;
             }
     
             & i {
@@ -366,27 +364,15 @@ body {
     
     .arrow-btn.previous {
         left: 0;
-        margin-top: -9vw;
     }
     
     .arrow-btn.next {
         right: 0;
-        margin-top: -9vw;
     }
 
     #centro{
         margin-left: 4vw;
         margin-right: 4vw;
-    }
-
-
-    #cust:nth-child(2) {
-        margin: 2vw 0 0 3vw;
-    }
-
-    #cust:nth-child(3) {
-        margin: 0.5vw 0 0 2.6vw;
-        font-size: 17px;
     }
 }
 
