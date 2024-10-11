@@ -25,9 +25,55 @@
 
     <script src="../../Bazar/adc-b/img.js" defer></script>
     <script src="../../css-bazar/carrosel.js" defer></script>
+
+    <!-- Notify -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
 </head>
 
 <body>
+    <% 
+        let msgErro = ''
+            
+        
+        const campoErro = {   
+            Nome:'',
+            Ano:'',
+            Descricao: ''
+
+        };
+        if (listaErros) {
+            listaErros.errors.forEach(err => {
+                campoErro[err['path']] = 'invalido';
+                msgErro +=  err.msg + '<br>'
+                %>     
+            <%});%>
+            <script>
+                (() => {
+                    var campoInvalido = '<%= msgErro%>'
+                    function mostrarNotificacao() {
+                        return new Notify ({
+                            status: 'error',
+                            title: 'Verifique os Campos', 
+                            text: '' + campoInvalido.replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+                            speed: 300,
+                            effect: 'fade',
+                            showIcon: false,
+                            showCloseButton: true,
+                            autoclose: true,
+                            autotimeout: 5000,
+                            gap: 20,
+                            distance: 20,
+                            position: 'center'
+                        });
+                    }
+
+                    mostrarNotificacao();
+                })();
+            </script>
+        <% } %>
     <!-- parte superior do desconto na primeira compra -->
     <a href="/masculino">
         <section id="section_parte_superior">

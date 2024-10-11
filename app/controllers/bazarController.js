@@ -5,21 +5,41 @@ const produtosModels = require("../models/produtos.models");
 
 const bazarController = {
   submitBazar: async (req, res) => {
+    const erros = validationResult(req);
+
     const userId = req.session.autenticado.id;
     const { imgBazar, Nome, Ano, Descricao, Titulo, Biografia } = req.body;
 
     let bazar = await produtosModels.findBazarByUserId(userId);
 
-    if (!bazar) {
-        const imgBazar = req.file ? req.file.filename : null;
-
-        await pool.query(
-            "INSERT INTO bazar (imgBazar, nome, ano, descricao, titulo, biografia, id_Cliente) VALUES (?, ?, ?, ?, ?, ?, ?)",
-            [imgBazar, Nome, Ano, Descricao, Titulo, Biografia, userId]
-        );
-        
-        bazar = await produtosModels.findBazarByUserId(userId);
+    if (!erros.isEmpty()) {
+      console.log(erros);
+      return res.render("pages/adc-bazar", {
+        Bazar: bazar,
+        listaErros: erros,
+        dadosNotificacao: null,
+        listaProdBazar: [],
+        valores: {
+            Nome: req.body.Nome,
+            Ano: req.body.Ano,
+            Descricao: req.body.Descricao,
+            Titulo: req.body.Titulo,
+            Biografia: req.body.Biografia,
+            imgBazar: req.body.imgBazar,
+        }
+    })
     }
+
+    if (!bazar) {
+      const imgBazar = req.file ? req.file.filename : null;
+
+      await pool.query(
+          "INSERT INTO bazar (imgBazar, nome, ano, descricao, titulo, biografia, id_Cliente) VALUES (?, ?, ?, ?, ?, ?, ?)",
+          [imgBazar, Nome, Ano, Descricao, Titulo, Biografia, userId]
+      );
+      
+      bazar = await produtosModels.findBazarByUserId(userId);
+  }
 
     // atualiza os produtos com o id do bazar :)
     await pool.query(
@@ -90,7 +110,7 @@ const bazarController = {
               lista.errors.push(erroMulter);
           }
           console.log(lista);
-          return res.render("pages/adc-bazar", { listaErros: lista, dadosNotificacao: null, valores: req.body });
+          return res.render("pages/adc-bazar", { listaErros: lista, dadosNotificacao: null, valores: req.body, Bazar: null });
       }
 
       try {

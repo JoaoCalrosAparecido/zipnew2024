@@ -642,13 +642,13 @@ router.get("/adc-bazar",
     if (bazar){
       bazarController.dadosBazar(req,res)
     }else{
-      res.render('pages/adc-bazar.ejs' , { Bazar: bazar });
+      res.render('pages/adc-bazar.ejs' , { Bazar: bazar, listaErros: null  });
     }
   })
 
 
   router.post("/bazarAdc", 
-    // controller.regrasValidaçãoBazar,
+    controller.regrasValidaçãoBazar,
     verificarUsuAutenticado,
     verificarUsuAutorizado(
         "./pages/login_do_usuario", {
@@ -665,7 +665,7 @@ router.get("/adc-bazar",
 );
 
 router.post("/attBazar", 
-  // controller.regrasValidaçãoBazar,
+  controller.regrasValidaçãoBazar,
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {
