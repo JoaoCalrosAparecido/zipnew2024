@@ -568,16 +568,15 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
   }
 
   try {
-    const { nome, cpf, dia, mes, ano, email, senha, confirmsenha, cep } = req.body;
+    const { nome, cpf, dia, mes, ano, email, senha } = req.body;
 
     const nasc = `${ano}-${mes}-${dia}`
 
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(senha, salt);
-    const hashPassword = bcrypt.hashSync(confirmsenha, salt);
 
-    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, confirmsenha, cep, Id_Tipo_Usuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-      [nome, cpf, nasc, email, hashedPassword, hashPassword, cep, 1]);
+    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, Id_Tipo_Usuario) VALUES (?, ?, ?, ?, ?, ?)",
+      [nome, cpf, nasc, email, hashedPassword, 1]);
     console.log(create)
     const usuario = await connection.query("SELECT * FROM cliente WHERE id_Cliente = ?", [create.insertId]);
     req.session.autenticado = {

@@ -39,9 +39,9 @@ const controller = {
       }
     }),
 
-    body('cep')
-    .customSanitizer(value => value.replace('-', '')) // Tira os hífens
-    .isLength({ min: 8, max: 8 }).isNumeric().withMessage('*CEP Inválido'),
+    // body('cep')
+    // .customSanitizer(value => value.replace('-', '')) // Tira os hífens
+    // .isLength({ min: 8, max: 8 }).isNumeric().withMessage('*CEP Inválido'),
 
 
     body('dia').isInt({ min: 1, max: 31 }).withMessage('*Dia Inválido'),
@@ -114,7 +114,6 @@ const controller = {
         nome: user.nome,
         cpf: user.cpf,
         nasc: user.nasc,
-        cep: user.cep,
         email: user.email,
         nasc: dataFormatada,
         senha: ""
@@ -132,7 +131,6 @@ const controller = {
             nome: "",
             cpf: "",
             nasc: "",
-            cep: "",
             email: "",
             nasc: "",
             senha: ""
@@ -154,11 +152,10 @@ const controller = {
       return res.render("pages/Config/meusdados", { listaErros: lista, dadosNotificacao: null, valores: req.body })
     }
     try {
-      let { nome, email, cep, nasc, senha } = req.body
+      let { nome, email, nasc, senha } = req.body
       var dadosForm = {
         nome: nome,
         email: email,
-        cep: cep,
         nasc: nasc,
       };
 
@@ -183,7 +180,6 @@ const controller = {
             nome: user.nome,
             cpf: user.cpf,
             nasc: user.nasc,
-            cep: user.cep,
             email: user.email,
             nasc: dataFormatada,
             senha: ""  
