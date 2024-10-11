@@ -31,15 +31,17 @@
 </head>
 
 <body>
-
-    <% if (dadosNotificacao) {%>
+    <% 
+    if (dadosNotificacao) {
+            %>     
         <script>
             (() => {
+                var campoInvalido = '<%= dadosNotificacao.title %>'
                 function mostrarNotificacao() {
-                    return new Notify({
+                    return new Notify ({
                         status: '<%= dadosNotificacao.type %>',
-                        title: '<%= dadosNotificacao.title %>',
-                        text: '<%= dadosNotificacao.msg %>',
+                        title: '<%= dadosNotificacao.msg %>', 
+                        text: '' + campoInvalido.replace(/&lt;/g,"<").replace(/&gt;/g,">"),
                         speed: 300,
                         effect: 'fade',
                         showIcon: false,
@@ -604,13 +606,13 @@
                 <article id="mott">
                     <label id="ttom">Motivo da denúncia</label>
                     <section id="check">
-                        <input type="checkbox" id="produtoRepetido" name="Repetido">
+                        <input type="checkbox" id="produtoRepetido" name="Caixa" value="repetido">
                         <label for="produtoRepetido" id="aa">Produto Repetido</label>
                         <br>
-                        <input type="checkbox" id="produtoForaTema" name="ForaTema">
+                        <input type="checkbox" id="produtoForaTema" name="Caixa" value="foraTema">
                         <label for="produtoForaTema" id="bb">Produto Fora do Tema</label>
                         <br>
-                        <input type="checkbox" id="produtoQualidade" name="MaQualidade">
+                        <input type="checkbox" id="produtoQualidade" name="Caixa" value="maQualidade">
                         <label for="produtoQualidade" id="cc">Produto de Má Qualidade</label>
                         <br>
                         <button type="submit" id="denunciarBtn" name="action">DENUNCIAR</button>
@@ -634,13 +636,13 @@
             <article id="mott">
                 <label id="ttom">Motivo da denúncia</label>
                 <section id="check">
-                    <input type="checkbox" id="fraude" name="Fraude">
+                    <input type="checkbox" id="fraude" name="Caixa">
                     <label for="fraude" id="aa">Fraude</label>
                     <br>
-                    <input type="checkbox" id="produtoIlicito" name="Ilícito">
+                    <input type="checkbox" id="produtoIlicito" name="Caixa">
                     <label for="produtoIlicito" id="bb">Produto Ilícito</label>
                     <br>
-                    <input type="checkbox" id="propagandaEnganosa" name="Enganosa">
+                    <input type="checkbox" id="propagandaEnganosa" name="Caixa">
                     <label for="propagandaEnganosa" id="cc">Propaganda Enganosa</label>
                     <br>
 

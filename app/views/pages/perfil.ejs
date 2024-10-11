@@ -34,6 +34,47 @@
 </head>
 
 <body>
+    <% 
+        let msgErro = ''
+            
+        
+        const campoErro = {   
+            Nome:'',
+            Ano:'',
+            Descricao: ''
+
+        };
+        if (listaErros) {
+            listaErros.errors.forEach(err => {
+                campoErro[err['path']] = 'invalido';
+                msgErro +=  err.msg + '<br>'
+                %>     
+            <%});%>
+            <script>
+                (() => {
+                    var campoInvalido = '<%= msgErro%>'
+                    function mostrarNotificacao() {
+                        return new Notify ({
+                            status: 'error',
+                            title: 'Verifique a URL', 
+                            text: '' + campoInvalido.replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+                            speed: 300,
+                            effect: 'fade',
+                            showIcon: false,
+                            showCloseButton: true,
+                            autoclose: true,
+                            autotimeout: 5000,
+                            gap: 20,
+                            distance: 20,
+                            position: 'center'
+                        });
+                    }
+
+                    mostrarNotificacao();
+                })();
+            </script>
+        <% } %>
+        
     <% if (dadosNotificacao) {%>
         <script>
             (() => {

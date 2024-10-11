@@ -20,12 +20,12 @@ const bazarController = {
         dadosNotificacao: null,
         listaProdBazar: [],
         valores: {
+            imgBazar: req.body.imgBazar,
             Nome: req.body.Nome,
             Ano: req.body.Ano,
             Descricao: req.body.Descricao,
             Titulo: req.body.Titulo,
             Biografia: req.body.Biografia,
-            imgBazar: req.body.imgBazar,
         }
     })
     }
@@ -103,6 +103,9 @@ const bazarController = {
   alterarBazar: async (req, res) => {
       const erros = validationResult(req);
       const erroMulter = req.session.erroMulter;
+      const userId = req.session.autenticado.id;
+      const user = await models.findUserById(userId);
+      const bazar = await produtosModels.findBazarByUserId(userId);
       
       if (!erros.isEmpty() || erroMulter != null) {
           lista = !erros.isEmpty() ? erros : { formatter: null, errors: [] };
@@ -110,7 +113,20 @@ const bazarController = {
               lista.errors.push(erroMulter);
           }
           console.log(lista);
-          return res.render("pages/adc-bazar", { listaErros: lista, dadosNotificacao: null, valores: req.body, Bazar: null });
+          return res.render("pages/adc-bazar", {
+            usuario: user,
+            Bazar: bazar,
+            listaErros: lista,
+            dadosNotificacao: null,
+            listaProdBazar: [],
+            valores: {
+              Nome: req.body.Nome,
+              Ano: req.body.Ano,
+              Descricao: req.body.Descricao,
+              Titulo: req.body.Titulo,
+              Biografia: req.body.Biografia,
+              imgBazar: req.body.imgBazar,
+            }});
       }
 
       try {
@@ -126,11 +142,8 @@ const bazarController = {
           imgBazar: imgBazarPath
         };
       
-        const userId = req.session.autenticado.id;
         const resultUpdate = await models.att(dadosForm, userId);
       
-        const user = await models.findUserById(userId);
-        const bazar = await produtosModels.findBazarByUserId(userId);
       
         if (!resultUpdate.isEmpty) {
           if (resultUpdate.changedRows == 1) {

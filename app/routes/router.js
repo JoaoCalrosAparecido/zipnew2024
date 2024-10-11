@@ -14,6 +14,12 @@ const cartModels = require('../models/cartModels')
 //MINHAS VENDAS
 const minhasvendasModels = require('../models/minhasvendasModels') 
 
+//Upload
+const upl = require("../multer/upload")
+const del = require("../multer/imgdelete")
+
+var uplImg = upl("./app/public/IMG/uploads/")
+
 const bazarController = require("../controllers/bazarController");
 const denunciaController = require("../controllers/denunciaController");
 const multer = require('multer');
@@ -63,7 +69,7 @@ router.get("/perfil",
 
     const userId = req.session.autenticado.id;
     const bazar = await produtosModels.findBazarByUserId(userId);
-    res.render('pages/perfil', { usuario: user, Bazar: bazar, dadosNotificacao: null });
+    res.render('pages/perfil', { usuario: user, Bazar: bazar, dadosNotificacao: null, listaErros: null });
   }
 );
 
@@ -73,17 +79,27 @@ router.post("/socialmedia",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
   async function (req, res) {
     const erros = validationResult(req);
-  
-    if (!erros.isEmpty()) {
-      return res.redirect('/perfil');
-    }
-
-    const { socialLinks } = req.body;
-  
     const userId = req.session.autenticado.id;
     const bazar = await produtosModels.findBazarByUserId(userId);
-    await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [socialLinks, userId]);
+    const { socialLinks } = req.body;
     const user = await models.findUserById(userId);
+
+      if (!erros.isEmpty()) {
+        return res.render("pages/perfil", {
+          usuario: user,
+          Bazar:bazar,
+          listaErros: erros,
+          dadosNotificacao: null,
+          listaProdBazar: [],
+          valores: {
+            socialLinks: req.body.socialLinks,
+          }
+      })
+      }
+    
+
+    await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [socialLinks, userId]);
+
     res.render('pages/perfil', { erros: null, logado: true, usuarioautenticado: userId, usuario: user, Bazar:bazar });
   }
 );
@@ -352,6 +368,7 @@ router.get('/produtos/:id_prod_cliente',
           const nomeCliente = clientes[0].nome;
 
           res.render('pages/produtos', { 
+            listaErros: null,
             usuarioautenticado: req.session.autenticado, 
             produto: produto,
             nomeCliente: nomeCliente,
@@ -496,7 +513,7 @@ router.get("/adc-produto",
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id)
     console.log(user)
-    res.render('pages/adc-produto', { usuario: user, erros: null, usuarioautenticado: req.session.autenticado })
+    res.render('pages/adc-produto', { usuario: user, erros: null, usuarioautenticado: req.session.autenticado, listaErros: null })
   });
 
 // [, ]
@@ -508,9 +525,19 @@ router.post("/adicionar-produto",
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id)
     const errors = validationResult(req);
+
     if (!errors.isEmpty()) {
-      console.log(errors)
-      return res.render('pages/adc-produto', { msg: 'Back-end funcionando', usuario: user, erros: errors });
+      return res.render("pages/adc-produto", {
+        usuario: user,
+        listaErros: errors,
+        dadosNotificacao: null,
+        listaProdBazar: [],
+        valores: {
+            tituloProduto: req.body.tituloProduto,
+            precoProduto: req.body.precoProduto,
+            descProduto: req.body.descProduto
+        }
+    })
     }
 
 
@@ -648,7 +675,6 @@ router.get("/adc-bazar",
 
 
   router.post("/bazarAdc", 
-    controller.regrasValidaçãoBazar,
     verificarUsuAutenticado,
     verificarUsuAutorizado(
         "./pages/login_do_usuario", {
@@ -657,15 +683,16 @@ router.get("/adc-bazar",
             logado: false,
             usuarioautenticado: null
         }, [2, 3]
-    ), 
-    upload.single('imgBazar'),
+    ),
+    uplImg('imgBazar'), 
+    controller.regrasValidaçãoBazar, 
     function (req, res) {
+        console.log(req.body)
         bazarController.submitBazar(req, res);
     }
 );
 
 router.post("/attBazar", 
-  controller.regrasValidaçãoBazar,
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {
@@ -676,13 +703,15 @@ router.post("/attBazar",
     },
     [2, 3]
   ), 
-  upload.single('imgBazar'),
+  uplImg('imgBazar'),
+  controller.regrasValidaçãoBazar,
   function (req, res) {
     bazarController.alterarBazar(req, res);
   }
 );
 
 router.post("/denunciar-produto/:id_prod_cliente",
+  controller.regrasValidaçãoDenunciaP,
   verificarUsuAutenticado, 
   verificarUsuAutorizado(   
     "./pages/login_do_usuario", {
@@ -699,6 +728,7 @@ router.post("/denunciar-produto/:id_prod_cliente",
 );
 
 router.post("/denunciar-vendedor/:id_prod_cliente",
+  controller.regrasValidaçãoDenunciaP,
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {

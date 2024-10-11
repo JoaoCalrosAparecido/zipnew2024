@@ -37,11 +37,13 @@
     <% 
         let msgErro = ''
             
-        
         const campoErro = {   
             Nome:'',
             Ano:'',
-            Descricao: ''
+            Descricao: '',
+            Titulo: '',
+            Biografia: '',
+            imgBazar: ''
 
         };
         if (listaErros) {
@@ -498,7 +500,7 @@
                             <span>+</span>
                         </section>
                         <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
-                        <input type="file" id="fileInput" name="imgBazar" accept="image/*">
+                        <input type="file" id="fileInput" name="imgBazar" accept="image/*" required>
                     </label>
                     <section id="formOverlay">
                         <input type="text" id="Name" placeholder="Seu nome" name="Nome">

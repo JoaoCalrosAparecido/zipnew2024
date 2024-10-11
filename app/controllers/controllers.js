@@ -1,6 +1,6 @@
 const pool = require("../../config/pool_conexoes");
 const bcrypt = require('bcrypt');
-const { body, validationResult } = require("express-validator");
+const { body, validationResult, check } = require("express-validator");
 const models = require("../models/models");
 const produtosModels = require('../models/produtos.models');
 
@@ -90,17 +90,14 @@ const controller = {
       }),
   ],
   regrasValidacaoAdcProduto: [
-    body('tituloProduto').isString().isLength({ min: 3, max: 45 }),
-    body('precoProduto').isNumeric({ min: 0.1 }),
-    body('descProduto').isString().isLength({ min: 25, max: 220 }),
+    body('tituloProduto').isString().isLength({ min: 3, max: 45 }).withMessage("*O Titulo deve ter de 3 a 45 caracteres!"),
+    body('precoProduto').isNumeric({ min: 0.1 }).withMessage("*O preço deve ser no minimo R$ 0.1"),
+    body('descProduto').isString().isLength({ min: 25, max: 220 }).withMessage("*A Descrição deve ter de 25 a 220 caracteres!"),
   ],
 
   regrasValidacaoperfil: [
     body('nome').isLength({ min: 3, max: 45 }).withMessage("*Nome deve ter de 3 a 45 caracteres!"),
     body('email').isEmail().withMessage('*Email Inválido'),
-    body('cep')    
-    .customSanitizer(value => value.replace('-', '')) // Tira os hífens
-    .isLength({ min: 8, max: 8 }).isNumeric().withMessage('*CEP Inválido'),
   ],
 
 
@@ -149,7 +146,16 @@ const controller = {
         lista.errors.push(erroMulter);
       }
       console.log(lista)
-      return res.render("pages/Config/meusdados", { listaErros: lista, dadosNotificacao: null, valores: req.body })
+      return res.render("pages/Config/meusdados", {
+        usuario: user,
+        Bazar:bazar,
+        listaErros: lista,
+        dadosNotificacao: null,
+        listaProdBazar: [],
+        valores: {
+          nome: req.body.nome,
+          email: req.body.email,
+        }});
     }
     try {
       let { nome, email, nasc, senha } = req.body
@@ -185,10 +191,10 @@ const controller = {
             senha: ""  
           };
           console.log("Atualizado")
-          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Alterações Gravadas", type: "sucess" }, Bazar: bazar, usuario: user, valores: campos });
+          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Alterações Gravadas", type: "sucess" }, Bazar: bazar, usuario: userId, valores: campos });
         } else {
           console.log("Atualizado 2")
-          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Sem Alterações", type: "sucess" }, Bazar: bazar, usuario: user, valores: dadosForm });
+          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Sem Alterações", type: "info" }, Bazar: bazar, usuario: userId, valores: dadosForm });
         }
       }
     } catch (e) {
@@ -223,28 +229,50 @@ const controller = {
   ],
 
   regrasValidaçãoBazar: [
-    body('imgBazar')
-      .notEmpty().withMessage('O campo da imagem não pode estar vazio.'),
     body('Nome')
-      .notEmpty().withMessage('O nome não pode estar vazio.')
-      .isString().isLength({ min: 2, max: 10 }).withMessage('O nome deve ter entre 2 e 10 caracteres.'),
+      .notEmpty()
+      .withMessage('*O nome não pode estar vazio.')
+      .isString()
+      .isLength({ min: 2, max: 10 })
+      .withMessage('*O nome deve ter entre 2 e 10 caracteres.'),
       
     body('Ano')
-      .notEmpty().withMessage('O ano não pode estar vazio.')
-      .isNumeric().isLength({ min: 4, max: 4 }).withMessage('O ano deve ter 4 dígitos.'),
+      .notEmpty()
+      .withMessage('*O ano não pode estar vazio.')
+      .isNumeric()
+      .isLength({ min: 4, max: 4 })
+      .withMessage('*O ano deve ter 4 dígitos.'),
       
     body('Descricao')
-      .notEmpty().withMessage('A descrição não pode estar vazia.')
-      .isString().isLength({ min: 5, max: 20 }).withMessage('A descrição deve ter entre 5 e 20 caracteres.'),
+      .notEmpty()
+      .withMessage('*A descrição não pode estar vazia.')
+      .isString()
+      .isLength({ min: 5, max: 20 })
+      .withMessage('*A descrição deve ter entre 5 e 20 caracteres.'),
       
     body('Titulo')
-      .notEmpty().withMessage('O título não pode estar vazio.')
-      .isString().isLength({ min: 3, max: 25 }).withMessage('O título deve ter entre 3 e 25 caracteres.'),
+      .notEmpty()
+      .withMessage('*O título não pode estar vazio.')
+      .isString()
+      .isLength({ min: 3, max: 25 })
+      .withMessage('*O título deve ter entre 3 e 25 caracteres.'),
       
     body('Biografia')
-      .notEmpty().withMessage('A Biografia não pode estar vazia.')
-      .isString().isLength({ min: 10, max: 300 }).withMessage('A biografia deve ter entre 10 e 300 caracteres.')
+      .notEmpty()
+      .withMessage('*A Biografia não pode estar vazia.')
+      .isString()
+      .isLength({ min: 10, max: 300 })
+      .withMessage('*A biografia deve ter entre 10 e 300 caracteres.')
   ],
+
+  regrasValidaçãoDenunciaP: [
+    check('Caixa').custom((valores, {req}) => {
+        if (!req.body.Caixa || req.body.Caixa.length === 0) {
+            throw new Error('*Selecione pelo menos um motivo');
+        }
+        return true;
+    })
+]
 };
 
 module.exports = controller;

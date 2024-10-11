@@ -8,12 +8,11 @@ const denunciasModels = require("../models/denunciasModels");
 const denunciaController = {
     denunciarP: async (req, res) => {
         try {
-            
             const userId = req.session.autenticado.id;
             const produtoId = parseInt(req.params.id_prod_cliente);
             const [produtos] = await pool.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
-            
-            // Verifica se o usuario ja fez uma denuncia
+    
+            // Verifica se o usuário já fez uma denúncia
             const [denunciasExistentes] = await pool.query(
                 'SELECT * FROM `denuncias_produto` WHERE id_Cliente = ? AND id_prod_cliente = ?',
                 [userId, produtoId]
@@ -24,62 +23,67 @@ const denunciaController = {
                     usuarioautenticado: req.session.autenticado, 
                     produto: produto,
                     nomeCliente: req.session.autenticado.nomeCliente,
+                    listaErros: null,
                     dadosNotificacao: { 
-                        title: "Você ja denunciou esse Produto", 
-                        msg: "Produto ja denunciado", 
+                        title: "Você já denunciou este produto", 
+                        msg: "Produto já denunciado", 
                         type: 'info' 
                     }
+                };
+                return res.render('pages/produtos', jsonResult);
             }
-            return res.render('pages/produtos', jsonResult);
-        }
-            
     
-            const { Repetido, ForaTema, MaQualidade } = req.body;
+            // Verificação de erros
+            let erros = validationResult(req);
+            if (!erros.isEmpty()) {
+                const produto = produtos[0];
+                const jsonResult = {
+                    usuarioautenticado: req.session.autenticado, 
+                    produto: produto,
+                    nomeCliente: req.session.autenticado.nomeCliente,
+                    dadosNotificacao: { 
+                    
+                        title: "Preencha um dos campos", 
+                        msg: "Campos vazios", 
+                        type: 'warning' 
+                    }
+                };
+                return res.render('pages/produtos', jsonResult);
+            }
+    
+            // Verifica quais caixas foram selecionadas
+            const motivos = req.body.Caixa || [];
     
             const dadosDenuncia = {
                 id_prod_cliente: produtoId,
-                id_Cliente: userId, 
-                repetido: !!Repetido, 
-                fora_tema: !!ForaTema,
-                ma_qualidade: !!MaQualidade,
+                id_Cliente: userId,
+                repetido: motivos.includes('repetido'),
+                fora_tema: motivos.includes('foraTema'),
+                ma_qualidade: motivos.includes('maQualidade')
             };
-    
-            // Definir o limite
-            const max_denuncias = 8;
     
             await denunciasModels.denunciarProd(dadosDenuncia);
     
-            // Verifica o número total de denúncias
-            const [totalDenuncias] = await pool.query(
-                'SELECT COUNT(*) as total FROM `denuncias_produto` WHERE id_prod_cliente = ?',
-                [produtoId]
-            );
-    
-            // Verifica se atingiu o limite
-            if (totalDenuncias[0].total >= max_denuncias) {
-                await pool.query('DELETE FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
-    
-                return res.status(200).send(`Produto ${produtoId} foi removido devido ao número elevado de denúncias.`);
-            }
-    
             const produto = produtos[0];
-
             const jsonResult = {
                 usuarioautenticado: req.session.autenticado, 
                 produto: produto,
                 nomeCliente: req.session.autenticado.nomeCliente,
+                listaErros: null,
                 dadosNotificacao: { 
                     title: "Sua denúncia foi enviada", 
                     msg: "Denúncia realizada com sucesso", 
-                    type: 'sucess' 
+                    type: 'success' 
                 }
-            }
+            };
             return res.render('pages/produtos', jsonResult);
         } catch (error) {
             console.error("Erro ao processar a denúncia:", error);
             res.status(500).send("Erro ao processar a denúncia.");
         }
     },
+
+    
 
 
 
