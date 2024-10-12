@@ -1,12 +1,10 @@
 ## O que falta do projeto (Lazully)
 - Validações & Notifiações: 
     Att/Adc Bazar (Campo fica vermelho) (Começo) (+ - check mas falta)
+
     Atualizar Dados (Campo fica vermelho) (Começo)
-
-    Denuncias Produtos (Não Passar em Branco) 
-    Produtos (Campo fica vermelho e Validação na imagem) 
-
-    URL (Check)
+    
+    Produtos (Campo fica vermelho e Validação na imagem)
 
 - Cadastro Politica de Privacidade & Ajustar as Novas mudanças do cadatro
 

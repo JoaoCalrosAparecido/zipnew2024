@@ -97,7 +97,7 @@ const denunciaController = {
             if (produtos.length === 0) {
                 return res.status(404).send("Produto não encontrado.");
             }
-
+    
             // id vendedor
             const idClienteDenunciado = produtos[0].id_Cliente;  
     
@@ -108,29 +108,46 @@ const denunciaController = {
             );
             
             const produto = produtos[0];
-
+    
             if (denunciasExistentes.length > 0) {
                 const jsonResult = {
                     usuarioautenticado: req.session.autenticado, 
                     produto: produto,
                     nomeCliente: req.session.autenticado.nomeCliente,
                     dadosNotificacao: { 
-                        title: "Você ja denunciou esse vendedor", 
-                        msg: "Vendedor ja denunciado", 
+                        title: "Você já denunciou este vendedor", 
+                        msg: "Vendedor já denunciado", 
                         type: 'info' 
                     }
-                }
+                };
+                return res.render('pages/produtos', jsonResult);
+            }
+
+            let erros = validationResult(req);
+            if (!erros.isEmpty()) {
+                const produto = produtos[0];
+                const jsonResult = {
+                    usuarioautenticado: req.session.autenticado, 
+                    produto: produto,
+                    nomeCliente: req.session.autenticado.nomeCliente,
+                    dadosNotificacao: { 
+                    
+                        title: "Preencha um dos campos", 
+                        msg: "Campos vazios", 
+                        type: 'warning' 
+                    }
+                };
                 return res.render('pages/produtos', jsonResult);
             }
     
-            const { Fraude, Ilícito, Enganosa } = req.body;
+            const motivos = req.body.Caixo || [];
     
             const dadosDenunciaV = {
                 id_Cliente: userId, 
                 id_Cliente_denunciado: idClienteDenunciado, 
-                fraude: !!Fraude, 
-                produto_ilicito: !!Ilícito,
-                propaganda_enganosa: !!Enganosa,
+                fraude: motivos.includes('fraude'), 
+                produto_ilicito: motivos.includes('produtoIlicito'),
+                propaganda_enganosa: motivos.includes('propagandaEnganosa'),
             };
     
             await denunciasModels.denunciarVend(dadosDenunciaV);
@@ -142,15 +159,17 @@ const denunciaController = {
                 dadosNotificacao: { 
                     title: "Sua denúncia foi enviada", 
                     msg: "Denúncia realizada com sucesso", 
-                    type: 'sucess' 
+                    type: 'success' 
                 }
-            }
+            };
             return res.render('pages/produtos', jsonResult);
         } catch (error) {
             console.error("Erro ao processar a denúncia:", error);
             res.status(500).send("Erro ao processar a denúncia.");
         }
-    },
+    }
+
+    
 
 
 

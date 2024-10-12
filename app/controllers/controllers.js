@@ -272,6 +272,15 @@ const controller = {
         }
         return true;
     })
+],
+
+regrasValidaçãoDenunciaV: [
+  check('Caixo').custom((valores, {req}) => {
+      if (!req.body.Caixo || req.body.Caixo.length === 0) {
+          throw new Error('*Selecione pelo menos um motivo');
+      }
+      return true;
+  })
 ]
 };
 

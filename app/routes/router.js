@@ -728,7 +728,7 @@ router.post("/denunciar-produto/:id_prod_cliente",
 );
 
 router.post("/denunciar-vendedor/:id_prod_cliente",
-  controller.regrasValidaçãoDenunciaP,
+  controller.regrasValidaçãoDenunciaV,
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {
