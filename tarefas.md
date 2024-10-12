@@ -1,10 +1,8 @@
 ## O que falta do projeto (Lazully)
 - Validações & Notifiações: 
-    Att/Adc Bazar (Campo fica vermelho) (Começo) (+ - check mas falta)
+    ****Perguntar pro giovanni dos erros de multiplos render quando atualiza dados
 
-    Atualizar Dados (Campo fica vermelho) (Começo)
-    
-    Produtos (Campo fica vermelho e Validação na imagem)
+    Produtos (Campo fica vermelho)
 
 - Cadastro Politica de Privacidade & Ajustar as Novas mudanças do cadatro
 

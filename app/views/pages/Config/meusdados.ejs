@@ -60,7 +60,7 @@
                             showIcon: false,
                             showCloseButton: true,
                             autoclose: true,
-                            autotimeout: 5000,
+                            autotimeout: 4000,
                             gap: 20,
                             distance: 20,
                             position: 'center'
@@ -71,7 +71,13 @@
                 })();
             </script>
         <% } %>
-        
+        <!-- <% if (formAprovado) { %>
+            <script>
+            setTimeout(() => {
+            window.location.href = "/perfil";
+            },4000);
+            </script>
+        <%} %> -->
     <!-- parte superior do desconto na primeira compra -->
     <a href="/masculino">
         <section id="section_parte_superior">
@@ -419,19 +425,19 @@
                     </Section>
                     <p id="align">
                     <p id="pz">Nome:</p>
-                    <input type="text" name="nome" id="nome" placeholder="Nome Completo*" value="<%= valores.nome %>">
+                    <input type="text" name="nome" id="nome" placeholder="Nome Completo*" value="<%= valores.nome %>" class="<%=campoErro.nome %>">
                     </p>
                     <p id="pz">CPF:</p>
-                    <input type="text" name="cpf" id="cpf" placeholder="CPF" value="<%= valores.cpf %>" readonly>
+                    <input type="text" name="cpf" id="cpf" placeholder="CPF" value="<%= valores.cpf %>" readonly >
                     <p id="pz">Nascimento:</p>
                     <input type="date" name="nasc" id="nasc" maxlength="2" placeholder="Data de Nascimento*"
-                        value="<%= valores.nasc %>" readonly>
+                        value="<%= valores.nasc %>" readonly> 
                     </p>
                     <p id="pz">Email:</p>
-                    <input type="email" name="email" id="email" placeholder="Email*" value="<%= valores.email %>">
+                    <input type="email" name="email" id="email" placeholder="Email*" value="<%= valores.email %>" class="<%=campoErro.email %>">
                     </p>
                     <p id="pz">Senha:</p>
-                    <input type="password" name="senha" id="senha" placeholder="Senha*">
+                    <input type="password" name="senha" id="senha" placeholder="Senha*" class="<%=campoErro.senha %>">
                     </p>
 
                     <p id="regra"><span id="pr">Preencha os campos apenas se deseja alterar os seus dados!</span>

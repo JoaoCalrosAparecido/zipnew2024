@@ -106,3 +106,8 @@ button:hover {
 #nome, #cpf, #email, #nasc, #senha {
     font-size: 18px;
 }
+
+.invalido{
+    background-color: rgba(255, 0, 0, 0.13);
+    border-color: rgb(255, 56, 56);
+}

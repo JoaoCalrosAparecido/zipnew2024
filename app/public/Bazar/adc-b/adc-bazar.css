@@ -71,7 +71,6 @@ html {
     padding: 10px;
     border: 1px solid #000000;
     margin-bottom: 0.3vw;
-    background-color: #FFFFFF;
     text-align: end;
 }
 
@@ -406,4 +405,9 @@ input::placeholder {
         margin-left: 4vw;
         margin-right: 4vw;
     }
+}
+
+.invalido{
+    background-color: rgba(255, 0, 0, 0.13);
+    border-color: rgb(255, 56, 56);
 }

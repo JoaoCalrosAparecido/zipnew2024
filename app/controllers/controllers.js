@@ -69,7 +69,7 @@ const controller = {
   ],
   regrasValidacaolog: [
     body('email').isEmail().withMessage('*Email Inválido'),
-    body('senha').isStrongPassword().withMessage('*Senha Inválida')
+    body('senha')
       .custom(async (senha, { req }) => {
         try {
           const [users] = await pool.query("SELECT * FROM cliente WHERE email = ?", [req.body.email]);
@@ -98,8 +98,17 @@ const controller = {
   regrasValidacaoperfil: [
     body('nome').isLength({ min: 3, max: 45 }).withMessage("*Nome deve ter de 3 a 45 caracteres!"),
     body('email').isEmail().withMessage('*Email Inválido'),
+    body('senha').custom((senha, {req}) => {
+      const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[\W_])/;
+      if (!senha){
+        return true
+      }  
+      if (senha.length < 8 || !regex.test(senha)){
+        throw new Error('*A senha é fraca');
+      }
+      return true
+    })
   ],
-
 
   mostrarPerfil: async (req, res) => {
     const user = await models.findUserById(req.session.autenticado.id)
@@ -116,7 +125,7 @@ const controller = {
         senha: ""
       };
 
-      return res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: null, valores: campos, Bazar:bazar });
+      return res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: null, valores: campos, Bazar:bazar, formAprovado: false });
     } catch (e) {
       console.log(e);
       return res.render("pages/Config/meusdados",
@@ -155,6 +164,8 @@ const controller = {
         valores: {
           nome: req.body.nome,
           email: req.body.email,
+          cpf: req.body.cpf,
+          nasc: req.body.nasc,
         }});
     }
     try {
@@ -191,15 +202,17 @@ const controller = {
             senha: ""  
           };
           console.log("Atualizado")
-          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Alterações Gravadas", type: "sucess" }, Bazar: bazar, usuario: userId, valores: campos });
+          return res.render("pages/perfil", 
+            { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Alterações Gravadas", type: "sucess" }, formAprovado: true, Bazar: bazar, usuario: userId, valores: campos });
         } else {
           console.log("Atualizado 2")
-          return res.render("pages/perfil", { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Sem Alterações", type: "info" }, Bazar: bazar, usuario: userId, valores: dadosForm });
+          return res.render("pages/perfil", 
+            { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Sem Alterações", type: "info" }, Bazar: bazar, usuario: userId, valores: dadosForm });
         }
       }
     } catch (e) {
       console.log(e)
-      return res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { title: "Erro ao atualizar o perfil!", msg: "Verifique os valores digitados!", type: "error" }, Bazar: bazar, valores: req.body });
+      return res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { title: "Erro ao atualizar o perfil!", msg: "Verifique os valores digitados!", type: "error" }, formAprovado: false, Bazar: bazar, valores: req.body });
     }
   },
 
@@ -230,36 +243,24 @@ const controller = {
 
   regrasValidaçãoBazar: [
     body('Nome')
-      .notEmpty()
-      .withMessage('*O nome não pode estar vazio.')
       .isString()
       .isLength({ min: 2, max: 10 })
       .withMessage('*O nome deve ter entre 2 e 10 caracteres.'),
       
     body('Ano')
-      .notEmpty()
-      .withMessage('*O ano não pode estar vazio.')
-      .isNumeric()
-      .isLength({ min: 4, max: 4 })
-      .withMessage('*O ano deve ter 4 dígitos.'),
+    .isInt({ min: 2000, max: new Date().getFullYear() }).withMessage('*Ano Inválido'),
       
     body('Descricao')
-      .notEmpty()
-      .withMessage('*A descrição não pode estar vazia.')
       .isString()
       .isLength({ min: 5, max: 20 })
       .withMessage('*A descrição deve ter entre 5 e 20 caracteres.'),
       
     body('Titulo')
-      .notEmpty()
-      .withMessage('*O título não pode estar vazio.')
       .isString()
       .isLength({ min: 3, max: 25 })
       .withMessage('*O título deve ter entre 3 e 25 caracteres.'),
       
     body('Biografia')
-      .notEmpty()
-      .withMessage('*A Biografia não pode estar vazia.')
       .isString()
       .isLength({ min: 10, max: 300 })
       .withMessage('*A biografia deve ter entre 10 e 300 caracteres.')
@@ -285,3 +286,6 @@ regrasValidaçãoDenunciaV: [
 };
 
 module.exports = controller;
+
+
+//  .equals('on')

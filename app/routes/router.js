@@ -395,7 +395,9 @@ router.post("/atualizardados",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
+
     controller.gravarPerfil(req, res)
+
   });
 
 router.get("/wishlist",
@@ -669,7 +671,17 @@ router.get("/adc-bazar",
     if (bazar){
       bazarController.dadosBazar(req,res)
     }else{
-      res.render('pages/adc-bazar.ejs' , { Bazar: bazar, listaErros: null  });
+      res.render('pages/adc-bazar.ejs' , { 
+        Bazar: bazar, 
+        listaErros: null, 
+        valores: {
+          Nome: "",
+          Ano: "",
+          Descricao: "",
+          Titulo: "",
+          Biografia: "",
+          imgBazar: "",
+      }});
     }
   })
 

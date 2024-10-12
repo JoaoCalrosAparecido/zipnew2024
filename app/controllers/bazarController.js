@@ -4,13 +4,15 @@ const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 
 const bazarController = {
+  
   submitBazar: async (req, res) => {
-    const erros = validationResult(req);
-
     const userId = req.session.autenticado.id;
     const { imgBazar, Nome, Ano, Descricao, Titulo, Biografia } = req.body;
 
     let bazar = await produtosModels.findBazarByUserId(userId);
+
+    const erros = validationResult(req);
+    var errosMulter = req.session.erroMulter;
 
     if (!erros.isEmpty()) {
       console.log(erros);
@@ -28,6 +30,48 @@ const bazarController = {
             Biografia: req.body.Biografia,
         }
     })
+    }
+
+    if (errosMulter != null){
+      erros.errors.push(errosMulter)
+      return res.render("pages/adc-bazar", {
+        Bazar: bazar,
+        listaErros: erros,
+        dadosNotificacao: null,
+        listaProdBazar: [],
+        valores: {
+          imgBazar: req.body.imgBazar,
+          Nome: req.body.Nome,
+          Ano: req.body.Ano,
+          Descricao: req.body.Descricao,
+          Titulo: req.body.Titulo,
+          Biografia: req.body.Biografia,
+      }
+    }
+      )
+    }
+
+    if (!req.file){
+      errosMulter = {
+        value: '',
+        msg: "Selecione uma imagem",
+        path: "imgBazar"
+    };
+    erros.errors.push(errosMulter)
+      return res.render("pages/adc-bazar", {
+        Bazar: bazar,
+        listaErros: erros,
+        dadosNotificacao: null,
+        listaProdBazar: [],
+        valores: {
+          imgBazar: req.body.imgBazar,
+          Nome: req.body.Nome,
+          Ano: req.body.Ano,
+          Descricao: req.body.Descricao,
+          Titulo: req.body.Titulo,
+          Biografia: req.body.Biografia,
+      }
+      })
     }
 
     if (!bazar) {
@@ -106,6 +150,53 @@ const bazarController = {
       const userId = req.session.autenticado.id;
       const user = await models.findUserById(userId);
       const bazar = await produtosModels.findBazarByUserId(userId);
+
+      const produtoBazar = await produtosModels.mostrarProdutosBazar(userId, bazar.Id_Bazar);
+    var errosMulter = req.session.erroMulter;
+
+    if (errosMulter != null){
+      erros.errors.push(errosMulter)
+      console.log(req.body)
+      console.log(erros)
+      return res.render("pages/adc-bazar", {
+        Bazar: bazar,
+        listaErros: erros,
+        dadosNotificacao: null,
+        listaProdBazar: produtoBazar,
+        valores: {
+          Nome: req.body.Nome,
+          Ano: req.body.Ano,
+          Descricao: req.body.Descricao,
+          Titulo: req.body.Titulo,
+          Biografia: req.body.Biografia,
+          imgBazar: req.body.imgBazar,
+        },
+    }
+      )
+    }
+
+    if (!req.file){
+      errosMulter = {
+        value: '',
+        msg: "Selecione uma imagem",
+        path: "imgBazar"
+    };
+    erros.errors.push(errosMulter)
+      return res.render("pages/adc-bazar", {
+        Bazar: bazar,
+        listaErros: erros,
+        dadosNotificacao: null,
+        listaProdBazar: produtoBazar,
+        valores: {
+          Nome: req.body.Nome,
+          Ano: req.body.Ano,
+          Descricao: req.body.Descricao,
+          Titulo: req.body.Titulo,
+          Biografia: req.body.Biografia,
+          imgBazar: req.body.imgBazar,
+        }
+      })
+    }
       
       if (!erros.isEmpty() || erroMulter != null) {
           lista = !erros.isEmpty() ? erros : { formatter: null, errors: [] };
@@ -118,7 +209,7 @@ const bazarController = {
             Bazar: bazar,
             listaErros: lista,
             dadosNotificacao: null,
-            listaProdBazar: [],
+            listaProdBazar: produtoBazar,
             valores: {
               Nome: req.body.Nome,
               Ano: req.body.Ano,
@@ -131,7 +222,7 @@ const bazarController = {
 
       try {
         let { Nome, Ano, Descricao, Titulo, Biografia } = req.body;
-        const imgBazarPath = req.file ? req.file.filename : null; // caminho da imagem
+        const imgBazarPath = req.file ? req.file.filename : null;
         
         const dadosForm = {
           nome: Nome,

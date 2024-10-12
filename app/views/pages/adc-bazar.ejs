@@ -425,24 +425,27 @@
                         </span>
                     </section>
                     <img id="imagePreview" src="/IMG/uploads/<%= valores.imgBazar %>" alt="Image Preview">
-                    <input type="file" id="fileInput" name="imgBazar" accept="image/*">
+                    <input type="file" id="fileInput" name="imgBazar" accept="image/*" value="<%= valores.imgBazar %>">
+                    <script>
+                        
+                    </script>
                 </label>
                 <section id="formOverlay">
-                    <input type="text" id="Name" placeholder="Seu nome" name="Nome" value="<%= valores.Nome %>">
-                    <input type="text" id="Year" placeholder="Ano atual" name="Ano" value="<%= valores.Ano %>">
+                    <input type="text" id="Name" placeholder="Seu nome" name="Nome" value="<%= valores.Nome %>" class="<%=campoErro.Nome %>">
+                    <input type="text" id="Year" placeholder="Ano atual" name="Ano" value="<%= valores.Ano %>" class="<%=campoErro.Ano %>">
                     <input type="text" id="Description" placeholder="Descrição sobre as roupas que irá revender"
-                        name="Descricao" value="<%= valores.Descricao %>">
+                        name="Descricao" value="<%= valores.Descricao %>" class="<%=campoErro.Descricao %>">
                 </section>
             </section>
 
             <section id="additionalInputs">
                 <input type="text" placeholder="Nome da instituição de caridade que escolheu" name="Titulo"
-                    value="<%= valores.Titulo %>">
+                    value="<%= valores.Titulo %>" class="<%=campoErro.Titulo %>">
             </section>
 
             <section id="textAreaSection">
                 <textarea placeholder="Uma breve biografia sua, o nome da instituição novamente e a porcentagem que irá doar"
-                    name="Biografia"><%= valores.Biografia %></textarea>
+                    name="Biografia" class="<%=campoErro.Biografia %>"><%= valores.Biografia %></textarea>
             </section>
 
             <section id="centro">
@@ -500,23 +503,23 @@
                             <span>+</span>
                         </section>
                         <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
-                        <input type="file" id="fileInput" name="imgBazar" accept="image/*" required>
+                        <input type="file" id="fileInput" name="imgBazar" accept="image/*">
                     </label>
                     <section id="formOverlay">
-                        <input type="text" id="Name" placeholder="Seu nome" name="Nome">
-                        <input type="text" id="Year" placeholder="Ano atual" name="Ano">
+                        <input type="text" id="Name" placeholder="Seu nome" name="Nome" class="<%=campoErro.Nome %>" value="<%= valores.Nome %>">
+                        <input type="text" id="Year" placeholder="Ano atual" name="Ano" class="<%=campoErro.Ano %>" value="<%= valores.Ano %>">
                         <input type="text" id="Description" placeholder="Descrição sobre as roupas que irá revender"
-                            name="Descricao">
+                            name="Descricao" class="<%=campoErro.Descricao %>" value="<%= valores.Descricao %>">
                     </section>
                 </section>
 
                 <section id="additionalInputs">
-                    <input type="text" placeholder="Nome da instituição de caridade que escolheu" name="Titulo">
+                    <input type="text" placeholder="Nome da instituição de caridade que escolheu" name="Titulo" class="<%=campoErro.Titulo %>" value="<%= valores.Titulo %>">
                 </section>
 
                 <section id="textAreaSection">
                     <textarea placeholder="Uma breve biografia sua, o nome da instituição novamente e a porcentagem que irá doar"
-                        name="Biografia"></textarea>
+                        name="Biografia" class="<%=campoErro.Biografia %>" ><%= valores.Biografia %></textarea>
                 </section>
 
                 <section id="submitSection">

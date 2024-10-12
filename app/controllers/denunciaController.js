@@ -168,7 +168,6 @@ const denunciaController = {
             res.status(500).send("Erro ao processar a denúncia.");
         }
     }
-
     
 
 

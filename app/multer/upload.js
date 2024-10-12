@@ -48,14 +48,12 @@ module.exports = (caminho = null, tamanhoArq = 3, extensoesPermitidas = ['jpeg',
                 // Diretório no qual está sendo armazenado
                 var storagePasta = multer.diskStorage({
                     destination: (req, file, cowboy) => {
-                        cowboy(null, caminho)
+                        cowboy(null, caminho); // Define a pasta de destino
                     },
                     filename: (req, file, cowboy) => {
-                        // função para renomear e deixar um padrão no nome dos arquivos
-                        cowboy(
-                            null,
-                            file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-                        )
+                        const nomeArquivo = file.fieldname + "-" + Date.now() + path.extname(file.originalname);
+                        req.filePath = path.join(caminho, nomeArquivo); // Salva o caminho completo do arquivo
+                        cowboy(null, nomeArquivo); // Define o nome do arquivo
                     }
                 });
                 // Upload
