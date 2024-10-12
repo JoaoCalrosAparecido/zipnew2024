@@ -13,20 +13,19 @@ body {
 
 #center {
     width: 100vw;
-    background-color: #F6F6F6;
 }
 
 #formulario{
-    margin-top: 14vh;
+    margin-top: 17vh;
     height: 100%;
     padding: 50px;
 }
 
 #forms{
-    margin-left: 1vw;
+    margin-left: 5vw;
     width: 16.5rem;
     display: flex;
-    column-gap: 3.5vw;
+    column-gap: 10vw;
 }
 
 #botao-bazar {
@@ -54,15 +53,15 @@ form input[type=password]{
 }
 
 button{
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(0, 0, 0);
     color: white;
     border: none;
-    font-size: 16px;
+    font-size: 21px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 16.5rem;
-    height: 50px;
-    margin-top: 20px;
+    width: 45%;
+    height: 8vh;
+    margin: 6vh 0 4vh 0;
 
 }
 button:hover {
@@ -70,32 +69,40 @@ button:hover {
 }
 #pz{
     padding-top: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     padding-left: 3px;
     width: 20px;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 
 #regra{
-    padding: 5px;
+    padding: 1vw;
     margin-top: 20px;
-    background-color: #e7e4e4; /* Cor de fundo */
-    border: 2px solid #c0c0c0; /* Borda sólida */
-    width: 46rem;
+    border: 2px solid #000;
+    width: 94%;
     height: 10vh;
     font-size: 20px;
 }
 
 #pr{
-    color: red;
-    font-size: 20px;
+    color: #2F395A;
+    font-size: 22px;
+    font-weight: 500;
 }
 
-#meio > h1{
-    font-size: 38px;
-    font-weight: 500;
+#meio > h1 > img{
     margin: 3vh 0 3vh 0;
 }
 
+
+#boxa {
+    margin-left: 2.5vw;
+    margin-top: -2vw;
+}
+
+
+#nome, #cpf, #email, #nasc, #senha {
+    font-size: 18px;
+}
