@@ -128,13 +128,9 @@ body {
         margin: 30px 0 8vw 0;
     }
 
-    #titulo {
-        display: none;
-    }
-
     #textAreaSection {
         width: 80vw;
-        margin: -23vw 0 14vw 9.5vw;
+        margin: 0 0 14vw 9.5vw;
     }
 
     #formOverlay input,
