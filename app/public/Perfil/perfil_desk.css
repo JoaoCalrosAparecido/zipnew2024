@@ -62,7 +62,7 @@ hr{
 }
 
 #box{
-    margin-top: 1.2vw;
+    margin-top: 0.8vw;
     margin-bottom: 35px;
 
     background-color: rgb(255, 255, 255);
@@ -85,7 +85,7 @@ hr{
     vertical-align: none;
     font-size: 32px;
     border-bottom: 2px solid #f1f1f1;
-    padding-bottom: 0.6vw;
+    padding-bottom: 0.4vw;
 }
 
 /* Informações Usuario*/
@@ -190,7 +190,7 @@ hr{
     text-align: center;
     border-bottom: 2px solid #f1f1f1;
     width: 91%;
-    padding-bottom: 0.6vw;
+    padding-bottom: 0.4vw;
     margin-left: 3.5vw;
     font-size: 32px;
     font-weight: 400;
@@ -213,14 +213,13 @@ hr{
     display: flex;
     margin-left: 3.5vw;
     margin-right: 5vw;
-
 }
 
 #likes, #likez, #likezz{
     margin-left: 5px;
     height: 60vh;
     width: 21.2vw;
-    margin-top: 2vw;
+    margin-top: 1.2vw;
 }
 
 

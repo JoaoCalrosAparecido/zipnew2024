@@ -267,8 +267,6 @@
     
     <% if (produto) { %>
         <!--foto das bolsas-->
-    <p id="paragrafo_das_fotos_classica"><!--Feminino | Bolsas | Bolsas de mão |--> <span
-        id="paragrafo_das_fot0s_classica_span">Clássicas</span></p>
     <section id="section_da_foto_da_bolsa">
         <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica1">
             <img src="../../IMG/uploads/<%= produto.img1 %>" alt="Imagem 1">
@@ -297,7 +295,7 @@
                 <P id="parte_produto_usado_bolsa_Preta">
                     <%= produto.descProduto %>
                 </P>
-                <P id="parte_cor_bolsa_Preta">COR: <span id="parte_cor_bolsa_Preta_span">aaaaaa</span></P>
+                <P id="parte_cor_bolsa_Preta">Tamanho <span id="parte_cor_bolsa_Preta_span">P</span></P>
             </article>
 
             <a href="cart.html">
@@ -308,7 +306,7 @@
             <form action="addCart" method="post">
                 <input type="hidden" name="idProdCart" value="<%= produto.id_prod_cliente %>, <%= produto.tituloprod %>, <%= produto.preçoprod %>, <%=produto.img1 %>"   style="opacity: 0;">
                     <button type="submit" id="produto_adicionar_a_sacola" class="add-to-cart"  >
-                        <p>ADICIONAR À SACOLA</p>
+                        <p>Adicionar à sacola</p>
                      </button>
             </form>
             
@@ -318,17 +316,22 @@
             <article id="artcle_do_vendidos_por_vinkings">
                 <p id="paragrafo_do_vendidos_por_vinkings">Vendido por <span id="span_do_vikings"> <%= nomeCliente %></p></span></p>
 
-                <p id="parte_escrita_100_vendas">+100 vendas</p>
+                <p id="parte_escrita_100_vendas">100 vendas finalizadas</p>
             </article>
 
             <article id="artcle_dos_detalhes">
-                <p>DETALHES</p>
+                
+                <p id="openMenuBtn">Denunciar produto</p>
                 <hr>
-
-                <p id="openMenuBtn">DENUNCIAR PRODUTO</p>
+                
+                <p id="openMenuBt">Denunciar vendedor</p>
                 <hr>
-
-                <p id="openMenuBt">DENUNCIAR VENDEDOR</p>
+                <section id="sustentabilidade-icon"><lord-icon
+                    src="https://cdn.lordicon.com/zruuduya.json"
+                    trigger="hover"
+                    colors="primary:#000000,secondary:#30beaa"
+                    style="width:2vw;height:2vw;">
+                </lord-icon><h2>Faça a moda circular como <%= nomeCliente %> </h2></section>
                 <hr>
             </article>
         </section>
