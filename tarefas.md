@@ -4,7 +4,8 @@
 
     Produtos (Campo fica vermelho)
 
-- Cadastro Politica de Privacidade & Ajustar as Novas mudanças do cadatro
+- Cadastro - Fazer o pdf abrir & fazer o pdf oficial
+
 
 - Adm pode aplicar banimentos / Fazer a pagina de Adm
 

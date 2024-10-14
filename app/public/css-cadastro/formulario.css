@@ -27,20 +27,22 @@ label {
 }
 
 #nome{
-    width: 50rem;
+    width: 49rem;
     height: 40px;
     margin-top: 20px;
     border-width: 1px;
+    padding-left: 10px;
 
 }
 
 
 #dia, #mes, #ano{
-    width: 15rem;
+    width: 14.3rem;
     height: 40px;
     margin-top: 20px;
     font-size: 16px;
     border-width: 1px;
+    padding-left: 10px;
 }
 
 #dia, #mes{
@@ -49,34 +51,29 @@ label {
 
 
 #senha{
-    width: 50rem;
+    width: 49rem;
     height: 40px;
     margin-top: 20px;
     border-width: 1px;
+    padding-left: 10px;
 }
 
 #email{
-    width: 50rem;
+    width: 49rem;
     height: 40px;
     margin-top: 40px;
     border-width: 1px;
+    padding-left: 10px;
 }
 
 
 #cpf{
-    width: 50rem;
+    width: 49rem;
     height: 40px;
     margin-top: 20px;
     border-width: 1px;
+    padding-left: 10px;
 }
-#cep{
-    width: 50rem;
-    height: 40px;
-    margin-top: 20px;
-    border-width: 1px;
-    
-}
-
 
 
 
@@ -100,8 +97,6 @@ label {
 }
 
 #foto{
-
-
     max-width: 40rem;
     width: 100%;
     padding: 20px;
@@ -112,7 +107,12 @@ label {
     font-family: 'Poppins', sans-serif;
     border: none;
     margin-left: 30rem;
-    
+}
+
+@media (max-width:1500px) {
+  #foto{
+    display: none;
+ }
 }
 
 #tornar{

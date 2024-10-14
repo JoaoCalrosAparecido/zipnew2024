@@ -62,8 +62,8 @@ const controller = {
       throw new Error('*As senhas não são iguais');
     }
     return true;
-  })
-
+  }),
+  body('Privacidade').equals('on').withMessage('*É presiso aceitar os termos')
 
 
   ],
@@ -288,4 +288,3 @@ regrasValidaçãoDenunciaV: [
 module.exports = controller;
 
 
-//  .equals('on')
