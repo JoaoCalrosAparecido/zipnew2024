@@ -1,31 +1,32 @@
-/*const pool = require("../../config/pool_conexoes");
+const pool = require("../../config/pool_conexoes");
 const { body, validationResult } = require("express-validator");
 const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 const moment = require("moment"); // Certifique-se de ter isso importado
 const pedidoModel = require("../models/pedidoModel"); // Certifique-se de ter esse import
+const cartModels = require("../models/cartModels");
 
 
 const pedidoControler = {
   gravarPedido: async (req, res) => {
     try {
-      const pedidos = req.session.cart;
+      const userId = req.session.autenticado.id;
+      const pedidos = await cartModels.findAllProductByUserId(userId);
       const camposJsonPedido = {
         data: moment().format("YYYY-MM-DD HH:mm:ss"),
-        usuario_id_usuario: req.session.autenticado.id,
+        usuario_id_usuario: userId,
         status_pedido: 1,
         status_pagamento: req.query.status,
         id_pagamento: req.query.payment_id
       };
-      var create = await pedidoModel.createPedido(camposJsonPedido);
-      await Promise.all(pedidos.map(async element => {
-        const camposJsonItemPedido = {
-          pedido_id_pedido: create.insertId,
-          hq_id_hq: element.codproduto,
-          quantidade: element.qtde
-        };
-        await pedidoModel.createItemPedido(camposJsonItemPedido);
-      }));
+
+      await pedidoModel.createPedido(camposJsonPedido);
+      
+        const listtaDePedidos =  pedidos.map((element) => {
+          return [ element.Id_prod_cliente, req.query.payment_id, 1]
+        });
+        
+        await pedidoModel.createItemPedido(listtaDePedidos);
       req.session.pedidos = [];
       res.redirect("/");
     } catch (e) {
@@ -35,4 +36,4 @@ const pedidoControler = {
   }
 };
 
-module.exports = pedidoControler;*/
+module.exports = pedidoControler;

@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
         // Itera sobre cada item para extrair os dados
         items.forEach(item => {
             console.log(item)
-            const id = parseFloat(document.getElementById('id_prod').value)
+            const id = document.getElementById('id_prod').value.toString();
             const unit_price = Number(parseFloat( item.querySelector(".preco-prod-value").innerText).toFixed(2));
-            const  title = item.querySelector(".name-prod").innerText;
-            const quantity = 1;
+            const title = item.querySelector(".name-prod").innerText.toString(); // Transformando title em string
+            const quantity = Number(1); // Garantindo que quantity seja um número
             const currency_id = "BRL";        
             
             
@@ -42,12 +42,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
         })
         .then(function (response) {
             return response.json();
+            
         })
         .then(function (preference) {
+            console.log(preference)
             createCheckoutButton(preference.id);
             //$(".shopping-cart").fadeOut(500);
             setTimeout(() => {
                // $(".container_payment").show(500).fadeIn();
+               preference.sandbox_init_point
+               window.open(preference.sandbox_init_point)
             }, 500);
         })
         .catch(function () {
@@ -75,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 }
             );
             window.checkoutButton = renderComponent(bricksBuilder);
+            window.open('sandbox_init_point')
         };
     }
 
