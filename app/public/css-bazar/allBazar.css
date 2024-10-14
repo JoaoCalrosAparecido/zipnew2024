@@ -206,8 +206,8 @@ body {
     background-color: rgb(216, 215, 215);
     width: 22.5vw;
     height: 30.5vw;
-    margin-left: -2.3vw;
     display: grid;
+    margin-left: -2.3vw;
     place-items: center;
 }
 
@@ -289,9 +289,8 @@ body {
 }
 
 .arrow-btn.next {
-    right: 0;
+    right: 3vw;
     margin-top: -2.5vw;
-    margin-right: 3vw;
 }
 
 #centro{
@@ -348,6 +347,7 @@ body {
     
             &:hover {
                 color: #ffffff;
+                background: gray;
             }
     
             & i {
@@ -395,4 +395,5 @@ body {
         font-size: 17px;
     }
 }
+
 

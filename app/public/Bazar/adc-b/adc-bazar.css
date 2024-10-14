@@ -135,6 +135,7 @@ html {
     cursor: pointer;
     font-size: 20px;
     font-weight: 500;
+    margin-top: -5vw;
 }
 
 #submitBtn:hover {
@@ -192,12 +193,10 @@ html {
 }
 
 #box {
-
-
     background-color: rgb(255, 255, 255);
-    width: 18vw;
-    height: 28.2vw;
-
+    width: 20vw;
+    height: 30.5vw;
+    margin: -3vw 0 0 -6vw;
     border-style: solid;
     border-width: 1px;
     border-radius: 2px;
@@ -226,10 +225,11 @@ html {
 
 #ash {
     background-color: rgb(255, 255, 255);
-    width: 18vw;
-    height: 26vw;
+    width: 22.5vw;
+    height: 30.5vw;
     display: grid;
     place-items: center;
+    margin-left: -2.3vw;
 }
 
 #none{
@@ -249,13 +249,13 @@ html {
 }
 
 #cust:nth-child(2) {
-    margin: 0.5vw 0 0 1.2vw;
+    margin: 0.5vw 0 0 -0.6vw;
     font-weight: 500;
     font-size: 20px;
 }
 
 #cust:nth-child(3) {
-    margin-left: 1vw;
+    margin-left: -0.8vw;
 }
 input::placeholder {
     font-size: 15px;
@@ -268,7 +268,8 @@ input::placeholder {
     overflow: hidden;
     position: relative;
     padding: 1rem 0;
-    width: 87vw;
+    width: 91.2vw;
+    margin-left: -2.7vw;
     
     & .arrows .arrow-btn {
         display: flex;
@@ -276,9 +277,9 @@ input::placeholder {
         min-height: 40px;
         font-size: 25px;
         outline: none;
-        background: black;
+        background: #cfcfd4;
         color: white;
-        border: 3px solid white;
+        border: 3px solid transparent;
         cursor: pointer;
         transition: font .5s, color .5s, background .5s;
         border-radius: 50%;
@@ -302,8 +303,8 @@ input::placeholder {
         display: flex;
         width: 100%;
         align-items: center;
-        padding: 12px 2.5rem;
-        margin-bottom: 6vw;
+        padding: 12px 7vw;
+        margin-bottom: 8vw;
         margin-top: 6vw;
     }
 
@@ -314,17 +315,22 @@ input::placeholder {
 }
 
 .arrow-btn.previous {
-    left: 0;
+    left: 1.6vw;
+    margin-top: -2.5vw;
 }
 
 .arrow-btn.next {
     right: 0;
+    margin-top: -2.5vw;
+    margin-right: -0.01vw;
 }
 
 #centro{
     margin-left: 6vw;
     margin-right: 6vw;
 }
+
+
 
 @media (min-width:768px) {
     .carousel__container .carousel__inner {
@@ -338,7 +344,7 @@ input::placeholder {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     #box{
         width: 70vw;
         height: 109vw;
@@ -349,16 +355,17 @@ input::placeholder {
         height: 100vw;
     }
     .carousel__container {
-        width: 92vw;
+        width: 80vw;
+        margin-left: 8vw;
         & .arrows .arrow-btn {
             display: flex;
             min-width: 40px;
             min-height: 40px;
             font-size: 25px;
             outline: none;
-            background: black;
+            background: #cfcfd4;
             color: white;
-            border: 3px solid white;
+            border: 3px solid transparent;
             cursor: pointer;
             transition: font .5s, color .5s, background .5s;
             border-radius: 50%;
@@ -395,17 +402,38 @@ input::placeholder {
     
     .arrow-btn.previous {
         left: 0;
+        margin-top: -4vw;
     }
     
     .arrow-btn.next {
-        right: 0;
+        right: 1vw;
+        margin-top: -4vw;
     }
-    
+
     #centro{
         margin-left: 4vw;
         margin-right: 4vw;
     }
+
+
+    #cust:nth-child(2) {
+        margin: 2vw 0 0 3vw;
+    }
+
+    #cust:nth-child(3) {
+        margin: 0.5vw 0 0 2.6vw;
+        font-size: 17px;
+    }
+
+
+    lord-icon#mais {
+        width: 10vw !important;
+        /* Ajuste o tamanho conforme necessário */
+        height: 10vw !important;
+        /* Ajuste o tamanho conforme necessário */
+    }
 }
+
 
 .invalido{
     background-color: rgba(255, 0, 0, 0.13);
