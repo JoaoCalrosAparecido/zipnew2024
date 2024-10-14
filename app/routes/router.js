@@ -45,7 +45,6 @@ router.get("/", verificarUsuAutenticado, function (req, res) {
 });
 
 router.get("/bazar", bazarController.getBazaarsWithProducts, function (req, res) {
-
 });
 
 
