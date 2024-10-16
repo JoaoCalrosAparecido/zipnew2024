@@ -52,9 +52,9 @@ verificarUsuAutorizado = (destinoFalha, objectJson ,tipoPermitido = null) => {
         next();
         } else {
             if(req.session.autenticado && req.session.autenticado.autenticado != null){
-                res.redirect("/")
+                return   res.redirect("/")
             }
-            res.render(destinoFalha, objectJson);
+         return   res.render(destinoFalha, objectJson);
         }
     };
 }

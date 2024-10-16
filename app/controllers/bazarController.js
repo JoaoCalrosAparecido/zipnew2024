@@ -242,6 +242,7 @@ const bazarController = {
             req.session.autenticado = {
               autenticado: userr.nome,
               id: userr.id_Cliente,
+              tipo: user.Id_Tipo_Usuario
             };
       
             const campos = { 

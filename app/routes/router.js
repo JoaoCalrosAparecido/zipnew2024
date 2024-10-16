@@ -371,7 +371,7 @@ router.get("/meusdados",
 router.post("/atualizardados",
   controller.regrasValidacaoperfil,
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  //verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
 
     controller.gravarPerfil(req, res)

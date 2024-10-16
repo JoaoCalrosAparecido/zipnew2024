@@ -1,7 +1,5 @@
 ## O que falta do projeto (Lazully)
 - Validações & Notifiações: 
-    ****Perguntar pro giovanni dos erros de multiplos render quando atualiza dados
-
     Produtos (Campo fica vermelho)
 
 - Cadastro - Fazer o pdf abrir & fazer o pdf oficial
