@@ -6,30 +6,35 @@
     color: #000000;
 }
 
+html {
+    overflow-x:hidden;
+}
+
 body{
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 /** Começo */
 
 #profile{
-    margin-top: 7rem;
+    margin-top: 6rem;
 }
 
 #on, #onn{
-    margin-left: 4vw;
+    margin-left: 5vw;
     margin-right: 4vw;
 }
 
 #welcome{
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 #sales{
     font-size: 14px;
     font-weight: 500;
-    color: #02A7F0;
+    color: #30beaa;
 }
 
 
@@ -38,7 +43,7 @@ body{
 #adding{
     margin-top: 30px;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 300;
     margin-bottom: 5px;
 }
 
@@ -59,7 +64,7 @@ hr{
 }
 
 #box{
-    margin-top: 15px;
+    margin-top: 2vw;
     margin-bottom: 35px;
 
     background-color: rgb(255, 255, 255);
@@ -68,8 +73,7 @@ hr{
 
     border-style: solid;
     border-width: 1px;
-    border-radius: 28px;
-    border-color: #333333;
+    border-color: #a9aab3;
 
     display: grid;
     place-items: center;
@@ -78,9 +82,11 @@ hr{
 
 #add{
     font-weight: 400;
-    color: #333333;
+    color: #6d6e79;
     vertical-align: none;
-    font-size: 28px;
+    font-size: 24px;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 1vw;
 }
 
 /* Informações Usuario*/
@@ -88,7 +94,7 @@ hr{
 
 #info{
     background: #F2F2F2;
-    padding-top: 3px;
+    margin-top: -30vh;
     padding-bottom: 3px;
 }
 
@@ -118,6 +124,10 @@ hr{
 }
 
 /* Suporte */
+
+#onn {
+    margin-top: 32vh;
+}
 
 #sup{
     background: #F2F2F2;
@@ -230,3 +240,11 @@ hr{
     text-decoration: none;
     color: black;
 }    
+
+#data, #help {
+    padding-top: 5vw;
+}
+
+#Log {
+    margin-bottom: 5vw;
+}

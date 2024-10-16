@@ -173,6 +173,11 @@ body {
     #textAreaSection textarea {
         width: 90%;
     }
+
+    #titulo {
+        margin-top: -11vh;
+    }
+
     #ash{
         width: 46vw;
         height: 70vw;
@@ -188,6 +193,7 @@ body {
     #cust:nth-child(3) {
         margin: 0 0 9vw 3.5vw;
         font-size: 13px;
+        margin-bottom: 20vh;
     }
 }
 
@@ -284,12 +290,12 @@ body {
 }
 
 .arrow-btn.previous {
-    left: 0.6vw;
+    left: 1vw;
     margin-top: -2.5vw;
 }
 
 .arrow-btn.next {
-    right: 3vw;
+    right: 2.4vw;
     margin-top: -2.5vw;
 }
 
@@ -325,7 +331,7 @@ body {
 
     .carousel__container {
         width: 87vw;
-        margin-left: 5vw;
+        margin-left: 3.5vw;
         margin-top: -13vw;
         & .arrows .arrow-btn {
             display: flex;
@@ -376,7 +382,7 @@ body {
     }
     
     .arrow-btn.next {
-        right: 0;
+        right: 1.5vw;
         margin-top: -9vw;
     }
 

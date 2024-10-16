@@ -4,7 +4,7 @@
 #paragrafo_das_fotos_classica {
     position: relative;
     top: 154px;
-    left: 10.5%;
+    left: 12%;
     font-family: 'Poppins', sans-serif;
     font-size: 11px;
 
@@ -23,6 +23,7 @@
 }
 
 #section_da_foto_da_bolsa {
+    margin-left: -1vw;
     width: 1020px;
     height: auto; /* Mudei a altura para auto para permitir o espaçamento adequado */
     background-color: rgb(255, 255, 255);
