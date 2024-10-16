@@ -68,6 +68,7 @@ const prodModels = {
         }
     },
 
+    
     mostrarProdutosPerfil: async (UserIdProd) => {
         const [resultados] = await pool.query("SELECT * FROM produtos WHERE id_Cliente = ?", [UserIdProd])
         return resultados

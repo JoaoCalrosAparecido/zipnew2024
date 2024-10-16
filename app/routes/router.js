@@ -293,11 +293,14 @@ router.get("/minhas-vendas",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   function (req, res) {
-  
+    const userId = req.session.autenticado.id;
+
+    const prodAll = await produtosModels.findAllProduct(userId, produtoId);
+    
 
   
 
-  res.render('pages/minhas-vendas', { msg: 'Back-end funcionando' });
+  res.render('pages/minhas-vendas', { msg: 'Back-end funcionando', prodAll: prodAll });
 });
 
 router.post("/enviado",

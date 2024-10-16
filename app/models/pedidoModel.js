@@ -32,7 +32,17 @@ const pedidoModel = {
         } catch (error) {
             return error;
         }
-    }
+    },
+
+    pedidoIdprod: async (prodId) => {
+        try {
+
+            const [linhas] = await pool.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [prodId]);
+            return linhas ;
+        } catch (error) {
+            return error;
+        }
+    },
 };
 
 module.exports = pedidoModel;
