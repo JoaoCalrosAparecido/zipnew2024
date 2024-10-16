@@ -122,7 +122,7 @@ html {
 #submitSection {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 100px 0;
 }
 
 #submitBtn {
@@ -315,14 +315,14 @@ input::placeholder {
 }
 
 .arrow-btn.previous {
-    left: 1.6vw;
+    left: 2.2vw;
     margin-top: -2.5vw;
 }
 
 .arrow-btn.next {
     right: 0;
     margin-top: -2.5vw;
-    margin-right: -0.01vw;
+    margin-right: 0.38vw;
 }
 
 #centro{
@@ -356,7 +356,7 @@ input::placeholder {
     }
     .carousel__container {
         width: 80vw;
-        margin-left: 8vw;
+        margin-left: 7vw;
         & .arrows .arrow-btn {
             display: flex;
             min-width: 40px;

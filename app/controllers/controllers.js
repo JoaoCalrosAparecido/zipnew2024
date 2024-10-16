@@ -9,9 +9,8 @@ const controller = {
   regrasValidacaocadastro: [
     body('nome').trim().isAlpha('pt-BR', { ignore: ' ' }).withMessage('*Nome Inválido'),
     body('cpf')
-    .customSanitizer(value => value.replace(/[\.\-]/g, '')) // Tira os hífens e os pontin
+    .customSanitizer(value => value.replace(/[\.\-]/g, ''))
     .custom(async value => {
-      // Verifica se o CPF já está em uso no banco de dados
       const [cpf] = await pool.query('SELECT * FROM cliente WHERE cpf = ?', [value]);
       if (cpf.length > 0) {
         throw new Error('*CPF em uso!');
@@ -56,7 +55,6 @@ const controller = {
       }),
 
     body('senha').isStrongPassword().withMessage('*A senha é fraca'),
-  // Verifica se as senhas são iguais
   body('confirmsenha').custom((value, { req }) => {
     if (value !== req.body.senha) {
       throw new Error('*As senhas não são iguais');
@@ -84,7 +82,7 @@ const controller = {
 
           return true;
         } catch (err) {
-          console.error(err); // Log de erro para depuração
+          console.error(err);
           throw new Error(err);
         }
       }),
@@ -144,6 +142,7 @@ const controller = {
         });
     }
   },
+
   gravarPerfil: async (req, res) => {
     const userId = await models.findUserById(req.session.autenticado.id)
     const bazar = await produtosModels.findBazarByUserId(userId);
@@ -182,7 +181,8 @@ const controller = {
       }
 
       let resultUpdate = await models.update(dadosForm, req.session.autenticado.id);
-
+      console.log("resultUpdate")
+      console.log(resultUpdate)
       if (!resultUpdate.isEmpty) {
         if (resultUpdate.changedRows == 1) {
           var user = await models.findUserById(req.session.autenticado.id);
@@ -191,6 +191,7 @@ const controller = {
           var autenticado = {
             autenticado: user.nome,
             id: user.id_Cliente,
+            tipo: user.Id_Tipo_Usuario
           };
           req.session.autenticado = autenticado;
           let campos = {
@@ -210,6 +211,7 @@ const controller = {
             { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Sem Alterações", type: "info" }, Bazar: bazar, usuario: userId, valores: dadosForm });
         }
       }
+
     } catch (e) {
       console.log(e)
       return res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { title: "Erro ao atualizar o perfil!", msg: "Verifique os valores digitados!", type: "error" }, formAprovado: false, Bazar: bazar, valores: req.body });

@@ -8,7 +8,7 @@
 }
 
 body {
-    overflow-x: hidden;
+    
 }
 
 #center {
@@ -22,10 +22,10 @@ body {
 }
 
 #forms{
-    margin-left: 5vw;
+    margin-left: 5.5vw;
     width: 16.5rem;
     display: flex;
-    column-gap: 10vw;
+    column-gap:4.5vw;
 }
 
 #botao-bazar {
