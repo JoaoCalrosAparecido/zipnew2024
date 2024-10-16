@@ -292,15 +292,16 @@ router.get("/vender", function (req, res) {
 router.get("/minhas-vendas", 
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
-  function (req, res) {
+  async function (req, res) {
     const userId = req.session.autenticado.id;
-
+    const produtoId = parseInt(req.params.id_prod_cliente);
     const prodAll = await produtosModels.findAllProduct(userId, produtoId);
+    const prodIdPed = await pedidoModel.pedidoIdprod(userId, produtoId);
     
 
   
 
-  res.render('pages/minhas-vendas', { msg: 'Back-end funcionando', prodAll: prodAll });
+  res.render('pages/minhas-vendas', { msg: 'Back-end funcionando', prodAll: prodAll, prodIdPed:prodIdPed });
 });
 
 router.post("/enviado",
