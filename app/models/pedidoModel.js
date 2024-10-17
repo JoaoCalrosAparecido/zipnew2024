@@ -34,15 +34,36 @@ const pedidoModel = {
         }
     },
 
+<<<<<<< Updated upstream
     pedidoIdprod: async (prodId) => {
         try {
 
             const [linhas] = await pool.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [prodId]);
+=======
+    deleteItemPedido: async (delete_items) => {
+        try {
+            console.log(delete_items)
+            //const [linhas] = await pool.query('INSERT INTO `pedido_item`(`Id_prod_cliente`, `Id_Pedidos_Loji`, `quantidade`) VALUES (?, ?, ?) ', [pedido_items ]);
+            //return linhas ;
+
+            var sql = "DELETE FROM produtos WHERE Id_prod_cliente IN (?)";
+            var values = delete_items; // Certifique-se de que delete_items é um array
+
+
+            const [linhas] =  await pool.query(sql, [values],function(err) {
+                if (err) throw err;
+                pool.end();
+            });
+>>>>>>> Stashed changes
             return linhas ;
         } catch (error) {
             return error;
         }
+<<<<<<< Updated upstream
     },
+=======
+    }
+>>>>>>> Stashed changes
 };
 
 module.exports = pedidoModel;
