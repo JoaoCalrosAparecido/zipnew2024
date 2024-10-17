@@ -746,7 +746,40 @@ router.get("/denuncias-usu", async function (req, res) {
 
 
 router.get("/pesquisa", function (req, res) {
-  res.render('pages/pesquisa', { msg: 'Back-end funcionando' });
+  res.render('pages/pesquisa', { posts:null });
+});
+
+
+router.post("/search", async function (req, res) {
+  try {
+      const termoPesquisa = `%${req.body.pesquisaInput}%`;
+
+      // Buscando produtos no banco de dados
+      const produtos = await produtosModels.acharPorTermo(termoPesquisa) || [];
+
+      // Se nenhum produto for encontrado
+      if (produtos.length === 0) {
+          const jsonResult = {
+              posts: "none",
+          };
+          return res.render("./pages/pesquisa", jsonResult);
+      }
+
+      // Organizando os produtos
+      const posts = {
+          produtos: produtos,
+      };
+
+      // Renderizando o resultado da pesquisa
+      const jsonResult = {
+          posts: posts,
+      };
+
+      return res.render("./pages/pesquisa", jsonResult);
+  } catch (error) {
+      console.error(error);
+      return res.status(404).render("pages/error-404.ejs");
+  }
 });
 
 
