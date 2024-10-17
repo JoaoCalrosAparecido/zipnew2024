@@ -27,8 +27,15 @@ const pedidoControler = {
         });
         
         await pedidoModel.createItemPedido(listtaDePedidos);
+
+        
       req.session.pedidos = [];
       res.redirect("/");
+      const listaIdProd = pedidos.map((element) => {
+        return [ element.Id_prod_cliente]
+        });
+
+        await pedidoModel.deleteItemPedido(listaIdProd);
     } catch (e) {
       console.log(e);
       res.status(500).send("Erro ao gravar o pedido.");

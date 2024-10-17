@@ -1,7 +1,6 @@
 ## O que falta do projeto (Lazully)
 - Cadastro - Fazer o pdf abrir & fazer o pdf oficial
-
-- Campo de busca (Thomaz helps)
+- Campo de busca - CSS
 
 - Adm pode aplicar banimentos / Fazer a pagina de Adm
 

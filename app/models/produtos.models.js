@@ -95,7 +95,15 @@ const prodModels = {
         }
     },
 
-    
+    acharPorTermo: async (termo) => {
+        try {
+            const [resultados] = await pool.query("select * from produtos where tituloprod LIKE ? OR preçoprod LIKE ?", [termo, termo]);
+            return resultados;
+        } catch (error) {
+            console.log("Erro ao buscar produto");
+            return error;
+        }
+    },
 
 };
 
