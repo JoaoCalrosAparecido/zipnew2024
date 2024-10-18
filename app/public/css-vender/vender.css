@@ -71,6 +71,13 @@ body {
 }
 
 
+
+.homem-costas {
+    width: 800px;
+    margin: 50vh 0 0 -100vh;
+}
+
+
 .init-hidden {
     opacity: 0;
     transition-duration: 2s;
@@ -79,9 +86,4 @@ body {
 .init-hidden--direita {
     opacity: 0;
     transition-duration: 3s;
-}
-
-.homem-costas {
-    width: 800px;
-    margin: 50vh 0 0 -100vh;
 }
