@@ -292,7 +292,7 @@ router.get("/minhas-vendas",
     const userId = req.session.autenticado.id;
     const produtoId = parseInt(req.params.id_prod_cliente);
     const prodAll = await produtosModels.findAllProduct(userId, produtoId);
-    const prodIdPed = await pedidoModel.pedidoIdprod(userId, produtoId);
+    const prodIdPed = await pedidoModel.pedidoIdprod(userId);
     
 
   

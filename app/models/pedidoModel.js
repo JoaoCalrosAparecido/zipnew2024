@@ -21,7 +21,7 @@ const pedidoModel = {
             //const [linhas] = await pool.query('INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade) VALUES (?, ?, ?) ', [pedido_items ]);
             //return linhas ;
 
-            var sql = "INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade) VALUES ?";
+            var sql = "INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade, tituloprod) VALUES ?";
             var values = pedido_items;
 
             const [linhas] =  await pool.query(sql, [values],function(err) {
@@ -57,9 +57,9 @@ const pedidoModel = {
         } 
     },
 
-    pedidoIdprod: async (userId, produtoId) => {
+    pedidoIdprod: async (userId) => {
         try {
-            const [linhas] = await pool.query('SELECT * FROM pedido_item WHERE id_Cliente = ? AND id_prod_cliente = ?', [userId, produtoId]);
+            const [linhas] = await pool.query('SELECT * FROM pedido_item WHERE id_Cliente = ?', [userId]);
             return linhas;
         } catch (error) {
             return error;

@@ -23,7 +23,7 @@ const pedidoControler = {
       await pedidoModel.createPedido(camposJsonPedido);
       
         const listtaDePedidos =  pedidos.map((element) => {
-          return [ element.Id_prod_cliente, req.query.payment_id, 1]
+          return [ element.Id_prod_cliente, req.query.payment_id, 1, element.tituloprod]
         });
         
         await pedidoModel.createItemPedido(listtaDePedidos);
