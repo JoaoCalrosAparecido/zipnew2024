@@ -1,10 +1,10 @@
-var swiper2 = new Swiper2(".mySwiper2", {
+var swiper2 = new Swiper(".mySwiper2", {
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,
       },
     scrollbar: {
-      el: ".swiper-scrollbar2",
+      el: ".swiper-scrollbar",
       hide: true,
     },
   });
