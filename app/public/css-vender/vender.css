@@ -77,7 +77,7 @@ body {
 
 .homem-costas {
     width: 800px;
-    margin: 10vh 0 0 -105vh;
+    margin: 5vw 31vw 0 -0.5vw;
 }
 
 
@@ -92,8 +92,9 @@ body {
 }
 
 figure > .swiper {
-    width: 30vw;
-    height: 80vh;
+    width: 22vw;
+    height: 27vw;
+    margin-right: 1vw;
 }
 
 .swiper-slide2 {
@@ -102,7 +103,11 @@ figure > .swiper {
     font-size: 18px;
     color: #000;
     background: #ff0101;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+}
+
+.swiper-slide2:nth-child(2) {
+    height: auto;
+    width: 100%;
+    margin: 0;
 }
