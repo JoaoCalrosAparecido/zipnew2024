@@ -536,6 +536,7 @@ router.post("/adicionar-produto",
       img2: req.files.img2[0].filename,
       img3: req.files.img3[0].filename,
       img4: req.files.img4[0].filename,
+      Stats: "Disponivel"
     }
 
 
@@ -582,8 +583,8 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(senha, salt);
 
-    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, Id_Tipo_Usuario) VALUES (?, ?, ?, ?, ?, ?)",
-      [nome, cpf, nasc, email, hashedPassword, 1]);
+    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, Id_Tipo_Usuario, Stats) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      [nome, cpf, nasc, email, hashedPassword, 1, "Ativo"]);
     console.log(create)
     const usuario = await connection.query("SELECT * FROM cliente WHERE id_Cliente = ?", [create.insertId]);
     req.session.autenticado = {
