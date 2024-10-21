@@ -41,8 +41,6 @@ const admController = {
             await denunciasModels.removerProdutoDenunciado(id_prod_cliente);
     },
     
-
-
     aprovarFamoso: async (req, res) => {
         const idUsuario = req.query.idUsuario
         const resultUpdate = await admModel.alterarTipoUsuario(2, idUsuario)

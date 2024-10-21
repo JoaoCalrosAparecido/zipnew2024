@@ -17,7 +17,7 @@ html {
     --branco: #fff;
     --preto: #000;
 
-    --font-size-primaria: 2.1rem;
+    --font-size-primaria: 1.88rem;
     --font-size-secundaria: 3.1rem;
 
     --peso-fonte-primario: 300;
@@ -28,12 +28,13 @@ body {
     font: var(--peso-fonte-primario) var(--font-size-primaria) 'Poppins', sans-serif;
     color: var(--preto);
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .swiper {
     margin: 100px auto;
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
 }
 
 .swiper-slide {
@@ -43,23 +44,29 @@ body {
     color: var(--branco);
 }
 
-.swiper-slide:nth-child(2n) {
-    background-color: rgb(0, 140, 255);
+.swiper-wrapper1 > .swiper-slide:nth-child(2n) {
+    height: 100vh;
+    width: 100vw;
+    padding: 0 2vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--branco);
 }
 
 .slogan-zip {
     position: absolute;
     right: 5vw;
-    top: 40vh;
+    top: 51vh;
 }
 
 .slide-primeiro-links {
     position: absolute;
-    top: 72vh;
-    right: 5vw;
+    top: 78vh;
+    right: 4.5vw;
 }
 
-.link-bazar, .link-como-vender {
+.link-bazar,
+.link-como-vender {
     padding: 0 1vw 0 1vw;
     color: var(--branco);
 }
@@ -67,4 +74,52 @@ body {
 .link-como-vender {
     border-left: 2px solid var(--branco);
     padding-left: 1.4vw;
+}
+
+
+
+.homem-costas {
+    width: 800px;
+    margin-top: 3vw;
+}
+
+
+.init-hidden {
+    opacity: 0;
+    transition-duration: 2s;
+}
+
+.init-hidden--direita {
+    opacity: 0;
+    transition-duration: 3s;
+}
+
+.carrosseis-bazar {
+    display: flex;
+    column-gap: -2vw;
+
+}
+
+figure > .swiper {
+    width: 22vw;
+    height: 27vw;
+    margin-right: 7vw;
+}
+
+.swiper-slide2 {
+    z-index: 4;
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+}
+
+.swiper-slide2:nth-child(2) {
+    height: auto;
+    width: 100%;
+    margin: 0;
+}
+
+
+.carrosseis-requi {
+    margin-right: -16px;
 }

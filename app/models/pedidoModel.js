@@ -8,7 +8,7 @@ const pedidoModel = {
     createPedido: async (pedido) => {
         try {
 
-            const [linhas] = await pool.query('INSERT INTO `pedidos`(`Id_Pedidos_Loji`, `Data_Pedido`, `id_Cliente`, `status_pedido`, `status_pagamento`, `id_pagamento`) VALUES (? ,? , ?, ?, ?, ?) ', [pedido.id_pagamento, pedido.data, pedido.usuario_id_usuario, pedido.status_pedido, pedido.status_pagamento, pedido.id_pagamento ]);
+            const [linhas] = await pool.query('INSERT INTO pedidos(Id_Pedidos_Loji, Data_Pedido, id_Cliente, status_pedido, status_pagamento, id_pagamento) VALUES (? ,? , ?, ?, ?, ?) ', [pedido.id_pagamento, pedido.data, pedido.usuario_id_usuario, pedido.status_pedido, pedido.status_pagamento, pedido.id_pagamento ]);
             return linhas ;
         } catch (error) {
             return error;
@@ -18,10 +18,14 @@ const pedidoModel = {
     createItemPedido: async (pedido_items) => {
         try {
             console.log(pedido_items)
-            //const [linhas] = await pool.query('INSERT INTO `pedido_item`(`Id_prod_cliente`, `Id_Pedidos_Loji`, `quantidade`) VALUES (?, ?, ?) ', [pedido_items ]);
+            //const [linhas] = await pool.query('INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade) VALUES (?, ?, ?) ', [pedido_items ]);
             //return linhas ;
 
+<<<<<<< HEAD
             var sql = "INSERT INTO `pedido_item`(`Id_prod_cliente`, `Id_Pedidos_Loji`, `quantidade`, `tituloprod`) VALUES ?";
+=======
+            var sql = "INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade, tituloprod) VALUES ?";
+>>>>>>> a972c49151d8257ef93c1c40905fcebfade86030
             var values = pedido_items;
 
             const [linhas] =  await pool.query(sql, [values],function(err) {
@@ -40,7 +44,7 @@ const pedidoModel = {
     deleteItemPedido: async (delete_items) => {
         try {
             console.log(delete_items)
-            //const [linhas] = await pool.query('INSERT INTO `pedido_item`(`Id_prod_cliente`, `Id_Pedidos_Loji`, `quantidade`) VALUES (?, ?, ?) ', [pedido_items ]);
+            //const [linhas] = await pool.query('INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade) VALUES (?, ?, ?) ', [pedido_items ]);
             //return linhas ;
 
             var sql = "DELETE FROM produtos WHERE Id_prod_cliente IN (?)";
@@ -57,9 +61,15 @@ const pedidoModel = {
         } 
     },
 
+<<<<<<< HEAD
     pedidoIdprod: async (userId, produtoId) => {
         try {
             const [linhas] = await pool.query('SELECT * FROM `pedido_item` WHERE `id_Cliente` = ? AND id_prod_cliente = ?', [userId, produtoId]);
+=======
+    pedidoIdprod: async (userId) => {
+        try {
+            const [linhas] = await pool.query('SELECT * FROM pedido_item WHERE id_Cliente = ?', [userId]);
+>>>>>>> a972c49151d8257ef93c1c40905fcebfade86030
             return linhas;
         } catch (error) {
             return error;

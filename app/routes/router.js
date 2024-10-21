@@ -290,8 +290,14 @@ router.get("/minhas-vendas",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     const userId = req.session.autenticado.id;
+<<<<<<< HEAD
     const prodIdPed = await pedidoModel.pedidoIdprod(userId, produtoId);
     console.log(prodIdPed)
+=======
+    const produtoId = parseInt(req.params.id_prod_cliente);
+    const prodAll = await produtosModels.findAllProduct(userId, produtoId);
+    const prodIdPed = await pedidoModel.pedidoIdprod(userId);
+>>>>>>> a972c49151d8257ef93c1c40905fcebfade86030
     
 
   
@@ -553,6 +559,7 @@ router.post("/adicionar-produto",
       img2: req.files.img2[0].filename,
       img3: req.files.img3[0].filename,
       img4: req.files.img4[0].filename,
+      Stats: "Disponivel"
     }
 
 
@@ -599,8 +606,8 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(senha, salt);
 
-    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, Id_Tipo_Usuario) VALUES (?, ?, ?, ?, ?, ?)",
-      [nome, cpf, nasc, email, hashedPassword, 1]);
+    const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, Id_Tipo_Usuario, Stats) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      [nome, cpf, nasc, email, hashedPassword, 1, "Ativo"]);
     console.log(create)
     const usuario = await connection.query("SELECT * FROM cliente WHERE id_Cliente = ?", [create.insertId]);
     req.session.autenticado = {
