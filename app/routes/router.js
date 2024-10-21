@@ -291,7 +291,7 @@ router.get("/minhas-vendas",
   async function (req, res) {
     const userId = req.session.autenticado.id;
 
-    const prodIdPed = await pedidoModel.pedidoIdprod(userId, produtoId);
+    const prodIdPed = await pedidoModel.pedidoIdprod(userId);
     console.log(prodIdPed)
 
     
