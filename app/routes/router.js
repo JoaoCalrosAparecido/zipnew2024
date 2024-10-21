@@ -290,14 +290,10 @@ router.get("/minhas-vendas",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     const userId = req.session.autenticado.id;
-<<<<<<< HEAD
+
     const prodIdPed = await pedidoModel.pedidoIdprod(userId, produtoId);
     console.log(prodIdPed)
-=======
-    const produtoId = parseInt(req.params.id_prod_cliente);
-    const prodAll = await produtosModels.findAllProduct(userId, produtoId);
-    const prodIdPed = await pedidoModel.pedidoIdprod(userId);
->>>>>>> a972c49151d8257ef93c1c40905fcebfade86030
+
     
 
   

@@ -21,11 +21,11 @@ const pedidoModel = {
             //const [linhas] = await pool.query('INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade) VALUES (?, ?, ?) ', [pedido_items ]);
             //return linhas ;
 
-<<<<<<< HEAD
-            var sql = "INSERT INTO `pedido_item`(`Id_prod_cliente`, `Id_Pedidos_Loji`, `quantidade`, `tituloprod`) VALUES ?";
-=======
+
+           // var sql = "INSERT INTO `pedido_item`(`Id_prod_cliente`, `Id_Pedidos_Loji`, `quantidade`, `tituloprod`) VALUES ?";
+
             var sql = "INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade, tituloprod) VALUES ?";
->>>>>>> a972c49151d8257ef93c1c40905fcebfade86030
+
             var values = pedido_items;
 
             const [linhas] =  await pool.query(sql, [values],function(err) {
@@ -61,15 +61,11 @@ const pedidoModel = {
         } 
     },
 
-<<<<<<< HEAD
+
     pedidoIdprod: async (userId, produtoId) => {
         try {
             const [linhas] = await pool.query('SELECT * FROM `pedido_item` WHERE `id_Cliente` = ? AND id_prod_cliente = ?', [userId, produtoId]);
-=======
-    pedidoIdprod: async (userId) => {
-        try {
-            const [linhas] = await pool.query('SELECT * FROM pedido_item WHERE id_Cliente = ?', [userId]);
->>>>>>> a972c49151d8257ef93c1c40905fcebfade86030
+
             return linhas;
         } catch (error) {
             return error;
