@@ -174,3 +174,10 @@ label {
     margin-top: 2vh;
     font-weight: 300
 }
+
+
+@media only screen and (max-width:480px){
+    #caixa {
+        background-color: #fff;
+    }
+}

@@ -20,7 +20,6 @@
 }
 
 #caixa{
-    background-color: #F6F6F6;
 
     height: 910px;
     padding: 20px;
@@ -45,7 +44,7 @@
 }
 
 #dia, #mes, #ano{
-    width: 24vw;
+    width: 22.8vw;
     height: 5vh;
     margin-top: 3px;
     font-size: 16px;
@@ -63,15 +62,15 @@
 
 #botao{
     width: 80vw;
-    height: 70px;
+    height: 8vh;
     cursor: pointer;
     background-color: rgb(36, 36, 36);
     color: rgb(255, 255, 255);
     border-color: rgb(36, 36, 36);
-    margin-bottom: 50px;
-    font-size: 23px;
-    font-weight: 500;
-    margin-top: 20px;
+    margin-bottom: 50vh;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 20px 0 50vh 0;
 
 }
 
@@ -92,14 +91,9 @@
     height: 5vh;
     margin-top: 10px;
     border-width: 1px;
-
 }
 
-#regra{
-    padding: 5px;
-    background-color: #e7e4e4; /* Cor de fundo */
-    border: 2px solid #c0c0c0; /* Borda sólida */
-    width: 78vw;
-    border-radius: 5px;
-    font-size: 10px;
+#regra {
+    width: 80vw;
 }
+
