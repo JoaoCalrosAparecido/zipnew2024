@@ -52,7 +52,21 @@ const pedidoControler = {
             res.render("pages/meus-pedidos", { pedidos });
         });
 
-}
+},
+
+listarVendas: async (req, res) => {
+      const id_Cliente = req.session.autenticado.id; // Obtendo o ID do cliente logado
+      pedidoModel.getVendasByCliente(id_Cliente, (err, vendas) => {
+          if (err) {
+              console.error('Erro ao buscar as vendas:', err);
+              return res.status(500).send('Erro ao buscar as vendas');
+          }
+          res.render('pages/minhas-vendas', { vendas });
+      });
+
+},
+
+
 };
 
 module.exports = pedidoControler;

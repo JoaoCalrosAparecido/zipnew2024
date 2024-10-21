@@ -286,19 +286,12 @@ router.get("/vender", function (req, res) {
 });
 
 router.get("/minhas-vendas", 
+  pedidoControler.listarVendas,
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
-  async function (req, res) {
-    const userId = req.session.autenticado.id;
+  function (req, res) {
 
-    const prodIdPed = await pedidoModel.pedidoIdprod(userId);
-    console.log(prodIdPed)
-
-    
-
-  
-
-  res.render('pages/minhas-vendas', { msg: 'Back-end funcionando', prodIdPed: prodIdPed });
+  res.render('pages/minhas-vendas', { msg: 'Back-end funcionando' });
 });
 
 router.post("/enviado",

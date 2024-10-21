@@ -11,7 +11,6 @@
 
 ## O que falta do projeto (Sophia)
 - Vender
-- Termos de uso e politica de privacidade
 - Produtos nas paginas m,f,i,a
 - Redocorar cadastro
 - Carrossel no perfil

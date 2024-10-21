@@ -88,14 +88,36 @@ const pedidoModel = {
                 pedidos.id_Cliente = ?`
         ;
         try {
-            // Usando 'await' para garantir que a consulta SQL seja executada corretamente
             const [rows] = await pool.query(query, [id_Cliente]);
-            // Callback retorna os resultados da consulta
             callback(null, rows);
         } catch (err) {
-            // Callback com erro, caso algo dê errado
             callback(err, null);
         }
+
+    },
+
+    getVendasByCliente: async (id_Cliente, callback) => {
+        const query = `
+            SELECT 
+                pedido_item.tituloprod AS produto_vendido,
+                cliente.nome AS comprador_nome
+            FROM 
+                pedidos
+            JOIN 
+                pedido_item ON pedidos.Id_Pedidos_Loji = pedido_item.Id_Pedidos_Loji
+            JOIN 
+                produtos ON pedido_item.Id_prod_cliente = produtos.Id_prod_cliente
+            JOIN 
+                cliente ON pedidos.id_Cliente = cliente.id_Cliente
+            WHERE 
+                produtos.id_Cliente = ?  `;
+
+                try {
+                    const [rows] = await pool.query(query, [id_Cliente]);
+                    callback(null, rows);
+                } catch (err) {
+                    callback(err, null);
+                }
 
     },
 

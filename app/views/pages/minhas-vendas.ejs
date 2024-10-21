@@ -378,16 +378,18 @@
                 </tr>
             </thead>
             <tbody id="vendas__celulas">
-                <tr id="vendas__linhas">
-                    <td></td>
-                    <td>Cleber</td>
-                    <td>
-                        <form action="enviado" method="post">
-                            <input type="hidden" name="envio" value="enviou">
-                            <button type="submit" >Enviado para os correios</button>
-                        </form>
-                    </td>
-                </tr>
+                <% vendas.forEach(venda => { %>
+                    <tr id="vendas__linhas">
+                        <td><%= venda.produto_vendido %></td>
+                        <td><%= venda.comprador_nome %></td>
+                        <td>
+                            <form action="enviado" method="post">
+                                <input type="hidden" name="envio" value="enviou">
+                                <button type="submit">Enviado para os correios</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
 
