@@ -72,7 +72,7 @@ const pedidoModel = {
     },
 
     getPedidosByCliente: async (id_Cliente, callback) => {
-        const [linhas] = 
+        const query = 
             `SELECT 
                 pedido_item.tituloprod AS produto_comprado,
                 cliente.nome AS vendedor_nome
@@ -87,12 +87,16 @@ const pedidoModel = {
             WHERE 
                 pedidos.id_Cliente = ?`
         ;
-        await pool.query(linhas, [id_Cliente], (err, results) => {
-            if (err) {
-                return callback(err, null);
-            }
-            callback(null, results);
-        });
+        try {
+            // Usando 'await' para garantir que a consulta SQL seja executada corretamente
+            const [rows] = await pool.query(query, [id_Cliente]);
+            // Callback retorna os resultados da consulta
+            callback(null, rows);
+        } catch (err) {
+            // Callback com erro, caso algo dê errado
+            callback(err, null);
+        }
+
     },
 
 }
