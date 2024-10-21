@@ -22,6 +22,7 @@
     <script src="/produtos/denunciar/menud.js" defer></script>
     <script src="/produtos/denunciar/script.js" defer></script>
 
+
     <!-- Notify -->
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
@@ -265,75 +266,70 @@
         <script src="../../js/menu_transparente.js"></script>
        
     
-    <% if (produto) { %>
-        <!--foto das bolsas-->
-    <section id="section_da_foto_da_bolsa">
-        <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica1">
-            <img src="../../IMG/uploads/<%= produto.img1 %>" alt="Imagem 1">
-        </figure>
-        <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica2">
-            <img src="../../IMG/uploads/<%= produto.img2 %>" alt="Imagem 2">
-        </figure>
-        <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica3">
-            <img src="../../IMG/uploads/<%= produto.img3 %>" alt="Imagem 3">
-        </figure>
-        <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica5">
-            <img src="../../IMG/uploads/<%= produto.img4 %>" alt="Imagem 4">
-        </figure>
-    </section>
 
-    <!--parte adicionar a sacola -->
-    <section id="section_adicionar_a_sacola">
-        <section id="section_position_sticky_adicionar_a_sacola">
-            <article id="article_da_primeira_parte_escrita">
-                <p id="parte_escrita_bolsa_Preta">
-                    <%= produto.tituloprod %>
-                </p>
-                <P id="parte_preço_bolsa_Preta">
-                    R$ <%= Number(produto.preçoprod).toFixed(2) %>
-                </P>
-                <P id="parte_produto_usado_bolsa_Preta">
-                    <%= produto.descProduto %>
-                </P>
-                <P id="parte_cor_bolsa_Preta">Tamanho <span id="parte_cor_bolsa_Preta_span">P</span></P>
-            </article>
-
-            <a href="cart.html">
-                <article id="imagem_de_favorito"></article>
-            </a>
-
-
-            <form action="addCart" method="post">
-                <input type="hidden" name="idProdCart" value="<%= produto.id_prod_cliente %>, <%= produto.tituloprod %>, <%= produto.preçoprod %>, <%=produto.img1 %>"   style="opacity: 0;">
-                    <button type="submit" id="produto_adicionar_a_sacola" class="add-to-cart"  >
-                        <p>Adicionar à sacola</p>
-                     </button>
-            </form>
-            
-
-            <script src="/adicionar_a_sacola/botao_adicionar_a_sacola.js"></script>
-
-            <article id="artcle_do_vendidos_por_vinkings">
-                <p id="paragrafo_do_vendidos_por_vinkings">Vendido por <span id="span_do_vikings"> <%= nomeCliente %></p></span></p>
-
-                <p id="parte_escrita_100_vendas">100 vendas finalizadas</p>
-            </article>
-
-            <article id="artcle_dos_detalhes">
-                
-                <p id="openMenuBtn">Denunciar produto</p>
-                <hr>
-                
-                <p id="openMenuBt">Denunciar vendedor</p>
-                <hr>
-                <section id="sustentabilidade-icon"><lord-icon
-                    src="https://cdn.lordicon.com/zruuduya.json"
-                    trigger="hover"
-                    colors="primary:#000000,secondary:#30beaa"
-                    style="width:2vw;height:2vw;">
-                </lord-icon><h2>Faça a moda circular como <%= nomeCliente %> </h2></section>
-                <hr>
-            </article>
+    <section id="display-flex-prod">
+        <% if (produto) { %>
+            <!--foto das bolsas-->
+        <section id="section_da_foto_da_bolsa">
+            <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica1">
+                <img src="../../IMG/uploads/<%= produto.img1 %>" alt="Imagem 1">
+            </figure>
+            <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica2">
+                <img src="../../IMG/uploads/<%= produto.img2 %>" alt="Imagem 2">
+            </figure>
+            <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica3">
+                <img src="../../IMG/uploads/<%= produto.img3 %>" alt="Imagem 3">
+            </figure>
+            <figure class="foto_da_bolsa" id="promos_bolsa_preta_classica5">
+                <img src="../../IMG/uploads/<%= produto.img4 %>" alt="Imagem 4">
+            </figure>
+        </section>
+        <!--parte adicionar a sacola -->
+        <section id="section_adicionar_a_sacola">
+            <section id="section_position_sticky_adicionar_a_sacola">
+                <article id="article_da_primeira_parte_escrita">
+                    <p id="parte_escrita_bolsa_Preta">
+                        <%= produto.tituloprod %>
+                    </p>
+                    <P id="parte_preço_bolsa_Preta">
+                        R$ <%= Number(produto.preçoprod).toFixed(2) %>
+                    </P>
+                    <P id="parte_produto_usado_bolsa_Preta">
+                        <%= produto.descProduto %>
+                    </P>
+                    <P id="parte_cor_bolsa_Preta">Tamanho <span id="parte_cor_bolsa_Preta_span">P</span></P>
+                </article>
+                <a href="cart.html">
+                    <article id="imagem_de_favorito"></article>
+                </a>
+                <form action="addCart" method="post">
+                    <input type="hidden" name="idProdCart" value="<%= produto.id_prod_cliente %>, <%= produto.tituloprod %>, <%= produto.preçoprod %>, <%=produto.img1 %>"   style="opacity: 0;">
+                        <button type="submit" id="produto_adicionar_a_sacola" class="add-to-cart"  >
+                            <p>Adicionar à sacola</p>
+                         </button>
+                </form>
+        
+                <script src="/adicionar_a_sacola/botao_adicionar_a_sacola.js"></script>
+                <article id="artcle_do_vendidos_por_vinkings">
+                    <p id="paragrafo_do_vendidos_por_vinkings">Vendido por <span id="span_do_vikings"> <%= nomeCliente %></p></span></p>
+                    <p id="parte_escrita_100_vendas">100 vendas finalizadas</p>
+                </article>
+                <article id="artcle_dos_detalhes">
+        
+                    <p id="openMenuBtn">Denunciar produto</p>
+                    <hr>
+        
+                    <p id="openMenuBt">Denunciar vendedor</p>
+                    <hr>
+                    <section id="sustentabilidade-icon"><lord-icon
+                        src="https://cdn.lordicon.com/zruuduya.json"
+                        trigger="hover"
+                        colors="primary:#000000,secondary:#30beaa"
+                        style="width:2vw;height:2vw;">
+                    </lord-icon><h2>Faça a moda circular como <%= nomeCliente %> </h2></section>
+                    <hr>
+                </article>
+            </section>
         </section>
     </section>
 

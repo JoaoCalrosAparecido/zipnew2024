@@ -290,14 +290,13 @@ router.get("/minhas-vendas",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     const userId = req.session.autenticado.id;
-    const produtoId = parseInt(req.params.id_prod_cliente);
-    const prodAll = await produtosModels.findAllProduct(userId, produtoId);
     const prodIdPed = await pedidoModel.pedidoIdprod(userId, produtoId);
+    console.log(prodIdPed)
     
 
   
 
-  res.render('pages/minhas-vendas', { msg: 'Back-end funcionando', prodAll: prodAll, prodIdPed:prodIdPed });
+  res.render('pages/minhas-vendas', { msg: 'Back-end funcionando', prodIdPed: prodIdPed });
 });
 
 router.post("/enviado",
@@ -381,8 +380,10 @@ router.post("/atualizardados",
 router.get("/wishlist",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
-  function (req, res) {
-    res.render('pages/wishlist', { msg: 'Back-end funcionando' });
+  async function (req, res) {
+    const userId = req.session.autenticado.id;
+    const prodAdd = await produtosModels.findProdById(userId);
+    res.render('pages/wishlist', { msg: 'Back-end funcionando' , prodAdd: prodAdd });
   });
 
 
@@ -426,26 +427,42 @@ router.delete('/removeFav',
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     try {
-      const idProd = req.body.idProd; // Captura o valor do input (ID do produto a ser removido)
-      console.log('ID do produto a ser removido:', idProd);
-
-      const results = await connection.query(
-        'DELETE FROM `Favoritos` WHERE id_prod_cliente = ? AND id_Cliente = ?',
-        [idProd, req.session.autenticado.id]
-      );
+     
+     
       
-      if (results.affectedRows > 0) {
-        console.log('Produto removido dos favoritos');
-        res.status(200).send('Produto removido dos favoritos'); // Sucesso
-      } else {
-        res.status(404).send('Produto não encontrado nos favoritos'); // Produto não encontrado
-      }
+      
+    
+      
+  
+
+      
+      const userId = req.session.autenticado.id;
+      console.log( userId, productId);
+          
+      const productId = req.body.produtosremovefav; // Captura o valor do input
+
+      
+     
+      
+      
+
+
+       await connection.query(
+        "DELETE FROM `Favoritos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
+        [userId, productId]
+       );
+      console.log('produto do add removido');
+
+      res.redirect('/produtos-adicionados'); 
     } catch (err) {
       console.log(err);
-      res.status(500).send('Erro ao remover favorito'); // Opcional: resposta de erro
+      res.status(500).send('Erro ao remover produto adicionado'); // Opcional: resposta de erro
     }
+    
+
+    
   }
-);
+  );
 
 router.post('/produtos/addCart', 
   verificarUsuAutenticado,

@@ -1,0 +1,31 @@
+#slide_imagens {
+    position: relative;
+    top: 1vh;
+    left: 33vw;
+    height: 80vh;
+    
+}
+
+.swiper {
+    position: sticky;
+    width: 25vw;
+    height: 45vw;
+    top: 0px;
+    top: -94vh;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #980d9c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

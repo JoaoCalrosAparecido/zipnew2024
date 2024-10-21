@@ -19,7 +19,7 @@ function updateCartfv() {
         cartItem.appendChild(productImage);
 
         // Cria e adiciona as informações do produto
-        const productInfo = document.createElement('div'); // Alterei para 'div' para ser mais semântico
+        const productInfo = document.createElement('article'); // Alterei para 'div' para ser mais semântico
         productInfo.innerHTML = `
             <h3>${item.name}</h3>
             <p>${item.descriptionfv || ''}</p>
@@ -29,17 +29,23 @@ function updateCartfv() {
 
         // Cria o formulário para remoção
         const removeForm = document.createElement('form');
-        removeForm.method = 'DELETE'; // O método será POST para simular DELETE
+        removeForm.method = 'POST'; // O método será POST para simular DELETE
         removeForm.action = 'removeFav'; // Ação para onde o formulário deve ser enviado
         removeForm.onsubmit = function(event) {
             event.preventDefault(); // Previne o envio padrão do formulário
             removeFromCartfv(index); // Chama a função para remover o item
         };
 
+        const input = document.createElement('input');
+        input.type = 'hidden'; // Tipo do input
+        input.name = 'produtosremovefav'; // Nome do input
+        input.value = "<%= prodAdd[i].id_prod_cliente %>"; // Valor do input (substitua 'index' pela variável correspondente)
+        removeForm.appendChild(input); // Adiciona o input ao formulário
+
         // Cria e adiciona o botão de remoção
         const removeButton = document.createElement('button');
         removeButton.type = 'submit'
-        removeButton.textContent = 'Remover'; // Texto do botão
+        removeButton.textContent = ''; // Texto do botão
         removeForm.appendChild(removeButton); // Adiciona o botão ao formulário
 
         // Adiciona o formulário ao item do carrinho
