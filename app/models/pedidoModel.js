@@ -72,10 +72,10 @@ const pedidoModel = {
     },
 
     getPedidosByCliente: async (id_Cliente, callback) => {
-        const query = `
-            SELECT 
+        const query = 
+            `SELECT 
                 pedido_item.tituloprod AS produto_comprado,
-                cliente.nome AS vendedor_nome,
+                cliente.nome AS vendedor_nome
             FROM 
                 pedidos
             JOIN 
@@ -85,8 +85,8 @@ const pedidoModel = {
             JOIN 
                 cliente ON produtos.id_Cliente = cliente.id_Cliente
             WHERE 
-                pedidos.id_Cliente = ?
-        `;
+                pedidos.id_Cliente = ?`
+        ;
         pool.query(query, [id_Cliente], (err, results) => {
             if (err) {
                 return callback(err, null);
