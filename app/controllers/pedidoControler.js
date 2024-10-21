@@ -66,6 +66,18 @@ listarVendas: async (req, res) => {
 
 },
 
+enviarMensagem: async (req, res) => {
+  const { id_produto, mensagem } = req.body;
+
+  try {
+      await pedidoModel.atualizarMensagem(id_produto, mensagem);
+      res.redirect('/minhas-vendas'); // Redirecionar para a página de vendas após a atualização
+  } catch (error) {
+      console.error('Erro ao atualizar mensagem:', error);
+      res.status(500).send('Erro ao atualizar mensagem');
+  }
+},
+
 
 };
 

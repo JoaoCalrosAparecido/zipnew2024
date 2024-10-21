@@ -294,6 +294,8 @@ router.get("/minhas-vendas",
   res.render('pages/minhas-vendas', { msg: 'Back-end funcionando' });
 });
 
+router.post('/atualizar-mensagem', pedidoControler.enviarMensagem);
+
 router.post("/enviado",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]), 

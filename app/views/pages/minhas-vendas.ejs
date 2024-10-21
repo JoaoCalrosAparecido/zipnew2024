@@ -383,8 +383,9 @@
                         <td><%= venda.produto_vendido %></td>
                         <td><%= venda.comprador_nome %></td>
                         <td>
-                            <form action="enviado" method="post">
-                                <input type="hidden" name="envio" value="enviou">
+                            <form action="/atualizar-mensagem" method="post">
+                                <input type="hidden" name="id_produto" value="<%= venda.id_produto %>">
+                                <input type="hidden" name="mensagem" value="Enviado">
                                 <button type="submit">Enviado para os correios</button>
                             </form>
                         </td>

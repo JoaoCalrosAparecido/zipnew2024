@@ -121,6 +121,22 @@ const pedidoModel = {
 
     },
 
+    atualizarMensagem: async (id_produto, localiza) => {
+        const query = `
+            UPDATE pedido_item
+            SET localiza = ?
+            WHERE Id_prod_cliente = ?`;
+
+        return new  Promise((resolve, reject) => {
+            pool.query(query, [localiza, id_produto], (err, results) => {
+                if (err) {
+                    return reject(err);
+                }
+                resolve(results);
+            });
+        });
+    }
+
 }
 
 
