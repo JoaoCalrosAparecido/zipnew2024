@@ -12,7 +12,7 @@
 ## O que falta do projeto (Sophia)
 - Vender
 - Produtos nas paginas m,f,i,a
-- Redocorar cadastro
+- imgs cadastro
 - Carrossel no perfil
 - Ajustar alinhamento dos produtos no m,f,i,a
 - Produtos clicveis

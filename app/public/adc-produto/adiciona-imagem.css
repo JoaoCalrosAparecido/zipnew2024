@@ -97,15 +97,19 @@ html, body {
 /*descrião parte do texto*/
 #descricao-paragrafos :nth-child(1) {
     font-family:  'Poppins', sans-serif;
-    font-size: 0.78vw;
+    font-size:  19px;
+    font-weight: 500;
 }
 #descricao-paragrafos :nth-child(1) > span {
-    color: #D9001B;
+    color: #30beaa;
+    font-weight: 500;
 }
 
 #descricao-paragrafos :nth-child(2) {
     font-family:  'Poppins', sans-serif;
-    font-size: 0.80vw;
+    font-size: 18px;
+    font-weight: 300;
+    color:  #585a5f;
 }
 
 /*descrião parte do botão*/
@@ -115,20 +119,20 @@ html, body {
     border: none;
     background-color: #212121;
     color: #FFFFFF;
-    font-size: 0.85vw;
-    font-weight: 600;
+    font-size: 21px;
+    font-weight: 300;
     font-family: 'Poppins', sans-serif;
 }
 
 #produto_adicionar_a_sacola:hover {
-    opacity: 60%;
+    opacity: 0.8;
     cursor: pointer;
 }
 
 #produto_adicionar_a_sacola {
     color: white;
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 300;
     font-family: 'Poppins', sans-serif;
 }
 
