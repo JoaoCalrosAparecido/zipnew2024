@@ -2,7 +2,7 @@
 
 body {
     overflow-x: hidden;
-  }
+}
 
 label {
     font-family: 'Poppins', sans-serif;
@@ -12,116 +12,131 @@ label {
     position: relative;
     top: 30px;
 }
+
 #caixa {
-    width: 100vw;
-    height: 890px;
+    width: 50vw;
+    height: 100vh;
     padding: 20px;
     position: absolute;
     top: 600px;
-    left: 50%;
-    margin-left: 0%;
-    transform: translate(-50%,-50%);
+    left: 25%;
+    margin-left: 3vw;
+    transform: translate(-50%, -50%);
     font-family: 'Poppins', sans-serif;
     border: none;
 }
 
-#nome{
-    width: 49rem;
+#nome {
+    width: 45rem;
     height: 40px;
-    margin-top: 20px;
+    margin-top: 0.5vw;
     border-width: 1px;
     padding-left: 10px;
 
 }
 
 
-#dia, #mes, #ano{
-    width: 14.3rem;
+#dia,
+#mes,
+#ano {
+    width: 12.95rem;
     height: 40px;
-    margin-top: 20px;
+    margin: 0.5vw 0 1.2vw 0;
     font-size: 16px;
     border-width: 1px;
     padding-left: 10px;
 }
 
-#dia, #mes{
+#dia,
+#mes {
     margin-right: 33px;
 }
 
 
-#senha{
-    width: 49rem;
+#senha {
+    width: 45rem;
     height: 40px;
-    margin-top: 20px;
+    margin-top: 0.5vw;
     border-width: 1px;
     padding-left: 10px;
 }
 
-#email{
-    width: 49rem;
+#email {
+    width: 45rem;
     height: 40px;
-    margin-top: 40px;
+    margin-top: 0.5vw;
+    border-width: 1px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+#cpf {
+    width: 45rem;
+    height: 40px;
+    margin-top: 0.5vw;
     border-width: 1px;
     padding-left: 10px;
 }
 
 
-#cpf{
-    width: 49rem;
-    height: 40px;
-    margin-top: 20px;
-    border-width: 1px;
-    padding-left: 10px;
-}
 
 
-
-
-#botao{
-    width: 50rem;
-    height: 70px;
+#botao {
+    width: 50%;
+    height: 7vh;
     cursor: pointer;
     background-color: rgb(36, 36, 36);
     color: rgb(255, 255, 255);
     border-color: rgb(36, 36, 36);
 
-    font-size: 25px;
-    font-weight: 500;
-    margin-top: 20px;
+    font-size: 21px;
+    font-weight: 300;
+    margin: 4vh 0 8vh 0;
     font-family: 'Poppins', sans-serif;
 }
 
-#lblemail, #lblnome, #lblsenha, #lblnascimento, #lblcep, #lbluf{
+#lblemail,
+#lblnome,
+#lblsenha,
+#lblnascimento,
+#lblcep,
+#lbluf {
     font-size: 20px;
 }
 
-#foto{
+#foto {
     max-width: 40rem;
     width: 100%;
     padding: 20px;
     position: absolute;
     top: 49%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    left: 100%;
+    transform: translate(-50%, -50%);
     font-family: 'Poppins', sans-serif;
     border: none;
     margin-left: 30rem;
 }
 
 @media (max-width:1500px) {
-  #foto{
-    display: none;
- }
+    #foto {
+        display: none;
+    }
 }
 
-#tornar{
+#tornar {
     margin-left: 80px;
     margin-top: 60px;
+    font-weight: 500;
+    font-size: 15px;
 }
-#forms{
+
+#forms {
     margin-left: 80px;
 }
-#cadastro{
+
+#cadastro {
     font-size: 30px;
     position: relative;
     left: 80px;
@@ -130,21 +145,32 @@ label {
 
 }
 
-.invalido{
+.invalido {
     background-color: rgba(255, 0, 0, 0.13);
     border-color: rgb(255, 56, 56);
 }
 
-#regra{
-    padding: 5px;
-    background-color: #e7e4e4; /* Cor de fundo */
-    border: 2px solid #c0c0c0; /* Borda sólida */
-    width: 49.2rem;
-    border-radius: 5px;
-    font-size: 12.2px;
+#regra {
+    padding: 1vw;
+    margin-top: 20px;
+    border: 1px solid rgb(46, 47, 48);
+    width: 79%;
+    font-weight: 300;
+    font-size: 15px;
 }
 
+#nome,
+#cpf,
+#dia,
+#mes,
+#ano #email,
+#senha {
+    border: 1px solid rgb(73, 73, 73);
+    font: 300 14px 'Poppins', sans-serif;
+    color: #000;
+}
 
-
-
-
+#Privacy {
+    margin-top: 2vh;
+    font-weight: 300
+}
