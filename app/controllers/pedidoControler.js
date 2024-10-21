@@ -40,7 +40,22 @@ const pedidoControler = {
       console.log(e);
       res.status(500).send("Erro ao gravar o pedido.");
     }
-  }
+  },
+
+  listarPedidos: async (req, res) => {
+    const id_Cliente = req.session.autenticado.id;  // Pegando o id do cliente logado da sessão
+
+    if (!id_Cliente) {
+        return res.status(401).send('Usuário não autenticado');
+    }
+
+    pedidoModel.getPedidosByCliente(id_Cliente, (err, pedidos) => {
+        if (err) {
+            return res.status(500).send('Erro ao buscar os pedidos');
+        }
+        res.render('pedidos', { pedidos });
+    });
+}
 };
 
 module.exports = pedidoControler;

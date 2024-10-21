@@ -45,7 +45,7 @@ const pedidoModel = {
         try {
             console.log(delete_items);
     
-            var updateSql = "UPDATE produtos SET Stats = 'inativo' WHERE Id_prod_cliente IN (?)";
+            var updateSql = "UPDATE produtos SET Stats = 'Vendido' WHERE Id_prod_cliente IN (?)";
             var values = delete_items;
     
 
@@ -69,6 +69,30 @@ const pedidoModel = {
         } catch (error) {
             return error;
         }
+    },
+
+    getPedidosByCliente: async (id_Cliente, callback) => {
+        const query = `
+            SELECT 
+                pedido_item.tituloprod AS produto_comprado,
+                cliente.nome AS vendedor_nome,
+            FROM 
+                pedidos
+            JOIN 
+                pedido_item ON pedidos.Id_Pedidos_Loji = pedido_item.Id_Pedidos_Loji
+            JOIN 
+                produtos ON pedido_item.Id_prod_cliente = produtos.Id_prod_cliente
+            JOIN 
+                cliente ON produtos.id_Cliente = cliente.id_Cliente
+            WHERE 
+                pedidos.id_Cliente = ?
+        `;
+        pool.query(query, [id_Cliente], (err, results) => {
+            if (err) {
+                return callback(err, null);
+            }
+            callback(null, results);
+        });
     },
 
 }

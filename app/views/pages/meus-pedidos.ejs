@@ -374,11 +374,19 @@
                 </tr>
             </thead>
             <tbody id="pedidos__celulas">
-                <tr id="pedidos__linhas">
-                    <td>Saia preta</td>
-                    <td>Bunny</td>
-                    <td>Enviado para os correios</td>
-                </tr>
+                <% if (pedidos.length > 0) { %>
+                    <% pedidos.forEach(pedido => { %>
+                        <tr id="pedidos__linhas">
+                            <td><%= pedido.produto_comprado %></td>
+                            <td><%= pedido.vendedor_nome %></td>
+                            <td><%= pedido.status %></td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="3">Nenhum pedido encontrado.</td>
+                    </tr>
+                <% } %>
             </tbody>
         </table>
     </section>

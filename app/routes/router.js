@@ -327,7 +327,12 @@ router.post("/enviado",
 });
 
 
-router.get("/meus-pedidos", function (req, res) {
+router.get("/meus-pedidos",
+  pedidoControler.listarPedidos,
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  function (req, res) {
+
   res.render('pages/meus-pedidos', { msg: 'Back-end funcionando' });
 });
 
