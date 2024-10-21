@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function (e) {
     //chave pública do vendedor
-    const mercadopago = new MercadoPago('APP_USR-47aeeb80-e961-4809-b893-e14947827b38', {
+    const mercadopago = new MercadoPago('APP_USR-72b8cc69-8252-4d71-b78e-0af3ec8fc217', {
         locale: 'pt-BR' // Os mais comuns são: 'pt-BR', 'es-AR' e 'en-US'
     });
-
+// APP_USR-72b8cc69-8252-4d71-b78e-0af3ec8fc217
     console.log("primeira etapa")
     
 

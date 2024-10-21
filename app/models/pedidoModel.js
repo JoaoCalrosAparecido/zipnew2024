@@ -22,9 +22,9 @@ const pedidoModel = {
             //return linhas ;
 
 
-           // var sql = "INSERT INTO `pedido_item`(`Id_prod_cliente`, `Id_Pedidos_Loji`, `quantidade`, `tituloprod`) VALUES ?";
+           var sql = "INSERT INTO `pedido_item`(`Id_prod_cliente`, `Id_Pedidos_Loji`, `quantidade`, `tituloprod`) VALUES ?";
 
-            var sql = "INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade, tituloprod) VALUES ?";
+        //var sql = "INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade, tituloprod) VALUES ?";
 
             var values = pedido_items;
 
@@ -43,19 +43,18 @@ const pedidoModel = {
 
     deleteItemPedido: async (delete_items) => {
         try {
-            console.log(delete_items)
-            //const [linhas] = await pool.query('INSERT INTO pedido_item(Id_prod_cliente, Id_Pedidos_Loji, quantidade) VALUES (?, ?, ?) ', [pedido_items ]);
-            //return linhas ;
+            console.log(delete_items);
+    
+            var updateSql = "UPDATE produtos SET Stats = 'inativo' WHERE Id_prod_cliente IN (?)";
+            var values = delete_items;
+    
 
-            var sql = "DELETE FROM produtos WHERE Id_prod_cliente IN (?)";
-            var values = delete_items; // Certifique-se de que delete_items é um array
-
-
-            const [linhas] =  await pool.query(sql, [values],function(err) {
-                if (err) throw err;
-                pool.end();
-            }); 
-            return linhas ;
+            var deleteSql = "DELETE FROM Sacola WHERE Id_prod_cliente IN (?)";
+            
+            const [updateResult] = await pool.query(updateSql, [values]);
+            const [deleteResult] = await pool.query(deleteSql, [values]);
+    
+            return { updateResult, deleteResult };
         } catch (error) {
             return error;
         } 
