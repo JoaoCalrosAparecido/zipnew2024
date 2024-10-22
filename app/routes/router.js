@@ -755,6 +755,19 @@ router.post("/denunciar-vendedor/:id_prod_cliente",
   }
 );
 
+router.post('/banir/:id_Cliente_denunciado', 
+  denunciaController.banirCliente,
+  verificarUsuAutenticado,
+  verificarUsuAutorizado(
+    "./pages/login_do_usuario", {
+      erros: null,
+      dadosform: { email: "", senha: "" },
+      logado: false,
+      usuarioautenticado: null
+    },
+    [1, 2, 3]
+  ));
+
 
 router.get("/denuncias-usu", async function (req, res) {
   const userId = req.session.autenticado.id;

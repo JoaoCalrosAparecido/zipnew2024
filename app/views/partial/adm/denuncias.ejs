@@ -29,6 +29,7 @@
 </section>
  
  <section class="table-wrapper-denuncias--vendedor">
+
         <table class="table-denuncias--vendedor" style="table-layout: fixed; width: 95%;">
             <thead class="denuncias-colunas--vendedor">
                 <tr>
@@ -47,27 +48,13 @@
                         <td class="celula2"><%= denuncias.total_fraude %></td>
                         <td class="celula3"><%= denuncias.total_produto_ilicito %></td>
                         <td class="celula4"><%= denuncias.total_propaganda_enganosa %></td>
-                        <td class="celula5"><button type="submit" class="efeito-botao">Banir</button></td>
+                        <td class="celula5">
+                        <form method="POST" action="/banir/<%= denuncias.id_Cliente_denunciado %>">
+                            <button type="submit" class="efeito-botao">Banir</button>
+                        </form></td>
                     </tr>
                 <% }) %>
-
-
-                    <!-- <article id="messageContainer" class="hidden">
-                        <article id="messageBox">
-                            <span id="closeBtn">&times;</span>
-                            <label for="advertencia">Faça uma advertência</label>
-                            <input type="text" id="advertencia">
-                            <fieldset>
-                                <legend>Suspensão</legend>
-                                <select>
-                                    <option>Suspender por 3 dias</option>
-                                    <option>Suspender por uma semana</option>
-                                    <option>Suspender por um mês</option>
-                                    <option>Suspensão permanente</option>
-                                </select>
-                            </fieldset>
-                        </article>
-                    </article> mensagem quando advertir estiver funcionando -->
             </tbody>
         </table>
+        
     </section>

@@ -53,18 +53,23 @@ const denunciasModels = {
     },
 
     listarDenunciasVendedor: async () => {
-        const query = 
-            `SELECT 
-                id_Cliente_denunciado, 
-                SUM(fraude) AS total_fraude,
-                SUM(produto_ilicito) AS total_produto_ilicito,
-                SUM(propaganda_enganosa) AS total_propaganda_enganosa
+        const query = `
+            SELECT 
+                d.id_Cliente_denunciado, 
+                SUM(d.fraude) AS total_fraude,
+                SUM(d.produto_ilicito) AS total_produto_ilicito,
+                SUM(d.propaganda_enganosa) AS total_propaganda_enganosa
             FROM 
-                denuncias_vendedor
+                denuncias_vendedor d
+            JOIN 
+                cliente c ON d.id_Cliente_denunciado = c.id_Cliente
+            WHERE 
+                c.Stats != 'Inativo'
             GROUP BY 
-                id_Cliente_denunciado;`;
-            const [denuncias] = await pool.query(query);
-            return denuncias
+                d.id_Cliente_denunciado;
+        `;
+        const [denuncias] = await pool.query(query);
+        return denuncias;
     },
 
     listarDenunciasUsu: async (userId) => {
@@ -91,7 +96,8 @@ const denunciasModels = {
     removerProdutoDenunciado: async (id_prod_cliente) => {
         const queryProduto = 'DELETE FROM `produtos` WHERE id_prod_cliente = ?';
         await pool.query(queryProduto, [id_prod_cliente]);
-    }
+    },
+
 }
 
 module.exports = denunciasModels

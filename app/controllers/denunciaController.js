@@ -167,6 +167,20 @@ const denunciaController = {
             console.error("Erro ao processar a denúncia:", error);
             res.status(500).send("Erro ao processar a denúncia.");
         }
+    },
+
+    banirCliente: async (req, res) => {
+        try {
+            const idClienteDenunciado = req.params.id_Cliente_denunciado;
+    
+            await pool.query('UPDATE cliente SET Stats = ? WHERE id_Cliente = ?', ["Inativo", idClienteDenunciado]);
+    
+            res.redirect('/adm-denuncias'); 
+    
+        } catch (error) {
+            console.error("Erro ao banir o cliente:", error);
+            res.status(500).send("Erro ao banir o cliente.");
+        }
     }
     
 
