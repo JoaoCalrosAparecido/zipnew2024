@@ -285,17 +285,6 @@ router.get("/vender", function (req, res) {
   res.render('pages/vender', { msg: 'Back-end funcionando' });
 });
 
-router.get("/minhas-vendas", 
-  pedidoControler.listarVendas,
-  verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
-  function (req, res) {
-
-  res.render('pages/minhas-vendas', { msg: 'Back-end funcionando' });
-});
-
-router.post('/atualizar-mensagem', pedidoControler.enviarMensagem);
-
 router.post("/enviado",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]), 
@@ -330,6 +319,19 @@ router.get("/meus-pedidos",
 
   res.render('pages/meus-pedidos', { msg: 'Back-end funcionando' });
 });
+
+router.get("/minhas-vendas", 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  pedidoControler.listarVendas
+);
+
+router.post('/atualizar-mensagem', 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  pedidoControler.enviarMensagem
+);
+
 
 router.get('/produtos/:id_prod_cliente',
   verificarUsuAutenticado,

@@ -72,10 +72,11 @@ const pedidoModel = {
     },
 
     getPedidosByCliente: async (id_Cliente, callback) => {
-        const query = 
-            `SELECT 
+        const query = `
+            SELECT 
                 pedido_item.tituloprod AS produto_comprado,
-                cliente.nome AS vendedor_nome
+                cliente.nome AS vendedor_nome,
+                pedido_item.localiza AS status_envio
             FROM 
                 pedidos
             JOIN 
@@ -85,22 +86,23 @@ const pedidoModel = {
             JOIN 
                 cliente ON produtos.id_Cliente = cliente.id_Cliente
             WHERE 
-                pedidos.id_Cliente = ?`
-        ;
+                pedidos.id_Cliente = ?`;
+        
         try {
             const [rows] = await pool.query(query, [id_Cliente]);
             callback(null, rows);
         } catch (err) {
             callback(err, null);
         }
-
     },
-
+    
     getVendasByCliente: async (id_Cliente, callback) => {
         const query = `
             SELECT 
                 pedido_item.tituloprod AS produto_vendido,
-                cliente.nome AS comprador_nome
+                cliente.nome AS comprador_nome,
+                pedido_item.localiza AS status_envio,
+                produtos.Id_prod_cliente AS id_produto
             FROM 
                 pedidos
             JOIN 
@@ -110,15 +112,14 @@ const pedidoModel = {
             JOIN 
                 cliente ON pedidos.id_Cliente = cliente.id_Cliente
             WHERE 
-                produtos.id_Cliente = ?  `;
-
-                try {
-                    const [rows] = await pool.query(query, [id_Cliente]);
-                    callback(null, rows);
-                } catch (err) {
-                    callback(err, null);
-                }
-
+                produtos.id_Cliente = ?`;
+    
+        try {
+            const [rows] = await pool.query(query, [id_Cliente]);
+            callback(null, rows);
+        } catch (err) {
+            callback(err, null);
+        }
     },
 
     atualizarMensagem: async (id_produto, localiza) => {
@@ -126,15 +127,13 @@ const pedidoModel = {
             UPDATE pedido_item
             SET localiza = ?
             WHERE Id_prod_cliente = ?`;
-
-        return new  Promise((resolve, reject) => {
-            pool.query(query, [localiza, id_produto], (err, results) => {
-                if (err) {
-                    return reject(err);
-                }
-                resolve(results);
-            });
-        });
+    
+        try {
+            const [results] = await pool.query(query, [localiza, id_produto]);
+            return results;
+        } catch (err) {
+            throw err;
+        }
     }
 
 }

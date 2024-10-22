@@ -43,15 +43,14 @@ const pedidoControler = {
   },
 
   listarPedidos: async (req, res) => {
-        const id_Cliente = req.session.autenticado.id;  // Verifica se o cliente está autenticado
-        pedidoModel.getPedidosByCliente(id_Cliente, (err, pedidos) => {
-            if (err) {
-                console.error('Erro ao buscar os pedidos:', err);  // Log detalhado do erro
-                return res.status(500).send('Erro ao buscar os pedidos');
-            }
-            res.render("pages/meus-pedidos", { pedidos });
-        });
-
+    const id_Cliente = req.session.autenticado.id;
+    pedidoModel.getPedidosByCliente(id_Cliente, (err, pedidos) => {
+        if (err) {
+            console.error('Erro ao buscar os pedidos:', err);
+            return res.status(500).send('Erro ao buscar os pedidos');
+        }
+        res.render("pages/meus-pedidos", { pedidos });
+    });
 },
 
 listarVendas: async (req, res) => {
@@ -71,12 +70,12 @@ enviarMensagem: async (req, res) => {
 
   try {
       await pedidoModel.atualizarMensagem(id_produto, mensagem);
-      res.redirect('/minhas-vendas'); // Redirecionar para a página de vendas após a atualização
+      res.redirect('/minhas-vendas');
   } catch (error) {
       console.error('Erro ao atualizar mensagem:', error);
       res.status(500).send('Erro ao atualizar mensagem');
   }
-},
+}
 
 
 };

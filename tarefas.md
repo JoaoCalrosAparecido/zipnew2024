@@ -16,15 +16,13 @@
 - Carrossel no perfil
 - Ajustar alinhamento dos produtos no m,f,i,a
 - Produtos clicveis
-- Ajustar cor do nome no adc prod
 - Indez canvas
 - Campo explicando o adc produtos e o adc bazar
 - Links Vender no menu
 
 
 ## O que falta do projeto (João)
-- Minhas vendas -banco e ejs
-- Meus pedidos banco e ejs
+
 - Remove bg tudo
 - Css mobile do produtos 
 - Css mobile do sacola 
@@ -39,4 +37,4 @@
 ## Topicos gerais a serem mencionado
 
 -Home
-    Newin -Na ZIP tem
+    Newin

@@ -80,7 +80,6 @@ const prodModels = {
     },
 
 
-    // pegar todos os bazares com seus produtos
     findAllBazaarsWithProducts: async () => {
         try {
             const [result] = await pool.query(`

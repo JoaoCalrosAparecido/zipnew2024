@@ -370,7 +370,7 @@
                 <tr id="pedidos__colunas">
                     <th id="pedidos__colunas__descricao">Produto Comprado</th>
                     <th id="pedidos__colunas__descricao">Nome do Vendedor</th>
-                    <th id="pedidos__colunas__descricao">Status do Pedido</th>
+                    <th id="pedidos__colunas__descricao">Status de Envio</th>
                 </tr>
             </thead>
             <tbody id="pedidos__celulas">
@@ -379,7 +379,14 @@
                         <tr id="pedidos__linhas">
                             <td><%= pedido.produto_comprado %></td>
                             <td><%= pedido.vendedor_nome %></td>
-                            <td> Enviado ao correio</td>
+        
+                            <td>
+                                <% if (pedido.status_envio === 'Enviado') { %>
+                                    Enviado ao correio
+                                <% } else { %>
+                                    Aguardando envio
+                                <% } %>
+                            </td>
                         </tr>
                     <% }); %>
                 <% } else { %>
