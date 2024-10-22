@@ -182,6 +182,16 @@ const denunciaController = {
                     WHERE id_Cliente = ? AND Stats = ?
                 )
             `, [idClienteDenunciado, "Inativo"]);
+
+            // para n perder o raciocionio esse codigo deleta da wishlist todos os produtos q tem inativo em produtos
+            // await pool.query(`
+            //     DELETE FROM Sacola 
+            //     WHERE Id_prod_cliente IN (
+            //         SELECT id_prod_cliente FROM produtos 
+            //         WHERE id_Cliente = ? AND Stats != ?
+            //     )
+            // `, [idClienteDenunciado, "Disponível"]);
+    
     
             res.redirect('/adm-denuncias');
     
