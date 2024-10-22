@@ -4,7 +4,10 @@ const prodModels = {
 
     findAllProductByUserId: async (userId) => {
         try {
-            const [linhas] = await pool.query('SELECT * FROM `produtos` WHERE `id_Cliente` = ? ', [userId]);
+            const [linhas] = await pool.query(
+                'SELECT * FROM `produtos` WHERE `id_Cliente` = ? AND `Stats` = "Disponível"', 
+                [userId]
+            );
             return linhas;
         } catch (error) {
             return error;
@@ -75,18 +78,19 @@ const prodModels = {
     },
 
     mostrarProdutosBazar: async (userId, idBazar) => {
-         const [resultados] = await pool.query("SELECT * FROM produtos WHERE id_Cliente = ? AND Id_Bazar = ?", [userId, idBazar])
-    return resultados;
+        const [resultados] = await pool.query(
+            "SELECT * FROM produtos WHERE id_Cliente = ? AND Id_Bazar = ? AND Stats = 'Disponível'", [userId, idBazar]);
+        return resultados;
     },
-
 
     findAllBazaarsWithProducts: async () => {
         try {
-            const [result] = await pool.query(`
-                SELECT bazar.*, produtos.* 
+            const [result] = await pool.query(
+                `SELECT bazar.*, produtos.* 
                 FROM bazar
-                LEFT JOIN produtos ON bazar.Id_Bazar = produtos.Id_Bazar
-            `);
+                LEFT JOIN produtos ON bazar.Id_Bazar = produtos.Id_Bazar AND produtos.Stats = 'Disponível'
+                JOIN cliente ON bazar.id_Cliente = cliente.id_Cliente
+                WHERE cliente.Stats = 'Ativo'`);
             return result;
         } catch (error) {
             console.log(error);
@@ -96,7 +100,8 @@ const prodModels = {
 
     acharPorTermo: async (termo) => {
         try {
-            const [resultados] = await pool.query("select * from produtos where tituloprod LIKE ? OR preçoprod LIKE ?", [termo, termo]);
+            const [resultados] = await pool.query(
+            "SELECT * FROM produtos WHERE (tituloprod LIKE ? OR preçoprod LIKE ?) AND Stats = 'Disponível'", [termo, termo]);
             return resultados;
         } catch (error) {
             console.log("Erro ao buscar produto");

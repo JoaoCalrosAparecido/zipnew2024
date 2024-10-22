@@ -98,10 +98,8 @@ const denunciaController = {
                 return res.status(404).send("Produto não encontrado.");
             }
     
-            // id vendedor
             const idClienteDenunciado = produtos[0].id_Cliente;  
     
-            // Verifica se o usuario ja fez uma denuncia contra o vendedor
             const [denunciasExistentes] = await pool.query(
                 'SELECT * FROM `denuncias_vendedor` WHERE id_Cliente = ? AND id_Cliente_denunciado = ?',
                 [userId, idClienteDenunciado]
@@ -174,15 +172,24 @@ const denunciaController = {
             const idClienteDenunciado = req.params.id_Cliente_denunciado;
     
             await pool.query('UPDATE cliente SET Stats = ? WHERE id_Cliente = ?', ["Inativo", idClienteDenunciado]);
+
+            await pool.query('UPDATE produtos SET Stats = ? WHERE id_Cliente = ? AND Stats != ?', ["Inativo", idClienteDenunciado, "Vendido"]);
+
+            await pool.query(`
+                DELETE FROM Sacola 
+                WHERE Id_prod_cliente IN (
+                    SELECT id_prod_cliente FROM produtos 
+                    WHERE id_Cliente = ? AND Stats = ?
+                )
+            `, [idClienteDenunciado, "Inativo"]);
     
-            res.redirect('/adm-denuncias'); 
+            res.redirect('/adm-denuncias');
     
         } catch (error) {
             console.error("Erro ao banir o cliente:", error);
             res.status(500).send("Erro ao banir o cliente.");
         }
-    }
-    
+    },
 
 
 

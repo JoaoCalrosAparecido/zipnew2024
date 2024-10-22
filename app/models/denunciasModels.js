@@ -40,16 +40,21 @@ const denunciasModels = {
     listarDenuncias: async () => {
         const query = 
             `SELECT 
-                id_prod_cliente, 
-                SUM(repetido) AS total_repetido,
-                SUM(fora_tema) AS total_fora_tema,
-                SUM(ma_qualidade) AS total_ma_qualidade
+                dp.id_prod_cliente, 
+                SUM(dp.repetido) AS total_repetido,
+                SUM(dp.fora_tema) AS total_fora_tema,
+                SUM(dp.ma_qualidade) AS total_ma_qualidade
             FROM 
-                denuncias_produto
+                denuncias_produto dp
+            JOIN 
+                produtos p ON dp.id_prod_cliente = p.id_prod_cliente
+            WHERE 
+                p.Stats = 'Disponível'
             GROUP BY 
-                id_prod_cliente;`;
-            const [denuncias] = await pool.query(query);
-            return denuncias
+                dp.id_prod_cliente;`;
+
+        const [denuncias] = await pool.query(query);
+        return denuncias;
     },
 
     listarDenunciasVendedor: async () => {
@@ -85,7 +90,8 @@ const denunciasModels = {
             JOIN 
                 produtos p ON dp.id_prod_cliente = p.id_prod_cliente
             WHERE 
-                p.id_Cliente = ?
+                p.id_Cliente = ? 
+                AND p.Stats = 'Disponível'
             GROUP BY 
                 dp.id_prod_cliente;`;
         

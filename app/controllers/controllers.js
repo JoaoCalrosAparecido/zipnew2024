@@ -68,24 +68,30 @@ const controller = {
   regrasValidacaolog: [
     body('email').isEmail().withMessage('*Email Inválido'),
     body('senha')
-      .custom(async (senha, { req }) => {
-        try {
-          const [users] = await pool.query("SELECT * FROM cliente WHERE email = ?", [req.body.email]);
-          if (users.length === 0) {
-            throw new Error('Usuário não encontrado.');
-          }
-          const userSenha = users[0].senha;
-          const senhaCorreta = await bcrypt.compare(senha, userSenha);
-          if (!senhaCorreta) {
-            throw new Error('Senha incorreta.');
-          }
-
-          return true;
-        } catch (err) {
-          console.error(err);
-          throw new Error(err);
+    .custom(async (senha, { req }) => {
+      try {
+        const [users] = await pool.query("SELECT * FROM cliente WHERE email = ?", [req.body.email]);
+        if (users.length === 0) {
+          throw new Error('Usuário não encontrado.');
         }
-      }),
+  
+        const user = users[0];
+
+        if (user.Stats !== 'Ativo') {
+          throw new Error('Sua conta está banida.');
+        }
+        
+        const senhaCorreta = await bcrypt.compare(senha, user.senha);
+        if (!senhaCorreta) {
+          throw new Error('Senha incorreta.');
+        }
+  
+        return true;
+      } catch (err) {
+        console.error(err);
+        throw new Error(err);
+      }
+    }),
   ],
   regrasValidacaoAdcProduto: [
     body('tituloProduto').isString().isLength({ min: 3, max: 45 }).withMessage("*O Titulo deve ter de 3 a 45 caracteres!"),

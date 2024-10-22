@@ -127,14 +127,7 @@ router.get("/cart",
       const userId = req.session.autenticado.id;
       
       const prodAdd = await produtosModels.findAllProductByUserId(userId);
-     
-      
-      
-    
-      
-  
 
-      
       res.render('pages/produtos-adicionados', { msg: 'Back-end funcionando', prodAdd: prodAdd });
     });
 
