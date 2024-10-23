@@ -10,50 +10,82 @@ const denunciaController = {
         try {
             const userId = req.session.autenticado.id;
             const produtoId = parseInt(req.params.id_prod_cliente);
+
             const [produtos] = await pool.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
+            if (produtos.length === 0) {
+                return res.status(404).render('pages/produtos', {
+                    usuarioautenticado: req.session.autenticado,
+                    dadosNotificacao: { 
+                        title: "Produto não encontrado", 
+                        msg: "Produto não existe", 
+                        type: 'error' 
+                    }
+                });
+            }
     
-            // Verifica se o usuário já fez uma denúncia
             const [denunciasExistentes] = await pool.query(
                 'SELECT * FROM `denuncias_produto` WHERE id_Cliente = ? AND id_prod_cliente = ?',
                 [userId, produtoId]
             );
+    
+            const produto = produtos[0];
+            let quantidadeVendas = 0;
+            let nomeCliente = null;
+    
+            const idCliente = produto.id_Cliente;
+    
+            const [clientes] = await pool.query(
+                'SELECT nome FROM `cliente` WHERE id_Cliente = ?', 
+                [idCliente]
+            );
+    
+            if (clientes.length > 0) {
+                nomeCliente = clientes[0].nome;
+    
+                const [vendas] = await pool.query(
+                    `SELECT COUNT(*) AS quantidadeVendas 
+                     FROM pedido_item pi
+                     INNER JOIN produtos p ON pi.Id_prod_cliente = p.id_prod_cliente
+                     WHERE p.id_Cliente = ? AND p.Stats = 'Disponível'`,
+                    [idCliente]
+                );
+    
+                if (vendas.length > 0) {
+                    quantidadeVendas = vendas[0].quantidadeVendas;
+                }
+            }
+    
             if (denunciasExistentes.length > 0) {
-                const produto = produtos[0];
-                const jsonResult = {
+                return res.render('pages/produtos', {
                     usuarioautenticado: req.session.autenticado, 
                     produto: produto,
-                    nomeCliente: req.session.autenticado.nomeCliente,
+                    nomeCliente: nomeCliente,
+                    quantidadeVendas: quantidadeVendas,
                     listaErros: null,
                     dadosNotificacao: { 
                         title: "Você já denunciou este produto", 
                         msg: "Produto já denunciado", 
                         type: 'info' 
                     }
-                };
-                return res.render('pages/produtos', jsonResult);
+                });
             }
-    
-            // Verificação de erros
+
             let erros = validationResult(req);
             if (!erros.isEmpty()) {
-                const produto = produtos[0];
-                const jsonResult = {
+                return res.render('pages/produtos', {
                     usuarioautenticado: req.session.autenticado, 
                     produto: produto,
-                    nomeCliente: req.session.autenticado.nomeCliente,
+                    nomeCliente: nomeCliente,
+                    quantidadeVendas: quantidadeVendas,
                     dadosNotificacao: { 
-                    
                         title: "Preencha um dos campos", 
                         msg: "Campos vazios", 
                         type: 'warning' 
                     }
-                };
-                return res.render('pages/produtos', jsonResult);
+                });
             }
     
-            // Verifica quais caixas foram selecionadas
             const motivos = req.body.Caixa || [];
-    
             const dadosDenuncia = {
                 id_prod_cliente: produtoId,
                 id_Cliente: userId,
@@ -64,25 +96,23 @@ const denunciaController = {
     
             await denunciasModels.denunciarProd(dadosDenuncia);
     
-            const produto = produtos[0];
-            const jsonResult = {
+            return res.render('pages/produtos', {
                 usuarioautenticado: req.session.autenticado, 
                 produto: produto,
-                nomeCliente: req.session.autenticado.nomeCliente,
+                nomeCliente: nomeCliente,
+                quantidadeVendas: quantidadeVendas,
                 listaErros: null,
                 dadosNotificacao: { 
                     title: "Sua denúncia foi enviada", 
                     msg: "Denúncia realizada com sucesso", 
                     type: 'success' 
                 }
-            };
-            return res.render('pages/produtos', jsonResult);
+            });
         } catch (error) {
             console.error("Erro ao processar a denúncia:", error);
             res.status(500).send("Erro ao processar a denúncia.");
         }
     },
-
     
 
 
@@ -98,20 +128,44 @@ const denunciaController = {
                 return res.status(404).send("Produto não encontrado.");
             }
     
-            const idClienteDenunciado = produtos[0].id_Cliente;  
-    
+            const produto = produtos[0];
+            const idClienteDenunciado = produto.id_Cliente;  
+
             const [denunciasExistentes] = await pool.query(
                 'SELECT * FROM `denuncias_vendedor` WHERE id_Cliente = ? AND id_Cliente_denunciado = ?',
                 [userId, idClienteDenunciado]
             );
-            
-            const produto = produtos[0];
+    
+            let quantidadeVendas = 0;
+            let nomeCliente = null;
+    
+            const [clientes] = await pool.query(
+                'SELECT nome FROM `cliente` WHERE id_Cliente = ?', 
+                [idClienteDenunciado]
+            );
+    
+            if (clientes.length > 0) {
+                nomeCliente = clientes[0].nome;
+    
+                const [vendas] = await pool.query(
+                    `SELECT COUNT(*) AS quantidadeVendas 
+                     FROM pedido_item pi
+                     INNER JOIN produtos p ON pi.Id_prod_cliente = p.id_prod_cliente
+                     WHERE p.id_Cliente = ? AND p.Stats = 'Disponível'`,
+                    [idClienteDenunciado]
+                );
+    
+                if (vendas.length > 0) {
+                    quantidadeVendas = vendas[0].quantidadeVendas;
+                }
+            }
     
             if (denunciasExistentes.length > 0) {
                 const jsonResult = {
                     usuarioautenticado: req.session.autenticado, 
                     produto: produto,
-                    nomeCliente: req.session.autenticado.nomeCliente,
+                    nomeCliente: nomeCliente,
+                    quantidadeVendas: quantidadeVendas,
                     dadosNotificacao: { 
                         title: "Você já denunciou este vendedor", 
                         msg: "Vendedor já denunciado", 
@@ -120,16 +174,15 @@ const denunciaController = {
                 };
                 return res.render('pages/produtos', jsonResult);
             }
-
+    
             let erros = validationResult(req);
             if (!erros.isEmpty()) {
-                const produto = produtos[0];
                 const jsonResult = {
                     usuarioautenticado: req.session.autenticado, 
                     produto: produto,
-                    nomeCliente: req.session.autenticado.nomeCliente,
+                    nomeCliente: nomeCliente,
+                    quantidadeVendas: quantidadeVendas,
                     dadosNotificacao: { 
-                    
                         title: "Preencha um dos campos", 
                         msg: "Campos vazios", 
                         type: 'warning' 
@@ -137,7 +190,7 @@ const denunciaController = {
                 };
                 return res.render('pages/produtos', jsonResult);
             }
-    
+
             const motivos = req.body.Caixo || [];
     
             const dadosDenunciaV = {
@@ -153,7 +206,8 @@ const denunciaController = {
             const jsonResult = {
                 usuarioautenticado: req.session.autenticado, 
                 produto: produto,
-                nomeCliente: req.session.autenticado.nomeCliente,
+                nomeCliente: nomeCliente,
+                quantidadeVendas: quantidadeVendas,
                 dadosNotificacao: { 
                     title: "Sua denúncia foi enviada", 
                     msg: "Denúncia realizada com sucesso", 

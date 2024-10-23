@@ -68,10 +68,11 @@ router.get("/perfil",
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id);
-
     const userId = req.session.autenticado.id;
+    const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
+
     const bazar = await produtosModels.findBazarByUserId(userId);
-    res.render('pages/perfil', { usuario: user, Bazar: bazar, dadosNotificacao: null, listaErros: null });
+    res.render('pages/perfil', { usuario: user, Bazar: bazar, quantidadeVendas, dadosNotificacao: null, listaErros: null });
   }
 );
 
@@ -329,29 +330,55 @@ router.post('/atualizar-mensagem',
 router.get('/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
   async (req, res) => {
+    try {
       const produtoId = parseInt(req.params.id_prod_cliente);
-      const [produtos] = await connection.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
+      
+      // Buscar o produto pelo ID
+      const [produtos] = await connection.query(
+        'SELECT * FROM `produtos` WHERE id_prod_cliente = ?', 
+        [produtoId]
+      );
 
       if (produtos.length > 0) {
         const produto = produtos[0];
         const idCliente = produto.id_Cliente;
-        const [clientes] = await connection.query('SELECT nome FROM `cliente` WHERE id_Cliente = ?', [idCliente]);
+        
+        // Buscar o nome do cliente (vendedor)
+        const [clientes] = await connection.query(
+          'SELECT nome FROM `cliente` WHERE id_Cliente = ?', 
+          [idCliente]
+        );
 
         if (clientes.length > 0) {
           const nomeCliente = clientes[0].nome;
+          
+          // Contar a quantidade de vendas do vendedor
+          const [vendas] = await connection.query(
+            `SELECT COUNT(*) AS quantidadeVendas 
+             FROM pedido_item pi
+             INNER JOIN produtos p ON pi.Id_prod_cliente = p.id_prod_cliente
+             WHERE p.id_Cliente = ? AND p.Stats = 'Disponível'`,
+            [idCliente]
+          );
+          
+          const quantidadeVendas = vendas[0].quantidadeVendas;
 
           res.render('pages/produtos', { 
             listaErros: null,
             usuarioautenticado: req.session.autenticado, 
             produto: produto,
             nomeCliente: nomeCliente,
+            quantidadeVendas: quantidadeVendas, 
             dadosNotificacao: null
           });
         }
       } else {
         res.status(404).send('Produto não encontrado.');
       }
-
+    } catch (error) {
+      console.error("Erro ao carregar a página do produto:", error);
+      res.status(500).send('Erro ao carregar a página do produto.');
+    }
   }
 );
 
@@ -534,7 +561,7 @@ router.post("/adicionar-produto",
     }
 
 
-    const { cateProduto, tituloProduto, precoProduto, descProduto } = req.body;
+    const { tamanProduto, cateProduto, tituloProduto, precoProduto, descProduto } = req.body;
 
     const userBazar = await produtosModels.findBazarByUserId(req.session.autenticado.id)
 
@@ -549,7 +576,8 @@ router.post("/adicionar-produto",
       img2: req.files.img2[0].filename,
       img3: req.files.img3[0].filename,
       img4: req.files.img4[0].filename,
-      Stats: "Disponivel"
+      Stats: "Disponivel",
+      tamanho: tamanProduto,
     }
 
 

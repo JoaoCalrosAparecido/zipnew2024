@@ -134,7 +134,24 @@ const pedidoModel = {
         } catch (err) {
             throw err;
         }
-    }
+    },
+
+    
+    contarVendasPorCliente: async (idCliente) => {
+        try {
+          const [resultados] = await pool.query(
+            `SELECT COUNT(*) AS quantidadeVendas 
+             FROM pedido_item pi
+             INNER JOIN produtos p ON pi.Id_prod_cliente = p.id_prod_cliente
+             WHERE p.id_Cliente = ? AND p.Stats = 'Disponível'`,
+            [idCliente]
+          );
+          return resultados[0].quantidadeVendas;
+        } catch (error) {
+          console.log("Erro ao contar as vendas");
+          return error;
+        }
+      },
 
 }
 

@@ -75,7 +75,8 @@ enviarMensagem: async (req, res) => {
       console.error('Erro ao atualizar mensagem:', error);
       res.status(500).send('Erro ao atualizar mensagem');
   }
-}
+},
+
 
 
 };

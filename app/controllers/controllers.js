@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const { body, validationResult, check } = require("express-validator");
 const models = require("../models/models");
 const produtosModels = require('../models/produtos.models');
+const pedidoModel = require('../models/pedidoModel');
 
 
 const controller = {
@@ -152,6 +153,7 @@ const controller = {
   gravarPerfil: async (req, res) => {
     const userId = await models.findUserById(req.session.autenticado.id)
     const bazar = await produtosModels.findBazarByUserId(userId);
+    const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
     const erros = validationResult(req);
     const erroMulter = req.session.erroMulter;
     if (!erros.isEmpty() || erroMulter != null) {
@@ -210,11 +212,11 @@ const controller = {
           };
           console.log("Atualizado")
           return res.render("pages/perfil", 
-            { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Alterações Gravadas", type: "sucess" }, formAprovado: true, Bazar: bazar, usuario: userId, valores: campos });
+            { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Alterações Gravadas", type: "sucess" }, formAprovado: true, Bazar: bazar, quantidadeVendas, usuario: userId, valores: campos });
         } else {
           console.log("Atualizado 2")
           return res.render("pages/perfil", 
-            { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Sem Alterações", type: "info" }, Bazar: bazar, usuario: userId, valores: dadosForm });
+            { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Sem Alterações", type: "info" }, Bazar: bazar, quantidadeVendas, usuario: userId, valores: dadosForm });
         }
       }
 
