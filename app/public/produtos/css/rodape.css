@@ -3,13 +3,19 @@
 
 
 /* area da ssection */
+#section_entre_no_mundo_cell {
+    display: none;
+}
 
+#rodape_cell {
+    display: none;
+}
 
 .rodape {
     height: 708px;
     background-color: #212121;
     position: relative;
-    top: 200px;
+    top: -35vh;
 }
 
 /* h1 */

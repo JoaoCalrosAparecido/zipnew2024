@@ -15,11 +15,12 @@
 - Vender
 - Produtos nas paginas m,f,i,a
 - Carrossel no perfil
-- Ajustar alinhamento dos produtos no m,f,i,a
+- Ajustar alinhamento dos produtos no m,f,i,a*
 - Produtos clicaveis
-- Indez canvas
-- Campo explicando o adc produtos e o adc bazar
-- Links Vender no menu
+- Indez canvas*
+- Campo explicando o adc produtos e o adc bazar*
+- Links Vender no menu*
+- favicon*
 
 
 ## O que falta do projeto (João)
