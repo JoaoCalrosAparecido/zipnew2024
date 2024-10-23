@@ -137,15 +137,16 @@
   left: 300px;
 }
 
-.menu {
+.menu2 {
   position: fixed;
   top: 10vh;
-  right: -68vw; /* Inicialmente oculto */
-  width: 68vw; /* Metade da largura da tela */
+  right: -68%; /* Inicialmente oculto */
+  width: 50vw; /* Metade da largura da tela */
   height: 100%;
   outline: none;
   background-color: #F2F2F2;
   transition: right 0.3s ease;
+  z-index: 1000;
 }
 
 input::-webkit-input-placeholder {
@@ -173,11 +174,11 @@ input::-webkit-input-placeholder {
 
 
 
-#openMenuBtn {
+#openMenuBtn2 {
 
 }
 
-#openMenuBtn.rolagem {
+#openMenuBtn.rolagem2 {
 
 
 }
@@ -209,7 +210,7 @@ input::-webkit-input-placeholder {
 
 
 /* Estilo para o botão de fechar menu */
-.closeBtn {
+.closeBtn2 {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -217,7 +218,7 @@ input::-webkit-input-placeholder {
   color: white;
 }
 
-.closeBtn i {
+.closeBtn2 {
   font-size: 20px;
 }
 
@@ -316,7 +317,7 @@ input::-webkit-input-placeholder {
   gap: 4.2vh;
   position: relative;
   top: -32vh;
-  left: 61.6vw;
+  left: 56vw;
 }
 
 #article_links_principais_cell_img > img {
@@ -331,7 +332,7 @@ input::-webkit-input-placeholder {
   width: 68vw;
   height: 17vh;
   position: relative;
-  top: -28vh;
+  top: 5.3vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -376,7 +377,7 @@ input::-webkit-input-placeholder {
 /*icones celular*/
 #section_icones_menu_deslizante_cell {
   position: relative;
-  top: -25vh;
+  top: 9vh;
   padding-left: 5vw;
   display: flex;
   flex-direction: column;
@@ -394,18 +395,15 @@ input::-webkit-input-placeholder {
   position: relative;
   width: 30vw;
 }
-
 .article_icones_menu_deslizante_cell > article > p > a {
   text-decoration: none;
   color: black;
 }
 
-
-
 /*contate-nos*/
 #article_contate_nos_menu_cell {
   display: flex;
-  column-gap: 19vw;
+  column-gap: 17vw;
 }
 
 #article_contate_nos_menu_cell > figure {
@@ -445,7 +443,7 @@ input::-webkit-input-placeholder {
 
 #article_brasil_menu_cell {
   display: flex;
-  column-gap: 19vw;
+  column-gap: 16vw;
 }
 
 #article_brasil_menu_cell > figure {
