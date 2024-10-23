@@ -29,7 +29,7 @@ Como ta:
 
 
 dia 22 
-- Css mobile do produtos / responsiva
+- Css mobile do produtos / responsiva check
 
 
 
@@ -40,7 +40,7 @@ dia 23 no laboratório:
 
 dia 23 
 - Css mobile adc produtos / responsiva
-- rodapé cadastro mobile
+- rodapé cadastro mobile check
 
 
 
