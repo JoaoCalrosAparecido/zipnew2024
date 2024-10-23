@@ -109,8 +109,7 @@ const prodModels = {
         }
     },
 
-<<<<<<< Updated upstream
-=======
+
     findAllProductfav: async (userId) => {
         try {
             const [linhas] = await pool.query('SELECT * FROM `Favoritos` WHERE `id_Cliente` = ?', [userId]);
@@ -119,7 +118,7 @@ const prodModels = {
             return error;
         }
     },
->>>>>>> Stashed changes
+
 
 };
 

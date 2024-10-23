@@ -84,26 +84,35 @@ router.post("/socialmedia",
     const erros = validationResult(req);
     const userId = req.session.autenticado.id;
     const bazar = await produtosModels.findBazarByUserId(userId);
+    const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
     const { socialLinks } = req.body;
     const user = await models.findUserById(userId);
 
-      if (!erros.isEmpty()) {
-        return res.render("pages/perfil", {
-          usuario: user,
-          Bazar:bazar,
-          listaErros: erros,
-          dadosNotificacao: null,
-          listaProdBazar: [],
-          valores: {
-            socialLinks: req.body.socialLinks,
-          }
-      })
-      }
-    
+    if (!erros.isEmpty()) {
+      return res.render("pages/perfil", {
+        usuario: user,
+        Bazar: bazar,
+        quantidadeVendas,
+        listaErros: erros,
+        dadosNotificacao: null,
+        listaProdBazar: [],
+        valores: {
+          socialLinks: req.body.socialLinks,
+        }
+      });
+    }
 
     await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [socialLinks, userId]);
 
-    res.render('pages/perfil', { erros: null, logado: true, usuarioautenticado: userId, usuario: user, Bazar:bazar });
+    res.render('pages/perfil', {
+      erros: null,
+      logado: true,
+      usuarioautenticado: userId,
+      usuario: user,
+      Bazar: bazar,
+      quantidadeVendas,
+      listaErros: null
+    });
   }
 );
 
@@ -524,9 +533,19 @@ router.get("/adc-produto",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2]),
   async function (req, res) {
-    const user = await models.findUserById(req.session.autenticado.id)
-    console.log(user)
-    res.render('pages/adc-produto', { usuario: user, erros: null, usuarioautenticado: req.session.autenticado, listaErros: null })
+    const userId = req.session.autenticado.id;
+    const user = await models.findUserById(userId);
+
+    const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
+
+    console.log(user);
+    res.render('pages/adc-produto', {
+      usuario: user,
+      erros: null,
+      usuarioautenticado: req.session.autenticado,
+      listaErros: null,
+      quantidadeVendas: quantidadeVendas, 
+    });
   });
 
 // [, ]
@@ -536,8 +555,14 @@ router.post("/adicionar-produto",
   upload.fields([{ name: 'img1' }, { name: 'img2' }, { name: 'img3' }, { name: 'img4' }]),
   controller.regrasValidacaoAdcProduto,
   async function (req, res) {
-    const user = await models.findUserById(req.session.autenticado.id)
+    const userId = req.session.autenticado.id;
+    const user = await models.findUserById(userId);
     const errors = validationResult(req);
+
+    const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
+
+
+    const { tamanProduto, cateProduto, tituloProduto, precoProduto, descProduto } = req.body;
 
     if (!errors.isEmpty()) {
       return res.render("pages/adc-produto", {
@@ -545,6 +570,7 @@ router.post("/adicionar-produto",
         listaErros: errors,
         dadosNotificacao: null,
         listaProdBazar: [],
+        quantidadeVendas: quantidadeVendas,
         valores: {
             tituloProduto: req.body.tituloProduto,
             precoProduto: req.body.precoProduto,
@@ -552,9 +578,6 @@ router.post("/adicionar-produto",
         }
     })
     }
-
-
-    const { tamanProduto, cateProduto, tituloProduto, precoProduto, descProduto } = req.body;
 
     const userBazar = await produtosModels.findBazarByUserId(req.session.autenticado.id)
 
@@ -712,7 +735,6 @@ router.get("/adc-bazar",
     uplImg('imgBazar'), 
     controller.regrasValidaçãoBazar, 
     function (req, res) {
-        console.log(req.body)
         bazarController.submitBazar(req, res);
     }
 );

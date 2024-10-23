@@ -1,11 +1,10 @@
 ## O que falta do projeto (Lazully)
 
 - 23/10
-- Numero de vendas Post - Atualizar e Criar Bazar, Atualizar Perfil, Url
+- Numero de vendas(Post) - Atualizar Perfil
 - Produtos clicaveis (Perfil, Login, Produtos, Sacola) Não esquecer da validação de compra e pa
 
 - 24/10
-- Adc Produto / quando errar puxar os campos anteriores
 - Tirar os inputs de pesquisa e colocar os links para pesquisa
 - Esqueci minha senha / Validação Email
 - Mensagem de Solicitação do Famoso negada
@@ -62,3 +61,5 @@ Dia 25
 Erro no render
 WishList - Pelo Produto
 Remover Produto da Sacola
+
+Produtos Denunciar e Fazer outra ação
