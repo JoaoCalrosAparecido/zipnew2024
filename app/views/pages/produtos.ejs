@@ -16,11 +16,23 @@
     <link rel="stylesheet" href="/produtos/css/stories_recentes.css">
     <link rel="stylesheet" href="/produtos/css/rodape.css">
 
+    <link rel="stylesheet" href="/produtos/css-cell/foto_do_produto.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="/produtos/css-cell/adicionar_a_sacola.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../produtos/css-cell/menu_cell.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../produtos/css-cell/parte_superior_cell.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../produtos/css-cell/rodape_cell.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../produtos/css-cell/stories_recentes_cell.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../produtos/css-cell/body.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../produtos/css-cell/voce_pode_gostar.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../produtos/css-cell/slide_produto_1.css" media="screen and (max-width:750px)">
+
     <link rel="stylesheet" href="/produtos/denunciar/produto.css">
     <link rel="stylesheet" href="/produtos/denunciar/vendendor.css">
     <script src="/produtos/denunciar/menu.js" defer></script>
     <script src="/produtos/denunciar/menud.js" defer></script>
     <script src="/produtos/denunciar/script.js" defer></script>
+
+      
 
 
     <!-- Notify -->
@@ -76,196 +88,338 @@
         </a>
     
     
-        <!--menu principal-->
-        <section id="menu_principal_como_todo">
-            <!--area do menu que contem os links-->
-            <article id="menu_principal">
-                <section id="section_menu_principal">
-                    <section id="parte_dos_links_do_menu">
-                        <a href="/bazar" class="links_do_menu1">BAZAR</a>
-                            <a href="" class="links_do_menu2">VENDER</a>
-                            <section id="section_menu_retratio">
-                                <section id="section_do_menu_retratio_2">
-                                    <!--parte das imagens-->
-                                    <figure id="figure_imagens_menu_retratio">
-                                        <figure id="menu_retratio_imagem1">
-                                            <img width="230px" src="../../IMG/menu_retratio/imagem_1.png" alt=""> <figcaption class="parte_escrita_figcaption">
-                                                Bazar Nick DJ
-                                            </figcaption>
-                                        </figure>
-                        
-                        
-                                        <figure id="menu_retratio_imagem2">
-                                            <img height="356px" src="/IMG/menu_retratio/imagem2.png" alt=""> <figcaption class="parte_escrita_figcaption">
-                                                Moda Passarela
-                                            </figcaption>
-                                        </figure>
-                                    </figure>
-                                    <!--parte das listas-->
-                                    <article id="article_menu_retratio_lista">
-                                        <ul id="menu_retratio_ul1"><p id="menu_retratio_ul1_p">Venda na zip</p>
-                                            <li class="menu_retratio_lista1">Saiba como vender</li>
-                                            <li class="menu_retratio_lista1">Dicas de como vender bem</li>
-                                            <li class="menu_retratio_lista1">Mais sobre comisssão</li>
-                                        </ul>
-                                        <ul id="menu_retratio_ul2"><p id="menu_retratio_ul2_p">Bazar</p>
-                                            <li class="menu_retratio_lista2">Veja como montar o seu</li>
-                                            <li class="menu_retratio_lista2">bazar na zip</li>
-                                        </ul>
-                                        <ul id="menu_retratio_ul3"><p id="menu_retratio_ul3_p">Ajuda</p>
-                                            <li class="menu_retratio_lista3">Não recebi minha compra</li>
-                                            <li class="menu_retratio_lista3">Tenho dúvidas</li>
-                                        </ul>
-                                    </article>
-                                    <!--parte escrita zip marketplace-->
-                                    <article id="parte_escrita_menu_retratio">
-                                        <img width="320px" src="IMG/menu_retratio/parte_escrita_refeito.png" alt="">
-                                    </article>
-                                </section>
-                            </section>
-                        <a href="/feminino" class="links_do_menu3">FEMININO</a>
-                        <a href="/masculino" class="links_do_menu4">MASCULINO</a>
-                        <a href="/infantil" class="links_do_menu5">INFANTIL</a>
-                        <a href="/acessorios" class="links_do_menu6">ACESSÓRIOS</a>
-                    </section>
-                </section>
-            </article>
-            
-    
-    
-            <!--logo zip-->
-            <article>
-                <a href="/">
-                    <figure id="logo_zip_menu">
-                        <img id="logo_zip_menu_imagem" src="" alt="">
-                    </figure>
-                </a>
-            </article>
-    
-            
-            
-    
-    
-            <!--imagem da barra de pesquisa e etc-->
-            <article id="barra_de_pesquisa_e_etc">
-                <figure id="imagem_da_barra_de_pesquisa_e_etc">
-    
-    
-    
-                    
-    
-                    <figure id="imagem_da_barra_de_pesquisa" class="search-container_principal">
-                        <article class="search-container_principal">
-                            <article class="search-icon_principal" id="searchIcon_principal">
-                                <lord-icon
-                                    id="icon1_principal"
-                                    src="https://cdn.lordicon.com/kkvxgpti.json"
-                                    trigger="hover"
-                                    style="width:21.5px;height:21.5px;">
-                                </lord-icon>
-                    
+<!--menu principal-->
+<section id="menu_principal_como_todo">
+    <!--area do menu que contem os links-->
+    <article id="menu_principal">
+        <section id="section_menu_principal">
+            <section id="parte_dos_links_do_menu">
+                <a href="/bazar" class="links_do_menu1">BAZAR</a>
+                    <a href="" class="links_do_menu2">VENDER</a>
+                    <section id="section_menu_retratio">
+                        <section id="section_do_menu_retratio_2">
+                            <!--parte das imagens-->
+                            <figure id="figure_imagens_menu_retratio">
+                                <figure id="menu_retratio_imagem1">
+                                    <img width="230px" src="../../IMG/menu_retratio/imagem_1.png" alt=""> <figcaption class="parte_escrita_figcaption">
+                                        Bazar Nick DJ
+                                    </figcaption>
+                                </figure>
+                
+                
+                                <figure id="menu_retratio_imagem2">
+                                    <img height="356px" src="/IMG/menu_retratio/imagem2.png" alt=""> <figcaption class="parte_escrita_figcaption">
+                                        Moda Passarela
+                                    </figcaption>
+                                </figure>
+                            </figure>
+                            <!--parte das listas-->
+                            <article id="article_menu_retratio_lista">
+                                <ul id="menu_retratio_ul1"><p id="menu_retratio_ul1_p">Venda na zip</p>
+                                    <li class="menu_retratio_lista1">Saiba como vender</li>
+                                    <li class="menu_retratio_lista1">Dicas de como vender bem</li>
+                                    <li class="menu_retratio_lista1">Mais sobre comisssão</li>
+                                </ul>
+                                <ul id="menu_retratio_ul2"><p id="menu_retratio_ul2_p">Bazar</p>
+                                    <li class="menu_retratio_lista2">Veja como montar o seu</li>
+                                    <li class="menu_retratio_lista2">bazar na zip</li>
+                                </ul>
+                                <ul id="menu_retratio_ul3"><p id="menu_retratio_ul3_p">Ajuda</p>
+                                    <li class="menu_retratio_lista3">Não recebi minha compra</li>
+                                    <li class="menu_retratio_lista3">Tenho dúvidas</li>
+                                </ul>
                             </article>
-                            <input type="text" class="search-input_principal" id="searchInput_principal" placeholder="Pesquisar...">
-                        </article>
-                    </figure>
-                    
-                    <script src="../../js/pesquisa_principal.js"></script>
+                            <!--parte escrita zip marketplace-->
+                            <article id="parte_escrita_menu_retratio">
+                                <img width="320px" src="IMG/menu_retratio/parte_escrita_refeito.png" alt="">
+                            </article>
+                        </section>
+                    </section>
+                <a href="/feminino" class="links_do_menu3">FEMININO</a>
+                <a href="/masculino" class="links_do_menu4">MASCULINO</a>
+                <a href="/infantil" class="links_do_menu5">INFANTIL</a>
+                <a href="/acessorios" class="links_do_menu6">ACESSÓRIOS</a>
+            </section>
+        </section>
+    </article>
     
-                    <a href="/wishlist">
-                        <figure id="imagem_do_icone_de_favorito">
-                            <lord-icon
-                                id="lordicon"
-                                src="https://cdn.lordicon.com/xyboiuok.json"
-                                trigger="hover"
-                                style="width:25px; height:25px;">
-                            </lord-icon>
-                        </figure>
-                    </a>
+
+
+    <!--logo zip-->
+    <a href="/">
+        <figure id="logo_zip_menu">
+            <img id="logo_zip_menu_imagem" src="" alt="">
+        </figure>
+    </a>
+
     
-                    
-                    <a href="/perfil"><figure id="imagem_do_icone_de_pessoa">
-                        
     
+
+
+    <!--imagem da barra de pesquisa e etc-->
+    <article id="barra_de_pesquisa_e_etc">
+        <figure id="imagem_da_barra_de_pesquisa_e_etc">
+
+
+
+            
+
+            <figure id="imagem_da_barra_de_pesquisa" class="search-container_principal">
+                <article class="search-container_principal">
+                    <article class="search-icon_principal" id="searchIcon_principal">
                         <lord-icon
-                        id="pessoa2"
-                        src="https://cdn.lordicon.com/kthelypq.json"
-                        trigger="hover"
-                        style="width:25px;height:25px;">
-                        </lord-icon>
-                    </figure></a>
-                    
-                    <a href="/cart">
-                        <figure id="imagem_do_icone_da_sacola">
-                            <lord-icon
-                            id="sacola1"
-                            src="https://cdn.lordicon.com/evyuuwna.json"
-                            trigger="morph"
-                            state="morph-shopping-bag-open"
-                            
-                            style="width:25px;height:25px;">
-                        </lord-icon>
-                            
-                        </figure>
-                    </a>
-    
-                   
-                </figure>
-    
-                <script src="../../barra_de_pesquisa.js"></script>
-    
-            </article>
-    
-            <!--barra de pesquisa e etc responsivo-->
-            <section id="barra_de_pesquisa_e_etc_responsivo">
-    
-                <!--barra de pesquisa-->
-                <article class="search-container">
-                    <article class="search-icon" id="searchIcon">
-                        <lord-icon
-                        id="icon1"
-                        src="https://cdn.lordicon.com/kkvxgpti.json"
-                        trigger="hover"
-                        style="width:20px;height:20px;">
-                    </lord-icon>
-                
-    
-                    </article>
-                    <input type="text" class="search-input" id="searchInput" placeholder="Pesquise">
-    
-                    <script src="../../pesquisa.js"></script>
-                </article>
-    
-                  
-    
-                
-                <!--icone sacola-->
-                <article id="article_icone_sacola_cell">
-                    
-                        <lord-icon
-                            id="icon3"
-                            src="https://cdn.lordicon.com/evyuuwna.json"
-                            trigger="morph"
-                            state="morph-shopping-bag-open"
-                            
+                            id="icon1_principal"
+                            src="https://cdn.lordicon.com/kkvxgpti.json"
+                            trigger="hover"
                             style="width:21px;height:21px;">
                         </lord-icon>
             
-    
-    
-                        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                       
+                    </article>
+                    <input type="text" class="search-input_principal" id="searchInput_principal" placeholder="Pesquisar...">
                 </article>
-    
-                <article">
-                
-                </article>
-        
+            </figure>
+            
+            <script src="../../js/pesquisa_principal.js"></script>
 
-            </section>
+            <figure id="imagem_do_icone_de_favorito">
+                <lord-icon
+                    id="lordicon"
+                    src="https://cdn.lordicon.com/xyboiuok.json"
+                    trigger="hover"
+                    style="width:25px; height:25px">
+                </lord-icon>
+
+                
+            </figure>
+
+            <a href="/perfil"><figure id="imagem_do_icone_de_pessoa">
+                
+
+                
+
+                <lord-icon
+                id="pessoa1"
+                src="https://cdn.lordicon.com/kthelypq.json"
+                trigger="hover"
+                style="width:25px;height:25px">
+                </lord-icon>
+            </figure></a>
+            
+            <a href="/cart">
+                <figure id="imagem_do_icone_da_sacola">
+                    <lord-icon
+                    id="sacola1"
+                    src="https://cdn.lordicon.com/evyuuwna.json"
+                    trigger="morph"
+                    state="morph-shopping-bag-open"
+                    
+                    style="width:25px;height:25px;">
+                </lord-icon>
+                    
+                
+                </figure>
+            </a>
+
+           
+        </figure>
+
+        <script src="../../barra_de_pesquisa.js"></script>
+
+        <script src="../../css-masculino/js/rolagem_icone-masculino.js"></script>
+    </article>
+
+    <!--barra de pesquisa e etc responsivo-->
+    <section id="barra_de_pesquisa_e_etc_responsivo">
+
+        <!--barra de pesquisa-->
+        <article class="search-container">
+            <article class="search-icon" id="searchIcon">
+                <lord-icon
+                id="icon1"
+                src="https://cdn.lordicon.com/kkvxgpti.json"
+                trigger="hover"
+                style="width:20px;height:20px;">
+            </lord-icon>
+        
+            
+
+            </article>
+            <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar...">
+
+            <script src="../../pesquisa.js"></script>
+        </article>
+
+          
+
+        
+        <!--icone sacola-->
+        <article id="article_icone_sacola_cell">
+            
+                <lord-icon
+                    id="icon3"
+                    src="https://cdn.lordicon.com/evyuuwna.json"
+                    trigger="morph"
+                    state="morph-shopping-bag-open"
+                    
+                    style="width:22px;height:22px;">
+                </lord-icon>
     
-        </section>
+
+                
+
+                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        </article>
+
+        <article">
+        <article id="openMenuBtn" class="botao_menu_cell ">
+        </article>
+
+        <div id="blackDiv"></div>
+
+               <script src="../../rolagem_menu_cell.js"></script>
+
+              <section id="menu" class="menu">
+                <!-- <span id="closeMenuBtn" class="closeBtn"><i class="fas fa-times">ooo</i></span> Botão de fechar menu -->
+                <section id="section_links_principais_cell">
+                    <article id="article_links_principais_cell_p">
+                        <p><a href="/bazar">BAZAR</a></p>
+
+                        <p>VENDER</p>
+
+                        <p><a href="/feminino">FEMININO</a></p>
+
+                        <p><a href="/masculino">MASCULINO</a></p>
+
+                        <p><a href="/infantil">INFANTIL</a></p>
+
+                        <p><a href="/acessorios">ACESSÓRIOS</a></p>
+                        
+                    </article>
+
+                    <article id="article_links_principais_cell_img">
+                        <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt=""> 
+
+                        <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+
+                        <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+
+                        <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+
+                        <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+                        
+                        <img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt="">
+                    </article>
+                </section>
+
+                <article id="article_saiba_mais_menu_cell">
+                    <p>Participe do nosso marketplace, favorite produtos e os adicione à sacola</p>
+                    <button><p>Cadastre-se</p></button>
+                </article>
+
+                <!--parte dos icones cell-->
+                <section id="section_icones_menu_deslizante_cell">
+                    <!--numero um-->
+                    <article class="article_icones_menu_deslizante_cell">
+                        <article>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/kthelypq.json"
+                                trigger="hover"
+                                style="width:26px;height:26px">
+                            </lord-icon>
+                            
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                        </article>
+
+                        <article>
+                            <p><a href="/perfil">Entrar</a></p>
+                        </article>
+                    </article>
+
+                    <!--numero dois-->
+                    <article class="article_icones_menu_deslizante_cell">
+                        <article>
+                            <lord-icon
+                            src="https://cdn.lordicon.com/evyuuwna.json"
+                            trigger="morph"
+                            state="morph-shopping-bag-open"
+                            style="width:26px;height:26px">
+                            </lord-icon>
+                            
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                        </article>
+
+                        <article>
+                            <p>Sacola</p>
+                        </article>
+                    </article>
+
+                    <!--numero tres-->
+                    <article class="article_icones_menu_deslizante_cell">
+                        <article>
+                            <lord-icon
+                            src="https://cdn.lordicon.com/xyboiuok.json"
+                            trigger="hover"
+                            style="width:26px;height:26px">
+                            </lord-icon>
+                            
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                        </article>
+
+                        <article>
+                            <p><a href="/wishlist">Wishlist</a></p>
+                        </article>
+                    </article>
+
+                    <!--numero quatro-->
+                    <article class="article_icones_menu_deslizante_cell">
+                        <article>
+                            <lord-icon
+                            src="https://cdn.lordicon.com/lobpqdog.json"
+                            trigger="hover"
+                            style="width:26px;height:26px">
+                            </lord-icon>
+                            
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                        </article>
+
+                        <article id="article_contate_nos_menu_cell">
+                            <p>Contate-nos</p>
+                            <figure><img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt=""></figure>
+                        </article>
+                    </article>
+
+                    <hr id="linha_icones_menu_cell">
+
+                    <article class="article_icones_menu_deslizante_cell" id="article_total_brasil_cell">
+                        <article>
+                            <figure id="figure_brasil_menu_cell"></figure>
+                        </article>
+
+                        <article id="article_brasil_menu_cell">
+                            <p>Brasil | PT R$</p>
+                            <figure><img src="../../IMG/area_do_menu/cell/setinha_do_menu.svg" alt=""></figure>
+                        </article>
+                    </article>
+                </section>
+
+              </section>
+              <article id="overlay"></article>
+        </article>
+    </section>
+
+</section>
+
+
+
+<script src="../../menu_responsivo.js"></script>
+
+
+
         <script src="../../js/menu_transparente.js"></script>
        
     
+
 
     <section id="display-flex-prod">
         <% if (produto) { %>
@@ -284,6 +438,20 @@
                 <img src="../../IMG/uploads/<%= produto.img4 %>" alt="Imagem 4">
             </figure>
         </section>
+
+        <!--fotos da bolsa-->
+        <div id="none" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="../../IMG/uploads/<%= produto.img1 %>" alt=""></div>
+              <div class="swiper-slide"><img src="../../IMG/uploads/<%= produto.img2 %>" alt=""></div>
+              <div class="swiper-slide"><img src="../../IMG/uploads/<%= produto.img3 %>" alt=""></div>
+              <div class="swiper-slide"><img src="../../IMG/uploads/<%= produto.img4 %>" alt=""></div>
+             
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
         <!--parte adicionar a sacola -->
         <section id="section_adicionar_a_sacola">
             <section id="section_position_sticky_adicionar_a_sacola">
@@ -321,11 +489,11 @@
         
                     <p id="openMenuBt">Denunciar vendedor</p>
                     <hr>
-                    <section id="sustentabilidade-icon"><lord-icon
+                    <section id="sustentabilidade-icon"><lord-icon id="icon-sustentabilidade"
                         src="https://cdn.lordicon.com/zruuduya.json"
                         trigger="hover"
-                        colors="primary:#000000,secondary:#30beaa"
-                        style="width:2vw;height:2vw;">
+                        colors="primary:#000000,secondary:#30beaa">
+                        
                     </lord-icon><h2>Faça a moda circular como <%= nomeCliente %> </h2></section>
                     <hr>
                 </article>
@@ -358,7 +526,7 @@
     <section id="section_slide_bolsa_produto1">
         <figure id="slide_bolsa_produto1">
             <figure>
-                <img width="375px" height="469px" src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa1.png"
+                <img src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa1.png"
                     alt="">
                 <figcaption class="parte_escrita_produto1">Bolsa Branca Medusa'95</figcaption>
                 <figcaption class="parte_preco_produto1">R$ 50,00</figcaption>
@@ -367,7 +535,7 @@
             </figure>
 
             <figure>
-                <img width="375px" height="469px" src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa2.png"
+                <img  src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa2.png"
                     alt="">
                 <figcaption class="parte_escrita_produto1">Bolsa Preta Medusa'95</figcaption>
                 <figcaption class="parte_preco_produto1">R$ 50,00</figcaption>
@@ -376,7 +544,7 @@
             </figure>
 
             <figure>
-                <img width="375px" height="469px" src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa3.png"
+                <img  src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa3.png"
                     alt="">
                 <figcaption class="parte_escrita_produto1">Bolsa Clássica Branca</figcaption>
                 <figcaption class="parte_preco_produto1">R$ 20,00</figcaption>
@@ -385,7 +553,7 @@
             </figure>
 
             <figure>
-                <img width="375px" height="469px" src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa4.png"
+                <img  src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa4.png"
                     alt="">
                 <figcaption class="parte_escrita_produto1">Bolsa Crocodilo Preta</figcaption>
                 <figcaption class="parte_preco_produto1">R$ 30,00</figcaption>
@@ -395,6 +563,45 @@
 
         </figure>
     </section>
+
+    <div class="swiper mySwiper2" id="swiper_do_slide2">
+        <div class="swiper-wrapper" id="display_slide2">
+          <div class="swiper-slide" id="slide2">
+            <img src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa1.png"
+                    alt="">
+                <figcaption class="parte_escrita_produto1">Bolsa Branca Medusa'95</figcaption>
+                <figcaption class="parte_preco_produto1">R$ 50,00</figcaption>
+                <img class="icone_favorito_slide_produto1"
+                    src="../IMG/pordutos/promos/bolsa_preta_classica/slide/icone_favorito.svg" alt="">
+          </div>
+          <div class="swiper-slide" id="slide2">
+            <img  src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa2.png"
+                    alt="">
+                <figcaption class="parte_escrita_produto1">Bolsa Preta Medusa'95</figcaption>
+                <figcaption class="parte_preco_produto1">R$ 50,00</figcaption>
+                <img class="icone_favorito_slide_produto1"
+                    src="../IMG/pordutos/promos/bolsa_preta_classica/slide/icone_favorito.svg" alt="">
+          </div>
+          <div class="swiper-slide" id="slide2">
+            <img  src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa3.png"
+                    alt="">
+                <figcaption class="parte_escrita_produto1">Bolsa Clássica Branca</figcaption>
+                <figcaption class="parte_preco_produto1">R$ 20,00</figcaption>
+                <img class="icone_favorito_slide_produto1"
+                    src="../IMG/pordutos/promos/bolsa_preta_classica/slide/icone_favorito.svg" alt="">
+          </div>
+          <div class="swiper-slide" id="slide2">
+            <img  src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa4.png"
+                    alt="">
+                <figcaption class="parte_escrita_produto1">Bolsa Crocodilo Preta</figcaption>
+                <figcaption class="parte_preco_produto1">R$ 30,00</figcaption>
+                <img class="icone_favorito_slide_produto1"
+                    src="../IMG/pordutos/promos/bolsa_preta_classica/slide/icone_favorito.svg" alt="">
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     <% } %>
 
     <!--STORIES RECENTES-->
@@ -589,6 +796,78 @@
     </section>
 
 
+ 
+</section>
+
+ <!--entre no mundo-->
+ <section id="section_entre_no_mundo_cell">
+    <figure id="figure_entre_no_mundo_cell"></figure>
+
+    <article id="paragrafo_entre_no_mundo_cell">
+        <p>Esteja por dentro de eventos, coleções e novidades exclusivas</p>
+    </article>
+
+    <section id="section_botao_email_entre_no_mundo_cell">
+        <a href="/cadastro">
+            <article id="article_botao_email_entre_no_mundo_cell">
+                <p>E-mail</p>
+                <img src="../../IMG/stories_recentes/cell/seta.svg" alt="">
+            </article>
+        </a>
+    </section>
+
+</section>
+
+    <!--rodapé cell-->
+    <section id="rodape_cell">
+        <article class="rodape_cell_conteudo">
+            <article>
+                <figure id="figure1_cell_conteudo">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/qeemqlwz.json"
+                    trigger="hover"
+                    colors="primary:#ffffff,secondary:#ffffff"
+                    style="width:25px;height:25px">
+                </lord-icon>
+                </figure>
+                <p id="paragrafo1_cell_conteudo">SOBRE NÓS</p>
+            </article>
+        </article>
+
+        <article class="rodape_cell_conteudo">
+            <article>
+                <figure id="figure2_cell_conteudo">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/kthelypq.json"
+                    trigger="hover"
+                    colors="primary:#ffffff"
+                    style="width:25px;height:25px">
+                </lord-icon>
+                </figure>
+                <p id="paragrafo2_cell_conteudo">ZIP & VOCÊ</p>
+            </article>
+        </article>
+
+        <article class="rodape_cell_conteudo">
+            <article>
+                <figure id="figure3_cell_conteudo">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/hqymfzvj.json"
+                    trigger="hover"
+                    colors="primary:#ffffff"
+                    style="width:25px;height:25px">
+                </lord-icon>
+                </figure>
+                <p id="paragrafo3_cell_conteudo">MARKETPLACE</p>
+            </article>
+        </article>
+
+        <article class="rodape_cell_conteudo">
+                <p>Copyright - 2024</p>
+        </article>
+    </section>
+
+
 
     <article class="overlay" id="overlay"></article>
 
@@ -656,8 +935,12 @@
     </section>
 </section>
 <article id="overla"></article>
-    
-
+   
+<!-- link do Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="../../produtos/css-cell/js_do_slide/slide.js"></script>
+<script src="../../produtos/css-cell/js_do_slide/slide2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>
 

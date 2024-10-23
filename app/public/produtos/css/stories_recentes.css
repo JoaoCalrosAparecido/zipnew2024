@@ -7,15 +7,26 @@
 
 .stories_recentes {
     background-color: var(--cor0);
-    width: 100%;
-    height: 491px;
+    width: 100vw;
+    height: 25.57vw;
     position: relative;
-    top: -342px;
+    top: -10.42vw;
 }
 
+@media (min-width: 751px) and (max-width: 850px) {
+    
+    .stories_recentes {
+        background-color: var(--cor0);
+        width: 100vw;
+        height: 25.57vw;
+        position: relative;
+        top: -7.42vw;
+    }    
+
+  }
 .stories_recentes_article {
     position: relative;
-    top: 350px;
+    top: 18.23vw;
 }
 
 
@@ -24,27 +35,28 @@
 /* linhas */
 .linha_do_entre_no_mundo_zip {
     position: relative;
-    top: -350PX;
+    top: -18.23vw;
 }
 
 /* escrita entre no mundo zip */
 .figure_escrita_entre_nomundo_zip{
     display: flex;
     position: relative;
-    top: -205px;
+    top: -10.68vw;
     left: 1.1%;
     
 }
 
+
 .escrita_entre_nomundo_zip {
     margin: auto;
-    width: 395px;
+    width: 20.57vw;
 }
 
 .article_paragrafo_stories_recentes {
     display: flex;
     position: relative;
-    top: -157px;
+    top: -8.18vw;
     left: 1.2%;
 }
 
@@ -52,23 +64,23 @@
     font-family: 'Poppins', sans-serif;
     margin: auto;
     font-weight: 550;
-    font-size: 19px;
+    font-size: 0.995238vw;
 }
 
 /* Digite o seu e-mail */
 .article_digite_o_seu_email {
     display: flex;
     position: relative;
-    top: -90px;
+    top: -4.69vw;
     left: 5px;
 }
 
 .digite_o_seu_email_stories_recentes {
     margin: auto;
-    width: 366px;
-    height: 51px;
+    width: 19.06vw;
+    height: 2.66vw;
     background-color: white;
-    border: 2px solid black;
+    border: 0.1vw solid black;
     display: flex;
     align-items: center;
     position: relative;
@@ -77,10 +89,10 @@
 
 .paragrafo_digite_o_seu_email {
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 0.785714vw;
     position: relative;
     opacity: 50%;
-    left: 10px;
+    left: 0.520833vw;
 }
 
 .setinha_do_digite_o_seu_email{

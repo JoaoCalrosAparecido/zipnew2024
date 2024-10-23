@@ -2,7 +2,7 @@
 
 #section_adicionar_a_sacola {
     width: 25.05vw;
-    height: 150vw;
+    height: 59.90vw;
     background-color: rgb(255, 255, 255);
     position: relative;
     top: 21.87vh;
@@ -10,10 +10,11 @@
     
 }
 
+
 #section_position_sticky_adicionar_a_sacola {
     background-color: rgb(255, 255, 255);
-    width: 25.05vw;
-    height: 123.91vw;
+    width: 100vw;
+    height: 239.12vw;
     position: sticky;
     top: 10.87vh;
 }
@@ -26,32 +27,36 @@
 }
 
 #parte_escrita_bolsa_Preta {
-    font-size: 1.46vw;
-    width: 22.35vw;
+    font-size: 5vw;
+    padding-left: 3vw;
+    width: 100vw;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
 }
 
 #parte_preço_bolsa_Preta {
-    font-size: 1.1vw;
+    font-size: 4vw;
+    padding-left: 3vw;
     font-weight: 600;
     color: #000000;
     font-family: 'Poppins', sans-serif;
-    padding-bottom: 0.8vw;
+    padding-bottom: 2.2vw;
     margin-top: 0.2vw;
 }
 
 #parte_produto_usado_bolsa_Preta {
-    font-size: 1.05vw;
+    font-size: 3.5vw;
+    padding-left: 3vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     color: #36373b;
-    padding-bottom: 0.8vw;
+    padding-bottom: 4.5vw;
 }
 
 
 #parte_cor_bolsa_Preta {
-    font-size: 1.15vw;
+    font-size: 4vw;
+    padding-left: 3vw;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
 }
@@ -75,11 +80,12 @@
 /*botão adicionar a sacola*/
 #produto_adicionar_a_sacola {
     background-color: black;
-    width: 100%;
-    height: 3.59vw;
+    width: 92vw;
+    
+    height: 12.19vw;
     position: relative;
-    left: 0.208333vw;
-    top: 2.20vw;
+    left: 3vw;
+    top: 5.20vw;
 
 }
 
@@ -90,9 +96,10 @@
 
 #produto_adicionar_a_sacola {
     color: white;
-    font-size: 1.05vw;
+    font-size: 3.55vw;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 /*parte escrita vinkings*/
@@ -105,7 +112,9 @@
 
 /*parte do vikings*/
 #paragrafo_do_vendidos_por_vinkings {
-    font-size: 1.1vw;
+    font-size: 3.5vw;
+    padding-top: 9vw;
+    padding-left: 3vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
@@ -116,7 +125,9 @@
 
 /*parte do +100vendas*/
 #parte_escrita_100_vendas {
-    font-size: 0.942857vw;
+    font-size: 2.8vw;
+    padding-left: 3vw;
+    padding-top: 1vw;
     font-family: 'Poppins', sans-serif;
     margin-top: 0.3vw;
     color: #36373b;
@@ -133,7 +144,8 @@
 }
 
 #artcle_dos_detalhes>p {
-    font-size: 0.995238vw;
+    font-size: 4vw;
+    padding-left: 3vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     color: #000000;
@@ -141,18 +153,25 @@
 
 #artcle_dos_detalhes>hr {
     color: #36373b;
+    width: 92vw;
+    position: relative;
+    left: 3vw;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
 }
 
-#artcle_dos_detalhes>#sustentabilidade-icon {
+#artcle_dos_detalhes > #sustentabilidade-icon {
     display: flex;
     align-items: center;
     column-gap: 0.3vw;
-    font: 500 0.680952vw 'Poppins', sans-serif;
+    padding-left: 3vw;
+
+    font: 500 2vw 'Poppins', sans-serif;
 }
 
 #icon-sustentabilidade{
-    width: 2vw;
-    height: 2vw;
+    width: 4vw;
+    height: 4vw;
 }
 
 #artcle_dos_detalhes>#sustentabilidade-icon>h2 {

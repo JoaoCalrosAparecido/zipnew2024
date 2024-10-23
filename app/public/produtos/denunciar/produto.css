@@ -6,7 +6,7 @@
     width: 38rem;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    right: -50%; /* Inicialmente fora da tela */
+    right: -64.3vw; /* Inicialmente fora da tela */
     box-sizing: border-box;
     transition: right 0.3s ease;
     background-color: white;

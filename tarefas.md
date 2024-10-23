@@ -26,14 +26,40 @@
 
 Como ta:
 
-- Remove bg tudo
+
+dia 22 
 - Css mobile do produtos / responsiva
-- Css mobile do sacola / responsiva
+
+
+
+dia 23 no laboratório:
+- wishlist adicionando no banco e removendo
+- no produtos conseguir adicionar no wishlist
+- vendas do vendendo no produtos
+
+dia 23 
 - Css mobile adc produtos / responsiva
-- Tela principal com os produtos do banco
-- Pagina de adc prdutos com tamanho funcionando
+- rodapé cadastro mobile
+
+
+
+
+dia 24 no laboratorio:
+- Tela principal com os produtos do banco/ em outras partes como você pode gostar e slide do wishlist
 - Adiciona produto com video e bazar
+- Pagina de adc prdutos com tamanho funcionando
+
+dia 24
+
 - Menus / Correção de bugs no css
+-  wishlist abrir no produtos
+
+dia 25
+- Css mobile do sacola / responsiva
+- Remove bg tudo
+
+
+
 
 
 
