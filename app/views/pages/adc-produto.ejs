@@ -461,14 +461,14 @@
                     <article>
 
                         <article class="inputs-adc-img">
-                            <input type="text" name="tituloProduto" id="" placeholder="Titulo" class="<%=campoErro.tituloProduto %>">
+                            <input type="text" name="tituloProduto" id="" placeholder="Titulo" class="<%=campoErro.tituloProduto %>" value="<%= valores.tituloProduto %>">
                         </article>
 
                         <article class="inputs-adc-img">
-                            <input type="text" name="precoProduto" id="" placeholder="Preço" class="<%=campoErro.precoProduto %>">
+                            <input type="text" name="precoProduto" id="" placeholder="Preço" class="<%=campoErro.precoProduto %>" value="<%= valores.precoProduto %>">
                         </article>
                         <article class="inputs-adc-img">
-                            <input type="text" name="descProduto" id="" placeholder="Descrição" class="<%=campoErro.descProduto %>">
+                            <input type="text" name="descProduto" id="" placeholder="Descrição" class="<%=campoErro.descProduto %>" value="<%= valores.descProduto %>">
                         </article>
                         <fieldset id="article-input-tamanho">
                             <legend>Tamanho</legend>
@@ -578,7 +578,7 @@
                         <p>Vendido por <span>
                                 <%= usuario && usuario.nome ? usuario.nome : 'Desconhecido' %>
                             </span></p>
-                        <p>100 vendas</p>
+                        <p><%= quantidadeVendas %> vendas</p>
                     </article>
 
                     <article>

@@ -2,6 +2,7 @@ const pool = require("../../config/pool_conexoes");
 const { body, validationResult } = require("express-validator");
 const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
+const pedidoModel = require('../models/pedidoModel');
 
 const bazarController = {
   
@@ -145,24 +146,25 @@ const bazarController = {
   },
 
   alterarBazar: async (req, res) => {
-      const erros = validationResult(req);
-      const erroMulter = req.session.erroMulter;
-      const userId = req.session.autenticado.id;
-      const user = await models.findUserById(userId);
-      const bazar = await produtosModels.findBazarByUserId(userId);
-
-      const produtoBazar = await produtosModels.mostrarProdutosBazar(userId, bazar.Id_Bazar);
+    const erros = validationResult(req);
+    const erroMulter = req.session.erroMulter;
+    const userId = req.session.autenticado.id;
+    const user = await models.findUserById(userId);
+    const bazar = await produtosModels.findBazarByUserId(userId);
+    const produtoBazar = await produtosModels.mostrarProdutosBazar(userId, bazar.Id_Bazar);
+    const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
     var errosMulter = req.session.erroMulter;
-
-    if (errosMulter != null){
-      erros.errors.push(errosMulter)
-      console.log(req.body)
-      console.log(erros)
+  
+    if (errosMulter != null) {
+      erros.errors.push(errosMulter);
+      console.log(req.body);
+      console.log(erros);
       return res.render("pages/adc-bazar", {
         Bazar: bazar,
         listaErros: erros,
         dadosNotificacao: null,
         listaProdBazar: produtoBazar,
+        quantidadeVendas,
         valores: {
           Nome: req.body.Nome,
           Ano: req.body.Ano,
@@ -171,22 +173,22 @@ const bazarController = {
           Biografia: req.body.Biografia,
           imgBazar: req.body.imgBazar,
         },
+      });
     }
-      )
-    }
-
-    if (!req.file){
+  
+    if (!req.file) {
       errosMulter = {
         value: '',
         msg: "Selecione uma imagem",
         path: "imgBazar"
-    };
-    erros.errors.push(errosMulter)
+      };
+      erros.errors.push(errosMulter);
       return res.render("pages/adc-bazar", {
         Bazar: bazar,
         listaErros: erros,
         dadosNotificacao: null,
         listaProdBazar: produtoBazar,
+        quantidadeVendas,
         valores: {
           Nome: req.body.Nome,
           Ano: req.body.Ano,
@@ -195,99 +197,103 @@ const bazarController = {
           Biografia: req.body.Biografia,
           imgBazar: req.body.imgBazar,
         }
-      })
+      });
     }
-      
-      if (!erros.isEmpty() || erroMulter != null) {
-          lista = !erros.isEmpty() ? erros : { formatter: null, errors: [] };
-          if (erroMulter != null) {
-              lista.errors.push(erroMulter);
-          }
-          console.log(lista);
-          return res.render("pages/adc-bazar", {
-            usuario: user,
-            Bazar: bazar,
-            listaErros: lista,
-            dadosNotificacao: null,
-            listaProdBazar: produtoBazar,
-            valores: {
-              Nome: req.body.Nome,
-              Ano: req.body.Ano,
-              Descricao: req.body.Descricao,
-              Titulo: req.body.Titulo,
-              Biografia: req.body.Biografia,
-              imgBazar: req.body.imgBazar,
-            }});
+  
+    if (!erros.isEmpty() || erroMulter != null) {
+      const lista = !erros.isEmpty() ? erros : { formatter: null, errors: [] };
+      if (erroMulter != null) {
+        lista.errors.push(erroMulter);
       }
-
-      try {
-        let { Nome, Ano, Descricao, Titulo, Biografia } = req.body;
-        const imgBazarPath = req.file ? req.file.filename : null;
-        
-        const dadosForm = {
-          nome: Nome,
-          ano: Ano,
-          descricao: Descricao,
-          titulo: Titulo,
-          biografia: Biografia,
-          imgBazar: imgBazarPath
-        };
-      
-        const resultUpdate = await models.att(dadosForm, userId);
-      
-      
-        if (!resultUpdate.isEmpty) {
-          if (resultUpdate.changedRows == 1) {
-            const userr = await models.findUserById(userId);
-            req.session.autenticado = {
-              autenticado: userr.nome,
-              id: userr.id_Cliente,
-              tipo: user.Id_Tipo_Usuario
-            };
-      
-            const campos = { 
-              Nome: bazar.nome,
-              Ano: bazar.ano,
-              Descricao: bazar.descricao,
-              Titulo: bazar.titulo,
-              Biografia: bazar.biografia,
-              imgBazar: bazar.imgBazar
-            };
-      
-            console.log("Atualizado");
-            return res.render("pages/perfil", { 
-              listaErros: null, 
-              dadosNotificacao: { title: "Bazar atualizado com sucesso", msg: "Alterações Gravadas", type: "success" },
-              usuario: user, 
-              Bazar: bazar, 
-              valores: campos 
-            });
-          } else {
-            console.log("Atualizado 2");
-            return res.render("pages/perfil", {
-              listaErros: null, 
-              dadosNotificacao: { title: "Bazar atualizado com sucesso", msg: "Sem Alterações", type: "info" },
-              usuario: user, 
-              Bazar: bazar, 
-              valores: dadosForm 
-            });
-          }
+      console.log(lista);
+      return res.render("pages/adc-bazar", {
+        usuario: user,
+        Bazar: bazar,
+        listaErros: lista,
+        dadosNotificacao: null,
+        listaProdBazar: produtoBazar,
+        quantidadeVendas,
+        valores: {
+          Nome: req.body.Nome,
+          Ano: req.body.Ano,
+          Descricao: req.body.Descricao,
+          Titulo: req.body.Titulo,
+          Biografia: req.body.Biografia,
+          imgBazar: req.body.imgBazar,
         }
-      } catch (e) {
-        console.log(e);
-        const userId = req.session.autenticado.id;
-        const user = await models.findUserById(userId);
-        const bazar = await produtosModels.findBazarByUserId(userId);
-        
-        return res.render("pages/perfil", {
-          listaErros: null, 
-          dadosNotificacao: { title: "Erro ao atualizar", msg: "Verifique os valores digitados!", type: "error" },
-          usuario: user, 
-          Bazar: bazar, 
-          valores: req.body 
-        });
+      });
+    }
+  
+    try {
+      let { Nome, Ano, Descricao, Titulo, Biografia } = req.body;
+      const imgBazarPath = req.file ? req.file.filename : null;
+  
+      const dadosForm = {
+        nome: Nome,
+        ano: Ano,
+        descricao: Descricao,
+        titulo: Titulo,
+        biografia: Biografia,
+        imgBazar: imgBazarPath
+      };
+  
+      const resultUpdate = await models.att(dadosForm, userId);
+  
+      if (!resultUpdate.isEmpty) {
+        if (resultUpdate.changedRows == 1) {
+          const userr = await models.findUserById(userId);
+          req.session.autenticado = {
+            autenticado: userr.nome,
+            id: userr.id_Cliente,
+            tipo: user.Id_Tipo_Usuario
+          };
+  
+          const campos = { 
+            Nome: bazar.nome,
+            Ano: bazar.ano,
+            Descricao: bazar.descricao,
+            Titulo: bazar.titulo,
+            Biografia: bazar.biografia,
+            imgBazar: bazar.imgBazar
+          };
+  
+          console.log("Atualizado");
+          return res.render("pages/perfil", { 
+            listaErros: null, 
+            dadosNotificacao: { title: "Bazar atualizado com sucesso", msg: "Alterações Gravadas", type: "success" },
+            usuario: user, 
+            Bazar: bazar,
+            quantidadeVendas,
+            valores: campos 
+          });
+        } else {
+          console.log("Atualizado 2");
+          return res.render("pages/perfil", {
+            listaErros: null, 
+            dadosNotificacao: { title: "Bazar atualizado com sucesso", msg: "Sem Alterações", type: "info" },
+            usuario: user, 
+            Bazar: bazar, 
+            quantidadeVendas,
+            valores: dadosForm 
+          });
+        }
       }
-    },
+    } catch (e) {
+      console.log(e);
+      const userId = req.session.autenticado.id;
+      const user = await models.findUserById(userId);
+      const bazar = await produtosModels.findBazarByUserId(userId);
+  
+      return res.render("pages/perfil", {
+        listaErros: null, 
+        dadosNotificacao: { title: "Erro ao atualizar", msg: "Verifique os valores digitados!", type: "error" },
+        usuario: user, 
+        Bazar: bazar, 
+        quantidadeVendas,
+        valores: req.body 
+      });
+    }
+  },
 
 
     //puxar produto pelo ID

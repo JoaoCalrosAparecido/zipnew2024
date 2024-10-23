@@ -110,6 +110,17 @@ const prodModels = {
     },
 
 
+    findAllProductfav: async (userId) => {
+        try {
+            const [linhas] = await pool.query('SELECT * FROM `Favoritos` WHERE `id_Cliente` = ?', [userId]);
+            return linhas;
+        } catch (error) {
+            return error;
+        }
+    },
+
+
 };
+
 
 module.exports = prodModels;

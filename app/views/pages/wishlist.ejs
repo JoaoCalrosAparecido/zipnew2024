@@ -423,6 +423,23 @@
                 <!-- Cart items will be dynamically added here -->
             
             </article>
+
+            <% if (prodAddFav) { %> 
+                <% prodAddFav.forEach(prod => { %>
+                    <h2>
+                        <%= prod.tituloprod %>
+                    </h2>
+                    <p>
+                        <%= prod.preçoprod %>
+                    </p>
+
+                    <form action="removeFav" method="post">
+                        <input type="text" name="produtosremovefav" value="<%= prod.Id_prod_cliente %>">
+                        <button type="submit">apagar</button>
+                    </form>
+                <% }) %>    
+            <%} %>
+
             
             
         </section>
@@ -437,11 +454,11 @@
         <!--slide-->
         <section id="slide_imagens">
             <div class="swiper mySwiper1 mySwiper2">
-                <% if (prodAdd) { %>
+                <% if (prodAddFav) { %>
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="../../IMG/uploads/<%= prodAdd.img1 %>" alt=""></div>
-                        <div class="swiper-slide"><img src="../../IMG/uploads/<%= prodAdd.img1 %>" alt=""></div>
-                        <div class="swiper-slide"><img src="../../IMG/uploads/<%= prodAdd.img1 %>" alt=""></div>
+                        <div class="swiper-slide"><img src="../../IMG/uploads/<%= prodAddFav.img1 %>" alt=""></div>
+                        <div class="swiper-slide"><img src="../../IMG/uploads/<%= prodAddFav.img1 %>" alt=""></div>
+                        <div class="swiper-slide"><img src="../../IMG/uploads/<%= prodAddFav.img1 %>" alt=""></div>
                     </div>
                 <% } %>
                 
