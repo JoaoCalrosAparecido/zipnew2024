@@ -14,7 +14,6 @@
 
 - Vender
 - Produtos nas paginas m,f,i,a
-- imgs cadastro
 - Carrossel no perfil
 - Ajustar alinhamento dos produtos no m,f,i,a
 - Produtos clicaveis
