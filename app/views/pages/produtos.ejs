@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="/produtos/denunciar/produto.css">
     <link rel="stylesheet" href="/produtos/denunciar/vendendor.css">
     <script src="/produtos/denunciar/menu.js" defer></script>
-    <script src="/produtos/denunciar/menud.js" defer></script>
     <script src="/produtos/denunciar/script.js" defer></script>
 
       
@@ -408,7 +407,6 @@
                 </section>
 
               </section>
-              <article id="overlay"></article>
         </article>
     </section>
 
@@ -468,7 +466,7 @@
                     <P id="parte_produto_usado_bolsa_Preta">
                         <%= produto.descProduto %>
                     </P>
-                    <P id="parte_cor_bolsa_Preta">Tamanho <span id="parte_cor_bolsa_Preta_span">P</span></P>
+                    <P id="parte_cor_bolsa_Preta">Tamanho <span id="parte_cor_bolsa_Preta_span"><%= produto.tamanho %></span></P>
                 </article>
                 <form action="addFav" method="post">
                 
@@ -487,7 +485,7 @@
                 <script src="/adicionar_a_sacola/botao_adicionar_a_sacola.js"></script>
                 <article id="artcle_do_vendidos_por_vinkings">
                     <p id="paragrafo_do_vendidos_por_vinkings">Vendido por <span id="span_do_vikings"> <%= nomeCliente %></p></span></p>
-                    <p id="parte_escrita_100_vendas">100 vendas finalizadas</p>
+                    <p id="parte_escrita_100_vendas"><%= quantidadeVendas %> vendas finalizadas</p>
                 </article>
                 <article id="artcle_dos_detalhes">
         
@@ -836,7 +834,6 @@
                 <p>Copyright - 2024</p>
         </article>
     </section>
-
 
 
     <article class="overlay" id="overlay"></article>

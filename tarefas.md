@@ -1,18 +1,17 @@
 ## O que falta do projeto (Lazully)
 
 - 23/10
-- Pagina de adc prdutos com tamanho(pp,p,etc) funcionando
-- Numero de vendas Perfil e Produtos
+- Numero de vendas Post - Atualizar e Criar Bazar, Atualizar Perfil, Url
 - Produtos clicaveis (Perfil, Login, Produtos, Sacola) Não esquecer da validação de compra e pa
 
 - 24/10
 - Adc Produto / quando errar puxar os campos anteriores
 - Tirar os inputs de pesquisa e colocar os links para pesquisa
+- Esqueci minha senha / Validação Email
 - Mensagem de Solicitação do Famoso negada
 
 - 25/10
 - Fazer a pagina de Adm - CSS
-- Background Denuncia produto
 - Denuncia Mostrar o nome de ambos prod e usuario denunciado
 
 - Esperar o joão e arrumar
