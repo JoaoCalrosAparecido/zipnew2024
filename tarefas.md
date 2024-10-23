@@ -32,38 +32,29 @@
 
 ## O que falta do projeto (João)
 
-Como ta:
+Dia 22 
+- Css mobile do produtos / responsiva (Check)
 
+Dia 23 no laboratório:
+- Wishlist adicionando no banco e removendo
+- Na pagina produtos conseguir adicionar no wishlist
 
-dia 22 
-- Css mobile do produtos / responsiva
-
-dia 23 no laboratório:
-- wishlist adicionando no banco e removendo
-- no produtos conseguir adicionar no wishlist
-- vendas do vendendo no produtos
-
-dia 23 
+Dia 23 
 - Css mobile adc produtos / responsiva
-- rodapé cadastro mobile
+- Rodapé cadastro mobile
 - Sacola endereço - API correios
 
-dia 24 no laboratorio:
+Dia 24 no laboratorio:
 - Tela principal com os produtos do banco/ em outras partes como você pode gostar e slide do wishlist
 - Adiciona produto com video e bazar
 
-dia 24
+Dia 24
 - Menus / Correção de bugs no css
 -  wishlist abrir no produtos
 
-dia 25
+Dia 25
 - Css mobile do sacola / responsiva
 - Remove bg tudo
-
-
-
-
-
 
 
 # Erros

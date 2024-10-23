@@ -400,13 +400,15 @@ router.post("/atualizardados",
 
   });
 
-router.get("/wishlist",
+router.get("/wishlist/",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     const userId = req.session.autenticado.id;
-    const prodAdd = await produtosModels.findProdById(userId);
-    res.render('pages/wishlist', { msg: 'Back-end funcionando' , prodAdd: prodAdd });
+    const prodAddFav = await produtosModels.findAllProductfav(userId);
+    console.log(prodAddFav)
+
+    res.render('pages/wishlist', { msg: 'Back-end funcionando' , prodAddFav: prodAddFav });
   });
 
 
@@ -449,43 +451,34 @@ router.delete('/removeFav',
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
+   
     try {
-     
-     
-      
-      
-    
-      
+        
   
-
-      
-      const userId = req.session.autenticado.id;
-      console.log( userId, productId);
-          
       const productId = req.body.produtosremovefav; // Captura o valor do input
 
-      
+      console.log('ID do produto:', productId);
      
-      
-      
+      const userId = req.session.autenticado.id;
 
 
        await connection.query(
         "DELETE FROM `Favoritos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
         [userId, productId]
-       );
-      console.log('produto do add removido');
+      );
+      console.log('Favoritos');
 
-      res.redirect('/produtos-adicionados'); 
+      res.redirect('/cart'); 
     } catch (err) {
       console.log(err);
-      res.status(500).send('Erro ao remover produto adicionado'); // Opcional: resposta de erro
+      res.status(500).send('Erro ao remover cart'); // Opcional: resposta de erro
     }
-    
-
-    
   }
   );
+
+    
+  
+  
 
 router.post('/produtos/addCart', 
   verificarUsuAutenticado,
