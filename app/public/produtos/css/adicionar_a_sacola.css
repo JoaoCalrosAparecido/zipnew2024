@@ -5,17 +5,16 @@
     height: 150vw;
     background-color: rgb(255, 255, 255);
     position: relative;
-    top: 21.87vh;
-    
-    
+    top: 17.87vh;
 }
 
 #section_position_sticky_adicionar_a_sacola {
     background-color: rgb(255, 255, 255);
     width: 25.05vw;
-    height: 123.91vw;
+    height: 131.3vw;
     position: sticky;
     top: 10.87vh;
+    left: -55vw;
 }
 
 /*parte escrita 1*/

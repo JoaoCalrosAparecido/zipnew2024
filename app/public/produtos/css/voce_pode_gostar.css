@@ -3,7 +3,7 @@
 
 #parte_do_voce_pode_gostar {
     position: relative;
-    top: -22.21vw;
+    top: -26.21vw;
     display: block;
 }
 
@@ -36,8 +36,7 @@
     display: flex;
     column-gap: 5.99vw;
     position: relative;
-    left: 34.9%;
-
+    left: 43%;
 }
 
 #artcle_do_voce_pode_gostar > p {
@@ -62,11 +61,12 @@
 /*parte sublinhada*/
 #parte_sublinhada_do_hr {
     position: relative;
-    top: 0.572917vw;
-    left: 32.7%;
+    top: 1.42917vw;
+    left: 41%;
     width: 16.72vw;
     height: 0.208333vw;
     background-color: black;
+    z-index: 1;
 }
 
 @media (min-width: 751px) and (max-width: 850px) {

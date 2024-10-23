@@ -381,7 +381,7 @@
     <section id="section_sacola_subtotal">
         <article>
             <p id="parte_escrita_sacola">SACOLA</p>
-            <p id="parte_escrita_subtotal">Subtotal: R$ <span id="total-price">0</span></p>
+            <p id="parte_escrita_subtotal">Subtotal: R$ <span class="other-total-price-1">0</span></p>
         </article>
     </section>
 
@@ -442,7 +442,7 @@
                     <section class="cart-item item" id="">
                         <img src="../../IMG/uploads/<%= cart[i].img1.trim() %>" alt="Nome do Produto">
                         <article>
-                            <input type="" name="id_prod" id="id_prod" value="<%= cart[i].Id_prod_cliente %>">
+                            <input type="hidden" name="id_prod" id="id_prod" value="<%= cart[i].Id_prod_cliente %>">
                             <h3 class="name-prod"><%= cart[i].tituloprod %></h3>
                             <p class="preco-prod">R$ <span class="preco-prod-value"><%= cart[i].preçoprod %></span></p>
                             <h1>
@@ -451,7 +451,7 @@
                             </h1>
                         </article>
                         <form action="removeCart" method="post">
-                            <input type="hidden" name="idRemoveProdCart" value="<%= cart[i].Id_prod_cliente %>, "   style="opacity: 0;">
+                            <input type="hidden" name="idRemoveProdCart" value="<%= cart[i].Id_prod_cliente %> "   style="opacity: 0;">
                             <button id="btnremove" type="submit" ></button>
                         </form>
                     </section>
@@ -482,10 +482,6 @@
                         </article>
                         <!--paragrafos-->
                         <article class="paragrafo_resumo_display_felex">
-                            <p class="paragrafo_resumo">Subtotal:</p>
-                            <p class="paragrafo_resumo paragrafo_resumo_direita">R$ <span id="other-total-price-2">0</span> </p>
-                        </article>
-                        <article class="paragrafo_resumo_display_felex">
                             <p class="paragrafo_resumo">Adicionar cupom +</p>
                             <p class="paragrafo_resumo paragrafo_resumo_direita">--</p>
                         </article>
@@ -497,8 +493,8 @@
                             <hr id="linha_resumo">
                         </article>
                         <article class="paragrafo_resumo_display_felex">
-                            <p class="paragrafo_resumo parte_do_total">Total:</p>
-                            <p class="paragrafo_resumo paragrafo_resumo_direita parte_do_total">R$ <span id="other-total-price-1">0</span></p>
+                            <p class="paragrafo_resumo parte_do_total">Total: <span class="parte_do_total"></span></p>
+                            <p class="paragrafo_resumo paragrafo_resumo_direita parte_do_total">R$ <span class="other-total-price-1">0</span></p>
                         </article>
                         <!--parte do botão-->
                         <!--
@@ -550,6 +546,7 @@
         </section>
     </section>
 <!--</form>-->
+<script src="../../bolsa_preta_classica/js/calculo.js"></script>
 <script src="../../cat-produto/ponto-para-virgula.js"></script>
 <script src="../../api-mercado-pago/api.js"></script>
 <script src="https://sdk.mercadopago.com/js/v2"></script>

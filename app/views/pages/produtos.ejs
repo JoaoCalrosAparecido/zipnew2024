@@ -416,6 +416,8 @@
 
 
 
+
+
 <script src="../../produtos/css-cell/js_do_slide/menu_responsivo.js"></script>
 
 
@@ -470,9 +472,13 @@
                     </P>
                     <P id="parte_cor_bolsa_Preta">Tamanho <span id="parte_cor_bolsa_Preta_span">P</span></P>
                 </article>
+                <form action="addFav" method="post">
+                
+                    <input type="hidden" name="idProd" value="<%= produto.id_prod_cliente %>, <%= produto.tituloprod %>, <%= produto.preçoprod %>, <%= produto.img1 %>"   style="opacity: 0;">
                 <a href="cart.html">
                     <article id="imagem_de_favorito"></article>
                 </a>
+                </form>
                 <form action="addCart" method="post">
                     <input type="hidden" name="idProdCart" value="<%= produto.id_prod_cliente %>, <%= produto.tituloprod %>, <%= produto.preçoprod %>, <%=produto.img1 %>"   style="opacity: 0;">
                         <button type="submit" id="produto_adicionar_a_sacola" class="add-to-cart"  >
