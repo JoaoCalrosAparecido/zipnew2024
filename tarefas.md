@@ -12,7 +12,6 @@
 
 - 25/10
 - Fazer a pagina de Adm - CSS
-- Background Denuncia produto
 - Denuncia Mostrar o nome de ambos prod e usuario denunciado
 
 - Esperar o joão e arrumar
