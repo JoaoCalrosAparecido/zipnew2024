@@ -27,7 +27,7 @@
     padding-left: 0px;
     position: absolute;
     top: 550px;
- 
+    left: 25%;
     margin: 0; 
     transform: 0; 
     font-family: 'Poppins', sans-serif;
@@ -61,7 +61,7 @@
 }
 
 #botao{
-    width: 80vw;
+    width: 82vw;
     height: 8vh;
     cursor: pointer;
     background-color: rgb(36, 36, 36);
@@ -97,3 +97,7 @@
     width: 80vw;
 }
 
+#foto-crie-conta {
+    width: 82vw;
+    text-align: center;
+}

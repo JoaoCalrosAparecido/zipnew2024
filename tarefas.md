@@ -41,6 +41,7 @@ Como ta:
 Como eu(Arthur) recomendaria:
 
 - Tela principal com os produtos do banco (Se prescisar de ajuda passa pra proxima tarefa)
+- rodape cadastro mobile
 - Css mobile do produtos / responsiva
 - Css mobile do sacola / responsiva
 - Css mobile adc produtos / responsiva
