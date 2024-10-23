@@ -23,7 +23,6 @@
 - Campo de busca - CSS
 - Vender
 - Produtos nas paginas m,f,i,a
-- Carrossel no perfil
 - Ajustar alinhamento dos produtos no m,f,i,a
 - Indez canvas
 - Campo explicando o adc produtos e o adc bazar

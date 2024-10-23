@@ -201,3 +201,9 @@ html, body {
     font-size: 0.8vw;
     margin-bottom: 1vh;
 }
+
+#categorias-opcoes {
+    font-weight: 600;
+    font-size: 0.9vw;
+    padding: 6vw 0 1vw 12vw;
+}
