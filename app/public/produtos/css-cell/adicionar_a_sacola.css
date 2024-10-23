@@ -177,3 +177,7 @@
 #artcle_dos_detalhes>#sustentabilidade-icon>h2 {
     font-weight: 500;
 }
+
+#section_position_sticky_adicionar_a_sacola {
+    top: -60vh;
+}

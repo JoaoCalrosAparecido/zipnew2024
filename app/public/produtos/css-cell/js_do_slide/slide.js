@@ -1,9 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-      },
-  });
+var swiper = new Swiper(".mySwiper", {
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    hide: true,
+  },
 });
