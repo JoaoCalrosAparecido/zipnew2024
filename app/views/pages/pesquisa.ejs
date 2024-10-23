@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="../../css-pesquisa/rodape.css">
     <link rel="stylesheet" href="../../css-pesquisa/slide.css">
     <link rel="stylesheet" href="../../css-pesquisa/stories_recentes.css">
-
     <!--links dos responsivos-->
     
     <!--menu-->
@@ -31,16 +30,17 @@
 
     <!--slide-->
     <link rel="stylesheet" href="/css-pesquisa/css-pesquisa-cell/slide.css" media="screen and (max-width:750px)">
-
+    
     <!--entre no mundo-->
     <link rel="stylesheet" href="/css-pesquisa/css-pesquisa-cell/entre_no_mundo-cell.css" media="screen and (max-width:750px)">
-
+    
     <!--rodapé-->
     <link rel="stylesheet" href="/css-pesquisa/css-pesquisa-cell/rodape_cell.css" media="screen and (max-width:750px)">
-
-
+    
+    
     <link rel="shortcut icon" href="IMG/fivecon/logo preta grande.ico" type="image/x-icon">
-
+    
+    <link rel="stylesheet" href="../../css-pesquisa-cell/barrapesquisa.css">
 </head>
 <body>
  <!-- parte superior do desconto na primeira compra -->
@@ -406,7 +406,7 @@
 
                     <form action="/search" method="POST">
                         <section id="secBusca">
-                            <input type="text" id="Busca" name="pesquisaInput" placeholder="Buscar"/>
+                            <input type="text" id="Busca" name="pesquisaInput" placeholder="Busque aqui por roupas, acessórios ou calçados de segunda mão.." style="width: 100vw;height: 7vh;box-sizing: border-box; border:none;padding: 0.2vw 0 0 2vw; font: 300 20px 'Poppins', sans-serif"/>
                         </section>
                     </form>
 
@@ -445,9 +445,9 @@
             </figure>
         <% } %>
     <% } else if (posts === "none") { %>
-        <p>Nenhum produto encontrado...</p>
+        <p style="font: 300 21px 'Poppins', sans-serif">Nenhum produto encontrado...</p>
     <% } else { %>
-        <p>Procure por uma nova peça</p>
+        <p style="font: 300 21px 'Poppins', sans-serif"></p>
     <% } %>
 
 
