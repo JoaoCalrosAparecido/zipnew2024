@@ -1,19 +1,19 @@
 ## O que falta do projeto (Lazully)
 
 - 23/10
-- Cadastro - Fazer o pdf abrir & fazer o pdf oficial
-- Pagina de adc prdutos com tamanho funcionando
+- Pagina de adc prdutos com tamanho(pp,p,etc) funcionando
 - Numero de vendas Perfil e Produtos
+- Produtos clicaveis (Perfil, Login, Produtos, Sacola) Não esquecer da validação de compra e pa
 
 - 24/10
-- Produtos clicaveis (Perfil, Login, Produtos, Sacola) Não esquecer da validação de compra e pa
 - Adc Produto / quando errar puxar os campos anteriores
+- Tirar os inputs de pesquisa e colocar os links para pesquisa
 - Mensagem de Solicitação do Famoso negada
 
 - 25/10
 - Fazer a pagina de Adm - CSS
-- Tirar os inputs de pesquisa e colocar os links para pesquisa
 - Background Denuncia produto
+- Denuncia Mostrar o nome de ambos prod e usuario denunciado
 
 - Esperar o joão e arrumar
 - (Relaciona Ban) Wishlist (Avisar o joão que ainda esta rodando o codigo js) - (Não esquecer da validação de produtos banidos e vendido)
@@ -29,6 +29,7 @@
 - Indez canvas
 - Campo explicando o adc produtos e o adc bazar
 - Links Vender no menu
+- Produtos adicionados css
 
 
 ## O que falta do projeto (João)
@@ -39,13 +40,10 @@ Como ta:
 dia 22 
 - Css mobile do produtos / responsiva
 
-
-
 dia 23 no laboratório:
 - wishlist adicionando no banco e removendo
 - no produtos conseguir adicionar no wishlist
 - vendas do vendendo no produtos
-
 
 dia 23 
 - Css mobile adc produtos / responsiva
