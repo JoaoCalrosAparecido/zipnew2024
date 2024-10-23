@@ -3,12 +3,12 @@
 
 #section_slide_bolsa_produto1 {
     width: 92vw;
-    height: 29.84vw;
+    height: 32.84vw;
     background-color: rgb(255, 255, 255);
     position: relative;
-    left: 3vw;
-    top: 108.21vw;
-    display: none;
+    left: 3.6vw;
+    top: 90.21vw;
+    
 }
 
 
@@ -20,8 +20,21 @@
 }
 
 #slide_bolsa_produto1 > figure :nth-child(1) {
-    width: 29.5vw;
+    width: 46vw;
 }
+
+#slide_bolsa_produto1 :nth-child(3) {
+    
+}
+
+#slide_bolsa_produto1 :nth-child(4) {
+    display: none;
+}
+
+#figureNoneCell {
+    display: none;
+}
+
 
 
 /*parte escrita*/
@@ -30,7 +43,7 @@
 .parte_escrita_produto1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 0.8vw;
+    font-size: 2.8vw;
     position: relative;
     top: 0.625000vw;
     padding-bottom: 14px;
@@ -41,7 +54,7 @@
 /*preço produto*/
 .parte_preco_produto1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.738462vw;
+    font-size: 2.738462vw;
 }
 
 
@@ -89,14 +102,6 @@
     font-size: 3vw;
   }
     #slide2 > :nth-child(3) {
-    display: block;
-    width: 50vw;
-    height: 50vw;
-    object-fit: cover;
-    position: relative;
-    left: 10vw;
-  }
-    #slide2 > :nth-child(4) {
     display: block;
     width: 50vw;
     height: 50vw;

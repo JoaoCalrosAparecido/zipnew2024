@@ -140,8 +140,8 @@
 .menu2 {
   position: fixed;
   top: 10vh;
-  right: -68%; /* Inicialmente oculto */
-  width: 50vw; /* Metade da largura da tela */
+  right: -78vw; /* Inicialmente oculto */
+  width: 68vw; /* Metade da largura da tela */
   height: 100%;
   outline: none;
   background-color: #F2F2F2;
@@ -241,7 +241,7 @@ input::-webkit-input-placeholder {
 /*conteudo no menu responsivo*/
 
 /*links principais*/
-.menu {
+.menu2 {
   top: 11vh;
   z-index: 10;
 }
@@ -317,7 +317,7 @@ input::-webkit-input-placeholder {
   gap: 4.2vh;
   position: relative;
   top: -32vh;
-  left: 56vw;
+  left: 64vw;
 }
 
 #article_links_principais_cell_img > img {
@@ -332,7 +332,7 @@ input::-webkit-input-placeholder {
   width: 68vw;
   height: 17vh;
   position: relative;
-  top: 5.3vh;
+  top: -27.6vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -377,7 +377,7 @@ input::-webkit-input-placeholder {
 /*icones celular*/
 #section_icones_menu_deslizante_cell {
   position: relative;
-  top: 9vh;
+  top: -25vh;
   padding-left: 5vw;
   display: flex;
   flex-direction: column;

@@ -14,7 +14,7 @@
     display: flex;
     column-gap: 5.99vw;
     position: relative;
-    left: 16vw;
+    left: 36.8vw;
     top: 1vw;
 
 }
@@ -34,7 +34,7 @@
 #hr_do_voce_pode_gostar {
     width: 92vw;
     position: relative;
-    left: 3vw;
+    left: 3.6vw;
     top: 2.61vh;
 }
 
@@ -42,7 +42,7 @@
 #parte_sublinhada_do_hr {
     position: relative;
     top: 1.572917vw;
-    left: 14.5vw;
+    left: 35.5vw;
     width: 30.72vw;
     height: 0.208333vw;
     background-color: black;

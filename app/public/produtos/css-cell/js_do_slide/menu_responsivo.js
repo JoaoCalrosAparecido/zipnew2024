@@ -4,7 +4,7 @@ document.getElementById("openMenuBtn2").addEventListener("click", function() {
     var openMenuBtn = document.getElementById("openMenuBtn2");
   
     if (menu.style.right === "0%") {
-        menu.style.right = "-68%";
+        menu.style.right = "-78%";
         blackDiv.style.display = 'none'; // Esconde a div preta
         openMenuBtn.classList.remove('active');
     } else {
@@ -20,7 +20,7 @@ document.getElementById("openMenuBtn2").addEventListener("click", function() {
     var menu = document.getElementById("menu2");
     var openMenuBtn = document.getElementById("openMenuBtn2");
   
-    menu.style.right = "-68%";
+    menu.style.right = "-78%";
     blackDiv.style.display = 'none'; // Esconde a div preta
     openMenuBtn.classList.remove('active');
   });
