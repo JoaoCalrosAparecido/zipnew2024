@@ -2,7 +2,6 @@
 
 - *(P) Numero de vendas(Post) - Atualizar Perfil (dando erro apos alteração)
 
-- Tirar os inputs de pesquisa e colocar os links para pesquisa
 
 - 24/10
 - Esqueci minha senha / Validação Email
