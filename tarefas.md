@@ -38,7 +38,7 @@ Dia 23 no laboratório:
 - e quando aperta no coração duas vezes remover o produto (check eu fiz essa porra)
 
 Dia 23 
-- Css mobile adc produtos / responsiva
+- Css mobile adc produtos / responsiva (check)
 - Rodapé cadastro mobile 
 - Sacola endereço - API correios
 

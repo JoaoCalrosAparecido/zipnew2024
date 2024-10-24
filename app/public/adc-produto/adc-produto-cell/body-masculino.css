@@ -4,7 +4,29 @@
     padding: 0%;
 }
 
+html, body {
+    height: 195vh;
+}
 
+@media (min-width: 740px) and (max-width: 750px) {
+
+    html, body {
+        height: 223vh;
+    }
+    
+}
+@media (min-width: 730px) and (max-width: 740px) {
+
+    html, body {
+        height: 222vh;
+    }
+    
+}
+@media (min-width: 720px) and (max-width: 730px) {
+
+   
+    
+}
 
 /*parte escrita new in*/
 .boddy {
