@@ -151,20 +151,21 @@ const controller = {
   },
 
   gravarPerfil: async (req, res) => {
-    const userId = await models.findUserById(req.session.autenticado.id)
+    const userId = await models.findUserById(req.session.autenticado.id);
     const bazar = await produtosModels.findBazarByUserId(userId);
     const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
     const erros = validationResult(req);
     const erroMulter = req.session.erroMulter;
+  
     if (!erros.isEmpty() || erroMulter != null) {
       lista = !erros.isEmpty() ? erros : { formatter: null, errors: [] };
       if (erroMulter != null) {
         lista.errors.push(erroMulter);
       }
-      console.log(lista)
+      console.log(lista);
       return res.render("pages/Config/meusdados", {
         usuario: user,
-        Bazar:bazar,
+        Bazar: bazar,
         listaErros: lista,
         dadosNotificacao: null,
         listaProdBazar: [],
@@ -173,56 +174,87 @@ const controller = {
           email: req.body.email,
           cpf: req.body.cpf,
           nasc: req.body.nasc,
-        }});
+        },
+      });
     }
+  
     try {
-      let { nome, email, nasc, senha } = req.body
+      let { nome, email, nasc, senha } = req.body;
       var dadosForm = {
         nome: nome,
         email: email,
         nasc: nasc,
       };
-
-      if (senha != "") {
+  
+      if (senha && senha.trim() !== "") {
         const salt = bcrypt.genSaltSync(10);
-        dadosForm.senha = bcrypt.hashSync(req.body.senha, salt);
+        dadosForm.senha = bcrypt.hashSync(senha, salt);
       }
-
+  
       let resultUpdate = await models.update(dadosForm, req.session.autenticado.id);
-      console.log("resultUpdate")
-      console.log(resultUpdate)
-      if (!resultUpdate.isEmpty) {
-        if (resultUpdate.changedRows == 1) {
-          var user = await models.findUserById(req.session.autenticado.id);
-          const data = new Date(user.nasc)
-          const dataFormatada = data.toISOString().split('T')[0];
-          var autenticado = {
-            autenticado: user.nome,
-            id: user.id_Cliente,
-            tipo: user.Id_Tipo_Usuario
-          };
-          req.session.autenticado = autenticado;
-          let campos = {
-            nome: user.nome,
-            cpf: user.cpf,
-            nasc: user.nasc,
-            email: user.email,
-            nasc: dataFormatada,
-            senha: ""  
-          };
-          console.log("Atualizado")
-          return res.render("pages/perfil", 
-            { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Alterações Gravadas", type: "sucess" }, formAprovado: true, Bazar: bazar, quantidadeVendas, usuario: userId, valores: campos });
-        } else {
-          console.log("Atualizado 2")
-          return res.render("pages/perfil", 
-            { listaErros: null, dadosNotificacao: { title: "Perfil! atualizado com sucesso", msg: "Sem Alterações", type: "info" }, Bazar: bazar, quantidadeVendas, usuario: userId, valores: dadosForm });
-        }
+      console.log("resultUpdate", resultUpdate);
+  
+      if (resultUpdate.affectedRows > 0) {
+        var user = await models.findUserById(req.session.autenticado.id);
+        const data = new Date(user.nasc);
+        const dataFormatada = data.toISOString().split("T")[0];
+  
+        var autenticado = {
+          autenticado: user.nome,
+          id: user.id_Cliente,
+          tipo: user.Id_Tipo_Usuario,
+        };
+  
+        req.session.autenticado = autenticado;
+        let campos = {
+          nome: user.nome,
+          cpf: user.cpf,
+          nasc: user.nasc,
+          email: user.email,
+          nasc: dataFormatada,
+          senha: "",
+        };
+  
+        return res.render("pages/perfil", {
+          listaErros: null,
+          dadosNotificacao: {
+            title: "Perfil atualizado com sucesso!",
+            msg: "Alterações Gravadas",
+            type: "sucess",
+          },
+          formAprovado: true,
+          Bazar: bazar,
+          quantidadeVendas: quantidadeVendas,
+          usuario: userId,
+          valores: campos,
+        });
+      } else {
+        return res.render("pages/perfil", {
+          listaErros: null,
+          dadosNotificacao: {
+            title: "Perfil atualizado com sucesso!",
+            msg: "Sem Alterações",
+            type: "info",
+          },
+          Bazar: bazar,
+          quantidadeVendas: quantidadeVendas,
+          usuario: userId,
+          valores: dadosForm,
+        });
       }
-
     } catch (e) {
-      console.log(e)
-      return res.render("pages/Config/meusdados", { listaErros: null, dadosNotificacao: { title: "Erro ao atualizar o perfil!", msg: "Verifique os valores digitados!", type: "error" }, formAprovado: false, Bazar: bazar, valores: req.body });
+      console.log(e);
+      return res.render("pages/Config/meusdados", {
+        listaErros: null,
+        dadosNotificacao: {
+          title: "Erro ao atualizar o perfil!",
+          msg: "Verifique os valores digitados!",
+          type: "error",
+        },
+        formAprovado: false,
+        Bazar: bazar,
+        valores: req.body,
+      });
     }
   },
 

@@ -1,16 +1,17 @@
 ## O que falta do projeto (Lazully)
 
-- 23/10
-- Numero de vendas(Post) - Atualizar Perfil
-- Produtos clicaveis (Perfil, Login, Produtos, Sacola) Não esquecer da validação de compra e pa
+- *(P) Numero de vendas(Post) - Atualizar Perfil (dando erro apos alteração)
+
+- Tirar os inputs de pesquisa e colocar os links para pesquisa
 
 - 24/10
-- Tirar os inputs de pesquisa e colocar os links para pesquisa
 - Esqueci minha senha / Validação Email
+- Produtos clicaveis (Perfil, Login, Produtos, Sacola) Não esquecer da validação de compra e pa
 - Mensagem de Solicitação do Famoso negada
 
 - 25/10
 - Fazer a pagina de Adm - CSS
+
 - Denuncia Mostrar o nome de ambos prod e usuario denunciado
 
 - Esperar o joão e arrumar
