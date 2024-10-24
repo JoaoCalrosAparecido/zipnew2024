@@ -152,8 +152,8 @@ const controller = {
 
   gravarPerfil: async (req, res) => {
     const userId = await models.findUserById(req.session.autenticado.id);
-    const bazar = await produtosModels.findBazarByUserId(userId);
-    const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
+    const bazar = await produtosModels.findBazarByUserId(req.session.autenticado.id);
+    const quantidadeVendas = await pedidoModel.contarVendasPorCliente(req.session.autenticado.id);
     const erros = validationResult(req);
     const erroMulter = req.session.erroMulter;
   
