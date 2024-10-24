@@ -53,6 +53,7 @@ Dia 24
 Dia 25
 - Css mobile do sacola / responsiva
 - Remove bg tudo
+- rodapé responsivo
 
 
 # Erros
