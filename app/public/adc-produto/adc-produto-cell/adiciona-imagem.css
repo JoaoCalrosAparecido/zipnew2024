@@ -34,7 +34,7 @@ html, body {
 /*blocos adc*/
 #section-blocos-adc {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     column-gap: 5.5px;
     width: 100vw;
     height: 66.5vw;
@@ -42,8 +42,8 @@ html, body {
 
 .blocos-adc {
     background-color: rgb(202, 209, 209);
-    width: 49vw; /*26.37*/
-    height: 61.02vw;
+    width: 100vw; /*26.37*/
+    height: 150vw;
     
 }
 
@@ -64,14 +64,14 @@ html, body {
 }
 
 .inputs-adc-img > input {
-    width: 90vw;
+    width: 100vw;
     height: 8.55vw;
     margin-bottom: 2.2vh;
     padding-left: 0.7vw;
     font-size: 2.80vw;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    left: 5vw;
+
 }
 
 
@@ -164,8 +164,8 @@ html, body {
 
 /*parte do adcionar iamgem do prototipo*/
 .upload-area {
-    width: 49vw; /* Largura do retângulo */
-    height: 61.02vw; /* Altura do retângulo */
+    width: 150vw; /* Largura do retângulo */
+    height: 100vw; /* Altura do retângulo */
     border: 2px solid #ccc; /* Adicionando uma borda cinza */
     border-radius: 5px;
     background-color: white;
@@ -241,3 +241,23 @@ html, body {
 
 
 
+.swiper {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

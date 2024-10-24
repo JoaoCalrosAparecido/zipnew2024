@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
+
+    <!--swiper-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 
@@ -415,43 +418,47 @@
         </article>
 
         <section id="section-adc-img">
-            <form action="/adicionar-produto" method="post" id="form-input" enctype="multipart/form-data">
+            <form action="/adicionar-produto" method="post" id="form-input" enctype="multipart/form-data" >
                 <!--quadrados de adicionar iamgem-->
-                <section id="section-blocos-adc">
-                    <article class="blocos-adc">
-                        <label class="uploadLabel">
-                            <article class="preview upload-area">
-                                <article class="imagem-de-cruz"></article>
-                            </article>
-                            <input type="file" name="img1" accept="image/*">
-                        </label>
-                    </article>
-                    <article class="blocos-adc">
-                        <label class="uploadLabel">
-                            <article class="preview upload-area">
-                                <article class="imagem-de-cruz"></article>
-                            </article>
-                            <input type="file" name="img2" accept="image/*, video/*">
-                        </label>
-                    </article>
-                    <article class="blocos-adc">
-                        <label class="uploadLabel">
-                            <article class="preview upload-area">
-                                <article class="imagem-de-cruz"></article>
-                            </article>
-                            <input type="file" name="img3" accept="image/*, video/*">
-                        </label>
-                    </article>
-                    <article class="blocos-adc">
-                        <label class="uploadLabel">
-                            <article class="preview upload-area">
-                                <article class="imagem-de-cruz"></article>
-                            </article>
-                            <input type="file" name="img4" accept="image/*, video/*">
-                        </label>
-                    </article>
-
+                <section class="swiper mySwiper">
+                    <section id="section-blocos-adc" class="swiper-wrapper">
+                        <article class="blocos-adc swiper-slide">
+                            <label class="uploadLabel">
+                                <article class="preview upload-area">
+                                    <article class="imagem-de-cruz"></article>
+                                </article>
+                                <input type="file" name="img1" accept="image/*">
+                            </label>
+                        </article>
+                        <article class="blocos-adc swiper-slide">
+                            <label class="uploadLabel">
+                                <article class="preview upload-area">
+                                    <article class="imagem-de-cruz"></article>
+                                </article>
+                                <input type="file" name="img2" accept="image/*, video/*">
+                            </label>
+                        </article>
+                        <article class="blocos-adc swiper-slide">
+                            <label class="uploadLabel">
+                                <article class="preview upload-area">
+                                    <article class="imagem-de-cruz"></article>
+                                </article>
+                                <input type="file" name="img3" accept="image/*, video/*">
+                            </label>
+                        </article>
+                        <article class="blocos-adc swiper-slide">
+                            <label class="uploadLabel">
+                                <article class="preview upload-area">
+                                    <article class="imagem-de-cruz"></article>
+                                </article>
+                                <input type="file" name="img4" accept="image/*, video/*">
+                            </label>
+                        </article>
+                    </section>
+                    <div class="swiper-scrollbar"></div>
                 </section>
+
+                
 
                 <script src="../../adc-produto/js/adicionar-imagem.js"></script>
 
@@ -804,7 +811,8 @@
     </section>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../../adc-produto/adc-produto-cell/js/slide.js"></script>
 
 </body>
 

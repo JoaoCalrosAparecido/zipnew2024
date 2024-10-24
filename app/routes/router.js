@@ -262,11 +262,24 @@ router.get("/pagamento",
     res.render('pages/pagamento', { msg: 'Back-end funcionando' });
   });
 
-router.get("/masculino", async function (req, res) {
-  const produtos = await produtosModels.findAllProductByCategoryName('masculino')
-
-  res.render('pages/masculino', { produtos, msg: 'Back-end funcionando' });
-});
+  router.get("/masculino",
+    verificarUsuAutenticado,
+    verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+    async function (req, res) {
+      const produtos = await produtosModels.findAllProductByCategoryName('masculino');
+  
+      const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+      const prodFavJaExiste = await Promise.all(
+        produtos.map(async (produto) => {
+          const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
+          return { ...produto, isFav };
+        })
+      );
+  
+      res.render('pages/masculino', { produtos: prodFavJaExiste, msg: 'Back-end funcionando' });
+    }
+  );
+  
 
 router.get("/feminino", async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('feminino')
@@ -341,6 +354,17 @@ router.post('/atualizar-mensagem',
 router.get('/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
   async (req, res) => {
+
+    const produtos = await produtosModels.findProducts();
+  
+    const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+    const prodFavJaExiste = await Promise.all(
+      produtos.map(async (produto) => {
+        const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
+        return { ...produto, isFav };
+      })
+    );
+
     try {
       const produtoId = parseInt(req.params.id_prod_cliente);
       
@@ -390,6 +414,7 @@ router.get('/produtos/:id_prod_cliente',
       console.error("Erro ao carregar a página do produto:", error);
       res.status(500).send('Erro ao carregar a página do produto.');
     }
+    
   }
 );
 
@@ -423,7 +448,7 @@ router.get("/wishlist/",
   });
 
 
-  router.post('/addFav', 
+  router.post('/masculino/addFav', 
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
@@ -450,14 +475,14 @@ router.get("/wishlist/",
           "DELETE FROM `Favoritos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
           [userId, id]
         );
-        res.redirect('/wishlist')
+        res.redirect('/masculino')
       } else {
         const results = await connection.query(
           'INSERT INTO `Favoritos` (id_prod_cliente, data, id_Cliente, tituloProd, preçoProd, img1) VALUES (?, ?, ?, ?, ?, ?)',
           [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
         );
         console.log('Favoritado');
-        res.redirect('/wishlist');
+        res.redirect('/masculino');
       }
 
 
@@ -554,10 +579,17 @@ router.post("/wishlist/removeFav",
   );
 
 
-  router.post('/checkFavStatus', async function(req, res) {
+
+  router.post('/checkFavStatus', 
+    verificarUsuAutenticado,
+    verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+    async function(req, res) {
     try {
         const userId = req.session.autenticado.id; // Pega o ID do usuário logado
         const idProd = req.body.idProd; // Pega o ID do produto enviado no corpo da requisição
+        console.log("Produto id: ", idProd);
+        
+        
 
         // Verifica se o produto já está nos favoritos
         const prodFavJaExiste = await prodModels.hasProductsFav(userId, idProd);
