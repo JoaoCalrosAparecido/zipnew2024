@@ -4,14 +4,13 @@
 
 
 - 24/10
-- Esqueci minha senha / Validação Email
+- Esqueci minha senha / Validação Email (Tarde)
 - Produtos clicaveis (Perfil, Login, Produtos, Sacola) Não esquecer da validação de compra e pa
-- Mensagem de Solicitação do Famoso negada
+- Denuncia Mostrar o nome de ambos prod e usuario denunciado
 
 - 25/10
 - Fazer a pagina de Adm - CSS
-
-- Denuncia Mostrar o nome de ambos prod e usuario denunciado
+- Mensagem de Solicitação do Famoso negada
 
 - Esperar o joão e arrumar
 - (Relaciona Ban) Wishlist (Avisar o joão que ainda esta rodando o codigo js) - (Não esquecer da validação de produtos banidos e vendido)
