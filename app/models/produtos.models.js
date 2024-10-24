@@ -119,9 +119,7 @@ const prodModels = {
         }
     },
 
-<<<<<<< Updated upstream
-    
-=======
+
     hasProductsFav: async (userId, prodId) => {
         try {
 
@@ -131,7 +129,7 @@ const prodModels = {
             return error;
         }
     },
->>>>>>> Stashed changes
+
 
 
 };
