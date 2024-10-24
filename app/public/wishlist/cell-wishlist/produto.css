@@ -13,6 +13,10 @@
     width: 100vw;
 }
 
+.containerfv {
+    position: relative;
+}
+
 .button {
     position: relative;
     left: 150px;
@@ -22,9 +26,11 @@
     display: flex;
     column-gap: 2vw;
     margin-bottom: 5vh;
+    position: relative;
+    left: 0px;
 }
 
-.cart-itemfv > form > button {
+#removeProdFav {
     position: absolute;
     right: 3vw;
     margin-top: 0.2vh;
@@ -38,21 +44,21 @@
     height: 4.17vw;
 }
 
-.cart-itemfv > form > button {
+#removeProdFav {
     position: absolute;
     right: 5vw;
 }
 
-.cart-itemfv > article > h3 {
+#tituloProdFav {
     font-family: 'Poppins', sans-serif;
     font-size: 3.5vw;
     margin-bottom: 1.5vh;
 }
-.cart-itemfv > article > p {
+#precoProdFav {
     font-family: 'Poppins', sans-serif;
 
 }
-.cart-itemfv > img {
+#imgProdFav {
     width: 30vw;
     height: 35vw;
 }

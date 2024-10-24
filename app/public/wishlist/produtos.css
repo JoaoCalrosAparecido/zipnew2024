@@ -19,7 +19,7 @@
     margin-bottom: 5vh;
 }
 
-.cart-itemfv > form > button {
+#removeProdFav {
     position: absolute;
     right: 3vw;
     margin-top: 0.2vh;
@@ -33,21 +33,21 @@
     height: 1.2vw;
 }
 
-.cart-itemfv > form > button {
+#removeProdFav{
     position: absolute;
     right: 0vw;
 }
 
-.cart-itemfv > article > h3 {
+#tituloProdFav {
     font-family: 'Poppins', sans-serif;
     font-size: 1vw;
     margin-bottom: 1.5vh;
 }
-.cart-itemfv > article > p {
+#precoProdFav {
     font-family: 'Poppins', sans-serif;
 
 }
-.cart-itemfv > img {
+#imgProdFav {
     width: 12vw;
     height: 15.5vw;
 }
