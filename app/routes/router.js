@@ -354,7 +354,6 @@ router.post('/atualizar-mensagem',
 router.get('/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
   async (req, res) => {
-
     const produtos = await produtosModels.findProducts();
   
     const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
@@ -401,7 +400,7 @@ router.get('/produtos/:id_prod_cliente',
           res.render('pages/produtos', { 
             listaErros: null,
             usuarioautenticado: req.session.autenticado, 
-            produto: produto,
+            produto: { ...produto, isFav: prodFavJaExiste.find(p => p.id_prod_cliente === produto.id_prod_cliente).isFav },
             nomeCliente: nomeCliente,
             quantidadeVendas: quantidadeVendas, 
             dadosNotificacao: null
@@ -414,9 +413,9 @@ router.get('/produtos/:id_prod_cliente',
       console.error("Erro ao carregar a página do produto:", error);
       res.status(500).send('Erro ao carregar a página do produto.');
     }
-    
   }
 );
+
 
 
 router.get("/meusdados",
