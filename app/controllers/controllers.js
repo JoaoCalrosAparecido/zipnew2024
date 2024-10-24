@@ -151,18 +151,20 @@ const controller = {
   },
 
   gravarPerfil: async (req, res) => {
-    const userId = await models.findUserById(req.session.autenticado.id);
-    const bazar = await produtosModels.findBazarByUserId(req.session.autenticado.id);
-    const quantidadeVendas = await pedidoModel.contarVendasPorCliente(req.session.autenticado.id);
+    const userId = req.session.autenticado.id;
+    const bazar = await produtosModels.findBazarByUserId(userId);
+    const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
     const erros = validationResult(req);
     const erroMulter = req.session.erroMulter;
-  
+
     if (!erros.isEmpty() || erroMulter != null) {
-      lista = !erros.isEmpty() ? erros : { formatter: null, errors: [] };
+      let lista = !erros.isEmpty() ? erros : { formatter: null, errors: [] };
       if (erroMulter != null) {
         lista.errors.push(erroMulter);
       }
       console.log(lista);
+
+      const user = await models.findUserById(userId);
       return res.render("pages/Config/meusdados", {
         usuario: user,
         Bazar: bazar,
@@ -177,7 +179,7 @@ const controller = {
         },
       });
     }
-  
+
     try {
       let { nome, email, nasc, senha } = req.body;
       var dadosForm = {
@@ -185,50 +187,50 @@ const controller = {
         email: email,
         nasc: nasc,
       };
-  
+    
       if (senha && senha.trim() !== "") {
         const salt = bcrypt.genSaltSync(10);
         dadosForm.senha = bcrypt.hashSync(senha, salt);
       }
-  
-      let resultUpdate = await models.update(dadosForm, req.session.autenticado.id);
+    
+      let resultUpdate = await models.update(dadosForm, userId);
       console.log("resultUpdate", resultUpdate);
-  
-      if (resultUpdate.affectedRows > 0) {
-        var user = await models.findUserById(req.session.autenticado.id);
-        const data = new Date(user.nasc);
+    
+      if (resultUpdate.changedRows > 0) {
+        var userAtualizado = await models.findUserById(userId);
+        const data = new Date(userAtualizado.nasc);
         const dataFormatada = data.toISOString().split("T")[0];
-  
+    
         var autenticado = {
-          autenticado: user.nome,
-          id: user.id_Cliente,
-          tipo: user.Id_Tipo_Usuario,
+          autenticado: userAtualizado.nome,
+          id: userAtualizado.id_Cliente,
+          tipo: userAtualizado.Id_Tipo_Usuario,
         };
-  
+    
         req.session.autenticado = autenticado;
         let campos = {
-          nome: user.nome,
-          cpf: user.cpf,
-          nasc: user.nasc,
-          email: user.email,
+          nome: userAtualizado.nome,
+          cpf: userAtualizado.cpf,
           nasc: dataFormatada,
+          email: userAtualizado.email,
           senha: "",
         };
-  
+    
         return res.render("pages/perfil", {
           listaErros: null,
           dadosNotificacao: {
             title: "Perfil atualizado com sucesso!",
             msg: "Alterações Gravadas",
-            type: "sucess",
+            type: "success",
           },
           formAprovado: true,
           Bazar: bazar,
           quantidadeVendas: quantidadeVendas,
-          usuario: userId,
+          usuario: userAtualizado,
           valores: campos,
         });
       } else {
+        const user = await models.findUserById(userId);
         return res.render("pages/perfil", {
           listaErros: null,
           dadosNotificacao: {
@@ -238,12 +240,14 @@ const controller = {
           },
           Bazar: bazar,
           quantidadeVendas: quantidadeVendas,
-          usuario: userId,
+          usuario: user,
           valores: dadosForm,
         });
       }
     } catch (e) {
       console.log(e);
+    
+      const user = await models.findUserById(userId);
       return res.render("pages/Config/meusdados", {
         listaErros: null,
         dadosNotificacao: {
@@ -253,10 +257,12 @@ const controller = {
         },
         formAprovado: false,
         Bazar: bazar,
+        usuario: user,
         valores: req.body,
       });
     }
   },
+    
 
   mostrarProduto: async (req, res) => {
     try {

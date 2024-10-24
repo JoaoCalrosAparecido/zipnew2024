@@ -105,12 +105,14 @@ router.post("/socialmedia",
     }
 
     await connection.query("UPDATE cliente SET Url_site = ? WHERE id_Cliente = ?;", [socialLinks, userId]);
+    
+    const userAtualizado = await models.findUserById(userId);
 
     res.render('pages/perfil', {
       erros: null,
       logado: true,
       usuarioautenticado: userId,
-      usuario: user,
+      usuario: userAtualizado,
       Bazar: bazar,
       quantidadeVendas,
       listaErros: null,
