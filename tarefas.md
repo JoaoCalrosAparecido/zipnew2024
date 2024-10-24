@@ -19,15 +19,14 @@
 
 ## O que falta do projeto (Sophia)
 
-- Campo de busca - CSS
+- Campo de busca - CSS mob
 - Vender
 - Produtos nas paginas m,f,i,a
 - Ajustar alinhamento dos produtos no m,f,i,a
 - Indez canvas
 - Campo explicando o adc produtos e o adc bazar
-- Links Vender no menu
-- Produtos adicionados css
-
+- Produtos adicionados css e vender no menu
+- favicon
 
 ## O que falta do projeto (João)
 
