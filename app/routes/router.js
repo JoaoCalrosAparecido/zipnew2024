@@ -41,6 +41,15 @@ accessToken: process.env.accessToken
 
 
 
+function selecionarProdutosAleatorios(produtos, quantidade) {
+  for (let i = produtos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [produtos[i], produtos[j]] = [produtos[j], produtos[i]];
+  }
+  return produtos.slice(0, quantidade);
+}
+
+
 router.get("/", verificarUsuAutenticado, function (req, res) {
   if (req.session.autenticado && req.session.autenticado.id) {
     res.render('pages/index', { logado: true, usuarioautenticado: req.session.autenticado.id });
@@ -363,7 +372,7 @@ router.get('/produtos/:id_prod_cliente',
   async (req, res) => {
     const produtos = await produtosModels.findProducts();
   
-    const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+    const userId = req.session.autenticado.id;
     const prodFavJaExiste = await Promise.all(
       produtos.map(async (produto) => {
         const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
@@ -373,6 +382,10 @@ router.get('/produtos/:id_prod_cliente',
 
     try {
       const produtoId = parseInt(req.params.id_prod_cliente);
+
+      const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
+      const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
+  
       
       // Buscar o produto pelo ID
       const [produtos] = await connection.query(
@@ -410,7 +423,8 @@ router.get('/produtos/:id_prod_cliente',
             produto: { ...produto, isFav: prodFavJaExiste.find(p => p.id_prod_cliente === produto.id_prod_cliente).isFav },
             nomeCliente: nomeCliente,
             quantidadeVendas: quantidadeVendas, 
-            dadosNotificacao: null
+            dadosNotificacao: null,
+            random: produtosAleatorios,
           });
         }
       } else {
@@ -786,10 +800,10 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
 
 router.post("/sign/login", controller.regrasValidacaolog, async function (req, res) {
   const erros = validationResult(req);
-
   if (!erros.isEmpty()) {
     console.log(erros);
-    return res.render('pages/login_do_usuario', { erros: erros, dadosform: { email: req.body.email, senha: req.body.senha }, logado: false, usuarioautenticado: req.session.userid });
+    return res.render('pages/login_do_usuario', 
+      { erros: erros, dadosform: { email: req.body.email, senha: req.body.senha }, logado: false, usuarioautenticado: req.session.userid });
   }
 
   try {

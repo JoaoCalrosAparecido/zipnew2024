@@ -530,43 +530,19 @@
 
     <!--slide das bolsas-->
     <section id="section_slide_bolsa_produto1">
+        
         <figure id="slide_bolsa_produto1">
+            <% random.forEach(function(rando) { %>
             <figure>
-                <img src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa1.png"
-                    alt="">
-                <figcaption class="parte_escrita_produto1">Bolsa Branca Medusa'95</figcaption>
-                <figcaption class="parte_preco_produto1">R$ 50,00</figcaption>
+                <a href="/produtos/<%= rando.id_prod_cliente %>">
+                <img src="../../IMG/uploads/<%= rando.img1 %>" alt="">
+                <figcaption class="parte_escrita_produto1"><%= rando.tituloprod %></figcaption>
+                <figcaption class="parte_preco_produto1">R$ <%= rando.preçoprod %></figcaption>
                 <img class="icone_favorito_slide_produto1"
                     src="../IMG/pordutos/promos/bolsa_preta_classica/slide/icone_favorito.svg" alt="">
+                </a>
             </figure>
-
-            <figure>
-                <img  src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa2.png"
-                    alt="">
-                <figcaption class="parte_escrita_produto1">Bolsa Preta Medusa'95</figcaption>
-                <figcaption class="parte_preco_produto1">R$ 50,00</figcaption>
-                <img class="icone_favorito_slide_produto1"
-                    src="../IMG/pordutos/promos/bolsa_preta_classica/slide/icone_favorito.svg" alt="">
-            </figure>
-
-            <figure id="figureNoneCell">
-                <img  src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa3.png"
-                    alt="">
-                <figcaption class="parte_escrita_produto1">Bolsa Clássica Branca</figcaption>
-                <figcaption class="parte_preco_produto1">R$ 20,00</figcaption>
-                <img class="icone_favorito_slide_produto1"
-                    src="../IMG/pordutos/promos/bolsa_preta_classica/slide/icone_favorito.svg" alt="">
-            </figure>
-
-            <figure id="figureNoneCell">
-                <img  src="../IMG/pordutos/promos/bolsa_preta_classica/slide/bolsa4.png"
-                    alt="">
-                <figcaption class="parte_escrita_produto1">Bolsa Crocodilo Preta</figcaption>
-                <figcaption class="parte_preco_produto1">R$ 30,00</figcaption>
-                <img class="icone_favorito_slide_produto1"
-                    src="../IMG/pordutos/promos/bolsa_preta_classica/slide/icone_favorito.svg" alt="">
-            </figure>
-
+            <% }); %>
         </figure>
     </section>
 

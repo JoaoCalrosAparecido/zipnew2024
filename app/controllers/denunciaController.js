@@ -5,11 +5,22 @@ const admModel = require("../models/admModels");
 const produtosModels = require("../models/produtos.models");
 const denunciasModels = require("../models/denunciasModels");
 
+function selecionarProdutosAleatorios(produtos, quantidade) {
+    for (let i = produtos.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [produtos[i], produtos[j]] = [produtos[j], produtos[i]];
+    }
+    return produtos.slice(0, quantidade);
+  }
 const denunciaController = {
+    
     denunciarP: async (req, res) => {
         try {
             const userId = req.session.autenticado.id;
             const produtoId = parseInt(req.params.id_prod_cliente);
+
+            const [random] = await pool.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
+            const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
 
             const [produtos] = await pool.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
             if (produtos.length === 0) {
@@ -62,6 +73,7 @@ const denunciaController = {
                     nomeCliente: nomeCliente,
                     quantidadeVendas: quantidadeVendas,
                     listaErros: null,
+                    random: produtosAleatorios,
                     dadosNotificacao: { 
                         title: "Você já denunciou este produto", 
                         msg: "Produto já denunciado", 
@@ -77,6 +89,7 @@ const denunciaController = {
                     produto: produto,
                     nomeCliente: nomeCliente,
                     quantidadeVendas: quantidadeVendas,
+                    random: produtosAleatorios,
                     dadosNotificacao: { 
                         title: "Preencha um dos campos", 
                         msg: "Campos vazios", 
@@ -102,6 +115,7 @@ const denunciaController = {
                 nomeCliente: nomeCliente,
                 quantidadeVendas: quantidadeVendas,
                 listaErros: null,
+                random: produtosAleatorios,
                 dadosNotificacao: { 
                     title: "Sua denúncia foi enviada", 
                     msg: "Denúncia realizada com sucesso", 
@@ -122,6 +136,9 @@ const denunciaController = {
         try {
             const userId = req.session.autenticado.id; 
             const produtoId = parseInt(req.params.id_prod_cliente);
+
+            const [random] = await pool.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
+            const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
     
             const [produtos] = await pool.query('SELECT * FROM `produtos` WHERE id_prod_cliente = ?', [produtoId]);
             if (produtos.length === 0) {
@@ -166,6 +183,7 @@ const denunciaController = {
                     produto: produto,
                     nomeCliente: nomeCliente,
                     quantidadeVendas: quantidadeVendas,
+                    random: produtosAleatorios,
                     dadosNotificacao: { 
                         title: "Você já denunciou este vendedor", 
                         msg: "Vendedor já denunciado", 
@@ -182,6 +200,7 @@ const denunciaController = {
                     produto: produto,
                     nomeCliente: nomeCliente,
                     quantidadeVendas: quantidadeVendas,
+                    random: produtosAleatorios,
                     dadosNotificacao: { 
                         title: "Preencha um dos campos", 
                         msg: "Campos vazios", 
@@ -208,6 +227,7 @@ const denunciaController = {
                 produto: produto,
                 nomeCliente: nomeCliente,
                 quantidadeVendas: quantidadeVendas,
+                random: produtosAleatorios,
                 dadosNotificacao: { 
                     title: "Sua denúncia foi enviada", 
                     msg: "Denúncia realizada com sucesso", 
