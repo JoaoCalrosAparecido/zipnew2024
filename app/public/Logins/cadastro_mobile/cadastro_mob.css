@@ -83,7 +83,7 @@
 }
 
 #boxa{
-    width: 15rem;
+    width: 80vw;
 }
 
 #nome, #cep, #senha, #email, #cpf{
@@ -98,6 +98,10 @@
 }
 
 #foto-crie-conta {
-    width: 82vw;
+    width: 60vw;
     text-align: center;
+}
+
+body {
+    height: 20vh;
 }
