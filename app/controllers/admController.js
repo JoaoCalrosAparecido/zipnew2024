@@ -50,7 +50,7 @@ const admController = {
     },
     negarFamoso: async (req, res) => {
         const idUsuario = req.query.idUsuario
-        const resultUpdate = await admModel.alterarUrl(null, idUsuario)
+        const resultUpdate = await admModel.alterarUrl("Negado", idUsuario)
         console.log(resultUpdate)
 
         res.redirect("/adm-famosos")

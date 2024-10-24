@@ -605,10 +605,15 @@
                         <article>
                             <button id="famous">Sou Famoso</button>
                         </article>
-                        <% } else if (usuario.Id_Tipo_Usuario==1 && usuario.Url_site) { %>
-                            <p class="mensagem-espera">Aguarde a aprovação do sou famoso...</p>
-                            <% } else { %>
-                                <% } %>
+                    <% } else if (usuario.Id_Tipo_Usuario==1 && usuario.Url_site == "Negado" ) { %>
+                        <article>
+                            <button id="famous">Sou Famoso</button>
+                        </article>
+                        <p class="mensagem-espera">Sua solicitação foi negada!</p>
+                    <% } else if (usuario.Id_Tipo_Usuario==1 && usuario.Url_site) { %>
+                        <p class="mensagem-espera">Aguarde a aprovação do sou famoso...</p>
+                    <% } else { %>
+                    <% } %>
                                     <article id="help">
                                         <p>Suporte</p>
                                     </article>
