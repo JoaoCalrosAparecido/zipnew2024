@@ -1,8 +1,4 @@
 ## O que falta do projeto (Lazully)
-
-- *(P) Numero de vendas(Post) - Atualizar Perfil (dando erro apos alteração)
-
-
 - 24/10
 - Esqueci minha senha / Validação Email (Tarde)
 - Produtos clicaveis (Perfil, Login, Produtos, Sacola) Não esquecer da validação de compra e pa
