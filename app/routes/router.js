@@ -113,7 +113,12 @@ router.post("/socialmedia",
       usuario: user,
       Bazar: bazar,
       quantidadeVendas,
-      listaErros: null
+      listaErros: null,
+      dadosNotificacao: { 
+        title: "Solicitação Enviada", 
+        msg: "Solicitação enviada com sucesso", 
+        type: 'success' 
+    },
     });
   }
 );

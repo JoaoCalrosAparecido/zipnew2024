@@ -5,7 +5,7 @@
 
 - 25/10
 - Fazer a pagina de Adm - CSS
-- Mensagem de Solicitação do Famoso negada
+- Bug Att Dados e URL n mostrar o atual
 
 - Esperar o joão e arrumar
 - (Relaciona Ban) Wishlist (Avisar o joão que ainda esta rodando o codigo js) - (Não esquecer da validação de produtos banidos e vendido)
