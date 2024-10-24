@@ -41,6 +41,7 @@ const denunciasModels = {
         const query = 
             `SELECT 
                 dp.id_prod_cliente, 
+                p.tituloProd,
                 SUM(dp.repetido) AS total_repetido,
                 SUM(dp.fora_tema) AS total_fora_tema,
                 SUM(dp.ma_qualidade) AS total_ma_qualidade
@@ -51,16 +52,16 @@ const denunciasModels = {
             WHERE 
                 p.Stats = 'Disponível'
             GROUP BY 
-                dp.id_prod_cliente;`;
-
+                dp.id_prod_cliente, p.tituloProd;`;
+    
         const [denuncias] = await pool.query(query);
         return denuncias;
     },
-
     listarDenunciasVendedor: async () => {
         const query = `
             SELECT 
                 d.id_Cliente_denunciado, 
+                c.nome,
                 SUM(d.fraude) AS total_fraude,
                 SUM(d.produto_ilicito) AS total_produto_ilicito,
                 SUM(d.propaganda_enganosa) AS total_propaganda_enganosa
@@ -71,7 +72,7 @@ const denunciasModels = {
             WHERE 
                 c.Stats != 'Inativo'
             GROUP BY 
-                d.id_Cliente_denunciado;
+                d.id_Cliente_denunciado, c.nome;
         `;
         const [denuncias] = await pool.query(query);
         return denuncias;

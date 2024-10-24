@@ -13,7 +13,7 @@
         <tbody class="denuncias-colunas-conteudo">
             <% denuncias.forEach(denuncia => { %>
                 <tr>
-                    <td class="celula1"><%= denuncia.id_prod_cliente %></td>
+                    <td class="celula1"><a href="/produtos/<%= denuncia.id_prod_cliente %>"><%= denuncia.id_prod_cliente %></a> - <%= denuncia.tituloProd %></td>
                     <td class="celula2"><%= denuncia.total_repetido %></td>
                     <td class="celula3"><%= denuncia.total_fora_tema %></td>
                     <td class="celula4"><%= denuncia.total_ma_qualidade %></td>
@@ -44,7 +44,7 @@
             <tbody class="denuncias-colunas-conteudo--vendedor">
                 <% denunciasV.forEach(denuncias => { %>
                     <tr>
-                        <td class="celula1"><%= denuncias.id_Cliente_denunciado %></td>
+                        <td class="celula1"><%= denuncias.id_Cliente_denunciado %> - <%= denuncias.nome %></td>
                         <td class="celula2"><%= denuncias.total_fraude %></td>
                         <td class="celula3"><%= denuncias.total_produto_ilicito %></td>
                         <td class="celula4"><%= denuncias.total_propaganda_enganosa %></td>

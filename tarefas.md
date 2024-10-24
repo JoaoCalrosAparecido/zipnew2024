@@ -2,7 +2,6 @@
 - 24/10
 - Esqueci minha senha / Validação Email (Tarde)
 - Produtos clicaveis (Perfil, Login, Produtos, Sacola) Não esquecer da validação de compra e pa
-- Denuncia Mostrar o nome de ambos prod e usuario denunciado
 
 - 25/10
 - Fazer a pagina de Adm - CSS
