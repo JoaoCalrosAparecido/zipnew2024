@@ -567,55 +567,22 @@
     <!--slide-->
     <section id="section_slide">
         <article id="article_slide">
-            <figure>
-                <article>
-                    <img width="305px" src="../IMG/sacola/slide/imagem1.png" alt="">
-                    <figcaption>
-                        <p id="paragrafo_slide_nome">Bracelete Prata com Strass</p>
-                        <p id="paragrafo_slide_preco">R$ 7,00</p>
-                    </figcaption>
-                </article>
-                <article id="coracao_slide">
-                    <img src="../IMG/sacola/slide/coracao.svg" alt="">
-                </article>
-            </figure>
-            <figure>
-                <article>
-                    <img width="305px" src="../IMG/sacola/slide/imagem2.png" alt="">
-                    <figcaption>
-                        <p id="paragrafo_slide_nome">Bolsa Preta e Dourada</p>
-                        <p id="paragrafo_slide_preco">R$ 30,00</p>
-                    </figcaption>
-                </article>
-                <article id="coracao_slide">
-                    <img src="../IMG/sacola/slide/coracao.svg" alt="">
-                </article>
-            </figure>
-            <figure>
-                <article>
-                    <img width="305px" src="../IMG/sacola/slide/imagem3.png" alt="">
-                    <figcaption>
-                        <p id="paragrafo_slide_nome">Bota Preta - Bazar Franciny</p>
-                        <p id="paragrafo_slide_preco">R$ 40,00</p>
-                    </figcaption>
-                </article>
-                <article id="coracao_slide">
-                    <img src="../IMG/sacola/slide/coracao.svg" alt="">
-                </article>
-            </figure>
-            <figure>
-                <article>
-                    <img width="305px" src="../IMG/sacola/slide/imagem4.png" alt="">
-                    <figcaption>
-                        <p id="paragrafo_slide_nome">Coturno Preto de Vinil</p>
-                        <p id="paragrafo_slide_preco">R$ 25,00</p>
-                    </figcaption>
-                </article>
-                <article id="coracao_slide">
-                    <img src="../IMG/sacola/slide/coracao.svg" alt="">
-                </article>
-            </figure>
-            
+            <% random.forEach(function(rando) { %>
+            <a href="/produtos/<%= rando.id_prod_cliente %>">
+                <figure>
+                    <article>
+                        <img width="305px" src="../../IMG/uploads/<%= rando.img1 %>" alt="">
+                        <figcaption>
+                            <p id="paragrafo_slide_nome"><%= rando.tituloprod %></p>
+                            <p id="paragrafo_slide_preco">R$ <%= rando.preçoprod %></p>
+                        </figcaption>
+                    </article>
+                    <article id="coracao_slide">
+                        <img src="../IMG/sacola/slide/coracao.svg" alt="">
+                    </article>
+                </figure>
+            </a>    
+            <% }); %>
         </article>
     </section>
 

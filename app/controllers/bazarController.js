@@ -4,6 +4,14 @@ const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 const pedidoModel = require('../models/pedidoModel');
 
+function selecionarProdutosAleatorios(produtos, quantidade) {
+  for (let i = produtos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [produtos[i], produtos[j]] = [produtos[j], produtos[i]];
+  }
+  return produtos.slice(0, quantidade);
+}
+
 const bazarController = {
   
   submitBazar: async (req, res) => {
@@ -154,6 +162,9 @@ const bazarController = {
     const produtoBazar = await produtosModels.mostrarProdutosBazar(userId, bazar.Id_Bazar);
     const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
     var errosMulter = req.session.erroMulter;
+
+    const [random] = await pool.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
+    const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
   
     if (errosMulter != null) {
       erros.errors.push(errosMulter);
@@ -264,7 +275,8 @@ const bazarController = {
             usuario: user, 
             Bazar: bazar,
             quantidadeVendas,
-            valores: campos 
+            valores: campos,
+            random: produtosAleatorios,
           });
         } else {
           console.log("Atualizado 2");
@@ -274,7 +286,8 @@ const bazarController = {
             usuario: user, 
             Bazar: bazar, 
             quantidadeVendas,
-            valores: dadosForm 
+            valores: dadosForm,
+            random: produtosAleatorios,
           });
         }
       }
@@ -290,7 +303,8 @@ const bazarController = {
         usuario: user, 
         Bazar: bazar, 
         quantidadeVendas,
-        valores: req.body 
+        valores: req.body,
+        random: produtosAleatorios,
       });
     }
   },

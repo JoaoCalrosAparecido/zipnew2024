@@ -5,6 +5,13 @@ const models = require("../models/models");
 const produtosModels = require('../models/produtos.models');
 const pedidoModel = require('../models/pedidoModel');
 
+function selecionarProdutosAleatorios(produtos, quantidade) {
+  for (let i = produtos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [produtos[i], produtos[j]] = [produtos[j], produtos[i]];
+  }
+  return produtos.slice(0, quantidade);
+}
 
 const controller = {
   regrasValidacaocadastro: [
@@ -157,6 +164,9 @@ const controller = {
     const erros = validationResult(req);
     const erroMulter = req.session.erroMulter;
 
+    const [random] = await pool.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
+    const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
+
     if (!erros.isEmpty() || erroMulter != null) {
       let lista = !erros.isEmpty() ? erros : { formatter: null, errors: [] };
       if (erroMulter != null) {
@@ -228,6 +238,7 @@ const controller = {
           quantidadeVendas: quantidadeVendas,
           usuario: userAtualizado,
           valores: campos,
+          random: produtosAleatorios,
         });
       } else {
         const user = await models.findUserById(userId);
@@ -238,6 +249,7 @@ const controller = {
             msg: "Sem Alterações",
             type: "info",
           },
+          random: produtosAleatorios,
           Bazar: bazar,
           quantidadeVendas: quantidadeVendas,
           usuario: user,

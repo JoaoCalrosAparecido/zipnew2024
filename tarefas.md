@@ -1,6 +1,7 @@
 ## O que falta do projeto (Lazully)
 - 24/10
-- Produtos clicaveis (Login, Perfil, Sacola)
+- Produtos clicaveis Review(Sacola, Perfil, Produtos) Login
+
 
 - 25/10
 - Fazer a pagina de Adm - CSS

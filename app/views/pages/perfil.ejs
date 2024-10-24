@@ -634,41 +634,25 @@
 
                 <p id="likeit">Você Pode Gostar</p>
 
-                <section id="bunker">
-                    <article id="container">
 
-                        <section id="">
-                            <img id="likezz" src="../IMG/perfil/blusa-tricot-branca.webp">
+                <% random.forEach(function(rando) { %>
+                    <a href="/produtos/<%= rando.id_prod_cliente %>">
+                        <section id="bunker">
+                            <article id="container">
+                                <section id="">
+                                    <img id="likezz" src="../../IMG/uploads/<%= rando.img1 %>">
+                                </section>
+                            </article>
                         </section>
 
-                        <section id="">
-                            <img id="likez" src="../IMG/perfil/BotaGold.png" alt="">
+                        <section id="sepair">
+                            <section id="dissy">
+                                <article id="h3"><%= rando.tituloprod %></article>
+                                <article id="h4">R$ <%= rando.preçoprod %></article>
+                            </section>
                         </section>
-
-                        <section id="">
-                            <img id="likez" src="../IMG/perfil/Bracelete.png" alt="">
-                        </section>
-
-                    </article>
-                </section>
-
-                <section id="sepair">
-
-                    <section id="dissy">
-                        <article id="h3">Coturno Preto de Vinil</article>
-                        <article id="h4">R$ 25,00</article>
-                    </section>
-
-                    <section id="dissa">
-                        <article id="h3">Bota Preta - Bazar Franciny</article>
-                        <article id="h4">R$ 40,00</article>
-                    </section>
-
-                    <section id="dissw">
-                        <article id="h3">Bracelete Prata com Strass</article>
-                        <article id="h4">R$ 7,00</article>
-                    </section>
-                </section>
+                    </a>
+                <% }); %>
 
             </section>
             </Section>

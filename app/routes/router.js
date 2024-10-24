@@ -82,8 +82,11 @@ router.get("/perfil",
     const userId = req.session.autenticado.id;
     const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
 
+    const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
+    const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
+
     const bazar = await produtosModels.findBazarByUserId(userId);
-    res.render('pages/perfil', { usuario: user, Bazar: bazar, quantidadeVendas, dadosNotificacao: null, listaErros: null });
+    res.render('pages/perfil', { usuario: user, Bazar: bazar, random: produtosAleatorios, quantidadeVendas, dadosNotificacao: null, listaErros: null });
   }
 );
 
@@ -99,6 +102,9 @@ router.post("/socialmedia",
     const { socialLinks } = req.body;
     const user = await models.findUserById(userId);
 
+    const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
+    const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
+
     if (!erros.isEmpty()) {
       return res.render("pages/perfil", {
         usuario: user,
@@ -107,6 +113,7 @@ router.post("/socialmedia",
         listaErros: erros,
         dadosNotificacao: null,
         listaProdBazar: [],
+        random: produtosAleatorios,
         valores: {
           socialLinks: req.body.socialLinks,
         }
@@ -125,6 +132,7 @@ router.post("/socialmedia",
       Bazar: bazar,
       quantidadeVendas,
       listaErros: null,
+      random: produtosAleatorios,
       dadosNotificacao: { 
         title: "Solicitação Enviada", 
         msg: "Solicitação enviada com sucesso", 
@@ -142,10 +150,10 @@ router.get("/cart",
     const userId = req.session.autenticado.id;
     const cart = await cartModels.findAllProductByUserId(userId);
     
+    const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
+    const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
     
-
-    
-    res.render('pages/cart', { msg: 'Back-end funcionando', cart: cart });
+    res.render('pages/cart', { random: produtosAleatorios, cart: cart });
   });
 
   router.get("/produtos-adicionados",
@@ -259,6 +267,7 @@ router.get("/cart",
 
       router.get('/pedidos', (req, res) => {
           const pedidos = req.session.pedidos || []; // ou outra forma de obter os pedidos
+          
           res.render('pages/cart', { pedidos: pedidos });
       });
 
