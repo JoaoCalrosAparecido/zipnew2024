@@ -33,12 +33,13 @@ Dia 22
 - Css mobile do produtos / responsiva (Check)
 
 Dia 23 no laboratório:
-- Wishlist adicionando no banco e removendo
-- Na pagina produtos conseguir adicionar no wishlist
+- Wishlist adicionando no banco e removendo  (check)
+- Na pagina produtos conseguir adicionar no wishlist funciona só não fica pretinho
+- e quando aperta no coração duas vezes remover o produto (check eu fiz essa porra)
 
 Dia 23 
 - Css mobile adc produtos / responsiva
-- Rodapé cadastro mobile
+- Rodapé cadastro mobile 
 - Sacola endereço - API correios
 
 Dia 24 no laboratorio:

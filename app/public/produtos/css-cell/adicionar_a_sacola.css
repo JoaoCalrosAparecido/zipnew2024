@@ -5,7 +5,7 @@
     height: 59.90vw;
     background-color: rgb(255, 255, 255);
     position: relative;
-    top: 21.87vh;
+    top: 5.87vh;
     
     
 }
@@ -68,13 +68,23 @@
 
 /*imagem favorito*/
 #imagem_de_favorito {
-    width: 1.41vw;
-    height: 1.35vw;
-    background-image: url('../../IMG/pordutos/promos/bolsa_preta_classica/imagem_de_favorito.svg');
-    background-size: 1.41vw;
+    width: 1.61vw;
+    all: unset;
     position: relative;
-    left: 23.75vw;
-    top: -5.99vw;
+    left: 87.75vw;
+    top: -29.99vw;
+    z-index: 20000;
+}
+
+#lordiconfv {
+    width: 7.61vw;
+    height: 7.61vw;
+   
+    position: relative;
+}
+
+#formsDoFav {
+    
 }
 
 /*botão adicionar a sacola*/

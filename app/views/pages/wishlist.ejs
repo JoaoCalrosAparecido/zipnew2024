@@ -152,23 +152,33 @@
                         </article>
                     </article>
                 </figure>
+<<<<<<< Updated upstream
                     
                 <figure id="imagem_do_icone_de_favorito">
                     <lord-icon
                         id="lordicon"
+=======
+                
+                <script src="../../js/pesquisa_principal.js"></script>
+    
+                <a href="/wishlist">
+                    <figure id="imagem_do_icone_de_favorito">
+                        <lord-icon
+                            id="lordicon"
+                            src="https://cdn.lordicon.com/xyboiuok.json"
+                            trigger="hover"
+                            style="width:25px; height:25px">
+                        </lord-icon>
+                        <lord-icon
+                        id="lordicon2"
+>>>>>>> Stashed changes
                         src="https://cdn.lordicon.com/xyboiuok.json"
                         trigger="hover"
-                        style="width:25px; height:25px">
+                        colors="primary:#ffffff"
+                        style="width:25.5px;height:25.5px">
                     </lord-icon>
-    
-                    <lord-icon
-                    id="lordicon2"
-                    src="https://cdn.lordicon.com/xyboiuok.json"
-                    trigger="hover"
-                    colors="primary:#ffffff"
-                    style="width:25.5px;height:25.5px">
-                </lord-icon>
-                </figure>
+                    </figure>
+                </a>
     
                 <a href="/perfil"><figure id="imagem_do_icone_de_pessoa">
                     
@@ -429,7 +439,7 @@
                     </p>
 
                     <form action="removeFav" method="post">
-                        <input type="text" name="produtosremovefav" value="<%= prod.Id_prod_cliente %>">
+                        <input type="hidden" name="produtosremovefav" value="<%= prod.Id_prod_cliente %>">
                         <button type="submit">apagar</button>
                     </form>
                 <% }) %>    

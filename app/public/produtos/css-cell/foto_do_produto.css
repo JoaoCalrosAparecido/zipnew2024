@@ -87,7 +87,7 @@
 /*area do swiper*/
 .swiper {
     width: 100vw;
-    height: 70vh;
+    height: 63vh;
     top: 10vh;
 }
 
@@ -102,8 +102,8 @@
 
 .swiper-slide>img {
     display: block;
-    width: 100%;
-    height: 70vh;
+    width: 100vw;
+    height: 60vh;
     object-fit: cover;
 }
 

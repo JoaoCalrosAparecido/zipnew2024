@@ -462,12 +462,20 @@
                     <P id="parte_cor_bolsa_Preta">Tamanho <span id="parte_cor_bolsa_Preta_span"><%= produto.tamanho %></span></P>
                 </article>
                 <form action="addFav" method="post">
-                
+                    <!-- onclick="addToCartfv('<%= produto.tituloprod %>', <%= produto.preçoprod %>, 'uploads/<%= produto.img1 %>')" -->
                     <input type="hidden" name="idProd" value="<%= produto.id_prod_cliente %>, <%= produto.tituloprod %>, <%= produto.preçoprod %>, <%= produto.img1 %>"   style="opacity: 0;">
-                <a href="cart.html">
-                    <article id="imagem_de_favorito"></article>
-                </a>
+                    <button type="submit" style="all: unset;" >
+                        <lord-icon class="add-to-cartfv"
+                            onclick="addToCartfv('<%= produto.tituloprod %>', <%= produto.preçoprod %>, 'uploads/<%= produto.img1 %>')"
+                            id="lordiconfv"
+                            src="https://cdn.lordicon.com/xyboiuok.json"
+                            trigger="hover"
+                            data-image="uploads/<%= produto.img1 %>"
+                            >
+                        </lord-icon>
+                    </button>
                 </form>
+                
                 <form action="addCart" method="post">
                     <input type="hidden" name="idProdCart" value="<%= produto.id_prod_cliente %>, <%= produto.tituloprod %>, <%= produto.preçoprod %>, <%=produto.img1 %>"   style="opacity: 0;">
                         <button type="submit" id="produto_adicionar_a_sacola" class="add-to-cart"  >
@@ -501,7 +509,7 @@
 
 
     
-
+    <script src="../../css-masculino/js/icone-favorto.js"></script>
     <script src="../../cat-produto/ponto-para-virgula.js"></script>
     <script src="/bolsa_preta_classica/javascript/index.js"></script>
     <script src="/bolsa_preta_classica/javascript/cart.js"></script>

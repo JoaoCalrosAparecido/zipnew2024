@@ -8,6 +8,7 @@ const { verificarUsuAutorizado, limparSessao, verificarUsuAutenticado } = requir
 const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 
+
 //sacola
 const cartModels = require('../models/cartModels')
 
@@ -32,6 +33,7 @@ const denunciasModels = require("../models/denunciasModels");
 // SDK do Mercado Pago
 const { MercadoPagoConfig, Preference } = require('mercadopago');
 const { pedidoController } = require("../controllers/pedidoControler");
+const prodModels = require("../models/produtos.models");
 // Adicione as credenciais
 const client = new MercadoPagoConfig({
 accessToken: process.env.accessToken
@@ -439,16 +441,78 @@ router.get("/wishlist/",
   
       const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
 
+      const userId = req.session.autenticado.id
+      
+      const prodFavJaExiste = await prodModels.hasProductsFav(userId, id)
+
+      if(prodFavJaExiste) {
+        await connection.query(
+          "DELETE FROM `Favoritos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
+          [userId, id]
+        );
+        res.redirect('/wishlist')
+      } else {
+        const results = await connection.query(
+          'INSERT INTO `Favoritos` (id_prod_cliente, data, id_Cliente, tituloProd, preçoProd, img1) VALUES (?, ?, ?, ?, ?, ?)',
+          [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
+        );
+        console.log('Favoritado');
+        res.redirect('/wishlist');
+      }
+
+
+
       
 
+     
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Erro ao adicionar favorito'); // Opcional: resposta de erro
+    }
+  }
+);
+  router.post('/produtos/addFav', 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  async function (req, res) {
+    try {
+     /* const idProd = parseInt(req.body.idProd);*/
+      const date = new Date();
 
-      const results = await connection.query(
-        'INSERT INTO `Favoritos` (id_prod_cliente, data, id_Cliente, tituloProd, preçoProd, img1) VALUES (?, ?, ?, ?, ?, ?)',
-        [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
-      );
-      console.log('Favoritado');
+      const idProd = req.body.idProd; // Captura o valor do input
+      const [id, titulo, preco, img1] = idProd.split(',');
 
-      res.redirect('/wishlist');
+      console.log('ID do produto:', id);
+      console.log('Título do produto:', titulo);
+      console.log('Preço do produto:', preco);
+      console.log('Imagem do produto:', img1);
+  
+      const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+      const userId = req.session.autenticado.id
+      
+      const prodFavJaExiste = await prodModels.hasProductsFav(userId, id)
+
+      if(prodFavJaExiste) {
+        await connection.query(
+          "DELETE FROM `Favoritos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
+          [userId, id]
+        );
+        res.redirect('/wishlist')
+      } else {
+        const results = await connection.query(
+          'INSERT INTO `Favoritos` (id_prod_cliente, data, id_Cliente, tituloProd, preçoProd, img1) VALUES (?, ?, ?, ?, ?, ?)',
+          [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
+        );
+        console.log('Favoritado');
+        res.redirect('/wishlist');
+      }
+
+
+
+      
+
+     
     } catch (err) {
       console.log(err);
       res.status(500).send('Erro ao adicionar favorito'); // Opcional: resposta de erro
@@ -456,40 +520,60 @@ router.get("/wishlist/",
   }
 );
 
-router.delete('/removeFav', 
+router.post("/wishlist/removeFav",
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
-   
+
     try {
-        
-  
+    
+      
       const productId = req.body.produtosremovefav; // Captura o valor do input
 
-      console.log('ID do produto:', productId);
+      
      
+      console.log('ID do produto:', productId)
       const userId = req.session.autenticado.id;
+      console.log( userId, productId);
+      
 
 
        await connection.query(
         "DELETE FROM `Favoritos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
         [userId, productId]
       );
-      console.log('Favoritos');
+      console.log('produto do favorito removido');
 
       res.redirect('/cart'); 
     } catch (err) {
       console.log(err);
-      res.status(500).send('Erro ao remover cart'); // Opcional: resposta de erro
+      res.status(500).send('Erro ao remover produto favoritado'); // Opcional: resposta de erro
     }
+    
   }
   );
 
-    
+
+  router.post('/checkFavStatus', async function(req, res) {
+    try {
+        const userId = req.session.autenticado.id; // Pega o ID do usuário logado
+        const idProd = req.body.idProd; // Pega o ID do produto enviado no corpo da requisição
+
+        // Verifica se o produto já está nos favoritos
+        const prodFavJaExiste = await prodModels.hasProductsFav(userId, idProd);
+
+        // Retorna a resposta como JSON para o frontend
+        res.json({ prodFavJaExiste: prodFavJaExiste });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Erro ao verificar status do favorito' });
+    }
+});
+
   
   
 
-router.post('/produtos/addCart', 
+router.post('/podutos/addCart', 
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
@@ -509,6 +593,7 @@ router.post('/produtos/addCart',
       const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
 
       console.log('addtocart')
+
 
       const prodJaExiste = await cartModels.hasProducts(userId, id)
 

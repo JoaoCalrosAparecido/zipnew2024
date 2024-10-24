@@ -119,7 +119,19 @@ const prodModels = {
         }
     },
 
+<<<<<<< Updated upstream
     
+=======
+    hasProductsFav: async (userId, prodId) => {
+        try {
+
+            const [linhas] = await pool.query('SELECT * FROM `Favoritos` WHERE `id_Cliente` = ? AND `Id_prod_cliente` = ? ', [userId, prodId]);
+            return linhas.length >= 1 ;
+        } catch (error) {
+            return error;
+        }
+    },
+>>>>>>> Stashed changes
 
 
 };
