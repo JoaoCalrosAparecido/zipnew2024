@@ -28,16 +28,11 @@ Dia 23
 - Rodapé cadastro mobile (check)
 
 Dia 25
-<<<<<<< HEAD
-- Menus corrigir menu do cadastro mobile e do adc-produtos mob quando rola para baixo por conta da logo que aumenta de tamanho
-- pagina que mostra os produtos com ícone de coração mais para cima 
-e funcionando a wishlist nessa pagina dos produtos (check)
-=======
+
 - Menus corrigir menu do cadastro mobile e do adc-produtos mob quando rola para baixo por conta da logo que aumenta de tamanho e menu do campo de busca
 - pagina que mostra os produtos com ícone de coração mais para cima
-e funcionando a wishlist nessa pagina dos produtos
->>>>>>> 7bc90179d7b0574383623478f83b96ef87cbb91a
-- sem carrossel no desk de adc-produtos
+e funcionando a wishlist nessa pagina dos produtos (check)
+- sem carrossel no desk de adc-produtos (check)
 - Css mobile da sacola / responsiva
 - rodape da sacola todo bugado
 - stycky no adc-prod;
