@@ -371,14 +371,20 @@
                 </tr>
             </thead>
             <tbody id="denuncias__celulas">
-                <% denuncias.forEach(denuncia => { %>
-                    <tr id="denuncias__linhas">
-                        <td><%= denuncia.nome_produto %></td>
-                        <td><%= denuncia.total_repetido %></td>
-                        <td><%= denuncia.total_fora_tema %></td>
-                        <td><%= denuncia.total_ma_qualidade %></td>
+                <% if (denuncias.length > 0) { %>
+                    <% denuncias.forEach(denuncia => { %>
+                        <tr id="denuncias__linhas">
+                            <td><%= denuncia.nome_produto %></td>
+                            <td><%= denuncia.total_repetido %></td>
+                            <td><%= denuncia.total_fora_tema %></td>
+                            <td><%= denuncia.total_ma_qualidade %></td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="4">Nenhuma denúncia foi encontrada.</td>
                     </tr>
-                <% }) %>
+                <% } %>
             </tbody>
         </table>
     </section>

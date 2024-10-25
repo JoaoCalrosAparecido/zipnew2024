@@ -1,14 +1,10 @@
 ## O que falta do projeto (Lazully)
-- 24/10
-- Produtos clicaveis Review(Sacola, Perfil, Produtos) Login
-
-- forms cadastro buga rodape
 - 25/10
-- Fazer a pagina de Adm - CSS
 - Esqueci minha senha / Validação Email
 
-- Esperar o joão e arrumar
-- (Relaciona Ban) Wishlist (Avisar o joão que ainda esta rodando o codigo js) - (Não esquecer da validação de produtos banidos e vendido)
+- (Relaciona Ban) Wishlist - (Não esquecer da validação de produtos banidos e vendido)
+
+Tabela denúncias com notificação 
 
 
 ## O que falta do projeto (Sophia)

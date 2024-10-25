@@ -3,7 +3,7 @@ const pool = require("../../config/pool_conexoes");
 const admModel = {
     chamarPreFamosos: async () => {
         const [resultados] = await pool.query(
-            "SELECT * FROM cliente WHERE Id_Tipo_Usuario = 1 AND Url_site IS NOT NULL AND Url_site != 'Negado'");
+            "SELECT * FROM cliente WHERE Id_Tipo_Usuario = 1 AND Url_site IS NOT NULL AND Url_site != 'Negado' AND Stats = 'Ativo'");
         return resultados;
     },
     alterarTipoUsuario: async (tipoUsuario, idUsuario) =>{
