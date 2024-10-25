@@ -11,9 +11,9 @@
 - Produtos nas paginas m,f,i,a
 - Ajustar alinhamento dos produtos no m,f,i,a
 - Indez canvas
-- Campo explicando o adc produtos e o adc bazar
+- Campo explicando o adc produtos
 - Produtos adicionados css e vender no menu
-- favicon só falta admin
+
 
 ## O que falta do projeto (João)
 
@@ -22,32 +22,31 @@ Dia 22
 
 Dia 23 no laboratório:
 - Wishlist adicionando no banco e removendo  (check)
-- Na pagina produtos conseguir adicionar no wishlist funciona só não fica pretinho
+- Na pagina produtos conseguir adicionar no wishlist funciona só não fica pretinho (check)
 - e quando aperta no coração duas vezes remover o produto (check eu fiz essa porra)
 
 Dia 23 
 - Css mobile adc produtos / responsiva (check)
 - Rodapé cadastro mobile (check)
-- Sacola endereço - API correios
-
-Dia 24 no laboratorio:
-- Tela principal com os produtos do banco/ em outras partes como você pode gostar e slide do wishlist
-- Adiciona produto com video e bazar
-
-Dia 24
-- Menus / Correção de bugs no css
--  wishlist abrir no produtos
 
 Dia 25
-- Css mobile do sacola / responsiva
-- Remove bg tudo
-- rodapé responsivo
+- Menus corrigir menu do cadastro mobile e do adc-produtos mob quando rola para baixo por conta da logo que aumenta de tamanho
+- pagina que mostra os produtos com ícone de coração mais para cima
+e funcionando a wishlist nessa pagina dos produtos
+- sem carrossel no desk de adc-produtos
+- Css mobile da sacola / responsiva
+
+
+Dia 26
+
+- Tela principal com os produtos do banco
+- Sacola endereço - API correios
+- Adiciona produto com video e bazar
 
 
 # Erros
 
 Erro no render
-WishList - Pelo Produto
 Remover Produto da Sacola
 
 Produtos Denunciar e Fazer outra ação
