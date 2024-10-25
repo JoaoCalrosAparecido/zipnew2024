@@ -4,9 +4,6 @@
 
 - (Relaciona Ban) Wishlist - (Não esquecer da validação de produtos banidos e vendido)
 
-Tabela denúncias com notificação 
-
-
 ## O que falta do projeto (Sophia)
 
 - Campo de busca - CSS mob
