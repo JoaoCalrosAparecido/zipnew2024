@@ -85,8 +85,10 @@ router.get("/perfil",
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
 
+    const totalDenuncias = await denunciasModels.contarDenunciasUsu(userId);
+
     const bazar = await produtosModels.findBazarByUserId(userId);
-    res.render('pages/perfil', { usuario: user, Bazar: bazar, random: produtosAleatorios, quantidadeVendas, dadosNotificacao: null, listaErros: null });
+    res.render('pages/perfil', { usuario: user, Bazar: bazar, random: produtosAleatorios, totalDenuncias: totalDenuncias, quantidadeVendas, dadosNotificacao: null, listaErros: null });
   }
 );
 
@@ -105,6 +107,8 @@ router.post("/socialmedia",
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
 
+    const totalDenuncias = await denunciasModels.contarDenunciasUsu(userId);
+
     if (!erros.isEmpty()) {
       return res.render("pages/perfil", {
         usuario: user,
@@ -114,6 +118,7 @@ router.post("/socialmedia",
         dadosNotificacao: null,
         listaProdBazar: [],
         random: produtosAleatorios,
+        totalDenuncias: totalDenuncias,
         valores: {
           socialLinks: req.body.socialLinks,
         }
@@ -133,6 +138,7 @@ router.post("/socialmedia",
       quantidadeVendas,
       listaErros: null,
       random: produtosAleatorios,
+      totalDenuncias: totalDenuncias,
       dadosNotificacao: { 
         title: "Solicitação Enviada", 
         msg: "Solicitação enviada com sucesso", 

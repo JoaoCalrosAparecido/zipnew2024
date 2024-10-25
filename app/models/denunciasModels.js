@@ -85,7 +85,7 @@ const denunciasModels = {
                 SUM(dp.repetido) AS total_repetido,
                 SUM(dp.fora_tema) AS total_fora_tema,
                 SUM(dp.ma_qualidade) AS total_ma_qualidade,
-                p.tituloprod AS nome_produto  -- Seleciona o nome do produto
+                p.tituloprod AS nome_produto
             FROM 
                 denuncias_produto dp
             JOIN 
@@ -98,6 +98,21 @@ const denunciasModels = {
         
         const [denuncias] = await pool.query(query, [userId]);
         return denuncias;
+    },
+
+    contarDenunciasUsu: async (userId) => {
+        const query = 
+            `SELECT 
+                COUNT(dp.id_prod_cliente) AS total_denuncias
+            FROM 
+                denuncias_produto dp
+            JOIN 
+                produtos p ON dp.id_prod_cliente = p.id_prod_cliente
+            WHERE 
+                p.id_Cliente = ? 
+                AND p.Stats = 'Disponível';`;
+        const [result] = await pool.query(query, [userId]);
+        return result[0].total_denuncias || 0;
     },
 
     removerProdutoDenunciado: async (id_prod_cliente) => {

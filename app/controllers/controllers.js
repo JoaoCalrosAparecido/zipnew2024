@@ -4,6 +4,7 @@ const { body, validationResult, check } = require("express-validator");
 const models = require("../models/models");
 const produtosModels = require('../models/produtos.models');
 const pedidoModel = require('../models/pedidoModel');
+const denunciasModels = require('../models/denunciasModels');
 
 function selecionarProdutosAleatorios(produtos, quantidade) {
   for (let i = produtos.length - 1; i > 0; i--) {
@@ -167,6 +168,8 @@ const controller = {
     const [random] = await pool.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
 
+    const totalDenuncias = await denunciasModels.contarDenunciasUsu(userId);
+
     if (!erros.isEmpty() || erroMulter != null) {
       let lista = !erros.isEmpty() ? erros : { formatter: null, errors: [] };
       if (erroMulter != null) {
@@ -239,6 +242,7 @@ const controller = {
           usuario: userAtualizado,
           valores: campos,
           random: produtosAleatorios,
+          totalDenuncias: totalDenuncias,
         });
       } else {
         const user = await models.findUserById(userId);
@@ -254,6 +258,7 @@ const controller = {
           quantidadeVendas: quantidadeVendas,
           usuario: user,
           valores: dadosForm,
+          totalDenuncias: totalDenuncias,
         });
       }
     } catch (e) {

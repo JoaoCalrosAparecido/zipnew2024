@@ -165,6 +165,8 @@ const bazarController = {
 
     const [random] = await pool.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
+
+    const totalDenuncias = await denunciasModels.contarDenunciasUsu(userId);
   
     if (errosMulter != null) {
       erros.errors.push(errosMulter);
@@ -277,6 +279,7 @@ const bazarController = {
             quantidadeVendas,
             valores: campos,
             random: produtosAleatorios,
+            totalDenuncias: totalDenuncias,
           });
         } else {
           console.log("Atualizado 2");
@@ -288,6 +291,7 @@ const bazarController = {
             quantidadeVendas,
             valores: dadosForm,
             random: produtosAleatorios,
+            totalDenuncias: totalDenuncias,
           });
         }
       }
@@ -305,6 +309,7 @@ const bazarController = {
         quantidadeVendas,
         valores: req.body,
         random: produtosAleatorios,
+        totalDenuncias: totalDenuncias,
       });
     }
   },
