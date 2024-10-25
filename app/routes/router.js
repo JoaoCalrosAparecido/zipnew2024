@@ -993,6 +993,9 @@ router.post("/search", async function (req, res) {
       return res.status(404)
   }
 });
+  router.get("/redsenha", function (req, res) {
+    res.render('pages/redsenha');
+});
 
 
 

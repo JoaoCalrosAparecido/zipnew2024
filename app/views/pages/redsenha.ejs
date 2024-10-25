@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt_br">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bazar ZIP</title>
-    <link rel="stylesheet" href="../css-bazar/allBazar.css">
-    <link rel="stylesheet" href="../../css-bazar/body.css">
-    <link rel="stylesheet" href="../../css-bazar/menu.css">
-    <link rel="stylesheet" href="../../css-bazar/menu_retratio.css">
-    <link rel="stylesheet" href="../../css-bazar/parte_superior.css">
-    <link rel="stylesheet" href="../../css-bazar/rodape.css">
-    <link rel="stylesheet" href="../../css-bazar/stories_recentes.css">
+    <title>Zip | Perfil de administrador</title>
 
-    <link rel="stylesheet" href="../../css-bazar/cell/body.css" media="screen and (max-width:750px)">
-    <link rel="stylesheet" href="../../css-bazar/cell/entre_no_mundo-cell.css" media="screen and (max-width:750px)">
-    <link rel="stylesheet" href="../../css-bazar/cell/menu_principal.css" media="screen and (max-width:750px)">
-    <link rel="stylesheet" href="../../css-bazar/cell/parte_superior.css" media="screen and (max-width:750px)">
-    <link rel="stylesheet" href="../../css-bazar/cell/rodape_cell.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../css-redefinir-senha/menu-adm.css">
+    <link rel="stylesheet" href="../../css-redefinir-senha/menu_retratio-adm.css">
+    <link rel="stylesheet" href="../../css-redefinir-senha/parte_superior-adm.css">
+    <link rel="stylesheet" href="../../css-redefinir-senha/rodape-adm.css">
+    <link rel="stylesheet" href="../../css-redefinir-senha/body.css">
 
-    <script src="../../css-bazar/carrosel.js" defer></script>
+    <link rel="stylesheet" href="../../css-redefinir-senha/cell/body.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../css-redefinir-senha/cell/menu_principal.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../css-redefinir-senha/cell/parte_superior-feminino.css" media="screen and (max-width:750px)">
+    <link rel="stylesheet" href="../../css-redefinir-senha/cell/rodape_cell.css" media="screen and (max-width:750px)">
+
+    <link rel="stylesheet" href="../../css-redefinir-senha/campoRed.css">
+
 </head>
 
 <body>
-    <!-- parte superior do desconto na primeira compra -->
+    <header>
+          <!-- parte superior do desconto na primeira compra -->
 
     <section id="section_parte_superior">
         <article>
@@ -207,7 +207,7 @@
                 <article id="openMenuBtn" class="botao_menu_cell ">
                 </article>
 
-                <article id="blackDiv"></article>
+                <div id="blackDiv"></div>
 
                 <script src="../../rolagem_menu_cell.js"></script>
 
@@ -264,7 +264,7 @@
                             </article>
 
                             <article>
-                                <p><a href="/perfil">Entrar</a></p>
+                                <p><a id="entrar" href="/perfil">Entrar</a></p>
                             </article>
                         </article>
 
@@ -339,335 +339,248 @@
 
     <script src="../../menu_responsivo.js"></script>
 
+    </header>
+    <!-- Meio -->
+    <main>
+        <section class="redefinir-senha-section">
+            <form class="redefinir-senha-form">
+                <h1 id="pass">REDEFINIR SENHA</h1>
 
+              <article class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email da conta" required>
+              </article>
+              <article class="input-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Nova senha" required>
+              </article>
+              <article class="input-group">
+                <label for="confirmar">Confirmar Senha:</label>
+                <input type="password" id="confirmar" name="confirmar" placeholder="Confirme sua senha" required>
+              </article>
+              <button type="submit">Redefinir</button>
+            </form>
 
-    <!--                                  lwdfowndfpowqnfdpnwqpfnqwnfpwqn-->
-
-    <section id="AllBazar">
-        <% if (bazaarList) { %>
-            <% Object.keys(bazaarList).forEach(function (bazaarId) { %>
-                <section id="imageSection">
-                    <section id="imagePreview"></section>
-                    <img id="imagePreview" src="/IMG/uploads/<%= bazaarList[bazaarId].imgBazar %>" alt="Imagem do Bazar"
-                        class="img-bazar">
-                    <section id="formOverlay">
-                        <p id="Name">
-                            <%= bazaarList[bazaarId].nome %>
-                        </p>
-                        <p id="Year">
-                            <%= bazaarList[bazaarId].ano %>
-                        </p>
-                        <p id="Description">
-                            <%= bazaarList[bazaarId].descricao %>
-                        </p>
-                    </section>
-                </section>
-
-                <section id="additionalInputs">
-                    <p id="titulo">
-                        <%= bazaarList[bazaarId].titulo %>
-                    </p>
-                </section>
-
-                <section id="textAreaSection">
-                    <p id="bio">
-                        <%= bazaarList[bazaarId].biografia %>
-                    </p>
-                </section>
-
-                <section id="centro">
-                <section class="carousel__container mt-3 mb-3">
-                    <article class="arrows">
-                        <button class="arrow-btn previous"><lord-icon
-                            src="https://cdn.lordicon.com/whtfgdfm.json"
-                            trigger="hover"
-                            colors="primary:#000000"
-                            style="width:40px;height:40px; transform: rotate(180deg);;">
-                        </lord-icon></button>
-                        <button class="arrow-btn next"><lord-icon
-                            src="https://cdn.lordicon.com/whtfgdfm.json"
-                            trigger="hover"
-                            colors="primary:#000000"
-                            style="width:40px;height:40px;">
-                        </lord-icon></button>
-                    </article>
-                    <section class="carousel__inner">
-                    <% bazaarList[bazaarId].produtos.forEach(function (produto) { %>
-                        <a id="none" href="/produtos/<%= produto.id_prod_cliente %>" class="card">
-                            <section id="ash">
-                                <img id="addyy" src="../../IMG/uploads/<%= produto.img1 %>" alt="Imagem do produto">
-                            </section>
-                            <p id="cust">
-                                <%= produto.tituloprod %>
-                            </p>
-                            <p id="cust">R$ <%= produto.preçoprod %>
-                            </p>
-                        </a>
-                        <% }) %>
-                </section>
-            </section>
-
-        </section>
-                    <% }) %>
-            <% } %>
-            </section>
-
-
-
-            <!--STORIES RECENTES-->
-            <section class="stories_recentes">
-
-
-
-
-                <!--ENTRE NO MUNDO ZIP-->
-                <article class="stories_recentes_article">
-                    <!--linha-->
-                    <hr class="linha_do_entre_no_mundo_zip">
-
-                    <!--escrito entre no mundo zip-->
-                    <figure class="figure_escrita_entre_nomundo_zip">
-                        <img class="escrita_entre_nomundo_zip"
-                            src="../IMG/stories_recentes/slides/entre_no_mundo_zip/escrita_entre_no_mundo_zip_refeito.png"
-                            alt="">
-                    </figure>
-
-                    <!--Esteja por dentro de eventos, coleções e novidades exclusivas-->
-                    <article class="article_paragrafo_stories_recentes">
-                        <p class="paragrafo_stories_recentes">Esteja por dentro de eventos, coleções e novidades
-                            exclusivas</p>
-                    </article>
-
-                    <!--Digite o seu e-mail-->
-                    <section class="article_digite_o_seu_email">
-                        <article class="digite_o_seu_email_stories_recentes">
-                            <p class="paragrafo_digite_o_seu_email">Digite o seu e-mail</p>
-                            <img class="setinha_do_digite_o_seu_email"
-                                src="IMG/stories_recentes/slides/entre_no_mundo_zip/setinha_do_digite_o_seu_email.svg"
-                                alt="">
+          </section>
+    </main>
+    <footer>
+        
+                <!--rodapé-->
+                <section class="rodape">
+                    <!--primeira seção-->
+                    <section>
+                        <article>
+                            <h1 class="rodape_h1 institucional">
+                                institucional
+                            </h1>
+                        </article>
+                        <article>
+                            <ul class="lista_do_rodape_parte_1">
+                                <li class="rodape_paragrafo institucional">sobre a ZIP</li>
+                                <li class="rodape_paragrafo institucional">fornecedores</li>
+                                <li class="rodape_paragrafo institucional">termos e condições</li>
+                                <li class="rodape_paragrafo institucional">política de privacidade</li>
+                                <li class="rodape_paragrafo institucional">configurações de privacidade</li>
+                                <li class="rodape_paragrafo institucional">trabalhe conosco</li>
+                                <li class="rodape_paragrafo institucional">sustentabilidade</li>
+                                <li class="rodape_paragrafo institucional">mapa do site</li>
+                                <li class="rodape_paragrafo institucional">investidores</li>
+                                <li class="rodape_paragrafo institucional">sala de imprensa</li>
+                                <li class="rodape_paragrafo institucional">blog ZIP</li>
+                            </ul>
                         </article>
                     </section>
-                </article>
-
-            </section>
-
-
-            <!--rodapé-->
-            <section class="rodape">
-                <!--primeira seção-->
-                <section>
-                    <article>
-                        <h1 class="rodape_h1 institucional">
-                            institucional
-                        </h1>
-                    </article>
-                    <article>
-                        <ul class="lista_do_rodape_parte_1">
-                            <li class="rodape_paragrafo institucional">sobre a ZIP</li>
-                            <li class="rodape_paragrafo institucional">fornecedores</li>
-                            <li class="rodape_paragrafo institucional">termos e condições</li>
-                            <li class="rodape_paragrafo institucional">política de privacidade</li>
-                            <li class="rodape_paragrafo institucional">configurações de privacidade</li>
-                            <li class="rodape_paragrafo institucional">trabalhe conosco</li>
-                            <li class="rodape_paragrafo institucional">sustentabilidade</li>
-                            <li class="rodape_paragrafo institucional">mapa do site</li>
-                            <li class="rodape_paragrafo institucional">investidores</li>
-                            <li class="rodape_paragrafo institucional">sala de imprensa</li>
-                            <li class="rodape_paragrafo institucional">blog ZIP</li>
-                        </ul>
-                    </article>
-                </section>
-                <!--segunda seção-->
-                <section>
-                    <!--parte ZIP&VC-->
-                    <article>
+                    <!--segunda seção-->
+                    <section>
+                        <!--parte ZIP&VC-->
                         <article>
-                            <h1 class="rodape_h1 segunda_secao_parte_1_h1">
-                                ZIP&VC
-                            </h1>
+                            <article>
+                                <h1 class="rodape_h1 segunda_secao_parte_1_h1">
+                                    ZIP&VC
+                                </h1>
+                            </article>
+                            <article>
+                                <ul class="lista_do_rodape segunda_secao_parte_1_ul">
+                                    <li class="rodape_paragrafo">participe do programa</li>
+                                </ul>
+                            </article>
                         </article>
+            
+                        <!--parte cartão ZIP-->
                         <article>
-                            <ul class="lista_do_rodape segunda_secao_parte_1_ul">
-                                <li class="rodape_paragrafo">participe do programa</li>
-                            </ul>
+                            <article>
+                                <h1 class="rodape_h1 segunda_secao_parte_2_h1">
+                                    cartão ZIP
+                                </h1>
+                            </article>
+                            <article>
+                                <ul class="lista_do_rodape segunda_secao_parte_2_ul">
+                                    <li class="rodape_paragrafo">sobre o cartão ZIP</li>
+                                </ul>
+                            </article>
                         </article>
-                    </article>
-
-                    <!--parte cartão ZIP-->
-                    <article>
+            
+                        <!--parte ZIP Pay-->
                         <article>
-                            <h1 class="rodape_h1 segunda_secao_parte_2_h1">
-                                cartão ZIP
-                            </h1>
+                            <article>
+                                <h1 class="rodape_h1 segunda_secao_parte_3_h1">
+                                    ZIP Pay
+                                </h1>
+                            </article>
+                            <article>
+                                <ul class="lista_do_rodape segunda_secao_parte_3_ul">
+                                    <li class="rodape_paragrafo">solicite seu cartão</li>
+                                </ul>
+                                <ul class="lista_do_rodape segunda_secao_parte_3_ul">
+                                    <li class="rodape_paragrafo">tire sua dúvida por e-mail</li>
+                                </ul>
+                            </article>
                         </article>
+            
+                        <!--parte cartão presente-->
                         <article>
-                            <ul class="lista_do_rodape segunda_secao_parte_2_ul">
-                                <li class="rodape_paragrafo">sobre o cartão ZIP</li>
-                            </ul>
+                            <article>
+                                <h1 class="rodape_h1 segunda_secao_parte_4_h1">
+                                    cartão presente
+                                </h1>
+                            </article>
+                            <article>
+                                <ul class="lista_do_rodape segunda_secao_parte_4_ul">
+                                    <li class="rodape_paragrafo">sobre o cartão presente ZIP</li>
+                                </ul>
+                            </article>
                         </article>
-                    </article>
-
-                    <!--parte ZIP Pay-->
-                    <article>
-                        <article>
-                            <h1 class="rodape_h1 segunda_secao_parte_3_h1">
-                                ZIP Pay
-                            </h1>
-                        </article>
-                        <article>
-                            <ul class="lista_do_rodape segunda_secao_parte_3_ul">
-                                <li class="rodape_paragrafo">solicite seu cartão</li>
-                            </ul>
-                            <ul class="lista_do_rodape segunda_secao_parte_3_ul">
-                                <li class="rodape_paragrafo">tire sua dúvida por e-mail</li>
-                            </ul>
-                        </article>
-                    </article>
-
-                    <!--parte cartão presente-->
-                    <article>
-                        <article>
-                            <h1 class="rodape_h1 segunda_secao_parte_4_h1">
-                                cartão presente
-                            </h1>
-                        </article>
-                        <article>
-                            <ul class="lista_do_rodape segunda_secao_parte_4_ul">
-                                <li class="rodape_paragrafo">sobre o cartão presente ZIP</li>
-                            </ul>
-                        </article>
-                    </article>
-
-                </section>
-
-                <!--parte 3-->
-                <section class="terceira_secao">
-
-                    <article>
-                        <h1 class="rodape_h1 ">
-                            serviços
-                        </h1>
-                    </article>
-
-                    <article>
-                        <ul class="lista_do_rodape lista_terceira_secao">
-                            <li class="rodape_paragrafo">tipos de entrega</li>
-                            <li class="rodape_paragrafo">clique & retire</li>
-                            <li class="rodape_paragrafo">trocas & devoluções</li>
-                            <li class="rodape_paragrafo">formas de pagamento</li>
-                            <li class="rodape_paragrafo">todas as vantagens</li>
-                            <li class="rodape_paragrafo">minha ZIP</li>
-                        </ul>
-                    </article>
-
-
-                    <article class="terceita_secao_bazar">
+            
+                    </section>
+            
+                    <!--parte 3-->
+                    <section class="terceira_secao">
+            
                         <article>
                             <h1 class="rodape_h1 ">
-                                bazar
+                                serviços
                             </h1>
                         </article>
-
+            
                         <article>
-                            <ul class="lista_do_rodape">
-                                <li class="rodape_paragrafo">veja coleção</li>
+                            <ul class="lista_do_rodape lista_terceira_secao">
+                                <li class="rodape_paragrafo">tipos de entrega</li>
+                                <li class="rodape_paragrafo">clique & retire</li>
+                                <li class="rodape_paragrafo">trocas & devoluções</li>
+                                <li class="rodape_paragrafo">formas de pagamento</li>
+                                <li class="rodape_paragrafo">todas as vantagens</li>
+                                <li class="rodape_paragrafo">minha ZIP</li>
                             </ul>
                         </article>
-
-                    </article>
-
-                </section>
-
-                <!--parte 4-->
-                <section class="quarta_secao">
-                    <article>
-                        <h1 class="rodape_h1 ">
-                            marketplace ZIP
+            
+            
+                        <article class="terceita_secao_bazar">
+                            <article>
+                                <h1 class="rodape_h1 ">
+                                    bazar
+                                </h1>
+                            </article>
+            
+                            <article>
+                                <ul class="lista_do_rodape">
+                                    <li class="rodape_paragrafo">veja coleção</li>
+                                </ul>
+                            </article>
+            
+                        </article>
+            
+                    </section>
+            
+                    <!--parte 4-->
+                    <section class="quarta_secao">
+                        <article>
+                            <h1 class="rodape_h1 ">
+                                marketplace ZIP
+                            </h1>
+                        </article>
+            
+                        <article class="lista_quarta_secao">
+                            <ul class="lista_do_rodape ">
+                                <li class="rodape_paragrafo">venda na ZIP</li>
+                                <li class="rodape_paragrafo">marketplace</li>
+                            </ul>
+                        </article>
+            
+                    </section>
+            
+                    <!--icones do instagram e etc-->
+                    <figure class="icones_do_instagram_e_etc_do_rodape">
+                        <img src="../IMG/rodape/icone_do_instagram_e_etc_2024.png" alt="">
+                    </figure>
+            
+                    <!--©Copyright2023  -->
+                    <article class="copyright">
+                        <h1 class="h1_do_copyright">
+                            © Copyright - 2024 -
                         </h1>
                     </article>
-
-                    <article class="lista_quarta_secao">
-                        <ul class="lista_do_rodape ">
-                            <li class="rodape_paragrafo">venda na ZIP</li>
-                            <li class="rodape_paragrafo">marketplace</li>
-                        </ul>
-                    </article>
-
                 </section>
-
-                <!--icones do instagram e etc-->
-                <figure class="icones_do_instagram_e_etc_do_rodape">
-                    <img src="../IMG/rodape/icone_do_instagram_e_etc_2024.png" alt="">
-                </figure>
-
-                <!--©Copyright2023  -->
-                <article class="copyright">
-                    <h1 class="h1_do_copyright">
-                        © Copyright - 2024 -
-                    </h1>
-                </article>
+            
+            
+             
             </section>
-
-
-            <!--entre no mundo-->
-            <section id="section_entre_no_mundo_cell">
-                <figure id="figure_entre_no_mundo_cell"></figure>
-
-                <article id="paragrafo_entre_no_mundo_cell">
-                    <p>Esteja por dentro de eventos, coleções e novidades exclusivas</p>
-                </article>
-
-                <section id="section_botao_email_entre_no_mundo_cell">
-                    <a href="/cadastro">
-                        <article id="article_botao_email_entre_no_mundo_cell">
-                            <p>E-mail</p>
-                            <img src="../../IMG/stories_recentes/cell/seta.svg" alt="">
+            
+             
+            
+                <!--rodapé cell-->
+                <section id="rodape_cell">
+                    <article class="rodape_cell_conteudo">
+                        <article>
+                            <figure id="figure1_cell_conteudo">
+                                <lord-icon
+                                src="https://cdn.lordicon.com/qeemqlwz.json"
+                                trigger="hover"
+                                colors="primary:#ffffff,secondary:#ffffff"
+                                style="width:25px;height:25px">
+                            </lord-icon>
+                            </figure>
+                            <p id="paragrafo1_cell_conteudo">SOBRE NÓS</p>
                         </article>
-                    </a>
+                    </article>
+            
+                    <article class="rodape_cell_conteudo">
+                        <article>
+                            <figure id="figure2_cell_conteudo">
+                                <lord-icon
+                                src="https://cdn.lordicon.com/kthelypq.json"
+                                trigger="hover"
+                                colors="primary:#ffffff"
+                                style="width:25px;height:25px">
+                            </lord-icon>
+                            </figure>
+                            <p id="paragrafo2_cell_conteudo">ZIP & VOCÊ</p>
+                        </article>
+                    </article>
+            
+                    <article class="rodape_cell_conteudo">
+                        <article>
+                            <figure id="figure3_cell_conteudo">
+                                <lord-icon
+                                src="https://cdn.lordicon.com/hqymfzvj.json"
+                                trigger="hover"
+                                colors="primary:#ffffff"
+                                style="width:25px;height:25px">
+                            </lord-icon>
+                            </figure>
+                            <p id="paragrafo3_cell_conteudo">MARKETPLACE</p>
+                        </article>
+                    </article>
+            
+                    <article class="rodape_cell_conteudo">
+                            <p>Copyright - 2024</p>
+                    </article>
                 </section>
+        
+    </footer>
 
-            </section>
 
-            <!--rodapé cell-->
-            <section id="rodape_cell">
-                <article class="rodape_cell_conteudo">
-                    <article>
-                        <figure id="figure1_cell_conteudo">
-                            <lord-icon src="https://cdn.lordicon.com/qeemqlwz.json" trigger="hover"
-                                colors="primary:#ffffff,secondary:#ffffff" style="width:25px;height:25px">
-                            </lord-icon>
-                        </figure>
-                        <p id="paragrafo1_cell_conteudo">SOBRE NÓS</p>
-                    </article>
-                </article>
-
-                <article class="rodape_cell_conteudo">
-                    <article>
-                        <figure id="figure2_cell_conteudo">
-                            <lord-icon src="https://cdn.lordicon.com/kthelypq.json" trigger="hover"
-                                colors="primary:#ffffff" style="width:25px;height:25px">
-                            </lord-icon>
-                        </figure>
-                        <p id="paragrafo2_cell_conteudo">ZIP & VOCÊ</p>
-                    </article>
-                </article>
-
-                <article class="rodape_cell_conteudo">
-                    <article>
-                        <figure id="figure3_cell_conteudo">
-                            <lord-icon src="https://cdn.lordicon.com/hqymfzvj.json" trigger="hover"
-                                colors="primary:#ffffff" style="width:25px;height:25px">
-                            </lord-icon>
-                        </figure>
-                        <p id="paragrafo3_cell_conteudo">MARKETPLACE</p>
-                    </article>
-                </article>
-
-                <article class="rodape_cell_conteudo">
-                    <p>Copyright - 2024</p>
-                </article>
-            </section>
-
+    
+    
 
 </body>
 
