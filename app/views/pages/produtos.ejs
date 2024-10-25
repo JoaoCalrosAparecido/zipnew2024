@@ -463,7 +463,7 @@
                     </P>
                     <P id="parte_cor_bolsa_Preta">Tamanho <span id="parte_cor_bolsa_Preta_span"><%= produto.tamanho %></span></P>
                 </article>
-                <form action="produtos/addFav" method="post">
+                <form action="/addFav" method="post">
                     <input type="hidden" name="idProd" value="<%= produto.id_prod_cliente %>, <%= produto.tituloprod %>, <%= produto.preçoprod %>, <%= produto.img1 %>" style="opacity: 0;">
                     <button type="submit" style="all: unset;">
                       <lord-icon class="add-to-cartfv"

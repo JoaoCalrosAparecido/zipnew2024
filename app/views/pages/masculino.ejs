@@ -568,7 +568,7 @@
                 <img src="../../IMG/uploads/<%= produtos[i].img1 %>" alt="<%= produtos[i].tituloprod %>">
                 <figcaption>
                   <h3 class="product-name"><%= produtos[i].tituloprod %></h3>
-                  <p class="product-price">R$ <%= produtos[i].preçoprod %></p>
+                  <p class="product-price">R$ <%= parseFloat(produtos[i].preçoprod).toFixed(2) %></p>
                 </figcaption>
               </a>
               <form action="masculino/addFav" method="post">

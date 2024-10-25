@@ -28,14 +28,14 @@ html, body {
 /*section*/
 #section-adc-img {
     display: flex;
-    column-gap: 2vw;
+    column-gap: 0vw;
 }
 
 /*blocos adc*/
 #section-blocos-adc {
     display: flex;
     flex-direction: column;
-    column-gap: 5.5px;
+    column-gap: 0px;
     width: 100vw;
     height: 66.5vw;
 }
@@ -51,7 +51,7 @@ html, body {
 #section-descricao {
     width: 100vw;
     position: relative;
-    top: 35vh;
+    top: 2vh;
     display: flex;
     flex-direction: column;
     row-gap: 5vh;
@@ -67,11 +67,10 @@ html, body {
     width: 100vw;
     height: 8.55vw;
     margin-bottom: 2.2vh;
-    padding-left: 0.7vw;
     font-size: 2.80vw;
     font-family: 'Poppins', sans-serif;
     position: relative;
-
+    position: relative;
 }
 
 
@@ -87,7 +86,7 @@ html, body {
 #article-input-categoria {
     border: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 2.9vw;
+    font-size: 2.75vw;
     margin-top: 0.5vh;
     font-weight: 500;
     position: relative;
@@ -164,8 +163,8 @@ html, body {
 
 /*parte do adcionar iamgem do prototipo*/
 .upload-area {
-    width: 150vw; /* Largura do retângulo */
-    height: 100vw; /* Altura do retângulo */
+    width: 98vw; /* Largura do retângulo */
+    height: 98vw; /* Altura do retângulo */
     border: 2px solid #ccc; /* Adicionando uma borda cinza */
     border-radius: 5px;
     background-color: white;
@@ -174,6 +173,8 @@ html, body {
     align-items: center;
     cursor: pointer;
     transition: border-color 0.3s ease;
+    position: relative;
+    left: 0.6vw;
   }
   
   .upload-area:hover {
@@ -181,8 +182,8 @@ html, body {
   }
   
   .preview img, .preview video {
-    width: 100%;
-    height: 100%;
+    width: 98vw;
+    height: 98vw;
     object-fit: cover; /* Para cobrir todo o espaço disponível sem distorção */
     display: block;
   }
@@ -213,13 +214,13 @@ html, body {
   #article-input-tamanho {
     border: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 2.9vw;
-    margin-top: -0.5vh;
+    font-size: 2.75vw;
     font-weight: 500;
     position: relative;
     left: 5vw;
   }
 
+  
   #escolha-tamanho {
     width: 90vw;
     height: 5vh;
@@ -244,6 +245,7 @@ html, body {
 .swiper {
     width: 100vw;
     height: 100vw;
+    display: flex;
   }
 
   .swiper-slide {
@@ -253,11 +255,12 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
 
   .swiper-slide img {
     display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 98vw;
+    height: 98vw;
+    object-fit: initial;
   }

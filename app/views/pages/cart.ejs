@@ -442,7 +442,7 @@
                         <article>
                             <input type="hidden" name="id_prod" id="id_prod" value="<%= cart[i].Id_prod_cliente %>">
                             <h3 class="name-prod"><%= cart[i].tituloprod %></h3>
-                            <p class="preco-prod">R$ <span class="preco-prod-value"><%= cart[i].preçoprod %></span></p>
+                            <p class="preco-prod">R$ <span class="preco-prod-value"><%= parseFloat(cart[i].preçoprod).toFixed(2) %></span></p>
                             <h1>
                                 <img id="coracao_mover" src="../../IMG/sacola/produtos/coracao_escrito_mover_par_uma_lista_de_desejos.svg" alt="Mover para a wishlist">
                                 Mover para a wishlist
@@ -545,8 +545,9 @@
     </section>
 <!--</form>-->
 <script src="../../bolsa_preta_classica/js/calculo.js"></script>
-<script src="../../cat-produto/ponto-para-virgula.js"></script>
+
 <script src="../../api-mercado-pago/api.js"></script>
+<script src="../../cat-produto/ponto-para-virgula.js"></script>
 <script src="https://sdk.mercadopago.com/js/v2"></script>
   
 

@@ -5,7 +5,7 @@
 }
 
 html, body {
-    height: 195vh;
+    height: 180vh;
 }
 
 @media (min-width: 740px) and (max-width: 750px) {

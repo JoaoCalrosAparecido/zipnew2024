@@ -66,12 +66,14 @@
     all: unset;
     position: relative;
     left: 23.75vw;
-    top: -6.99vw;
+
 }
 
 #lordiconfv {
     width: 1.61vw;
     margin-left: 24vw;
+    position: relative;
+    top: -7vw;
 }
 
 /*botão adicionar a sacola*/

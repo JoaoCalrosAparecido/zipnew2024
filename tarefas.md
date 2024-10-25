@@ -31,8 +31,8 @@ Dia 23
 
 Dia 25
 - Menus corrigir menu do cadastro mobile e do adc-produtos mob quando rola para baixo por conta da logo que aumenta de tamanho
-- pagina que mostra os produtos com ícone de coração mais para cima
-e funcionando a wishlist nessa pagina dos produtos
+- pagina que mostra os produtos com ícone de coração mais para cima 
+e funcionando a wishlist nessa pagina dos produtos (check)
 - sem carrossel no desk de adc-produtos
 - Css mobile da sacola / responsiva
 
