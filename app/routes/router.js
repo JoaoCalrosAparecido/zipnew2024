@@ -8,7 +8,6 @@ const { verificarUsuAutorizado, limparSessao, verificarUsuAutenticado } = requir
 const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 
-
 //sacola
 const cartModels = require('../models/cartModels')
 
@@ -39,6 +38,14 @@ const client = new MercadoPagoConfig({
 accessToken: process.env.accessToken
 });
 
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
+const https = require("https");
+const jwt = require("jsonwebtoken");
+const { enviarEmail } = require("../util/email");
+
+const emailAtivarConta = require("../util/email-ativar-conta");
+
 
 
 function selecionarProdutosAleatorios(produtos, quantidade) {
@@ -52,9 +59,9 @@ function selecionarProdutosAleatorios(produtos, quantidade) {
 
 router.get("/", verificarUsuAutenticado, function (req, res) {
   if (req.session.autenticado && req.session.autenticado.id) {
-    res.render('pages/index', { logado: true, usuarioautenticado: req.session.autenticado.id });
+    res.render('pages/index', { logado: true, usuarioautenticado: req.session.autenticado.id, dadosNotificacao: null });
   } else {
-    res.render('pages/index', { logado: false, usuarioautenticado: null });
+    res.render('pages/index', { logado: false, usuarioautenticado: null, dadosNotificacao: null });
   }
 });
 
@@ -64,14 +71,14 @@ router.get("/bazar", bazarController.getBazaarsWithProducts, function (req, res)
 
 router.get("/cadastro", function (req, res) {
   res.render('pages/cadastro',
-    { erros: null, dadosform: { nome: '', cpf: '', dia: '', mes: '', ano: '', email: '', senha: '', confirmsenha: '', cep: '' }, logado: false, usuarioautenticado: req.session.userid });
+    { erros: null, dadosNotificacao: null, dadosform: { nome: '', cpf: '', dia: '', mes: '', ano: '', email: '', senha: '', confirmsenha: '', cep: '' }, logado: false, usuarioautenticado: req.session.userid });
 });
 
 router.get("/login_do_usuario", verificarUsuAutenticado, async function (req, res) {
   if (req.session.autenticado && req.session.autenticado.id != null) {
     return res.redirect("/perfil")
   }
-  res.render('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: req.session.userid });
+  res.render('pages/login_do_usuario', { dadosNotificacao: null, erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: req.session.userid });
 });
 
 router.get("/perfil",
@@ -774,7 +781,7 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
 
   if (!erros.isEmpty()) {
     return res.render('pages/cadastro', {
-      erros: erros, dadosform: {
+      erros: erros, dadosNotificacao:null, dadosform: {
         nome: req.body.nome,
         cpf: req.body.cpf,
         dia: req.body.dia,
@@ -799,21 +806,82 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
 
     const create = await connection.query("INSERT INTO cliente (nome, cpf, nasc, email, senha, Id_Tipo_Usuario, Stats) VALUES (?, ?, ?, ?, ?, ?, ?)",
       [nome, cpf, nasc, email, hashedPassword, 1, "Ativo"]);
-    console.log(create)
-    const usuario = await connection.query("SELECT * FROM cliente WHERE id_Cliente = ?", [create.insertId]);
-    req.session.autenticado = {
-      autenticado: usuario[0].nome,
-      id: usuario[0].id_Cliente,
-      tipo: usuario[0].Id_Tipo_Usuario
-    }
 
-    res.render('pages/login_do_usuario', { erros: null, dadosform: { email: req.body.email, senha: req.body.senha }, logado: true, usuarioautenticado: req.session.userid })
+    const [user] = await connection.query("SELECT * FROM `cliente` WHERE email = ?", [email])
+    console.log(user[0].id_Cliente)
+
+      const token = jwt.sign(
+        { userId: user[0].id_Cliente },
+        process.env.SECRET_KEY
+      );
+      console.log(token);
+      const html = require('../util/email-ativar-conta')(process.env.URL_BASE, token);
+      enviarEmail(email, "Cadastro no site exemplo", null, html, ()=>{
+        res.render('pages/login_do_usuario', { 
+          erros: null,
+          logado: false,
+          usuarioautenticado: null,
+          dadosNotificacao: {
+            msg: "Email de verificação enviado",
+            type: "success",
+            title: "Verifique o Email"
+          }
+        })
+      });
+    
+
+
+    // const usuario = await connection.query("SELECT * FROM cliente WHERE id_Cliente = ?", [create.insertId]);
+    // req.session.autenticado = {
+    //   autenticado: usuario[0].nome,
+    //   id: usuario[0].id_Cliente,
+    //   tipo: usuario[0].Id_Tipo_Usuario
+    // }
+
+    // res.render('pages/login_do_usuario', { erros: null, dadosform: { email: req.body.email, senha: req.body.senha }, logado: true, usuarioautenticado: req.session.userid })
   } catch (error) {
     console.log(error)
   }
 });
 
-router.post("/sign/login", controller.regrasValidacaolog, async function (req, res) {
+router.get("/ativar-conta",async function (req, res) {
+  try {
+    const token = req.query.token;
+    console.log(token);
+    jwt.verify(token, process.env.SECRET_KEY, async (err, decoded) => {
+      console.log(decoded);
+      if (err) {
+        console.log({ message: "Token inválido ou expirado" });
+      } else {
+        const user = await connection.query("SELECT * FROM `cliente` WHERE id_Cliente = ?", [decoded.userId]);
+        if (!user) {
+          console.log({ message: "Usuário não encontrado" });
+        } else {
+          let resultUpdate = await connection.query("UPDATE `cliente` SET Status_User = 1 WHERE id_Cliente = ?", [decoded.userId])
+          console.log({ message: "Conta ativada" });
+          res.render("pages/login_do_usuario", {
+            erros: null,
+            logado: false,
+            usuarioautenticado: req.session.autenticado,
+            dadosform: { email: '', senha: '' },
+            dadosNotificacao: {
+              titulo: "Sucesso",
+              mensagem: "Conta ativada, use seu e-mail e senha para acessar o seu perfil!",
+              tipo: "success",
+            },
+          });
+        }
+        // Ativa a conta do usuário
+      }
+    });
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+router.post("/sign/login", 
+  controller.regrasValidacaolog, 
+  async function (req, res) {
   const erros = validationResult(req);
   if (!erros.isEmpty()) {
     console.log(erros);
@@ -999,8 +1067,54 @@ router.post("/search", async function (req, res) {
       return res.status(404)
   }
 });
-  router.get("/redsenha", function (req, res) {
-    res.render('pages/redsenha');
+
+
+router.get("/redsenha", function (req, res) {
+
+  res.render('pages/redsenha',{    
+    erros: null, 
+    logado: false,
+    usuarioautenticado: req.session.userid });
+});
+
+router.post("/redefinir",
+  controller.regrasValidacaoRedefinir,
+  function (req, res) {
+  const erros = validationResult(req);
+  if (!erros.isEmpty()) {
+    console.log(erros);
+    return res.render('pages/redsenha', 
+      { erros: erros, 
+        dadosform: { 
+          email: req.body.email, 
+          senha: req.body.senha, 
+          confirmar: req.body.senha, 
+        }, 
+        logado: false, 
+        usuarioautenticado: req.session.userid });
+  }
+  const token = jwt.sign(
+    { userId: user[0].id_Cliente },
+    process.env.SECRET_KEY
+  );
+  console.log(token);
+  const html = require('../util/email-reset-senha')(process.env.URL_BASE, token);
+  enviarEmail(email, "Email de Redefinição de senha", null, html, ()=>{
+    res.render('pages/login_do_usuario', { 
+      logado: false,
+      usuarioautenticado: null,
+      dadosNotificacao: {
+        msg: "Email de verificação enviado",
+        type: "success",
+        title: "Verifique o Email"
+      }
+    })
+  });
+
+  res.render('pages/redsenha', { 
+    erros: null, 
+    logado: false,
+    usuarioautenticado: req.session.userid });
 });
 
 

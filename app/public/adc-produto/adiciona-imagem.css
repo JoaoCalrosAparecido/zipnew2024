@@ -11,7 +11,6 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 #adc-img-titulo {
@@ -24,6 +23,7 @@ html, body {
     font-size: 0.9vw;
     font-family: 'Poppins', sans-serif;
 }
+
 
 @media (min-width: 1351px) and (max-width: 1650px) {
     #adc-img-titulo {
@@ -550,7 +550,7 @@ html, body {
     border: none;
     font-family: 'Poppins', sans-serif;
     font-size: 0.9vw;
-    margin-top: -0.5vh;
+    margin-top: 2vw;
     font-weight: 500;
   }
 
@@ -650,3 +650,15 @@ html, body {
     }
 }
 
+<<<<<<< HEAD
+=======
+
+#explicacao-inputs {
+    font: 500 16px 'Poppins', sans-serif;
+    width: 95%;
+    margin-bottom: 1.5vw;
+    border: 1px solid grey;
+    padding: 0.5vw 1vw;
+}
+
+>>>>>>> 7bc90179d7b0574383623478f83b96ef87cbb91a

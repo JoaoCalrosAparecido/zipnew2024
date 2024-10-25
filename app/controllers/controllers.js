@@ -89,6 +89,10 @@ const controller = {
         if (user.Stats !== 'Ativo') {
           throw new Error('Sua conta está banida.');
         }
+
+        if (user.Status_User !== '1') {
+          throw new Error('Sua conta não foi ativada, Verifique seu email');
+        }
         
         const senhaCorreta = await bcrypt.compare(senha, user.senha);
         if (!senhaCorreta) {
@@ -101,6 +105,30 @@ const controller = {
         throw new Error(err);
       }
     }),
+  ],
+  regrasValidacaoRedefinir: [
+    body('email')
+    .custom(async (senha, { req }) => {
+      try {
+        const [users] = await pool.query("SELECT * FROM cliente WHERE email = ?", [req.body.email]);
+        if (users.length === 0) {
+          throw new Error('Email não está cadastrado.');
+        }
+
+        return true;
+      } catch (err) {
+        console.error(err);
+        throw new Error(err);
+      }
+    }),
+    body('senha').isStrongPassword().withMessage('*A senha é fraca'),
+    body('confirmar').custom((value, { req }) => {
+      if (value !== req.body.senha) {
+        throw new Error('*As senhas não são iguais');
+      }
+      return true;
+    }),
+
   ],
   regrasValidacaoAdcProduto: [
     body('tituloProduto').isString().isLength({ min: 3, max: 45 }).withMessage("*O Titulo deve ter de 3 a 45 caracteres!"),
@@ -348,6 +376,8 @@ regrasValidaçãoDenunciaV: [
       return true;
   })
 ]
+
+
 };
 
 module.exports = controller;
