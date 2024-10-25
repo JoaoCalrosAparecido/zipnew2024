@@ -12,12 +12,11 @@
     <link rel="stylesheet" href="/produtos/css/foto_do_produto.css">
     <link rel="stylesheet" href="/produtos/css/adicionar_a_sacola.css">
     <link rel="stylesheet" href="/produtos/css/voce_pode_gostar.css">
-    <link rel="stylesheet" href="/produtos/css/slide_produto_1.css">
     <link rel="stylesheet" href="/produtos/css/stories_recentes.css">
     <link rel="stylesheet" href="/produtos/css/rodape.css">
-
-
-
+    
+    
+    
     <link rel="stylesheet" href="/produtos/css-cell/foto_do_produto.css" media="screen and (max-width:750px)">
     <link rel="stylesheet" href="/produtos/css-cell/adicionar_a_sacola.css" media="screen and (max-width:750px)">
     <link rel="stylesheet" href="../../produtos/css-cell/menu_cell.css" media="screen and (max-width:750px)">
@@ -27,23 +26,24 @@
     <link rel="stylesheet" href="../../produtos/css-cell/body.css" media="screen and (max-width:750px)">
     <link rel="stylesheet" href="../../produtos/css-cell/voce_pode_gostar.css" media="screen and (max-width:750px)">
     <link rel="stylesheet" href="../../produtos/css-cell/slide_produto_1.css" media="screen and (max-width:750px)">
-
-
-
+    
+    
+    
     <link rel="stylesheet" href="/produtos/denunciar/produto.css">
     <link rel="stylesheet" href="/produtos/denunciar/vendendor.css">
     <script src="/produtos/denunciar/menu.js" defer></script>
     <script src="/produtos/denunciar/script.js" defer></script>
-
-      
-
-
+    
+    
+    
+    
     <!-- Notify -->
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
-
+    
+    <link rel="stylesheet" href="/produtos/css/slide_produto_1.css">
 </head>
 
 <body>
@@ -533,13 +533,13 @@
         
         <figure id="slide_bolsa_produto1">
             <% random.forEach(function(rando) { %>
-            <figure>
+            <figure id="produto-slide">
                 <a href="/produtos/<%= rando.id_prod_cliente %>">
-                <img src="../../IMG/uploads/<%= rando.img1 %>" alt="">
+                <img id="slide-imagens-prod" src="../../IMG/uploads/<%= rando.img1 %>" alt="">
                 <figcaption class="parte_escrita_produto1"><%= rando.tituloprod %></figcaption>
                 <figcaption class="parte_preco_produto1">R$ <%= rando.preçoprod %></figcaption>
                 <img class="icone_favorito_slide_produto1"
-                    src="../IMG/pordutos/promos/bolsa_preta_classica/slide/icone_favorito.svg" alt="">
+                    src="../IMG/pordutos/promos/bolsa_preta_classica/slide/icone_favorito.svg" alt="" style="top: -59.5vh;">
                 </a>
             </figure>
             <% }); %>

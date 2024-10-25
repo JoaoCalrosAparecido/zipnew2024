@@ -2,37 +2,35 @@
 
 
 #section_slide_bolsa_produto1 {
-    width: 92vw;
-    height: 32.84vw;
-    background-color: rgb(255, 255, 255);
-    position: relative;
-    left: 3.6vw;
-    top: 90.21vw;
-    
+  width: 92vw;
+  height: 32.84vw;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  left: 3.6vw;
+  top: 90.21vw;
+
 }
 
 
 
 /*slide em si*/
 #slide_bolsa_produto1 {
-    display: flex;
-    column-gap: 2.9px;
+  display: flex;
+  column-gap: 2.9px;
 }
 
-#slide_bolsa_produto1 > figure :nth-child(1) {
-    width: 46vw;
+#slide_bolsa_produto1>figure :nth-child(1) {
+  width: 46vw;
 }
 
-#slide_bolsa_produto1 :nth-child(3) {
-    
-}
+#slide_bolsa_produto1 :nth-child(3) {}
 
 #slide_bolsa_produto1 :nth-child(4) {
-    display: none;
+  display: none;
 }
 
 #figureNoneCell {
-    display: none;
+  display: none;
 }
 
 
@@ -41,71 +39,74 @@
 
 /*paragrafo produto*/
 .parte_escrita_produto1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 2.8vw;
-    position: relative;
-    top: 0.625000vw;
-    padding-bottom: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2.8vw;
+  position: relative;
+  top: 0.625000vw;
+  padding-bottom: 14px;
 }
 
 
 
 /*preço produto*/
 .parte_preco_produto1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.738462vw;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.738462vw;
 }
 
 
 
 /*icone favorito*/
 .icone_favorito_slide_produto1 {
-    position: relative;
-    top: -26.04vw;
-    left: 17vw;
-    width: 1.41vw;
+  position: relative;
+  top: -26.04vw;
+  left: 17vw;
+  width: 1.41vw;
 }
 
-    #swiper_do_slide2 {
-    width: 100vw;
-    height: 90vw;
-    top: 30vw;
-    
-  }
+#swiper_do_slide2 {
+  width: 100vw;
+  height: 90vw;
+  top: 30vw;
 
-  #display_slide2 {
-    display: flex;
-    gap: 10vw;
-  }
+}
 
-  #slide2 {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 20vw;
-    
-  }
+#display_slide2 {
+  display: flex;
+  gap: 10vw;
+}
 
-    #slide2 > :nth-child(1) {
-    display: block;
-    width: 50vw;
-    height: 50vw;
-    object-fit: cover;
-    position: relative;
-    left: 10vw;
-  }
-    #slide2 > :nth-child(2) {
-    font-size: 3vw;
-  }
-    #slide2 > :nth-child(3) {
-    display: block;
-    width: 50vw;
-    height: 50vw;
-    object-fit: cover;
-    position: relative;
-    left: 10vw;
-  }
+#slide2 {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 20vw;
+
+}
+
+#slide2> :nth-child(1) {
+  display: block;
+  width: 50vw;
+  height: 50vw;
+  object-fit: cover;
+  position: relative;
+  left: 10vw;
+}
+
+#slide2> :nth-child(2) {
+  font-size: 3vw;
+}
+
+#slide2> :nth-child(3) {
+  display: block;
+  width: 50vw;
+  height: 50vw;
+  object-fit: cover;
+  position: relative;
+  left: 10vw;
+}
+

@@ -201,7 +201,7 @@ hr{
     margin-bottom: 15px;
 
     background-color: rgb(255, 255, 255);
-    width: 16vw;
+    width: 25%;
     height: 40vh;
 
     display: grid;
@@ -215,9 +215,9 @@ hr{
 }
 
 #likes, #likez, #likezz{
-    margin-left: 5px;
-    height: 60vh;
-    width: 21.2vw;
+    margin-left: -8vw;
+    height: 50vh;
+    width: 17vw;
     margin-top: 1.2vw;
 }
 
@@ -267,3 +267,28 @@ hr{
     height: 48vh;
 }
 
+#bunker {
+    width: 25%;
+}
+
+#slide {
+    display: flex;
+    margin-left: 8vw;
+}
+
+#h3, #h4 {
+    margin-left: -7vw;
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+}
+
+#h4 {
+    margin-left: -7.2vw;
+    font-weight: 300;
+}
+
+#likeit {
+    width: 69vw;
+    margin-bottom: 1vh;
+}
