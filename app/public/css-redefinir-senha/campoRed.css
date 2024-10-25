@@ -23,7 +23,7 @@
   }
   
   .redefinir-senha-form {
-    background-color: #e4e4e4;
+    background-color: #EEEEEE;
     padding: 50px;
     width: 100%;
     max-width: 500px;
@@ -36,7 +36,7 @@
   
   .input-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     font-size: 16px;
   }
   
@@ -61,6 +61,19 @@
   
   button:hover {
     background-color: #333;
+  }
+
+  #red{
+    margin-top: 20px;
+    height: 55px;
+    cursor: pointer;
+    background-color: rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
+    border-color: rgb(36, 36, 36);
+
+    font-size: 21px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
   }
   
   @media (max-width: 480px) {
