@@ -35,7 +35,7 @@ e funcionando a wishlist nessa pagina dos produtos
 - sem carrossel no desk de adc-produtos
 - Css mobile da sacola / responsiva
 - rodape da sacola todo bugado
-- stycky no adc-prod
+- stycky no adc-prod;
 
 Dia 26
 
