@@ -469,14 +469,17 @@
                     <article>
 
                         <article class="inputs-adc-img">
-                            <input type="text" name="tituloProduto" id="" placeholder="Titulo" class="<%=campoErro.tituloProduto %>" value="<%= valores.tituloProduto %>">
+                            <input type="text" name="tituloProduto" id="titulo" placeholder="Titulo" class="<%=campoErro.tituloProduto %>" value="<%= valores.tituloProduto %>">
+                            <p id="explicacao-inputs" for="titulo">O título deve ter no mínimo 3 caracteres e no máximo 45.</p>
                         </article>
 
                         <article class="inputs-adc-img">
-                            <input type="text" name="precoProduto" id="" placeholder="Preço" class="<%=campoErro.precoProduto %>" value="<%= valores.precoProduto %>">
+                            <input type="text" name="precoProduto" id="preco" placeholder="Preço (ex: 10.00)" class="<%=campoErro.precoProduto %>" value="<%= valores.precoProduto %>">
+                            <p id="explicacao-inputs" for="preco">Não se deve colocar "R$" e nem "," no preço (esses caracteres são automáticos). Além disso, o valor do produto deve ser pelo menos de um centavo.</p>
                         </article>
                         <article class="inputs-adc-img">
-                            <input type="text" name="descProduto" id="" placeholder="Descrição" class="<%=campoErro.descProduto %>" value="<%= valores.descProduto %>">
+                            <input type="text" name="descProduto" id="desc" placeholder="Descrição" class="<%=campoErro.descProduto %>" value="<%= valores.descProduto %>">
+                            <p id="explicacao-inputs" for="desc">A descrição deve ter no mínimo 25 caracteres e no máximo 220.</p>
                         </article>
                         <fieldset id="article-input-tamanho">
                             <legend>Tamanho</legend>

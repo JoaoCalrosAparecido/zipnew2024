@@ -8,12 +8,11 @@
 
 - Campo de busca - CSS mob
 - Vender
-- Produtos nas paginas m,f,i,a
-- Ajustar alinhamento dos produtos no m,f,i,a
+- Produtos nas paginas m,f,i,a - ama
+- Ajustar alinhamento dos produtos no m,f,i,a - ama
 - Indez canvas
-- Campo explicando o adc produtos
 - Produtos adicionados css e vender no menu
-
+- css wishlist e produtos adicionados, login e redefinir senha
 
 ## O que falta do projeto (João)
 
@@ -35,14 +34,15 @@ Dia 25
 e funcionando a wishlist nessa pagina dos produtos
 - sem carrossel no desk de adc-produtos
 - Css mobile da sacola / responsiva
-
+- rodape da sacola todo bugado
+- stycky no adc-prod
 
 Dia 26
 
 - Tela principal com os produtos do banco
 - Sacola endereço - API correios
 - Adiciona produto com video e bazar
-
+- api mercado pago
 
 # Erros
 
