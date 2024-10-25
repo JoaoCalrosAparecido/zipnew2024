@@ -20,6 +20,12 @@
     <link rel="stylesheet" href="../../css-redefinir-senha/campoRed.css">
 
     <link rel="shortcut icon" href="../../IMG/android-icon-192x192.png" type="image/x-icon">
+
+        <!-- Notify -->
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
+        <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
 </head>
 
 <body>
@@ -342,22 +348,61 @@
 
     </header>
     <!-- Meio -->
+
+    <% 
+    let msgErro = ''
+        
+    
+    const campoErro = {   
+        email:'',
+        senha:'',
+    };
+    if (erros) {
+        erros.errors.forEach(err => {
+            campoErro[err['path']] = 'invalido';
+            msgErro +=  err.msg + '<br>'
+            %>     
+        <%});%>
+        <script>
+            (() => {
+                var campoInvalido = '<%= msgErro%>'
+                function mostrarNotificacao() {
+                    return new Notify ({
+                        status: 'error',
+                        title: 'Verifique os Campos', 
+                        text: '' + campoInvalido.replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+                        speed: 300,
+                        effect: 'fade',
+                        showIcon: false,
+                        showCloseButton: true,
+                        autoclose: true,
+                        autotimeout: 5000,
+                        gap: 20,
+                        distance: 20,
+                        position: 'center'
+                    });
+                }
+
+                mostrarNotificacao();
+            })();
+        </script>
+        <% } %>
     <main>
         <section class="redefinir-senha-section">
-            <form class="redefinir-senha-form">
+            <form class="redefinir-senha-form"  action="/redefinir" method="post">
                 <h1 id="pass">REDEFINIR SENHA</h1>
 
               <article class="input-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Email da conta" required>
+                <input type="email" id="email" name="email" placeholder="Email da conta">
               </article>
               <article class="input-group">
                 <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" placeholder="Nova senha" required>
+                <input type="password" id="senha" name="senha" placeholder="Nova senha">
               </article>
               <article class="input-group">
                 <label for="confirmar">Confirmar Senha:</label>
-                <input type="password" id="confirmar" name="confirmar" placeholder="Confirme sua senha" required>
+                <input type="password" id="confirmar" name="confirmar" placeholder="Confirme sua senha">
               </article>
               <button type="submit" id="red">Redefinir</button>
             </form>
