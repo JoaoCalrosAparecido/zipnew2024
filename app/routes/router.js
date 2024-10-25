@@ -531,7 +531,7 @@ router.get("/wishlist/",
     }
   }
 );
-  router.post('/produtos/addFav', 
+  router.post('/addFav', 
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
@@ -640,7 +640,7 @@ router.post("/wishlist/removeFav",
   
   
 
-router.post('/podutos/addCart', 
+router.post('/produtos/addCart', 
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
