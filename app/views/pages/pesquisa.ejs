@@ -199,13 +199,7 @@
         <!--barra de pesquisa-->
         <article class="search-container">
             <article class="search-icon" id="searchIcon">
-                <a href="/pesquisa">
-                    <lord-icon
-                        id="icon1"
-                        src="https://cdn.lordicon.com/kkvxgpti.json"
-                        trigger="hover"
-                        style="width:20px;height:20px;">
-                    </lord-icon>
+                
                 </a>
             </article>
         </article>
@@ -395,20 +389,44 @@
                 <article id="article_paragrafo_978">
 
                     <form action="/search" method="POST">
-                        <section id="secBusca">
-                            <input type="text" id="Busca" name="pesquisaInput" placeholder="Busque aqui por roupas, acessórios ou calçados de segunda mão.." 
-                            style="width: 70vw;
+                        <section id="secBusca" style="height: 10.5vh;">
+                            <input type="text" id="Busca" name="pesquisaInput" placeholder="Busque aqui por roupas, acessórios ou calçados de segunda mão.."/>
+                            <style>
+
+                            #Busca {
+                            width: 70vw;
                             height: 5vh;
                             box-sizing: border-box;
-                            padding: 0.2vw 0 0 2vw; 
+                            padding: -2vw 0 0 2vw; 
                             font: 300 18px 'Poppins', 
                             sans-serif; 
-                            text-align: center;"/>
+                            text-align: center;
+                            }
+
+                            @media only screen and (max-width:480px) {
+                               #Busca {
+                                height: 5vh;
+                                width: 85vw;
+                                padding-top: 0;
+                                font-size: 20px !important;
+                               }
+                            }
+
+                            </style>
                             <lord-icon
                             src="https://cdn.lordicon.com/kkvxgpti.json"
+                            id="icone-busca"
                             trigger="hover"
                             style="width:35px;height:35px;padding-top: 1vw;">
                         </lord-icon>
+                        <style>
+                             @media only screen and (max-width:480px) {
+                                #icone-busca {
+                                    width: 30px !important;
+                                    padding-top: 3vw !important;
+                                }
+                             }
+                        </style>
                         </section>
                     </form>
 

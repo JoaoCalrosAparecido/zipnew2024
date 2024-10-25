@@ -8,7 +8,7 @@
 /*colção masculina*/
 #section_parte_escrita_colecao_masculina_cell {
     position: relative;
-    top: vh;
+    top: 5vh;
     height: 14vh;
     background-color: #F1F1F1;
     z-index: 2;
@@ -51,13 +51,14 @@
 /*paragrafo*/
 #article_paragrafo_978 {
     position: relative;
+    top: -3vh;
     background-color: white;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 
 }
 

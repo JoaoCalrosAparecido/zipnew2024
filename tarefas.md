@@ -6,7 +6,6 @@
 
 ## O que falta do projeto (Sophia)
 
-- Campo de busca - CSS mob
 - Vender
 - Produtos nas paginas m,f,i,a - ama
 - Ajustar alinhamento dos produtos no m,f,i,a - ama
@@ -29,7 +28,7 @@ Dia 23
 - Rodapé cadastro mobile (check)
 
 Dia 25
-- Menus corrigir menu do cadastro mobile e do adc-produtos mob quando rola para baixo por conta da logo que aumenta de tamanho
+- Menus corrigir menu do cadastro mobile e do adc-produtos mob quando rola para baixo por conta da logo que aumenta de tamanho e menu do campo de busca
 - pagina que mostra os produtos com ícone de coração mais para cima
 e funcionando a wishlist nessa pagina dos produtos
 - sem carrossel no desk de adc-produtos
@@ -52,3 +51,4 @@ Remover Produto da Sacola
 Produtos Denunciar e Fazer outra ação
 
 meus dados mob menu e cadastro menu mob
+
