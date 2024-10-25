@@ -5,7 +5,6 @@
 }
 
 #rodape_cell {
-    margin-top: 40vh;
     display: flex;
     flex-direction: column;
     gap: 0.2vh;
