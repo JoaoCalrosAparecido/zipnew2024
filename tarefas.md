@@ -2,7 +2,7 @@
 - 24/10
 - Produtos clicaveis Review(Sacola, Perfil, Produtos) Login
 
-
+- forms cadastro buga rodape
 - 25/10
 - Fazer a pagina de Adm - CSS
 - Esqueci minha senha / Validação Email
@@ -20,7 +20,7 @@
 - Indez canvas
 - Campo explicando o adc produtos e o adc bazar
 - Produtos adicionados css e vender no menu
-- favicon
+- favicon só falta admin
 
 ## O que falta do projeto (João)
 
@@ -34,7 +34,7 @@ Dia 23 no laboratório:
 
 Dia 23 
 - Css mobile adc produtos / responsiva (check)
-- Rodapé cadastro mobile 
+- Rodapé cadastro mobile (check)
 - Sacola endereço - API correios
 
 Dia 24 no laboratorio:
@@ -58,3 +58,5 @@ WishList - Pelo Produto
 Remover Produto da Sacola
 
 Produtos Denunciar e Fazer outra ação
+
+meus dados mob menu e cadastro menu mob
