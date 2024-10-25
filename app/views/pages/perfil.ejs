@@ -605,6 +605,10 @@
                         <article>
                             <button id="famous">Sou Famoso</button>
                         </article>
+                    <% } else if (usuario.Id_Tipo_Usuario==3 ) { %>
+                        <article>
+                            <a href="/adm"><button id="adm">ADM</button></a>
+                        </article>
                     <% } else if (usuario.Id_Tipo_Usuario==1 && usuario.Url_site == "Negado" ) { %>
                         <article>
                             <button id="famous">Sou Famoso</button>
