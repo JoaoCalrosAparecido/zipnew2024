@@ -1,17 +1,9 @@
-#slide_imagens {
-    position: relative;
-    top: 1vh;
-    left: 33vw;
-    height: 80vh;
-    
-}
-
 .swiper {
-    position: sticky;
     width: 25vw;
-    height: 45vw;
-    top: 0px;
-    top: -94vh;
+    height: 45.5vw;
+    margin-top: -85.5vh;
+    position: absolute;
+    left: 27vw;
   }
 
   .swiper-slide {

@@ -404,7 +404,7 @@
                                 <p id="precoProdFav">
                                     Preço: R$ <%= parseFloat(prod.preçoprod).toFixed(2) %>
                                 </p>
-                                <p></p>
+                                <p id="parcelaProd">Parcela até 12x com juros</p>
                             </article>
                             <form action="removeFav" method="post">
                                 <input type="hidden" name="produtosremovefav" value="<%= prod.Id_prod_cliente %>">
@@ -414,12 +414,21 @@
                     <% }) %>    
                 <%} %>
             </article>
-
-            
-
-            
-            
         </section>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+            </div>
+          </div>
         
         <script src="../../wishlist/cell-wishlist/js/proo.js"></script>
 
@@ -623,14 +632,7 @@
             © Copyright - 2024 -
         </h1>
     </article>
-</section>
-
-
-
-
-
-   
-    
+</section>    
     <!--slide script-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../../wishlist/js/slide_wishlist.js"></script>
