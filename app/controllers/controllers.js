@@ -378,7 +378,33 @@ regrasValidaçãoDenunciaV: [
       }
       return true;
   })
-]
+],
+
+regrasValidacaoEndereco: [
+  body('cep').custom(async (value, { req }) => {
+    const cep = value.replace(/\D/g, '');
+
+    if (cep.length !== 8) {
+      throw new Error('CEP inválido. O CEP deve ter 8 dígitos.');
+    }
+
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const data = await response.json();
+
+      if (data.erro) {
+        throw new Error('CEP não encontrado.');
+      }
+      
+      req.body.enderecoCompleto = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+      return true;
+    } catch (error) {
+      console.error(error);
+      throw new Error('Erro ao buscar o endereço. Tente novamente.');
+    }
+  }),
+  body('numero').notEmpty().withMessage('O número da casa é obrigatório.'),
+],
 
 
 };
