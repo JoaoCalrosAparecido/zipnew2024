@@ -9,7 +9,7 @@
 - Ajustar alinhamento dos produtos no m,f,i,a - ama
 - Indez canvas
 - Produtos adicionados css e vender no menu
-- css wishlist e produtos adicionados, login e redefinir senha
+- css wishlist e produtos adicionados, 
 
 ## O que falta do projeto (João)
 

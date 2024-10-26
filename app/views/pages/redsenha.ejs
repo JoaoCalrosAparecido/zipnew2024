@@ -414,7 +414,7 @@
     <main>
         <section class="redefinir-senha-section">
             <form class="redefinir-senha-form"  action="/redefinir" method="post">
-                <h1 id="pass">REDEFINIR SENHA</h1>
+                <h1 id="pass"><img src="../../IMG/redsenha/redefinir.png" alt=""></h1>
 
               <article class="input-group">
                 <label for="email">Email:</label>
@@ -428,9 +428,13 @@
                 <label for="confirmar">Confirmar Senha:</label>
                 <input type="password" id="confirmar" name="confirmar" placeholder="Confirme sua senha">
               </article>
+              <p id="regra"><span id="pr">Preencha os campos apenas se deseja redefinir sua senha!</span>
+                <br>A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas e minúsculas,
+                números e símbolos como !, @, # ou $. Confirme a redifinição pelo seu email acima.
+            </p>
               <button type="submit" id="red">Redefinir</button>
             </form>
-
+            <img id="modelo-redefinir-senha" src="../../IMG/redsenha/modelo.png" alt="">
           </section>
     </main>
     <footer>

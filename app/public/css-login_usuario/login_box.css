@@ -79,8 +79,8 @@ form input[type=password] {
     font-size: 13px;
     font-weight: 400;
     text-decoration: underline;
-
-
+    color: #000;
+    cursor: pointer;
 }
 
 #AftSend {
