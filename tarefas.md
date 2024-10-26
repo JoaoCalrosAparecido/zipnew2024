@@ -1,5 +1,7 @@
 ## O que falta do projeto (Lazully)
 
+- Tela principal com os produtos do banco
+- Sacola endereço - API correios
 - (Relaciona Ban) Wishlist - (Não esquecer da validação de produtos banidos e vendido)
 
 ## O que falta do projeto (Sophia)
@@ -37,8 +39,6 @@ e funcionando a wishlist nessa pagina dos produtos (check)
 
 Dia 26
 
-- Tela principal com os produtos do banco
-- Sacola endereço - API correios
 - Adiciona produto com video e bazar
 - api mercado pago
 

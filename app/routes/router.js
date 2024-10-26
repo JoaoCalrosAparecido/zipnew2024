@@ -58,7 +58,6 @@ function selecionarProdutosAleatorios(produtos, quantidade) {
 
 
 router.get("/", verificarUsuAutenticado, async function (req, res) {
-  try {
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 24);
 
@@ -91,10 +90,6 @@ router.get("/", verificarUsuAutenticado, async function (req, res) {
       logado: false, 
       usuarioautenticado: null, 
       dadosNotificacao: null });
-  } catch (error) {
-    console.error('Erro ao buscar produtos:', error);
-    res.status(500).send('Erro no servidor');
-  }
 });
 
 router.get("/bazar", bazarController.getBazaarsWithProducts, function (req, res) {
