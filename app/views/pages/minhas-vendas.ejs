@@ -371,7 +371,8 @@
                 <tr id="vendas__colunas">
                     <th id="vendas__colunas__descricao">Produto Vendido</th>
                     <th id="vendas__colunas__descricao">Nome do Comprador</th>
-                    <th id="vendas__colunas__descricao">Ação</th>
+                    <th id="vendas__colunas__descricao">Endereço do Cliente</th>
+                    <th id="vendas__colunas__descricao">Enviar pedido</th>
                 </tr>
             </thead>
             <tbody id="vendas__celulas">
@@ -380,7 +381,8 @@
                         <% if (venda.status_envio !== 'Enviado') { %> 
                             <tr id="vendas__linhas">
                                 <td><%= venda.produto_vendido %></td>
-                                <td><%= venda.comprador_nome %></td>
+                                <td><%= venda.produto_vendido %></td>
+                                <td>rua galria, 888</td>
                                 <td>
                                     <form action="/atualizar-mensagem" method="post">
                                         <input type="hidden" name="id_produto" value="<%= venda.id_produto %>">
