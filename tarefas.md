@@ -1,8 +1,8 @@
 ## O que falta do projeto (Lazully)
 
 - Sacola endereço - API correios
-- (Relaciona Ban) Wishlist - (Não esquecer da validação de produtos banidos e vendido)
-- Aparecer numeros de minhas vendas
+
+- (Relaciona Ban) Wishlist - (Não esquecer da validação de produtos banidos e vendido) (Talvez Check)
 
 ## O que falta do projeto (Sophia)
 
@@ -37,7 +37,10 @@ e funcionando a wishlist nessa pagina dos produtos (check)
 
 Dia 26
 
+<<<<<<< HEAD
 - sem carrossel no desk de adc-produtos (check)
+=======
+>>>>>>> a8ebccff86fadc1ecf721ff7e1df08aaa13a5ce0
 - carrossel voce pode gostar da pagina de produtos mob com css certo e o coração da wishlist mais para cima
 - Adiciona produto com video e bazar
 - stycky no adc-prod

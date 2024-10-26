@@ -50,6 +50,8 @@ const pedidoModel = {
     
 
             var deleteSql = "DELETE FROM Sacola WHERE Id_prod_cliente IN (?)";
+            var deleteSql = "DELETE FROM Favoritos WHERE Id_prod_cliente IN (?)";
+
             
             const [updateResult] = await pool.query(updateSql, [values]);
             const [deleteResult] = await pool.query(deleteSql, [values]);
@@ -112,7 +114,9 @@ const pedidoModel = {
             JOIN 
                 cliente ON pedidos.id_Cliente = cliente.id_Cliente
             WHERE 
-                produtos.id_Cliente = ?`;
+                produtos.id_Cliente = ?
+                AND pedido_item.localiza != 'Enviado';
+        `;
     
         try {
             const [rows] = await pool.query(query, [id_Cliente]);
@@ -120,6 +124,24 @@ const pedidoModel = {
         } catch (err) {
             callback(err, null);
         }
+    },
+
+    contarVendasNaoEnviadas: async (id_Cliente) => {
+        const query = `
+            SELECT 
+                COUNT(pedido_item.Id_prod_cliente) AS total_vendas_nao_enviadas
+            FROM 
+                pedidos
+            JOIN 
+                pedido_item ON pedidos.Id_Pedidos_Loji = pedido_item.Id_Pedidos_Loji
+            JOIN 
+                produtos ON pedido_item.Id_prod_cliente = produtos.Id_prod_cliente
+            WHERE 
+                produtos.id_Cliente = ? 
+                AND pedido_item.localiza != 'Enviado';
+        `;
+        const [result] = await pool.query(query, [id_Cliente]);
+        return result[0].total_vendas_nao_enviadas || 0;
     },
 
     atualizarMensagem: async (id_produto, localiza) => {

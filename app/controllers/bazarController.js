@@ -162,9 +162,11 @@ const bazarController = {
     const produtoBazar = await produtosModels.mostrarProdutosBazar(userId, bazar.Id_Bazar);
     const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
     var errosMulter = req.session.erroMulter;
-
+    
     const [random] = await pool.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
+    
+    const totalVendasNaoEnviadas = await pedidoModel.contarVendasNaoEnviadas(userId);
 
     const totalDenuncias = await denunciasModels.contarDenunciasUsu(userId);
   
@@ -275,6 +277,7 @@ const bazarController = {
             listaErros: null, 
             dadosNotificacao: { title: "Bazar atualizado com sucesso", msg: "Alterações Gravadas", type: "success" },
             usuario: user, 
+            totalVendasNaoEnviadas: totalVendasNaoEnviadas,
             Bazar: bazar,
             quantidadeVendas,
             valores: campos,
@@ -287,6 +290,7 @@ const bazarController = {
             listaErros: null, 
             dadosNotificacao: { title: "Bazar atualizado com sucesso", msg: "Sem Alterações", type: "info" },
             usuario: user, 
+            totalVendasNaoEnviadas: totalVendasNaoEnviadas,
             Bazar: bazar, 
             quantidadeVendas,
             valores: dadosForm,
@@ -305,6 +309,7 @@ const bazarController = {
         listaErros: null, 
         dadosNotificacao: { title: "Erro ao atualizar", msg: "Verifique os valores digitados!", type: "error" },
         usuario: user, 
+        totalVendasNaoEnviadas: totalVendasNaoEnviadas,
         Bazar: bazar, 
         quantidadeVendas,
         valores: req.body,

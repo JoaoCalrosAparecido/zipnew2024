@@ -3,9 +3,9 @@
 
 #produtos-cell {
     position: relative;
-    top: 23vh;
+    top: 8vh;
     margin-left: 3.8vw;
-    width: 60vw;
+    width: 40vw;
 }
 
 .button {
@@ -16,13 +16,15 @@
 .cart-itemfv {
     display: flex;
     column-gap: 2vw;
-    margin-bottom: 5vh;
+    margin: 0 0 5vh 5vw;
+    padding: 1vw;
+    border: 1px solid #e8e8e8;
+
+    
 }
 
 #removeProdFav {
-    position: absolute;
-    right: 3vw;
-    margin-top: 0.2vh;
+    margin: 0.3vw 1vw 0 0;
     display: block;
     border: none;
     background-color: white;
@@ -41,11 +43,12 @@
 #tituloProdFav {
     font-family: 'Poppins', sans-serif;
     font-size: 1vw;
-    margin-bottom: 1.5vh;
+    font-weight: 500;
+    margin-top: 13vh;
 }
 #precoProdFav {
     font-family: 'Poppins', sans-serif;
-
+    font-size: 0.9vw;
 }
 #imgProdFav {
     width: 12vw;
