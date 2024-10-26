@@ -6,11 +6,25 @@
     top: 8vh;
     margin-left: 3.8vw;
     width: 40vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#cart-cart {
+    display: flex;
+    flex-direction: column;
 }
 
 .button {
     position: relative;
     left: 150px;
+}
+
+#cart-itemsfv {
+    display: flex;
+    width: 90vw;
+    flex-wrap: wrap;
 }
 
 .cart-itemfv {
@@ -20,6 +34,8 @@
     margin: 0 0 5vh 5vw;
     padding: 1vw;
     border: 1px solid #e8e8e8;
+    width: 33.5vw;
+    height: 16.60vw;
 }
 
 #removeProdFav {
@@ -35,8 +51,8 @@
 }
 
 #removeProdFav{
-    position: absolute;
-    right: 0vw;
+position: relative;
+left: 6vw;
 }
 
 #tituloProdFav {

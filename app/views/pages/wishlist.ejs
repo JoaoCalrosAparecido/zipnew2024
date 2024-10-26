@@ -389,31 +389,32 @@
     
         <section id="produtos-cell">
             
-            <article id="cart-image-containerfv"></article> <!-- Container para a imagem do produto -->
-            <article class="containerfv" id="cart-itemsfv">
-                <!-- Cart items will be dynamically added here -->
-                <% if (prodAddFav) { %> 
-                    <% prodAddFav.forEach(prod => { %>
-                        <article class="cart-itemfv">
-                            <img id="imgProdFav" src="../../IMG/uploads/<%= prod.img1.trim() %>" alt="">
-
-                            <article>
-                                <h3 id="tituloProdFav">
-                                    <%= prod.tituloprod %>
-                                </h3>
-                                <p id="precoProdFav">
-                                    Preço: R$ <%= parseFloat(prod.preçoprod).toFixed(2) %>
-                                </p>
-                                <p id="parcelaProd">Parcela até 12x com juros</p>
+            <section id="cart-cart">
+                <article id="cart-image-containerfv"></article> <!-- Container para a imagem do produto -->
+                <article class="containerfv" id="cart-itemsfv">
+                    <!-- Cart items will be dynamically added here -->
+                    <% if (prodAddFav) { %>
+                        <% prodAddFav.forEach(prod => { %>
+                            <article class="cart-itemfv">
+                                <img id="imgProdFav" src="../../IMG/uploads/<%= prod.img1.trim() %>" alt="">
+                                <article>
+                                    <h3 id="tituloProdFav">
+                                        <%= prod.tituloprod %>
+                                    </h3>
+                                    <p id="precoProdFav">
+                                        Preço: R$ <%= parseFloat(prod.preçoprod).toFixed(2) %>
+                                    </p>
+                                    <p id="parcelaProd">Parcela até 12x com juros</p>
+                                </article>
+                                <form action="removeFav" method="post">
+                                    <input type="hidden" name="produtosremovefav" value="<%= prod.Id_prod_cliente %>">
+                                    <button id="removeProdFav" type="submit"></button>
+                                </form>
                             </article>
-                            <form action="removeFav" method="post">
-                                <input type="hidden" name="produtosremovefav" value="<%= prod.Id_prod_cliente %>">
-                                <button id="removeProdFav" type="submit"></button>
-                            </form>
-                        </article>
-                    <% }) %>    
-                <%} %>
-            </article>
+                        <% }) %>
+                    <%} %>
+                </article>
+            </section>
         </section>
 
         <div class="swiper mySwiper">
@@ -429,7 +430,7 @@
               <div class="swiper-slide">Slide 9</div>
             </div>
           </div>
-        
+
         <script src="../../wishlist/cell-wishlist/js/proo.js"></script>
 
         
