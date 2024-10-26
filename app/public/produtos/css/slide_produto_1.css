@@ -185,7 +185,7 @@
 /*icone favorito*/
 .icone_favorito_slide_produto1 {
   position: relative;
-  top: -26.04vw;
+  top: -30.04vw;
   left: 17vw;
   width: 1.41vw;
 }
@@ -193,7 +193,7 @@
 @media (min-width: 1300px) and (max-width: 1500px) {
   .icone_favorito_slide_produto1 {
     position: relative;
-    top: -27.04vw;
+    top: -32.04vw;
     left: 17vw;
     width: 1.41vw;
   }
@@ -264,7 +264,7 @@
 
 
 #produto-slide #slide-imagens-prod {
-  height: 55vh;
+  height: 26.35vw;
   margin-right: 0.5vw;
 }
 
@@ -276,7 +276,7 @@
 .parte_escrita_produto1, .parte_preco_produto1 {
   margin-left: 1vw;
   color: black;
-  font-size: 18px;
+  font-size: 0.85vw;
 }
 
 .parte_escrita_produto1 {

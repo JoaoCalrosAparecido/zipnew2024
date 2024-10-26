@@ -37,7 +37,7 @@ e funcionando a wishlist nessa pagina dos produtos (check)
 
 Dia 26
 
-- sem carrossel no desk de adc-produtos 
+- sem carrossel no desk de adc-produtos (check)
 - carrossel voce pode gostar da pagina de produtos mob com css certo e o coração da wishlist mais para cima
 - Adiciona produto com video e bazar
 - stycky no adc-prod

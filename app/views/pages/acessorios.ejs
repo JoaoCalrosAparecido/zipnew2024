@@ -565,20 +565,18 @@
                 <p class="product-price">R$ <%= produtos[i].preçoprod %></p>
             </figcaption>
             </a>
-            <form action="addFav" method="post">
-            <!-- onclick="addToCartfv('<%= produtos[i].tituloprod %>', <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>')" -->
-            <input type="hidden" name="idProd" value="<%= produtos[i].id_prod_cliente %>, <%= produtos[i].tituloprod %>, <%= produtos[i].preçoprod %>, /<%= produtos[i].img1 %>"   style="opacity: 0;">
-            <button type="submit" style="all: unset;" >
-                <lord-icon class="add-to-cartfv"
-                    onclick="addToCartfv('<%= produtos[i].tituloprod %>', <%= produtos[i].preçoprod %>, 'uploads/<%= produtos[i].img1 %>')"
-                    id="lordiconfv"
-                    src="https://cdn.lordicon.com/xyboiuok.json"
-                    trigger="hover"
-                    data-image="uploads/<%= produtos[i].img1 %>"
-                    >
-                </lord-icon>
-            </button>
-        </form>
+            <form action="acessorios/addFav" method="post">
+                <input type="hidden" name="idProd" value="<%= produtos[i].id_prod_cliente %>, <%= produtos[i].tituloprod %>, <%= produtos[i].preçoprod %>, <%= produtos[i].img1 %>" style="opacity: 0;">
+                <button type="submit" style="all: unset;">
+                  <lord-icon class="add-to-cartfv"
+                             id="lordiconfv"
+                             src="<%= produtos[i].isFav ? 'https://cdn.lordicon.com/ulnswmkk.json' : 'https://cdn.lordicon.com/xyboiuok.json' %>"
+                             trigger="hover"
+                             data-image="uploads/<%= produtos[i].img1 %>"
+                             data-id="<%= produtos[i].id_prod_cliente %>">
+                  </lord-icon>
+                </button>
+              </form>
         </figure>
 
 <% } %>
@@ -586,7 +584,6 @@
 
 </section>
 <script src="../../cat-produto/ponto-para-virgula.js"></script>
-<script src="../../css-feminino/js/icone-favorito.js"></script>
 <script src="../../wishlist/cell-wishlist/js/index.js"></script>
 
 
