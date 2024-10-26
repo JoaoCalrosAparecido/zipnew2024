@@ -276,7 +276,8 @@
 .parte_escrita_produto1, .parte_preco_produto1 {
   margin-left: 1vw;
   color: black;
-  font-size: 0.85vw;
+  font-size: 0.9vw;
+  width: 18.23vw;
 }
 
 .parte_escrita_produto1 {
