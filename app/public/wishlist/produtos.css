@@ -9,6 +9,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    grid-a;
+    
 }
 
 #cart-cart {
@@ -23,15 +25,16 @@
 
 #cart-itemsfv {
     display: flex;
-    width: 90vw;
+    width: 83vw;
     flex-wrap: wrap;
+    
 }
 
 .cart-itemfv {
     display: flex;
     flex-direction: row;
     column-gap: 2vw;
-    margin: 0 0 5vh 5vw;
+    margin: 0 0 1.5vw 1.5vw;
     padding: 1vw;
     border: 1px solid #e8e8e8;
     width: 33.5vw;
