@@ -57,11 +57,43 @@ function selecionarProdutosAleatorios(produtos, quantidade) {
 }
 
 
-router.get("/", verificarUsuAutenticado, function (req, res) {
-  if (req.session.autenticado && req.session.autenticado.id) {
-    res.render('pages/index', { logado: true, usuarioautenticado: req.session.autenticado.id, dadosNotificacao: null });
-  } else {
-    res.render('pages/index', { logado: false, usuarioautenticado: null, dadosNotificacao: null });
+router.get("/", verificarUsuAutenticado, async function (req, res) {
+  try {
+    const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
+    const produtosAleatorios = selecionarProdutosAleatorios(random, 24);
+
+    const bloco1 = produtosAleatorios.slice(0, 2);
+    const bloco2 = produtosAleatorios.slice(2, 4);
+    const bloco3 = produtosAleatorios.slice(4, 6);
+    const bloco4 = produtosAleatorios.slice(6, 8);
+    const bloco5 = produtosAleatorios.slice(8, 10);
+    const bloco6 = produtosAleatorios.slice(10, 12);
+    const bloco7 = produtosAleatorios.slice(12, 14);
+    const bloco8 = produtosAleatorios.slice(14, 16);
+    const bloco9 = produtosAleatorios.slice(16, 18);
+    const bloco10 = produtosAleatorios.slice(18, 20);
+    const bloco11 = produtosAleatorios.slice(20, 22);
+    const bloco12 = produtosAleatorios.slice(22, 24);
+
+    res.render('pages/index', { 
+      bloco1, 
+      bloco2, 
+      bloco3, 
+      bloco4,
+      bloco5,
+      bloco6,
+      bloco7,
+      bloco8,
+      bloco9,
+      bloco10,
+      bloco11,
+      bloco12,
+      logado: false, 
+      usuarioautenticado: null, 
+      dadosNotificacao: null });
+  } catch (error) {
+    console.error('Erro ao buscar produtos:', error);
+    res.status(500).send('Erro no servidor');
   }
 });
 
