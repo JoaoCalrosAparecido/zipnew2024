@@ -91,9 +91,9 @@ router.get("/", verificarUsuAutenticado, async function (req, res) {
       logado: false, 
       usuarioautenticado: null, 
       dadosNotificacao: null });
-    }
-    catch{
-      res.redirect('/login_do_usuario')
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Erro ao conectar ao banco de dados');
     }
 });
 
