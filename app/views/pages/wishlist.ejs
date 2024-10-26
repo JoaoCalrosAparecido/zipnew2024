@@ -381,6 +381,7 @@
         <h1 id="saudacao"><img src="../../IMG/wishlist/produtos/wishlist-escrita.png" alt=""></h1>
         <p id="saudacao-desc">guarde seus favoritos aqui</p>
     </section>
+    
 
 
     <!--display flex produtos e img-->
@@ -397,7 +398,7 @@
                         <% prodAddFav.forEach(prod => { %>
                             <article class="cart-itemfv">
                                 <img id="imgProdFav" src="../../IMG/uploads/<%= prod.img1.trim() %>" alt="">
-                                <article>
+                                <article id="produto-detalhes">
                                     <h3 id="tituloProdFav">
                                         <%= prod.tituloprod %>
                                     </h3>
@@ -419,17 +420,20 @@
 
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">Slide 1</div>
-              <div class="swiper-slide">Slide 2</div>
-              <div class="swiper-slide">Slide 3</div>
-              <div class="swiper-slide">Slide 4</div>
-              <div class="swiper-slide">Slide 5</div>
-              <div class="swiper-slide">Slide 6</div>
-              <div class="swiper-slide">Slide 7</div>
-              <div class="swiper-slide">Slide 8</div>
-              <div class="swiper-slide">Slide 9</div>
+              <div class="swiper-slide">
+                <img src="../../IMG/wishlist/produtos/modelo-delineado.png">
+              </div>
+              <div class="swiper-slide">
+                <img src="../../IMG/wishlist/produtos/ana-copy.jpg">
+              </div>
+              </div>
             </div>
           </div>
+    </section>
+
+            
+
+
 
         <script src="../../wishlist/cell-wishlist/js/proo.js"></script>
 

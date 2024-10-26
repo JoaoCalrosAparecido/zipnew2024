@@ -1,9 +1,9 @@
 .swiper {
-    width: 25vw;
-    height: 45.5vw;
-    margin-top: -85.5vh;
+    width: 40vw;
+    height: 50vw;
+    margin-top: -105.5vh;
     position: absolute;
-    left: 27vw;
+    right: -25vw;
   }
 
   .swiper-slide {

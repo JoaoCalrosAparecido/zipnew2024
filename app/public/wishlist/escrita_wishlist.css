@@ -2,9 +2,6 @@
 
 
 #section-escrita-wishlist {
-    background: url('../../IMG/wishlist/produtos/modelos-wishlist-copy.jpg') no-repeat center / cover;
-    background-position: left top;
-    filter: brightness(60%);
     width: 100vw;
     height: 18vw;
 }
@@ -14,14 +11,14 @@
     font-size: 3.0rem;
     position: relative;
     top: 21.5vh;
-    left: 15%;
+    left: 6vw;
 }
 
 
 #saudacao-desc {
     position: relative;
     top: 21.5vh;
-    left: 15%;
+    left: 6vw;
     color: #000;
     font-weight: 500;
 }

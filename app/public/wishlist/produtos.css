@@ -3,19 +3,15 @@
 
 #produtos-cell {
     position: relative;
-    top: 8vh;
-    margin-left: 3.8vw;
-    width: 40vw;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    grid-a;
+    top: 0vh;
+    width: 90vw;
+    margin-left: 4vw;
+    padding-top: 1.5vw;
     
 }
 
 #cart-cart {
-    display: flex;
-    flex-direction: column;
+
 }
 
 .button {
@@ -24,9 +20,7 @@
 }
 
 #cart-itemsfv {
-    display: flex;
-    width: 83vw;
-    flex-wrap: wrap;
+   
     
 }
 
@@ -35,14 +29,16 @@
     flex-direction: row;
     column-gap: 2vw;
     margin: 0 0 1.5vw 1.5vw;
-    padding: 1vw;
-    border: 1px solid #e8e8e8;
-    width: 33.5vw;
+    padding: 1vw 1vw 0 1vw;
+    border-bottom: 1px solid #d1d4d6;
+    border-top: 1px solid #d1d4d6;
+    background-color: #ffff;
+    width: 40vw;
     height: 16.60vw;
 }
 
 #removeProdFav {
-    margin: 0.3vw 1vw 0 0;
+    margin: 0.3vw 6vw 0 0;
     display: block;
     border: none;
     background-color: white;
@@ -60,13 +56,15 @@ left: 6vw;
 
 #tituloProdFav {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     font-weight: 500;
     margin-top: 11vh;
+    width: 180%;
 }
 #precoProdFav {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+    width: 180%;
 }
 #imgProdFav {
     width: 12vw;
@@ -85,4 +83,17 @@ left: 6vw;
 #parcelaProd {
     font-size: 1.6rem;
     margin-top: 1vh;
+    width: 180%;
+}
+
+#produto-detalhes {
+    width: 100vw;
+}
+
+#lista-wishlits {
+    width: 100vw;
+    display: flex;
+    column-gap: 1vw;
+    margin-left: 1vw;
+    list-style-type: none;
 }
