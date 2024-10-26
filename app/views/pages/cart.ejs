@@ -524,29 +524,31 @@
                     <article id="imagem_do_pix">
                         <img width="72px" src="../IMG/sacola/pix/imagem_do_pix.png" alt="">
                     </article>
-                    <section id="area_de_endereco">
+
+                    <form id="area_de_endereco" action="/endere" method="post">
                         <p>Busca de Endereço</p>
-                    
+                      
                         <article id="article_cep_endereco">
-                            <label for="cep">CEP:</label>
-                            <input type="text" id="cep" placeholder="Digite o CEP" maxlength="9" required>
-                            <br>
+                          <label for="cep">CEP:</label>
+                          <input type="text" id="cep" name="cep" placeholder="Digite o CEP" maxlength="9">
+                          <br>
                         </article>
-                        
+                      
                         <article id="article_numero_endereco">
-                            <label for="numero">Número da Casa:</label>
-                            <input type="text" id="numero" placeholder="Número" required>
-                            <br>
+                          <label for="numero">Número da Casa:</label>
+                          <input type="text" id="numero" name="numero" placeholder="Número">
+                          <br>
                         </article>
-                        
+                      
                         <article id="botao_endereco">
-                            <button onclick="buscarEndereco()">Buscar Endereço</button>
-                        </article>
-                        <section id="section_endereco">
-                            <article><p id="confira">Confira Suas Informações</p></article>
-                            <article id="endereco-info" style="margin-top: 20px;"></article>
-                        </section>
+                          <button type="submit">Buscar Endereço</button>
+                        </article>                        
+                    </form>
+                    <section id="section_endereco">
+                        <article><p id="confira">Confira Suas Informações</p></article>
+                        <article id="endereco-info" style="margin-top: 20px;"></article>
                     </section>
+
                 </article>
             </section>
         </section>
