@@ -690,13 +690,15 @@
                 <article id="promo_responsivo_slide">
                     <% bloco3.forEach(function(produto) { %>
                         <figure>
-                            <figure id="promo_responsivo_slide">
-                                <img class="imagem_do_slide" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
-                            </figure>
-                            <figcaption id="figcaption_promos_responsivo">
-                                <p id="paragrafo_promos_responsivo"><%= produto.tituloprod %></p>
-                                <p id="preco_promos_responsivo">R$ <%= produto.preçoprod %></p>
-                            </figcaption>
+                            <a href="/produtos/<%= produto.id_prod_cliente %>">
+                                <figure id="promo_responsivo_slide">
+                                    <img class="imagem_do_slide" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
+                                </figure>
+                                <figcaption id="figcaption_promos_responsivo">
+                                    <p id="paragrafo_promos_responsivo"><%= produto.tituloprod %></p>
+                                    <p id="preco_promos_responsivo">R$ <%= produto.preçoprod %></p>
+                                </figcaption>
+                            </a>
                         </figure>
                     <% }); %>
                     
@@ -731,7 +733,7 @@
         <article class="slide_principal_promos_article">
             <section class="slider_principal_promos">
                 <% bloco1.forEach(function(produto) { %>
-
+                <a href="/produtos/<%= produto.id_prod_cliente %>">
                 <article class="slide_principal_promos">
                     <article class="slide_principal_grupo_promos">
                         <article id="produto_principal_promos_parte_e_scrita_e_imagem">
@@ -744,6 +746,7 @@
                         </article>
                     </article>
                 </article>
+                </a>
                 <% }); %>
 
                 <!--slide 2-->
@@ -795,33 +798,37 @@
                     <article class="slide_secundario_grupo_promos">
                         <% bloco2.forEach(function(produto) { %>
                         <section>
+                            <a href="/produtos/<%= produto.id_prod_cliente %>">
                             <img id="slide_secundario_promos_produto1" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <article class="parte_escrita_relogio">
                                 <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
                                 <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                             </article>
+                            </a>
                         </section>
                         <% }); %>
 
                         <% bloco3.forEach(function(produto) { %>
                         <section>
-                            <a href="/bolsa_preta_classica">
+                            <a href="/produtos/<%= produto.id_prod_cliente %>">
                                 <img id="slide_secundario_promos_produto2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
-                            </a>
                             <article class="parte_escrita_relogio">
                                 <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
                                 <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                             </article>
+                            </a>
                         </section>
                         <% }); %>
 
                         <% bloco4.forEach(function(produto) { %>
                         <section>
+                            <a href="/produtos/<%= produto.id_prod_cliente %>">
                             <img id="slide_secundario_promos_produto3" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <article class="parte_escrita_relogio">
                                 <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
                                 <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                             </article>
+                            </a>
                         </section>
                         <% }); %>
 
@@ -839,31 +846,37 @@
                         <article id="slide_secundario_promos2">
                             <% bloco5.forEach(function(produto) { %>
                             <article>
+                                <a href="/produtos/<%= produto.id_prod_cliente %>">
                                 <img id="slide2_secundario_promos_produto1" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                 <article class="parte_escrita_relogio">
                                     <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
                                     <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                                 </article>
+                                </a>
                             </article>
                             <% }); %>
 
                             <% bloco6.forEach(function(produto) { %>
                             <article>
+                                <a href="/produtos/<%= produto.id_prod_cliente %>">
                                 <img id="slide2_secundario_promos_produto2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                 <article class="parte_escrita_relogio">
                                     <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
                                     <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                                 </article>
+                                </a>
                             </article>
                             <% }); %>
 
                             <% bloco7.forEach(function(produto) { %>
                             <article>
+                                <a href="/produtos/<%= produto.id_prod_cliente %>">
                                 <img id="slide2_secundario_promos_produto3" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                 <article class="parte_escrita_relogio">
                                     <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
                                     <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                                 </article>
+                                </a>
                             </article>
                             <% }); %>
 
@@ -926,20 +939,24 @@
                         <!--slide imagens-->
                         <% bloco9.forEach(function(produto) { %>
                         <article class="slide first2 slide_watches_cell">
+                            <a href="/produtos/<%= produto.id_prod_cliente %>">
                             <img class="imagem_do_watches_slide_cell" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <figcaption class="paragrafo_figcaption_cell">
                                 <p class="produto_paragrafo_watches1_cell"><%= produto.tituloprod %></p>
                                 <p class="parte_do_preço_watches_cell">R$ <%= produto.preçoprod %></p>
                             </figcaption>
+                            </a>
                         </article>
                         <% }); %>
                         <% bloco10.forEach(function(produto) { %>
                         <article class="slide slide_watches_cell ">
+                            <a href="/produtos/<%= produto.id_prod_cliente %>">
                             <img class="imagem_do_watches_slide2_cell" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <figcaption class="paragrafo_figcaption_cell">
                                 <p class="produto_paragrafo_watches2_cell"><%= produto.tituloprod %></p>
                                 <p class="parte_do_preço_watches_cell">R$ <%= produto.preçoprod %></p>
                             </figcaption>
+                            </a>
                         </article>
                         <% }); %>
                         <!--navigation auto-->
@@ -1007,21 +1024,25 @@
                             <!--slide imagens-->
                             <% bloco9.forEach(function(produto) { %>
                             <article class="slide first">
+                                <a href="/produtos/<%= produto.id_prod_cliente %>">
                                 <img class="imagem_do_watches_slide" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                 <figcaption class="paragrafo_figcaption">
                                     <p class="produto_paragrafo_watches1"><%= produto.tituloprod %></p>
                                     <p class="parte_do_preço_watches">R$ <%= produto.preçoprod %></p>
 
                                 </figcaption>
+                                </a>
                             </article>
                             <% }); %>
                             <% bloco10.forEach(function(produto) { %>
                             <article class="slide ">
+                                <a href="/produtos/<%= produto.id_prod_cliente %>">
                                 <img class="imagem_do_watches_slide2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                 <figcaption class="paragrafo_figcaption">
                                     <p class="produto_paragrafo_watches2"><%= produto.tituloprod %></p>
                                     <p class="parte_do_preço_watches">R$ <%= produto.preçoprod %></p>
                                 </figcaption>
+                                </a>
                             </article>
                             <% }); %>
                             <!--navigation auto-->
@@ -1110,20 +1131,24 @@
                     <!--slide imagens-->
                     <% bloco11.forEach(function(produto) { %>
                     <article class="slide first2 slide_larezzo_cell">
+                        <a href="/produtos/<%= produto.id_prod_cliente %>">
                         <img class="imagem_do_larezzo_slide_cell" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                         <figcaption class="paragrafo_figcaption_cell">
                             <p class="produto_paragrafo_larezzo1_cell"><%= produto.tituloprod %></p>
                             <p class="parte_do_preço_larezzo_cell">R$ <%= produto.preçoprod %></p>
                         </figcaption>
+                        </a>
                     </article>
                     <% }); %>
                     <% bloco12.forEach(function(produto) { %>
                     <article class="slide slide_larezzo_cell ">
+                        <a href="/produtos/<%= produto.id_prod_cliente %>">
                         <img class="imagem_do_larezzo_slide2_cell" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                         <figcaption class="paragrafo_figcaption_cell">
                             <p class="produto_paragrafo_larezzo2_cell"><%= produto.tituloprod %></p>
                             <p class="parte_do_preço_larezzo_cell">R$ <%= produto.preçoprod %></p>
                         </figcaption>
+                        </a>
                     </article>
                     <% }); %>
                     <!--navigation auto-->
@@ -1173,22 +1198,26 @@
                         <!--slides imagens-->
                         <% bloco11.forEach(function(produto) { %>
                         <section class="slide first">
+                            <a href="/produtos/<%= produto.id_prod_cliente %>">
                             <img class="imagem_do_larezzo_slide" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <figcaption class="paragrafo_figcaption_larezzo">
                                 <p class="produto_paragrafo_larezzo1"><%= produto.tituloprod %></p>
                                 <p class="parte_do_preço_larezzo">R$ <%= produto.preçoprod %></p>
 
                             </figcaption>
+                            </a>
                         </section>
                         <% }); %>
                         <% bloco12.forEach(function(produto) { %>
                         <section class="slide">
+                            <a href="/produtos/<%= produto.id_prod_cliente %>">
                             <img class="imagem_do_larezzo_slide2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <figcaption class="paragrafo_figcaption_larezzo">
                                 <p class="produto_paragrafo_larezzo2"><%= produto.tituloprod %></p>
                                 <p class="parte_do_preço_larezzo">R$ <%= produto.preçoprod %></p>
 
                             </figcaption>
+                            </a>
                         </section>
                         <% }); %>
                         <!--navigation auto-->
