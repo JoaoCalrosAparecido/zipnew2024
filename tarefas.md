@@ -40,10 +40,9 @@ e funcionando a wishlist nessa pagina dos produtos (check)
 
 Dia 26
 
-<<<<<<< HEAD
+
 - Sacola endereço - API correios
-=======
->>>>>>> 64dd10491436b57e12f46cafc83a1bdeadc796d9
+
 - Adiciona produto com video e bazar
 - api mercado pago
 
