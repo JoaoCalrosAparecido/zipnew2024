@@ -1,5 +1,7 @@
 ## O que falta do projeto (Lazully)
 
+- Tela principal com os produtos do banco
+- Sacola endereço - API correios
 - (Relaciona Ban) Wishlist - (Não esquecer da validação de produtos banidos e vendido)
 
 ## O que falta do projeto (Sophia)
@@ -9,7 +11,7 @@
 - Ajustar alinhamento dos produtos no m,f,i,a - ama
 - Indez canvas
 - Produtos adicionados css e vender no menu
-- css wishlist e produtos adicionados, login e redefinir senha
+- css wishlist e produtos adicionados, 
 
 ## O que falta do projeto (João)
 
@@ -38,7 +40,10 @@ e funcionando a wishlist nessa pagina dos produtos (check)
 
 Dia 26
 
+<<<<<<< HEAD
 - Sacola endereço - API correios
+=======
+>>>>>>> 64dd10491436b57e12f46cafc83a1bdeadc796d9
 - Adiciona produto com video e bazar
 - api mercado pago
 

@@ -725,19 +725,24 @@
         <!--slide principal-->
         <article class="slide_principal_promos_article">
             <section class="slider_principal_promos">
+<<<<<<< HEAD
                 
+=======
+                <% bloco1.forEach(function(produto) { %>
+>>>>>>> 64dd10491436b57e12f46cafc83a1bdeadc796d9
                 <article class="slide_principal_promos">
                     <article class="slide_principal_grupo_promos">
                         <article id="produto_principal_promos_parte_e_scrita_e_imagem">
                             <article id="Produto_principal_promos"><img src="../IMG/primeiro_slide_promos/produto_principal_promos.png" alt=""></article>
                             <figcaption id="figcaption_do_slide_Principal_promos">
-                                <p id="paragrafo_do_slide_Principal_promos">Hourgless <br> Double- <br>Brasted Blazer
+                                <p id="paragrafo_do_slide_Principal_promos"><%= produto.tituloprod %>
                                 </p>
-                                <p id="paragrafo_do_slide_Principal_promos_preço">R$ 150,00</p>
+                                <p id="paragrafo_do_slide_Principal_promos_preço">R$ <%= produto.preçoprod %></p>
                             </figcaption>
                         </article>
                     </article>
                 </article>
+                <% }); %>
 
                 <!--slide 2-->
                 <!--slide principal2-->
