@@ -83,7 +83,7 @@ router.get("/login_do_usuario", verificarUsuAutenticado, async function (req, re
 
 router.get("/perfil",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     const user = await models.findUserById(req.session.autenticado.id);
     const userId = req.session.autenticado.id;
@@ -102,7 +102,7 @@ router.get("/perfil",
 router.post("/socialmedia",
   controller.regrasValidaçãoURL,
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1]),
   async function (req, res) {
     const erros = validationResult(req);
     const userId = req.session.autenticado.id;
@@ -157,7 +157,7 @@ router.post("/socialmedia",
 
 router.get("/cart",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
 
     const userId = req.session.autenticado.id;
@@ -171,7 +171,7 @@ router.get("/cart",
 
   router.get("/produtos-adicionados",
     verificarUsuAutenticado,
-    verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+    verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
     async function (req, res) {
       const userId = req.session.autenticado.id;
       
@@ -182,7 +182,7 @@ router.get("/cart",
 
     router.post("/removeProdAdd",
       verificarUsuAutenticado,
-      verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+      verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
       async function (req, res) {
   
         try {
@@ -217,7 +217,7 @@ router.get("/cart",
 
   router.post("/removeCart",
     verificarUsuAutenticado,
-    verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+    verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
     async function (req, res) {
 
 
@@ -295,14 +295,14 @@ router.get("/cart",
 
 router.get("/pagamento",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   function (req, res) {
     res.render('pages/pagamento', { msg: 'Back-end funcionando' });
   });
 
   router.get("/masculino",
     verificarUsuAutenticado,
-    verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+    verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
     async function (req, res) {
       const produtos = await produtosModels.findAllProductByCategoryName('masculino');
   
@@ -343,7 +343,7 @@ router.get("/vender", function (req, res) {
 
 router.post("/enviado",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]), 
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]), 
   async function (req, res) {
   
 
@@ -370,7 +370,7 @@ router.post("/enviado",
 router.get("/meus-pedidos",
   pedidoControler.listarPedidos,
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   function (req, res) {
 
   res.render('pages/meus-pedidos', { msg: 'Back-end funcionando' });
@@ -378,13 +378,13 @@ router.get("/meus-pedidos",
 
 router.get("/minhas-vendas", 
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   pedidoControler.listarVendas
 );
 
 router.post('/atualizar-mensagem', 
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   pedidoControler.enviarMensagem
 );
 
@@ -463,7 +463,7 @@ router.get('/produtos/:id_prod_cliente',
 
 router.get("/meusdados",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     controller.mostrarPerfil(req, res)
   });
@@ -471,7 +471,7 @@ router.get("/meusdados",
 router.post("/atualizardados",
   controller.regrasValidacaoperfil,
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
 
     controller.gravarPerfil(req, res)
@@ -480,7 +480,7 @@ router.post("/atualizardados",
 
 router.get("/wishlist/",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     const userId = req.session.autenticado.id;
     const prodAddFav = await produtosModels.findAllProductfav(userId);
@@ -492,7 +492,7 @@ router.get("/wishlist/",
 
   router.post('/masculino/addFav', 
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     try {
      /* const idProd = parseInt(req.body.idProd);*/
@@ -540,7 +540,7 @@ router.get("/wishlist/",
 );
   router.post('/addFav', 
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     try {
      /* const idProd = parseInt(req.body.idProd);*/
@@ -589,7 +589,7 @@ router.get("/wishlist/",
 
 router.post("/wishlist/removeFav",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
 
     try {
@@ -624,7 +624,7 @@ router.post("/wishlist/removeFav",
 
   router.post('/checkFavStatus', 
     verificarUsuAutenticado,
-    verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+    verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
     async function(req, res) {
     try {
         const userId = req.session.autenticado.id; // Pega o ID do usuário logado
@@ -649,7 +649,7 @@ router.post("/wishlist/removeFav",
 
 router.post('/produtos/addCart', 
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
     
 
@@ -690,7 +690,7 @@ router.post('/produtos/addCart',
 
 router.get("/adc-produto",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2]),
   async function (req, res) {
     const userId = req.session.autenticado.id;
     const user = await models.findUserById(userId);
@@ -715,7 +715,7 @@ router.get("/adc-produto",
 // [, ]
 router.post("/adicionar-produto",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   upload.fields([{ name: 'img1' }, { name: 'img2' }, { name: 'img3' }, { name: 'img4' }]),
   controller.regrasValidacaoAdcProduto,
   async function (req, res) {
@@ -821,6 +821,7 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
           erros: null,
           logado: false,
           usuarioautenticado: null,
+          dadosform: { email: "", senha: "" },
           dadosNotificacao: {
             msg: "Email de verificação enviado",
             type: "success",
@@ -865,9 +866,9 @@ router.get("/ativar-conta",async function (req, res) {
             usuarioautenticado: req.session.autenticado,
             dadosform: { email: '', senha: '' },
             dadosNotificacao: {
-              titulo: "Sucesso",
-              mensagem: "Conta ativada, use seu e-mail e senha para acessar o seu perfil!",
-              tipo: "success",
+              title: "Sucesso",
+              msg: "Conta ativada, use seu e-mail e senha para acessar o seu perfil!",
+              type: "success",
             },
           });
         }
@@ -886,7 +887,7 @@ router.post("/sign/login",
   if (!erros.isEmpty()) {
     console.log(erros);
     return res.render('pages/login_do_usuario', 
-      { erros: erros, dadosform: { email: req.body.email, senha: req.body.senha }, logado: false, usuarioautenticado: req.session.userid });
+      { erros: erros,dadosNotificacao: null, dadosform: { email: req.body.email, senha: req.body.senha }, logado: false, usuarioautenticado: req.session.userid });
   }
 
   try {
@@ -920,6 +921,7 @@ router.get("/adc-bazar",
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {
+    dadosNotificacao: null,
     erros: null,
     dadosform: { email: "", senha: "" },
     logado: false,
@@ -951,6 +953,7 @@ router.get("/adc-bazar",
     verificarUsuAutenticado,
     verificarUsuAutorizado(
         "./pages/login_do_usuario", {
+            dadosNotificacao: null,
             erros: null,
             dadosform: { email: "", senha: "" },
             logado: false,
@@ -968,6 +971,7 @@ router.post("/attBazar",
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {
+      dadosNotificacao: null,
       erros: null,
       dadosform: { email: "", senha: "" },
       logado: false,
@@ -987,6 +991,7 @@ router.post("/denunciar-produto/:id_prod_cliente",
   verificarUsuAutenticado, 
   verificarUsuAutorizado(   
     "./pages/login_do_usuario", {
+      dadosNotificacao: null,
       erros: null,
       dadosform: { email: "", senha: "" },
       logado: false,
@@ -1004,6 +1009,7 @@ router.post("/denunciar-vendedor/:id_prod_cliente",
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {
+      dadosNotificacao: null,
       erros: null,
       dadosform: { email: "", senha: "" },
       logado: false,
@@ -1021,6 +1027,7 @@ router.post('/banir/:id_Cliente_denunciado',
   verificarUsuAutenticado,
   verificarUsuAutorizado(
     "./pages/login_do_usuario", {
+      dadosNotificacao: null,
       erros: null,
       dadosform: { email: "", senha: "" },
       logado: false,
@@ -1072,14 +1079,17 @@ router.post("/search", async function (req, res) {
 router.get("/redsenha", function (req, res) {
 
   res.render('pages/redsenha',{    
+    dadosNotificacao: null,
+    dadosform: null,
     erros: null, 
     logado: false,
-    usuarioautenticado: req.session.userid });
+    usuarioautenticado: req.session.userid
+   });
 });
 
 router.post("/redefinir",
   controller.regrasValidacaoRedefinir,
-  function (req, res) {
+  async function (req, res) {
   const erros = validationResult(req);
   if (!erros.isEmpty()) {
     console.log(erros);
@@ -1090,19 +1100,26 @@ router.post("/redefinir",
           senha: req.body.senha, 
           confirmar: req.body.senha, 
         }, 
+        dadosNotificacao: null,
         logado: false, 
         usuarioautenticado: req.session.userid });
   }
+  
+  const [user] = await connection.query("SELECT * FROM `cliente` WHERE email = ?", [req.body.email])
   const token = jwt.sign(
-    { userId: user[0].id_Cliente },
+    { userId: user[0].id_Cliente,
+      senhaNova: req.body.senha
+     },
     process.env.SECRET_KEY
   );
   console.log(token);
   const html = require('../util/email-reset-senha')(process.env.URL_BASE, token);
-  enviarEmail(email, "Email de Redefinição de senha", null, html, ()=>{
+  enviarEmail(req.body.email, "Email de Redefinição de senha", null, html, ()=>{
     res.render('pages/login_do_usuario', { 
       logado: false,
       usuarioautenticado: null,
+      erros: null,
+      dadosform: { email: "", senha: "" },
       dadosNotificacao: {
         msg: "Email de verificação enviado",
         type: "success",
@@ -1110,11 +1127,43 @@ router.post("/redefinir",
       }
     })
   });
+});
 
-  res.render('pages/redsenha', { 
-    erros: null, 
-    logado: false,
-    usuarioautenticado: req.session.userid });
+router.get("/resetar-senha", async function (req, res) {
+  try {
+    const token = req.query.token;
+    console.log(token);
+    jwt.verify(token, process.env.SECRET_KEY, async (err, decoded) => {
+      console.log(decoded);
+      if (err) {
+        console.log({ message: "Token inválido ou expirado" });
+      } else {
+        const user = await connection.query("SELECT * FROM `cliente` WHERE id_Cliente = ?", [decoded.userId]);
+        if (!user) {
+          console.log({ message: "Usuário não encontrado" });
+        } else {
+          const salt = bcrypt.genSaltSync(10);
+          const hashedPassword = bcrypt.hashSync(decoded.senhaNova, salt);
+          const resultado = await connection.query("UPDATE `cliente` SET senha = ? WHERE id_Cliente = ?", [hashedPassword, decoded.userId]);
+          console.log({ message: "Conta ativada" });
+          res.render("pages/login_do_usuario", {
+            erros: null,
+            logado: false,
+            usuarioautenticado: req.session.autenticado,
+            dadosform: { email: '', senha: '' },
+            dadosNotificacao: {
+              title: "Sucesso",
+              msg: "Senha alterada com sucesso, use seu e-mail e senha para acessar o seu perfil!",
+              type: "success",
+            },
+          });
+        }
+        // Ativa a conta do usuário
+      }
+    });
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 

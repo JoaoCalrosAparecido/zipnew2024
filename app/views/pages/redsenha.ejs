@@ -387,6 +387,30 @@
             })();
         </script>
         <% } %>
+        <% if (dadosNotificacao) {%>
+            <script>
+                (() => {
+                    function mostrarNotificacao() {
+                        return new Notify({
+                            status: '<%= dadosNotificacao.type %>',
+                            title: '<%= dadosNotificacao.title %>',
+                            text: '<%= dadosNotificacao.msg %>',
+                            speed: 300,
+                            effect: 'fade',
+                            showIcon: false,
+                            showCloseButton: true,
+                            autoclose: true,
+                            autotimeout: 5000,
+                            gap: 20,
+                            distance: 20,
+                            position: 'center'
+                        });
+                    }
+    
+                    mostrarNotificacao();
+                })();
+            </script>
+        <% } %>
     <main>
         <section class="redefinir-senha-section">
             <form class="redefinir-senha-form"  action="/redefinir" method="post">

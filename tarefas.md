@@ -1,6 +1,4 @@
 ## O que falta do projeto (Lazully)
-- 25/10
-- Esqueci minha senha / Validação Email
 
 - (Relaciona Ban) Wishlist - (Não esquecer da validação de produtos banidos e vendido)
 

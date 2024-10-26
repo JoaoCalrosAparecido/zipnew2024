@@ -76,8 +76,7 @@ const controller = {
   ],
   regrasValidacaolog: [
     body('email').isEmail().withMessage('*Email Inválido'),
-    body('senha')
-    .custom(async (senha, { req }) => {
+    body('senha').custom(async (senha, { req }) => {
       try {
         const [users] = await pool.query("SELECT * FROM cliente WHERE email = ?", [req.body.email]);
         if (users.length === 0) {
@@ -85,15 +84,15 @@ const controller = {
         }
   
         const user = users[0];
-
+  
         if (user.Stats !== 'Ativo') {
           throw new Error('Sua conta está banida.');
         }
 
-        if (user.Status_User !== '1') {
-          throw new Error('Sua conta não foi ativada, Verifique seu email');
+        if (user.Status_User == "0") {
+          throw new Error('Sua conta não foi ativada. Verifique seu email.');
         }
-        
+  
         const senhaCorreta = await bcrypt.compare(senha, user.senha);
         if (!senhaCorreta) {
           throw new Error('Senha incorreta.');
@@ -101,8 +100,8 @@ const controller = {
   
         return true;
       } catch (err) {
-        console.error(err);
-        throw new Error(err);
+        console.error('Erro de autenticação:', err);
+        throw new Error('Erro na autenticação. Tente novamente.');
       }
     }),
   ],
