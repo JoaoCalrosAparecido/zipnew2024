@@ -11,7 +11,8 @@
 - Ajustar alinhamento dos produtos no m,f,i,a - ama
 - Indez canvas
 - Produtos adicionados css e vender no menu
-- css wishlist e produtos adicionados, 
+- css wishlist
+- Css mobile da sacola / responsiva 
 
 ## O que falta do projeto (João)
 
@@ -32,19 +33,15 @@ Dia 25
 - Menus corrigir menu do cadastro mobile e do adc-produtos mob quando rola para baixo por conta da logo que aumenta de tamanho e menu do campo de busca(check)
 - pagina que mostra os produtos com ícone de coração mais para cima (check)
 e funcionando a wishlist nessa pagina dos produtos (check)
-- sem carrossel no desk de adc-produtos (check)
-- Css mobile da sacola / responsiva
-- rodape da sacola todo bugado
-- stycky no adc-prod
-- campo input
+
 
 Dia 26
 
-
-- Sacola endereço - API correios
-
+- sem carrossel no desk de adc-produtos 
+- carrossel voce pode gostar da pagina de produtos mob com css certo e o coração da wishlist mais para cima
 - Adiciona produto com video e bazar
-- api mercado pago
+- stycky no adc-prod
+
 
 # Erros
 
