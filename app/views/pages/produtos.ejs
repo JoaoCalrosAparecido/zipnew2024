@@ -462,9 +462,9 @@
                     </P>
                     <P id="parte_cor_bolsa_Preta">Tamanho <span id="parte_cor_bolsa_Preta_span"><%= produto.tamanho %></span></P>
                 </article>
-                <form action="/addFav" method="post">
+                <form action="/addFav" method="post" id="button_fav">
                     <input type="hidden" name="idProd" value="<%= produto.id_prod_cliente %>, <%= produto.tituloprod %>, <%= produto.preçoprod %>, <%= produto.img1 %>" style="opacity: 0;">
-                    <button type="submit" style="all: unset;">
+                    <button type="submit" style="all: unset;" >
                       <lord-icon class="add-to-cartfv"
                                  id="lordiconfv"
                                  src="<%= produto.isFav ? 'https://cdn.lordicon.com/ulnswmkk.json' : 'https://cdn.lordicon.com/xyboiuok.json'  %>" 

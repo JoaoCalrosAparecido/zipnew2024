@@ -3,7 +3,7 @@
 
 #parte_do_voce_pode_gostar {
     position: relative;
-    top: 83.21vw;
+    top: 70.21vw;
     display: block;
 }
 
@@ -14,15 +14,16 @@
     display: flex;
     column-gap: 5.99vw;
     position: relative;
-    left: 36.8vw;
+    left: 33.8vw;
     top: 1vw;
 
 }
 
 #artcle_do_voce_pode_gostar > p {
     font-weight: 600;
-    font-size: 2.8vw;
+    font-size: 3.3vw;
     font-family: 'Poppins', sans-serif;
+    align-content: center;
 }
 
 #paragrafo_vistos_recentemente {
@@ -42,9 +43,9 @@
 #parte_sublinhada_do_hr {
     position: relative;
     top: 1.572917vw;
-    left: 35.5vw;
-    width: 30.72vw;
-    height: 0.208333vw;
+    left: 32.5vw;
+    width: 35.5vw;
+    height: 0.308333vw;
     background-color: black;
 }
 

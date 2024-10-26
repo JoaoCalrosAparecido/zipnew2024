@@ -67,19 +67,25 @@
 }
 
 /*imagem favorito*/
+#button_fav {
+    position: relative;
+    top: -22.6vw;
+    left: 68vw;
+    z-index: 100;
+}
+
 #imagem_de_favorito {
     width: 1.61vw;
     all: unset;
     position: relative;
     left: 87.75vw;
-    top: -29.99vw;
+    top: -39.99vw;
     z-index: 20000;
 }
 
 #lordiconfv {
     width: 7.61vw;
     height: 7.61vw;
-   
     position: relative;
 }
 

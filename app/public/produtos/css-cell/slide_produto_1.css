@@ -23,15 +23,26 @@
   width: 46vw;
 }
 
-#slide_bolsa_produto1 :nth-child(3) {}
+#slide_bolsa_produto1>figure >img {
+  width: 46vw;
+}
 
+#produto-slide #slide-imagens-prod {
+  height: 60.35vw;
+  margin-right: 0.5vw;
+}
+
+#slide_bolsa_produto1>figure :nth-child(2) {
+  width: 46vw;
+}
+#slide_bolsa_produto1 :nth-child(3) {
+
+}
 #slide_bolsa_produto1 :nth-child(4) {
   display: none;
 }
 
-#figureNoneCell {
-  display: none;
-}
+
 
 
 
@@ -44,7 +55,7 @@
   font-size: 2.8vw;
   position: relative;
   top: 0.625000vw;
-  padding-bottom: 14px;
+  padding-bottom: 1vw;
 }
 
 
