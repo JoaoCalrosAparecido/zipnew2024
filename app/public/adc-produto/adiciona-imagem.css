@@ -134,7 +134,7 @@ html, body {
 
 #form-input {
     display: flex;
-    gap: 3vw;
+    gap: 1vw;
 }
 
 .inputs-adc-img > input {
@@ -650,8 +650,6 @@ html, body {
     }
 }
 
-<<<<<<< HEAD
-=======
 
 #explicacao-inputs {
     font: 500 16px 'Poppins', sans-serif;
@@ -661,4 +659,14 @@ html, body {
     padding: 0.5vw 1vw;
 }
 
->>>>>>> 7bc90179d7b0574383623478f83b96ef87cbb91a
+
+#titulo, #preco, #desc {
+    width: 25.2vw;
+}
+
+
+@media only screen and (max-width:480px) {
+    #section-blocos-adc {
+        height: 90vh;
+    }
+}
