@@ -61,18 +61,18 @@ router.get("/", verificarUsuAutenticado, async function (req, res) {
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 24);
 
-    const bloco1 = produtosAleatorios.slice(0, 2);
-    const bloco2 = produtosAleatorios.slice(2, 4);
-    const bloco3 = produtosAleatorios.slice(4, 6);
-    const bloco4 = produtosAleatorios.slice(6, 8);
-    const bloco5 = produtosAleatorios.slice(8, 10);
-    const bloco6 = produtosAleatorios.slice(10, 12);
-    const bloco7 = produtosAleatorios.slice(12, 14);
-    const bloco8 = produtosAleatorios.slice(14, 16);
-    const bloco9 = produtosAleatorios.slice(16, 18);
-    const bloco10 = produtosAleatorios.slice(18, 20);
-    const bloco11 = produtosAleatorios.slice(20, 22);
-    const bloco12 = produtosAleatorios.slice(22, 24);
+    const bloco1 = produtosAleatorios.slice(0, 1);
+    const bloco2 = produtosAleatorios.slice(1, 2);
+    const bloco3 = produtosAleatorios.slice(2, 3);
+    const bloco4 = produtosAleatorios.slice(3, 4);
+    const bloco5 = produtosAleatorios.slice(4, 5);
+    const bloco6 = produtosAleatorios.slice(5, 6);
+    const bloco7 = produtosAleatorios.slice(6, 7);
+    const bloco8 = produtosAleatorios.slice(7, 8);
+    const bloco9 = produtosAleatorios.slice(8, 9);
+    const bloco10 = produtosAleatorios.slice(9, 10);
+    const bloco11 = produtosAleatorios.slice(10, 11);
+    const bloco12 = produtosAleatorios.slice(11, 12);
 
     res.render('pages/index', { 
       bloco1, 
