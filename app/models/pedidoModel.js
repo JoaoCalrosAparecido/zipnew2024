@@ -50,6 +50,8 @@ const pedidoModel = {
     
 
             var deleteSql = "DELETE FROM Sacola WHERE Id_prod_cliente IN (?)";
+            var deleteSql = "DELETE FROM Favoritos WHERE Id_prod_cliente IN (?)";
+
             
             const [updateResult] = await pool.query(updateSql, [values]);
             const [deleteResult] = await pool.query(deleteSql, [values]);
