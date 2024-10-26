@@ -10,15 +10,22 @@
     filter: brightness(0);
     font-size: 3.0rem;
     position: relative;
-    top: 21.5vh;
-    left: 6vw;
+    top: 19.5vh;
+    left: 7.5vw;
 }
 
 
 #saudacao-desc {
     position: relative;
-    top: 21.5vh;
-    left: 6vw;
+    top: 19.5vh;
+    left: 8vw;
     color: #000;
     font-weight: 500;
+}
+
+
+@media (max-width:480px) {
+    #section-escrita-wishlist #saudacao {
+        top: 55vh;
+    }
 }

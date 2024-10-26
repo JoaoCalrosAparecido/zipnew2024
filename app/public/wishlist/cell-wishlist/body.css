@@ -3,3 +3,12 @@
     padding: 0px;
 }
 
+html {
+    font-size: 62.5%;
+}
+
+#body-cell {
+    overflow-x: hidden;
+    font: 300 1.8rem 'Poppins';
+}
+
