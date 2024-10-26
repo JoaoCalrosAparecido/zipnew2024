@@ -1,8 +1,8 @@
 ## O que falta do projeto (Lazully)
 
-- Tela principal com os produtos do banco
 - Sacola endereço - API correios
 - (Relaciona Ban) Wishlist - (Não esquecer da validação de produtos banidos e vendido)
+- Aparecer numeros de minhas vendas
 
 ## O que falta do projeto (Sophia)
 
