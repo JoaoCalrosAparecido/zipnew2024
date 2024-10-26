@@ -195,6 +195,8 @@ const controller = {
     const [random] = await pool.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
 
+    const totalVendasNaoEnviadas = await pedidoModel.contarVendasNaoEnviadas(userId);
+
     const totalDenuncias = await denunciasModels.contarDenunciasUsu(userId);
 
     if (!erros.isEmpty() || erroMulter != null) {
@@ -270,6 +272,7 @@ const controller = {
           valores: campos,
           random: produtosAleatorios,
           totalDenuncias: totalDenuncias,
+          totalVendasNaoEnviadas: totalVendasNaoEnviadas,
         });
       } else {
         const user = await models.findUserById(userId);
@@ -286,6 +289,7 @@ const controller = {
           usuario: user,
           valores: dadosForm,
           totalDenuncias: totalDenuncias,
+          totalVendasNaoEnviadas: totalVendasNaoEnviadas,
         });
       }
     } catch (e) {
