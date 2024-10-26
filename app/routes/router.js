@@ -93,7 +93,7 @@ router.get("/", verificarUsuAutenticado, async function (req, res) {
       dadosNotificacao: null });
     } catch (err) {
       console.log(err);
-      res.status(500).send('Erro ao conectar ao banco de dados');
+      res.status(500).send('Erro ao conectar ao banco de dados, Max Users');
     }
 });
 
