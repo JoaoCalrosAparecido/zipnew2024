@@ -119,10 +119,12 @@ router.get("/perfil",
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
 
+    const totalVendasNaoEnviadas = await pedidoModel.contarVendasNaoEnviadas(userId);
+
     const totalDenuncias = await denunciasModels.contarDenunciasUsu(userId);
 
     const bazar = await produtosModels.findBazarByUserId(userId);
-    res.render('pages/perfil', { usuario: user, Bazar: bazar, random: produtosAleatorios, totalDenuncias: totalDenuncias, quantidadeVendas, dadosNotificacao: null, listaErros: null });
+    res.render('pages/perfil', { usuario: user, Bazar: bazar, totalVendasNaoEnviadas: totalVendasNaoEnviadas, random: produtosAleatorios, totalDenuncias: totalDenuncias, quantidadeVendas, dadosNotificacao: null, listaErros: null });
   }
 );
 
@@ -141,6 +143,8 @@ router.post("/socialmedia",
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
 
+    const totalVendasNaoEnviadas = await pedidoModel.contarVendasNaoEnviadas(userId);
+
     const totalDenuncias = await denunciasModels.contarDenunciasUsu(userId);
 
     if (!erros.isEmpty()) {
@@ -152,6 +156,7 @@ router.post("/socialmedia",
         dadosNotificacao: null,
         listaProdBazar: [],
         random: produtosAleatorios,
+        totalVendasNaoEnviadas: totalVendasNaoEnviadas,
         totalDenuncias: totalDenuncias,
         valores: {
           socialLinks: req.body.socialLinks,
@@ -173,6 +178,7 @@ router.post("/socialmedia",
       listaErros: null,
       random: produtosAleatorios,
       totalDenuncias: totalDenuncias,
+      totalVendasNaoEnviadas: totalVendasNaoEnviadas,
       dadosNotificacao: { 
         title: "Solicitação Enviada", 
         msg: "Solicitação enviada com sucesso", 
