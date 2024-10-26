@@ -16,7 +16,7 @@ html, body {
 
 #adc-img-titulo {
     font-size: 2.9vw;
-    margin: 2vh 0 1vh 9.6vw;
+    margin: 2vh 0 1vh 2vh;
     align-self: flex-start;
 }
 
@@ -43,7 +43,7 @@ html, body {
 .blocos-adc {
     background-color: rgb(202, 209, 209);
     width: 100vw; /*26.37*/
-    height: 150vw;
+    height: 90vh;
     
 }
 
@@ -71,6 +71,11 @@ html, body {
     font-family: 'Poppins', sans-serif;
     position: relative;
     position: relative;
+}
+
+#titulo, #desc, #preco {
+    width: 90vw;
+    margin-left: 5vw;
 }
 
 
@@ -135,16 +140,15 @@ html, body {
 
 /*descrião parte do botão*/
 #produto_adicionar_a_sacola {
-    width: 80vw;
-    height: 8.75vw;
+    width: 90vw;
+    height: 12vw;
     border: none;
     background-color: #212121;
     color: #FFFFFF;
     font-size: 4.10vw;
     font-weight: 300;
     font-family: 'Poppins', sans-serif;
-    position: relative;
-    left: 10vw;
+    margin-left: 5vw;
 }
 
 #produto_adicionar_a_sacola:hover {
@@ -164,7 +168,7 @@ html, body {
 /*parte do adcionar iamgem do prototipo*/
 .upload-area {
     width: 98vw; /* Largura do retângulo */
-    height: 98vw; /* Altura do retângulo */
+    height: 85vh; /* Altura do retângulo */
     border: 2px solid #ccc; /* Adicionando uma borda cinza */
     border-radius: 5px;
     background-color: white;
@@ -183,7 +187,7 @@ html, body {
   
   .preview img, .preview video {
     width: 98vw;
-    height: 98vw;
+    height: 90vh;
     object-fit: cover; /* Para cobrir todo o espaço disponível sem distorção */
     display: block;
   }
@@ -235,16 +239,22 @@ html, body {
 
 #categorias-opcoes {
     font-weight: 600;
-    font-size: 0.9vw;
+    font-size: 2.75vw;
     padding: 6vw 0 1vw 12vw;
 }
 
-
+#explicacao-inputs {
+    width: 90.2vw;
+    margin: 0 0 9vw 5vw;
+    box-sizing: border-box;
+    padding: 2vw 2vw;
+    font-weight: 300;
+}
 
 
 .swiper {
     width: 100vw;
-    height: 100vw;
+    height: 90vh;
     display: flex;
   }
 
@@ -261,6 +271,6 @@ html, body {
   .swiper-slide img {
     display: block;
     width: 98vw;
-    height: 98vw;
+    height: 100%;
     object-fit: initial;
   }

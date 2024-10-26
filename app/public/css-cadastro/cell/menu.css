@@ -146,6 +146,7 @@
   outline: none;
   background-color: #F2F2F2;
   transition: right 0.3s ease;
+  z-index: 10000000000;
 }
 
 input::-webkit-input-placeholder {
