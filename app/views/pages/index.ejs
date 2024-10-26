@@ -688,24 +688,29 @@
             <!--parte do slide-->
             <section>
                 <article id="promo_responsivo_slide">
+                    <% bloco3.forEach(function(produto) { %>
+                        <figure>
+                            <figure id="promo_responsivo_slide">
+                                <img class="imagem_do_slide" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
+                            </figure>
+                            <figcaption id="figcaption_promos_responsivo">
+                                <p id="paragrafo_promos_responsivo"><%= produto.tituloprod %></p>
+                                <p id="preco_promos_responsivo">R$ <%= produto.preçoprod %></p>
+                            </figcaption>
+                        </figure>
+                    <% }); %>
+                    
+                    <% bloco4.forEach(function(produto) { %>
                     <figure>
                         <figure id="promo_responsivo_slide">
-                            <img class="imagem_do_slide" src="../../IMG/cell_index/promos/imagem1.avif" alt="">
+                            <img class="imagem_do_slide" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                         </figure>
                         <figcaption id="figcaption_promos_responsivo">
-                            <p id="paragrafo_promos_responsivo">Bolsa Preta Clássica</p>
-                            <p id="preco_promos_responsivo">R$ 20,00</p>
+                            <p id="paragrafo_promos_responsivo"><%= produto.tituloprod %></p>
+                            <p id="preco_promos_responsivo">R$ <%= produto.preçoprod %></p>
                         </figcaption>
                     </figure>
-                    <figure>
-                        <figure id="promo_responsivo_slide">
-                            <img class="imagem_do_slide" src="../../IMG/cell_index/promos/imagem2.avif" alt="">
-                        </figure>
-                        <figcaption id="figcaption_promos_responsivo">
-                            <p id="paragrafo_promos_responsivo">Óculos Escuro</p>
-                            <p id="preco_promos_responsivo">R$ 17,00</p>
-                        </figcaption>
-                    </figure>
+                    <% }); %>
                 </article>
             </section>
             <section id="section_setas_promos">
@@ -730,7 +735,7 @@
                 <article class="slide_principal_promos">
                     <article class="slide_principal_grupo_promos">
                         <article id="produto_principal_promos_parte_e_scrita_e_imagem">
-                            <article id="Produto_principal_promos"><img src="../IMG/primeiro_slide_promos/produto_principal_promos.png" alt=""></article>
+                            <img id="Produto_principal_promos" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <figcaption id="figcaption_do_slide_Principal_promos">
                                 <p id="paragrafo_do_slide_Principal_promos"><%= produto.tituloprod %>
                                 </p>
@@ -745,19 +750,19 @@
                 <!--slide principal2-->
                 <article class="slide_principal_promos_article">
                     <section class="slider_principal_promos2">
-                        
+                        <% bloco8.forEach(function(produto) { %>
                         <article class="slide_principal_promos">
                             <article class="slide_principal_grupo_promos">
                                 <article id="produto_principal_promos_parte_e_scrita_e_imagem2">
-                                    <article class="Produto_principal_promos2"> <img src="../IMG/primeiro_slide_promos/produto2_principal_promos.png" alt=""></article>
+                                    <img class="Produto_principal_promos2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                     <figcaption id="figcaption_do_slide_Principal_promos">
-                                        <p id="paragrafo_do_slide_Principal_promos">Croc-Efect <br> Greca <br> Goddess
-                                            Top <br> Handle Bag </p>
-                                        <p id="paragrafo_do_slide_Principal_promos_preço">R$ 1.100,00</p>
+                                        <p id="paragrafo_do_slide_Principal_promos"><%= produto.tituloprod %>
+                                        <p id="paragrafo_do_slide_Principal_promos_preço">R$ <%= produto.preçoprod %></p>
                                     </figcaption>
                                 </article>
                             </article>
                         </article>
+                        <% }); %>
                     </section>
 
 
@@ -788,31 +793,37 @@
 
                 <article class="slide_secundario_promos">
                     <article class="slide_secundario_grupo_promos">
+                        <% bloco2.forEach(function(produto) { %>
                         <section>
-                            <article id="slide_secundario_promos_produto1"><img src="../IMG/primeiro_slide_promos/produto1_slide_secundario_promos.png" alt=""></article>
+                            <img id="slide_secundario_promos_produto1" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <article class="parte_escrita_relogio">
-                                <p class="relogios_paragrafo">Calça Jeans de Alfaiataria</p>
-                                <p class="relogios_paragrafo_preco">R$ 8,00</p>
+                                <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
+                                <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                             </article>
                         </section>
+                        <% }); %>
 
+                        <% bloco3.forEach(function(produto) { %>
                         <section>
                             <a href="/bolsa_preta_classica">
-                                <article id="slide_secundario_promos_produto2"><img src="../IMG/primeiro_slide_promos/produto2_slide_secundario_promos.png" alt=""></article>
+                                <img id="slide_secundario_promos_produto2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             </a>
                             <article class="parte_escrita_relogio">
-                                <p class="relogios_paragrafo">Bolsa Preta Clássica</p>
-                                <p class="relogios_paragrafo_preco">R$ 20,00</p>
+                                <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
+                                <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                             </article>
                         </section>
+                        <% }); %>
 
+                        <% bloco4.forEach(function(produto) { %>
                         <section>
-                            <article id="slide_secundario_promos_produto3"><img src="../IMG/primeiro_slide_promos/produto3_slide_secundario_promos.png" alt=""></article>
+                            <img id="slide_secundario_promos_produto3" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <article class="parte_escrita_relogio">
-                                <p class="relogios_paragrafo">Salto 10cm Preto de Bico Fino </p>
-                                <p class="relogios_paragrafo_preco">R$ 25,00</p>
+                                <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
+                                <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                             </article>
                         </section>
+                        <% }); %>
 
                         <!--fim grupo-->
                     </article>
@@ -826,29 +837,35 @@
                 <article class="slide_secundario_promos">
                     <article class="slide_secundario_grupo_promos">
                         <article id="slide_secundario_promos2">
+                            <% bloco5.forEach(function(produto) { %>
                             <article>
-                                <article id="slide2_secundario_promos_produto1"><img src="../IMG/primeiro_slide_promos/produto1_slide2_secundario_promos.png" alt=""></article>
+                                <img id="slide2_secundario_promos_produto1" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                 <article class="parte_escrita_relogio">
-                                    <p class="relogios_paragrafo">Salto 10cm Preto de Bico Fino </p>
-                                    <p class="relogios_paragrafo_preco">R$ 25,00</p>
+                                    <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
+                                    <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                                 </article>
                             </article>
+                            <% }); %>
 
+                            <% bloco6.forEach(function(produto) { %>
                             <article>
-                                <article id="slide2_secundario_promos_produto2"><img src="../IMG/primeiro_slide_promos/produto2_slide2_secundario_promos.png" alt=""></article>
+                                <img id="slide2_secundario_promos_produto2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                 <article class="parte_escrita_relogio">
-                                    <p class="relogios_paragrafo">Blusa de Cetim Preta Crocodilo</p>
-                                    <p class="relogios_paragrafo_preco">R$ 7,00</p>
+                                    <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
+                                    <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                                 </article>
                             </article>
+                            <% }); %>
 
+                            <% bloco7.forEach(function(produto) { %>
                             <article>
-                                <article id="slide2_secundario_promos_produto3"><img src="../IMG/primeiro_slide_promos/produto3_slide2_secundario_promos.png" alt=""></article>
+                                <img id="slide2_secundario_promos_produto3" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                 <article class="parte_escrita_relogio">
-                                    <p class="relogios_paragrafo">Crystal Sphere Earrings </p>
-                                    <p class="relogios_paragrafo_preco">R$ 4.650,00</p>
+                                    <p class="relogios_paragrafo"><%= produto.tituloprod %></p>
+                                    <p class="relogios_paragrafo_preco">R$ <%= produto.preçoprod %></p>
                                 </article>
                             </article>
+                            <% }); %>
 
                         </article>
 
@@ -907,22 +924,24 @@
                         <input type="radio" name="radio-btn" id="radio3">
                         <input type="radio" name="radio-btn" id="radio4">
                         <!--slide imagens-->
+                        <% bloco9.forEach(function(produto) { %>
                         <article class="slide first2 slide_watches_cell">
-                            <article class="imagem_do_watches_slide_cell"><img src="../IMG/cell_index/watches/bota1.avif" alt=""></article>
+                            <img class="imagem_do_watches_slide_cell" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <figcaption class="paragrafo_figcaption_cell">
-                                <p class="produto_paragrafo_watches1_cell">Full Watches (Usado)</p>
-                                <p class="parte_do_preço_watches_cell">R$ 30,00</p>
-
+                                <p class="produto_paragrafo_watches1_cell"><%= produto.tituloprod %></p>
+                                <p class="parte_do_preço_watches_cell">R$ <%= produto.preçoprod %></p>
                             </figcaption>
                         </article>
+                        <% }); %>
+                        <% bloco10.forEach(function(produto) { %>
                         <article class="slide slide_watches_cell ">
-                            <article class="imagem_do_watches_slide2_cell"><img src="../IMG/cell_index/watches/calça1.avif" alt=""></article>
+                            <img class="imagem_do_watches_slide2_cell" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <figcaption class="paragrafo_figcaption_cell">
-                                <p class="produto_paragrafo_watches2_cell">Calça Jeans Lavagem Claras</p>
-                                <p class="parte_do_preço_watches_cell">R$ 50,00</p>
-
+                                <p class="produto_paragrafo_watches2_cell"><%= produto.tituloprod %></p>
+                                <p class="parte_do_preço_watches_cell">R$ <%= produto.preçoprod %></p>
                             </figcaption>
                         </article>
+                        <% }); %>
                         <!--navigation auto-->
                         <article class="navigation-=auto">
                             <article class="auto-btn1"></article>
@@ -986,22 +1005,25 @@
                             <input type="radio" name="radio-btn" id="radio1">
                             <input type="radio" name="radio-btn" id="radio2">
                             <!--slide imagens-->
+                            <% bloco9.forEach(function(produto) { %>
                             <article class="slide first">
-                                <article class="imagem_do_watches_slide"><img src="../IMG/watches/definitivo/slide/bota_preta_prdouto1_watches.png" alt=""></article>
+                                <img class="imagem_do_watches_slide" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                 <figcaption class="paragrafo_figcaption">
-                                    <p class="produto_paragrafo_watches1">Full Watches (Usado)</p>
-                                    <p class="parte_do_preço_watches">R$ 30,00</p>
+                                    <p class="produto_paragrafo_watches1"><%= produto.tituloprod %></p>
+                                    <p class="parte_do_preço_watches">R$ <%= produto.preçoprod %></p>
 
                                 </figcaption>
                             </article>
+                            <% }); %>
+                            <% bloco10.forEach(function(produto) { %>
                             <article class="slide ">
-                                <article class="imagem_do_watches_slide2"><img src="../IMG/watches/definitivo/slide/bolsa_preta_refeito.png" alt=""></article>
+                                <img class="imagem_do_watches_slide2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                                 <figcaption class="paragrafo_figcaption">
-                                    <p class="produto_paragrafo_watches2">Bolsa Replicada de Grife</p>
-                                    <p class="parte_do_preço_watches">R$ 50,00</p>
-
+                                    <p class="produto_paragrafo_watches2"><%= produto.tituloprod %></p>
+                                    <p class="parte_do_preço_watches">R$ <%= produto.preçoprod %></p>
                                 </figcaption>
                             </article>
+                            <% }); %>
                             <!--navigation auto-->
                             <article class="navigation-=auto">
                                 <article class="auto-btn1"></article>
@@ -1086,22 +1108,24 @@
                     <input type="radio" name="radio-btn" id="radio3la">
                     <input type="radio" name="radio-btn" id="radio4la">
                     <!--slide imagens-->
+                    <% bloco11.forEach(function(produto) { %>
                     <article class="slide first2 slide_larezzo_cell">
-                        <article class="imagem_do_larezzo_slide_cell"><img src="../IMG/cell_index/larezzo/bota1.avif" alt=""></article>
+                        <img class="imagem_do_larezzo_slide_cell" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                         <figcaption class="paragrafo_figcaption_cell">
-                            <p class="produto_paragrafo_larezzo1_cell">Full Watches (Usado)</p>
-                            <p class="parte_do_preço_larezzo_cell">R$ 30,00</p>
-
+                            <p class="produto_paragrafo_larezzo1_cell"><%= produto.tituloprod %></p>
+                            <p class="parte_do_preço_larezzo_cell">R$ <%= produto.preçoprod %></p>
                         </figcaption>
                     </article>
+                    <% }); %>
+                    <% bloco12.forEach(function(produto) { %>
                     <article class="slide slide_larezzo_cell ">
-                        <article class="imagem_do_larezzo_slide2_cell"><img src="../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo.png" alt=""></article>
+                        <img class="imagem_do_larezzo_slide2_cell" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                         <figcaption class="paragrafo_figcaption_cell">
-                            <p class="produto_paragrafo_larezzo2_cell">Bolsa Replicada de Grife</p>
-                            <p class="parte_do_preço_larezzo_cell">R$ 50,00</p>
-
+                            <p class="produto_paragrafo_larezzo2_cell"><%= produto.tituloprod %></p>
+                            <p class="parte_do_preço_larezzo_cell">R$ <%= produto.preçoprod %></p>
                         </figcaption>
                     </article>
+                    <% }); %>
                     <!--navigation auto-->
                     <article class="navigation-=auto">
                         <article class="auto-btn1"></article>
@@ -1147,23 +1171,26 @@
                         <input type="radio" name="radio-btn" id="radio2_1">
                         <input type="radio" name="radio-btn" id="radio2_2">
                         <!--slides imagens-->
+                        <% bloco11.forEach(function(produto) { %>
                         <section class="slide first">
-                            <article class="imagem_do_larezzo_slide"><img src="../IMG/new_in_for_him/new_in_for_him/slide/bota_produto1_larezzo.png" alt=""></article>
+                            <img class="imagem_do_larezzo_slide" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <figcaption class="paragrafo_figcaption_larezzo">
-                                <p class="produto_paragrafo_larezzo1">Larezzo Botas - Bazar</p>
-                                <p class="parte_do_preço_larezzo">R$ 150,00</p>
+                                <p class="produto_paragrafo_larezzo1"><%= produto.tituloprod %></p>
+                                <p class="parte_do_preço_larezzo">R$ <%= produto.preçoprod %></p>
 
                             </figcaption>
                         </section>
-
+                        <% }); %>
+                        <% bloco12.forEach(function(produto) { %>
                         <section class="slide">
-                            <article class="imagem_do_larezzo_slide2"><img src="../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo.png" alt=""></article>
+                            <img class="imagem_do_larezzo_slide2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                             <figcaption class="paragrafo_figcaption_larezzo">
-                                <p class="produto_paragrafo_larezzo2">Larezzo Ternos - Bazar</p>
-                                <p class="parte_do_preço_larezzo">R$ 150,00</p>
+                                <p class="produto_paragrafo_larezzo2"><%= produto.tituloprod %></p>
+                                <p class="parte_do_preço_larezzo">R$ <%= produto.preçoprod %></p>
 
                             </figcaption>
                         </section>
+                        <% }); %>
                         <!--navigation auto-->
                         <article class="navigation-auto2">
                             <article class="auto-btn1"></article>
