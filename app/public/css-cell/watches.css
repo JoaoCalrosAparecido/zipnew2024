@@ -19,12 +19,16 @@
 }
 
 #imagem_principal_watches_cell {
-    background-image: url("../IMG/cell_index/watches/imagem_principal.avif");
     background-size: 100vw;
     width: 100vw;
     height: 90vh;
     position: relative;
 
+
+}
+
+#imagem_principal_watches_cell > img {
+    width: 100vw;
 
 }
 
@@ -38,7 +42,6 @@
 }
 
 #parte_escrita_watches_cell {
-    background-image: url("../IMG/watches/definitivo/imagem_watches_parte_escrita_refeito.png");
     background-size: 31vw;
     background-repeat: no-repeat;
     width: 31vw;
@@ -46,6 +49,11 @@
     position: absolute;
     top: -4.5vh;
     transform: translate(-50%, -50%);
+}
+
+#parte_escrita_watches_cell > img {
+    width: 31vw;
+
 }
 
 #botao_watches_cell {
@@ -126,22 +134,29 @@
 
 /*imagens*/
 .imagem_do_watches_slide_cell {
-    background-image: url('../IMG/cell_index/watches/bota1.avif');
     background-size: 55vw;
     background-repeat: no-repeat;
     width: 55vw;
     height: 71vw;
 }
+
+.imagem_do_watches_slide_cell > img {
+    width: 55vw;
+
+}
  
 
 .imagem_do_watches_slide2_cell {
-    background-image: url('../IMG/cell_index/watches/calça1.avif');
     background-size: 55.2vw;
     background-repeat: no-repeat;
     width: 55vw;
     height: 71vw;
 }
 
+.imagem_do_watches_slide2_cell > img {
+    width: 55vw;
+
+}
 
 
 /*parte escrita dos produtos*/

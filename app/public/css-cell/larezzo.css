@@ -25,11 +25,14 @@
 }
 
 #imagem_principal_larezzo_cell {
-    background-image: url("../IMG/cell_index/larezzo/imagem-principal.avif");
-    background-size: 100vw;
     width: 100vw;
     height: 90vh;
     position: relative;
+
+}
+
+#imagem_principal_larezzo_cell > img {
+    width: 100vw;
 
 }
 
@@ -43,15 +46,17 @@
 }
 
 #parte_escrita_larezzo_cell {
-    background-image: url("../IMG/larezzo/parte_escrita_cell_refeito.png");
-    background-size: 31vw;
-    background-repeat: no-repeat;
     width: 31vw;
     height: 8vw;
     position: absolute;
     top: -4.6vh;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#parte_escrita_larezzo_cell > img {
+    width: 31vw;
+
 }
 
 #botao_larezzo_cell {
@@ -87,12 +92,15 @@
 
 /*imagens*/
 .imagem_do_larezzo_slide_cell {
-    background-image: url('../IMG/cell_index/larezzo/bota1.avif');
-    background-size: 55vw;
-    background-repeat: no-repeat;
     width: 55vw;
     height: 71vw;
 }
+
+.imagem_do_larezzo_slide_cell > img {
+    width: 55vw;
+
+}
+
 /*imagem hover*/
 /*
 .imagem_do_larezzo_slide_cell:active {
@@ -101,11 +109,13 @@
 */
 
 .imagem_do_larezzo_slide2_cell {
-    background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo.png');
-    background-size: 55vw;
-    background-repeat: no-repeat;
     width: 55vw;
     height: 71vw;
+}
+
+.imagem_do_larezzo_slide2_cell > img {
+    width: 55vw;
+
 }
 
 /*.imagem_do_larezzo_slide2_cell:active {

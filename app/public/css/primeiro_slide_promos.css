@@ -32,13 +32,9 @@
     top: 34.5%;
     width: 376px;
     height: 482px;
-    background-image: url('../IMG/primeiro_slide_promos/produto1_slide_secundario_promos.png');
-    background-position: 20%;
 }
 
-#slide_secundario_promos_produto1:hover {
-  background-image: url('../IMG/primeiro_slide_promos/produto1_slide_secundario_promos_hover.png');
-}
+
 
 /*slide2*/
 #slide_secundario_promos_produto2 {
@@ -46,12 +42,10 @@
   top: 34.5%;
   width: 376px;
   height: 482px;
-  background-image: url('../IMG/primeiro_slide_promos/produto2_slide_secundario_promos.png');
+ 
 }
 
-#slide_secundario_promos_produto2:hover {
-  background-image: url('../IMG/primeiro_slide_promos/produto2_slide_secundario_promos_hover.png');
-}
+
 
 /*slide3*/
 #slide_secundario_promos_produto3 {
@@ -59,12 +53,9 @@
   top: 34.5%;
   width: 376px;
   height: 482px;
-  background-image: url('../IMG/primeiro_slide_promos/produto3_slide_secundario_promos.png');
 }
 
-#slide_secundario_promos_produto3:hover {
-  background-image: url('../IMG/primeiro_slide_promos/produto3_slide_secundario_promos_hover.png');
-}
+
 
 
 /*slide4*/
@@ -211,37 +202,28 @@
     top: 34.5%;
     width: 376px;
     height: 482px;
-    background-image: url('../IMG/primeiro_slide_promos/produto1_slide2_secundario_promos.png');
-    background-position: 20%;
+
 }
 
-#slide2_secundario_promos_produto1:hover {
-  background-image: url('../IMG/primeiro_slide_promos/produto1_slide2_secundario_promos_hover.png');
-}
+
 
 #slide2_secundario_promos_produto2 {
   position: relative;
   top: 34.5%;
   width: 376px;
   height: 482px;
-  background-image: url('../IMG/primeiro_slide_promos/produto2_slide2_secundario_promos.png');
 }
 
-#slide2_secundario_promos_produto2:hover {
-  background-image: url('../IMG/primeiro_slide_promos/produto2_slide_2_secundario_promos_hover.png');
-}
 
 #slide2_secundario_promos_produto3 {
   position: relative;
   top: 34.5%;
   width: 376px;
   height: 482px;
-  background-image: url('../IMG/primeiro_slide_promos/produto3_slide2_secundario_promos.png');
+
 }
 
-#slide2_secundario_promos_produto3:hover {
-  background-image: url('../IMG/primeiro_slide_promos/produto3_slide2_secundario_promos_hover.png');
-}
+
 
   /*slide principal*/
   .slide_principal_promos_article {
@@ -301,14 +283,10 @@
   #Produto_principal_promos{
     width: 450px;
     height: 616px;
-    background-image: url('../IMG/primeiro_slide_promos/produto_principal_promos.png');
-    background-position: -15px;
+    
     position: relative;
   }
 
-  #Produto_principal_promos:hover{
-    background-image: url('../IMG/primeiro_slide_promos/produto_principal_promos_hover_T2.png');
-  }
 
 
 
@@ -316,15 +294,12 @@
   .Produto_principal_promos2{
     width: 450px;
     height: 616px;
-    background-image: url('../IMG/primeiro_slide_promos/produto2_principal_promos.png');
     background-position: 15px;
     position: relative;
     
   }
 
-  .Produto_principal_promos2:hover {
-    background-image: url('../IMG/primeiro_slide_promos/prduto2_principal_promos_hover.png');
-  }
+
 
   .slider_principal_promos2 {
     width: 753px;

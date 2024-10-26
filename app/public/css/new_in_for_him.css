@@ -180,26 +180,19 @@
 /*o slide first é compartilhado com o watches*/
 
 .imagem_do_larezzo_slide {
-    background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/bota_produto1_larezzo.png');
     width: 439px;
     height: 549px;
     background-color: black;
 }
 
-.imagem_do_larezzo_slide:hover {
-    background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/bota_produto1_larezzo_hover.png');
-}
 
 .imagem_do_larezzo_slide2 {
-    background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo.png');
     width: 439px;
     height: 549px;
     background-color: black;
 }
 
-.imagem_do_larezzo_slide2:hover {
-    background-image: url('../IMG/new_in_for_him/new_in_for_him/slide/blusa_produto2_larezzo_hover.png');
-}
+
 
 /*parte escrita do larezzo*/
 

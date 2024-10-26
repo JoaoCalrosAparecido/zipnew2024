@@ -7,7 +7,6 @@
 }
  /*parte da imagem*/
 #imagem_pricipal_italian_cell {
-    background-image: url("../IMG/italian_leather_artistry/definitivo/imagem_principal_cell.png");
     width: 100vw;
     height: 70vh;
     position: relative;
@@ -16,6 +15,11 @@
     background-size: 110vh;
 
 }
+
+#imagem_pricipal_italian_cell > img {
+    width: 110vw;
+}
+
 
 .class_imagem_italian_leather_artistry {
 
@@ -31,7 +35,6 @@
 }
 
 #parte_escrita_italian_cell {
-    background-image: url("../IMG/italian_leather_artistry/definitivo/parte_escrita_cell_refeito.png");
     background-size: 50vw;
     background-repeat: no-repeat;
     background-position: center;
@@ -40,6 +43,11 @@
     position: relative;
     top: -25vh;
     margin: auto;
+}
+
+#parte_escrita_italian_cell > img {
+    width: 50vw;
+
 }
 
 #botao_italian_cell {

@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/voce_pode_gostar.css">
     <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/slide.css">
     <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/rodape.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/endereco.css">
+
 
     <link rel="shortcut icon" href="../../IMG/android-icon-192x192.png" type="image/x-icon">
 </head>
@@ -522,23 +524,24 @@
                     <article id="imagem_do_pix">
                         <img width="72px" src="../IMG/sacola/pix/imagem_do_pix.png" alt="">
                     </article>
-                    <article id="article_entrega">
-                        <p id="paragrafo_entrega">ENTREGA</p>
-                    </article>
-                    <article id="article_receba_ate_3">
-                        <p id="paragrafo_receba_ate_3">receba até 3-5 dias úteis</p>
-                    </article>
-                    <article id="article_vinkings">
-                        <p id="paragrafo_vinkings"><span id="span_vinkings">VINKINGS</span> disponibiliza devolução</p>
-                    </article>
-                    <article id="article_7_dias">
-                        <p id="paragrafo_7_dias">7 dias após a coleta</p>
-                    </article>
-                    <article id="article_preciso_de_ajuda">
-                        <a href="">
-                            <p id="paragrafo_preciso_de_ajuda">Preciso de ajuda</p>
-                        </a>
-                    </article>
+                    <section id="area_de_endereco">
+                        
+                            <p>Busca de Endereço</p>
+                        
+                            <article id="article_cep_endereco">
+                                <label for="cep">CEP:</label>
+                                <input type="text" id="cep" placeholder="00000-000" required>
+                                <br>
+                            </article>
+                            <article id="article_numero_endereco">
+                                <label for="numero">Número da Casa:</label>
+                                <input type="text" id="numero" placeholder="Número" required>
+                                <br>
+                            </article>
+                            <article id="botao_endereco">
+                                <button onclick="buscarEndereco()">Buscar Endereço</button>
+                            </article>
+                    </section>
                 </article>
             </section>
         </section>
