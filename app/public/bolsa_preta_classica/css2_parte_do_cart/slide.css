@@ -2,32 +2,32 @@
 
 
 #section_slide {
-    width: 1231px;
-    height: 444px;
+    width: 64.11vw;
+    height: 48.26vh;
     background-color: rgb(255, 255, 255);
     position: relative;
-    top: 264px;
+    top: 13.75vw;
     left: 5.25%;
 }
 
 #article_slide {
     display: flex;
-    column-gap: 3.7px;
+    column-gap: 0.192708vw;
 }
 
 /*paragrafo*/
 #paragrafo_slide_nome {
     font-family: 'Poppins', sans-serif;
-    font-size: 12px;
+    font-size: 0.625714vw;
     position: relative;
     left: 1%;
-    top: 4px;
-    padding-bottom: 3px;
+    top: 0.208333vw;
+    padding-bottom: 0.156250vw;
 }
 
 #paragrafo_slide_preco  {
     font-family: 'Poppins', sans-serif;
-    font-size: 11px;
+    font-size: 0.573571vw;
     position: relative;
     left: 1%;
 }
@@ -35,6 +35,6 @@
 /*coracao*/
 #coracao_slide {
     position: relative;
-    top: -414px;
+    top: -21.56vw;
     left: 90.6%;
 }

@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/cart-styles.css">
     <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/linha_sacola.css">
     <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/parte_superior.css">
-    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/menu.css">
-    <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/menu_retratio.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css/menu.css">
+    <link rel="stylesheet" href="bolsa_preta_classica/css/menu_retratio.css">
     <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/parte_da_sacola.css">
     <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/sacola_subtotal.css">
     <link rel="stylesheet" href="bolsa_preta_classica/css2_parte_do_cart/resumo_&_pix.css">
@@ -525,28 +525,37 @@
                         <img width="72px" src="../IMG/sacola/pix/imagem_do_pix.png" alt="">
                     </article>
                     <section id="area_de_endereco">
+                        <p>Busca de Endereço</p>
+                    
+                        <article id="article_cep_endereco">
+                            <label for="cep">CEP:</label>
+                            <input type="text" id="cep" placeholder="00000-000" required>
+                            <br>
+                        </article>
                         
-                            <p>Busca de Endereço</p>
+                        <article id="article_numero_endereco">
+                            <label for="numero">Número da Casa:</label>
+                            <input type="text" id="numero" placeholder="Número" required>
+                            <br>
+                        </article>
                         
-                            <article id="article_cep_endereco">
-                                <label for="cep">CEP:</label>
-                                <input type="text" id="cep" placeholder="00000-000" required>
-                                <br>
-                            </article>
-                            <article id="article_numero_endereco">
-                                <label for="numero">Número da Casa:</label>
-                                <input type="text" id="numero" placeholder="Número" required>
-                                <br>
-                            </article>
-                            <article id="botao_endereco">
-                                <button onclick="buscarEndereco()">Buscar Endereço</button>
-                            </article>
+                        <article id="botao_endereco">
+                            <button onclick="buscarEndereco()">Buscar Endereço</button>
+                        </article>
+                        <section id="section_endereco">
+                            <article><p id="confira">Confira Suas Informações</p></article>
+                            <article id="endereco-info" style="margin-top: 20px;"></article>
+                        </section>
                     </section>
                 </article>
             </section>
         </section>
     </section>
 <!--</form>-->
+
+<!--script da api do cep e validação eu acho-->
+<script src="../../bolsa_preta_classica/js/api_e_validacao_do_cep.js"></script>
+
 <script src="../../bolsa_preta_classica/js/calculo.js"></script>
 
 <script src="../../api-mercado-pago/api.js"></script>

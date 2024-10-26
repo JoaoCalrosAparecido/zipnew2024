@@ -25,7 +25,7 @@
     position: fixed;
     top: 0;
     background-color: black;
-    height: 37px;
+    height: 1.93vw;
     width: 100vw ;
     color: white;
     display: flex;
@@ -48,9 +48,9 @@
 
 #img_parte_superior{
     position: fixed;
-    width: 34px;
-    height: 34px;
-    right: 511px;
+    width: 1.77vw;
+    height: 1,77vw;
+    right: 26.61vw;
 }
 
 #espaço {
@@ -59,7 +59,7 @@
 
 #mais_exclamaçao{
     position: absolute;
-    bottom: 3px;
+    bottom: 0.156250vw;
 
 }
 

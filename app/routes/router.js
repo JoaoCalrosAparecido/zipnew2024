@@ -346,22 +346,55 @@ router.get("/pagamento",
   );
   
 
-router.get("/feminino", async function (req, res) {
+router.get("/feminino",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('feminino')
 
-  res.render('pages/feminino', { produtos, msg: 'Back-end funcionando' });
+  const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+      const prodFavJaExiste = await Promise.all(
+        produtos.map(async (produto) => {
+          const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
+          return { ...produto, isFav };
+        })
+      );
+
+  res.render('pages/feminino', { produtos: prodFavJaExiste, msg: 'Back-end funcionando' });
 });
 
-router.get("/infantil", async function (req, res) {
+router.get("/infantil", 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('infantil')
 
-  res.render('pages/infantil', { produtos, msg: 'Back-end funcionando' });
+  const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+      const prodFavJaExiste = await Promise.all(
+        produtos.map(async (produto) => {
+          const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
+          return { ...produto, isFav };
+        })
+      );
+
+  res.render('pages/infantil', { produtos: prodFavJaExiste, msg: 'Back-end funcionando' });
 });
 
-router.get("/acessorios", async function (req, res) {
+router.get("/acessorios",
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('acessorios')
 
-  res.render('pages/acessorios', { produtos, msg: 'Back-end funcionando' });
+  const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+      const prodFavJaExiste = await Promise.all(
+        produtos.map(async (produto) => {
+          const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
+          return { ...produto, isFav };
+        })
+      );
+
+  res.render('pages/acessorios', { produtos: prodFavJaExiste, msg: 'Back-end funcionando' });
 });
 
 router.get("/vender", function (req, res) {
@@ -565,6 +598,155 @@ router.get("/wishlist/",
     }
   }
 );
+  router.post('/feminino/addFav', 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  async function (req, res) {
+    try {
+     /* const idProd = parseInt(req.body.idProd);*/
+      const date = new Date();
+
+      const idProd = req.body.idProd; // Captura o valor do input
+      const [id, titulo, preco, img1] = idProd.split(',');
+
+      console.log('ID do produto:', id);
+      console.log('Título do produto:', titulo);
+      console.log('Preço do produto:', preco);
+      console.log('Imagem do produto:', img1);
+  
+      const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+      const userId = req.session.autenticado.id
+      
+      const prodFavJaExiste = await prodModels.hasProductsFav(userId, id)
+
+      if(prodFavJaExiste) {
+        await connection.query(
+          "DELETE FROM `Favoritos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
+          [userId, id]
+        );
+        res.redirect('/feminino')
+      } else {
+        const results = await connection.query(
+          'INSERT INTO `Favoritos` (id_prod_cliente, data, id_Cliente, tituloProd, preçoProd, img1) VALUES (?, ?, ?, ?, ?, ?)',
+          [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
+        );
+        console.log('Favoritado');
+        res.redirect('/feminino');
+      }
+
+
+
+      
+
+     
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Erro ao adicionar favorito'); // Opcional: resposta de erro
+    }
+  }
+);
+  router.post('/infantil/addFav', 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  async function (req, res) {
+    try {
+     /* const idProd = parseInt(req.body.idProd);*/
+      const date = new Date();
+
+      const idProd = req.body.idProd; // Captura o valor do input
+      const [id, titulo, preco, img1] = idProd.split(',');
+
+      console.log('ID do produto:', id);
+      console.log('Título do produto:', titulo);
+      console.log('Preço do produto:', preco);
+      console.log('Imagem do produto:', img1);
+  
+      const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+      const userId = req.session.autenticado.id
+      
+      const prodFavJaExiste = await prodModels.hasProductsFav(userId, id)
+
+      if(prodFavJaExiste) {
+        await connection.query(
+          "DELETE FROM `Favoritos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
+          [userId, id]
+        );
+        res.redirect('/infantil')
+      } else {
+        const results = await connection.query(
+          'INSERT INTO `Favoritos` (id_prod_cliente, data, id_Cliente, tituloProd, preçoProd, img1) VALUES (?, ?, ?, ?, ?, ?)',
+          [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
+        );
+        console.log('Favoritado');
+        res.redirect('/infantil');
+      }
+
+
+
+      
+
+     
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Erro ao adicionar favorito'); // Opcional: resposta de erro
+    }
+  }
+);
+  router.post('/acessorios/addFav', 
+  verificarUsuAutenticado,
+  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
+  async function (req, res) {
+    try {
+     /* const idProd = parseInt(req.body.idProd);*/
+      const date = new Date();
+
+      const idProd = req.body.idProd; // Captura o valor do input
+      const [id, titulo, preco, img1] = idProd.split(',');
+
+      console.log('ID do produto:', id);
+      console.log('Título do produto:', titulo);
+      console.log('Preço do produto:', preco);
+      console.log('Imagem do produto:', img1);
+  
+      const dataFav = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+      const userId = req.session.autenticado.id
+      
+      const prodFavJaExiste = await prodModels.hasProductsFav(userId, id)
+
+      if(prodFavJaExiste) {
+        await connection.query(
+          "DELETE FROM `Favoritos` WHERE id_Cliente = ? AND Id_prod_cliente = ?",
+          [userId, id]
+        );
+        res.redirect('/acessorios')
+      } else {
+        const results = await connection.query(
+          'INSERT INTO `Favoritos` (id_prod_cliente, data, id_Cliente, tituloProd, preçoProd, img1) VALUES (?, ?, ?, ?, ?, ?)',
+          [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
+        );
+        console.log('Favoritado');
+        res.redirect('/acesssorios');
+      }
+
+
+
+      
+
+     
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Erro ao adicionar favorito'); // Opcional: resposta de erro
+    }
+  }
+);
+
+
+
+
+
   router.post('/addFav', 
   verificarUsuAutenticado,
   verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),

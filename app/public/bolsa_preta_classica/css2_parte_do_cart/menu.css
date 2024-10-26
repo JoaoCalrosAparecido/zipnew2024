@@ -39,7 +39,7 @@
 
 
 #section_menu_principal{
-    width: 100%;
+    width: 100vw;
     position: relative;
     display: flex;
     column-gap: 1.4%;
@@ -51,7 +51,7 @@
 }
 
 #parte_dos_links_do_menu {
-    width: 100%;
+    width: 100vw;
     position: relative;
     display: flex;
     column-gap: 1.4%;
@@ -62,7 +62,7 @@
     font-family: 'Poppins', sans-serif;
     position: relative;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 0.782143vw;
     color: rgb(0, 0, 0);
     font-weight: 500;
 }
@@ -75,7 +75,7 @@
     font-family: 'Poppins', sans-serif;
     position: relative;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 0.782143vw;
     color: rgb(0, 0, 0);
     font-weight: 500;
 }
@@ -88,7 +88,7 @@
     font-family: 'Poppins', sans-serif;
     position: relative;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 0.782143vw;
     color: rgb(0, 0, 0);
     font-weight: 500;
 }
@@ -101,7 +101,7 @@
     font-family: 'Poppins', sans-serif;
     position: relative;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 0.782143vw;
     color: rgb(0, 0, 0);
     font-weight: 500;
 }
@@ -113,7 +113,7 @@
     font-family: 'Poppins', sans-serif;
     position: relative;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 0.782143vw;
     color: rgb(0, 0, 0);
     font-weight: 500;
 }
@@ -125,7 +125,7 @@
     font-family: 'Poppins', sans-serif;
     position: relative;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 0.782143vw;
     color: rgb(0, 0, 0);
     font-weight: 500;
 }
@@ -144,7 +144,7 @@
     background-size: 90px;
     background-position: center center;
     z-index: 300;
-    width: 90px;
+    width: 4.69vw;
     height:75px;
 }
 
@@ -201,7 +201,7 @@
   }
   
   .search-icon_principal {
-    width: 18px;
+    width: 0.937500vw;
     height: 18px;
     
     background-image: url(''); /* Adicione o caminho da sua imagem de ícone de pesquisa */
@@ -221,7 +221,7 @@
     right: 25px; /* Mudança de left para right */
     padding: 5px;
     border: 1px solid #ccc;
-    width: 150px; /* Largura ajustada */
+    width: 7.81vw; /* Largura ajustada */
   }
   
   .search-input_principal:focus {

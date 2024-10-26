@@ -5,18 +5,18 @@
 }
 
 #section_do_resumo_e_do_pix {
-    width: 466px;
-    height: 992px;
+    width: 24.27vw;
+    height: 51.67vw;
     background-color: rgb(255, 255, 255);
     position: absolute;
-    left: 1370px;
+    left: 71.35vw;
     top: 17.5%;
 }
 
 /*position sticky*/
 #position_sticky {
     position: sticky;
-    top: 120px;
+    top: 6.25vw;
 }
 
 /*resumo do pedido*/
@@ -32,28 +32,28 @@
 /*parte escrita resumo do pedido*/
 #section_parte_escrita_resumo_do_pedido {
     text-align: center;
-    padding-top: 23px;
-    padding-bottom: 35px;
+    padding-top: 1.20vw;
+    padding-bottom: 1.82vw;
 }
 
 #parte_escrita_resumo_do_pedido {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1.04vw;
 }
 
 /*resumo do pedido*/
 #artcle_resumo_do_pedido {
-    width: 466px;
-    height: 329px;
+    width: 24.27vw;
+    height: 17.14vw;
     background-color: #F2F2F2;
 }
 
 /*paragrafo*/
 .paragrafo_resumo {
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    padding-bottom: 16px;
+    font-size: 1.04vw;
+    padding-bottom: 0.833333vw;
 }
 
 .paragrafo_resumo_display_felex {
@@ -67,18 +67,18 @@
 
 .parte_do_total {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 0.834286vw;
 }
 
 /*linha*/
 #article_linha_resumo {
-    padding-bottom: 16px;
+    padding-bottom: 0.833333vw;
 }
 
 /*botao finalizar*/
 #checkout-btn {
-    width: 415px;
-    height: 54px;
+    width: 21.61vw;
+    height: 2.81vw;
     background-color: black;
     display: flex;
     align-items: center;
@@ -93,16 +93,16 @@
     color: rgb(96, 29, 29);
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 0.782143vw;
 }
 
 /*pix*/
 #article_do_pix {
-    width: 466px;
-    height: 363px;
+    width: 24.27vw;
+    height: 29.32vw;
     background-color: #F2F2F2;
     position: relative;
-    top: 19px;
+    top: 0.989583vw;
 }
 
 /*paragrafos*/
@@ -110,11 +110,11 @@
 /*forma de patgamento*/
 #article_forma_de_pagamento {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 1.56vw;
 }
 
 #paragrafo_forma_de_pagamento {
-    font-size: 20px;
+    font-size: 1.04vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
@@ -122,11 +122,11 @@
 /*entrega*/
 #article_entrega {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 1.56vw;
 }
 
 #paragrafo_entrega {
-    font-size: 15px;
+    font-size: 0.782143vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
@@ -138,18 +138,18 @@
 
 #paragrafo_receba_ate_3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 0.730000vw;
 }
 
 /*vinkings*/
 #article_vinkings {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 1.04vw;
 }
 
 #paragrafo_vinkings {
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 0.782143vw;
     font-weight: 550;
 }
 
@@ -164,18 +164,18 @@
 
 #paragrafo_7_dias {
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 0.730000vw;
 }
 
 /*Preciso de ajuda*/
 #article_preciso_de_ajuda {
     text-align: center;
-    padding: 30px;
+    padding: 1.56vw;
 }
 
 #paragrafo_preciso_de_ajuda {
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 0.730000vw;
     color: black;
 }
 
@@ -183,5 +183,5 @@
 #imagem_do_pix {
     display: flex;
     justify-content: center;
-    padding-top: 22px;
+    padding-top: 1.15vw;
 }

@@ -3,21 +3,21 @@
 
 #section_sacola_subtotal {
     position: relative;
-    top: 164px;
+    top: 8.54vw;
     left: 4.9%;
 }
 
 /*paragrafos*/
 #parte_escrita_sacola{
-    font-size: 23px;
+    font-size: 1.20vw;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    padding-bottom: 2px;
+    padding-bottom: 0.104167vw;
 
 }
 
 #parte_escrita_subtotal{
-    font-size: 16px;
+    font-size: 0.834286vw;
     font-family: 'Poppins', sans-serif;
 
 }

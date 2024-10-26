@@ -1,8 +1,8 @@
 #section_da_parte_da_sacola {
     position: relative;
-    top: 316.5px;
+    top: 16.48vw;
     left: 4.9%;
-    width: 1226px;
+    width: 63.85vw;
 }
 
 .cart-item   {
@@ -10,18 +10,18 @@
 }
 
 .cart-item > img  {
-    width: 220px;
-    height: 278px;
+    width: 11.46vw;
+    height: 14.48vw;
 }
 .cart-item > article   {
     position: relative;
-    top: -100px;
-    left: 10px;
-    width: 940px;
+    top: -5.21vw;
+    left: 0.520833vw;
+    width: 48.96vw;
 }
 .cart-item > button   {
     position: relative;
-    left: 20px;
+    left: 1.04vw;
 }
 
 .cart-item > article >h1  {

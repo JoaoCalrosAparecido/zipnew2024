@@ -4,39 +4,39 @@
 /*linha primaria*/
 #section_linha_primaria {
     position: relative;
-    top: 202px;
+    top: 10.52vw;
     left: 4.9%;
 }
 
 /*barra preta*/
 #barra_da_linha_primaria{
-    width: 98px;
-    height: 4px;
+    width: 5.10vw;
+    height: 0.208333vw;
     background-color: black;
 }
 
 /*paragrafo*/
 #Parte_escrita_sacola_linha_primaria {
     font-weight: 600;
-    font-size: 21px;
+    font-size: 1.10vw;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    top: 3px;
+    top: 0.156250vw;
 }
 
 /*linha*/
 #linha_primaria {
-    width: 1230px;
+    width: 64.06vw;
 }
 
 /*linha secundaria*/
 
 #section_linha_secundaria{
     position: relative;
-    top: 185px;
+    top: 9.64vw;
     left: 4.9%;
 }
 
 #linha_secundaria {
-    width: 1230px;
+    width: 64.06vw;
 }
