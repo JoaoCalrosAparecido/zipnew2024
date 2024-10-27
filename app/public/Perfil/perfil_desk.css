@@ -203,9 +203,9 @@ hr{
 #likeit{
     text-align: center;
     border-bottom: 2px solid #f1f1f1;
-    width: 91%;
+    width: 110%;
     padding-bottom: 0.4vw;
-    margin-left: 3.5vw;
+    margin-left: 5.5vw;
     font-size: 32px;
     font-weight: 400;
     color: #6d6e79;
@@ -229,10 +229,10 @@ hr{
     margin-right: 5vw;
 }
 
-#likes, #likez, #likezz{
+ #likezz{
     margin-left: -8vw;
-    height: 50vh;
-    width: 17vw;
+    height: 49vh;
+    width: 18vw;
     margin-top: 1.2vw;
 }
 
@@ -306,4 +306,12 @@ hr{
 #likeit {
     width: 69vw;
     margin-bottom: 1vh;
+}
+
+#contagem-vendas {
+    margin-left: 13vw;
+}
+
+#contagem-denun {
+    margin-left: 15vw;
 }

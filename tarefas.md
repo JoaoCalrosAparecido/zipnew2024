@@ -36,15 +36,14 @@ Dia 26
 - carrossel voce pode gostar da pagina de produtos mob com css certo e o coração da wishlist mais para cima (check)
 - stycky no adc-prod e wishlist
 - wishilit mobile (check)
-- pagian principal
-- dispaly flex no feminino masculino e acessorios
-- favoritar no infantil não funciona
-- favoritou produto na pagina de produto continua naq pagina de produto
-- deletou algo na  wishlist continua na wishlist
+
 
 dia 27
-- Adiciona produto com video e bazar
-
+- dispaly flex nos produtos no feminino masculino e acessorios
+- favoritou na pagina de produtos continua na pagina de produtos
+- produtos adicionados css igual da wishlist
+- review nos menus mobiles e desk para ver se tem bugs
+- adc produtos wishlist 
 
 # Erros
 

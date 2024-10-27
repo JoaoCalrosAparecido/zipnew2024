@@ -6,8 +6,8 @@
     height: 48.26vh;
     background-color: rgb(255, 255, 255);
     position: relative;
-    top: 100.75vw;
-    left: 4.85vw;
+    top: 125.75vw;
+    left: 6.85vw;
 }
 
 #article_slide {
@@ -24,7 +24,7 @@
 }
 
 #article_informações_slide > img {
-    height: 67.85vw;
+    height: 60.85vw;
     width: 45vw;
 }
 #article_informações_slide  {

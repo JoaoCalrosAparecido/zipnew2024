@@ -11,7 +11,7 @@
 
 /*barra preta*/
 #barra_da_linha_primaria{
-    width: 16.10vw;
+    width: 25.10vw;
     height: 0.208333vw;
     background-color: black;
     position: relative;
@@ -25,14 +25,16 @@
     font-family: 'Poppins', sans-serif;
     position: relative;
     top: 8vw;
+    left: 2vw;
     margin-bottom: 0.5vw;
 }
 
 /*linha*/
 #linha_primaria {
-    width: 90vw;
+    width: 88vw;
     position: relative;
     top: 8vw;
+    padding-left: 5vw;
 }
 
 /*linha secundaria*/
@@ -43,6 +45,6 @@
     left: 7.8vw;
 }
 
-#linha_secundaria {
-    width: 79.6vw;
-}
+
+
+
