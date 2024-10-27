@@ -3,24 +3,24 @@
 
 #section_sacola_subtotal {
     position: relative;
-    top: 8.54vw;
+    top: 20.54vw;
     left: 4.9%;
 }
 
 /*paragrafos*/
 #parte_escrita_sacola{
-    font-size: 1.20vw;
+    font-size: 3.8vw;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     padding-bottom: 0.104167vw;
 }
 
 #parte_escrita_sacola > img {
-    width: 9.38vw;
+    width: 18vw;
 }
 
 #parte_escrita_subtotal{
-    font-size: 0.989583vw;
+    font-size: 2.5vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     margin-bottom: 3vh;

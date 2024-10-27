@@ -5,6 +5,7 @@
 body {
 height: auto;
 overflow-x: hidden;
+font: 300 1.8rem 'Poppins';
 }
 
 .invalido{

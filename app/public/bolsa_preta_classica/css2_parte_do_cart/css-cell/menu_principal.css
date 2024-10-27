@@ -4,7 +4,7 @@
 
 #menu_principal_como_todo {
     position: fixed;
-    z-index: 10000;
+    z-index: 1000;
     opacity: 100%;
     top: 3vh;
 }
@@ -51,7 +51,7 @@
     position: fixed;
     top: -0.2vh;
     left: -4vw;
-    background-image: url('../../IMG/area_do_menu/logo_zip_parte_preta_2024.png');
+    background-image: url('../../../IMG/area_do_menu/logo_zip_parte_preta_2024.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25vw;
@@ -64,7 +64,7 @@
 
 
 #logo_zip_menu_imagem {
-    width: 105%;
+    width: 105vw;
 }
 
 
@@ -161,7 +161,7 @@ input::-webkit-input-placeholder {
   position: fixed;
   top: 5.3vh;
   right: 4vw;
-  background-image: url('../../IMG/cell_index/menu-principal/menu-preto.png');
+  background-image: url('../../../IMG/cell_index/menu-principal/menu-preto.png');
   background-repeat: no-repeat;
   background-size: 5.5vw;
   width: 6vw; /* Ajuste conforme necessário */
@@ -196,7 +196,7 @@ input::-webkit-input-placeholder {
 
 /* Estilo para o ícone de menu */
 #openMenuBtn.active {
-  background-image: url("../../IMG/area_do_menu/cell/x_de_fechar_refeito-removebg-preview.png");
+  background-image: url("../../../IMG/area_do_menu/cell/x_de_fechar_refeito-removebg-preview.png");
   background-repeat: no-repeat;
   background-size: 4vw;
   width: 5.5vw;
@@ -433,7 +433,7 @@ input::-webkit-input-placeholder {
 }
 
 #figure_brasil_menu_cell {
-  background-image: url("../../IMG/area_do_menu/cell/brasil.png");
+  background-image: url("../../../IMG/area_do_menu/cell/brasil.png");
   background-size: 4vw;
   background-repeat: no-repeat;
   width: 4vw;

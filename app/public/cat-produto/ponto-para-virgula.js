@@ -17,6 +17,11 @@ window.onload = function() {
         preco1.innerHTML = preco1.innerHTML.replace(/\./g, ',');
     }
 
+    var precos = document.querySelectorAll('.paragrafo_slide_preco');
+    precos.forEach(function(preco) {
+        preco.innerHTML = preco.innerHTML.replace(/\./g, ',');
+    });
+    
     // Para os elementos com a classe 'preco-prod'
     var precos = document.querySelectorAll('.preco-prod');
     precos.forEach(function(p) {

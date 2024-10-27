@@ -11,14 +11,14 @@
 
 #section_parte_superior {
     width: 100vw;
-    z-index: 10000;
+    z-index: 1000;
 }
 
 
 #parte_superior{
     z-index: 10;
     position: fixed;
-    top: 0vw;
+    top: 0;
     background-color: black;
     height: 3vh;
     width: 100vw ;

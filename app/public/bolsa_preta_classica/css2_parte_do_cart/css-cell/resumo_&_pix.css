@@ -5,18 +5,19 @@
 }
 
 #section_do_resumo_e_do_pix {
-    width: 24.27vw;
+    width: 90vw;
     height: 73.67vw;
     background-color: rgb(255, 255, 255);
-    position: absolute;
-    left: 71.35vw;
-    top: 17.5%;
+    position: relative;
+    left: 1vw;
+    top: 26.5vw;
 }
 
 /*position sticky*/
 #position_sticky {
-    position: sticky;
+    position: relative;
     top: 6.25vw;
+    margin-left: 2vw;
 }
 
 /*resumo do pedido*/
@@ -38,20 +39,20 @@
 #parte_escrita_resumo_do_pedido {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 19px;
+    font-size: 4.8vw;
+    margin-left: 17vw;
 }
 
 /*resumo do pedido*/
 #artcle_resumo_do_pedido {
-    width: 24.27vw;
-    height: 13vw;
+    width: 90vw;
+    height: 40vw;
     background-color: #F2F2F2;
 }
 
 /*paragrafo*/
 .paragrafo_resumo {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.04vw;
     padding-bottom: 0.833333vw;
 }
 
@@ -61,17 +62,21 @@
 
 .paragrafo_resumo_direita {
     position: absolute;
-    right: 5.2%;
+    right: 13.2vw;
+    
 }
 
 .parte_do_total {
     font-weight: 600;
-    font-size: 0.834286vw;
+    font-size: 3.5vw;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 /*linha*/
 #article_linha_resumo {
     padding-bottom: 0.833333vw;
+    width: 80vw;
 }
 
 /*botao finalizar*/
@@ -92,13 +97,13 @@
     color: #F2F2F2;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
-    font-size: 19px;
+    font-size: 3.8vw;
 }
 
 /*pix*/
 #article_do_pix {
-    width: 24.27vw;
-    height: 29.32vw;
+    width: 90vw;
+    height: 89.32vw;
     background-color: #F2F2F2;
     position: relative;
     top: 0.989583vw;
@@ -112,9 +117,10 @@
 }
 
 #paragrafo_forma_de_pagamento {
-    font-size: 1.04vw;
+    font-size: 3.8vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    margin-left: 19vw;
 }
 
 /*entrega*/
@@ -124,7 +130,7 @@
 }
 
 #paragrafo_entrega {
-    font-size: 0.782143vw;
+    font-size: 3.5ve;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
@@ -136,7 +142,7 @@
 
 #paragrafo_receba_ate_3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.730000vw;
+    font-size: 3.5vw;
 }
 
 /*vinkings*/
@@ -147,7 +153,7 @@
 
 #paragrafo_vinkings {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.782143vw;
+    font-size: 3.5vw;
     font-weight: 550;
 }
 
@@ -162,7 +168,7 @@
 
 #paragrafo_7_dias {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.730000vw;
+    font-size: 3.5vw;
 }
 
 /*Preciso de ajuda*/
@@ -173,7 +179,7 @@
 
 #paragrafo_preciso_de_ajuda {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.730000vw;
+    font-size: 3.5vw;
     color: black;
 }
 
@@ -181,16 +187,17 @@
 #imagem_do_pix {
     display: flex;
     padding: 1vw 0 0 1.3vw;
-    width: 3.72vw;
-    height: 3.72vw;
+    width: 12vw;
+    height: 12vw;
+    margin-left: 36vw;
 }
 
 
 #endereco-botap {
-    width: 21.61vw;
+    width: 80vw;
     height: 2.81vw;
-    font: 500 0.885417vw 'Poppins';
-    padding: 1vw 0;
+    font: 500 3.8vw 'Poppins';
+    padding: 10vw 0vw 0vw 13vw;
     color: black;
     position: relative;
     left: -0.00000000000000000001vw;

@@ -2,22 +2,30 @@
 
 
 #section_slide {
-    width: 62.11vw;
+    width: 90vw;
     height: 48.26vh;
     background-color: rgb(255, 255, 255);
     position: relative;
-    top: 13.75vw;
-    left: 7.65vw;
+    top: 100.75vw;
+    left: 4.85vw;
 }
 
 #article_slide {
     display: flex;
-    column-gap: 0.192708vw;
+    column-gap: 31vw;
+}
+
+#article_slide :nth-child(3) {
+    display: none;
+}
+
+#article_slide :nth-child(4) {
+    display: none;
 }
 
 #article_informações_slide > img {
-    height: 23.96vw;
-    width: 15.89vw;
+    height: 67.85vw;
+    width: 45vw;
 }
 #article_informações_slide  {
     width: 15.89vw;
@@ -26,7 +34,8 @@
 /*paragrafo*/
 #paragrafo_slide_nome {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.885417vw;
+    font-size: 3vw;
+    width: 42.8vw;
     position: relative;
     left: 1%;
     top: 0.208333vw;
@@ -35,9 +44,11 @@
 
 #paragrafo_slide_preco  {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.885417vw;
+    font-size: 3vw;
     position: relative;
     left: 1%;
+    width: 42.8vw;
+
 }
 
 /*coracao*/
