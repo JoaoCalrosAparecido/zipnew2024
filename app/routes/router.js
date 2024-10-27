@@ -948,11 +948,21 @@ router.post("/adicionar-produto",
     const userId = req.session.autenticado.id;
     const user = await models.findUserById(userId);
     const errors = validationResult(req);
-
     const quantidadeVendas = await pedidoModel.contarVendasPorCliente(userId);
-
-
     const { tamanProduto, cateProduto, tituloProduto, precoProduto, descProduto } = req.body;
+
+    const hasImages = req.files && (req.files.img1 && req.files.img2 && req.files.img3 && req.files.img4);
+
+    if (!errors.isEmpty() || !hasImages) {
+      if (!hasImages) {
+        errors.errors.push({
+          msg: "*Todas as imagens devem ser preenchidas",
+          param: "img"
+        });
+      }
+    }
+    
+    
 
     if (!errors.isEmpty()) {
       return res.render("pages/adc-produto", {
