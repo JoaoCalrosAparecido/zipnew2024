@@ -755,6 +755,7 @@
                     <section class="slider_principal_promos2">
                         <% bloco8.forEach(function(produto) { %>
                         <article class="slide_principal_promos">
+                            <a href="/produtos/<%= produto.id_prod_cliente %>">
                             <article class="slide_principal_grupo_promos">
                                 <article id="produto_principal_promos_parte_e_scrita_e_imagem2">
                                     <img class="Produto_principal_promos2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
@@ -764,6 +765,7 @@
                                     </figcaption>
                                 </article>
                             </article>
+                            </a>
                         </article>
                         <% }); %>
                     </section>
