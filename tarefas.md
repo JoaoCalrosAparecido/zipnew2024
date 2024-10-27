@@ -34,13 +34,13 @@ Dia 26
 
 - sem carrossel no desk de adc-produtos (check)
 - carrossel voce pode gostar da pagina de produtos mob com css certo e o coração da wishlist mais para cima (check)
-- stycky no adc-prod e wishlist
+- stycky no adc-prod e wishlist (impossible)
 - wishilit mobile (check)
 
 
 dia 27
-- dispaly flex nos produtos no feminino masculino e acessorios
-- favoritou na pagina de produtos continua na pagina de produtos
+- dispaly flex nos produtos no feminino masculino e acessorios (check)
+- favoritou na pagina de produtos continua na pagina de produtos(check)
 - produtos adicionados css igual da wishlist
 - review nos menus mobiles e desk para ver se tem bugs
 - adc produtos wishlist 
