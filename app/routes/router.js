@@ -745,7 +745,7 @@ router.get("/wishlist/",
           [id, dataFav, req.session.autenticado.id, titulo, preco, img1]
         );
         console.log('Favoritado');
-        res.redirect('/acesssorios');
+        res.redirect('/acessorios');
       }
 
 
