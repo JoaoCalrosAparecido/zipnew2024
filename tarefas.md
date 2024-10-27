@@ -9,9 +9,7 @@
 - Ajustar alinhamento dos produtos no m,f,i,a - ama
 - Indez canvas
 - Produtos adicionados css e vender no menu
-- contagens
-- login carrossel perfil
--tabelas
+- login carrossel
 
 ## O que falta do projeto (João)
 
