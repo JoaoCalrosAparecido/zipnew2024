@@ -60,33 +60,33 @@ meus dados mob menu e cadastro menu mob
 
 # Upd Menu
 ## Paginas que so temos acesso logado
-Meus dados  Perfeito
-Adc-produto Perfeito
-Adc-bazar Perfeito
-cart    Perfeito
-denuncias-usu   Perfeito
-meus pedidos    Perfeito
-minhas vendas   Perfeito
-perfil  Perfeito
-Tabelas - famoso - denuncia - dashbord  Perfeito
+Meus dados
+Adc-produt
+Adc-baza
+cart  
+denuncias-usu 
+meus pedidos  
+minhas vendas 
+perfil
+Tabelas/famoso/denuncia/dashbord
 Wishlist
-produtos adicionados       - pagina quebrada
+produtos adicionados         pagina quebrada
 
-## Paginas que temos acesso logado e deslogado          OBV Q FALTA A VALIDAÇÃO DE LOGADO        TEREI DE ARRUMAR AS FONTES APOS DO SACOLA
-Index   Perfeito
-Masculino   Perfeito
-Femino  TODO BUGADO porem feito
-Infantil    Perfeito
-Acessorios  Perfeito
-Pesquisa    Perfeito
-Bazar   Perfeito - css
-Produtos    Perfeito Pro
-Vender      Perfeito - css
+## Paginas que temos acesso logado e deslogado          OBV Q FALTA A VALIDAÇÃO DE LOGADO
+Index 
+Masculino 
+Femino      TODO BUGADO 
+Infantil  
+Acessorios
+Pesquisa  
+Bazar
+Produtos
+Vender
 
 ## Paginas que so temos acesso deslogado
-Cadastro    Perfeito
-Login   Perfeito
-Redefinir Senha     Perfeito
+Cadastro  
+Login 
+Redefinir Senha   
 
 
 ## Menus Mobile quebrados
