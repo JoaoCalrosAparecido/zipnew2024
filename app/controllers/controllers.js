@@ -314,12 +314,13 @@ const controller = {
 
   mostrarProduto: async (req, res) => {
     try {
+      const userId = req.session.autenticado.id;
       const produtoId = parseInt(req.params.id_prod_cliente);
       const [produto] = await produtosModels.findProdById(produtoId)
       console.log(produto);
       
       if (produto) {
-          res.render('pages/produtos', { usuarioautenticado: req.session.autenticado, produto: produto[0] })
+          res.render('pages/produtos', { usuarioautenticado: req.session.autenticado, produto: produto[0], user: userId })
       } else {
           res.status(404).send('Produto não encontrado');
       }

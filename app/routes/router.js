@@ -59,6 +59,7 @@ function selecionarProdutosAleatorios(produtos, quantidade) {
 
 router.get("/", verificarUsuAutenticado, async function (req, res) {
   try{
+    const userId = req.session.autenticado.id;
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 24);
 
@@ -89,6 +90,7 @@ router.get("/", verificarUsuAutenticado, async function (req, res) {
       bloco11,
       bloco12,
       logado: false, 
+      user: userId,
       usuarioautenticado: null, 
       dadosNotificacao: null });
     } catch (err) {
@@ -98,6 +100,7 @@ router.get("/", verificarUsuAutenticado, async function (req, res) {
 });
 
 router.get("/bazar", bazarController.getBazaarsWithProducts, function (req, res) {
+  
 });
 
 
@@ -360,7 +363,7 @@ router.get("/pagamento",
         })
       );
   
-      res.render('pages/masculino', { produtos: prodFavJaExiste, msg: 'Back-end funcionando' });
+      res.render('pages/masculino', { produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
     }
   );
   
@@ -378,7 +381,7 @@ router.get("/feminino",
         })
       );
 
-  res.render('pages/feminino', { produtos: prodFavJaExiste, msg: 'Back-end funcionando' });
+  res.render('pages/feminino', { produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
 });
 
 router.get("/infantil", 
@@ -394,7 +397,7 @@ router.get("/infantil",
         })
       );
 
-  res.render('pages/infantil', { produtos: prodFavJaExiste, msg: 'Back-end funcionando' });
+  res.render('pages/infantil', { produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
 });
 
 router.get("/acessorios",
@@ -410,11 +413,12 @@ router.get("/acessorios",
         })
       );
 
-  res.render('pages/acessorios', { produtos: prodFavJaExiste, msg: 'Back-end funcionando' });
+  res.render('pages/acessorios', { produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
 });
 
 router.get("/vender", function (req, res) {
-  res.render('pages/vender', { msg: 'Back-end funcionando' });
+  const userId = req.session.autenticado.id;
+  res.render('pages/vender', { user: userId, msg: 'Back-end funcionando' });
 });
 
 router.post("/enviado",
@@ -523,6 +527,7 @@ router.get('/produtos/:id_prod_cliente',
             dadosNotificacao: null,
             random: produtosAleatorios,
             produtos: prodFavJaExiste,
+            user: userId,
           });
         }
       } else {
@@ -1275,18 +1280,21 @@ router.get("/denuncias-usu", async function (req, res) {
 });
 
 
-router.get("/pesquisa", function (req, res) {
-  res.render('pages/pesquisa', { posts:null });
+router.get("/pesquisa", async function (req, res) {
+  const userId = req.session.autenticado.id;
+  res.render('pages/pesquisa', { user: userId, posts:null });
 });
 
 
 router.post("/search", async function (req, res) {
   try {
+      const userId = req.session.autenticado.id;
       const termoPesquisa = `%${req.body.pesquisaInput}%`;
       const produtos = await produtosModels.acharPorTermo(termoPesquisa) || [];
       if (produtos.length === 0) {
           const jsonResult = {
               posts: "none",
+              user: userId,
           };
           return res.render("./pages/pesquisa", jsonResult);
       }
@@ -1294,6 +1302,7 @@ router.post("/search", async function (req, res) {
           produtos: produtos,
       };
       const jsonResult = {
+          user: userId,
           posts: posts,
       };
       return res.render("./pages/pesquisa", jsonResult);

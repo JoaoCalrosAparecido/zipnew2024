@@ -74,6 +74,7 @@ const denunciaController = {
                     quantidadeVendas: quantidadeVendas,
                     listaErros: null,
                     random: produtosAleatorios,
+                    user: userId,
                     dadosNotificacao: { 
                         title: "Você já denunciou este produto", 
                         msg: "Produto já denunciado", 
@@ -90,6 +91,7 @@ const denunciaController = {
                     nomeCliente: nomeCliente,
                     quantidadeVendas: quantidadeVendas,
                     random: produtosAleatorios,
+                    user: userId,
                     dadosNotificacao: { 
                         title: "Preencha um dos campos", 
                         msg: "Campos vazios", 
@@ -116,6 +118,7 @@ const denunciaController = {
                 quantidadeVendas: quantidadeVendas,
                 listaErros: null,
                 random: produtosAleatorios,
+                user: userId,
                 dadosNotificacao: { 
                     title: "Sua denúncia foi enviada", 
                     msg: "Denúncia realizada com sucesso", 
@@ -184,6 +187,7 @@ const denunciaController = {
                     nomeCliente: nomeCliente,
                     quantidadeVendas: quantidadeVendas,
                     random: produtosAleatorios,
+                    user: userId,
                     dadosNotificacao: { 
                         title: "Você já denunciou este vendedor", 
                         msg: "Vendedor já denunciado", 
@@ -201,6 +205,7 @@ const denunciaController = {
                     nomeCliente: nomeCliente,
                     quantidadeVendas: quantidadeVendas,
                     random: produtosAleatorios,
+                    user: userId,
                     dadosNotificacao: { 
                         title: "Preencha um dos campos", 
                         msg: "Campos vazios", 
@@ -228,6 +233,7 @@ const denunciaController = {
                 nomeCliente: nomeCliente,
                 quantidadeVendas: quantidadeVendas,
                 random: produtosAleatorios,
+                user: userId,
                 dadosNotificacao: { 
                     title: "Sua denúncia foi enviada", 
                     msg: "Denúncia realizada com sucesso", 

@@ -73,15 +73,15 @@ Wishlist
 produtos adicionados         pagina quebrada
 
 ## Paginas que temos acesso logado e deslogado          OBV Q FALTA A VALIDAÇÃO DE LOGADO
-Index 
-Masculino 
-Femino      TODO BUGADO 
-Infantil  
-Acessorios
-Pesquisa  
-Bazar
-Produtos
-Vender
+Index   Feito Plus
+Masculino   Feito Falta Css
+Femino      TODO BUGADO      Feito Falta Css
+Infantil  Feito Falta Css
+Acessorios  Feito Falta Css
+Vender  Feito Falta Css
+Pesquisa  Feito Falta Css
+Bazar   Feito Falta Css
+Produtos    Feito Falta css
 
 ## Paginas que so temos acesso deslogado
 Cadastro  
@@ -97,3 +97,33 @@ Wishlist
 Tabelas - famoso - denuncia - dashbord (Coisa besta mas vo bota aq)
 Redsenha (Coisa besta mas vo bota aq)
 
+
+
+
+
+
+
+
+
+                                <% if (user !=  null) { %>
+                                    <p><a href="/perfil">Perfil</a></p>
+                                <% } else { %>
+                                    <p><a href="/perfil">Entrar</a></p>
+                                <% } %>
+
+                                
+                    <% if (user !=  null) { %>
+                        <article id="article_saiba_mais_menu_cell">
+                            <p>Acesse seu perfil e participe do nosso marketplace</p>
+                                <button>
+                                    <a href="/perfil" style="color: black; text-decoration: none;">Perfil</a>
+                                </button>
+                        </article>
+                    <% } else { %>
+                        <article id="article_saiba_mais_menu_cell">
+                            <p>Participe do nosso marketplace, favorite produtos e os adicione à sacola</p>
+                                <button>
+                                    <a href="/cadastro" style="color: black; text-decoration: none;">Cadastre-se</a>
+                                </button>
+                        </article>
+                    <% } %>
