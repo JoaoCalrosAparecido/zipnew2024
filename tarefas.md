@@ -73,16 +73,16 @@ Wishlist
 produtos adicionados       - pagina quebrada
 ?? pagamento      ?
 
-## Paginas que temos acesso logado e deslogado
-Index
-Masculino
-Femino
-Infantil
-Acessorios
-Pesquisa
-Bazar
-Produtos
-Vender
+## Paginas que temos acesso logado e deslogado          OBV Q FALTA A VALIDAÇÃO DE LOGADO        TEREI DE ARRUMAR AS FONTES APOS DO SACOLA
+Index   Perfeito
+Masculino   Perfeito
+Femino  TODO BUGADO
+Infantil    Perfeito
+Acessorios  Perfeito
+Pesquisa    Perfeito
+Bazar   Perfeito - css
+Produtos    Perfeito Pro
+Vender      Perfeito - css
 
 ## Paginas que so temos acesso deslogado
 Cadastro 
