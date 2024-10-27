@@ -473,13 +473,13 @@ router.get('/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
   async (req, res) => {
     const produtos = await produtosModels.findProducts();
-    const userId = req.session.autenticado.id;
-    const prodFavJaExiste = await Promise.all(
-      produtos.map(async (produto) => {
-        const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
-        return { ...produto, isFav };
-      })
-    );
+  const userId = req.session.autenticado.id;
+      const prodFavJaExiste = await Promise.all(
+        produtos.map(async (produto) => {
+          const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
+          return { ...produto, isFav };
+        })
+      );
 
     try {
       const produtoId = parseInt(req.params.id_prod_cliente);
