@@ -704,6 +704,7 @@
                     
                     <% bloco4.forEach(function(produto) { %>
                     <figure>
+                        <a href="/produtos/<%= produto.id_prod_cliente %>">
                         <figure id="promo_responsivo_slide">
                             <img class="imagem_do_slide" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                         </figure>
@@ -711,6 +712,7 @@
                             <p id="paragrafo_promos_responsivo"><%= produto.tituloprod %></p>
                             <p id="preco_promos_responsivo">R$ <%= produto.preçoprod %></p>
                         </figcaption>
+                        </a>
                     </figure>
                     <% }); %>
                 </article>
@@ -755,6 +757,7 @@
                     <section class="slider_principal_promos2">
                         <% bloco8.forEach(function(produto) { %>
                         <article class="slide_principal_promos">
+                            <a href="/produtos/<%= produto.id_prod_cliente %>">
                             <article class="slide_principal_grupo_promos">
                                 <article id="produto_principal_promos_parte_e_scrita_e_imagem2">
                                     <img class="Produto_principal_promos2" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
@@ -764,6 +767,7 @@
                                     </figcaption>
                                 </article>
                             </article>
+                            </a>
                         </article>
                         <% }); %>
                     </section>
