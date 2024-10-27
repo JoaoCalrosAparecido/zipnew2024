@@ -1,7 +1,5 @@
 ## O que falta do projeto (Lazully)
 
-- Sacola endereço - API correios
-
 - (Relaciona Ban) Wishlist - (Não esquecer da validação de produtos banidos e vendido) (Talvez Check)
 
 ## O que falta do projeto (Sophia)

@@ -203,8 +203,17 @@ router.get("/cart",
     
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
+
+    const [userAddress] = await connection.query(
+      "SELECT cep, casa FROM cliente WHERE id_Cliente = ?", [userId]
+    );
+
+    const valores = {
+      cep: userAddress[0]?.cep || '',  
+      numero: userAddress[0]?.casa || ''
+    };
     
-    res.render('pages/cart', { random: produtosAleatorios, dadosNotificacao: null, listaErros: null, cart: cart, erros: null, valores: { cep: '', numero: '' }});
+    res.render('pages/cart', { random: produtosAleatorios, dadosNotificacao: null, listaErros: null, cart: cart, erros: null, valores: valores });
   });
 
   router.get("/produtos-adicionados",
