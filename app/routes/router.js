@@ -1049,7 +1049,7 @@ router.post("/sign/register", controller.regrasValidacaocadastro, async function
       );
       console.log(token);
       const html = require('../util/email-ativar-conta')(process.env.URL_BASE, token);
-      enviarEmail(email, "Cadastro no site exemplo", null, html, ()=>{
+      enviarEmail(email, "Verificação de Email", null, html, ()=>{
         res.render('pages/login_do_usuario', { 
           erros: null,
           logado: false,
