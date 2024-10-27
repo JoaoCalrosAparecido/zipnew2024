@@ -53,3 +53,47 @@ Produtos Denunciar e Fazer outra ação
 
 meus dados mob menu e cadastro menu mob
 
+
+
+
+
+
+# Upd Menu
+## Paginas que so temos acesso logado
+Meus dados
+Adc-produt
+Adc-baza
+cart  
+denuncias-usu 
+meus pedidos  
+minhas vendas 
+perfil
+Tabelas/famoso/denuncia/dashbord
+Wishlist
+produtos adicionados         pagina quebrada
+
+## Paginas que temos acesso logado e deslogado          OBV Q FALTA A VALIDAÇÃO DE LOGADO
+Index 
+Masculino 
+Femino      TODO BUGADO 
+Infantil  
+Acessorios
+Pesquisa  
+Bazar
+Produtos
+Vender
+
+## Paginas que so temos acesso deslogado
+Cadastro  
+Login 
+Redefinir Senha   
+
+
+## Menus Mobile quebrados
+Adc Produto
+Meus dados
+produtos adicionados
+Wishlist
+Tabelas - famoso - denuncia - dashbord (Coisa besta mas vo bota aq)
+Redsenha (Coisa besta mas vo bota aq)
+

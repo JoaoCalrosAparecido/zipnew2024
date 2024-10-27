@@ -279,11 +279,12 @@
 .produto_paragrafo_watches1 {
     font-family: 'Poppins', sans-serif;
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 500;
     position: relative;
     left: 14.5%;
     top: 5px;
     padding-bottom: 10px;
+    color: #000000;
 }
 
 .parte_do_preço_watches {
@@ -292,16 +293,18 @@
     opacity: 60%;
     position: relative;
     left: 39%;
+    color: #000000;
 }
 
 .produto_paragrafo_watches2 {
     font-family: 'Poppins', sans-serif;
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 500;
     position: relative;
     left: 10.5%;
     top: 5px;
     padding-bottom: 10px;
+    color: #000000;
 }
 
 /*preço*/
