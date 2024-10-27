@@ -349,7 +349,6 @@ router.get("/pagamento",
 
   router.get("/masculino",
     verificarUsuAutenticado,
-    verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
     async function (req, res) {
       const produtos = await produtosModels.findAllProductByCategoryName('masculino');
   
@@ -368,7 +367,6 @@ router.get("/pagamento",
 
 router.get("/feminino",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('feminino')
 
@@ -385,7 +383,6 @@ router.get("/feminino",
 
 router.get("/infantil", 
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('infantil')
 
@@ -402,7 +399,6 @@ router.get("/infantil",
 
 router.get("/acessorios",
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('acessorios')
 
@@ -471,12 +467,9 @@ router.post('/atualizar-mensagem',
 
 router.get('/produtos/:id_prod_cliente',
   verificarUsuAutenticado,
-  verificarUsuAutorizado('pages/login_do_usuario', { dadosNotificacao: null,  erros: null, logado: false, dadosform: { email: '', senha: '' }, usuarioautenticado: null }, [1, 2, 3]),
   async (req, res) => {
     const produtos = await produtosModels.findProducts();
-  
-  
-    const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+    const userId = req.session.autenticado.id;
     const prodFavJaExiste = await Promise.all(
       produtos.map(async (produto) => {
         const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
