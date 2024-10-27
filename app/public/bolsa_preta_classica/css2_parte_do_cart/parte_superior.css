@@ -34,7 +34,8 @@
 }
 
 #parte_superior > p{
-    font-size: 97%;
+    font-size: 13px;
+    font-weight: 400;
     font-family: 'Poppins', sans-serif;
     position: relative;
     

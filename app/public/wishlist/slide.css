@@ -1,7 +1,8 @@
 #section_swiper {
   width: 36vw;
   position: relative;
-  top: -18vh;
+  top: -20vh;
+  left: -5vw;
 }
 
 #section_swiper > article {
