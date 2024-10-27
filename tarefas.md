@@ -76,7 +76,7 @@ produtos adicionados       - pagina quebrada
 ## Paginas que temos acesso logado e deslogado          OBV Q FALTA A VALIDAÇÃO DE LOGADO        TEREI DE ARRUMAR AS FONTES APOS DO SACOLA
 Index   Perfeito
 Masculino   Perfeito
-Femino  TODO BUGADO
+Femino  TODO BUGADO porem feito
 Infantil    Perfeito
 Acessorios  Perfeito
 Pesquisa    Perfeito
@@ -85,9 +85,9 @@ Produtos    Perfeito Pro
 Vender      Perfeito - css
 
 ## Paginas que so temos acesso deslogado
-Cadastro 
-Login 
-Redefinir Senha 
+Cadastro    Perfeito
+Login   Perfeito
+Redefinir Senha     Perfeito
 
 
 ## Menus Mobile quebrados
