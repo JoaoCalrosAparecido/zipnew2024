@@ -199,6 +199,7 @@ router.get("/cart",
   async function (req, res) {
 
     const userId = req.session.autenticado.id;
+    const user = await models.findUserById(userId);
     const cart = await cartModels.findAllProductByUserId(userId);
     
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
@@ -213,7 +214,7 @@ router.get("/cart",
       numero: userAddress[0]?.casa || ''
     };
     
-    res.render('pages/cart', { random: produtosAleatorios, dadosNotificacao: null, listaErros: null, cart: cart, erros: null, valores: valores });
+    res.render('pages/cart', { usuario: user, random: produtosAleatorios, dadosNotificacao: null, listaErros: null, cart: cart, erros: null, valores: valores });
   });
 
   router.get("/produtos-adicionados",
@@ -287,7 +288,7 @@ router.get("/cart",
         res.redirect('/cart'); 
       } catch (err) {
         console.log(err);
-        res.status(500).send('Erro ao remover cart'); // Opcional: resposta de erro
+        res.status(500).send('Erro ao remover cart'); 
       }
     }
     );
@@ -326,8 +327,7 @@ router.get("/cart",
 
 
       router.get('/pedidos', (req, res) => {
-          const pedidos = req.session.pedidos || []; // ou outra forma de obter os pedidos
-          
+          const pedidos = req.session.pedidos || []; 
           res.render('pages/cart', { pedidos: pedidos });
       });
 
@@ -1410,6 +1410,7 @@ router.post("/endere",
   async function (req, res) {
     const erros = validationResult(req);
     const userId = req.session.autenticado.id;
+    const user = await models.findUserById(userId);
     const cart = await cartModels.findAllProductByUserId(userId);
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
@@ -1420,6 +1421,7 @@ router.post("/endere",
         listaErros: erros,
         random: produtosAleatorios,
         cart: cart,
+        usuario: user,
         dadosNotificacao: null,
         valores: {
           cep: req.body.cep,
@@ -1438,16 +1440,25 @@ router.post("/endere",
       const [result] = await connection.query(
         "UPDATE cliente SET cep = ?, casa = ? WHERE id_Cliente = ?", [enderecoCompleto, numero, userId]);
 
+      const [userAddress] = await connection.query(
+        "SELECT cep, casa FROM cliente WHERE id_Cliente = ?", [userId]
+      );
+    
+        const novovalores = {
+          cep: userAddress[0]?.cep || '',  
+          numero: userAddress[0]?.casa || ''
+        };
+
+      const userAtualizado = await models.findUserById(userId);
+
       console.log("Endereço atualizado com sucesso.");
       res.render("pages/cart", {
         erros: null,
         listaErros: null,
         random: produtosAleatorios,
         cart: cart,
-        valores: {
-          cep: req.body.cep,
-          numero: req.body.numero,
-        },
+        usuario: userAtualizado,
+        valores: novovalores,
         dadosNotificacao: { 
           title: "Endereço Atualizado", 
           msg: "Endereço atualizado com sucesso", 

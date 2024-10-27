@@ -580,10 +580,13 @@
                         -->
                             
                                 
-                                    
-                                    <button type="submit" id="checkout-btn">
-                                        <P id="paragrafo_do_botao_do_finalizar_resumo">FINALIZAR</P>
-                                    </button>
+                        <% if (!usuario.cep && !usuario.casa) { %>
+                                <P id="paragrafo_do_botao_do_finalizar_resumo">Escolha um Endereço</P>
+                        <% }else{ %>
+                            <button type="submit" id="checkout-btn">
+                                <P id="paragrafo_do_botao_do_finalizar_resumo">FINALIZAR</P>
+                            </button>
+                        <% }%>
                                 
                                
                             
