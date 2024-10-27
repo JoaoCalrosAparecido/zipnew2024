@@ -60,18 +60,17 @@ meus dados mob menu e cadastro menu mob
 
 # Upd Menu
 ## Paginas que so temos acesso logado
-Meus dados
-Adc-produto
-Adc-bazar
-cart
-denuncias-usu
-meus pedidos
-minhas vendas
-perfil
-Tabelas - famoso - denuncia - dashbord
+Meus dados  Perfeito
+Adc-produto Perfeito
+Adc-bazar Perfeito
+cart    Perfeito
+denuncias-usu   Perfeito
+meus pedidos    Perfeito
+minhas vendas   Perfeito
+perfil  Perfeito
+Tabelas - famoso - denuncia - dashbord  Perfeito
 Wishlist
 produtos adicionados       - pagina quebrada
-?? pagamento      ?
 
 ## Paginas que temos acesso logado e deslogado          OBV Q FALTA A VALIDAÇÃO DE LOGADO        TEREI DE ARRUMAR AS FONTES APOS DO SACOLA
 Index   Perfeito
