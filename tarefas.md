@@ -1,7 +1,4 @@
 ## O que falta do projeto (Lazully)
-
-- (Relaciona Ban) Wishlist - (Não esquecer da validação de produtos banidos e vendido) (Talvez Check)
-
 ## O que falta do projeto (Sophia)
 
 - Vender
@@ -52,7 +49,6 @@ dia 27
 # Erros
 
 Erro no render
-Remover Produto da Sacola
 
 Produtos Denunciar e Fazer outra ação
 
