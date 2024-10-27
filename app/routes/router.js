@@ -837,7 +837,7 @@ router.post("/wishlist/removeFav",
       );
       console.log('produto do favorito removido');
 
-      res.redirect('/cart'); 
+      res.redirect('/wishlist'); 
     } catch (err) {
       console.log(err);
       res.status(500).send('Erro ao remover produto favoritado'); // Opcional: resposta de erro
@@ -989,15 +989,7 @@ router.post("/adicionar-produto",
 
     const createProd = await produtosModels.createProd(dadosProduto)
     console.log(createProd)
-    if (cateProduto == "feminino") {
-      res.redirect("/feminino")
-    } else if (cateProduto == "masculino") {
-      res.redirect("/masculino")
-    } else if (cateProduto == "infantil") {
-      res.redirect("/infantil")
-    } else if (cateProduto == "acessorios") {
-      res.redirect("/acessorios")
-    }
+    res.redirect("/produtos-adicionados")
   });
 
 router.post("/sign/register", controller.regrasValidacaocadastro, async function (req, res) {
