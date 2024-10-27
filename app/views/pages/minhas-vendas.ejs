@@ -382,7 +382,7 @@
                             <tr id="vendas__linhas">
                                 <td><%= venda.produto_vendido %></td>
                                 <td><%= venda.produto_vendido %></td>
-                                <td>rua galria, 888</td>
+                                <td><%= venda.comprador_cep %>, <%= venda.comprador_casa %></td>
                                 <td>
                                     <form action="/atualizar-mensagem" method="post">
                                         <input type="hidden" name="id_produto" value="<%= venda.id_produto %>">
@@ -395,7 +395,7 @@
                     <% }); %>
                 <% } else { %>
                     <tr>
-                        <td colspan="3">Nenhuma venda encontrada.</td>
+                        <td colspan="4">Nenhuma venda encontrada.</td>
                     </tr>
                 <% } %>
             </tbody>

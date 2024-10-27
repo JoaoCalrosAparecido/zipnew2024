@@ -20,8 +20,83 @@
 
 
     <link rel="shortcut icon" href="../../IMG/android-icon-192x192.png" type="image/x-icon">
+
+        <!-- Notify -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
+    
+
 </head>
 <body>
+
+    <% 
+        let msgErro = ''
+            
+        
+        const campoErro = {   
+            cep:'',
+            numero:'',
+  
+
+        };
+        if (listaErros) {
+            listaErros.errors.forEach(err => {
+                campoErro[err['path']] = 'invalido';
+                msgErro +=  err.msg + '<br>'
+                %>     
+            <%});%>
+            <script>
+                (() => {
+                    var campoInvalido = '<%= msgErro%>'
+                    function mostrarNotificacao() {
+                        return new Notify ({
+                            status: 'error',
+                            title: 'Verifique a URL', 
+                            text: '' + campoInvalido.replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+                            speed: 300,
+                            effect: 'fade',
+                            showIcon: false,
+                            showCloseButton: true,
+                            autoclose: true,
+                            autotimeout: 5000,
+                            gap: 20,
+                            distance: 20,
+                            position: 'center'
+                        });
+                    }
+
+                    mostrarNotificacao();
+                })();
+            </script>
+        <% } %>
+        
+    <% if (dadosNotificacao) {%>
+        <script>
+            (() => {
+                function mostrarNotificacao() {
+                    return new Notify({
+                        status: '<%= dadosNotificacao.type %>',
+                        title: '<%= dadosNotificacao.title %>',
+                        text: '<%= dadosNotificacao.msg %>',
+                        speed: 300,
+                        effect: 'fade',
+                        showIcon: false,
+                        showCloseButton: true,
+                        autoclose: true,
+                        autotimeout: 5000,
+                        gap: 20,
+                        distance: 20,
+                        position: 'center'
+                    });
+                }
+
+                mostrarNotificacao();
+            })();
+        </script>
+    <% } %>
+
         <!-- parte superior do desconto na primeira compra -->
         <a href="/masculino">
             <section id="section_parte_superior">
@@ -526,27 +601,27 @@
                     </article>
 
                     <form id="area_de_endereco" action="/endere" method="post">
-                        <p>Busca de Endereço</p>
+                        <p>Atualizar Endereço</p>
                       
                         <article id="article_cep_endereco">
                           <label for="cep">CEP:</label>
-                          <input type="text" id="cep" name="cep" placeholder="Digite o CEP" maxlength="9">
+                          <input type="text" id="cep" name="cep" placeholder="Digite o CEP" maxlength="9" class="<%=campoErro.cep %>" value="<%= valores.cep %>">
                           <br>
                         </article>
-                      
+                        
                         <article id="article_numero_endereco">
-                          <label for="numero">Número da Casa:</label>
-                          <input type="text" id="numero" name="numero" placeholder="Número">
-                          <br>
+                            <label for="numero">Número da Casa:</label>
+                            <input type="text" id="numero" name="numero" placeholder="Número" class="<%=campoErro.numero %>" value="<%= valores.numero %>">
+                            <br>
                         </article>
-                      
+                        
                         <article id="botao_endereco">
-                          <button type="submit">Buscar Endereço</button>
+                            <button type="submit">Atualizar Endereço</button>
+                            <article><p id="confira">Confira Suas Informações</p></article>
+                            <article id="endereco-info" style="margin-top: 20px;"></article>
                         </article>                        
                     </form>
                     <section id="section_endereco">
-                        <article><p id="confira">Confira Suas Informações</p></article>
-                        <article id="endereco-info" style="margin-top: 20px;"></article>
                     </section>
 
                 </article>

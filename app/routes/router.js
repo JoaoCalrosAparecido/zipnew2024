@@ -204,7 +204,7 @@ router.get("/cart",
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
     
-    res.render('pages/cart', { random: produtosAleatorios, cart: cart });
+    res.render('pages/cart', { random: produtosAleatorios, dadosNotificacao: null, listaErros: null, cart: cart, erros: null, valores: { cep: '', numero: '' }});
   });
 
   router.get("/produtos-adicionados",
@@ -1382,7 +1382,6 @@ router.get("/resetar-senha", async function (req, res) {
             },
           });
         }
-        // Ativa a conta do usuário
       }
     });
   } catch (e) {
@@ -1398,63 +1397,61 @@ router.post("/endere",
     erros: null,
     dadosform: { email: "", senha: "" },
     logado: false,
-    usuarioautenticado: null
-  }, [1, 2, 3]),
+    usuarioautenticado: null }, [1, 2, 3]),
   async function (req, res) {
-    const errors = validationResult(req);
+    const erros = validationResult(req);
     const userId = req.session.autenticado.id;
     const cart = await cartModels.findAllProductByUserId(userId);
-    
     const [random] = await connection.query('SELECT * FROM produtos WHERE Stats = "Disponível"');
     const produtosAleatorios = selecionarProdutosAleatorios(random, 4);
+    const { cep, numero } = req.body;
 
-    if (!errors.isEmpty()) {
+    if (!erros.isEmpty()) {
       return res.render("pages/cart", {
-        erros: errors.array(),
-        dadosform: req.body ,
+        listaErros: erros,
         random: produtosAleatorios,
-        cart: cart
+        cart: cart,
+        dadosNotificacao: null,
+        valores: {
+          cep: req.body.cep,
+          numero: req.body.numero,
+        }
       });
     }
-
-    const { cep, numero } = req.body;
 
     try {
       const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
       const data = await response.json();
 
-      if (data.erro) {
-        console.log("CEP não encontrado.");
-        throw new Error("CEP não encontrado.");
-      }
-
       const enderecoCompleto = `${data.logradouro || ""}, ${data.bairro || ""}, ${data.localidade || ""} - ${data.uf || ""}`;
       console.log("Endereço completo formatado:", enderecoCompleto);
 
       const [result] = await connection.query(
-        "UPDATE cliente SET cep = ?, casa = ? WHERE id_Cliente = ?",
-        [enderecoCompleto, numero , userId]
-      );
-
-      if (result.affectedRows === 0) {
-        console.log("Nenhuma linha foi afetada, usuário não encontrado.");
-        throw new Error('Falha ao atualizar o endereço. Usuário não encontrado.');
-      }
+        "UPDATE cliente SET cep = ?, casa = ? WHERE id_Cliente = ?", [enderecoCompleto, numero, userId]);
 
       console.log("Endereço atualizado com sucesso.");
-      res.redirect("/cart");
-    } catch (error) {
-      console.error("Erro durante a atualização do endereço:", error);
-      return res.render("pages/cart", {
-        erros: [{ msg: 'Erro ao atualizar o endereço. Tente novamente.' }],
-        dadosform: req.body,
+      res.render("pages/cart", {
+        erros: null,
+        listaErros: null,
         random: produtosAleatorios,
         cart: cart,
+        valores: {
+          cep: req.body.cep,
+          numero: req.body.numero,
+        },
+        dadosNotificacao: { 
+          title: "Endereço Atualizado", 
+          msg: "Endereço atualizado com sucesso", 
+          type: 'success' 
+      },
       });
+    } catch (error) {
+      console.error("Erro durante a atualização do endereço:", error);
+      return res.redirect("/cart");
+      
     }
   }
 );
-
 
 
 

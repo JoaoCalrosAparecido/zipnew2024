@@ -103,6 +103,8 @@ const pedidoModel = {
             SELECT 
                 pedido_item.tituloprod AS produto_vendido,
                 cliente.nome AS comprador_nome,
+                cliente.cep AS comprador_cep,
+                cliente.casa AS comprador_casa,
                 pedido_item.localiza AS status_envio,
                 produtos.Id_prod_cliente AS id_produto
             FROM 

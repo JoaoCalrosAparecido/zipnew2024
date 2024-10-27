@@ -6,3 +6,8 @@ body {
 height: auto;
 overflow-x: hiden;
 }
+
+.invalido{
+    background-color: rgba(255, 0, 0, 0.13);
+    border-color: rgb(255, 56, 56);
+}
