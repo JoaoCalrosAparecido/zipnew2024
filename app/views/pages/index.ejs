@@ -704,6 +704,7 @@
                     
                     <% bloco4.forEach(function(produto) { %>
                     <figure>
+                        <a href="/produtos/<%= produto.id_prod_cliente %>">
                         <figure id="promo_responsivo_slide">
                             <img class="imagem_do_slide" src="../../IMG/uploads/<%= produto.img1 %>" alt="">
                         </figure>
@@ -711,6 +712,7 @@
                             <p id="paragrafo_promos_responsivo"><%= produto.tituloprod %></p>
                             <p id="preco_promos_responsivo">R$ <%= produto.preçoprod %></p>
                         </figcaption>
+                        </a>
                     </figure>
                     <% }); %>
                 </article>
