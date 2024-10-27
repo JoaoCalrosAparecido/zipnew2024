@@ -44,7 +44,7 @@
 /*resumo do pedido*/
 #artcle_resumo_do_pedido {
     width: 24.27vw;
-    height: 17.14vw;
+    height: 13vw;
     background-color: #F2F2F2;
 }
 
@@ -89,10 +89,10 @@
 }
 
 #paragrafo_do_botao_do_finalizar_resumo{
-    color: rgb(96, 29, 29);
-    font-weight: 600;
+    color: #F2F2F2;
+    font-weight: 500;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.782143vw;
+    font-size: 19px;
 }
 
 /*pix*/
@@ -108,8 +108,7 @@
 
 /*forma de patgamento*/
 #article_forma_de_pagamento {
-    text-align: center;
-    padding-top: 1.56vw;
+    padding: 1.3vw 0 0 1.3vw;
 }
 
 #paragrafo_forma_de_pagamento {
@@ -181,8 +180,7 @@
 /*imagem do pix*/
 #imagem_do_pix {
     display: flex;
-    justify-content: center;
-    padding-top: 1.15vw;
+    padding: 1vw 0 0 1.3vw;
 }
 
 

@@ -4,26 +4,29 @@
 #area_de_endereco {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     position: relative;
     top: 2vh;
+    padding: 1vw 0 0 1.3vw;
 }
 #area_de_endereco > p {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.02vw;
-    font-weight: 550;
+    font-size: 19px;
+    font-weight: 500;
     margin-bottom: 1.5vh;
-
 }
 
 /*cep*/
 #article_cep_endereco {
-    margin-bottom: 0.5vh;
-    
+    margin: 1vw 0 0.5vh 0;
+    font-size: 19px;
 }
 #article_cep_endereco > input {
-    width: 8.4vw;
-    height: 2.2vh;
+    width: 21vw;
+    margin: 0.5vw 0 1vw 0;
+    font-family: 'Poppins';
+    padding: 0.3vw;
+    border: none;
 }
 
 #article_cep_endereco > input::placeholder {
@@ -35,7 +38,7 @@
 #article_cep_endereco > label {
     font-family: 'Poppins', sans-serif;
     font-size: 0.860357vw;
-    font-weight: 550;
+    font-weight: 500;
 }
 
 /*numero*/
@@ -44,8 +47,11 @@
 
 }
 #article_numero_endereco > input {
-    width: 2.6vw;
-    height: 2.2vh;
+    width: 21vw;
+    font-family: 'Poppins';
+    margin: 0.5vw 0 1vw 0;
+    padding: 0.3vw;
+    border: none;
 }
 
 #article_numero_endereco > input::placeholder {
@@ -79,15 +85,14 @@
 }
 
 #botao_endereco > button {
-    width: 9.9vw;
-    height: 2vw;
+    width: 21.61vw;
+    height: 2.81vw;
     background-color: black;        
     border: none;          
-    color: white;       
-    padding: 0;            
+    color: white;                
     font-family: 'Poppins', sans-serif;   
-    font-weight: 600;
-    font-size: 0.73vw;     
+    font-weight: 500;
+    font-size: 19px;     
     cursor: pointer; 
 }
 
@@ -96,3 +101,4 @@
     font-family: 'Poppins', sans-serif;
     font-size: 0.82vw;
 }
+

@@ -9,8 +9,6 @@
 - Ajustar alinhamento dos produtos no m,f,i,a - ama
 - Indez canvas
 - Produtos adicionados css e vender no menu
-- css wishlist
-- Css mobile da sacola / responsiva 
 
 ## O que falta do projeto (João)
 

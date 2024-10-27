@@ -552,20 +552,15 @@
                             <p id="parte_escrita_resumo_do_pedido">resumo do pedido</p>
                         </article>
                         <!--paragrafos-->
-                        <article class="paragrafo_resumo_display_felex">
-                            <p class="paragrafo_resumo">Adicionar cupom +</p>
-                            <p class="paragrafo_resumo paragrafo_resumo_direita">--</p>
-                        </article>
-                        <article class="paragrafo_resumo_display_felex">
-                            <p class="paragrafo_resumo">Endereço (1)</p>
-                            <p class="paragrafo_resumo paragrafo_resumo_direita">--</p>
-                        </article>
                         <article id="article_linha_resumo">
                             <hr id="linha_resumo">
                         </article>
                         <article class="paragrafo_resumo_display_felex">
-                            <p class="paragrafo_resumo parte_do_total">Total: <span class="parte_do_total"></span></p>
+                            <p class="paragrafo_resumo parte_do_total">total: <span class="parte_do_total"></span></p>
                             <p class="paragrafo_resumo paragrafo_resumo_direita parte_do_total">R$ <span class="other-total-price-1">0</span></p>
+                        </article>
+                        <article id="article_linha_resumo">
+                            <hr id="linha_resumo">
                         </article>
                         <!--parte do botão-->
                         <!--
@@ -580,7 +575,7 @@
                                 <P id="endereco-botap">digite seu endereço abaixo</P>
                         <% }else{ %>
                             <button type="submit" id="checkout-btn">
-                                <P id="paragrafo_do_botao_do_finalizar_resumo">FINALIZAR</P>
+                                <P id="paragrafo_do_botao_do_finalizar_resumo">finalizar</P>
                             </button>
                         <% }%>
                                 
@@ -593,14 +588,14 @@
                 <!--pix-->
                 <article id="article_do_pix">
                     <article id="article_forma_de_pagamento">
-                        <p id="paragrafo_forma_de_pagamento">FORMA DE PAGAMENTO</p>
+                        <p id="paragrafo_forma_de_pagamento">você pode pagar em pix</p>
                     </article>
                     <article id="imagem_do_pix">
                         <img width="72px" src="../IMG/sacola/pix/imagem_do_pix.png" alt="">
                     </article>
 
                     <form id="area_de_endereco" action="/endere" method="post">
-                        <p>Atualizar Endereço</p>
+                        <p>digite o endereço para entrega</p>
                       
                         <article id="article_cep_endereco">
                           <label for="cep">CEP:</label>
@@ -615,8 +610,8 @@
                         </article>
                         
                         <article id="botao_endereco">
-                            <button type="submit">Atualizar Endereço</button>
-                            <article><p id="confira">Confira Suas Informações</p></article>
+                            <button type="submit" id="endereco-botao" style="font-size: 19px; font-weight: 500;">enviar endereço</button>
+                            <article><p id="confira">confira suas Informações</p></article>
                             <article id="endereco-info" style="margin-top: 20px;"></article>
                         </article>                        
                     </form>
