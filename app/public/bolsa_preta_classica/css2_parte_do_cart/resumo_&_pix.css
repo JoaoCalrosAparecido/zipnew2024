@@ -16,7 +16,7 @@
 /*position sticky*/
 #position_sticky {
     position: sticky;
-    top: 6.25vw;
+    top: 8.25vw;
 }
 
 /*resumo do pedido*/
@@ -98,7 +98,7 @@
 /*pix*/
 #article_do_pix {
     width: 24.27vw;
-    height: 29.32vw;
+    height: 30.5vw;
     background-color: #F2F2F2;
     position: relative;
     top: 0.989583vw;
