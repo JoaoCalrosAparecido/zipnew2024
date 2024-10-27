@@ -350,9 +350,9 @@ router.get("/pagamento",
   router.get("/masculino",
     verificarUsuAutenticado,
     async function (req, res) {
-      const produtos = await produtosModels.findAllProductByCategoryName('masculino');
+      const produtos = await produtosModels.findAllProductByCategoryName('masculino') || [];
   
-      const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+      const userId = req.session.autenticado.id;
       const prodFavJaExiste = await Promise.all(
         produtos.map(async (produto) => {
           const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
@@ -368,9 +368,9 @@ router.get("/pagamento",
 router.get("/feminino",
   verificarUsuAutenticado,
   async function (req, res) {
-  const produtos = await produtosModels.findAllProductByCategoryName('feminino')
+  const produtos = await produtosModels.findAllProductByCategoryName('feminino') || [];
 
-  const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+  const userId = req.session.autenticado.id;
       const prodFavJaExiste = await Promise.all(
         produtos.map(async (produto) => {
           const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
@@ -384,9 +384,9 @@ router.get("/feminino",
 router.get("/infantil", 
   verificarUsuAutenticado,
   async function (req, res) {
-  const produtos = await produtosModels.findAllProductByCategoryName('infantil')
+  const produtos = await produtosModels.findAllProductByCategoryName('infantil') || [];
 
-  const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+  const userId = req.session.autenticado.id;
       const prodFavJaExiste = await Promise.all(
         produtos.map(async (produto) => {
           const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
@@ -400,9 +400,9 @@ router.get("/infantil",
 router.get("/acessorios",
   verificarUsuAutenticado,
   async function (req, res) {
-  const produtos = await produtosModels.findAllProductByCategoryName('acessorios')
+  const produtos = await produtosModels.findAllProductByCategoryName('acessorios') || [];
 
-  const userId = req.session.autenticado.id; // Certifique-se de que o userId está definido corretamente
+  const userId = req.session.autenticado.id;
       const prodFavJaExiste = await Promise.all(
         produtos.map(async (produto) => {
           const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);

@@ -254,16 +254,22 @@ const denunciaController = {
                 WHERE Id_prod_cliente IN (
                     SELECT id_prod_cliente FROM produtos 
                     WHERE id_Cliente = ? AND Stats = ?
-                )
-            `, [idClienteDenunciado, "Inativo"]);
+                )`, [idClienteDenunciado, "Inativo"]);
 
              await pool.query(`
                  DELETE FROM Favoritos 
                  WHERE Id_prod_cliente IN (
                      SELECT id_prod_cliente FROM produtos 
                      WHERE id_Cliente = ? AND Stats != ?
-                 )
-             `, [idClienteDenunciado, "Disponível"]);
+                 )`, [idClienteDenunciado, "Disponível"]);
+
+            await pool.query(`
+                DELETE FROM denuncias_produto
+                WHERE id_prod_cliente IN (
+                    SELECT id_prod_cliente FROM produtos 
+                    WHERE id_Cliente = ? AND Stats != ?
+                )`, [idClienteDenunciado, "Disponível"]);
+       
     
     
             res.redirect('/adm-denuncias');
