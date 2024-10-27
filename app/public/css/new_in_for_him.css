@@ -204,21 +204,23 @@
 .produto_paragrafo_larezzo1 {
     font-family: 'Poppins', sans-serif;
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 500;
     position: relative;
     left: 14%;
     top: 5px;
     padding-bottom: 10px;
+    color: #000000;
 }
 
 .produto_paragrafo_larezzo2 {
     font-family: 'Poppins', sans-serif;
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 500;
     position: relative;
     left: 10.5%;
     top: 5px;
     padding-bottom: 10px;
+   color: #000000;
 }
 
 .parte_do_preço_larezzo {
@@ -227,6 +229,7 @@
     opacity: 60%;
     position: relative;
     left: 35%;
+    color: #000000;
 }
 
 /*imagens principais*/

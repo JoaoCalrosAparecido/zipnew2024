@@ -94,17 +94,18 @@
 /* parte escrita */
 .parte_escrita_relogio {
     position: relative;
-    top: 38%;
+    top: 36%;
     left: 30px;
 }
 
 .relogios_paragrafo {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 19px;
+    font-weight: 500;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    padding-bottom: 2%;
-
+    padding-bottom: 1%;
+    text-decoration: none;
+    color: #000;
 }
 
 .relogios_paragrafo_preco {
@@ -113,6 +114,8 @@
   font-size: 19px;
   left: -1%;
   opacity: 60%;
+  text-decoration: none;
+  color: #000;
 }
 
 /* seta */
@@ -276,8 +279,8 @@
 
   #paragrafo_do_slide_Principal_promos_preço {
     font-family: 'Poppins', sans-serif;
-    font-size: 25px;
-    opacity: 80%;
+    font-size: 21px;
+    opacity: 60%;
     color: #000;
   }
 
@@ -313,4 +316,9 @@
   #produto_principal_promos_parte_e_scrita_e_imagem2{
     position: relative;
     left: 10%;
+  }
+
+
+  * {
+    text-decoration: none;
   }
