@@ -57,7 +57,8 @@
                             <td class="celula4"><%= denuncias.total_propaganda_enganosa %></td>
                             <td class="celula5">
                             <form method="POST" action="/banir/<%= denuncias.id_Cliente_denunciado %>">
-                                <button type="submit" class="efeito-botao">Banir</button>
+                                <button type="submit" class="efeito-botao"
+                                id="banir">Banir</button>
                             </form></td>
                         </tr>
                     <% }) %>

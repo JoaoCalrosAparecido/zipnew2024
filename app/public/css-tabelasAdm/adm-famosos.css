@@ -76,7 +76,7 @@ td {
 }
 
 .solicitacoes-colunas>tr>th {
-    height: 7vh;
+    height: 10vh;
     background-color: #212121;
     color: #FFFFFF;
     border-top: none;
@@ -114,13 +114,15 @@ td:nth-child(2) {
     border-top: none;
 }
 
-button {
-    padding: 0.8vw 4vw;
+#aprova, #nega {
+    padding: 0.9vw 4vw;
     border-radius: 25px;
     color: #FFFFFF;
     font-size: 1.4rem;
     font-weight: 600;
     border: none;
+    width: 60%;
+    box-sizing: border-box;
 }
 
 #aprova {
