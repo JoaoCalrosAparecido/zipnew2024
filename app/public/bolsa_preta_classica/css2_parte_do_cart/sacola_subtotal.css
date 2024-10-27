@@ -13,11 +13,11 @@
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     padding-bottom: 0.104167vw;
-
 }
 
 #parte_escrita_subtotal{
-    font-size: 0.834286vw;
+    font-size: 19px;
     font-family: 'Poppins', sans-serif;
-
+    font-weight: 500;
+    margin-bottom: 3vh;
 }

@@ -31,15 +31,14 @@
 
 /*parte escrita resumo do pedido*/
 #section_parte_escrita_resumo_do_pedido {
-    text-align: center;
     padding-top: 1.20vw;
     padding-bottom: 1.82vw;
 }
 
 #parte_escrita_resumo_do_pedido {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.04vw;
+    font-weight: 500;
+    font-size: 19px;
 }
 
 /*resumo do pedido*/
@@ -184,4 +183,17 @@
     display: flex;
     justify-content: center;
     padding-top: 1.15vw;
+}
+
+
+#endereco-botap {
+    width: 21.61vw;
+    height: 2.81vw;
+    font: 500 17px 'Poppins';
+    padding: 1vw 0;
+    color: black;
+    position: relative;
+    left: -0.00000000000000000001vw;
+    top: 0.0000000000000000000000001vh;
+    z-index: 100;
 }

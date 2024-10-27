@@ -455,15 +455,15 @@
     <!--sacola subtotal-->
     <section id="section_sacola_subtotal">
         <article>
-            <p id="parte_escrita_sacola">SACOLA</p>
-            <p id="parte_escrita_subtotal">Subtotal: R$ <span class="other-total-price-1">0</span></p>
+            <h1 id="parte_escrita_sacola"><img src="../../IMG/sacola/sacola-escrita.png" alt=""></h1>
+            <p id="parte_escrita_subtotal">finalize seu pedido e garanta seus achados</p>
         </article>
     </section>
 
     <!--linha primaria-->
     <section id="section_linha_primaria">
         <article>
-            <p id="Parte_escrita_sacola_linha_primaria">Sacola (1)</p>
+            <p id="Parte_escrita_sacola_linha_primaria">sacola (1)</p>
             <article id="barra_da_linha_primaria"></article>
             <hr id="linha_primaria">
         </article>
@@ -475,7 +475,7 @@
 <!--<form action="create-preference" method="post">-->
     <section class="form-payment">
         <article class="products">
-            <h2 class="title">Resumo do pedido</h2>
+           
             
             <% var pedidos = pedidos || []; %>
             <%
@@ -495,14 +495,9 @@
                 });
             } else {
             %>
-                <p>Carrinho vazio.</p>
             <%
             }
             %>
-            
-            <article class="total">
-                <span class="price" id="summary-total">Total R$ <%= total.toFixed(2) %></span>
-            </article>
         </article>
     </section>
 <!--lista do codigo-->
@@ -520,6 +515,7 @@
                             <input type="hidden" name="id_prod" id="id_prod" value="<%= cart[i].Id_prod_cliente %>">
                             <h3 class="name-prod"><%= cart[i].tituloprod %></h3>
                             <p class="preco-prod">R$ <span class="preco-prod-value"><%= parseFloat(cart[i].preçoprod).toFixed(2) %></span></p>
+                            <p id="parcela">parcela em até 12x com juros</p>
                             <h1>
                                 <img id="coracao_mover" src="../../IMG/sacola/produtos/coracao_escrito_mover_par_uma_lista_de_desejos.svg" alt="Mover para a wishlist">
                                 Mover para a wishlist
@@ -553,7 +549,7 @@
                     <section id="parte_do_section_distancia_da_esquerda">
                         <!--escrita resumo do pedido-->
                         <article id="section_parte_escrita_resumo_do_pedido">
-                            <p id="parte_escrita_resumo_do_pedido">RESUMO DO PEDIDO</p>
+                            <p id="parte_escrita_resumo_do_pedido">resumo do pedido</p>
                         </article>
                         <!--paragrafos-->
                         <article class="paragrafo_resumo_display_felex">
@@ -581,7 +577,7 @@
                             
                                 
                         <% if (!usuario.cep && !usuario.casa) { %>
-                                <P id="paragrafo_do_botao_do_finalizar_resumo">Escolha um Endereço</P>
+                                <P id="endereco-botap">digite seu endereço abaixo</P>
                         <% }else{ %>
                             <button type="submit" id="checkout-btn">
                                 <P id="paragrafo_do_botao_do_finalizar_resumo">FINALIZAR</P>
@@ -651,8 +647,7 @@
     <!--voce pode gostar-->
     <section id="section_voce_pode_gostar">
         <article id="article_voce_pode_gostar">
-            <p id="paragrafo_voce_pode_gostar">VOCÊ PODE GOSTAR</p>
-            <p id="paragrafo_vistos_recente">VISTAS RECENTEMENTE</p>
+
         </article>
 
         <!--barra-->
@@ -661,19 +656,16 @@
 
     <!--slide-->
     <section id="section_slide">
-        <article id="article_slide">
+        <article id="article_slide" style="margin-left: -3vw;">
             <% random.forEach(function(rando) { %>
             <a href="/produtos/<%= rando.id_prod_cliente %>">
                 <figure>
                     <article>
-                        <img width="305px" src="../../IMG/uploads/<%= rando.img1 %>" alt="">
+                        <img width="305px" src="../../IMG/uploads/<%= rando.img1 %>" alt="" style="height: 50vh;">
                         <figcaption>
-                            <p id="paragrafo_slide_nome"><%= rando.tituloprod %></p>
-                            <p id="paragrafo_slide_preco">R$ <%= rando.preçoprod %></p>
+                            <p id="paragrafo_slide_nome" style="color: #000; text-decoration: none; font-size: 17px; margin: 0.5vw 0 0 1.2vw;font-weight: 500;"><%= rando.tituloprod %></p>
+                            <p id="paragrafo_slide_preco" style="color: #000; text-decoration: none; font-size: 17px; margin: 0.2vw 0 0 1vw;font-weight: 300;">R$ <%= rando.preçoprod %></p>
                         </figcaption>
-                    </article>
-                    <article id="coracao_slide">
-                        <img src="../IMG/sacola/slide/coracao.svg" alt="">
                     </article>
                 </figure>
             </a>    
