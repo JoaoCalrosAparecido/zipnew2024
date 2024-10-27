@@ -73,15 +73,15 @@ Wishlist
 produtos adicionados         pagina quebrada
 
 ## Paginas que temos acesso logado e deslogado          OBV Q FALTA A VALIDAÇÃO DE LOGADO
-Index   Feito Plus
-Masculino   Feito Falta Css
-Femino      TODO BUGADO      Feito Falta Css
-Infantil  Feito Falta Css
-Acessorios  Feito Falta Css
-Vender  Feito Falta Css
-Pesquisa  Feito Falta Css
-Bazar   Feito Falta Css
-Produtos    Feito Falta css
+Index
+Masculino
+Femino      TODO BUGADO
+Infantil
+Acessorios 
+Vender
+Pesquisa
+Bazar   
+Produtos
 
 ## Paginas que so temos acesso deslogado
 Cadastro  
