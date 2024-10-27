@@ -131,6 +131,62 @@ const prodModels = {
     },
 
 
+    countAvailableMaleProducts: async () => {
+        const query = 
+            `SELECT 
+                COUNT(*) AS total_produtos_masculinos
+            FROM 
+                produtos
+            WHERE 
+                Stats = 'Disponível' 
+                AND cateProduto = 'masculino';`;
+        
+        const [result] = await pool.query(query);
+        return result[0].total_produtos_masculinos || 0;
+    },
+
+    countAvailableFemaleProducts: async () => {
+        const query = 
+            `SELECT 
+                COUNT(*) AS total_produtos_masculinos
+            FROM 
+                produtos
+            WHERE 
+                Stats = 'Disponível' 
+                AND cateProduto = 'feminino';`;
+        
+        const [result] = await pool.query(query);
+        return result[0].total_produtos_masculinos || 0;
+    },
+
+    countAvailableChildProducts: async () => {
+        const query = 
+            `SELECT 
+                COUNT(*) AS total_produtos_masculinos
+            FROM 
+                produtos
+            WHERE 
+                Stats = 'Disponível' 
+                AND cateProduto = 'infantil';`;
+        
+        const [result] = await pool.query(query);
+        return result[0].total_produtos_masculinos || 0;
+    },
+
+    countAvailableLeftProducts: async () => {
+        const query = 
+            `SELECT 
+                COUNT(*) AS total_produtos_masculinos
+            FROM 
+                produtos
+            WHERE 
+                Stats = 'Disponível' 
+                AND cateProduto = 'acessorios';`;
+        
+        const [result] = await pool.query(query);
+        return result[0].total_produtos_masculinos || 0;
+    },
+
 
 };
 

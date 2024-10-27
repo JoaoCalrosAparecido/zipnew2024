@@ -354,8 +354,11 @@ router.get("/pagamento",
     verificarUsuAutenticado,
     async function (req, res) {
       const produtos = await produtosModels.findAllProductByCategoryName('masculino') || [];
-  
       const userId = req.session.autenticado.id;
+
+
+      const totalDisponiveisMasculino = await produtosModels.countAvailableMaleProducts();
+
       const prodFavJaExiste = await Promise.all(
         produtos.map(async (produto) => {
           const isFav = await prodModels.hasProductsFav(userId, produto.id_prod_cliente);
@@ -363,7 +366,7 @@ router.get("/pagamento",
         })
       );
   
-      res.render('pages/masculino', { produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
+      res.render('pages/masculino', { contagem: totalDisponiveisMasculino, produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
     }
   );
   
@@ -373,6 +376,8 @@ router.get("/feminino",
   async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('feminino') || [];
 
+  const totalDisponiveisMasculino = await produtosModels.countAvailableFemaleProducts();
+
   const userId = req.session.autenticado.id;
       const prodFavJaExiste = await Promise.all(
         produtos.map(async (produto) => {
@@ -381,7 +386,7 @@ router.get("/feminino",
         })
       );
 
-  res.render('pages/feminino', { produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
+  res.render('pages/feminino', { contagem: totalDisponiveisMasculino, produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
 });
 
 router.get("/infantil", 
@@ -389,6 +394,8 @@ router.get("/infantil",
   async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('infantil') || [];
 
+  const totalDisponiveisMasculino = await produtosModels.countAvailableChildProducts();
+
   const userId = req.session.autenticado.id;
       const prodFavJaExiste = await Promise.all(
         produtos.map(async (produto) => {
@@ -397,7 +404,7 @@ router.get("/infantil",
         })
       );
 
-  res.render('pages/infantil', { produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
+  res.render('pages/infantil', {  contagem: totalDisponiveisMasculino, produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
 });
 
 router.get("/acessorios",
@@ -405,6 +412,8 @@ router.get("/acessorios",
   async function (req, res) {
   const produtos = await produtosModels.findAllProductByCategoryName('acessorios') || [];
 
+  const totalDisponiveisMasculino = await produtosModels.countAvailableLeftProducts();
+
   const userId = req.session.autenticado.id;
       const prodFavJaExiste = await Promise.all(
         produtos.map(async (produto) => {
@@ -413,7 +422,7 @@ router.get("/acessorios",
         })
       );
 
-  res.render('pages/acessorios', { produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
+  res.render('pages/acessorios', { contagem: totalDisponiveisMasculino, produtos: prodFavJaExiste, user: userId, msg: 'Back-end funcionando' });
 });
 
 router.get("/vender", function (req, res) {
