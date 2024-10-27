@@ -601,13 +601,13 @@
                         <p>digite o endereço para entrega</p>
                       
                         <article id="article_cep_endereco">
-                          <label for="cep">CEP:</label>
+                          <label for="cep">cep</label>
                           <input type="text" id="cep" name="cep" placeholder="Digite o CEP" maxlength="9" class="<%=campoErro.cep %>" value="<%= valores.cep %>">
                           <br>
                         </article>
                         
                         <article id="article_numero_endereco">
-                            <label for="numero">Número da Casa:</label>
+                            <label for="numero">número da casa</label>
                             <input type="text" id="numero" name="numero" placeholder="Número" class="<%=campoErro.numero %>" value="<%= valores.numero %>">
                             <br>
                         </article>
@@ -637,9 +637,7 @@
   
 
     <!--linha secundaria-->
-    <section id="section_linha_secundaria">
-        <hr id="linha_secundaria">
-    </section>
+
 
     <!--voce pode gostar-->
     <section id="section_voce_pode_gostar">
@@ -660,7 +658,7 @@
                     <article id="article_informações_slide">
                         <img  src="../../IMG/uploads/<%= rando.img1 %>" alt="" >
                         <figcaption>
-                            <p id="paragrafo_slide_nome" class="paragrafo_slide_preco"  style="color: #000; text-decoration: none; margin: 0.5vw 0 0 1.2vw;font-weight: 500;"><%= rando.tituloprod %></p>
+                            <p id="paragrafo_slide_nome" class="paragrafo_slide_preco"  style="color: #000; text-decoration: none; margin: 0 0 0 1.2vw;font-weight: 500;"><%= rando.tituloprod %></p>
                             <p id="paragrafo_slide_preco" class="paragrafo_slide_preco" style="color: #000; text-decoration: none; margin: 0.2vw 0 0 1vw;font-weight: 300;">R$ <%= rando.preçoprod %></p>
                         </figcaption>
                     </article>

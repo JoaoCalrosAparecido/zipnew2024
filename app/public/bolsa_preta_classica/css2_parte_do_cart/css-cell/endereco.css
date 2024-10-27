@@ -14,18 +14,17 @@
     font-size: 3.8vw;
     font-weight: 500;
     margin-bottom: 1.5vh;
-    margin-left: 13vw;
 }
 
 /*cep*/
 #article_cep_endereco {
-    margin: 0vw 0 0.5vh 3.3vw;
-    font-size: 3.4vw;
+    margin: 2vw 0 0 3.3vw;
+    font-size: 19px;
 }
 #article_cep_endereco > input {
-    width: 70vw;
+    width: 80vw;
     height: 5vh;
-    margin: 3vw 0 5vw 0;
+    margin: 0 0 5vw 0;
     font-family: 'Poppins';
     padding: 0.3vw;
     border: none;
@@ -49,9 +48,9 @@
     font-size: 3.4vw;
 }
 #article_numero_endereco > input {
-    width: 44vw;
+    width: 80vw;
     height: 5vh;
-    margin: 3vw 0 5vw 0;
+    margin: 0 0 5vw 0;
     font-family: 'Poppins';
     padding: 0.3vw;
     border: none;
@@ -105,3 +104,18 @@
     font-size: 0.82vw;
 }
 
+#area_de_endereco > p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 1.5vh;
+    margin-left: 4vw;
+}
+
+#article_do_pix {
+    height: 65vh;
+}
+
+label {
+    font-size: 19px;
+}
