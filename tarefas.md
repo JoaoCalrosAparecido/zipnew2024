@@ -36,8 +36,16 @@ Dia 26
 
 - sem carrossel no desk de adc-produtos (check)
 - carrossel voce pode gostar da pagina de produtos mob com css certo e o coração da wishlist mais para cima (check)
+- stycky no adc-prod e wishlist
+- wishilit mobile
+- pagian principal
+- dispaly flex no feminino masculino e acessorios
+- favoritar no infantil não funciona
+- favoritou produto na pagina de produto continua naq pagina de produto
+- deletou algo na  wishlist continua na wishlist
+
+dia 27
 - Adiciona produto com video e bazar
-- stycky no adc-prod (check)
 
 
 # Erros

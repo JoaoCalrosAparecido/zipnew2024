@@ -23,9 +23,7 @@
     font-weight: 500;
 }
 
-
-@media (max-width:480px) {
-    #section-escrita-wishlist #saudacao {
-        top: 55vh;
-    }
+#saudacao > img {
+    width: 13vw;
 }
+

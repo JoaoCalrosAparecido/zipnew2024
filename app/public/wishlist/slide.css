@@ -1,18 +1,28 @@
+#section_swiper {
+  width: 36vw;
+  position: relative;
+  top: -18vh;
+}
+
+#section_swiper > article {
+  position: sticky;
+  top: 18vh;
+}
+
 .swiper {
     width: 36vw;
     height: 50vw;
-    margin-top: -110.5vh;
-    position: absolute;
-    right: -23vw;
+    
   }
 
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #980d9c;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+
   }
 
   .swiper-slide img {
