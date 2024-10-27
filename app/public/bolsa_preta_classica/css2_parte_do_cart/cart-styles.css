@@ -28,17 +28,25 @@
 .cart-item h3 {
     position: relative;
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    top: 0px;
+    font-weight: 500;
+    font-size: 18px;
+    top: 4vh;
 }
 
 .cart-item p {
     position: relative;
     left: 00px;
-    font-weight: 600;
-    font-size: 0.886429vw;
+    top: 4vh;
+    font-weight: 300;
+    font-size: 18px;
     font-family: 'Poppins', sans-serif;
 
+}
+
+#parcela {
+    font-weight: 300;
+    font-size: 17px;
+    margin-top: 0.5vw;
 }
 
 /*preço*/

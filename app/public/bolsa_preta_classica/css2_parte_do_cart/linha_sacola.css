@@ -17,11 +17,12 @@
 
 /*paragrafo*/
 #Parte_escrita_sacola_linha_primaria {
-    font-weight: 600;
-    font-size: 1.10vw;
+    font-weight: 500;
+    font-size: 20px;
     font-family: 'Poppins', sans-serif;
     position: relative;
     top: 0.156250vw;
+    margin-bottom: 0.5vw;
 }
 
 /*linha*/
@@ -33,7 +34,7 @@
 
 #section_linha_secundaria{
     position: relative;
-    top: 9.64vw;
+    top: 10.64vw;
     left: 4.9%;
 }
 
