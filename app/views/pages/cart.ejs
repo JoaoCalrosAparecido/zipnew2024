@@ -515,7 +515,9 @@
                         <article>
                             <input type="hidden" name="id_prod" id="id_prod" value="<%= cart[i].Id_prod_cliente %>">
                             <h3 class="name-prod"><%= cart[i].tituloprod %></h3>
-                            <p class="preco-prod">R$ <span class="preco-prod-value"><%= parseFloat(cart[i].preçoprod).toFixed(2) %></span></p>
+                            <span class="preco-prod-value" style="display: none;"><%= parseFloat(cart[i].preçoprod).toFixed(2) %></span>
+                            <p class="preco-prod">R$ <%= parseFloat(cart[i].preçoprod).toFixed(2) %></p>
+
                             <p id="parcela">parcela em até 12x com juros</p>
                             <h1>
                                 <img id="coracao_mover" src="../../IMG/sacola/produtos/coracao_escrito_mover_par_uma_lista_de_desejos.svg" alt="Mover para a wishlist">
