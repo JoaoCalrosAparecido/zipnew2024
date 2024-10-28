@@ -45,20 +45,15 @@ dia 27
 - review nos menus mobiles e desk para ver se tem bugs
 - adc produtos wishlist 
 
+
+
+
 # Erros
 
 Erro no render
 
-Produtos Denunciar e Fazer outra ação
-
-meus dados mob menu e cadastro menu mob
 
 
-
-
-
-
-# Upd Menu
 ## Paginas que so temos acesso logado
 Meus dados
 Adc-produt
@@ -70,12 +65,12 @@ minhas vendas
 perfil
 Tabelas/famoso/denuncia/dashbord
 Wishlist
-produtos adicionados         pagina quebrada
+produtos adicionados
 
-## Paginas que temos acesso logado e deslogado          OBV Q FALTA A VALIDAÇÃO DE LOGADO
+## Paginas que temos acesso logado e deslogado 
 Index
 Masculino
-Femino      TODO BUGADO
+Femino
 Infantil
 Acessorios 
 Vender
@@ -89,13 +84,66 @@ Login
 Redefinir Senha   
 
 
-## Menus Mobile quebrados
-Adc Produto
-Meus dados
-produtos adicionados
-Wishlist
-Tabelas - famoso - denuncia - dashbord (Coisa besta mas vo bota aq)
-Redsenha (Coisa besta mas vo bota aq)
+
+
+
+
+## Paginas Como Estão
+Cadastro = Finalizado
+Redefinir Senha = Finalizado
+Cart = Finalizado
+Produtos = Finalizado
+Bazar = Finalizado 
+Meus dados = Finalizado 
+denuncias-usu = Finalizado 
+minhas vendas = Finalizado 
+meus pedidos = Finalizado 
+Adc-bazar & Criar Bazar = Finalizado (Somente aumentar na validação)
+
+
+Tabelas/famoso/denuncia/dashbord = Finalizado
+{    botão menu mobile
+    famoso/denuncia - espaço abaixo do rodape}
+
+
+
+
+
+Produtos Adicionados, Vender{
+    Pagina em desenvolvimento.. (Porem apos ja estão finalizados)
+}
+Index{
+    Mobile com alguns bugs
+    E SETAS QUE NÃO FUNCIONAM N DEVEM APARECER
+    Imagem desk da Larezzo torta pra cima
+}
+Masculino, Infantil, Acessorios, Femino{
+    Desk espaço embaixo do rodape
+    Desk distancia dos produtos
+}
+Pesquisa (ps: é o msm css do M F I A){
+    Produtos ao pesquisar aparecem bugados
+}
+Infantil{
+    Bugado os produtos mobile
+}
+Wishlist{
+    Mobile Menu todo bugado
+}
+perfil{
+    Você pode gostar bugado(mostra as 4 imagens)
+}
+Adc-produto{
+    Menu Mobile totalmente quebrado
+    Rodape Mobile com um espaço abaixo
+    Bug de aumentar e diminuir, 
+    Olhar controller centavos
+}
+Login {
+    Ver oque sera do voce pode gostar
+    Tirar o Lembre-me
+    No mobile ao scrolar esta dando uma travada (como se tivesse 2 barras)
+}
 
 
 
@@ -103,27 +151,3 @@ Redsenha (Coisa besta mas vo bota aq)
 
 
 
-
-
-                                <% if (user !=  null) { %>
-                                    <p><a href="/perfil">Perfil</a></p>
-                                <% } else { %>
-                                    <p><a href="/perfil">Entrar</a></p>
-                                <% } %>
-
-                                
-                    <% if (user !=  null) { %>
-                        <article id="article_saiba_mais_menu_cell">
-                            <p>Acesse seu perfil e participe do nosso marketplace</p>
-                                <button>
-                                    <a href="/perfil" style="color: black; text-decoration: none;">Perfil</a>
-                                </button>
-                        </article>
-                    <% } else { %>
-                        <article id="article_saiba_mais_menu_cell">
-                            <p>Participe do nosso marketplace, favorite produtos e os adicione à sacola</p>
-                                <button>
-                                    <a href="/cadastro" style="color: black; text-decoration: none;">Cadastre-se</a>
-                                </button>
-                        </article>
-                    <% } %>

@@ -354,7 +354,6 @@ input::-webkit-input-placeholder {
   background-color: white;
   text-decoration: none;
   position: relative;
-  top: 5vh;
   font-size: 3.5vw;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;

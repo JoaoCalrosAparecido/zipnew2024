@@ -127,7 +127,7 @@ const denunciaController = {
             });
         } catch (error) {
             console.error("Erro ao processar a denúncia:", error);
-            res.status(500).send("Erro ao processar a denúncia.");
+            res.redirect('/')
         }
     },
     
@@ -243,7 +243,7 @@ const denunciaController = {
             return res.render('pages/produtos', jsonResult);
         } catch (error) {
             console.error("Erro ao processar a denúncia:", error);
-            res.status(500).send("Erro ao processar a denúncia.");
+            res.redirect('/')
         }
     },
 

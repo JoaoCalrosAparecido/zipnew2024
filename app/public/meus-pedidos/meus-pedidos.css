@@ -40,7 +40,7 @@ body {
 
 #pedidos {
     width: 90vw;
-    margin: 20vh 0 0 4.5vw;
+    margin: 20vh 0 22vh 4.5vw;
     border-collapse: collapse;
     border-spacing: 0;
     table-layout: fixed;

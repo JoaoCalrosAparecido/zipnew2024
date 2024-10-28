@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= produto.tituloprod %></title>
     <link rel="stylesheet" href="/produtos/css/parte_superior.css">
     <link rel="stylesheet" href="/produtos/css/menu.css">
     <link rel="stylesheet" href="/produtos/css/menu_retratio.css">
@@ -184,12 +184,14 @@
             </figure>
 
             <figure id="imagem_do_icone_de_favorito">
-                <lord-icon
-                    id="lordicon"
-                    src="https://cdn.lordicon.com/xyboiuok.json"
-                    trigger="hover"
-                    style="width:25px; height:25px">
-                </lord-icon>
+                <a href="/wishlist">
+                    <lord-icon
+                        id="lordicon"
+                        src="https://cdn.lordicon.com/xyboiuok.json"
+                        trigger="hover"
+                        style="width:25px; height:25px">
+                    </lord-icon>
+                </a>
 
                 
             </figure>
