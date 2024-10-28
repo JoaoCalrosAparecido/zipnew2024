@@ -38,6 +38,7 @@ body {
 }
 
 .swiper-slide {
+    background-color: #c2caab;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,26 +101,119 @@ body {
 
 }
 
-figure > .swiper {
-    width: 22vw;
-    height: 27vw;
-    margin-right: 7vw;
+.video-noiva {
+    width: 100vw;
+    margin: -20vh 1.2vw 0 0; 
+    height: 100vh; 
+    object-fit: cover;
 }
 
-.swiper-slide2 {
-    z-index: 4;
-    text-align: center;
+.zip-transforma {
+    height: 40vh;
+    margin: 35vh 0 0 -7vw;
+}
+
+.video-celular {
+    width: 100vw; 
+    margin: -20vh 0 0 -3vw; 
+    height: 100vh; 
+    object-fit: cover;   
+    filter: blur(50px); 
+    opacity: 10%;
+}
+
+.requitos {
+    position: absolute;
+    left: 10vw;
+    top: 8vh;
+    display: flex;
+    justify-content: center;
+    column-gap: 3vw;
+}
+
+.req-imgs-escritas {
+    display: flex;
+    flex-direction: column;
+}
+
+.resquisitos-escrita {
+    width: 29vw;
+    margin-left: 2vw;
+}
+
+.modelo-oculos-branco {
+    height: 80vh;
+    transition: transform 0.5s ease-in-out;
+}
+
+.modelo-oculos-branco:hover {
+    transform: scale(1.1);
+}
+
+.swiper-slide:nth-child(2n) {
+    background: url('../../IMG/vender/fundo.png') no-repeat center/cover;
+    background-position: left;
+}
+
+.img-vender-requisitos {
+    width: 35vw;
+    margin: -70vh 0 0 14vw;
+}
+
+.noiva-roxa {
+    margin: -6vw 16vw 0 0;
+}
+
+.incetivo-cadastrar {
+    color: #353821;
+    font-weight: 500;
     font-size: 18px;
-    color: #000;
+    margin: 1vw 0 0 -48vw;
+    width: 28vw;
+    text-align: center;
 }
 
-.swiper-slide2:nth-child(2) {
-    height: auto;
-    width: 100%;
-    margin: 0;
+.modelo-bola {
+    margin: -1.5vh 0 0 10vw;
 }
 
 
-.carrosseis-requi {
-    margin-right: -16px;
+@media only screen and (max-width:480px) {
+    .zip-transforma {
+        height: 35vh;
+        margin: 34vh 0 0 1vw;
+    }
+
+    .noiva-roxa {
+        display: none;
+    }
+
+    .img-vender-requisitos {
+        width: 80vw;
+        margin: -90vh 0 0 9vw;
+    }
+
+    .incetivo-cadastrar {
+        margin-top: 10vh;
+        width: 80vw;
+        position: absolute;
+        left: 59vw;
+    }
+
+    .modelo-oculos-branco {
+        display: none;
+    }
+
+    .video-celular {
+        filter: blur(5px);
+    }
+
+    .requitos {
+        left: 3vw;
+        top: 15vh;
+    }
+
+    .bazar-resquisitos-escrita, .resquisitos-escrita {
+        width: 90vw;;
+    }
 }
