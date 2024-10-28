@@ -12,7 +12,10 @@
     column-gap: 2vw;
     justify-content: center;
     row-gap: 3vw;
+    left: 0px;
 }
+
+
 
 /*primeiro slide*/
 #section_primeiro_slide1_cell {

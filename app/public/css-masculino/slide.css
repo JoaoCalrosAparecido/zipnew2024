@@ -105,26 +105,3 @@
 }
 
 
-
-/*veja mais*/
-#veja-mais-cell {
-    position: relative;
-    top: 20vh;
-    width: 100vw;
-    display: none;
-    justify-content: center;
-}
-
-#veja-mais-cell > button {
-    background-color: white;
-    width: 77vw;
-    height: 6vh;
-    font-size: 3.8vw;
-    font-weight: 550;
-    font-family: 'Poppins', sans-serif;
-}
-
-#veja-mais-cell > button:active {
-    background-color: rgb(0, 0, 0);
-    color: white;
-}

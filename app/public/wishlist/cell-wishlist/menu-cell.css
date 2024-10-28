@@ -331,7 +331,7 @@ input::-webkit-input-placeholder {
   width: 68vw;
   height: 17vh;
   position: relative;
-  top: -28vh;
+  top: 4vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -376,7 +376,7 @@ input::-webkit-input-placeholder {
 /*icones celular*/
 #section_icones_menu_deslizante_cell {
   position: relative;
-  top: -25vh;
+  top: 7vh;
   padding-left: 5vw;
   display: flex;
   flex-direction: column;

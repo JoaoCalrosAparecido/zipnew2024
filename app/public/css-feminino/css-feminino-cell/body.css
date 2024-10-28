@@ -4,9 +4,12 @@
     padding: 0%;
 }
 
-body {
+
+
+html, body {
     height: 20px;
-    
+    position: relative;
+    top: 5vh;
 }
 
 /*parte escrita new in*/

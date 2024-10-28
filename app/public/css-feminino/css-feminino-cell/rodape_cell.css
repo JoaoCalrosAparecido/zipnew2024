@@ -5,6 +5,10 @@
     display: none;
 }
 
+.stories_recentes_article {
+    display: none;
+}
+
 #rodape_cell {
     display: flex;
     flex-direction: column;
