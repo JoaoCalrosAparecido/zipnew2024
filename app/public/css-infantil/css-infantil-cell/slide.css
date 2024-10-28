@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*section principal*/
-#section_slide_cell {
-    position: relative;
-    top: 15vh;
-    z-index: 2;
-}
+    #section_slide_cell {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 15vh;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2vw;
+        justify-content: center;
+        row-gap: 3vw;
+    }
 
 /*primeiro slide*/
 #section_primeiro_slide1_cell {
@@ -61,6 +68,11 @@
 
 /*blocos do slide produtos*/
 
+.class_produtos_figure {
+    width: 45.83vw;
+    height: 34.75vh;
+}
+
 .class_produtos_figure > a {
     text-decoration: none;
     color: unset;
@@ -92,7 +104,7 @@
 /*veja mais*/
 #veja-mais-cell {
     position: relative;
-    top: 16vh;
+    top: 23vh;
     width: 100vw;
     display: flex;
     justify-content: center;

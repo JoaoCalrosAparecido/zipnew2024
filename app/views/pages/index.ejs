@@ -168,18 +168,6 @@
         <!--imagem da barra de pesquisa e etc-->
         <article id="barra_de_pesquisa_e_etc">
             <figure id="imagem_da_barra_de_pesquisa_e_etc">
-                <!--
-                <% if (logado) { %>
-                    <a href="/sair">sair</a>
-                <% } else { %>
-                    <a href="/login_do_usuario">Entrar</a>
-                <% } %>
-                -->
-
-
-
-
-
                 <figure id="imagem_da_barra_de_pesquisa" class="search-container_principal">
                     <article class="search-container_principal">
                         <article class="search-icon_principal" id="searchIcon_principal">
@@ -337,12 +325,22 @@
                         -->
                     </section>
 
-                    <article id="article_saiba_mais_menu_cell">
-                        <p>Participe do nosso marketplace, favorite produtos e os adicione à sacola</p>
-                        <button>
-                            <p>Cadastre-se</p>
-                        </button>
-                    </article>
+
+                    <% if (user !=  null) { %>
+                        <article id="article_saiba_mais_menu_cell">
+                            <p>Acesse seu perfil e participe do nosso marketplace</p>
+                                <button>
+                                    <a href="/perfil" style="color: black; text-decoration: none;">Perfil</a>
+                                </button>
+                        </article>
+                    <% } else { %>
+                        <article id="article_saiba_mais_menu_cell">
+                            <p>Participe do nosso marketplace, favorite produtos e os adicione à sacola</p>
+                                <button>
+                                    <a href="/cadastro" style="color: black; text-decoration: none;">Cadastre-se</a>
+                                </button>
+                        </article>
+                    <% } %>
 
                     <!--parte dos icones cell-->
                     <section id="section_icones_menu_deslizante_cell">
@@ -359,12 +357,11 @@
                             <article>
 
 
-                                <% if (logado) { %>
+                                <% if (user !=  null) { %>
                                     <p><a href="/perfil">Perfil</a></p>
-                                    <% } else { %>
-                                        <p><a href="/perfil">Entrar</a></p>
-
-                                        <% } %>
+                                <% } else { %>
+                                    <p><a href="/perfil">Entrar</a></p>
+                                <% } %>
 
 
                             </article>

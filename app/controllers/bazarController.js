@@ -3,6 +3,7 @@ const { body, validationResult } = require("express-validator");
 const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 const pedidoModel = require('../models/pedidoModel');
+const denunciasModels = require("../models/denunciasModels");
 
 function selecionarProdutosAleatorios(produtos, quantidade) {
   for (let i = produtos.length - 1; i > 0; i--) {
@@ -348,6 +349,7 @@ const bazarController = {
 
 getBazaarsWithProducts: async (req, res) => {
   try {
+    const userId = req.session.autenticado.id;
       const bazaarList = await produtosModels.findAllBazaarsWithProducts();
 
       let groupedBazaars = bazaarList.reduce((accumulator, currentItem) => {
@@ -372,10 +374,10 @@ getBazaarsWithProducts: async (req, res) => {
           return accumulator;
       }, {});
 
-      return res.render("pages/bazar", { bazaarList: groupedBazaars });
+      return res.render("pages/bazar", { bazaarList: groupedBazaars, user: userId });
   } catch (error) {
       console.log(error);
-      return res.render("pages/bazar", { bazaarList: [], errorList: error });
+      return res.render("pages/bazar", { bazaarList: [], errorList: error, user: null });
   }
 }
 

@@ -146,12 +146,14 @@
             </figure>
 
             <figure id="imagem_do_icone_de_favorito">
+            <a href="/wishlist">
                 <lord-icon
                     id="lordicon"
                     src="https://cdn.lordicon.com/xyboiuok.json"
                     trigger="hover"
                     style="width:25px; height:25px">
                 </lord-icon>
+            </a>
 
                 
             </lord-icon>
@@ -267,10 +269,21 @@
                     </article>
                 </section>
 
-                <article id="article_saiba_mais_menu_cell">
-                    <p>Participe do nosso marketplace, favorite produtos e os adicione à sacola</p>
-                    <button><p>Cadastre-se</p></button>
-                </article>
+                <% if (user !=  null) { %>
+                    <article id="article_saiba_mais_menu_cell">
+                        <p>Acesse seu perfil e participe do nosso marketplace</p>
+                            <button>
+                                <a href="/perfil" style="color: black; text-decoration: none;">Perfil</a>
+                            </button>
+                    </article>
+                <% } else { %>
+                    <article id="article_saiba_mais_menu_cell">
+                        <p>Participe do nosso marketplace, favorite produtos e os adicione à sacola</p>
+                            <button>
+                                <a href="/cadastro" style="color: black; text-decoration: none;">Cadastre-se</a>
+                            </button>
+                    </article>
+                <% } %>
 
                 <!--parte dos icones cell-->
                 <section id="section_icones_menu_deslizante_cell">
@@ -287,7 +300,11 @@
                         </article>
 
                         <article>
-                            <p><a href="/perfil">Entrar</a></p>
+                            <% if (user !=  null) { %>
+                                <p><a href="/perfil">Perfil</a></p>
+                            <% } else { %>
+                                <p><a href="/perfil">Entrar</a></p>
+                            <% } %>
                         </article>
                     </article>
 

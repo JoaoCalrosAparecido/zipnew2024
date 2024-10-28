@@ -130,8 +130,10 @@ const controller = {
 
   ],
   regrasValidacaoAdcProduto: [
-    body('tituloProduto').isString().isLength({ min: 3, max: 45 }).withMessage("*O Titulo deve ter de 3 a 45 caracteres!"),
-    body('precoProduto').isNumeric({ min: 0.1 }).withMessage("*O preço deve ser no minimo R$ 0.1"),
+    body('tituloProduto').isString().isLength({ min: 3, max: 30 }).withMessage("*O Titulo deve ter de 3 a 30 caracteres!"),
+    body('precoProduto')
+    .isNumeric().withMessage("*O preço deve ser um número")
+    .custom((value) => value >= 0.1).withMessage("*O preço deve ser no mínimo R$ 0.10"),
     body('descProduto').isString().isLength({ min: 25, max: 220 }).withMessage("*A Descrição deve ter de 25 a 220 caracteres!"),
   ],
 
@@ -314,12 +316,13 @@ const controller = {
 
   mostrarProduto: async (req, res) => {
     try {
+      const userId = req.session.autenticado.id;
       const produtoId = parseInt(req.params.id_prod_cliente);
       const [produto] = await produtosModels.findProdById(produtoId)
       console.log(produto);
       
       if (produto) {
-          res.render('pages/produtos', { usuarioautenticado: req.session.autenticado, produto: produto[0] })
+          res.render('pages/produtos', { usuarioautenticado: req.session.autenticado, produto: produto[0], user: userId })
       } else {
           res.status(404).send('Produto não encontrado');
       }
@@ -340,16 +343,16 @@ const controller = {
   regrasValidaçãoBazar: [
     body('Nome')
       .isString()
-      .isLength({ min: 2, max: 10 })
-      .withMessage('*O nome deve ter entre 2 e 10 caracteres.'),
+      .isLength({ min: 2, max: 15 })
+      .withMessage('*O nome deve ter entre 2 e 15 caracteres.'),
       
     body('Ano')
     .isInt({ min: 2000, max: new Date().getFullYear() }).withMessage('*Ano Inválido'),
       
     body('Descricao')
       .isString()
-      .isLength({ min: 5, max: 20 })
-      .withMessage('*A descrição deve ter entre 5 e 20 caracteres.'),
+      .isLength({ min: 5, max: 35 })
+      .withMessage('*A descrição deve ter entre 5 e 35 caracteres.'),
       
     body('Titulo')
       .isString()
@@ -358,8 +361,8 @@ const controller = {
       
     body('Biografia')
       .isString()
-      .isLength({ min: 10, max: 300 })
-      .withMessage('*A biografia deve ter entre 10 e 300 caracteres.')
+      .isLength({ min: 10, max: 400 })
+      .withMessage('*A biografia deve ter entre 10 e 400 caracteres.')
   ],
 
   regrasValidaçãoDenunciaP: [

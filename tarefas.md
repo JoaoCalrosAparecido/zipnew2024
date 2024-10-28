@@ -41,24 +41,19 @@ Dia 26
 dia 27
 - dispaly flex nos produtos no feminino masculino e acessorios (check)
 - favoritou na pagina de produtos continua na pagina de produtos(check)
-- produtos adicionados css igual da wishlist
+- produtos adicionados css igual da wishlist (check)
 - review nos menus mobiles e desk para ver se tem bugs
 - adc produtos wishlist 
+
+
+
 
 # Erros
 
 Erro no render
 
-Produtos Denunciar e Fazer outra ação
-
-meus dados mob menu e cadastro menu mob
 
 
-
-
-
-
-# Upd Menu
 ## Paginas que so temos acesso logado
 Meus dados
 Adc-produt
@@ -70,18 +65,18 @@ minhas vendas
 perfil
 Tabelas/famoso/denuncia/dashbord
 Wishlist
-produtos adicionados         pagina quebrada
+produtos adicionados
 
-## Paginas que temos acesso logado e deslogado          OBV Q FALTA A VALIDAÇÃO DE LOGADO
-Index 
-Masculino 
-Femino      TODO BUGADO 
-Infantil  
-Acessorios
-Pesquisa  
-Bazar
-Produtos
+## Paginas que temos acesso logado e deslogado 
+Index
+Masculino
+Femino
+Infantil
+Acessorios 
 Vender
+Pesquisa
+Bazar   
+Produtos
 
 ## Paginas que so temos acesso deslogado
 Cadastro  
@@ -89,11 +84,65 @@ Login
 Redefinir Senha   
 
 
-## Menus Mobile quebrados
-Adc Produto
-Meus dados
-produtos adicionados
-Wishlist
-Tabelas - famoso - denuncia - dashbord (Coisa besta mas vo bota aq)
-Redsenha (Coisa besta mas vo bota aq)
+
+
+
+
+## Paginas Como Estão
+Cadastro = Finalizado
+Redefinir Senha = Finalizado
+Cart = Finalizado
+Produtos = Finalizado
+Bazar = Finalizado 
+Meus dados = Finalizado 
+denuncias-usu = Finalizado 
+minhas vendas = Finalizado 
+meus pedidos = Finalizado 
+Adc-bazar & Criar Bazar = Finalizado
+Tabelas/famoso/denuncia/dashbord = Finalizado
+
+
+
+
+
+Produtos Adicionados, Vender{
+    Pagina em desenvolvimento.. (Porem apos ja estão finalizados)
+}
+Index{
+    Mobile com alguns bugs
+    E SETAS QUE NÃO FUNCIONAM N DEVEM APARECER
+    Imagem desk da Larezzo torta pra cima
+}
+Masculino, Infantil, Acessorios, Femino{
+    Desk espaço embaixo do rodape
+    Desk distancia dos produtos
+}
+Pesquisa (ps: é o msm css do M F I A){
+    Produtos ao pesquisar aparecem bugados
+}
+Infantil{
+    Bugado os produtos mobile
+}
+Wishlist{
+    Mobile Menu todo bugado
+}
+perfil{
+    Você pode gostar bugado(mostra as 4 imagens)
+}
+Adc-produto{
+    Menu Mobile totalmente quebrado
+    Rodape Mobile com um espaço abaixo
+    Bug de aumentar e diminuir
+}
+Login {
+    Ver oque sera do voce pode gostar
+    Tirar o Lembre-me
+    No mobile ao scrolar esta dando uma travada (como se tivesse 2 barras)
+}
+
+
+
+
+
+
 

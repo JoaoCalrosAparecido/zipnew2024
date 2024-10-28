@@ -9,8 +9,10 @@
     z-index: 2;
     display: flex;
     flex-wrap: wrap;
-    column-gap: 5px;
+    column-gap: 2vw;
     justify-content: center;
+    row-gap: 3vw;
+
 }
 
 /*primeiro slide*/

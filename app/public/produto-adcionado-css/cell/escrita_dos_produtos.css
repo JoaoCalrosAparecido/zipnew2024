@@ -1,0 +1,7 @@
+#escrita-prod  {
+    position: relative;
+    left: 3vw;
+}
+#escrita-prod > img {
+    width: 60vw;
+}

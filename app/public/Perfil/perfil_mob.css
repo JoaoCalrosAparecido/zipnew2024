@@ -189,8 +189,29 @@ hr{
 
 /* Você pode gostar*/
 
+#bunker {
+    width: 45vw;
+}
+
+
 #slide{
     margin-bottom: 5rem;
+    display: flex;
+    column-gap: 2.5vw;
+    position: relative;
+    left: 4vw;
+}
+
+#slide > a {
+    width: 45vw;
+}
+
+#slide :nth-child(3) {
+    display: none;
+}
+
+#slide :nth-child(4) {
+    display: none;
 }
 
 #likeit{
@@ -204,7 +225,7 @@ hr{
     margin-bottom: 15px;
 
     background-color: rgb(255, 255, 255);
-    width: 40vw;
+    width: 45vw;
     height: 30vh;
 
     display: grid;
@@ -217,28 +238,27 @@ hr{
 
 #container{
     display: flex;
-    margin-left: 9vw;
+    margin-left: 0vw;
     margin-right: 9vw;
 
 }
 
 #likes, #likezz{
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
 #h1, #h3{
-    font-size: 14px;
-    margin-left: 5px;
+    font-size: 13px;
+    margin-left: 0px;
 }
 #h2, #h4{
-    font-size: 13px;
+    font-size: 12px;
     color: #7F7F7F;
 }
 
 #sepair{
     display: flex;
-    margin-left: 8vw;
-    margin-right: 8vw;
+    margin-left: 2vw;
 }
 
 #display{
@@ -246,7 +266,7 @@ hr{
 }
 
 #dissy{
-    margin-left: 11vw;
+    margin-left: 0vw;
 }
 
 #dissa, #dissw{

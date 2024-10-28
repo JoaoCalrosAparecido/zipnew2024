@@ -90,7 +90,7 @@ button:hover {
 
 
 
-@media (max-width: 780px) {
+@media (max-width: 1200px) {
   #modelo-redefinir-senha {
     display:none;
   }
