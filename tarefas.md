@@ -41,7 +41,7 @@ Dia 26
 dia 27
 - dispaly flex nos produtos no feminino masculino e acessorios (check)
 - favoritou na pagina de produtos continua na pagina de produtos(check)
-- produtos adicionados css igual da wishlist
+- produtos adicionados css igual da wishlist (check)
 - review nos menus mobiles e desk para ver se tem bugs
 - adc produtos wishlist 
 

@@ -9,8 +9,10 @@
     height: auto; 
     display: flex;
     flex-wrap: wrap;
-    column-gap: 0.5vh;
+    column-gap: 1vw;
     row-gap: 19vh;
+    left: 0.8vw;
+
     
 }
 
