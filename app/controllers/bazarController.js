@@ -3,6 +3,7 @@ const { body, validationResult } = require("express-validator");
 const models = require("../models/models");
 const produtosModels = require("../models/produtos.models");
 const pedidoModel = require('../models/pedidoModel');
+const denunciasModels = require("../models/denunciasModels");
 
 function selecionarProdutosAleatorios(produtos, quantidade) {
   for (let i = produtos.length - 1; i > 0; i--) {

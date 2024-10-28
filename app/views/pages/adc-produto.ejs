@@ -470,12 +470,12 @@
                     <article>
                         <article class="inputs-adc-img">
                             <input type="text" name="tituloProduto" id="titulo" placeholder="Titulo" class="<%=campoErro.tituloProduto %>" value="<%= valores.tituloProduto %>">
-                            <p id="explicacao-inputs" for="titulo">O título deve ter no mínimo 3 caracteres e no máximo 45.</p>
+                            <p id="explicacao-inputs" for="titulo">O título deve ter no mínimo 3 caracteres e no máximo 30.</p>
                         </article>
 
                         <article class="inputs-adc-img">
                             <input type="text" name="precoProduto" id="preco" placeholder="Preço (ex: 10.00)" class="<%=campoErro.precoProduto %>" value="<%= valores.precoProduto %>">
-                            <p id="explicacao-inputs" for="preco">Não se deve colocar "R$" e nem "," no preço (esses caracteres são automáticos). Além disso, o valor do produto deve ser pelo menos de um centavo.</p>
+                            <p id="explicacao-inputs" for="preco">Não se deve colocar "R$" e nem "," no preço (esses caracteres são automáticos). Além disso, o valor do produto deve ser pelo menos de dez centavos.</p>
                         </article>
                         <article class="inputs-adc-img">
                             <input type="text" name="descProduto" id="desc" placeholder="Descrição" class="<%=campoErro.descProduto %>" value="<%= valores.descProduto %>">

@@ -98,8 +98,7 @@ Meus dados = Finalizado
 denuncias-usu = Finalizado 
 minhas vendas = Finalizado 
 meus pedidos = Finalizado 
-Adc-bazar & Criar Bazar = Finalizado (Somente aumentar na validação)
-
+Adc-bazar & Criar Bazar = Finalizado
 
 Tabelas/famoso/denuncia/dashbord = Finalizado
 {    botão menu mobile
@@ -136,8 +135,7 @@ perfil{
 Adc-produto{
     Menu Mobile totalmente quebrado
     Rodape Mobile com um espaço abaixo
-    Bug de aumentar e diminuir, 
-    Olhar controller centavos
+    Bug de aumentar e diminuir
 }
 Login {
     Ver oque sera do voce pode gostar
