@@ -99,10 +99,7 @@ denuncias-usu = Finalizado
 minhas vendas = Finalizado 
 meus pedidos = Finalizado 
 Adc-bazar & Criar Bazar = Finalizado
-
 Tabelas/famoso/denuncia/dashbord = Finalizado
-{    botão menu mobile
-    famoso/denuncia - espaço abaixo do rodape}
 
 
 
